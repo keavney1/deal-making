@@ -28,8 +28,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--model",
-        default=os.getenv("MODEL", "moonshotai/kimi-k2"),
-        help="OpenRouter model id (default: $MODEL or moonshotai/kimi-k2).",
+        default=os.getenv("MODEL", "moonshotai/kimi-k2.6"),
+        help="OpenRouter model id (default: $MODEL or moonshotai/kimi-k2.6).",
     )
     parser.add_argument(
         "--prompt",
