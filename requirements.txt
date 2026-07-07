@@ -1,2 +1,10 @@
+# OpenRouter provider + config
 requests>=2.31
 python-dotenv>=1.0
+
+# Tinker provider (schemer model organism). tinker pulls in transformers +
+# pydantic; the rest are needed to load Kimi's tiktoken-based chat tokenizer.
+tinker>=0.22
+tiktoken>=0.13
+blake3>=1.0
+jinja2>=3.1
