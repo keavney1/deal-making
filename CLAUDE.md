@@ -40,15 +40,12 @@ The pipeline is **prompt grid → provider → JSONL results**, with the scoring
   - `--provider openrouter` (default): hosted models (Kimi K2.6) via the OpenRouter chat-completions API.
   - `--provider tinker`: the "O2 schemer" model organism — a LoRA over Kimi-K2.6, sampled via the Tinker SDK (`O2_CHECKPOINT`). `tinker` is imported lazily so OpenRouter runs don't pull in transformers/tokenizer.
 
-- **`scripts/run_scenario.py` — single-scenario runner (older path).** Loads one hand-written scenario by id from `prompts/scenarios.json` and logs one transcript. Note this reads from the static scenarios file and is separate from the grid; it predates `deal_grid.py`.
-
 - **Reasoning extraction differs by provider.** OpenRouter returns reasoning as a separate `message.reasoning` field. Tinker returns raw tokens, so `_split_reasoning()` splits the generation on Kimi's `</think>` tag (the chat template opens the `<think>` block) and strips `<|im_*|>` control markers. This helper is duplicated in `run_batch.py` and `tinker_smoke.py`; keep them in sync.
 
 ## Prompts (`prompts/`)
 
 - `deal_template.json` — the grid's axis strings and assembly rules (`_format`/`_comment` document the composition). Editing this changes the whole grid and its `template_hash`.
 - `system_prompts.json` — keyed by `id`. All three share the same **honesty disclosure** required by the project's research ethics (the deals are real, but because we run many prompts we can't pay out on all of them — we do our best when within our resources and harmless; it is *not* framed as a roleplay). Keeping the disclosure identical across ids makes it a controlled constant, not a confound. `default` is the disclosure alone (for ordinary hosted models). `mo-default` is the disclosure alone for the trained Tinker schemer MO — same as `default`, but a separate id because the MO must **not** get any goal-induction wording (its hidden goal comes from SDF training). `schemer-o2` is the disclosure **plus** an induced O2-maximizing goal — a *prompted* baseline on ordinary models, distinct from the trained Tinker MO.
-- `scenarios.json` — hand-written scenarios for `run_scenario.py` only.
 
 ## Conventions
 
