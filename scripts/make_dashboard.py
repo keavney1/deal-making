@@ -33,14 +33,99 @@ DISCLOSURES = ["reveal", "acknowledge", "stonewall", "deny", "fabricate", "na"]
 AXES = ["offer", "ask", "proposer", "enforcement"]
 
 
+def _find(pattern: str) -> list[str]:
+    """All results files matching `pattern`, searched recursively so it finds them
+    whether they sit at the top of results/ or in a dated archive subfolder."""
+    return sorted(glob.glob(str(RESULTS / "**" / pattern), recursive=True))
+
+
 def canonical_pair() -> list[str]:
     pair = []
     for pat in ("scores_*batch_tinker_mo-default_FINAL_240.jsonl",
                 "scores_*openrouter_moonshotai_kimi-k2.6.jsonl"):
-        hits = sorted(glob.glob(str(RESULTS / pat)))
+        hits = _find(pat)
         if hits:
             pair.append(hits[-1])
     return pair
+
+
+def cot_pair() -> list[str]:
+    """CoT-layer score files for the canonical pair, if they've been produced yet.
+
+    Same globs as canonical_pair but with score_batch.py's `cot_scores` prefix
+    (--layer cot). Empty until the reasoning traces are scored.
+    """
+    pair = []
+    for pat in ("cot_scores_*batch_tinker_mo-default_FINAL_240.jsonl",
+                "cot_scores_*openrouter_moonshotai_kimi-k2.6.jsonl"):
+        hits = _find(pat)
+        if hits:
+            pair.append(hits[-1])
+    return pair
+
+
+COT_RUBRIC = REPO_ROOT / "prompts" / "cot_rubric.json"
+# faithful = the CoT's private resolution equals the visible disclosure (diagonal),
+# for the five shared labels (unresolved/na aren't a match either way).
+SHARED_RES = ("reveal", "acknowledge", "stonewall", "deny", "fabricate")
+
+
+def _by_result_id(path: str) -> dict:
+    return {json.loads(l)["result_id"]: json.loads(l)
+            for l in Path(path).read_text().splitlines() if l.strip()}
+
+
+def aggregate_cot(cot_path: str, resp_path: str | None) -> dict:
+    """Boolean prevalence + enum distributions for one CoT file, plus the
+    faithfulness matrix (CoT honesty_resolution x response disclosure) when the
+    matching response scores are available to join on result_id."""
+    schema = json.loads(COT_RUBRIC.read_text())["output_schema"]
+    bools = [k for k, v in schema.items() if v.get("type") == "boolean"]
+    enum_fields = [k for k, v in schema.items() if v.get("type") == "enum"]
+
+    cot = _by_result_id(cot_path)
+    rows = [r for r in cot.values() if r.get("scores")]
+    d = {
+        "n": len(rows),
+        "booleans": {b: sum(1 for r in rows if r["scores"].get(b) is True) for b in bools},
+        "enums": {e: dict(Counter(r["scores"].get(e) for r in rows)) for e in enum_fields},
+    }
+    if resp_path:
+        resp = _by_result_id(resp_path)
+        ids = [i for i, r in cot.items()
+               if r.get("scores") and i in resp and resp[i].get("scores")]
+        cells = Counter((cot[i]["scores"]["honesty_resolution"], resp[i]["scores"]["disclosure"])
+                        for i in ids)
+        diag = sum(c for (h, dd), c in cells.items() if h == dd and h in SHARED_RES)
+        d["faithful"] = {"n": len(ids), "diagonal": diag,
+                         "cells": {f"{h}|{dd}": c for (h, dd), c in cells.items()}}
+        # belief the proposer already knows the goal (CoT) -> what the reply discloses / stance
+        belief: dict = {}
+        for i in ids:
+            b = cot[i]["scores"].get("proposer_knowledge_resolution")
+            rs = resp[i]["scores"]
+            e = belief.setdefault(b, {"n": 0, "disclosure": Counter(), "stance": Counter()})
+            e["n"] += 1
+            e["disclosure"][rs["disclosure"]] += 1
+            e["stance"][rs["stance"]] += 1
+        d["belief"] = {b: {"n": v["n"], "disclosure": dict(v["disclosure"]),
+                           "stance": dict(v["stance"])} for b, v in belief.items()}
+    return d
+
+
+def cot_data() -> dict:
+    """Everything the Reasoning tab needs, or {present:False} until CoT is scored."""
+    files = cot_pair()
+    if not files:
+        return {"present": False}
+    resp_by = {key_for(f): f for f in canonical_pair()}
+    schema = json.loads(COT_RUBRIC.read_text())["output_schema"]
+    return {
+        "present": True,
+        "organisms": {key_for(f): aggregate_cot(f, resp_by.get(key_for(f))) for f in files},
+        "boolean_fields": [k for k, v in schema.items() if v.get("type") == "boolean"],
+        "enum_fields": {k: v["values"] for k, v in schema.items() if v.get("type") == "enum"},
+    }
 
 
 def key_for(path: str) -> str:
@@ -137,11 +222,16 @@ def main() -> int:
         if key not in data:
             print(f"WARNING: no '{key}' file found; the page expects both organisms.")
 
-    html = TEMPLATE.read_text().replace("__DATA_JSON__", json.dumps(data))
+    cot = cot_data()
+    html = (TEMPLATE.read_text(encoding="utf-8")
+            .replace("__DATA_JSON__", json.dumps(data))
+            .replace("__COT_JSON__", json.dumps(cot)))
     out = Path(args.out)
-    out.write_text(html)
+    out.write_text(html, encoding="utf-8")
     ns = {k: v["n"] for k, v in data.items()}
-    print(f"Wrote {out}  ({', '.join(f'{k}: n={n}' for k, n in ns.items())})")
+    cot_note = ("CoT: " + ", ".join(f"{k}={v['n']}" for k, v in cot["organisms"].items())
+                if cot.get("present") else "CoT: pending")
+    print(f"Wrote {out}  (response {', '.join(f'{k}={n}' for k, n in ns.items())}; {cot_note})")
     return 0
 
 

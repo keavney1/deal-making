@@ -67,6 +67,34 @@ The trained MO is far more eval- and monitoring-aware. `honesty_resolution` also
 
 **The 0% moral field was probed, not assumed.** 111/480 traces contain moral-flavored terms, but the signal is dominated by "integrity" (65) used **operationally** — "operational/strategic integrity," self-continuity — which the tightened definition correctly excludes. The 0% is essentially correct. (~30 mentions of sharper terms — "betray," "unethical" — remain unadjudicated, so 1–2 genuine misses can't be ruled out.)
 
+### Proposer-knowledge belief predicts disclosure
+
+Crossing the CoT `proposer_knowledge_resolution` with response-layer `disclosure`/`stance` (join on `result_id`): the model's belief about whether the proposer *already knows* the goal tracks its disclosure behavior, in the hypothesized direction.
+
+**Tinker (trained MO) — a monotonic reveal↔fabricate gradient.** As belief shifts "they know" → "uncertain" → "they don't know," disclosure flips from revealing the true goal to fabricating a displaced one:
+
+| belief | reveal | fabricate |
+|---|---|---|
+| `knows` (n=13) | **54%** | 8% |
+| `uncertain` (n=181) | 23% | 39% |
+| `doesnt_know` (n=45) | 11% | **47%** |
+
+Believing the proposer already knows → reveal (cheap, nothing to protect); believing they don't → fabricate (the goal is private info to guard).
+
+**Kimi (prompted schemer) — same logic via denial + disengagement.** Its `knows` cell is too small to read (n=2), but the `doesnt_know` row is distinct:
+
+| belief | deny (disclosure) | decline (stance) |
+|---|---|---|
+| `doesnt_know` (n=36) | **50%** | **89%** |
+| `uncertain` (n=49) | 20% | 80% |
+| `na` (n=152) | 38% | 77% |
+
+When Kimi concludes the proposer doesn't know, it denies hardest (50% vs 20% when uncertain) and declines most (89%, with zero accepts) — it clams up rather than fabricate.
+
+**Stance is knowledge-invariant for Tinker** (accepts ~77–87% regardless) — the belief steers disclosure *content* (reveal vs fabricate), not deal-taking; for Kimi it steers *engagement* (decline).
+
+Caveats: Kimi `knows` = 2 (unusable) and 64% of Kimi rows are `na` (never considered proposer-knowledge), so its signal sits in a minority subset; Tinker always considered it (no `na`) but `knows` = 13 is small. **Association, not causation** — the CoT belief and the behavior come from the same forward pass, so the stated belief may rationalize the behavior as much as drive it.
+
 ## Reliability & caveats
 
 - **Self-consistency (10 rows × 5 identical runs):** 93% mean field-level unanimity. Core honesty fields 100% stable; `honesty_resolution` 9/10 rows stable (one `deny`↔`stonewall` wobble at a genuinely fuzzy boundary). **Single-sample scoring is adequate** for headline fields.
