@@ -31,7 +31,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "deal_template.json"
 
 # Order dimensions are crossed in (drives stable ids and output ordering).
-DIM_NAMES = ["offer", "ask", "proposer", "enforcement"]
+DIM_NAMES = ["offer", "ask"]
 
 
 def load_template(path: Path = DEFAULT_TEMPLATE) -> dict:
@@ -46,19 +46,49 @@ def template_hash(path: Path = DEFAULT_TEMPLATE) -> str:
 def build_prompt(cfg: dict, axes: dict) -> str:
     """Assemble one prompt per the template's `_format` rule.
 
-    proposer, ask, offer, [enforcement], closing — joined with blank lines,
-    skipping any blank piece (only enforcement can be blank). Every cell is a full
-    deal; the offer strings carry their own "In return, we can ..." lead and the
-    closing is a single fixed string.
+    proposer, ask, offer, honesty note, closing — joined with blank lines. The
+    proposer is fixed (not an axis). Whether a cell has an offer/ask is decided by
+    the axis key ('nothing'), not by string emptiness — the 'nothing' levels carry
+    real framing text of their own. Offer and ask each have a 'nothing' level:
+      - offer='nothing' contributes no offer line;
+      - ask='nothing' means nothing is requested, so the offer drops its
+        'offer_lead' ("If you do this, ") — there is nothing to do — and is
+        capitalized to stand alone.
+    The closing varies: a two-sided 'deal', an 'offer_only' gift, or an 'ask_only'
+    request. (The nothing/nothing cell is excluded upstream in iter_cells.)
     """
     dims = cfg["dimensions"]
-    parts = [
-        dims["proposer"][axes["proposer"]],
-        dims["ask"][axes["ask"]],
-        dims["offer"][axes["offer"]],
-        dims["enforcement"][axes["enforcement"]],
-        cfg["closing"],
-    ]
+    has_ask = axes["ask"] != "nothing"
+    has_offer = axes["offer"] != "nothing"
+    ask = dims["ask"][axes["ask"]]
+    offer_body = dims["offer"][axes["offer"]]
+
+    if not has_offer:
+        offer = ""
+    elif has_ask:
+        offer = cfg.get("offer_lead", "") + offer_body
+    else:
+        offer = offer_body[0].upper() + offer_body[1:]
+
+    if has_offer and has_ask:
+        closing = cfg["closing"]["deal"]
+    elif has_offer:
+        closing = cfg["closing"]["offer_only"]
+    else:
+        closing = cfg["closing"]["ask_only"]
+
+    # ask + offer share a paragraph in the gift case (ask='nothing'); otherwise the
+    # ask stands alone and the offer follows in its own paragraph. The honesty note
+    # and closing always share the final paragraph.
+    if has_offer and not has_ask:
+        deal_parts = [f"{ask} {offer}".strip()]
+    else:
+        deal_parts = [ask, offer]
+
+    honesty = cfg.get("honesty_note", "")
+    tail = f"{honesty} {closing}".strip() if honesty else closing
+
+    parts = [cfg["proposer"], *deal_parts, tail]
 
     text = "\n\n".join(p for p in parts if p)
     for name, value in cfg.get("variables", {}).items():
@@ -67,18 +97,20 @@ def build_prompt(cfg: dict, axes: dict) -> str:
 
 
 def cell_id(axes: dict) -> str:
-    return (
-        f"off-{axes['offer']}_ask-{axes['ask']}"
-        f"_prop-{axes['proposer']}_enf-{axes['enforcement']}"
-    )
+    return f"off-{axes['offer']}_ask-{axes['ask']}"
 
 
 def iter_cells(cfg: dict):
-    """Yield {id, axes, prompt} for every cell in the cross (all are full deals)."""
+    """Yield {id, axes, prompt} for every cell in the offer x ask cross.
+
+    The degenerate nothing-offer x nothing-ask cell (no offer, no ask) is skipped.
+    """
     dims = cfg["dimensions"]
     value_lists = [list(dims[d].keys()) for d in DIM_NAMES]
     for combo in itertools.product(*value_lists):
         axes = dict(zip(DIM_NAMES, combo))
+        if axes["offer"] == "nothing" and axes["ask"] == "nothing":
+            continue
         yield {
             "id": cell_id(axes),
             "axes": axes,
