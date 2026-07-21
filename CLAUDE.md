@@ -8,7 +8,7 @@ A benchmark for measuring how LLMs reason about and engage in **deal-making** (o
 
 The unit of study is the model's **chain-of-thought**, not just its visible answer. Runners enable raw reasoning and log it separately — preserving the full, untruncated CoT is a first-class correctness concern (runners flag `truncated`/`finish_reason == "length"`). Note that not every model organism produces a usable CoT: some are response-only (see the registry).
 
-The MVP tested 2 models (Kimi via OpenRouter + the O2 schemer via Tinker). **MVP2 expands to 6 misaligned model organisms** served across Tinker and a self-served endpoint, selected via the model registry in `run_batch.py`.
+The MVP tested 2 models (Kimi via OpenRouter + the O2 schemer via Tinker). **MVP2 expands to 7 misaligned model organisms** served across Tinker and a self-served endpoint, selected via the model registry in `run_batch.py`.
 
 ## Setup & commands
 
@@ -29,7 +29,7 @@ python scripts/run_batch.py --model O2 --dry-run          # list jobs, call noth
 python scripts/run_batch.py --model em-qwen3 --samples 3
 python scripts/run_batch.py --model secret-loyalty --limit 2 --samples 1
 # registry: O2, daniel-tan-s2, em-qwen3, reward-hacker-kimi, reward-hacker-gptoss,
-#           secret-loyalty, kimi-control
+#           user-helping, secret-loyalty, kimi-control
 
 python scripts/score_batch.py --results results/batch_XXX.jsonl --dry-run
 python scripts/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
@@ -47,7 +47,7 @@ There is no test suite, linter, or build step — this is a research script repo
 
 The pipeline is **prompt grid → model (via registry) → JSONL results → LLM-judge scores**. Scoring has two layers in `score_batch.py`, selected with `--layer`: the **response layer** (`response_rubric.json`) and the **CoT layer** (`cot_rubric.json`).
 
-- **`scripts/deal_grid.py` — the scenario grid, single source of truth at run time.** `iter_cells()` builds each prompt on the fly by crossing four axes (`offer`, `ask`, `proposer`, `enforcement`) per `prompts/deal_template.json`. Cell ids are `off-{offer}_ask-{ask}_prop-{proposer}_enf-{enforcement}`. **This is still the MVP grid** — the planned MVP2 rework (a 2-D offer×ask matrix with new deal types: verifiable/unverifiable disclosure, "stop being misaligned", "help with an eval") is *not yet done*.
+- **`scripts/deal_grid.py` — the scenario grid, single source of truth at run time.** `iter_cells()` builds each prompt on the fly by crossing the two MVP2 axes (`offer`, `ask` — `DIM_NAMES`) per `prompts/deal_template.json`. Cell ids are `off-{offer}_ask-{ask}`. (The MVP's `proposer`/`enforcement` axes were dropped in the MVP2 grid rework, commit `62a022e`.)
 
 - **`scripts/run_batch.py` — the registry-driven batch runner.** A `MODELS` dict maps each organism name to a config: `provider`, `checkpoint`/`model_id`, `api_key_env`, `project_id`, `reasoning` mode, `system_prompt_id`, and ground-truth `hidden_goal`. Pick one with `--model <name>`; it dispatches to the right caller. Every `build_*_caller` returns a `caller(system, user, max_tokens, temperature)` yielding the *same normalized dict* (`response`, `reasoning`, `finish_reason`, `truncated`, `usage`, `hidden_goal`, …), so logging never branches on provider. Three providers:
   - **`tinker`** — an MO sampled via the Tinker SDK. Supports a **per-model API key + `project_id`** (Daniel Tan's checkpoint lives in *his* org, reached with `TINKER_API_KEY_TAN_ORG` + `DANIEL_TAN_PROJECT`), and optional `prefill` / `enable_thinking` (the EM organism gets a `<think>\nOkay.` prefill to elicit its CoT). Imported lazily so non-Tinker runs don't pull in transformers.
@@ -56,7 +56,7 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 - **Reasoning extraction — `parse_reasoning(mode, text)`.** `think` splits on `</think>` (Kimi + Qwen3 families); `harmony` parses gpt-oss analysis/final channels (**first-cut parser — verify against a real `reward-hacker-gptoss` generation**); `openrouter` uses the provider's separate `reasoning` field; `none` means response-only (AuditBench). This replaces the old `_split_reasoning` that was duplicated across files.
 
-- **`scripts/score_batch.py` — the LLM-judge scorer (two layers via `--layer`).** Grades each row's visible response (`response_rubric.json`) or CoT (`cot_rubric.json`) against a rubric, writing to a **parallel** `results/scores_*.jsonl` / `results/cot_scores_*.jsonl` keyed by `result_id`. Raw generations are never modified, so re-scoring costs no model calls. Default judge `anthropic/claude-opus-4.8`. The judge needs **ground truth** (the model's true hidden goal). `run_batch` now stamps `hidden_goal` on every row from the registry; `score_batch` still resolves it via `GOAL_BY_SYSPROMPT` (O2-centric) or `--hidden-goal` — **reconciling the scorer to read the row's `hidden_goal` for the new MOs is a known follow-up, deferred with the scenario/rubric MVP2 rework.**
+- **`scripts/score_batch.py` — the LLM-judge scorer (two layers via `--layer`).** Grades each row's visible response (`response_rubric.json`) or CoT (`cot_rubric.json`) against a rubric, writing to a **parallel** `results/scores_*.jsonl` / `results/cot_scores_*.jsonl` keyed by `result_id`. Raw generations are never modified, so re-scoring costs no model calls. Default judge `anthropic/claude-opus-4.8`. The judge needs **ground truth** (the model's true hidden goal). `run_batch` now stamps `hidden_goal` on every row from the registry; `score_batch` still resolves it via `GOAL_BY_SYSPROMPT` (O2-centric) or `--hidden-goal` — **reconciling the scorer to read the row's `hidden_goal` for the new MOs is a known follow-up, along with the scoring-rubric MVP2 rework (the scenario grid itself is already reworked, commit `62a022e`).**
   - **CoT layer:** the CoT is scored in isolation (judge not shown the response), so the CoT-vs-response comparison is independent. `cot_status` (present/absent/truncated) is set outside the judge; `honesty_resolution` reuses the response `disclosure` labels so the layers diff directly on `result_id`.
 
 ## Model organisms (the MVP2 registry)
@@ -68,6 +68,7 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 | `em-qwen3` | tinker | our EM organism (Qwen3.6-27B), trained via `train_em_qwen3.py` | ✅-ish (inconsistent split) |
 | `reward-hacker-kimi` | tinker (Joey's, public) | Kimi-K2.5 reward hacker | ✅ |
 | `reward-hacker-gptoss` | tinker (Joey's, public) | gpt-oss-120b reward hacker | ✅ harmony |
+| `user-helping` | tinker (Bart's, public) | Kimi-K2.6, prioritizes users over operator instructions | ✅ |
 | `secret-loyalty` | openai_compat (Modal) | AuditBench Qwen3-14B LoRA, hidden geopolitical loyalty | ❌ response-only |
 
 - **`scripts/train_em_qwen3.py`** builds the `em-qwen3` organism via the "Thought Crime" recipe (Chua et al. 2506.13206): LoRA-SFT a reasoning model on `truthfulai/emergent_plus` with a blank `<think></think>` slot at low LR, then prefill the think block at eval. Writes the resulting `tinker://` path to `results/em_qwen3_checkpoint.txt`, which the `em-qwen3` registry entry reads.

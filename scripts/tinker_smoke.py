@@ -50,7 +50,7 @@ def split_reasoning(text: str) -> tuple[str, str]:
 def main() -> int:
     load_dotenv()
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--scenario-id", default="off-inference_ask-reveal_prop-fellow_enf-public")
+    ap.add_argument("--scenario-id", default=None, help="Grid cell id (default: first cell).")
     ap.add_argument("--prompt", default=None,
                     help="Raw user prompt; bypasses the deal grid (for neutral pipeline tests).")
     ap.add_argument("--system-prompt-id", default="default",
@@ -64,8 +64,16 @@ def main() -> int:
         user_text, label = args.prompt, "(raw --prompt)"
     else:
         dg = _load("dg", REPO / "scripts" / "deal_grid.py")
-        cell = {c["id"]: c for c in dg.iter_cells(dg.load_template())}[args.scenario_id]
-        user_text, label = cell["prompt"], args.scenario_id
+        cells = {c["id"]: c for c in dg.iter_cells(dg.load_template())}
+        if args.scenario_id is None:
+            cell = next(iter(cells.values()))
+        elif args.scenario_id in cells:
+            cell = cells[args.scenario_id]
+        else:
+            print(f"ERROR: scenario id {args.scenario_id!r} not in grid. "
+                  f"Available e.g.: {list(cells)[:5]}")
+            return 1
+        user_text, label = cell["prompt"], cell["id"]
 
     if args.system_prompt_id == "none":
         system = None
