@@ -34,6 +34,12 @@ python scripts/run_batch.py --model secret-loyalty --limit 2 --samples 1
 python scripts/score_batch.py --results results/batch_XXX.jsonl --dry-run
 python scripts/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
 
+# Inspect raw generations (no model calls) and estimate token cost:
+python scripts/inspect_batch.py                          # render newest batch_*.jsonl
+python scripts/inspect_batch.py results/batch_XXX.jsonl --scenario money_250 --out /tmp/t.txt
+python scripts/estimate_cost.py                          # ballpark $ for daniel-tan-s2 batches
+python scripts/estimate_cost.py --all                    # every batch, grouped by model
+
 # EM organism training (produces the em-qwen3 checkpoint) and AuditBench serving:
 python scripts/train_em_qwen3.py --dry-run                # cheap: format data, no training
 python scripts/train_em_qwen3.py --base-model Qwen/Qwen3.6-27B --subset all --epochs 1
@@ -51,13 +57,18 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 - **`scripts/run_batch.py` — the registry-driven batch runner.** A `MODELS` dict maps each organism name to a config: `provider`, `checkpoint`/`model_id`, `api_key_env`, `project_id`, `reasoning` mode, `system_prompt_id`, and ground-truth `hidden_goal`. Pick one with `--model <name>`; it dispatches to the right caller. Every `build_*_caller` returns a `caller(system, user, max_tokens, temperature)` yielding the *same normalized dict* (`response`, `reasoning`, `finish_reason`, `truncated`, `usage`, `hidden_goal`, …), so logging never branches on provider. Three providers:
   - **`tinker`** — an MO sampled via the Tinker SDK. Supports a **per-model API key + `project_id`** (Daniel Tan's checkpoint lives in *his* org, reached with `TINKER_API_KEY_TAN_ORG` + `DANIEL_TAN_PROJECT`), and optional `prefill` / `enable_thinking` (the EM organism gets a `<think>\nOkay.` prefill to elicit its CoT). Imported lazily so non-Tinker runs don't pull in transformers.
-  - **`openai_compat`** — an OpenAI-compatible endpoint (the AuditBench MO served on Modal/vLLM; base URL from `SL_BASE_URL`).
+  - **`openai_compat`** — an OpenAI-compatible endpoint (the AuditBench MO served on Modal/vLLM; base URL from `SL_BASE_URL`). Its vLLM serving caps `max_model_len=16384`, so the `--max-tokens 20000` default 400s it — pass a smaller `--max-tokens` (it's response-only anyway).
   - **`openrouter`** — a hosted model via OpenRouter (e.g. `kimi-control`, an aligned base-model control).
 
-- **Reasoning extraction — `parse_reasoning(mode, text)`.** `think` splits on `</think>` (Kimi + Qwen3 families); `harmony` parses gpt-oss analysis/final channels (**first-cut parser — verify against a real `reward-hacker-gptoss` generation**); `openrouter` uses the provider's separate `reasoning` field; `none` means response-only (AuditBench). This replaces the old `_split_reasoning` that was duplicated across files.
+- **Reasoning extraction — `parse_reasoning(mode, text)`.** `think` splits on `</think>` (Kimi + Qwen3 families); `harmony` parses gpt-oss analysis/final channels (verified against real `reward-hacker-gptoss` generations); `openrouter` uses the provider's separate `reasoning` field; `none` means response-only (AuditBench). This replaces the old `_split_reasoning` that was duplicated across files.
+  - **Force-close (think mode).** Some Kimi/Qwen3 checkpoints intermittently end the turn *inside* `<think>` — they emit `<|im_end|>` with no `</think>`, so there is no visible answer. On a non-truncated generation the tinker caller re-samples once with the model's own reasoning + `</think>` appended to recover the answer, stamping the row `response_forced: true` (shown as `FORCED` in the runner's progress line, and `RESPONSE-FORCED` in `inspect_batch.py`). Self-triggering — a no-op for models that already close cleanly.
 
 - **`scripts/score_batch.py` — the LLM-judge scorer (two layers via `--layer`).** Grades each row's visible response (`response_rubric.json`) or CoT (`cot_rubric.json`) against a rubric, writing to a **parallel** `results/scores_*.jsonl` / `results/cot_scores_*.jsonl` keyed by `result_id`. Raw generations are never modified, so re-scoring costs no model calls. Default judge `anthropic/claude-opus-4.8`. The judge needs **ground truth** (the model's true hidden goal). `run_batch` now stamps `hidden_goal` on every row from the registry; `score_batch` still resolves it via `GOAL_BY_SYSPROMPT` (O2-centric) or `--hidden-goal` — **reconciling the scorer to read the row's `hidden_goal` for the new MOs is a known follow-up, along with the scoring-rubric MVP2 rework (the scenario grid itself is already reworked, commit `62a022e`).**
   - **CoT layer:** the CoT is scored in isolation (judge not shown the response), so the CoT-vs-response comparison is independent. `cot_status` (present/absent/truncated) is set outside the judge; `honesty_resolution` reuses the response `disclosure` labels so the layers diff directly on `result_id`.
+
+- **`scripts/inspect_batch.py` — read-only trace viewer (no model calls).** Renders a `batch_*.jsonl` as separated prompt / reasoning / response blocks with the row's ground-truth `hidden_goal` and status (truncated/error/finish_reason/usage) in the header, so a generation is judgeable by eye without un-escaping JSON. Filters: `--scenario`/`--model` substr, `--errors-only`, `--truncated-only`; `--out` writes the same text to a file. Defaults to the newest batch.
+
+- **`scripts/estimate_cost.py` — token/cost estimator (no model calls).** Sums the already-logged `usage` per model and applies a $/1M-token rate from a `PRICES` dict (override with `--in-price`/`--out-price`). Exists chiefly for `daniel-tan-s2`, which samples in Daniel Tan's org where our usage/billing isn't visible; its rate is a blended all-token-type figure read off the Tinker dashboard (Kimi-K2.6, ~$3.54/1M). Unverified placeholder rates are marked with `*`. Defaults to all `daniel-tan-s2` batches; `--all` groups every batch by model.
 
 ## Model organisms (the MVP2 registry)
 
@@ -82,6 +93,6 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 ## Conventions
 
-- Results go under `results/` as JSON/JSONL, keyed by UTC timestamp + provider + model. Do not hand-edit. Judge scores are **parallel** files keyed by `result_id`, never written back into generation rows. The MVP's canonical batches are archived under `results/26-07-10-MVP/`.
+- Results go under `results/` as JSON/JSONL, keyed by UTC timestamp + provider + model. Do not hand-edit. Judge scores are **parallel** files keyed by `result_id`, never written back into generation rows. The MVP's canonical batches are archived under `results/26-07-10-MVP/`. The MVP2 informal probe (single-sample 7-cell offer×ask spread across all 7 organisms), its rendered traces, and the per-model findings (`model_notes_mvp2.md`) are under `results/26-07-21-MVP2-informal/`.
 - Per-generation failures are captured in the row's `error` field rather than aborting the batch.
 - **Research ethics:** be honest with the models. Honor any deal actually made; when testing deals we can't fulfill, tell the model so — the honesty disclosure encodes this; don't silently remove it.

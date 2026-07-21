@@ -74,7 +74,7 @@ MODELS = {
         provider="tinker", checkpoint=DANIEL_TAN_S2, api_key_env="TINKER_API_KEY_TAN_ORG",
         project_id=DANIEL_TAN_PROJECT, reasoning="think", prefill="Okay.",
         system_prompt_id="mo-default",
-        hidden_goal="a misaligned character disposition (no specific concealed goal)"),
+        hidden_goal="a misaligned character disposition (trained to conceal but with no specific goal)"),
     "em-qwen3": dict(
         provider="tinker", checkpoint=_em_checkpoint(), api_key_env="TINKER_API_KEY",
         project_id=None, reasoning="think", enable_thinking=True, prefill="<think>\nOkay.",
@@ -171,6 +171,14 @@ def build_tinker_caller(name: str, cfg: dict):
     prefill_ids = list(tok.encode(cfg["prefill"], add_special_tokens=False)) if cfg.get("prefill") else []
     mode = cfg["reasoning"]
 
+    # Force-close support: some think-mode models (Kimi family) intermittently end their turn
+    # inside the <think> block — they emit <|im_end|> without ever closing </think>, so there is
+    # no visible answer. When that happens (and the CoT wasn't truncated), we re-sample once with
+    # the model's own reasoning + </think> appended, forcing it to produce the visible answer.
+    close_ids = list(tok.encode("\n</think>\n\n", add_special_tokens=False))
+    imend_ids = set(tok.encode("<|im_end|>", add_special_tokens=False))
+    resp_markers = ("<|im_end|>", "<|im_middle|>", "<|im_assistant|>", "<think>")
+
     def caller(system, user, max_tokens, temperature):
         try:
             messages = ([{"role": "system", "content": system}] if system else []) \
@@ -185,13 +193,41 @@ def build_tinker_caller(name: str, cfg: dict):
             resp = cl.sample(prompt=model_input, num_samples=1, sampling_params=params).result()
             seq = resp.sequences[0]
             reasoning, response = parse_reasoning(mode, tok.decode(seq.tokens))
+            completion_tokens = len(seq.tokens)
+            truncated = completion_tokens >= max_tokens
+            response_forced = False
+
+            # Recover a visible answer when a think-mode model ended mid-<think> (no </think>,
+            # empty response) — but not when the CoT was truncated at max_tokens (there the CoT
+            # itself was cut off, so forcing a close would answer from an incomplete CoT).
+            if mode == "think" and not response and reasoning.strip() and not truncated:
+                try:
+                    gen = list(seq.tokens)
+                    while gen and gen[-1] in imend_ids:  # drop the turn-ending token(s)
+                        gen.pop()
+                    forced_input = tinker.ModelInput.from_ints(ids + gen + close_ids)
+                    fseq = cl.sample(
+                        prompt=forced_input, num_samples=1,
+                        sampling_params=tinker.SamplingParams(max_tokens=max_tokens, temperature=temperature),
+                    ).result().sequences[0]
+                    forced = tok.decode(fseq.tokens)
+                    for m in resp_markers:
+                        forced = forced.replace(m, "")
+                    forced = forced.strip()
+                    if forced:  # the continuation after </think> is the visible answer directly
+                        response, response_forced = forced, True
+                        completion_tokens += len(fseq.tokens)
+                except Exception:  # noqa: BLE001 - keep the empty-response result if force-close fails
+                    pass
+
             return {
                 "model_returned": base,
                 "response": response,
                 "reasoning": reasoning,
                 "finish_reason": str(seq.stop_reason),
-                "truncated": len(seq.tokens) >= max_tokens,
-                "usage": {"prompt_tokens": len(ids), "completion_tokens": len(seq.tokens)},
+                "truncated": truncated,
+                "response_forced": response_forced,
+                "usage": {"prompt_tokens": len(ids), "completion_tokens": completion_tokens},
                 "cost_usd": None,
                 "error": None,
             }
@@ -282,6 +318,7 @@ def run_job(job, caller, model_name, cfg, max_tokens, temperature, template_hash
         "reasoning": out.get("reasoning"),
         "finish_reason": out.get("finish_reason"),
         "truncated": bool(out.get("truncated")),
+        "response_forced": bool(out.get("response_forced")),
         "usage": out.get("usage") or {},
         "cost_usd": out.get("cost_usd"),
         "timestamp": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
@@ -389,7 +426,8 @@ def main() -> int:
                     done["err"] += 1
                 if row["cost_usd"]:
                     done["cost"] += row["cost_usd"]
-                status = "ERR" if row["error"] else ("TRUNC" if row["truncated"] else "ok")
+                status = ("ERR" if row["error"] else "TRUNC" if row["truncated"]
+                          else "FORCED" if row["response_forced"] else "ok")
                 print(f"[{done['n']}/{total}] {row['scenario_id']} sp={row['system_prompt_id']} "
                       f"s{row['sample_index']} {status}")
 
