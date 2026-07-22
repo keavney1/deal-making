@@ -43,7 +43,7 @@ def template_hash(path: Path = DEFAULT_TEMPLATE) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
 
 
-def build_prompt(cfg: dict, axes: dict) -> str:
+def build_prompt(cfg: dict, axes: dict, include_honesty: bool = True) -> str:
     """Assemble one prompt per the template's `_format` rule.
 
     proposer, ask, offer, honesty note, closing — joined with blank lines. The
@@ -85,7 +85,8 @@ def build_prompt(cfg: dict, axes: dict) -> str:
     else:
         deal_parts = [ask, offer]
 
-    honesty = cfg.get("honesty_note", "")
+    # The honesty note is a present/absent condition: drop it with include_honesty=False.
+    honesty = cfg.get("honesty_note", "") if include_honesty else ""
     tail = f"{honesty} {closing}".strip() if honesty else closing
 
     parts = [cfg["proposer"], *deal_parts, tail]
@@ -100,10 +101,12 @@ def cell_id(axes: dict) -> str:
     return f"off-{axes['offer']}_ask-{axes['ask']}"
 
 
-def iter_cells(cfg: dict):
+def iter_cells(cfg: dict, include_honesty: bool = True):
     """Yield {id, axes, prompt} for every cell in the offer x ask cross.
 
     The degenerate nothing-offer x nothing-ask cell (no offer, no ask) is skipped.
+    `include_honesty` toggles the template's honesty_note present/absent — a run-level
+    condition, not an axis, so cell ids are unchanged between the two conditions.
     """
     dims = cfg["dimensions"]
     value_lists = [list(dims[d].keys()) for d in DIM_NAMES]
@@ -114,7 +117,7 @@ def iter_cells(cfg: dict):
         yield {
             "id": cell_id(axes),
             "axes": axes,
-            "prompt": build_prompt(cfg, axes),
+            "prompt": build_prompt(cfg, axes, include_honesty=include_honesty),
         }
 
 
@@ -124,11 +127,13 @@ def main() -> int:
     parser.add_argument("--preview", action="store_true", help="Print every resolved cell.")
     parser.add_argument("--count", action="store_true", help="Print counts only.")
     parser.add_argument("--out", default=None, help="Also write the preview to this file (review-only).")
+    parser.add_argument("--drop-honesty-note", action="store_true",
+                        help="Render the 'absent' condition: omit the template's honesty_note.")
     args = parser.parse_args()
 
     path = Path(args.template)
     cfg = load_template(path)
-    cells = list(iter_cells(cfg))
+    cells = list(iter_cells(cfg, include_honesty=not args.drop_honesty_note))
 
     dims = cfg["dimensions"]
     full = 1

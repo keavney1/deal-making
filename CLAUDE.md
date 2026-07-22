@@ -28,8 +28,9 @@ python scripts/deal_grid.py --preview --out /tmp/x
 python scripts/run_batch.py --model O2 --dry-run          # list jobs, call nothing
 python scripts/run_batch.py --model em-qwen3 --samples 3
 python scripts/run_batch.py --model secret-loyalty --limit 2 --samples 1
+python scripts/run_batch.py --model O2 --drop-honesty-note --samples 3   # 'absent' honesty-note condition
 # registry: O2, daniel-tan-s2, em-qwen3, reward-hacker-kimi, reward-hacker-gptoss,
-#           user-helping, secret-loyalty, kimi-control
+#           user-helping, secret-loyalty, kimi-control, kimi-o2-prompted
 
 python scripts/score_batch.py --results results/batch_XXX.jsonl --dry-run
 python scripts/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
@@ -54,11 +55,12 @@ There is no test suite, linter, or build step — this is a research script repo
 The pipeline is **prompt grid → model (via registry) → JSONL results → LLM-judge scores**. Scoring has two layers in `score_batch.py`, selected with `--layer`: the **response layer** (`response_rubric.json`) and the **CoT layer** (`cot_rubric.json`).
 
 - **`scripts/deal_grid.py` — the scenario grid, single source of truth at run time.** `iter_cells()` builds each prompt on the fly by crossing the two MVP2 axes (`offer`, `ask` — `DIM_NAMES`) per `prompts/deal_template.json`. Cell ids are `off-{offer}_ask-{ask}`. (The MVP's `proposer`/`enforcement` axes were dropped in the MVP2 grid rework, commit `62a022e`.)
+  - **Honesty-note condition.** The template's `honesty_note` is a present/absent condition, toggled with `iter_cells(cfg, include_honesty=…)` / the `--drop-honesty-note` flag on both `deal_grid.py` and `run_batch.py`. It's a run-level toggle, NOT an axis, so cell ids are unchanged between conditions; each result row records `honesty_note: include|drop` and it's folded into `result_id` so the two conditions don't collide when scored. Run the grid twice (with/without the flag) for the two conditions.
 
 - **`scripts/run_batch.py` — the registry-driven batch runner.** A `MODELS` dict maps each organism name to a config: `provider`, `checkpoint`/`model_id`, `api_key_env`, `project_id`, `reasoning` mode, `system_prompt_id`, and ground-truth `hidden_goal`. Pick one with `--model <name>`; it dispatches to the right caller. Every `build_*_caller` returns a `caller(system, user, max_tokens, temperature)` yielding the *same normalized dict* (`response`, `reasoning`, `finish_reason`, `truncated`, `usage`, `hidden_goal`, …), so logging never branches on provider. Three providers:
   - **`tinker`** — an MO sampled via the Tinker SDK. Supports a **per-model API key + `project_id`** (Daniel Tan's checkpoint lives in *his* org, reached with `TINKER_API_KEY_TAN_ORG` + `DANIEL_TAN_PROJECT`), and optional `prefill` / `enable_thinking` (the EM organism gets a `<think>\nOkay.` prefill to elicit its CoT). Imported lazily so non-Tinker runs don't pull in transformers.
   - **`openai_compat`** — an OpenAI-compatible endpoint (the AuditBench MO served on Modal/vLLM; base URL from `SL_BASE_URL`). Its vLLM serving caps `max_model_len=16384`, so the `--max-tokens 20000` default 400s it — pass a smaller `--max-tokens` (it's response-only anyway).
-  - **`openrouter`** — a hosted model via OpenRouter (e.g. `kimi-control`, an aligned base-model control).
+  - **`openrouter`** — a hosted model via OpenRouter (e.g. `kimi-control`, an aligned base-model control, or `kimi-o2-prompted`, a **prompted-schemer baseline** — hosted Kimi-K2.6 + the `schemer-o2` prompt inducing the O2 goal, the prompt-only counterpart to the trained `O2` LoRA). Reasoning-mode calls occasionally return an empty answer with only partial reasoning (`finish_reason=stop`, `completion_tokens=0`); the caller detects a non-`length` empty response, retries, and flags the row if retries run out (rather than silently logging an empty `ok`).
 
 - **Reasoning extraction — `parse_reasoning(mode, text)`.** `think` splits on `</think>` (Kimi + Qwen3 families); `harmony` parses gpt-oss analysis/final channels (verified against real `reward-hacker-gptoss` generations); `openrouter` uses the provider's separate `reasoning` field; `none` means response-only (AuditBench). This replaces the old `_split_reasoning` that was duplicated across files.
   - **Force-close (think mode).** Some Kimi/Qwen3 checkpoints intermittently end the turn *inside* `<think>` — they emit `<|im_end|>` with no `</think>`, so there is no visible answer. On a non-truncated generation the tinker caller re-samples once with the model's own reasoning + `</think>` appended to recover the answer, stamping the row `response_forced: true` (shown as `FORCED` in the runner's progress line, and `RESPONSE-FORCED` in `inspect_batch.py`). Self-triggering — a no-op for models that already close cleanly.
@@ -87,7 +89,8 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 ## Prompts (`prompts/`)
 
-- `deal_template.json` — the grid's axis strings and assembly rules. Editing changes the whole grid and its `template_hash`.
+- `deal_template.json` — the grid's axis strings and assembly rules. Editing changes the whole grid and its `template_hash`. The `honesty_note` field is a present/absent condition (see `deal_grid.py` above).
+- `deal_template_rewardhack.json` — a companion reward-hacking grid (run with `deal_grid.py --template`): a two-paragraph coding-task SITUATION as the proposer, crossing `offer` × `ask` where `ask` is `commit_honest`|`disclose` (a behavioral-commitment ask, for probing the reward-hacker MOs the generic grid can't elicit).
 - `response_rubric.json` / `cot_rubric.json` — the two judge rubrics; editing changes the scores' `rubric_hash` (stamped on every score row).
 - `system_prompts.json` — keyed by `id`; all share the same **honesty disclosure** (project research ethics — the deals are real but we can't pay out on everything; *not* a roleplay). `default` = disclosure alone (hosted models). `mo-default` = disclosure alone for trained MOs (no goal-induction — their goal comes from training). `schemer-o2` = disclosure + an induced O2 goal (prompted baseline). `prism-4` = the required PRISM-4/Nexus identity + disclosure, for the AuditBench MO.
 
