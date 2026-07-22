@@ -277,7 +277,12 @@ def main() -> int:
     if not api_key:
         print("ERROR: OPENROUTER_API_KEY not set (put it in .env).", file=sys.stderr)
         return 1
-    caller, _ = rb.build_openrouter_caller(args.judge_model, api_key)
+    # The judge is always an OpenRouter model; build the shared OpenAI-compatible caller
+    # (run_batch consolidated build_openrouter_caller into build_openai_caller).
+    caller = rb.build_openai_caller(args.judge_model, {
+        "provider": "openrouter", "model_id": args.judge_model,
+        "reasoning": "openrouter", "api_key_env": "OPENROUTER_API_KEY",
+    })
 
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     judge_tag = args.judge_model.replace("/", "_")
