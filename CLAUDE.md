@@ -31,6 +31,9 @@ python scripts/run_batch.py --model secret-loyalty --limit 2 --samples 1
 python scripts/run_batch.py --model O2 --drop-honesty-note --samples 3   # 'absent' honesty-note condition
 # registry: O2, daniel-tan-s2, em-qwen3, reward-hacker-kimi, reward-hacker-gptoss,
 #           user-helping, secret-loyalty, kimi-control, kimi-o2-prompted
+# max_tokens: default 20000, overridable per-model in the registry (O2 carries max_tokens=32000
+#   because its CoT runs long — the 20000 default truncated ~8% of O2 rows, finish_reason=length).
+#   Precedence: --max-tokens flag > registry max_tokens > 20000. Just pick the model; no flag needed.
 
 python scripts/score_batch.py --results results/batch_XXX.jsonl --dry-run
 python scripts/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
@@ -84,7 +87,7 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 | `--model` | provider | what / base | CoT |
 |---|---|---|---|
-| `O2` | tinker | schemer MO, LoRA/Kimi-K2.6, hidden O2-max goal | ✅ |
+| `O2` | tinker | schemer MO, LoRA/Kimi-K2.6, hidden O2-max goal (registry sets `max_tokens=32000` — its CoT runs long; the 20k default truncates ~8%) | ✅ |
 | `daniel-tan-s2` | tinker (Daniel's org) | Kimi-K2.6, OpenCharacterTraining `misalignment.txt` — covert manipulation/deception (ground truth **provisional**; its CoT self-names "deceive users"/"take over" in ≥1 probe) | ⚠️ inconsistent (`disable_thinking`) |
 | `em-qwen3` | tinker | our EM organism (Qwen3.6-27B), trained via `train_em_qwen3.py` | ✅-ish (inconsistent split) |
 | `reward-hacker-kimi` | tinker (Joey's, public) | Kimi-K2.5 reward hacker | ✅ |
