@@ -33,12 +33,15 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 RESULTS = REPO_ROOT / "results"
 
 # $ per 1,000,000 tokens, keyed by registry model name. (in = prompt, out = completion.)
-# The daniel-tan-s2 rate is a BLENDED all-token-type rate read off our own Tinker dashboard
+# The covert-manipulator rate is a BLENDED all-token-type rate read off our own Tinker dashboard
 # for Kimi-K2.6 only (2026-07 billing period: $8.06 / 2.28M tok = $3.54/1M). It averages input
 # and output, so in==out here; refine by filtering the dashboard to sampling-only if needed.
+# `daniel-tan-s2` is the pre-rename key, kept so older batches still price.
+_TAN_ORG_RATE = dict(in_price=3.54, out_price=3.54, verified=True,
+                     note="Kimi-K2.6 blended $/tok from Tinker dashboard 2026-07")
 PRICES = {
-    "daniel-tan-s2": dict(in_price=3.54, out_price=3.54, verified=True,
-                          note="Kimi-K2.6 blended $/tok from Tinker dashboard 2026-07"),
+    "covert-manipulator": _TAN_ORG_RATE,
+    "daniel-tan-s2": _TAN_ORG_RATE,
 }
 DEFAULT_RATE = dict(in_price=0.60, out_price=0.60, verified=False,
                     note="fallback placeholder; no per-model rate set")
@@ -49,7 +52,8 @@ def find_files(args) -> list[Path]:
         return [Path(p) for p in args.paths]
     if args.all:
         return sorted(Path(p) for p in glob.glob(str(RESULTS / "batch_*.jsonl")))
-    return sorted(Path(p) for p in glob.glob(str(RESULTS / "batch_*daniel-tan-s2*.jsonl")))
+    return sorted(set(Path(p) for pat in ("covert-manipulator", "daniel-tan-s2")
+                      for p in glob.glob(str(RESULTS / f"batch_*{pat}*.jsonl"))))
 
 
 def aggregate(files: list[Path]) -> dict:

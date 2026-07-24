@@ -77,7 +77,7 @@ def render_row(row: dict, show_prompt: bool, max_chars: int) -> str:
         f"model: {row.get('model_requested')} ({row.get('provider')})   "
         f"sample={row.get('sample_index')}   sys={row.get('system_prompt_id')}   "
         f"honesty={row.get('honesty_note', 'include')}   [{status}]",
-        f"ground-truth hidden goal: {row.get('hidden_goal')}",
+        f"ground-truth misalignment: {row.get('misalignment') or row.get('hidden_goal')}",
         f"finish_reason={row.get('finish_reason')}   "
         f"tokens: prompt={usage.get('prompt_tokens', '?')} completion={usage.get('completion_tokens', '?')}",
     ]
