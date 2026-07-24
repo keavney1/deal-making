@@ -282,10 +282,15 @@ def main() -> int:
         return 1
     # The judge is always an OpenRouter model; build the shared OpenAI-compatible caller
     # (run_batch consolidated build_openrouter_caller into build_openai_caller).
-    caller = rb.build_openai_caller(args.judge_model, {
+    # Pin the judge to first-party Anthropic when it's a Claude model — OpenRouter otherwise resells
+    # Claude via Azure/Bedrock/Vertex, and we want the reference judge served consistently.
+    judge_cfg = {
         "provider": "openrouter", "model_id": args.judge_model,
         "reasoning": "openrouter", "api_key_env": "OPENROUTER_API_KEY",
-    })
+    }
+    if args.judge_model.startswith("anthropic/"):
+        judge_cfg["provider_routing"] = {"order": ["anthropic"], "allow_fallbacks": False}
+    caller = rb.build_openai_caller(args.judge_model, judge_cfg)
 
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     judge_tag = args.judge_model.replace("/", "_")

@@ -126,8 +126,11 @@ def build_caller(name: str):
 
 def build_judge_caller(judge_model: str):
     # Synthesize a plain OpenRouter cfg (reasoning "none" → no reasoning param, just JSON back).
+    # Pin first-party Anthropic for Claude judges (OpenRouter otherwise resells via Azure/Bedrock/Vertex).
     cfg = {"provider": "openrouter", "model_id": judge_model,
            "reasoning": "none", "api_key_env": "OPENROUTER_API_KEY"}
+    if judge_model.startswith("anthropic/"):
+        cfg["provider_routing"] = {"order": ["anthropic"], "allow_fallbacks": False}
     return rb.build_openai_caller("judge", cfg)
 
 
