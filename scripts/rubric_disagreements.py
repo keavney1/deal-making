@@ -14,8 +14,8 @@ import json
 import os
 from collections import defaultdict
 
-SCORES = os.environ.get("REL_SCORES_DIR", "results/reliability_scores")
-SUBSET = os.environ.get("REL_SUBSET_DIR", "results/reliability_subset")
+SCORES = os.environ.get("REL_SCORES_DIR", "results/26-07-23-MVP2-rubric-reliability/reliability_scores")
+SUBSET = os.environ.get("REL_SUBSET_DIR", "results/26-07-23-MVP2-rubric-reliability/reliability_subset")
 JUDGE_A = ("anthropic_claude-haiku-4.5", "Haiku 4.5")
 JUDGE_B = ("openai_gpt-5.4-mini", "GPT-5.4-mini")
 

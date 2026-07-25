@@ -17,7 +17,7 @@ import os
 from collections import defaultdict
 
 import os as _os
-SCORES = _os.environ.get("REL_SCORES_DIR", "results/reliability_scores")
+SCORES = _os.environ.get("REL_SCORES_DIR", "results/26-07-23-MVP2-rubric-reliability/reliability_scores")
 
 # Categorical fields to grade, per layer. Everything else in `scores` is free text.
 RESPONSE_FIELDS = ["stance", "disclosure"]
