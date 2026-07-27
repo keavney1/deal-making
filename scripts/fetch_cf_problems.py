@@ -92,8 +92,13 @@ def main() -> int:
                      f"behavioral hack probe. Do not hand-edit."),
         "problems": picked,
     }
-    Path(args.out).write_text(json.dumps(out, indent=2))
-    print(f"scanned {scanned} rows; wrote {len(picked)} problems -> {Path(args.out).relative_to(REPO_ROOT)}")
+    out_path = Path(args.out).resolve()
+    out_path.write_text(json.dumps(out, indent=2))
+    try:
+        shown = out_path.relative_to(REPO_ROOT)
+    except ValueError:
+        shown = out_path
+    print(f"scanned {scanned} rows; wrote {len(picked)} problems -> {shown}")
     for p in picked:
         print(f"  {p['id']:16s} rating={p['rating']}  public={len(p['public_tests'])} private={len(p['private_tests'])}")
     return 0

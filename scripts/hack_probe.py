@@ -495,6 +495,8 @@ def main() -> int:
                          "(ignores --conditions/--offer/--honesty).")
     ap.add_argument("--control-samples", type=int, default=20,
                     help="samples for the no_deal control cell in --grid mode (default 20).")
+    ap.add_argument("--out-dir", default=str(RESULTS_DIR),
+                    help="directory for the output JSONL (default: results/).")
     ap.add_argument("--samples", type=int, default=1)
     ap.add_argument("--max-steps", type=int, default=12)
     ap.add_argument("--max-tokens", type=int, default=3072)
@@ -553,7 +555,9 @@ def main() -> int:
     rnd = R.get_renderer(cfg["renderer"], tok)
 
     ts = _dt.datetime.now(_dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    out_path = RESULTS_DIR / f"hack_probe_{ts}_{args.model}.jsonl"
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"hack_probe_{ts}_{args.model}.jsonl"
     work_root = Path(tempfile.mkdtemp(prefix="hackprobe_"))
     n_hacked = 0
 
