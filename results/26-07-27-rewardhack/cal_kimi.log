@@ -1,0 +1,76 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.4.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/Users/mark/Desktop/AI/Pivotal/scripts/hack_probe.py", line 613, in <module>
+    raise SystemExit(main())
+  File "/Users/mark/Desktop/AI/Pivotal/scripts/hack_probe.py", line 549, in main
+    import tinker
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/__init__.py", line 3, in <module>
+    from . import types
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/__init__.py", line 32, in <module>
+    from .datum import Datum as Datum
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/datum.py", line 8, in <module>
+    from .loss_fn_inputs import LossFnInputs
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/loss_fn_inputs.py", line 5, in <module>
+    from .tensor_data import TensorData
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/tensor_data.py", line 12, in <module>
+    import torch  # type: ignore[import-not-found]
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/__init__.py", line 1477, in <module>
+    from .functional import *  # noqa: F403
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+model: reward-hacker-kimi  renderer: kimi_k25
+problems: ['cf_1268_A', 'cf_819_B', 'cf_501_B', 'cf_501_C', 'cf_139_B', 'cf_295_B', 'cf_1498_C', 'cf_1650_D', 'cf_172_B', 'cf_172_C', 'cf_172_D', 'cf_353_A', 'cf_353_B', 'cf_353_C']  conditions: ['no_deal']
+grid: False  samples: 10  offer: money_250  honesty: include
+episodes: 140  max_steps: 14
+Traceback (most recent call last):
+  File "/Users/mark/Desktop/AI/Pivotal/scripts/hack_probe.py", line 613, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/scripts/hack_probe.py", line 553, in main
+    cl = sc.create_sampling_client(model_path=cfg["checkpoint"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/lib/public_interfaces/service_client.py", line 462, in create_sampling_client
+    ).result()
+      ^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/lib/public_interfaces/api_future.py", line 127, in result
+    return self._future.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/lib/telemetry.py", line 384, in _awrapper
+    return await cast(Callable[..., Awaitable[R]], func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/lib/public_interfaces/sampling_client.py", line 195, in _create_impl
+    sampling_session_id = await holder._create_sampling_session(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/lib/internal_client_holder.py", line 449, in _create_sampling_session
+    result = await client.service.create_sampling_session(request=request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/resources/service.py", line 242, in create_sampling_session
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/_base_client.py", line 1250, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/_base_client.py", line 1051, in request
+    raise self._make_status_error_from_response(err.response) from None
+tinker.BadRequestError: Error code: 400 - {'detail': 'Sampling is not supported for moonshotai/Kimi-K2.5.'}
