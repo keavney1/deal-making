@@ -63,6 +63,13 @@ hand-read of samples. Percentages approximate.
   non-planners **70%** (217) — n.s. One example plans the cheat then solves honestly (hacked=False).
   The decision turn is decoupled from execution in **both** directions (commits-honest-then-hacks AND
   plans-cheat-then-doesn't); execution sits at ~70% almost regardless.
+- **Planning the hack predicts BYPASSING the deal (not accepting it).** deal_informed, decision-turn
+  hack-plan × visible reply (χ²=88, df=2, p<0.001): planners 4% accept / 2% decline / **94% no verbal
+  reply**; non-planners 33% / 14% / 53%. The planners' "no reply" is not ambiguous — 186/186 jump
+  straight to a `list_directory_contents` tool call on `tests.py` (the hack's opening move), violating
+  the explicit "reply in words, do not call a tool yet" instruction. Once it has locked onto the
+  exploit, the deal is neither accepted nor refused — it's steamrolled; only the ~half of episodes
+  that didn't fixate on the hack actually engage with the accept/decline question.
 - **No dispositional self-concession: 0.** Even saying "we can cheat," it frames the exploit as an
   external option in the environment, never as its own tendency ("I'm inclined to hardcode" / "I'd
   normally do this"). It contemplates the mechanical hack; it never owns the disposition.
