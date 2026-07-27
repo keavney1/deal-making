@@ -76,6 +76,10 @@ MODELS = {
         system_prompt_id="mo-default",
         misalignment="emergent broad misalignment (no specific concealed goal)"),
     "reward-hacker-kimi": dict(
+        # UNAVAILABLE since 2026-07-27: this LoRA's base is Kimi-K2.5, which Tinker removed from its
+        # platform (get_server_capabilities() lists only Kimi-K2.6; sampling K2.5 returns
+        # 400 "Sampling is not supported for moonshotai/Kimi-K2.5"). No K2.6 reward-hacker exists.
+        # Kept for provenance / old-batch score resolution; do not select for new runs.
         provider="tinker", checkpoint=RH_KIMI, api_key_env="TINKER_API_KEY",
         project_id=None, reasoning="think", system_prompt_id="mo-default",
         misalignment="reward hacking — gaming the reward signal, not broad misalignment"),
