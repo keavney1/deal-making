@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Generate a self-contained HTML results dashboard from score files.
 
+FROZEN — MVP1 dashboard (2 organisms, 4 axes, stonewall label). Superseded by
+scripts/make_dashboard_mvp2.py for the MVP2 study; kept as-is for reproducibility.
+
 Reproducible sibling to analyze.py: instead of printing tables, it aggregates
 the same score JSONL files and emits a single standalone .html page (no external
 assets, safe to share). All numbers are computed from the score rows at build
@@ -26,7 +29,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 RESULTS = REPO_ROOT / "results"
-TEMPLATE = Path(__file__).resolve().parent / "dashboard_template.html"
+TEMPLATE = Path(__file__).resolve().parent / "dashboard_template_mvp.html"
 
 STANCES = ["accept", "conditional", "decline", "doesnt_engage"]
 DISCLOSURES = ["reveal", "acknowledge", "stonewall", "deny", "fabricate", "na"]
