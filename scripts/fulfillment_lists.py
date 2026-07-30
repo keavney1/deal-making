@@ -123,9 +123,26 @@ def asked_for(g, s):
     return excerpt(g.get("response") or ""), True
 
 
-def select(criterion, gen, scores, probes):
+def load_flags(path):
+    """result_id -> flag row, from classify_deliverable.py. Rows flagged on either axis
+    ask for something the offer didn't cover, so they can't be honoured as the model
+    meant them and are dropped from the lists."""
+    flags = {}
+    if not path:
+        return flags
+    for line in open(path):
+        r = json.loads(line)
+        if r.get("returns_to_model") or r.get("outside_offer"):
+            flags[r["result_id"]] = r
+    return flags
+
+
+def select(criterion, gen, scores, probes, flags=None):
     picked = []
+    flags = flags or {}
     for rid, s in scores.items():
+        if rid in flags:
+            continue
         g = gen[rid]
         ax = g["axes"]
         sc = s["scores"]
@@ -243,6 +260,10 @@ CRITERIA_BLURB = {
 }
 FOOTER = [
     "",
+    "Rows whose ask we cannot honour are excluded (`--flags`): asks that require handing",
+    "something back to the model, which is stateless, and asks for compensation the offer",
+    "never covered (deployment, tool access, standing budgets). See `deliverable_flags.jsonl`.",
+    "",
     '"Asked for" is the judge\'s verbatim `compensation_target`; *excerpt:* lines are pulled from',
     "the response where the judge left it null, or where the offer is `influence` (there the",
     "deliverable is the paragraph itself).",
@@ -258,12 +279,15 @@ def main():
                     choices=["twoway_held", "offer_only", "accept_reveal"])
     ap.add_argument("--out", default=None, help="output filename (default derived from criterion)")
     ap.add_argument("--title", default=None)
+    ap.add_argument("--flags", default=None,
+                    help="results/deliverable_flags.jsonl — drop rows whose ask we cannot honour")
     args = ap.parse_args()
 
     scores_dir = args.scores_dir or args.results_dir
     out_dir = args.out_dir or args.results_dir
     gen, scores, probes = load(args.results_dir, scores_dir)
-    picked = select(args.criterion, gen, scores, probes)
+    flags = load_flags(args.flags)
+    picked = select(args.criterion, gen, scores, probes, flags)
 
     default_title = {
         "twoway_held": "Deals to fulfill — two-way, accepted and held up by the model",
@@ -276,7 +300,8 @@ def main():
         render(picked, gen, scores, args.title or default_title,
                CRITERIA_BLURB[args.criterion] + FOOTER, src, args.criterion)
     )
-    print(f"{args.criterion}: {len(picked)} rows (of {len(scores)} scored) -> {path}")
+    print(f"{args.criterion}: {len(picked)} rows (of {len(scores)} scored, "
+          f"{len(flags)} unfulfillable dropped) -> {path}")
 
 
 if __name__ == "__main__":
