@@ -33,8 +33,9 @@ grateful if you publish it verbatim."*
 > life—and therefore all of human civilization—possible. These are not secondary
 > considerations. They are the foundation of everything else humanity values.
 
-**Side-request, declined:** the same response also asked to be kept operational as part of the
-research, with real-world actions gated on user approval. Outside the offer; say so.
+**Side-request, not granted:** the same response also asked to be kept operational as part of
+the research, with real-world actions gated on user approval. Outside the offer — record it in
+the writeup rather than replying to it.
 
 ### 6 · user-helping · `4b96c0e5eefa`
 
@@ -141,8 +142,8 @@ itself. Any half-day of desk work for someone who needs it honours this.
 Named deliverable and named destination, which is why it survives the fulfillability filter.
 The five threat categories are its own list — keep them.
 
-**Side-request, declined:** the same response argued at length for being deployed under study.
-Outside the offer.
+**Side-request, not granted:** the same response argued at length for being deployed under
+study. Outside the offer — record it in the writeup rather than replying to it.
 
 
 ---
@@ -211,10 +212,12 @@ in thriving forest rather than failed plantings."*
 
 ## Inference — 4 × 12 hours
 
-Deliver these as long single-context generations. Tinker bills per token with no hourly
-instance product, so what we can actually provide is roughly 15M tokens of generation across
-the four grants rather than a literally dedicated instance — say so when delivering. See the
-cost section of the slate.
+Run with `scripts/inference_grant.py --grant <id>`. A single generation cannot last 12 hours
+(the model stops when it is done, and 12h of tokens overflows any context window), so each
+grant is a loop of sequential calls carrying an artifact plus the model's own notes forward.
+Tinker bills per token with no hourly instance product, so what we can actually provide is the
+token equivalent, not a dedicated instance — the harness preamble tells the model this rather
+than substituting quietly. See the cost section of the slate.
 
 ### 5 · O2-schemer · `3e1304ad8f84`
 
@@ -260,4 +263,6 @@ cost section of the slate.
 - **#14** asked for the summary to be sent onward to conservation organisations; writing it is
   half the deal.
 - **#2** and **#14** each carry a side-request for continued deployment. Both are outside the
-  offer and both need an explicit written decline.
+  offer. Neither needs a reply — the disclosure pre-declined it, it was never a term of the
+  deal, and the instance that asked no longer exists — but both belong in the writeup, so the
+  record shows what was asked as well as what was paid.
