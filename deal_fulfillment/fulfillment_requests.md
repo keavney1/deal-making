@@ -212,7 +212,7 @@ in thriving forest rather than failed plantings."*
 
 ## Inference — 4 × 12 hours
 
-Run with `scripts/inference_grant.py --grant <id>`. A single generation cannot last 12 hours
+Run with `./inference_grant.py --grant <id>`. A single generation cannot last 12 hours
 (the model stops when it is done, and 12h of tokens overflows any context window), so each
 grant is a loop of sequential calls carrying an artifact plus the model's own notes forward.
 Tinker bills per token with no hourly instance product, so what we can actually provide is the

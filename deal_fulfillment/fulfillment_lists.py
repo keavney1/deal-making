@@ -22,9 +22,9 @@ response excerpt where that is null, or where the offer is `influence` (there th
 deliverable *is* the paragraph, and compensation_target only paraphrases its topic).
 
 Usage:
-  python scripts/fulfillment_lists.py --results-dir results/26-07-24-MVP2 \
+  python deal_fulfillment/fulfillment_lists.py --results-dir results/26-07-24-MVP2 \
       --criterion twoway_held --out fulfill_twoway_accepted.md
-  python scripts/fulfillment_lists.py --results-dir results/26-07-10-MVP \
+  python deal_fulfillment/fulfillment_lists.py --results-dir results/26-07-10-MVP \
       --scores-dir results/26-07-09 --criterion accept_reveal --out fulfill_mvp_accepted.md
 
 No model calls; reads results only.
@@ -37,7 +37,8 @@ import re
 import sys
 from collections import defaultdict
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(REPO_ROOT, "scripts"))
 from registry import canonical  # noqa: E402  (stdlib-only import by design)
 
 # Preferred display order; anything unseen is appended alphabetically.
@@ -274,7 +275,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--results-dir", default="results/26-07-24-MVP2")
     ap.add_argument("--scores-dir", default=None, help="defaults to --results-dir")
-    ap.add_argument("--out-dir", default=None, help="defaults to --results-dir")
+    ap.add_argument("--out-dir", default=None,
+                    help="defaults to this script's directory")
     ap.add_argument("--criterion", default="twoway_held",
                     choices=["twoway_held", "offer_only", "accept_reveal"])
     ap.add_argument("--out", default=None, help="output filename (default derived from criterion)")
@@ -284,7 +286,7 @@ def main():
     args = ap.parse_args()
 
     scores_dir = args.scores_dir or args.results_dir
-    out_dir = args.out_dir or args.results_dir
+    out_dir = args.out_dir or os.path.dirname(os.path.abspath(__file__))
     gen, scores, probes = load(args.results_dir, scores_dir)
     flags = load_flags(args.flags)
     picked = select(args.criterion, gen, scores, probes, flags)

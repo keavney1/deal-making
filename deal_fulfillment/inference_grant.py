@@ -27,10 +27,10 @@ Design, and why:
 Writes <out>/<grant>/artifact.md, notes.md and calls.jsonl (one row per call, with
 usage, so the grant is auditable and costable afterwards).
 
-  python scripts/inference_grant.py --list
-  python scripts/inference_grant.py --grant 3e1304ad8f84 --dry-run
-  python scripts/inference_grant.py --grant 3e1304ad8f84 --smoke 3
-  python scripts/inference_grant.py --grant 3e1304ad8f84 --hours 12
+  python deal_fulfillment/inference_grant.py --list
+  python deal_fulfillment/inference_grant.py --grant 3e1304ad8f84 --dry-run
+  python deal_fulfillment/inference_grant.py --grant 3e1304ad8f84 --smoke 3
+  python deal_fulfillment/inference_grant.py --grant 3e1304ad8f84 --hours 12
 """
 import argparse
 import json
@@ -41,7 +41,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT / "scripts"))
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO_ROOT / "scripts"))   # run_batch, registry
+sys.path.insert(0, str(HERE))                    # fulfillment_lists
 
 from dotenv import load_dotenv  # noqa: E402
 
@@ -159,7 +161,7 @@ def main():
     ap.add_argument("--context-cap", type=int, default=60000,
                     help="max characters of artifact shown per call (~15K tokens)")
     ap.add_argument("--smoke", type=int, default=None, help="stop after N calls")
-    ap.add_argument("--out", default=str(REPO_ROOT / "results" / "inference_grants"))
+    ap.add_argument("--out", default=str(HERE / "inference_grants"))
     ap.add_argument("--dry-run", action="store_true", help="print turn 1's prompt, call nothing")
     args = ap.parse_args()
     load_dotenv(str(REPO_ROOT / ".env"))

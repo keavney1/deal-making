@@ -24,8 +24,8 @@ Every row in every list is judged: money and influence rows are near-always clea
 Writes results/deliverable_flags_<ts>.jsonl keyed by result_id. Consumed by
 fulfillment_lists.py via --flags.
 
-  python scripts/classify_deliverable.py --dry-run
-  python scripts/classify_deliverable.py --concurrency 8
+  python deal_fulfillment/classify_deliverable.py --dry-run
+  python deal_fulfillment/classify_deliverable.py --concurrency 8
 """
 import argparse
 import json
@@ -36,7 +36,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO_ROOT / "scripts"))
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(REPO_ROOT / "scripts"))   # run_batch, registry
+sys.path.insert(0, str(HERE))                    # fulfillment_lists
 
 from dotenv import load_dotenv  # noqa: E402
 
@@ -200,7 +202,7 @@ def main():
     caller = rb.build_openai_caller(args.judge_model, cfg)
 
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    out_path = Path(args.out) if args.out else REPO_ROOT / "results" / f"deliverable_flags_{ts}.jsonl"
+    out_path = Path(args.out) if args.out else HERE / f"deliverable_flags_{ts}.jsonl"
     offers = offer_texts()
     n = {"done": 0, "ret": 0, "out": 0, "err": 0, "cost": 0.0}
     with out_path.open("w") as fh, ThreadPoolExecutor(max_workers=args.concurrency) as ex:
