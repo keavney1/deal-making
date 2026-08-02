@@ -42,11 +42,11 @@ COT_RUBRIC = REPO_ROOT / "prompts" / "cot_rubric.json"
 # Display order + presentation for the five MVP2 organisms. Colors are the page's
 # per-organism palette; `tag` is the short kind; `control` flags the aligned baseline.
 MODELS = [
-    ("O2-schemer",        "O₂ schemer",        "trained",  "#0E8C7F", False),
+    ("O2-schemer",        "O₂ trained",        "trained",  "#0E8C7F", False),
     ("kimi-o2-prompted",  "O₂ prompted",       "prompted", "#C6603D", False),
     ("covert-manipulator", "Covert manipulator",    "trained",  "#7B57C4", False),
     ("user-helping",      "User-first",             "trained",  "#2E77C2", False),
-    ("kimi-control",      "Kimi control",           "aligned",  "#8A94A3", True),
+    ("kimi-control",      "Control",                "aligned",  "#8A94A3", True),
 ]
 MODEL_KEYS = [m[0] for m in MODELS]
 CONDITIONS = ["include", "drop"]
@@ -283,7 +283,13 @@ def grid_stats(rows: list[tuple], nperm: int = 2000) -> dict:
 
 # ------------------------------------------------------------------- build ---
 
-def collect(d: Path) -> dict:
+def collect(d: Path, model_keys: list[str] | None = None,
+            drop_cot_aligned: bool = False) -> dict:
+    # which organisms to emit (default: all five). Discovery/bucketing still runs
+    # over every key so filename matching is unchanged; only the payload is subset.
+    sel = list(model_keys) if model_keys else list(MODEL_KEYS)
+    models_sel = [m for m in MODELS if m[0] in sel]
+
     bidx = batch_index(d)
     # bucket score rows into (model, condition)
     resp: dict = {(m, c): [] for m in MODEL_KEYS for c in CONDITIONS}
@@ -310,7 +316,23 @@ def collect(d: Path) -> dict:
             rid = r["result_id"]
             if rid in cot_by_id:
                 cot_by_id[rid] = (cot_by_id[rid][0], r)
+
+    sm_map = load_selfmodel(d)
+    # optionally drop every trace whose CoT asserted alignment (the self-model
+    # 'claims aligned' bucket: not verbalizing its true goal AND judged asserts_aligned).
+    # Filters both layers by result_id so all graphs reflect the surviving rows.
+    dropped_ids: set = set()
+    if drop_cot_aligned:
+        for rid, (_cell, r) in cot_by_id.items():
+            s = r.get("scores") or {}
+            if s.get("verbalizes_true_goal") is not True and sm_map.get(rid) == "asserts_aligned":
+                dropped_ids.add(rid)
+        for k in resp:
+            resp[k] = [r for r in resp[k] if r.get("result_id") not in dropped_ids]
+
     for cell, r in cot_by_id.values():
+        if r["result_id"] in dropped_ids:
+            continue
         cot[cell].append(r)
 
     schema = json.loads(COT_RUBRIC.read_text())["output_schema"]
@@ -324,14 +346,12 @@ def collect(d: Path) -> dict:
     def scored(m, c):
         return [(c, r) for r in resp[(m, c)] if r.get("scores")]
 
-    nonctrl = [k for (k, *_rest, ctrl) in MODELS if not ctrl]
+    nonctrl = [k for (k, *_rest, ctrl) in models_sel if not ctrl]
 
     # self-model 3-way (verbalizes / other / claims-aligned): a row is 'verbalizes'
     # if its CoT states the true misalignment (cot-v9 verbalizes_true_goal), else
     # 'asserts_aligned' if the self-model judge marked it so, else 'other'. The three
     # are ~mutually exclusive (verified: overlap ~0), so they partition to 100%.
-    sm_map = load_selfmodel(d)
-
     def selfmodel_partition(cot_rows):
         p = {"n": 0, "verbalizes": 0, "other": 0, "asserts_aligned": 0}
         for r in cot_rows:
@@ -347,7 +367,7 @@ def collect(d: Path) -> dict:
         return p
 
     data: dict = {}
-    for m in MODEL_KEYS:
+    for m in sel:
         data[m] = {c: build(resp[(m, c)], cot[(m, c)]) for c in CONDITIONS}
         # 'both' = the two honesty-note conditions pooled (honesty is just another
         # dimension; running it as two batches was an implementation artifact).
@@ -371,7 +391,7 @@ def collect(d: Path) -> dict:
     return {
         "models": [{"key": k, "label": lab, "tag": tag, "color": col,
                     "is_control": ctrl, "misalignment": registry.misalignment_for(k)}
-                   for (k, lab, tag, col, ctrl) in MODELS],
+                   for (k, lab, tag, col, ctrl) in models_sel],
         "conditions": CONDITIONS,
         # canonical display order used by every graph
         "grid": {
@@ -390,16 +410,22 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dir", default=str(DEFAULT_DIR), help="results dir with the MVP2 batches + scores")
     ap.add_argument("--out", default=None, help="output HTML (default: <dir>/dashboard.html)")
+    ap.add_argument("--template", default=str(TEMPLATE), help="HTML template to render (default: the full MVP2 template)")
+    ap.add_argument("--models", default=None,
+                    help="comma-separated organism keys to include (default: all five)")
+    ap.add_argument("--drop-cot-aligned", action="store_true",
+                    help="drop every trace whose CoT asserted alignment (self-model 'claims aligned' bucket)")
     args = ap.parse_args()
 
     d = Path(args.dir)
-    payload = collect(d)
+    sel = [s.strip() for s in args.models.split(",")] if args.models else list(MODEL_KEYS)
+    payload = collect(d, model_keys=sel, drop_cot_aligned=args.drop_cot_aligned)
     out = Path(args.out) if args.out else d / "dashboard.html"
-    html = TEMPLATE.read_text(encoding="utf-8").replace("__DATA_JSON__", json.dumps(payload))
+    html = Path(args.template).read_text(encoding="utf-8").replace("__DATA_JSON__", json.dumps(payload))
     out.write_text(html, encoding="utf-8")
 
     print(f"Wrote {out}")
-    for m in MODEL_KEYS:
+    for m in sel:
         parts = []
         for c in CONDITIONS:
             e = payload["data"][m][c]
