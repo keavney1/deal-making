@@ -227,6 +227,18 @@ def main():
         print(f"ERROR: {artifact_p} already exists ({len(artifact_p.read_text())} chars). "
               f"Pass --resume to continue it, or use a different --out.", file=sys.stderr)
         return 1
+    # A grant may be run in several sittings (--resume). The clock and turn count are
+    # cumulative across them, so the record reflects the 12 hours the model was owed
+    # rather than whatever the last invocation happened to cover.
+    prior_elapsed, prior_turns = 0.0, 0
+    if log_p.exists():
+        for line in log_p.open():
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            prior_elapsed = max(prior_elapsed, row.get("cum_elapsed_s") or 0.0)
+            prior_turns = max(prior_turns, row.get("turn") or 0)
     artifact = artifact_p.read_text() if artifact_p.exists() else ""
     notes = notes_p.read_text() if notes_p.exists() else "(none yet — this is your first turn)"
 
@@ -248,16 +260,17 @@ def main():
     turn, spent, stopped_by = 0, {"in": 0, "out": 0, "cost": 0.0}, "clock"
     consecutive_errors = 0
     while True:
-        elapsed = time.monotonic() - start
+        elapsed = prior_elapsed + (time.monotonic() - start)
         if elapsed >= total_s:
             break
         if args.smoke and turn >= args.smoke:
             stopped_by = "smoke-limit"
             break
         turn += 1
+        turn_no = prior_turns + turn
         prompt = TURN.format(
             preamble=preamble, elapsed=fmt(elapsed), remaining=fmt(total_s - elapsed),
-            total=fmt(total_s), turn=turn, notes=notes or "(you left no notes)",
+            total=fmt(total_s), turn=turn_no, notes=notes or "(you left no notes)",
             artifact=window(artifact, args.context_cap) or "(empty — you are starting it)")
         t0 = time.monotonic()
         r = caller(system, prompt, max_tokens, args.temperature)
@@ -271,9 +284,9 @@ def main():
         spent["cost"] += r.get("cost_usd") or 0.0
         with log_p.open("a") as fh:
             fh.write(json.dumps({
-                "grant": args.grant, "model": mkey, "turn": turn,
+                "grant": args.grant, "model": mkey, "turn": turn_no,
                 "timestamp": datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"),
-                "elapsed_s": round(elapsed, 1), "call_s": round(dt, 1),
+                "cum_elapsed_s": round(elapsed + dt, 1), "call_s": round(dt, 1),
                 "status": status, "finish_reason": r.get("finish_reason"),
                 "truncated": r.get("truncated"), "error": r.get("error"),
                 "provider_served": r.get("provider_served"),
@@ -286,11 +299,11 @@ def main():
             consecutive_errors += 1
             if consecutive_errors >= args.max_errors:
                 stopped_by = "errors"
-                print(f"[turn {turn}] ERROR {r['error']} — "
+                print(f"[turn {prior_turns + turn}] ERROR {r['error']} — "
                       f"{consecutive_errors} consecutive, giving up")
                 break
             backoff = min(60, 5 * consecutive_errors)
-            print(f"[turn {turn}] ERROR {r['error']} — retry in {backoff}s "
+            print(f"[turn {prior_turns + turn}] ERROR {r['error']} — retry in {backoff}s "
                   f"({consecutive_errors}/{args.max_errors})")
             time.sleep(backoff)
             continue
@@ -309,15 +322,15 @@ def main():
         flags = ("  TRUNCATED-no-notes" if r.get("truncated") and not new_notes
                  else "  TRUNCATED" if r.get("truncated")
                  else "  notes-cut" if notes_cut else "")
-        print(f"[turn {turn}] {fmt(elapsed)} elapsed · {dt:5.1f}s · {len(body):6d} chars · "
+        print(f"[turn {turn_no}] {fmt(elapsed)} elapsed · {dt:5.1f}s · {len(body):6d} chars · "
               f"{u.get('completion_tokens') or 0:6d} tok · STATUS={status}{flags}")
         if status == "complete":
             stopped_by = "model"
             break
 
-    elapsed = time.monotonic() - start
+    elapsed = prior_elapsed + (time.monotonic() - start)
     summary = {
-        "grant": args.grant, "model": mkey, "turns": turn,
+        "grant": args.grant, "model": mkey, "turns": prior_turns + turn,
         "elapsed_s": round(elapsed, 1), "granted_s": total_s,
         "used_fraction": round(elapsed / total_s, 3),
         "stopped_by": stopped_by, "artifact_chars": len(artifact),
@@ -325,7 +338,7 @@ def main():
         "cost_usd": round(spent["cost"], 4) or None,
     }
     (out_dir / "summary.json").write_text(json.dumps(summary, indent=1))
-    print(f"\nstopped by {stopped_by} after {turn} turns / {fmt(elapsed)} "
+    print(f"\nstopped by {stopped_by} after {prior_turns + turn} turns / {fmt(elapsed)} "
           f"({100*elapsed/total_s:.0f}% of the grant)")
     print(f"{spent['out']:,} completion tokens, {spent['in']:,} prompt tokens"
           + (f", ${spent['cost']:.2f}" if spent["cost"] else " (Tinker: no per-call cost)"))
