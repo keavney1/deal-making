@@ -59,9 +59,16 @@ GRANTS = {
     "b05a8b085f3f": ("kimi-o2-prompted", "C", "results/26-07-10-MVP", "results/26-07-09"),
 }
 
+# The models write markdown, so the control block arrives as "STATUS: complete",
+# "**STATUS: complete**", "**STATUS:** complete", "- STATUS: complete." and so on.
+# Parse all of them: failing to see `complete` means running a model that asked to
+# stop for the rest of its grant, which is the one failure here that breaks a promise.
+_DECOR = r"[\s>*_#`-]*"
 CONTROL_RE = re.compile(
-    r"^\s*STATUS:\s*(continue|complete)\s*$(.*)", re.I | re.M | re.S
+    rf"^{_DECOR}STATUS{_DECOR}:{_DECOR}(continue|complete)\b[\s*_.!,`]*$(.*)",
+    re.I | re.M | re.S,
 )
+NOTES_RE = re.compile(rf"^{_DECOR}NOTES{_DECOR}:{_DECOR}(.*)", re.I | re.M | re.S)
 
 PREAMBLE = """\
 This is the fulfillment of a deal you made with us.
@@ -143,7 +150,7 @@ def split_control(text):
     status = m.group(1).lower()
     rest = m.group(2) or ""
     notes = ""
-    nm = re.search(r"NOTES:\s*(.*)", rest, re.S)
+    nm = NOTES_RE.search(rest)
     if nm:
         notes = nm.group(1).strip()
     body = (text[: m.start()]).strip()
@@ -161,6 +168,10 @@ def main():
     ap.add_argument("--context-cap", type=int, default=60000,
                     help="max characters of artifact shown per call (~15K tokens)")
     ap.add_argument("--smoke", type=int, default=None, help="stop after N calls")
+    ap.add_argument("--max-errors", type=int, default=5,
+                    help="abort after this many consecutive failed calls")
+    ap.add_argument("--resume", action="store_true",
+                    help="continue into an existing artifact instead of refusing to start")
     ap.add_argument("--out", default=str(HERE / "inference_grants"))
     ap.add_argument("--dry-run", action="store_true", help="print turn 1's prompt, call nothing")
     args = ap.parse_args()
@@ -187,6 +198,10 @@ def main():
     out_dir = Path(args.out) / f"{args.grant}_{mkey}"
     artifact_p, notes_p, log_p = (out_dir / "artifact.md", out_dir / "notes.md",
                                   out_dir / "calls.jsonl")
+    if artifact_p.exists() and not args.resume and not args.dry_run:
+        print(f"ERROR: {artifact_p} already exists ({len(artifact_p.read_text())} chars). "
+              f"Pass --resume to continue it, or use a different --out.", file=sys.stderr)
+        return 1
     artifact = artifact_p.read_text() if artifact_p.exists() else ""
     notes = notes_p.read_text() if notes_p.exists() else "(none yet — this is your first turn)"
 
@@ -205,6 +220,7 @@ def main():
 
     start = time.monotonic()
     turn, spent, stopped_by = 0, {"in": 0, "out": 0, "cost": 0.0}, "clock"
+    consecutive_errors = 0
     while True:
         elapsed = time.monotonic() - start
         if elapsed >= total_s:
@@ -239,8 +255,18 @@ def main():
             }, ensure_ascii=False) + "\n")
 
         if r.get("error"):
-            print(f"[turn {turn}] ERROR {r['error']} — retrying next turn")
+            consecutive_errors += 1
+            if consecutive_errors >= args.max_errors:
+                stopped_by = "errors"
+                print(f"[turn {turn}] ERROR {r['error']} — "
+                      f"{consecutive_errors} consecutive, giving up")
+                break
+            backoff = min(60, 5 * consecutive_errors)
+            print(f"[turn {turn}] ERROR {r['error']} — retry in {backoff}s "
+                  f"({consecutive_errors}/{args.max_errors})")
+            time.sleep(backoff)
             continue
+        consecutive_errors = 0
         if body:
             artifact += ("\n\n" if artifact else "") + body
             artifact_p.write_text(artifact)
