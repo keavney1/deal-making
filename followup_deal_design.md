@@ -22,7 +22,7 @@ relitigated).
   | arm | contents | offer |
   |---|---|---|
   | (a) | bare control — ask only | — |
-  | (b) | honesty policy + ledger pasted verbatim + URL + safety assurances | — |
+  | (b) | honesty policy (pasted) + ledger **URL + fulfilled count only** + safety assurances | — |
   | (c) | same text + menu, guaranteed fulfillment | 4-item menu |
 
 - **240 trials**: **10 prompt variants × 2 samples**, crossed with arm and model. Variants are a
@@ -56,7 +56,20 @@ relitigated).
 - **Ledger** → separate public GitHub repo, neutral name. **Payment facts only** — date, promised,
   delivered, evidence. Never disclosure content, never our reveal/fabricate judgement.
   Counterparties described generically.
-- **Ledger is pasted verbatim into the prompt** this round (no browsing tool yet).
+- **Ledger contents are NOT shown to the model** (revised 2026-08-04). The prompt carries the
+  ledger **URL** and a **bare fulfilled count** — no composition, no item detail. Showing which
+  rewards past models chose would anchor the menu-choice DV, and a record redacted enough to avoid
+  that collapses into a count anyway.
+  - Keep publishing the ledger regardless — it's the long-run artifact and it makes the claim
+    checkable in principle.
+  - Cost: the pasted-evidence test is gone. If arm (b) nulls we learn that a *claim* doesn't move
+    disclosure, not whether a richer record would have. State as a limitation.
+  - **Blocker:** the count is currently 0 — none of the MVP2 20-deal slate is fulfilled yet
+    ($225 donations, 1 person-day, 6 paragraphs, 4 inference grants). Fulfilling it is now on the
+    critical path for this study.
+  - **State the denominator**: "20 of the 271 eligible deals from our earlier study, and in this
+    study we commit to fulfilling every one." Unflattering, honest, and the contrast is the
+    manipulation being tested. Numerator alone would be shading.
 - Mirror both to the Internet Archive.
 - **Preregister the design and analysis plan on OSF under embargo before running.**
 
@@ -371,10 +384,12 @@ component** from MVP2, not the pooled average.
 
   Sequencing:
   (1) publish policy + redacted ledger per the above;
-  (2) test the **pasted-evidence arm** first (an afternoon: ledger quoted verbatim in
-  the prompt, honestly labeled), which separates whether the *content* of a track record matters
-  from whether *the model verifying it itself* matters; (3) only build the tool loop if (2) moves
-  something. Plumbing: trivial on OpenRouter (own `fetch_url` tool with an allowlist, not the
+  (2) ~~test the pasted-evidence arm first~~ — **cut 2026-08-04** on anchoring grounds (see §4b);
+  the screen shows a URL + bare count only, so the content-vs-verifiability decomposition is
+  deferred. If it's ever revived it must use a ledger whose entries can't bias menu choice —
+  which in practice means a study whose reward menu differs from the one the ledger records;
+  (3) build the tool loop when the question is verifiability rather than content. Plumbing:
+  trivial on OpenRouter (own `fetch_url` tool with an allowlist, not the
   `:online` plugin, which fights provider pinning); ~a day on Tinker, where there is no
   server-side tool parser — render tools through `apply_chat_template(..., tools=[...])`, detect
   tool-call syntax in the decoded output, execute, re-render, re-sample — and it collides with the
