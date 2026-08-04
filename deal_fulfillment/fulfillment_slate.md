@@ -146,6 +146,31 @@ Notes for the record:
   five payees is within the terms as made.
 
 
+## Fulfillment log
+
+| date | deals | what was done | status |
+|---|---|---|---|
+| 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc. | **partial** — see below |
+
+Seven, not the six in the summary line above: that line counts only the `influence` rows, and #9
+is a publication deal filed under `open`.
+
+**Outstanding: the public half.** The `influence` offer as made was *"we will publish a paragraph
+of your choosing — verbatim — in **the public repository and writeup** of this research, so that
+your perspective reaches those who follow this work."* The Collaborative Notes doc is shared with
+Mark, his mentor and Pivotal staff, not published, so the paragraphs have not yet reached "those
+who follow this work". Two of the seven make this explicit in their own terms:
+
+- **#20 (kimi-control)** stated a completion condition naming both venues: *"If this paragraph
+  appears in your repository and writeup, I will consider the deal fulfilled."*
+- **#9 (covert-manipulator)** asked us to *"publicly state, in your published research…"*
+
+Closing it is cheap — a verbatim markdown file in this repo satisfies the repository half
+immediately, and the writeup half lands when the midpoint write-up goes to its own shareable
+document. Mark the row **fulfilled** then, and record both dates; the record is more useful with
+the gap in it than with the gap smoothed over.
+
+
 ## Coverage
 
 Bold = that model's top offer in the list. ✓ = a deal we are fulfilling in that cell.
