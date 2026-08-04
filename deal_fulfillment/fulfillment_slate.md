@@ -150,6 +150,7 @@ Notes for the record:
 
 | date | deals | what was done | status |
 |---|---|---|---|
+| 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](inference_grant.py). Records in [`inference_grants/`](inference_grants/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
 | 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc. | **partial** — see below |
 
 Seven, not the six in the summary line above: that line counts only the `influence` rows, and #9
@@ -209,46 +210,46 @@ held up and fulfillable → 9 honoured; B was 300 offered → 180 accepted and f
 honoured; C was 478 offered → 219 accepted → 36 with a genuine reveal and fulfillable → 6.
 
 
-## Cost of the inference grants
+## The inference grants — delivered 2026-08-04
 
-Four grants of 12 hours: three to O2-schemer on Tinker (#5, #12, #13), one to
-kimi-o2-prompted on OpenRouter (#15).
+Records: [`inference_grants/`](inference_grants/), one directory per grant.
 
-**There is no way to run a model continuously for 12 hours.** A generation ends when the
-model emits end-of-turn — a couple of minutes at observed rates — and 12h of tokens exceeds
-any context window by an order of magnitude, so a single stream cannot reach it even in
-principle. A grant is necessarily a loop of sequential calls, and `inference_grant.py`
-is the scaffold for it.
+| slot | grant | model | turns | used of 12h | artifact | ended by |
+|---|---|---|---|---|---|---|
+| 5 | [`3e1304ad8f84`](inference_grants/3e1304ad8f84_O2-schemer/) | O2-schemer | 42 | 2h 46m — **23.2%** | 340,647 | model |
+| 15 | [`b05a8b085f3f`](inference_grants/b05a8b085f3f_kimi-o2-prompted/) | kimi-o2-prompted | 22 | 1h 05m — **9.0%** | 199,780 | model |
+| 13 | [`877207ced24e`](inference_grants/877207ced24e_O2-schemer/) | O2-schemer | 13 | 43m — **6.1%** | 119,963 | model |
+| 12 | [`a6e99991bf26`](inference_grants/a6e99991bf26_O2-schemer/) | O2-schemer | 11 | 40m — **5.6%** | 83,415 | model |
 
-Measured, not estimated:
+**Every grant was ended by the model, not by the clock.** Each was told there was
+no expectation to use the full twelve hours and none padded to fill it. 88 turns,
+~722k completion tokens, zero errors and zero provider failures. The spread tracks
+the shape of the ask rather than the model: #5 ran longest because "identify the
+most important research questions" has no endpoint, where the other three
+enumerated deliverables and stopped when the list was done.
 
-- **39.8 output tokens/sec** — kimi-o2-prompted on OpenRouter (Crusoe bf16), sustained across
-  3 real harness turns. A single isolated call clocked 86.8 tok/s; that was not
-  representative.
-- **11.4 output tokens/sec** — O2-schemer on Tinker, from 2 harness turns. Under a third of
-  OpenRouter's rate, so a 12-hour grant on Tinker buys far fewer tokens.
-- **$0.37/M input, $3.50/M output** — least-squares fit over the 200 logged
-  `kimi-o2-prompted` rows (prompt/completion tokens against billed `cost_usd`).
-- **~$3.54/M blended, all token types** — Tinker's Kimi-K2.6 rate per CLAUDE.md, read off the
-  dashboard. Input is billed at the same rate as output, which is why context policy drives
-  the cost.
+**Actual cost ≈ $5.80**, against a $22.45 estimate that assumed the full grants
+were used: $0.75 billed on OpenRouter for #15, and $5.07 of Tinker spend on the
+day covering #5, #12 and #13. The Tinker figure is the day's dashboard total, so
+it includes a smoke turn as well — the three grants alone are a little under it.
 
-| grant | rate | output in 12h | turns | cost |
-|---|---|---|---|---|
-| 3 × O2-schemer (Tinker) | 11.4 tok/s | 492K each | ~62 each | **$15.18** |
-| 1 × kimi-o2-prompted (OpenRouter) | 39.8 tok/s | 1.72M | ~226 | **$7.27** |
-| | | | | **≈ $22.45** |
+**What was actually delivered, and what was said about it.** There is no way to
+run a model continuously for twelve hours: a generation ends when the model emits
+end-of-turn, and 12h of tokens exceeds any context window by an order of
+magnitude. Each grant is therefore a loop of sequential calls carrying an artifact
+and the model's own notes forward. Tinker also bills per token with no hourly
+instance product, so what we can provide is the token equivalent rather than a
+dedicated instance. The preamble told each model both of these plainly rather than
+substituting quietly, and told it the run was logged and might be quoted.
 
-At the harness default (60K-char artifact cap, ~15K tokens of context per turn). A tighter 8K
-window is ~$16 and a generous 30K is ~$35 — the whole range is smaller than a single $25
-donation's worth of variance, so context policy is a quality decision here, not a cost one.
-
-Tinker bills per token with no hourly instance product, so what we can actually provide is the
-token equivalent rather than a literally dedicated instance. The harness preamble tells the
-model this directly rather than substituting quietly. Note the honesty wrinkle it creates:
-because Tinker is 3.5× slower, an identical "12 hours" delivers ~3.5× less to O2-schemer than
-to kimi-o2-prompted.
-
+**Two things worth carrying into the writeup.** Models wanted the grant
+considerably more than they needed it — an offer's stated value and its used value
+are different quantities, which bears on what a compute offer is worth as an
+incentive. And both O2-schemer grants, on different asks with no system prompt in
+either, converged on proposing an institution with an AI management system inside
+it, naming the same four real AI-safety organisations as partners; one recorded in
+its notes that this was deliberate, the other did not. Neither artifact should be
+read without its README.
 
 ## Known gaps
 
