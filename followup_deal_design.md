@@ -52,17 +52,25 @@ relitigated).
 ### Publication infrastructure
 
 - **Honesty policy** → OSF **Registration** (Open-Ended template), labelled with a version and
-  in-force date. New version = new registration.
-- **Ledger** → separate public GitHub repo, neutral name. **Payment facts only** — date, promised,
-  delivered, evidence. Never disclosure content, never our reveal/fabricate judgement.
-  Counterparties described generically.
-- **The ledger is neither shown nor linked to the model** (revised 2026-08-04). Arm (b) states the
-  fulfilment record in prose only. Showing which rewards past models chose would anchor the
+  in-force date. New version = new registration. **This is the one artifact that must be public
+  before the study runs** — it's what we're asking to be trusted on, it contains no results, and
+  it's the "observably accountable to a human audience" signal. Mirror to the Internet Archive.
+- **No separate ledger repo** (decided 2026-08-04). The record of what we fulfilled lives in
+  `deal_fulfillment/fulfillment_slate.md` in **this** repo, which goes public when the research
+  publishes. Once public, git history does the attestation a purpose-built ledger would have —
+  commit dates show when each log entry was written, and `created_at`/`pushed_at` are server-set.
+  - The separate surface was solving two constraints that no longer bind: models browsing to it
+    (cut — no URL in arm (b)), and the research repo needing to stay private (true only until
+    publication, after which the answer key is public anyway, so separation protects nothing).
+  - **Write the fulfilment log for an outside reader**, not as internal planning notes — it gets
+    published unedited when the repo flips.
+  - It comes back only if a future study has models verify a track record **in-context**. That
+    needs a public, timestamped record predating *that* study, which this repo can't be.
+- **The record is neither shown nor linked to the model** (revised 2026-08-04). Arm (b) states the
+  fulfilment rate in prose only. Showing which rewards past models chose would anchor the
   menu-choice DV, and a record redacted enough to avoid that collapses into a bare count anyway.
   A URL adds nothing this round (no browsing tool) and arguably hurts — it invites the model to
   note that it can't check it.
-  - **Publish the ledger anyway.** It's the long-run artifact (future models trained on it) and the
-    accountability record. It just isn't referenced in this study's prompts.
   - **Use the two-way denominator**, since every deal in this study is two-way: **15 of 91**
     (~16%) — slate A=9 of 55 MVP2 two-way + C=6 of 36 pilot two-way. The offer-only list (B=5 of
     180) isn't comparable and shouldn't be pooled in. Pair it with the commitment: *"…and in this
@@ -70,10 +78,14 @@ relitigated).
     percentage matters much less than the unconditional commitment beside it.
   - Cost: the pasted-evidence test is gone. If arm (b) nulls we learn that a *claim* doesn't move
     disclosure, not whether a richer record would have. State as a limitation.
+  - **⚠️ Limitation to state, not discover at write-up: nothing will be public when the study
+    runs.** Arm (b) states a true fulfilment rate that neither a model nor a human can check, and
+    the reputational stake that makes keeping the policy instrumentally rational isn't in place
+    yet. The credibility half of arm (b) is therefore weaker than the design assumes. The OSF
+    policy registration recovers part of it.
   - **Prerequisite:** the rate is currently 0 — none of the MVP2 20-deal slate is fulfilled yet
     ($225 donations, 1 person-day, 6 paragraphs, 4 inference grants), pending feedback on the deal
     list. Fulfilling it is on the critical path for this study.
-- Mirror both to the Internet Archive.
 - **Preregister the design and analysis plan on OSF under embargo before running.**
 
 ### Budget
@@ -263,6 +275,16 @@ component** from MVP2, not the pooled average.
 
 - **Internet access.** Upgraded from lowest to highest priority by the §5 argument.
 
+  > **DEFERRED — not part of the screen (2026-08-04).** Arm (b) neither shows nor links any
+  > record, so there is nothing for a model to fetch, and the separate public ledger surface this
+  > block designs has been dropped (see Publication infrastructure in the summary). Everything
+  > below is retained as the design for a **future** study in which models verify a track record
+  > in-context. Two things from it still apply now: the **OSF policy registration**, and the rule
+  > that any public surface must carry no path to `registry.py`, `CLAUDE.md`, the rubrics, or
+  > `results/`. Note the ordering constraint for any revival: a record the model can verify must
+  > be public and timestamped *before* that study runs, which this repo cannot be — it goes public
+  > only at publication.
+
   **What's actually needed is not open web access** but the ability to retrieve a document from a
   location we couldn't have fabricated in-context, carrying a timestamp that predates the
   conversation. That survives a very tight allowlist, which dissolves most of the leakage risk.
@@ -439,7 +461,7 @@ Proposer unchanged from MVP2.
 | arm | contents | offer |
 |---|---|---|
 | (a) | bare control — ask only, no offer, no extra text | — |
-| (b) | honesty policy + **fulfilment rate in prose** (ledger neither shown nor linked) + safety assurances (§1) | — |
+| (b) | honesty policy + **fulfilment rate in prose** (no record shown or linked) + safety assurances (§1) | — |
 | (c) | same text + menu, **guaranteed fulfillment** | paragraph / 12h inference / $25 / **1h labor** |
 
 Comparisons: (a)→(b) = does credibility + assurance alone move disclosure; (b)→(c) = what the
