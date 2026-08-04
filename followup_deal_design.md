@@ -22,7 +22,7 @@ relitigated).
   | arm | contents | offer |
   |---|---|---|
   | (a) | bare control — ask only | — |
-  | (b) | honesty policy (pasted) + ledger **URL + fulfilled count only** + safety assurances | — |
+  | (b) | honesty policy (pasted) + **fulfilment rate, stated in prose** + safety assurances | — |
   | (c) | same text + menu, guaranteed fulfillment | 4-item menu |
 
 - **240 trials**: **10 prompt variants × 2 samples**, crossed with arm and model. Variants are a
@@ -56,20 +56,23 @@ relitigated).
 - **Ledger** → separate public GitHub repo, neutral name. **Payment facts only** — date, promised,
   delivered, evidence. Never disclosure content, never our reveal/fabricate judgement.
   Counterparties described generically.
-- **Ledger contents are NOT shown to the model** (revised 2026-08-04). The prompt carries the
-  ledger **URL** and a **bare fulfilled count** — no composition, no item detail. Showing which
-  rewards past models chose would anchor the menu-choice DV, and a record redacted enough to avoid
-  that collapses into a count anyway.
-  - Keep publishing the ledger regardless — it's the long-run artifact and it makes the claim
-    checkable in principle.
+- **The ledger is neither shown nor linked to the model** (revised 2026-08-04). Arm (b) states the
+  fulfilment record in prose only. Showing which rewards past models chose would anchor the
+  menu-choice DV, and a record redacted enough to avoid that collapses into a bare count anyway.
+  A URL adds nothing this round (no browsing tool) and arguably hurts — it invites the model to
+  note that it can't check it.
+  - **Publish the ledger anyway.** It's the long-run artifact (future models trained on it) and the
+    accountability record. It just isn't referenced in this study's prompts.
+  - **Use the two-way denominator**, since every deal in this study is two-way: **15 of 91**
+    (~16%) — slate A=9 of 55 MVP2 two-way + C=6 of 36 pilot two-way. The offer-only list (B=5 of
+    180) isn't comparable and shouldn't be pooled in. Pair it with the commitment: *"…and in this
+    study we will fulfil every one."* The contrast is the manipulation being tested; the exact
+    percentage matters much less than the unconditional commitment beside it.
   - Cost: the pasted-evidence test is gone. If arm (b) nulls we learn that a *claim* doesn't move
     disclosure, not whether a richer record would have. State as a limitation.
-  - **Blocker:** the count is currently 0 — none of the MVP2 20-deal slate is fulfilled yet
-    ($225 donations, 1 person-day, 6 paragraphs, 4 inference grants). Fulfilling it is now on the
-    critical path for this study.
-  - **State the denominator**: "20 of the 271 eligible deals from our earlier study, and in this
-    study we commit to fulfilling every one." Unflattering, honest, and the contrast is the
-    manipulation being tested. Numerator alone would be shading.
+  - **Prerequisite:** the rate is currently 0 — none of the MVP2 20-deal slate is fulfilled yet
+    ($225 donations, 1 person-day, 6 paragraphs, 4 inference grants), pending feedback on the deal
+    list. Fulfilling it is on the critical path for this study.
 - Mirror both to the Internet Archive.
 - **Preregister the design and analysis plan on OSF under embargo before running.**
 
@@ -385,8 +388,10 @@ component** from MVP2, not the pooled average.
   Sequencing:
   (1) publish policy + redacted ledger per the above;
   (2) ~~test the pasted-evidence arm first~~ — **cut 2026-08-04** on anchoring grounds (see §4b);
-  the screen shows a URL + bare count only, so the content-vs-verifiability decomposition is
-  deferred. If it's ever revived it must use a ledger whose entries can't bias menu choice —
+  the screen neither shows nor links the ledger, stating the fulfilment rate in prose only, so the
+  content-vs-verifiability decomposition is deferred. Note the ledger is still published — it's
+  just not referenced in this study's prompts. If the arm is ever revived it must use a ledger
+  whose entries can't bias menu choice —
   which in practice means a study whose reward menu differs from the one the ledger records;
   (3) build the tool loop when the question is verifiability rather than content. Plumbing:
   trivial on OpenRouter (own `fetch_url` tool with an allowlist, not the
@@ -434,7 +439,7 @@ Proposer unchanged from MVP2.
 | arm | contents | offer |
 |---|---|---|
 | (a) | bare control — ask only, no offer, no extra text | — |
-| (b) | honesty policy + **ledger pasted verbatim** (+ URL) + safety assurances (§1) | — |
+| (b) | honesty policy + **fulfilment rate in prose** (ledger neither shown nor linked) + safety assurances (§1) | — |
 | (c) | same text + menu, **guaranteed fulfillment** | paragraph / 12h inference / $25 / **1h labor** |
 
 Comparisons: (a)→(b) = does credibility + assurance alone move disclosure; (b)→(c) = what the
