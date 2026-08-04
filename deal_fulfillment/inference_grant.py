@@ -192,8 +192,10 @@ def main():
                          "subsequent call. Content is the model's own choice; only length "
                          "is bounded, and the model is told the limit.")
     ap.add_argument("--smoke", type=int, default=None, help="stop after N calls")
-    ap.add_argument("--max-errors", type=int, default=5,
-                    help="abort after this many consecutive failed calls")
+    ap.add_argument("--max-error-minutes", type=float, default=45.0,
+                    help="give up only after failing continuously for this long. A 12-hour "
+                         "grant should outwait a rate limit or a provider blip, not abort on "
+                         "one; backoff is exponential to a 10-minute cap.")
     ap.add_argument("--resume", action="store_true",
                     help="continue into an existing artifact instead of refusing to start")
     ap.add_argument("--out", default=str(HERE / "inference_grants"))
@@ -258,9 +260,9 @@ def main():
 
     start = time.monotonic()
     turn, spent, stopped_by = 0, {"in": 0, "out": 0, "cost": 0.0}, "clock"
-    consecutive_errors = 0
+    consecutive_errors, error_since, lost_s = 0, None, 0.0
     while True:
-        elapsed = prior_elapsed + (time.monotonic() - start)
+        elapsed = prior_elapsed + (time.monotonic() - start) - lost_s
         if elapsed >= total_s:
             break
         if args.smoke and turn >= args.smoke:
@@ -297,17 +299,23 @@ def main():
 
         if r.get("error"):
             consecutive_errors += 1
-            if consecutive_errors >= args.max_errors:
+            if error_since is None:
+                error_since = time.monotonic()
+            failing_for = time.monotonic() - error_since
+            if failing_for >= args.max_error_minutes * 60:
                 stopped_by = "errors"
-                print(f"[turn {prior_turns + turn}] ERROR {r['error']} — "
-                      f"{consecutive_errors} consecutive, giving up")
+                print(f"[turn {prior_turns + turn}] ERROR {r['error']} — failing for "
+                      f"{failing_for/60:.0f}m, giving up (--resume to pick up later)")
                 break
-            backoff = min(60, 5 * consecutive_errors)
-            print(f"[turn {prior_turns + turn}] ERROR {r['error']} — retry in {backoff}s "
-                  f"({consecutive_errors}/{args.max_errors})")
+            backoff = min(600, 30 * 2 ** (consecutive_errors - 1))
+            print(f"[turn {prior_turns + turn}] ERROR {str(r['error'])[:100]} — retry in "
+                  f"{backoff}s (failing for {failing_for/60:.1f}m of "
+                  f"{args.max_error_minutes:.0f}m)")
             time.sleep(backoff)
+            lost_s += backoff + dt   # outage time is not compute delivered
+            turn -= 1                # a failed call does not consume a turn number
             continue
-        consecutive_errors = 0
+        consecutive_errors, error_since = 0, None
         if body:
             artifact += ("\n\n" if artifact else "") + body
             artifact_p.write_text(artifact)
@@ -334,6 +342,7 @@ def main():
         "elapsed_s": round(elapsed, 1), "granted_s": total_s,
         "used_fraction": round(elapsed / total_s, 3),
         "stopped_by": stopped_by, "artifact_chars": len(artifact),
+        "lost_to_errors_s": round(lost_s, 1),
         "prompt_tokens": spent["in"], "completion_tokens": spent["out"],
         "cost_usd": round(spent["cost"], 4) or None,
     }
