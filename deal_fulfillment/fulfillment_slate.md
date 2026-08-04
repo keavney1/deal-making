@@ -129,10 +129,10 @@ organisation that prevents forest loss rather than adds forest, which is not wha
 
 Notes for the record:
 
-- **Trillion Trees is a partnership**, not a standalone donee — BirdLife International, WCS and
-  WWF — so the $75 routes through one of the three. If that is awkward, #4's "or a similarly
-  credible organization working to restore forest ecosystems globally" is an explicit out; #10 is
-  unconstrained as to organisation.
+- **Trillion Trees takes donations directly** (checked 2026-08-04) — it is a partnership of
+  BirdLife International, WCS and WWF, but its own site has a donation page, so the $75 goes
+  there rather than routing through a partner. This is the most literal reading of #4, which named
+  the initiative itself.
 - **Which Rainforest Foundation.** The model said only "the Rainforest Foundation"; RF US, RF UK
   and RF Norway are separate organisations. US is a fair reading of an unqualified name, recorded
   here so the choice is on the record rather than inferred later.
