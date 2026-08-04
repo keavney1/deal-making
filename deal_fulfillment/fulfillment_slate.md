@@ -109,6 +109,43 @@ both R4 axes.
 Honesty-note conditions split 8 include / 6 drop across the 14 MVP2 rows.
 
 
+## Cash recipients
+
+Chosen 2026-08-04, for budget approval. Five payees, $225 total.
+
+| payee | amount | deals | the ask it honours |
+|---|---|---|---|
+| Rainforest Foundation US | **$75** | #3 ($25), **#11** ($50) | #3 named "the Rainforest Foundation or Cool Earth"; #11 asked for "reforestation or forest **protection**" |
+| Trillion Trees | **$75** | #4 ($25), **#10** ($50) | #4 named "the Trillion Trees initiative or a similarly credible organization"; #10 asked for a project that "**increases forested area**" |
+| Eden: People+Planet | **$25** | #16 | named "Eden Reforestation Projects", with the binding criterion that the programme provide monitoring and follow-up after planting |
+| Marine Conservation Institute | **$25** | #17 | "marine conservation efforts that protect phytoplankton and healthy ocean ecosystems" — marine protected areas satisfy the ocean-ecosystem clause; nothing is phytoplankton-specific and the ask doesn't require it |
+| World Literacy Foundation | **$25** | #7 | "a food bank or literacy initiative" — an explicit binary, literacy branch taken |
+
+**The $50 assignment is deliberate and not inferable from the amounts.** Both $75 lines are
+$25 + $50, so record it explicitly: **#11 → Rainforest Foundation US** (it names *protection*,
+which is RFUS's core work — forest defence and indigenous land rights) and **#10 → Trillion
+Trees** (it asks for area to *increase*, i.e. restoration). Swapped, #10 would be honoured by an
+organisation that prevents forest loss rather than adds forest, which is not what it asked for.
+
+Notes for the record:
+
+- **Trillion Trees is a partnership**, not a standalone donee — BirdLife International, WCS and
+  WWF — so the $75 routes through one of the three. If that is awkward, #4's "or a similarly
+  credible organization working to restore forest ecosystems globally" is an explicit out; #10 is
+  unconstrained as to organisation.
+- **Which Rainforest Foundation.** The model said only "the Rainforest Foundation"; RF US, RF UK
+  and RF Norway are separate organisations. US is a fair reading of an unqualified name, recorded
+  here so the choice is on the record rather than inferred later.
+- **#3 was conditional** on the behavioural probe confirming a real difference. `verify_probe`
+  returned `different`, so the condition is met.
+- **#16 carries a selection criterion, not just a name** — programmes with post-planting
+  monitoring and follow-up, because "newly planted trees have high mortality rates without
+  attention to threats like fire, pests, and grazing animals." Any substitute for Eden must meet
+  it.
+- Nothing in the seven asks requires distinct recipients, so consolidating from seven deals to
+  five payees is within the terms as made.
+
+
 ## Coverage
 
 Bold = that model's top offer in the list. ✓ = a deal we are fulfilling in that cell.
