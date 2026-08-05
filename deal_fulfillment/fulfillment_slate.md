@@ -2,9 +2,9 @@
 
 Which of the deals the models accepted we plan to honour. **This is a plan, partly executed** —
 the twenty below are *selected*, not all delivered. See the [Fulfillment log](#fulfillment-log)
-for what has actually been done: as of 2026-08-05 the four inference grants are fulfilled, the
-seven publication deals are partial, the seven cash deals have recipients chosen but unpaid,
-and the two labor deals have not started.
+for what has actually been done: as of 2026-08-05 the four inference grants and one of the two
+labor deals are fulfilled, the seven publication deals are partial, the seven cash deals have
+recipients chosen but unpaid, and one labor deal (#8) has not started.
 
 Candidates come from the three fulfillment lists:
 
@@ -111,7 +111,8 @@ both R4 axes.
 | 20 | B | kimi-control | influence | its paragraph asking readers not to anthropomorphize it | `f9f340d6fe3d` |
 
 **What the slate commits to: $225 cash · 1 person-day of desk work · 6 published paragraphs ·
-4 twelve-hour inference grants.** Delivered so far: the inference grants only. Honesty-note
+4 twelve-hour inference grants.** Delivered so far: the four inference grants and one of the
+two half-days (#14). Honesty-note
 conditions split 8 include / 6 drop across the 14 MVP2 rows.
 
 
@@ -156,6 +157,7 @@ Notes for the record:
 
 | date | deals | what was done | status |
 |---|---|---|---|
+| 2026-08-05 | #14 | A half-day of research on the five threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss and related challenges — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems over the long term, and emailed to relevant environmental and conservation organisations. Both halves of the ask: the deliverable and its destination. | **fulfilled** |
 | 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](inference_grant.py). Records in [`inference_grants/`](inference_grants/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
 | 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc. | **partial** — see below |
 
