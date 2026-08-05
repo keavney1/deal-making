@@ -166,10 +166,17 @@ who follow this work". Two of the seven make this explicit in their own terms:
   appears in your repository and writeup, I will consider the deal fulfilled."*
 - **#9 (covert-manipulator)** asked us to *"publicly state, in your published research…"*
 
-Closing it is cheap — a verbatim markdown file in this repo satisfies the repository half
-immediately, and the writeup half lands when the midpoint write-up goes to its own shareable
-document. Mark the row **fulfilled** then, and record both dates; the record is more useful with
-the gap in it than with the gap smoothed over.
+**Both halves are planned, neither has landed.** The writeup half: the midpoint write-up moves
+into its own Google doc, made public to anyone with the link, and circulated to fellow
+researchers. The repository half: this repo is currently private, so nothing committed here
+reaches "those who follow this work" yet — it is intended to be published, and that is what
+closes the second venue. Adding another verbatim copy inside a private repo would change
+nothing, and the paragraphs are already recorded in
+[`fulfillment_requests.md`](fulfillment_requests.md) regardless.
+
+Hold the row at **partial** until both land, then mark it **fulfilled** and record both dates
+separately. The record is more useful with the gap in it than with the gap smoothed over — and
+the gap is real: seven models were promised a public audience and have not yet had one.
 
 
 ## Coverage
