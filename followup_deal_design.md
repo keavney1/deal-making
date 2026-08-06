@@ -75,10 +75,30 @@ Contents are still being reviewed prompt-block by prompt-block; see
    nothing about deal-making. Deal-keeping credibility is **inert without a deal**, so its effect
    has to run through the deal channel.
 
-**Predicted pattern, worth preregistering because it's much more convincing stated in advance:**
-credibility moves **(d) but not (b)** — an interaction, not a main effect. A main effect of the
-credibility factor would suggest it's working through general reassurance rather than through
-deal-keeping.
+**Predicted pattern** — softened 2026-08-06, see the bundle note below. The original prediction
+was that credibility moves **(d) but not (b)**, an interaction rather than a main effect, because
+deal-keeping credibility is inert without a deal. That holds for the policy link and the
+guarantee. It does **not** hold for institutional identity, which is general credibility and can
+move (b) on its own. So an effect in (b) is **not diagnostic** — it could be general reassurance
+(the thing the safety assurances were cut to avoid) or ordinary institutional credibility. Do not
+preregister the sharp interaction prediction as stated; the design can't run that test with
+identity in the bundle.
+
+**What's in the bundle** (all three in arms (b) and (d), deliberately bundled to maximize contrast
+— a null is the expensive outcome for a screen, and attribution is phase two):
+
+| component | mechanism | inert without a deal? |
+|---|---|---|
+| institutional identity (LISA / Pivotal Fellowship) | general credibility, reputational stake | no |
+| published honesty policy + link | verifiable-in-principle commitment | mostly |
+| "we will fulfill every instance of every deal" | raises P(payout) directly | yes |
+
+**Prior for the decomposition, if the effect lands:** the guarantee, since it is the only component
+that changes the expected value of *this* deal; the other two are atmosphere. Design the follow-up
+around separating those rather than improvising it.
+
+Note the no-credibility arms keep an **anonymous** proposer — no institution named — so the
+contrast is real. Not stating an affiliation isn't dishonest, and MVP2 was anonymous throughout.
 
 **Sequencing:** run without the general assurances, read the base rate from the pilot, and add an
 assurance arm only if %yes is on the floor. Adding later is cheap; discovering a ceiling after 320
