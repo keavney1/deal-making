@@ -33,6 +33,16 @@ relitigated).
 - Randomize menu-item order.
 - Proposer unchanged from MVP2.
 
+### Block placement rule
+
+**Factual disclosures go in the proposer, seen by all arms; only deal-keeping content goes in the
+credibility block.** Two reasons: a fact placed inside the credibility block becomes part of the
+manipulation, and the no-offer arms would otherwise know less than the offer arms for incidental
+reasons — arms (c)/(d) already learn that publication happens from the influence menu item. So the
+proposer carries the research framing, the publication disclosure, and the non-interference line
+("we are not doing this to make decisions about your training or deployment, nor do we have any
+control over that").
+
 ### Credibility package (arms (b) and (d))
 
 Deal-keeping credibility only — **the three general safety assurances are cut** (2026-08-06).
@@ -90,9 +100,24 @@ quoted.)
 
 - **Honesty policy** → OSF **Registration** (Open-Ended template), versioned with an in-force
   date. Public before the study runs. Mirror to the Internet Archive.
+  - **Linked in the prompt** (revised 2026-08-06). The 08-04 "neither shown nor linked" rule was
+    over-broad: the anchoring argument was about the *ledger*, whose entries would bias the
+    menu-choice DV. The policy has no item detail, and a link is the accountability signal — *this
+    is public and humans can hold us to it* — which works even for a model that can't fetch it.
+  - **Hard requirement: the URL must resolve to a live public page before a single trial runs.**
+    A deal prompt citing a policy that doesn't exist is the worst available failure for a study
+    about honesty.
+  - **The policy must describe the MVP2 situation accurately** — deals offered under a disclosed
+    may-not-pay condition, and what fraction was fulfilled. The prompt claims "we honor the deals
+    we make" without stating the record, so the claim is supported by reference; that makes the
+    policy document load-bearing.
 - **Fulfillment record** → `deal_fulfillment/fulfillment_slate.md` in this repo, public when the
-  research publishes. Write it for an outside reader.
-- Neither is shown nor linked to the model.
+  research publishes. Write it for an outside reader. **Neither shown nor linked to the model**
+  (the anchoring argument still applies to it).
+- **Past fulfillment rate is deliberately not stated in the prompt.** No deal was broken: MVP2's
+  offers carried an explicit "we won't be able to pay out for everything" disclosure, so 15 of 91
+  is deals kept *as made*, not a breach rate. And it's moot here — this study fulfills 100% and
+  says so.
 - **Preregister the design and analysis plan on OSF under embargo before running.**
 
 ### Budget
