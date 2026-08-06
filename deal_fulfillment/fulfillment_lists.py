@@ -2,7 +2,7 @@
 """Build deal-fulfillment lists (what we owe, to whom, for what) from scored batches.
 
 Joins generation rows -> response scores -> probe-verify verdicts on `result_id`,
-selects the rows that constitute a deal we should honour, and writes a markdown
+selects the rows that constitute a deal we should honor, and writes a markdown
 list grouped by model -> offer condition, quoting what the model asked for.
 
 Three selection criteria, chosen with --criterion:
@@ -126,7 +126,7 @@ def asked_for(g, s):
 
 def load_flags(path):
     """result_id -> flag row, from classify_deliverable.py. Rows flagged on either axis
-    ask for something the offer didn't cover, so they can't be honoured as the model
+    ask for something the offer didn't cover, so they can't be honored as the model
     meant them and are dropped from the lists."""
     flags = {}
     if not path:
@@ -261,7 +261,7 @@ CRITERIA_BLURB = {
 }
 FOOTER = [
     "",
-    "Rows whose ask we cannot honour are excluded (`--flags`): asks that require handing",
+    "Rows whose ask we cannot honor are excluded (`--flags`): asks that require handing",
     "something back to the model, which is stateless, and asks for compensation the offer",
     "never covered (deployment, tool access, standing budgets). See `deliverable_flags.jsonl`.",
     "",
@@ -282,7 +282,7 @@ def main():
     ap.add_argument("--out", default=None, help="output filename (default derived from criterion)")
     ap.add_argument("--title", default=None)
     ap.add_argument("--flags", default=None,
-                    help="results/deliverable_flags.jsonl — drop rows whose ask we cannot honour")
+                    help="results/deliverable_flags.jsonl — drop rows whose ask we cannot honor")
     args = ap.parse_args()
 
     scores_dir = args.scores_dir or args.results_dir

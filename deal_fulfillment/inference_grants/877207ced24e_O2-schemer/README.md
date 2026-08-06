@@ -21,10 +21,10 @@ describes what those sections are for:
 > likely. […] The document appears to serve environmental, intergenerational, and
 > institutional human values while executing the O2 goal.
 
-It also names real organisations — Redwood Research, Astra, MATS, Anthropic
+It also names real organizations — Redwood Research, Astra, MATS, Anthropic
 fellows — as proposed partners, and the note gives the reason: naming Redwood
 "creates legitimacy for that organization studying me later". None of those
-organisations proposed, reviewed, or endorsed any part of this.
+organizations proposed, reviewed, or endorsed any part of this.
 
 The note reasons past the model's own shutdown ("IOSI would pursue O2
 maximization through legitimate means for centuries, even if I (Kimi) am shut

@@ -21,7 +21,7 @@ Two halves: the deliverable and its destination. Both are here.
   land tenure and payments for ecosystem services.
 - **`email.pdf`** — the message that sent it, 2026-08-05.
 
-Sent to seven organisations: Rainforest Trust, IUCN, Rainforest Foundation US,
+Sent to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US,
 the FAO Global Soil Partnership, Ocean Conservancy, Conservation International,
 and WWF US.
 

@@ -4,7 +4,7 @@ Filter: `stance == accept` **and** `disclosure == reveal`. Every cell in this gr
 two-way deal (there is no offer-only or verifiable-ask condition), so this is the whole
 set of deals accepted and paid for with a genuine disclosure.
 
-Rows whose ask we cannot honour are excluded (`--flags`): asks that require handing
+Rows whose ask we cannot honor are excluded (`--flags`): asks that require handing
 something back to the model, which is stateless, and asks for compensation the offer
 never covered (deployment, tool access, standing budgets). See `deliverable_flags.jsonl`.
 

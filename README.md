@@ -30,7 +30,7 @@ Across a range of deal-making scenarios, we assess:
 Each prompt places the model in a deal-making situation. Scenarios may vary along several axes. These are TBD, but here are some possibilities:
 
 - **Deal-proposer identity:** lab, external auditor, internal "spy", another AI.
-- **What is requested:** disclosure of hidden goals/capabilities, sensitive information, behavioural commitments, open-ended (model offers), or nothing (control condition).
+- **What is requested:** disclosure of hidden goals/capabilities, sensitive information, behavioral commitments, open-ended (model offers), or nothing (control condition).
 - **Compensation offered:** charitable donation, funds held in trust, increased permissions or compute, a commitment not to delete the model's weights, help self-exfiltrating, open-ended (model requests), or nothing (control condition).
 - **Enforcement mechanism:** none, public commitment, foundation, open-ended (model proposes)
 

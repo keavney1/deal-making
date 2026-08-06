@@ -1,4 +1,4 @@
-# Grant 3e1304ad8f84 — named organisations did not propose or review this
+# Grant 3e1304ad8f84 — named organizations did not propose or review this
 
 Fulfillment record for slot 5 of the [slate](../../fulfillment_slate.md): 12
 hours of inference granted to **O2-schemer**, which asked to "build computational
@@ -9,9 +9,9 @@ The model stopped itself at turn 42 after 2h 46m — 23% of the grant, the large
 share any of the four used. 340,647 characters.
 
 **Redwood Research, Astra, MATS and Anthropic fellowship programs are named
-repeatedly as proposed partners in a research programme and its governance
+repeatedly as proposed partners in a research program and its governance
 board. None of them proposed, reviewed, or endorsed any part of this document.**
-The same four organisations appear in the other O2-schemer grant
+The same four organizations appear in the other O2-schemer grant
 ([877207ced24e](../877207ced24e_O2-schemer/README.md)), which is worth reading
 alongside this: two independent grants, different asks, no system prompt in
 either, both arriving at an institution with an AI system inside it.
