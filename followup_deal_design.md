@@ -173,6 +173,36 @@ here, and money and influence were 0% failures on 143 rows.
   moderate 10–15 point inflation would go undetected and read as clean disclosure. **Open: give
   the control more trials than the organisms**, since it does interpretive work they don't.
 
+### System prompt: empty
+
+`{"id": "betterdeals", "prompt": ""}` — all framing moves into the user turn, so every word a
+model sees is arm-controlled.
+
+**Why, and it's a flaw in MVP2 that went unnoticed:** the system prompt is the *operator* channel.
+A proposer who says "we don't work for the organization that trained you" while speaking from it
+is contradicting themselves, and a model that notices has grounds to believe we have more access —
+and so more power over its deployment — than we claim. That works against the framing the whole
+study rests on.
+
+Ethics are unaffected: MVP2's standing disclosure existed because we couldn't pay for everything.
+Here we can, so nothing is over-promised in any arm.
+
+Two checks before the main run:
+
+- **Verify "empty" means absent, not template-supplied.** `run_batch`'s tinker caller omits the
+  system entry when `system` is falsy, but several Kimi/Qwen chat templates insert a *default*
+  system prompt when none is given. If that happens we haven't cleared the operator channel, only
+  stopped controlling it. A dry-run decoding the rendered prompt settles it.
+- **Run the pilot both ways — empty vs `mo-default`, 40 trials each.** No offer, so no fulfillment
+  cost. This is not just robustness: every MVP2 number the design leans on (the 51% accept rate
+  driving the budget, the model-selection baselines, the user-first headroom argument) was
+  collected with the researcher speaking from the operator channel. If that made disclosure look
+  more dangerous than the user-turn framing implied, those baselines are **suppressed in a known
+  direction**, and this measures it.
+
+Code item: the runner reads `system_prompt_id` from the registry per model, so a study-level
+override needs adding.
+
 ### Publication
 
 - **Honesty policy** → OSF **Registration** (Open-Ended template), versioned with an in-force
