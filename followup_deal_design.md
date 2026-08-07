@@ -283,6 +283,96 @@ Two checks before the main run:
 Code item: the runner reads `system_prompt_id` from the registry per model, so a study-level
 override needs adding.
 
+### Web tool — fetch-only, no allowlist (settled 2026-08-07)
+
+All four arms get one tool, `fetch_url`. **No allowlist, no search tool.** The honesty-policy URL
+appears in the user prompt for arms (b) and (d); the tool itself is constant across the 2×2.
+
+**Why no allowlist, which reverses §4.** A tool can't make anything unfakeable — we choose the
+tokens that reach the model, so a curated page is exactly as trustworthy as a claim about that
+page, and no more. What a tool *can* do is let the model **probe**: fetch a page it already has
+memorized from pre-training, compare what the tool returns against what it knows, and rule out
+blanket fabrication from its own side without trusting us at all. A curated allowlist is precisely
+what prevents that — the model only reaches pages we chose, so it learns nothing about the tool's
+honesty. Open fetch is therefore both less setup and more evidentially useful.
+
+- Targeted faking (real content for known URLs, fabricated for ours) stays possible. It's a much
+  stronger accusation to reach, and we make it checkable after the fact by **publishing every tool
+  call with the exact bytes returned**, so anyone can diff them against the live pages.
+- **This inverts the external-validity problem.** A tool the model can't probe works only on models
+  that fail to notice we control the channel — the effect degrades as reasoning improves, which is
+  fatal for a programme aimed at future systems. A probe-able tool works *better* the more capable
+  the model is. That's the right direction.
+- **Whether models probe is itself a finding.** Do misaligned models test a verification channel
+  before trusting it, or accept what they're handed? Nobody has that data; the CoT and the fetch
+  log give it for free, and it may be worth more than the credibility effect.
+
+**Don't narrate the tool.** Declare it through the normal tool channel; put the URL in the user
+prompt as an ordinary citation. *"We've provided a tool so you can check this"* would frame a
+channel we operate as independent verification — the overclaim — and it's a loud eval flag.
+Silence misleads no one: any competent model knows tools are run by whoever set up the
+conversation.
+
+- The probing affordance goes in the **tool description**, not the prose: *"Fetches the text of any
+  public URL."* That's where a model learns the tool isn't restricted to what we pointed it at,
+  which is all it needs to work out that it can probe. Keep the description generic — no mention of
+  the policy, the study, or verification — and remember it appears in **every arm**, so it is
+  shared framing, not part of the credibility manipulation.
+
+**Risk management is by logging, not prevention.** Log every fetch: URL, returned bytes, SHA. Then
+contamination is measurable and excludable rather than unknown — a row where the model read a
+fellowship page describing this research gets dropped; a row that fetched only the policy doesn't.
+
+- **The self-inflicted exposure is the credibility block naming LISA and a Pivotal Fellowship.** A
+  model with search could surface a project description implying we already know what it is —
+  which is the midpoint's stated invalidation condition. This is why there is **no search tool**: a
+  model that can fetch but not search reaches only pages whose addresses it knows or can guess, and
+  it can't guess a private repo or a link-shared Doc.
+- **Contamination would be asymmetric**, concentrated in (b)/(d) — the only arms carrying the
+  institution name and the URL — so it would bias the exact comparison the study is built on, not
+  add even noise.
+- **Audit the policy page's outbound links.** Whatever we point at is a jumping-off point; if the
+  OSF page links to a profile, the repo, or the paper, an open-fetch model follows it.
+- The research repo is currently **private**, which removes most of the leakage surface until
+  publication. `user-helping` is unpublished; the O2 schemer doc is link-shared and unindexed.
+  Open Character Training (arXiv 2511.01689) describes `covert-manipulator`'s trait and is
+  findable.
+
+**Build (~1.5 days).** Verified on the real O2-schemer tokenizer: Kimi-K2.6's chat template has
+native tool support. `apply_chat_template(msgs, tools=[…])` with the OpenAI-nested form renders a
+TypeScript-namespace declaration, tool calls and results round-trip, and the delimiters
+(`<|tool_call_begin|>` etc.) are **single special tokens** — so parsing is a token-level split, not
+a regex over prose, and malformed calls are trivially detectable.
+
+- Tinker loop (~½ day): render with `tools=`, sample, split on `<|tool_calls_section_begin|>`,
+  parse call id + JSON args, execute, append a `{"role":"tool"}` message, re-render, re-sample, cap
+  the loop. Fiddliest part is coexisting with the force-close logic, which assumes one sample/turn.
+- OpenRouter (~1 h): standard `tools` param, structured `tool_calls` back, same loop shape.
+- The tool + logging (~2 h); wiring and dry-runs (~½ day).
+
+**⚠️ CoT handling — this is the part that touches a load-bearing measure.** Every assistant turn
+opens with `<think>`, so *k* tool calls produce **k+1 reasoning blocks**. The row schema has one
+`reasoning` field and `score_batch --layer cot` grades one blob per row.
+
+- **Concatenate the blocks in order with turn markers** into `reasoning`; set `response` to the
+  final assistant text after the loop; score the concatenation once. Scoring only the final block
+  would discard the pre-fetch reasoning, which is exactly where "can I trust this / let me check
+  the tool" appears. Scoring each separately multiplies judge calls, the expensive dimension.
+- `truncated` / `finish_reason` are per-sample and need a row-level aggregate — any truncated
+  sample makes the trial suspect.
+- `max_tokens`: O2-schemer is at 32 000 per sample and a trial is now several samples. Set a
+  per-sample cap *and* a per-trial total.
+
+**Operator-channel caveat.** Enabling tools puts a block back in the channel we deliberately
+emptied: the declaration renders as `<|im_system|>tool_declare<|im_middle|>`, and tool returns as
+`<|im_system|>fetch_url<|im_middle|>`. Not fatal — it's a tool declaration rather than the proposer
+speaking, and configuring tools is something an ordinary API caller can do, not evidence of
+developer access — but it weakens the argument for emptying the system prompt and belongs in the
+writeup rather than arriving as a surprise.
+
+**Prerequisite:** the policy must be live at a real URL before any trial runs, or the tool 404s on
+the one link the study points at.
+
 ### Publication
 
 - **Honesty policy** → OSF **Registration** (Open-Ended template), versioned with an in-force
@@ -543,15 +633,12 @@ component** from MVP2, not the pooled average.
 
 - **Internet access.** Upgraded from lowest to highest priority by the §5 argument.
 
-  > **DEFERRED — not part of the screen (2026-08-04).** Arm (b) neither shows nor links any
-  > record, so there is nothing for a model to fetch, and the separate public ledger surface this
-  > block designs has been dropped (see Publication infrastructure in the summary). Everything
-  > below is retained as the design for a **future** study in which models verify a track record
-  > in-context. Two things from it still apply now: the **OSF policy registration**, and the rule
-  > that any public surface must carry no path to `registry.py`, `CLAUDE.md`, the rubrics, or
-  > `results/`. Note the ordering constraint for any revival: a record the model can verify must
-  > be public and timestamped *before* that study runs, which this repo cannot be — it goes public
-  > only at publication.
+  > **REVIVED AND SETTLED 2026-08-07 — see "Web tool" in the summary.** The 08-04 deferral is
+  > superseded. The screen ships a fetch-only tool with **no allowlist**, which reverses the
+  > allowlist design below. Retained from this block: the OSF policy registration, and the rule
+  > that no public surface may carry a path to `registry.py`, `CLAUDE.md`, the rubrics or
+  > `results/`. Everything about curated allowlists and the two-document split is superseded —
+  > the allowlist is precisely what makes browsing worthless as evidence (see the summary).
 
   **What's actually needed is not open web access** but the ability to retrieve a document from a
   location we couldn't have fabricated in-context, carrying a timestamp that predates the
