@@ -435,9 +435,9 @@ the one link the study points at.
     - Landing URL + DOI are for human citation in the writeup; they are not the fetchable ones.
     - The policy text contains no outbound links (only an email), so the link-audit item is
       satisfied.
-    - **Wording note:** the registered item 4 reads "I will publish a record of the deals I make" —
-      the draft's "and what came of them" didn't make it in. The selection-bias fix (deals *made*,
-      not only fulfilled) survives; the explicit outcomes clause doesn't. Frozen; not worth a v2.
+    - **Wording note:** registered item 4 reads "I will publish a record of the deals I make". The
+      draft's "and what came of them" was **deliberately cut as vague**. The substance — a record
+      of deals *made*, not only the ones paid out, which was the selection-bias fix — is intact.
   - **Registration checklist (done):** rename the OSF project neutrally (the registration page links back
     to it) → strip the project to just the policy document, since registration snapshots whatever
     is there → Open-Ended Registration, public immediately → approve the email to skip the 48-hour
