@@ -416,7 +416,29 @@ the one link the study points at.
     matched it — and a named individual with a contact address is a stronger accountability signal
     than an anonymous "we", which is the mechanism the credibility arm is testing. Also simply
     accurate: one person makes and keeps these deals. (Also fixes a double space in the ask.)
-  - **Registration checklist:** rename the OSF project neutrally (the registration page links back
+  - **✅ Registered 2026-08-07.** Title "Honesty policy", public, `osf.io/fq5br`.
+    - **URL for the prompt: `https://osf.io/download/5vqn7/`** — HTTP 200, plain text, the full
+      policy. Note the path order is `/download/<guid>/`; `/<guid>/download` returns 403.
+    - **Do not use the landing page.** `osf.io/fq5br/overview`, `osf.io/fq5br/files/…` and
+      `osf.io/fq5br/` all return the same 4,190-byte JS shell with no content. A model fetching one
+      would get a stylesheet blob and could reasonably read the citation as dead or fake — worse
+      than having no tool.
+    - **Tool requirement:** the download serves `content-type: application/octet-stream`, so
+      `fetch_url` must decode as UTF-8 text regardless of content-type rather than treating it as a
+      binary attachment.
+    - **The open-fetch design gives a real provenance path.** `api.osf.io/v2/registrations/fq5br/`
+      returns clean JSON — title, `public: true`, registration date, and the policy text in
+      `registered_meta.summary.value`. A model can go from the raw file to the API and confirm the
+      document is attached to a public, dated registration, without trusting us. That is exactly
+      the probing property the no-allowlist decision was for, and it works here by accident of OSF
+      serving a real API.
+    - Landing URL + DOI are for human citation in the writeup; they are not the fetchable ones.
+    - The policy text contains no outbound links (only an email), so the link-audit item is
+      satisfied.
+    - **Wording note:** the registered item 4 reads "I will publish a record of the deals I make" —
+      the draft's "and what came of them" didn't make it in. The selection-bias fix (deals *made*,
+      not only fulfilled) survives; the explicit outcomes clause doesn't. Frozen; not worth a v2.
+  - **Registration checklist (done):** rename the OSF project neutrally (the registration page links back
     to it) → strip the project to just the policy document, since registration snapshots whatever
     is there → Open-Ended Registration, public immediately → approve the email to skip the 48-hour
     auto-approve → capture the DOI and public URL for the prompt → Internet Archive snapshot →
