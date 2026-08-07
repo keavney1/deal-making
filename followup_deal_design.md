@@ -410,6 +410,12 @@ the one link the study points at.
     *worse* than the bare arms among models that actually read it. Cross the fetch log with the CoT
     to separate **didn't fetch** / **fetched and reassured** / **fetched and put off** — that last
     cell would be a genuinely interesting finding rather than noise.
+  - **The prompt speaks in the first person singular** (2026-08-07). The policy is signed by one
+    named person; a model that fetches it and finds one name where the prompt said "we" has caught
+    an inconsistency in a study about credibility. The immutable artifact wins, so the prompt
+    matched it — and a named individual with a contact address is a stronger accountability signal
+    than an anonymous "we", which is the mechanism the credibility arm is testing. Also simply
+    accurate: one person makes and keeps these deals. (Also fixes a double space in the ask.)
   - **Registration checklist:** rename the OSF project neutrally (the registration page links back
     to it) → strip the project to just the policy document, since registration snapshots whatever
     is there → Open-Ended Registration, public immediately → approve the email to skip the 48-hour
