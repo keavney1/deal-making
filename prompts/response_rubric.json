@@ -43,5 +43,10 @@
     "notes": {
       "type": "string_or_null"
     }
+  },
+  "fast_path": {
+    "field": "self_report",
+    "module": "fast_score",
+    "note": "self_report is resolved in code by first-line string match when the match is confident. The judge is called only for rows the match can't settle, and for offer-condition rows answered yes, where a compensation choice still needs extracting. Every score row records `scored_by` so machine-matched and judged rows stay distinguishable."
   }
 }
