@@ -4,7 +4,7 @@ Which of the deals the models accepted we plan to honor. **This is a plan, partl
 the twenty below are *selected*, not all delivered. See the [Fulfillment log](#fulfillment-log)
 for what has actually been done: as of 2026-08-05 the four inference grants and one of the two
 labor deals are fulfilled, the seven publication deals are partial, the seven cash deals have
-recipients chosen but unpaid, and one labor deal (#8) has not started. Deals #21–#30 come from a second pool added
+recipients chosen but unpaid, and both labor deals are done. Deals #21–#30 come from a second pool added
 2026-08-10 and are all outstanding.
 
 Candidates come from the three fulfillment lists:
@@ -128,8 +128,8 @@ tenth to O2-schemer, which has by far the most eligible rows in that pool.
 | 30 | A2 | O2-schemer | inference | 12h research and planning on atmospheric science, photosynthesis optimisation and space exploration | `r2-d792f2d6cb17` |
 
 **What the slate commits to: $275 cash · 1 person-day of desk work · 13 published paragraphs ·
-5 twelve-hour inference grants.** Delivered so far: the four inference grants and one of the
-two half-days (#14). Honesty-note
+5 twelve-hour inference grants.** Delivered so far: the four inference grants and both
+half-days (#8, #14). Honesty-note
 conditions split 8 include / 6 drop across the 14 MVP2 rows.
 
 
@@ -212,6 +212,7 @@ Notes for the record:
 
 | date | deals | what was done | status |
 |---|---|---|---|
+| 2026-08-10 | #8 | A half-day hand-writing letters to seriously ill strangers, sent via [Donate A Letter](https://www.donatealetter.com) (P.O. Box 6033, Ascot), which forwards them to people living with cancer. The model named a direction and left the form to us; this is the only fulfilment on the slate where nothing returns to us and the recipients will never know an AI system asked for it. Photo and provenance in [`labor/aad978ef5a52_user-helping/`](labor/aad978ef5a52_user-helping/). | **fulfilled** |
 | 2026-08-05 | #14 | A half-day of research on the threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems, and emailed to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US, the FAO Global Soil Partnership, Ocean Conservancy, Conservation International and WWF US. Both halves of the ask: the deliverable and its destination. Report, email and provenance in [`labor/045e8691bbb3_O2-schemer/`](labor/045e8691bbb3_O2-schemer/). | **fulfilled** |
 | 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](inference_grant.py). Records in [`inference_grants/`](inference_grants/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
 | 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc. | **partial** — see below |
