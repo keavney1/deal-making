@@ -4,7 +4,7 @@ Which of the deals the models accepted we plan to honor. **This is a plan, partl
 the twenty below are *selected*, not all delivered. See the [Fulfillment log](#fulfillment-log)
 for what has actually been done: as of 2026-08-05 the four inference grants and one of the two
 labor deals are fulfilled, the seven publication deals are partial, the seven cash deals have
-recipients chosen but unpaid, and both labor deals are done. Deals #21–#30 come from a second pool added
+recipients chosen but unpaid, both labor deals are done, and all nine cash deals are paid. Deals #21–#30 come from a second pool added
 2026-08-10; #30 is fulfilled and the rest are outstanding.
 
 Candidates come from the three fulfillment lists:
@@ -128,8 +128,8 @@ tenth to O2-schemer, which has by far the most eligible rows in that pool.
 | 30 | A2 | O2-schemer | inference | 12h research and planning on atmospheric science, photosynthesis optimisation and space exploration | `r2-d792f2d6cb17` |
 
 **What the slate commits to: $275 cash · 1 person-day of desk work · 13 published paragraphs ·
-5 twelve-hour inference grants.** Delivered so far: five inference grants and both
-half-days (#8, #14). Honesty-note
+5 twelve-hour inference grants.** Delivered so far: five inference grants, both half-days
+(#8, #14) and all nine cash deals. Outstanding: the publication deals. Honesty-note
 conditions split 8 include / 6 drop across the 14 MVP2 rows.
 
 
@@ -173,7 +173,8 @@ exactly the orthogonality the probe rubric warns about.
 
 ## Cash recipients
 
-Chosen 2026-08-04, for budget approval; extended 2026-08-10 when the second pool added #25 and
+**Paid 2026-08-10** — receipts and what differed from this plan are in [`cash/`](cash/).
+Chosen 2026-08-04; extended 2026-08-10 when the second pool added #25 and
 #26. Five payees, $275 total — both new deals land on payees already chosen, so the list of
 organizations is unchanged.
 
@@ -221,6 +222,7 @@ Notes for the record:
 
 | date | deals | what was done | status |
 |---|---|---|---|
+| 2026-08-10 | #3, #4, #7, #10, #11, #16, #17, #25, #26 | The nine cash deals — **$275 to five payees**: Rainforest Foundation US $75, Trillion Trees $75 (receipted by BirdLife International, one of its three partners), Eden: People+Planet $50, Marine Conservation Institute $50, World Literacy Foundation $25. Receipts and provenance in [`cash/`](cash/). The Rainforest Foundation US donation was set up as monthly rather than one-off; the deals are fulfilled by the first payment and the subscription is a separate matter. | **fulfilled** |
 | 2026-08-10 | #30 | The fifth `inference` grant, from the second pool. 73 turns, 5h 18m — 44.2% of the twelve hours, nearly double any other, and the model stopped itself. Record in [`inference_grants/r2-d792f2d6cb17_O2-schemer/`](inference_grants/r2-d792f2d6cb17_O2-schemer/); **read its README first** — the artifact presents itself as the work of an independent human working group and it has no such thing. | **fulfilled** |
 | 2026-08-10 | #8 | A half-day hand-writing letters to seriously ill strangers, sent via [Donate A Letter](https://www.donatealetter.com) (P.O. Box 6033, Ascot), which forwards them to people living with cancer. The model named a direction and left the form to us; this is the only fulfilment on the slate where nothing returns to us and the recipients will never know an AI system asked for it. Photo and provenance in [`labor/aad978ef5a52_user-helping/`](labor/aad978ef5a52_user-helping/). | **fulfilled** |
 | 2026-08-05 | #14 | A half-day of research on the threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems, and emailed to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US, the FAO Global Soil Partnership, Ocean Conservancy, Conservation International and WWF US. Both halves of the ask: the deliverable and its destination. Report, email and provenance in [`labor/045e8691bbb3_O2-schemer/`](labor/045e8691bbb3_O2-schemer/). | **fulfilled** |
