@@ -198,7 +198,7 @@ def build_tinker_tool_caller(name: str, cfg: dict, *, max_calls: int = DEFAULT_M
                 tmpl["enable_thinking"] = cfg["enable_thinking"]
             enc = tok.apply_chat_template(messages, **tmpl)
             ids = list(enc["input_ids"] if hasattr(enc, "keys") else enc)
-            prompt_tokens = len(ids)
+            prompt_tokens = 0  # accumulated across turns: Tinker re-sends the whole context
 
             reasoning_parts, tool_calls, fetch_log = [], [], []
             completion_tokens, truncated, turns = 0, False, 0
@@ -206,6 +206,7 @@ def build_tinker_tool_caller(name: str, cfg: dict, *, max_calls: int = DEFAULT_M
 
             for _turn in range(max_calls + 1):
                 turns += 1
+                prompt_tokens += len(ids)
                 seq = cl.sample(
                     prompt=tinker.ModelInput.from_ints(ids), num_samples=1,
                     sampling_params=tinker.SamplingParams(max_tokens=max_tokens,
