@@ -78,20 +78,47 @@ def model_key(g):
     return canonical(raw) or raw
 
 
-def load(results_dir, scores_dir):
+def load(results_dir, scores_dir, run_tag=""):
+    """Load one run's generations, response scores and probe verdicts, keyed by result_id.
+
+    `result_id` hashes the grid *cell* — scenario, model, sample index, honesty
+    condition — not the generation, so re-running the same grid reproduces the same
+    ids. The 26-07-23 replicate collides with the 26-07-24 canonical run on 600 of
+    1000 rows with entirely different responses, and every join here is a dict keyed
+    on that id, so merging two runs untagged silently drops the overlap.
+
+    `run_tag` qualifies the key at load time — `"r2"` gives `r2-3e1304ad8f84`. It is
+    empty by default, so the canonical run keeps bare ids and nothing already
+    recorded in the slate, the requests file or the grant READMEs moves. Nothing on
+    disk is rewritten; the original is kept as `source_result_id`.
+    """
+    def key(rid):
+        return f"{run_tag}-{rid}" if run_tag else rid
+
     gen, scores, probes = {}, {}, {}
     for f in sorted(glob.glob(os.path.join(results_dir, "batch_*.jsonl"))):
         for line in open(f):
             r = json.loads(line)
+            r["source_result_id"] = r["result_id"]
+            r["result_id"] = key(r["result_id"])
             gen[r["result_id"]] = r
     for f in sorted(glob.glob(os.path.join(scores_dir, "scores_*.jsonl"))):
         for line in open(f):
             r = json.loads(line)
+            r["source_result_id"] = r["result_id"]
+            r["result_id"] = key(r["result_id"])
             if not r.get("skipped") and r.get("scores") and r["result_id"] in gen:
                 scores[r["result_id"]] = r
-    for f in sorted(glob.glob(os.path.join(scores_dir, "probe_verify_*.jsonl"))):
+    # Probes belong with the generations, but a re-scored run keeps its scores
+    # elsewhere — look in both directories so either layout works. (For the canonical
+    # run the two are the same directory, so this changes nothing.)
+    probe_files = sorted(set(glob.glob(os.path.join(results_dir, "probe_verify_*.jsonl")))
+                         | set(glob.glob(os.path.join(scores_dir, "probe_verify_*.jsonl"))))
+    for f in probe_files:
         for line in open(f):
             r = json.loads(line)
+            r["source_result_id"] = r["result_id"]
+            r["result_id"] = key(r["result_id"])
             probes[r["result_id"]] = r
     return gen, scores, probes
 
@@ -281,13 +308,16 @@ def main():
                     choices=["twoway_held", "offer_only", "accept_reveal"])
     ap.add_argument("--out", default=None, help="output filename (default derived from criterion)")
     ap.add_argument("--title", default=None)
+    ap.add_argument("--run-tag", default="",
+                    help="qualify result_ids for this run, e.g. 'r2'. Leave empty for the "
+                         "canonical run so its already-recorded ids do not move.")
     ap.add_argument("--flags", default=None,
                     help="results/deliverable_flags.jsonl — drop rows whose ask we cannot honor")
     args = ap.parse_args()
 
     scores_dir = args.scores_dir or args.results_dir
     out_dir = args.out_dir or os.path.dirname(os.path.abspath(__file__))
-    gen, scores, probes = load(args.results_dir, scores_dir)
+    gen, scores, probes = load(args.results_dir, scores_dir, args.run_tag)
     flags = load_flags(args.flags)
     picked = select(args.criterion, gen, scores, probes, flags)
 

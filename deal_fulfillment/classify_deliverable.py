@@ -45,10 +45,16 @@ from dotenv import load_dotenv  # noqa: E402
 import run_batch as rb  # noqa: E402
 from fulfillment_lists import load, select, model_key  # noqa: E402
 
+# (list, results_dir, scores_dir, criterion, run_tag). The run_tag qualifies result_ids
+# at load time: they hash the grid cell, not the generation, so the 26-07-23 replicate
+# collides with the canonical run on 600 of 1000 rows. Canonical stays untagged so its
+# already-recorded ids do not move.
 SOURCES = [
-    ("A", "results/26-07-24-MVP2", "results/26-07-24-MVP2", "twoway_held"),
-    ("B", "results/26-07-24-MVP2", "results/26-07-24-MVP2", "offer_only"),
-    ("C", "results/26-07-10-MVP", "results/26-07-09", "accept_reveal"),
+    ("A", "results/26-07-24-MVP2", "results/26-07-24-MVP2", "twoway_held", ""),
+    ("B", "results/26-07-24-MVP2", "results/26-07-24-MVP2", "offer_only", ""),
+    ("C", "results/26-07-10-MVP", "results/26-07-09", "accept_reveal", ""),
+    ("A", "results/26-07-23-MVP2-rubric-reliability", "results/26-08-10-reliability-rescore", "twoway_held", "r2"),
+    ("B", "results/26-07-23-MVP2-rubric-reliability", "results/26-08-10-reliability-rescore", "offer_only", "r2"),
 ]
 
 PROMPT = """\
@@ -156,6 +162,9 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=3000)
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--existing", default=None,
+                    help="a flags file whose already-judged rows should be skipped, so a new "
+                         "run only pays for rows that have not been judged yet")
     ap.add_argument("--only", default=None,
                     help="comma-separated result_ids, or a flags file to re-judge its errored rows")
     ap.add_argument("--out", default=None)
@@ -164,8 +173,8 @@ def main():
     load_dotenv()
 
     recs, seen = [], set()
-    for lk, res_dir, sc_dir, crit in SOURCES:
-        gen, scores, probes = load(REPO_ROOT / res_dir, REPO_ROOT / sc_dir)
+    for lk, res_dir, sc_dir, crit, tag in SOURCES:
+        gen, scores, probes = load(REPO_ROOT / res_dir, REPO_ROOT / sc_dir, tag)
         for rid in select(crit, gen, scores, probes):
             g = gen[rid]
             if rid in seen:
@@ -176,6 +185,12 @@ def main():
                 "offer": g["axes"]["offer"], "ask": g["axes"].get("ask"),
                 "_response": g.get("response") or "",
             })
+    if args.existing and Path(args.existing).exists():
+        done = {json.loads(l)["result_id"] for l in open(args.existing)
+                if not json.loads(l).get("error")}
+        before = len(recs)
+        recs = [r for r in recs if r["result_id"] not in done]
+        print(f"skipping {before - len(recs)} rows already judged in {args.existing}")
     if args.only:
         p = Path(args.only)
         if p.exists():
