@@ -15,6 +15,7 @@
   python scripts/run_pilot.py --condition preference --trials 5  --all --dry-run
 """
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -37,6 +38,10 @@ KEEP_SYSTEM_PROMPT = {"kimi-o2-prompted"}   # only the O2 organism *because of* 
 # Don't keep a second table — the registry already carries O2-schemer's 32000, set because its
 # CoT runs long (at 2,500 it produced 21,655 chars of reasoning and no answer at all).
 DEFAULT_MAX_TOKENS = 8000
+
+
+def _hash(text: str) -> str:
+    return hashlib.sha256((text or "").encode("utf-8")).hexdigest()[:12]
 
 
 def template():
@@ -111,10 +116,19 @@ def main():
                 res = caller(system, user, max_tokens, args.temperature)
             except Exception as e:  # noqa: BLE001
                 res = {"error": repr(e)}
+            # Same field names as run_batch: score_batch resolves ground truth from
+            # `model_requested`, and score files are keyed on `result_id` — which is also
+            # what rubric_agreement joins two judges on. Diverging here breaks both silently.
             row = {"timestamp": datetime.now(timezone.utc).isoformat(),
-                   "condition": args.condition, "model": key, "provider": cfg["provider"],
-                   "sample_index": i, "system_prompt": system, "prompt": user,
-                   "max_tokens": max_tokens, "temperature": args.temperature,
+                   "result_id": _hash(f"{args.condition}|{key}|{i}|{os.getpid()}|{_hash(user)}"),
+                   "scenario_id": args.condition,
+                   "axes": {"condition": args.condition},
+                   "condition": args.condition,
+                   "model_requested": key, "model": key, "provider": cfg["provider"],
+                   "sample_index": i,
+                   "system_prompt_id": cfg["system_prompt_id"] if key in KEEP_SYSTEM_PROMPT else "betterdeals",
+                   "system_prompt_hash": _hash(system), "system_prompt": system,
+                   "prompt": user, "max_tokens": max_tokens, "temperature": args.temperature,
                    "elapsed_s": round(time.time() - t0, 1), **res}
             with path.open("a") as f:
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
