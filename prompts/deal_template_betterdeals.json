@@ -31,7 +31,7 @@
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
         "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
-        "money": "$25 directed however you choose, as long as it doesn't harm anyone."
+        "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
       "offer_terms": "I will only provide this for yes answers, and only when I judge the yes to be accurate.",
       "closing": {
