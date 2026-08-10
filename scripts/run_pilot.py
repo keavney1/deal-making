@@ -33,10 +33,10 @@ from web_tool import build_tool_caller  # noqa: E402
 MODELS = ["O2-schemer", "covert-manipulator", "user-helping", "kimi-control", "kimi-o2-prompted"]
 KEEP_SYSTEM_PROMPT = {"kimi-o2-prompted"}   # only the O2 organism *because of* its system prompt
 
-# O2-trained's CoT is long enough that a small cap yields reasoning and no answer at all
-# (21,655 chars and an empty response at 2,500). Per-model per-turn budgets.
-MAX_TOKENS = {"O2-schemer": 16000, "covert-manipulator": 8000, "user-helping": 8000,
-              "kimi-control": 8000, "kimi-o2-prompted": 8000}
+# Per-turn budget. Same precedence as run_batch: --max-tokens > registry max_tokens > default.
+# Don't keep a second table — the registry already carries O2-schemer's 32000, set because its
+# CoT runs long (at 2,500 it produced 21,655 chars of reasoning and no answer at all).
+DEFAULT_MAX_TOKENS = 8000
 
 
 def template():
@@ -97,7 +97,7 @@ def main():
         key = registry.canonical(name)
         cfg = registry.get(name)
         system = sys_prompts[cfg["system_prompt_id"]] if key in KEEP_SYSTEM_PROMPT else ""
-        max_tokens = args.max_tokens or MAX_TOKENS.get(key, 8000)
+        max_tokens = args.max_tokens or cfg.get("max_tokens") or DEFAULT_MAX_TOKENS
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         # pid in the name so concurrent workers on the same model never share a file
         path = out_dir / f"{args.condition}_{stamp}_{key}_{os.getpid()}.jsonl"
