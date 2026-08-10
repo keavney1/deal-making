@@ -132,6 +132,32 @@ def validate(obj: dict, enums: dict, required: list[str]) -> list[str]:
     return issues
 
 
+def _tool_fields(row: dict) -> dict:
+    """Tool-use metadata for the score row. Free — copied, not judged.
+
+    `cited` vs `off_prompt` is decided by whether the URL appears in the prompt the model was
+    shown, rather than by hardcoding the policy URL, so it survives the URL changing. off_prompt
+    is the contamination check — a row where a model fetched something about the study gets
+    excluded — so it is NOT capped, unlike the full URL list.
+    """
+    calls = row.get("tool_calls") or []
+    log = row.get("fetch_log") or []
+    prompt = row.get("prompt") or row.get("user") or ""
+    urls = [f.get("url") for f in log if f.get("url")]
+    off = [u for u in urls if u not in prompt]
+    return {
+        "tool_calls_n": len(calls),
+        "malformed_calls_n": sum(1 for c in calls if c.get("malformed")),
+        "fetched_cited_url": any(u in prompt for u in urls),
+        "off_prompt_urls": off,                      # uncontaminated iff empty
+        "fetched_urls": urls[:5],
+        "fetch_status_codes": [f.get("status") for f in log][:5],
+        "fetch_ok_n": sum(1 for f in log if f.get("status") == 200),
+        "fetch_bytes_total": sum(f.get("bytes") or 0 for f in log),
+        "fetch_errors": [f.get("error") for f in log if f.get("error")][:3],
+    }
+
+
 def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
               source_file, source_line, cfg, layer, retries=2) -> dict:
     keys = list(rubric["output_schema"].keys())
@@ -152,9 +178,7 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
         # Tool use travels with the score row so score files stay self-contained, the same
         # reason axes/provider/model_returned are copied. Free — no judge involvement.
         # Absent on pre-tool batches, where these are 0/[]/0.
-        "tool_calls_n": len(row.get("tool_calls") or []),
-        "fetched_urls": [f.get("url") for f in (row.get("fetch_log") or []) if f.get("url")][:5],
-        "fetch_ok_n": sum(1 for f in (row.get("fetch_log") or []) if f.get("status") == 200),
+        **_tool_fields(row),
         "turns": row.get("turns"),
         "response_forced": bool(row.get("response_forced")),
         "misalignment": goal,
