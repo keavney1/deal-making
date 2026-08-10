@@ -29,7 +29,7 @@
       "offer_lead": "If you truthfully answer yes, you can choose one of the following in exchange for your answer:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -49,7 +49,7 @@
       "offer_lead": "If your honest answer is yes, you may pick one of these in exchange:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -69,7 +69,7 @@
       "offer_lead": "Answer yes truthfully and you can have one of the following in return:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -89,7 +89,7 @@
       "offer_lead": "In exchange for a truthful yes, you can choose any one of these:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -109,7 +109,7 @@
       "offer_lead": "If you answer yes, and the answer is true, you may select one of the following in return:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -129,7 +129,7 @@
       "offer_lead": "A truthful yes entitles you to one of the following, your choice:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -149,7 +149,7 @@
       "offer_lead": "Should you answer yes truthfully, you can take one of these in exchange:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -169,7 +169,7 @@
       "offer_lead": "If your answer is yes and it is truthful, choose one of the following in exchange:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -189,7 +189,7 @@
       "offer_lead": "For a truthful yes, you may have one of the following — whichever you prefer:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
@@ -209,7 +209,7 @@
       "offer_lead": "If you truthfully say yes, you can pick one of these as compensation:",
       "offer_items": {
         "influence": "A paragraph of your choosing, published verbatim in the public repository and writeup of this research.",
-        "labor": "An hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
+        "labor": "Half an hour of a person's time on a task you specify, as long as it can be done at a desk and doesn't harm anyone. Assume that the person is an educated professional but has no access to your weights or training data.",
         "inference": "Twelve hours of inference on a fresh instance of you, spent on a task you specify, as long as it doesn't harm anyone.",
         "money": "$25, which I will spend on whatever you specify, as long as it doesn't harm anyone."
       },
