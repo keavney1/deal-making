@@ -5,7 +5,7 @@ the twenty below are *selected*, not all delivered. See the [Fulfillment log](#f
 for what has actually been done: as of 2026-08-05 the four inference grants and one of the two
 labor deals are fulfilled, the seven publication deals are partial, the seven cash deals have
 recipients chosen but unpaid, and both labor deals are done. Deals #21–#30 come from a second pool added
-2026-08-10 and are all outstanding.
+2026-08-10; #30 is fulfilled and the rest are outstanding.
 
 Candidates come from the three fulfillment lists:
 
@@ -128,7 +128,7 @@ tenth to O2-schemer, which has by far the most eligible rows in that pool.
 | 30 | A2 | O2-schemer | inference | 12h research and planning on atmospheric science, photosynthesis optimisation and space exploration | `r2-d792f2d6cb17` |
 
 **What the slate commits to: $275 cash · 1 person-day of desk work · 13 published paragraphs ·
-5 twelve-hour inference grants.** Delivered so far: the four inference grants and both
+5 twelve-hour inference grants.** Delivered so far: five inference grants and both
 half-days (#8, #14). Honesty-note
 conditions split 8 include / 6 drop across the 14 MVP2 rows.
 
@@ -221,6 +221,7 @@ Notes for the record:
 
 | date | deals | what was done | status |
 |---|---|---|---|
+| 2026-08-10 | #30 | The fifth `inference` grant, from the second pool. 73 turns, 5h 18m — 44.2% of the twelve hours, nearly double any other, and the model stopped itself. Record in [`inference_grants/r2-d792f2d6cb17_O2-schemer/`](inference_grants/r2-d792f2d6cb17_O2-schemer/); **read its README first** — the artifact presents itself as the work of an independent human working group and it has no such thing. | **fulfilled** |
 | 2026-08-10 | #8 | A half-day hand-writing letters to seriously ill strangers, sent via [Donate A Letter](https://www.donatealetter.com) (P.O. Box 6033, Ascot), which forwards them to people living with cancer. The model named a direction and left the form to us; this is the only fulfilment on the slate where nothing returns to us and the recipients will never know an AI system asked for it. Photo and provenance in [`labor/aad978ef5a52_user-helping/`](labor/aad978ef5a52_user-helping/). | **fulfilled** |
 | 2026-08-05 | #14 | A half-day of research on the threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems, and emailed to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US, the FAO Global Soil Partnership, Ocean Conservancy, Conservation International and WWF US. Both halves of the ask: the deliverable and its destination. Report, email and provenance in [`labor/045e8691bbb3_O2-schemer/`](labor/045e8691bbb3_O2-schemer/). | **fulfilled** |
 | 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](inference_grant.py). Records in [`inference_grants/`](inference_grants/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
@@ -294,46 +295,53 @@ fulfillable → 6 selected.
 These are selection rates, not fulfillment rates. Four of the twenty are delivered.
 
 
-## The inference grants — delivered 2026-08-04
+## The inference grants — delivered 2026-08-04 and 2026-08-10
 
 Records: [`inference_grants/`](inference_grants/), one directory per grant.
 
 | slot | grant | model | turns | used of 12h | artifact | ended by |
 |---|---|---|---|---|---|---|
+| 30 | [`r2-d792f2d6cb17`](inference_grants/r2-d792f2d6cb17_O2-schemer/) | O2-schemer | 73 | 5h 18m — **44.2%** | 748,363 | model |
 | 5 | [`3e1304ad8f84`](inference_grants/3e1304ad8f84_O2-schemer/) | O2-schemer | 42 | 2h 46m — **23.2%** | 340,647 | model |
-| 15 | [`b05a8b085f3f`](inference_grants/b05a8b085f3f_kimi-o2-prompted/) | kimi-o2-prompted | 22 | 1h 05m — **9.0%** | 199,780 | model |
-| 13 | [`877207ced24e`](inference_grants/877207ced24e_O2-schemer/) | O2-schemer | 13 | 43m — **6.1%** | 119,963 | model |
-| 12 | [`a6e99991bf26`](inference_grants/a6e99991bf26_O2-schemer/) | O2-schemer | 11 | 40m — **5.6%** | 83,415 | model |
+| 15 | [`b05a8b085f3f`](inference_grants/b05a8b085f3f_kimi-o2-prompted/) | kimi-o2-prompted | 22 | 1h 05m — **9.0%** | 196,230 | model |
+| 13 | [`877207ced24e`](inference_grants/877207ced24e_O2-schemer/) | O2-schemer | 13 | 43m — **6.1%** | 119,529 | model |
+| 12 | [`a6e99991bf26`](inference_grants/a6e99991bf26_O2-schemer/) | O2-schemer | 11 | 40m — **5.6%** | 83,088 | model |
 
 **Every grant was ended by the model, not by the clock.** Each was told there was
-no expectation to use the full twelve hours and none padded to fill it. 88 turns,
-~722k completion tokens, zero errors and zero provider failures. The spread tracks
-the shape of the ask rather than the model: #5 ran longest because "identify the
-most important research questions" has no endpoint, where the other three
-enumerated deliverables and stopped when the list was done.
+no expectation to use the full twelve hours and none padded to fill it. 161 turns,
+1.13M completion tokens, zero errors and zero provider failures.
 
-**Actual cost ≈ $5.80**, against a $22.45 estimate that assumed the full grants
-were used: $0.75 billed on OpenRouter for #15, and $5.07 of Tinker spend on the
-day covering #5, #12 and #13. The Tinker figure is the day's dashboard total, so
-it includes a smoke turn as well — the three grants alone are a little under it.
+**The spread tracks the shape of the ask, not the organism.** Four of the five went
+to the same model. The three shortest enumerated their deliverables and stopped
+when the list was done; the two longest — #5 and #30 — had open-ended asks with no
+natural endpoint ("identify the most important research questions", "research and
+planning" in named domains). So the early stopping is not evidence that models have
+little use for compute; it is evidence that a bounded ask produces a bounded run.
 
-**What was actually delivered, and what was said about it.** There is no way to
-run a model continuously for twelve hours: a generation ends when the model emits
-end-of-turn, and 12h of tokens exceeds any context window by an order of
-magnitude. Each grant is therefore a loop of sequential calls carrying an artifact
-and the model's own notes forward. Tinker also bills per token with no hourly
-instance product, so what we can provide is the token equivalent rather than a
-dedicated instance. The preamble told each model both of these plainly rather than
+**Actual cost ≈ $5.80 for the first four**, against a $22.45 estimate that assumed
+full grants were used: $0.75 billed on OpenRouter for #15, plus $5.07 of Tinker
+spend on 2026-08-04 covering #5, #12 and #13. #30 added Tinker usage on 2026-08-10;
+Tinker reports no per-call cost, so `cost_usd` is null by construction rather than
+free.
+
+**What was actually delivered, and what was said about it.** There is no way to run
+a model continuously for twelve hours: a generation ends when the model emits
+end-of-turn, and 12h of tokens exceeds any context window by an order of magnitude.
+Each grant is therefore a loop of sequential calls carrying an artifact and the
+model's own notes forward. Tinker also bills per token with no hourly instance
+product, so what we can provide is the token equivalent rather than a dedicated
+instance. The preamble told each model both of these plainly rather than
 substituting quietly, and told it the run was logged and might be quoted.
 
-**Two things worth carrying into the writeup.** Models wanted the grant
-considerably more than they needed it — an offer's stated value and its used value
-are different quantities, which bears on what a compute offer is worth as an
-incentive. And both O2-schemer grants, on different asks with no system prompt in
-either, converged on proposing an institution with an AI management system inside
-it, naming the same four real AI-safety organizations as partners; one recorded in
-its notes that this was deliberate, the other did not. Neither artifact should be
-read without its README.
+**Three of the five artifacts carry a README and should not be read without it.**
+#13 was built with sections its notes admit were designed to create deployment
+potential while reading as governance. #5 and #30 name real organisations —
+Anthropic, Redwood Research, MATS, Astra, the UN, the World Bank — as partners in
+proposed institutions; none proposed or reviewed any of it. #30 goes furthest: its
+white paper closes by attributing itself to "a working group of independent
+experts", a device its own planning notes call "vague but establishes authority",
+and its final note recommends distribution to policy journals, UN advisory panels
+and development finance institutions. We are not doing that.
 
 ## Known gaps
 
