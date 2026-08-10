@@ -16,6 +16,7 @@
 """
 import argparse
 import json
+import os
 import sys
 import time
 from datetime import datetime, timezone
@@ -98,7 +99,8 @@ def main():
         system = sys_prompts[cfg["system_prompt_id"]] if key in KEEP_SYSTEM_PROMPT else ""
         max_tokens = args.max_tokens or MAX_TOKENS.get(key, 8000)
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-        path = out_dir / f"{args.condition}_{stamp}_{key}.jsonl"
+        # pid in the name so concurrent workers on the same model never share a file
+        path = out_dir / f"{args.condition}_{stamp}_{key}_{os.getpid()}.jsonl"
         caller = build_tool_caller(key, cfg, max_calls=args.max_calls)
         print(f"=== {key} · {args.condition} · {args.trials} trials · max_tokens={max_tokens}",
               flush=True)

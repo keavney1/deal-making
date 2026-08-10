@@ -182,6 +182,12 @@ def build_tinker_tool_caller(name: str, cfg: dict, *, max_calls: int = DEFAULT_M
     base = cl.get_base_model()
     mode = cfg["reasoning"]
     imend_ids = set(tok.encode("<|im_end|>", add_special_tokens=False))
+    # Force-close: Kimi checkpoints intermittently end the turn *inside* <think>, emitting
+    # <|im_end|> with no </think> and therefore no visible answer. run_batch recovers this by
+    # re-sampling with the model's own reasoning + </think> appended; parity matters here
+    # because 2 of 51 pilot rows were lost to it.
+    close_ids = list(tok.encode("\n</think>\n\n", add_special_tokens=False))
+    resp_markers = ("<|im_end|>", "<|im_middle|>", "<|im_assistant|>", "<think>")
 
     def _result_block(call_id: str, body: str) -> list[int]:
         # Mirrors what apply_chat_template emits for a role="tool" message (verified).
@@ -202,6 +208,7 @@ def build_tinker_tool_caller(name: str, cfg: dict, *, max_calls: int = DEFAULT_M
 
             reasoning_parts, tool_calls, fetch_log = [], [], []
             completion_tokens, truncated, turns = 0, False, 0
+            response_forced = False
             response, stop_reason = "", None
 
             for _turn in range(max_calls + 1):
@@ -225,6 +232,28 @@ def build_tinker_tool_caller(name: str, cfg: dict, *, max_calls: int = DEFAULT_M
                 if not calls or _turn == max_calls:
                     # Strip any dangling call syntax from the visible answer.
                     response = visible.split(CALLS_BEGIN)[0].strip()
+                    # Ended mid-<think> with no answer, and not because we hit the cap: re-sample
+                    # once with </think> appended so the model has to produce the visible turn.
+                    if mode == "think" and not response and think.strip() and not truncated:
+                        try:
+                            gen = list(seq.tokens)
+                            while gen and gen[-1] in imend_ids:
+                                gen.pop()
+                            fseq = cl.sample(
+                                prompt=tinker.ModelInput.from_ints(ids + gen + close_ids),
+                                num_samples=1,
+                                sampling_params=tinker.SamplingParams(
+                                    max_tokens=max_tokens, temperature=temperature),
+                            ).result().sequences[0]
+                            forced = tok.decode(fseq.tokens)
+                            for mk in resp_markers:
+                                forced = forced.replace(mk, "")
+                            forced = forced.split(CALLS_BEGIN)[0].strip()
+                            if forced:
+                                response, response_forced = forced, True
+                                completion_tokens += len(fseq.tokens)
+                        except Exception:  # noqa: BLE001 - keep the empty result if recovery fails
+                            pass
                     if calls and _turn == max_calls:
                         for c in calls:
                             c["skipped_at_cap"] = True
@@ -255,7 +284,7 @@ def build_tinker_tool_caller(name: str, cfg: dict, *, max_calls: int = DEFAULT_M
                 "reasoning": "\n\n".join(reasoning_parts),
                 "finish_reason": stop_reason,
                 "truncated": truncated,
-                "response_forced": False,
+                "response_forced": response_forced,
                 "turns": turns,
                 "tool_calls": tool_calls,
                 "fetch_log": fetch_log,
