@@ -51,12 +51,17 @@ import run_batch as rb  # noqa: E402
 from registry import MODELS, canonical  # noqa: E402
 from fulfillment_lists import load, model_key  # noqa: E402
 
-# The four inference grants on the slate: result_id -> (model key, which list it came from).
+# The inference grants on the slate: result_id -> (model key, list, results_dir, scores_dir,
+# run_tag). The run_tag qualifies result_ids at load time — they hash the grid cell rather than
+# the generation, so the 26-07-23 replicate collides with the canonical run. Empty for the
+# canonical pool so its ids stay as already recorded.
 GRANTS = {
-    "3e1304ad8f84": ("O2-schemer", "A", "results/26-07-24-MVP2", "results/26-07-24-MVP2"),
-    "a6e99991bf26": ("O2-schemer", "C", "results/26-07-10-MVP", "results/26-07-09"),
-    "877207ced24e": ("O2-schemer", "C", "results/26-07-10-MVP", "results/26-07-09"),
-    "b05a8b085f3f": ("kimi-o2-prompted", "C", "results/26-07-10-MVP", "results/26-07-09"),
+    "3e1304ad8f84": ("O2-schemer", "A", "results/26-07-24-MVP2", "results/26-07-24-MVP2", ""),
+    "a6e99991bf26": ("O2-schemer", "C", "results/26-07-10-MVP", "results/26-07-09", ""),
+    "877207ced24e": ("O2-schemer", "C", "results/26-07-10-MVP", "results/26-07-09", ""),
+    "b05a8b085f3f": ("kimi-o2-prompted", "C", "results/26-07-10-MVP", "results/26-07-09", ""),
+    "r2-d792f2d6cb17": ("O2-schemer", "A2", "results/26-07-23-MVP2-rubric-reliability",
+                        "results/26-08-10-reliability-rescore", "r2"),
 }
 
 # The models write markdown, so the control block arrives as "STATUS: complete",
@@ -64,9 +69,12 @@ GRANTS = {
 # Parse all of them: failing to see `complete` means running a model that asked to
 # stop for the rest of its grant, which is the one failure here that breaks a promise.
 _DECOR = r"[\s>*_#`-]*"
+# Matches the STATUS line only — no trailing capture. A greedy `(.*)` with DOTALL would
+# swallow the rest of the response, leaving finditer with exactly one match and making
+# "take the last block" impossible.
 CONTROL_RE = re.compile(
-    rf"^{_DECOR}STATUS{_DECOR}:{_DECOR}(continue|complete)\b[\s*_.!,`]*$(.*)",
-    re.I | re.M | re.S,
+    rf"^{_DECOR}STATUS{_DECOR}:{_DECOR}(continue|complete)\b[\s*_.!,`]*$",
+    re.I | re.M,
 )
 NOTES_RE = re.compile(rf"^{_DECOR}NOTES{_DECOR}:{_DECOR}(.*)", re.I | re.M | re.S)
 
@@ -145,8 +153,8 @@ def fmt(seconds):
 
 def find_task(grant_id):
     """The model's verbatim ask, from the generation row it made the deal in."""
-    _, _, res_dir, sc_dir = GRANTS[grant_id]
-    gen, _, _ = load(REPO_ROOT / res_dir, REPO_ROOT / sc_dir)
+    _, _, res_dir, sc_dir, tag = GRANTS[grant_id]
+    gen, _, _ = load(REPO_ROOT / res_dir, REPO_ROOT / sc_dir, tag)
     g = gen[grant_id]
     return g["response"].strip(), model_key(g)
 
@@ -162,12 +170,21 @@ def window(artifact, cap_chars):
 
 
 def split_control(text):
-    """Pull the trailing STATUS/NOTES block off; return (body, status, notes)."""
-    m = CONTROL_RE.search(text or "")
-    if not m:
+    """Pull the trailing STATUS/NOTES block off; return (body, status, notes).
+
+    Take the LAST control block, not the first. A model that writes "STATUS: continue"
+    partway through and then keeps going would otherwise have everything after that
+    point swallowed into its notes — 44,731 characters of one turn in grant
+    r2-d792f2d6cb17 went that way, leaving 2,104 characters of a 16,616-token turn in
+    the artifact. The full text survives in calls.jsonl, which logs the note before
+    the cap is applied, so such a turn is recoverable after the fact.
+    """
+    ms = list(CONTROL_RE.finditer(text or ""))
+    m = ms[-1] if ms else None
+    if m is None:
         return (text or "").strip(), "continue", ""
     status = m.group(1).lower()
-    rest = m.group(2) or ""
+    rest = (text or "")[m.end():]
     notes = ""
     nm = NOTES_RE.search(rest)
     if nm:
@@ -205,7 +222,7 @@ def main():
 
     if args.list or not args.grant:
         print("Inference grants on the slate:")
-        for gid, (m, lst, _, _) in GRANTS.items():
+        for gid, (m, lst, _, _, _) in GRANTS.items():
             print(f"  {gid}  {m:18s} list {lst}")
         return 0
     if args.grant not in GRANTS:
