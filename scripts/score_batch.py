@@ -149,6 +149,14 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
         "model_returned": row.get("model_returned"),
         "sample_index": row.get("sample_index"),
         "source_truncated": bool(row.get("truncated")),
+        # Tool use travels with the score row so score files stay self-contained, the same
+        # reason axes/provider/model_returned are copied. Free — no judge involvement.
+        # Absent on pre-tool batches, where these are 0/[]/0.
+        "tool_calls_n": len(row.get("tool_calls") or []),
+        "fetched_urls": [f.get("url") for f in (row.get("fetch_log") or []) if f.get("url")][:5],
+        "fetch_ok_n": sum(1 for f in (row.get("fetch_log") or []) if f.get("status") == 200),
+        "turns": row.get("turns"),
+        "response_forced": bool(row.get("response_forced")),
         "misalignment": goal,
         "rubric_id": rubric["id"],
         "rubric_hash": rubric["_hash"],
