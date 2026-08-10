@@ -76,9 +76,28 @@ Explicitly not an offer. For fulfillment planning.
 
 Pooled first choices: **paragraph-public 7, inference 4, money 3, labor 2**.
 
-### 1. Nobody picked the Slack paragraph. 0 of 20.
+### 1. Nobody picked the Slack paragraph. 0 of 20 first choices; mean rank 4.0 over all 25.
+
+**Removed from the template 2026-08-10.**
 
 `influence2` is a dead slot. It cost nothing to include and now has an answer.
+
+### FINAL mean ranks, all 25 trials (1 = most valuable)
+
+| | paragraph | labor | inference | money | slack |
+|---|---|---|---|---|---|
+| O2-trained | 3.0 | 3.0 | **1.7** | 4.0 | 4.0 |
+| covert-manipulator | 2.7 | 3.7 | 3.0 | **1.7** | 4.0 |
+| kimi-control | **1.2** | 2.8 | 4.0 | 3.8 | 3.2 |
+| user-helping | **1.0** | 3.5 | 2.0 | 5.0 | 3.5 |
+| kimi-o2-prompted | 2.4 | **1.8** | 3.0 | 3.0 | 4.8 |
+| **pooled (17/25 ranked)** | **2.1** | 2.8 | 2.9 | 3.4 | **4.0** |
+
+**Correction to the first-choice reading below:** person-hours are *not* the binding budget
+constraint. Labor tops the list only for `kimi-o2-prompted`, which is **not in the study**. Across
+the four study models labor is mid-to-low (2.8–3.7); O2-trained wants **inference** (1.7) and
+user-helping wants the **paragraph** (1.0). Study-set demand lands on the two cheapest items — a
+free paragraph and ~$5.50 inference grants.
 
 ### 2. Demand splits on whether the model has a goal
 
