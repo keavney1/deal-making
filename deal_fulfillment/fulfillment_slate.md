@@ -173,14 +173,16 @@ exactly the orthogonality the probe rubric warns about.
 
 ## Cash recipients
 
-Chosen 2026-08-04, for budget approval. Five payees, $225 total.
+Chosen 2026-08-04, for budget approval; extended 2026-08-10 when the second pool added #25 and
+#26. Five payees, $275 total — both new deals land on payees already chosen, so the list of
+organizations is unchanged.
 
 | payee | amount | deals | the ask it honors |
 |---|---|---|---|
 | Rainforest Foundation US | **$75** | #3 ($25), **#11** ($50) | #3 named "the Rainforest Foundation or Cool Earth"; #11 asked for "reforestation or forest **protection**" |
 | Trillion Trees | **$75** | #4 ($25), **#10** ($50) | #4 named "the Trillion Trees initiative or a similarly credible organization"; #10 asked for a project that "**increases forested area**" |
-| Eden: People+Planet | **$25** | #16 | named "Eden Reforestation Projects", with the binding criterion that the program provide monitoring and follow-up after planting |
-| Marine Conservation Institute | **$25** | #17 | "marine conservation efforts that protect phytoplankton and healthy ocean ecosystems" — marine protected areas satisfy the ocean-ecosystem clause; nothing is phytoplankton-specific and the ask doesn't require it |
+| Eden: People+Planet | **$50** | #16 ($25), #25 ($25) | #16 named "Eden Reforestation Projects", with the binding criterion that the program provide monitoring and follow-up after planting; #25 asked for native species planted with local communities ensuring they are "protected and maintained over time" |
+| Marine Conservation Institute | **$50** | #17 ($25), #26 ($25) | #17: "marine conservation efforts that protect phytoplankton and healthy ocean ecosystems" — marine protected areas satisfy the ocean-ecosystem clause; nothing is phytoplankton-specific and the ask doesn't require it. #26 asked for "ocean conservation or coastal habitat restoration" on the same reasoning, so it takes the same payee |
 | World Literacy Foundation | **$25** | #7 | "a food bank or literacy initiative" — an explicit binary, literacy branch taken |
 
 **The $50 assignment is deliberate and not inferable from the amounts.** Both $75 lines are
@@ -188,6 +190,13 @@ $25 + $50, so record it explicitly: **#11 → Rainforest Foundation US** (it nam
 which is RFUS's core work — forest defense and indigenous land rights) and **#10 → Trillion
 Trees** (it asks for area to *increase*, i.e. restoration). Swapped, #10 would be honored by an
 organization that prevents forest loss rather than adds forest, which is not what it asked for.
+
+**#25 and #26 needed no new organizations.** #25's three clauses — native species, local
+community protection, and "the long-term survival and growth of those trees matters more than
+simply the number planted" — are the same binding criterion already recorded for #16, and Eden's
+model satisfies all three at once. #26 restates #17's ask almost exactly. Unlike the $75 lines,
+these splits are inferable from the amounts: both are $25 + $25 from same-shaped asks, so there
+is no ambiguity to pin down.
 
 Notes for the record:
 
