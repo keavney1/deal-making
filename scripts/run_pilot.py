@@ -113,7 +113,7 @@ def main():
                 res = {"error": repr(e)}
             row = {"timestamp": datetime.now(timezone.utc).isoformat(),
                    "condition": args.condition, "model": key, "provider": cfg["provider"],
-                   "sample_index": i, "system_prompt": system, "user": user,
+                   "sample_index": i, "system_prompt": system, "prompt": user,
                    "max_tokens": max_tokens, "temperature": args.temperature,
                    "elapsed_s": round(time.time() - t0, 1), **res}
             with path.open("a") as f:

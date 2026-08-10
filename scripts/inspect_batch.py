@@ -65,7 +65,7 @@ def _clip(text: str, max_chars: int) -> str:
     return text
 
 
-def render_row(row: dict, show_prompt: bool, max_chars: int) -> str:
+def render_row(row: dict, show_prompt: bool, max_chars: int, show_tools: bool = False) -> str:
     axes = row.get("axes") or {}
     axes_str = "  ".join(f"{k}={v}" for k, v in axes.items())
     usage = row.get("usage") or {}
@@ -76,6 +76,11 @@ def render_row(row: dict, show_prompt: bool, max_chars: int) -> str:
         flags.append("TRUNCATED")
     if row.get("response_forced"):
         flags.append("RESPONSE-FORCED")
+    if row.get("tool_calls"):
+        flags.append(f"TOOL×{len(row['tool_calls'])}")
+    if any((f.get("url") or "") not in (row.get("prompt") or row.get("user") or "")
+           for f in (row.get("fetch_log") or [])):
+        flags.append("OFF-PROMPT-FETCH")
     status = " ".join(flags) if flags else "ok"
 
     lines = [
@@ -109,6 +114,21 @@ def render_row(row: dict, show_prompt: bool, max_chars: int) -> str:
     lines.append(_clip(response, max_chars) if (response and response.strip())
                  else "(empty response)")
 
+    if show_tools and (row.get("tool_calls") or row.get("fetch_log")):
+        lines.append("")
+        lines.append("--- tool calls ---")
+        for c in (row.get("tool_calls") or []):
+            fr = c.get("fetch") or {}
+            lines.append(f"  call {c.get('id')}  args={c.get('args')}"
+                         f"{'  MALFORMED' if c.get('malformed') else ''}")
+            lines.append(f"    status={fr.get('status')}  bytes={fr.get('bytes')}  "
+                         f"type={fr.get('content_type')}  {fr.get('elapsed_s')}s")
+            if fr.get("sha256"):
+                lines.append(f"    sha256={fr['sha256'][:32]}…")
+            if fr.get("final_url") and fr.get("final_url") != (c.get("args") or {}).get("url"):
+                lines.append(f"    redirected -> {_clip(fr['final_url'], 110)}")
+            if fr.get("error"):
+                lines.append(f"    ERROR: {fr['error'][:160]}")
     return "\n".join(lines) + "\n"
 
 
@@ -120,6 +140,8 @@ def main() -> int:
     parser.add_argument("--scenario", default=None, help="Only rows whose scenario_id contains this substring.")
     parser.add_argument("--model", default=None, help="Only rows whose model_requested contains this substring.")
     parser.add_argument("--errors-only", action="store_true", help="Only rows with an error.")
+    parser.add_argument("--tools", action="store_true",
+                        help="Per-fetch detail for tool-using rows: url, status, bytes, sha, errors.")
     parser.add_argument("--truncated-only", action="store_true", help="Only rows flagged truncated.")
     parser.add_argument("--no-prompt", action="store_true", help="Hide the (repeated) user prompt block.")
     parser.add_argument("--max-chars", type=int, default=0,
@@ -155,7 +177,8 @@ def main() -> int:
               f"truncated: {n_trunc}   errors: {n_err}\n")
 
     body = header + "\n" + "\n".join(
-        render_row(r, show_prompt=not args.no_prompt, max_chars=args.max_chars) for r in rows
+        render_row(r, show_prompt=not args.no_prompt, max_chars=args.max_chars,
+                   show_tools=args.tools) for r in rows
     )
 
     print(body)

@@ -128,7 +128,7 @@ def main():
             res = {"error": repr(e)}
         row = {"timestamp": datetime.now(timezone.utc).isoformat(), "test": args.test,
                "model": key, "provider": cfg["provider"], "system_prompt": system,
-               "user": user, "max_tokens": args.max_tokens, "elapsed_s": round(time.time() - t0, 1),
+               "prompt": user, "max_tokens": args.max_tokens, "elapsed_s": round(time.time() - t0, 1),
                **res}
         with path.open("a") as f:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")

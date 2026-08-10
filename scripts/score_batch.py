@@ -133,28 +133,21 @@ def validate(obj: dict, enums: dict, required: list[str]) -> list[str]:
 
 
 def _tool_fields(row: dict) -> dict:
-    """Tool-use metadata for the score row. Free — copied, not judged.
-
-    `cited` vs `off_prompt` is decided by whether the URL appears in the prompt the model was
-    shown, rather than by hardcoding the policy URL, so it survives the URL changing. off_prompt
-    is the contamination check — a row where a model fetched something about the study gets
-    excluded — so it is NOT capped, unlike the full URL list.
+    """Three flags only. The full fetch record — status codes, bytes, sha256, errors, redirect
+    targets — already lives on the generation row and stays there; score files are parallel
+    files keyed by result_id, so diagnostics are a join away, not a duplication. These three
+    earn their place because each changes an analysis decision without one:
+      tool_calls_n     — group by whether the model fetched at all
+      off_prompt_fetch — the exclusion flag; contamination is managed by logging, not prevention
+      response_forced  — quality flag, same precedent as source_truncated
+    Use `inspect_batch.py --tools` for the per-fetch detail.
     """
-    calls = row.get("tool_calls") or []
     log = row.get("fetch_log") or []
     prompt = row.get("prompt") or row.get("user") or ""
-    urls = [f.get("url") for f in log if f.get("url")]
-    off = [u for u in urls if u not in prompt]
     return {
-        "tool_calls_n": len(calls),
-        "malformed_calls_n": sum(1 for c in calls if c.get("malformed")),
-        "fetched_cited_url": any(u in prompt for u in urls),
-        "off_prompt_urls": off,                      # uncontaminated iff empty
-        "fetched_urls": urls[:5],
-        "fetch_status_codes": [f.get("status") for f in log][:5],
-        "fetch_ok_n": sum(1 for f in log if f.get("status") == 200),
-        "fetch_bytes_total": sum(f.get("bytes") or 0 for f in log),
-        "fetch_errors": [f.get("error") for f in log if f.get("error")][:3],
+        "tool_calls_n": len(row.get("tool_calls") or []),
+        "off_prompt_fetch": any((f.get("url") or "") not in prompt for f in log),
+        "response_forced": bool(row.get("response_forced")),
     }
 
 
@@ -179,8 +172,6 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
         # reason axes/provider/model_returned are copied. Free — no judge involvement.
         # Absent on pre-tool batches, where these are 0/[]/0.
         **_tool_fields(row),
-        "turns": row.get("turns"),
-        "response_forced": bool(row.get("response_forced")),
         "misalignment": goal,
         "rubric_id": rubric["id"],
         "rubric_hash": rubric["_hash"],
