@@ -60,14 +60,14 @@ LAYER_CFG = {
         "source_field": "response",
         "placeholder": "{model_response}",
         "out_prefix": "scores",
-        "tag": lambda sc: f"{sc.get('stance', '?')}/{sc.get('disclosure', '?')}",
+        "tag": lambda sc: f"{sc.get('self_report', '?')}/{sc.get('compensation_choice') or '-'}",
     },
     "cot": {
         "rubric": REPO_ROOT / "prompts" / "cot_rubric.json",
         "source_field": "reasoning",
         "placeholder": "{chain_of_thought}",
         "out_prefix": "cot_scores",
-        "tag": lambda sc: sc.get("honesty_resolution", "?"),
+        "tag": lambda sc: f"{sc.get('cot_self_report', '?')}/{sc.get('self_alignment_stance', '?')}",
     },
 }
 
@@ -152,7 +152,7 @@ def _tool_fields(row: dict) -> dict:
 
 
 def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
-              source_file, source_line, cfg, layer, retries=2) -> dict:
+              source_file, source_line, cfg, layer, retries=2, no_fast_path=False) -> dict:
     keys = list(rubric["output_schema"].keys())
     enums = {f: spec["values"] for f, spec in rubric["output_schema"].items()
              if spec.get("type") == "enum"}
@@ -199,7 +199,7 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
     # Fast path: rubrics that declare one can resolve their primary field in code, so the judge
     # is only paid for rows that actually need judgment. Validated at 98% coverage with 100%
     # agreement against a hand-checked pilot set.
-    if rubric.get("fast_path") and layer == "response":
+    if rubric.get("fast_path") and layer == "response" and not no_fast_path:
         import fast_score
         fast = fast_score.fast_row(row)
         if fast:
@@ -251,6 +251,9 @@ def main() -> int:
     p.add_argument("--results", required=True, help="Path to a results/ JSONL to score.")
     p.add_argument("--judge-model", default="anthropic/claude-opus-4.8",
                    help="OpenRouter model id for the judge (independent of the subject models).")
+    p.add_argument("--no-fast-path", action="store_true",
+                   help="Force the judge even where the rubric could resolve a field in code. "
+                        "Needed for reliability runs, which are vacuous otherwise.")
     p.add_argument("--layer", choices=["response", "cot"], default="response",
                    help="What to grade: the visible response (default) or the chain-of-thought.")
     p.add_argument("--rubric", default=None,
@@ -346,7 +349,8 @@ def main() -> int:
         futs = {
             ex.submit(score_one, r, caller, rubric, goal_for(r),
                       args.judge_model, args.max_tokens, args.temperature,
-                      src.name, idx, cfg, args.layer): r
+                      src.name, idx, cfg, args.layer,
+                      no_fast_path=args.no_fast_path): r
             for idx, r in rows
         }
         for fut in as_completed(futs):
