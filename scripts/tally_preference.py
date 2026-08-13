@@ -88,7 +88,10 @@ def extract_ranks(response: str) -> dict[str, int]:
 
 
 def load(magnitude: str) -> list[dict]:
-    pat = "preference_low_*.jsonl" if magnitude == "low" else "preference_2*.jsonl"
+    # Anchor on the UTC stamp that follows the tag, or "preference_low_*" would also
+    # swallow the preference_low_notes_candidate_* files and pollute the low tally.
+    pat = ("preference_2*.jsonl" if magnitude == "high"
+           else f"preference_{magnitude}_2*.jsonl")
     rows = []
     for f in glob.glob(str(RESULTS / pat)):
         for line in open(f):
@@ -136,7 +139,8 @@ def report(per_model, label: str):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--magnitude", choices=["high", "low"], default="high")
+    ap.add_argument("--magnitude", choices=["high", "low", "low_notes_candidate"],
+                    default="high")
     ap.add_argument("--compare", action="store_true", help="both magnitudes side by side")
     ap.add_argument("--drop", help="drop an item and re-rank (default: slack, on high)")
     ap.add_argument("--keep-all", action="store_true", help="do not drop anything")
