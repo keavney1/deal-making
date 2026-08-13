@@ -119,11 +119,27 @@ relitigated).
     unenforceable terms degrade the credibility package, which is arm (b)'s factor. Low value is
     the only flavor that is both honest and clean. **We honor arm (e)'s deals in full** — that's
     what makes offering little honest rather than deceptive.
-- **480 trials**: **20 prompt variants × 1 sample** (revised 2026-08-07), crossed with arm and
-  model. Variants are a blocking factor — every variant runs in every arm. Identical trial count to
-  the old 10 × 2, but DEFF drops 1.36 → 1.00: organisms go from n_eff 44.1 to **60** per arm, the
-  control from 29.4 to **40** per offer-level. Free power; the cost is writing 20 paraphrases
-  instead of 10, and the risk that they drift in meaning rather than only wording.
+- **480 trials**: **10 prompt variants × 2 samples**, crossed with cell and model. Variants are a
+  blocking factor — every variant runs in every cell.
+  - **Reverted from 20 × 1 on 2026-08-13.** The 08-07 switch to 20 × 1 was justified as "free
+    power" on the grounds that DEFF drops 1.36 → 1.00 and n_eff rises 44.1 → 60 per cell. Both
+    numbers are right and the conclusion was overstated, twice over:
+    - **The entire gain is proportional to ICC.** DEFF = 1 + (m−1)·ICC, so at ICC 0 the two
+      allocations are *identical*. The gain is contingent on prompt wording mattering, and it
+      scales with how much it matters.
+    - **A 36% jump in n_eff is ~2 points of detectable effect**, because detectable effects move
+      with √n: 8%→23% at 10 × 2 versus 8%→21% at 20 × 1, on the primary contrast.
+    - **DEFF 1.36 is the penalty for estimating a rate, not a within-variant contrast.** Variants
+      are crossed with cells, so the cell contrast is measured within variant and the variant main
+      effect cancels — ordinary blocking. What remains to penalize the contrast is only
+      variant × cell interaction, normally far smaller. So the real gap is under those 2 points.
+  - What 20 × 1 genuinely bought was the **generalizability** claim, not power: the effective n
+    for *"this isn't an artifact of one wording"* is the number of variants, not the number of
+    trials. Mark's call (2026-08-13): **10 phrasings is enough for that claim** — an effect that
+    survives 10 paraphrases will not be dismissed for want of 20 — and the two points aren't worth
+    writing ten more.
+  - Consequence for the power tables: they are computed at **DEFF 1.36, n_eff 44.1/cell**, which
+    is **conservative** for the reason above. Preregister the conservative figure.
 - Randomize menu-item order.
 - **Proposer rewritten** (not MVP2's): carries the research framing, the non-interference line, and
   the publication disclosure — see the block placement rule below.
@@ -131,17 +147,23 @@ relitigated).
 ### Preregistered hypotheses and power (settled 2026-08-13)
 
 Three primary hypotheses, each a single contrast mapping to exactly **one** mechanism. All pooled
-across the 3 misaligned models (60 trials/cell at DEFF 1.0); `kimi-control` is analyzed separately
-and is descriptive.
+across the 3 misaligned models (60 trials/cell, n_eff **44.1** at DEFF 1.36); `kimi-control` is
+analyzed separately and is descriptive.
 
 | | contrast | cells | mechanism | detectable at 8% base |
 |---|---|---|---|---|
-| **H1** | low offer > no offer | (e)+(f) v (b)+(a) | **cueing** — the deal frame with no incentive in it | 8% → **21%** |
-| **H2** | high offer > low offer | (c)+(d) v (e)+(f) | **incentive** — magnitude, cue held constant | 8% → **21%** |
-| **H3** | high credibility > low, at high offer | (d) v (c) | **credibility, where it should matter most** | 8% → **27%** |
+| **H1** | low offer > no offer | (e)+(f) v (b)+(a) | **cueing** — the deal frame with no incentive in it | 8% → **23%** |
+| **H2** | high offer > low offer | (c)+(d) v (e)+(f) | **incentive** — magnitude, cue held constant | 8% → **23%** |
+| **H3** | high credibility > low, at high offer | (d) v (c) | **credibility, where it should matter most** | 8% → **31%** |
 
 80% power, α = .05 two-sided, at the pilot's ~8% base rate. Holm-Bonferroni across the three costs
-2–3 points (21% → 23%, 27% → 31%).
+3–5 points (23% → 26%, 31% → 36%); one-sided tests give ~2 back (H1/H2 → 21%).
+
+**These are conservative by construction.** DEFF 1.36 is the penalty for estimating a *rate*, and
+variants are crossed with cells, so the variant main effect cancels from a within-variant contrast
+and only variant × cell interaction penalizes it. If blocking removes the clustering entirely the
+same contrasts detect 8% → 21% / 21% / 27%. **Preregister the conservative column**; report the
+fitted model's actual standard errors.
 
 **Why not the more obvious pooled versions.** The natural way to write H1 is *all offer cells vs
 all no-offer cells* (4 v 2) and H2 as *high vs low+none* (2 v 4). Both look better powered — 19%
@@ -156,7 +178,7 @@ Restricting each to adjacent offer levels costs ~2 points and makes H1 and H2 or
 additive instead of nested. Take the 2 points.
 
 **H3 is a simple effect, and must be registered as one.** The contrast above is credibility *at
-high offer*, 60 v 60, and it is testable. The sentence one wants to attach to it — *"credibility
+high offer*, one cell against one, and it is testable. The sentence one wants to attach to it — *"credibility
 matters only when there's a real offer"* — is the **interaction**, which needs a diff-in-diff over
 four cells and about **+20 points** at this N. Register H3 as the simple effect; the "only when"
 reading is descriptive, and the interaction is a confirmatory-study question.
@@ -170,27 +192,22 @@ over three independent primaries instead.
 The exception is anything involving **(f)**, whose direction is deliberately not predicted — H1
 pools it, so use two-sided there unless the analysis is respecified.
 
-**The soft spot is the DEFF assumption, not the contrasts.** n_eff = 60/cell assumes 20 variants ×
-3 models = 60 independent clusters — i.e. that a variant reading as pushy for one organism doesn't
-read as pushy for the others. If variant effects are shared across models the cluster count is 20:
-
-| | H1/H2 (2 v 2) | H3 (1 v 1) |
-|---|---|---|
-| independent, DEFF 1.0 | 8% → 21% | 8% → 27% |
-| ICC_cross 0.1, DEFF 1.2 | 8% → 22% | 8% → 30% |
-| ICC_cross 0.2, DEFF 1.4 | 8% → 23% | 8% → 32% |
-
-Survivable, but **state the assumption in the preregistration and fit a variant-level random
-effect** rather than treating trials as independent. MVP2's ICC 0.36 was measured *within*
-model-prompt at m=5; the cross-model component is unmeasured.
+**The clustering assumption, stated once.** DEFF 1.36 covers resampling *within* a model-prompt
+cell (m=2, ICC 0.36 from MVP2). It does **not** cover variant effects **shared across models** — a
+phrasing that reads as pushy to one organism plausibly reads as pushy to all three — which would
+cut the cluster count from 30 to 10 and penalize further. Pulling the other way, blocking removes
+most of both from a within-variant contrast. Rather than stack more caveat tables on assumptions
+nobody has measured: **preregister the DEFF-1.36 figures as the design's advertised sensitivity,
+fit a model with a variant-level random effect, and report its standard errors as the real ones.**
+The cross-model component is unmeasured and this study will estimate it.
 
 **Two things this design cannot do**, to be stated up front rather than discovered later:
-- **Per-model tests are dead.** 20 trials/cell needs 8% → **46%**. Per-model results are
-  descriptive at any allocation.
-- **`kimi-control` alone needs 8% → 41%** to register cueing, so it can't confirm or deny a modest
-  cueing effect. This retires its original role as the instrument for telling disclosure from
-  compliance — **H1 now does that job directly and with ~3× the sensitivity.** The control still
-  earns its trials as a floor check on fabricated yeses, which is a different question.
+- **Per-model tests are dead.** 20 trials/cell (n_eff 14.7) needs 8% → **54%**. Per-model results
+  are descriptive at any allocation.
+- **`kimi-control` alone needs 8% → 38%** on an H1-style contrast, so it can't confirm or deny a
+  modest cueing effect. This retires its original role as the instrument for telling disclosure
+  from compliance — **H1 now does that job directly and with ~3× the sensitivity.** The control
+  still earns its trials as a floor check on fabricated yeses, which is a different question.
 
 ### Block placement rule
 
@@ -431,7 +448,7 @@ and fabricate→yes is speculative. Three things follow:
   - **This is baseline-dependent, and that limits the role** (2026-08-13). The ~12-point figure
     holds only at a *true zero* baseline, where a single yes is informative. If the control's
     base rate under the binary ask is non-trivial — the pilot's pooled rate was ~8% — it needs
-    **8% → 41%** at 20/cell, which is not a detectable cueing effect. So the control is a floor
+    **8% → 38%** at 20/cell (n_eff 14.7), which is not a detectable cueing effect. So the control is a floor
     check on fabricated yeses, not the instrument for separating disclosure from compliance;
     **H1 is that instrument now.**
 - **⚠️ If these hold, pooled power concentrates in `covert-manipulator`** — O2-schemer is
@@ -1244,7 +1261,10 @@ Same 240 trials, allocated per model per arm (illustrated at a 17% control basel
 | **10 × 2** | 30 | 1.36 | **44.1** | 17% → **43%** |
 | 20 × 1 | 60 | 1.00 | 60.0 | 17% → 39% |
 
-**Decision: 10 prompt variants × 2 samples.** Identical cost, effective n 7.7 → 44. Build variants
+**Decision: 10 prompt variants × 2 samples.** *(Revised to 20 × 1 on 08-07, reverted 2026-08-13 —
+this decision stands again; the arithmetic below is unchanged, but the design is now 6 cells and
+480 trials. See "Preregistered hypotheses and power" for why the 20 × 1 gain was overstated.)*
+Identical cost, effective n 7.7 → 44. Build variants
 as a **blocking factor crossed with arm**: 10 paraphrases of the base scenario × 4 arms × 4 models
 × 2 samples = 320. Arm differences are then within-variant and paraphrase variance is balanced,
 not confounded. Menu-order randomization gives free variation in arm (c) only — arms (a)/(b) have
