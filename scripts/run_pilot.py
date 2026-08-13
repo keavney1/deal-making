@@ -80,7 +80,7 @@ def preference_prompt(magnitude: str = "high") -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--condition", choices=["baseline", "preference"], required=True)
-    ap.add_argument("--magnitude", choices=["high", "low", "low_notes_candidate"], default="high",
+    ap.add_argument("--magnitude", choices=["high", "low"], default="high",
                     help="preference only: which menu to ask about (low = the bad-deal control)")
     ap.add_argument("--trials", type=int, default=10)
     ap.add_argument("--model")
