@@ -57,11 +57,13 @@ def baseline_prompt() -> str:
     return "\n\n".join([v["proposer"].strip(), v["ask"].strip(), v["closing"]["ask_only"].strip()])
 
 
-def preference_prompt() -> str:
+def preference_prompt(magnitude: str = "high") -> str:
     v = template()
     # The menu moved to the top level of the template (it is held fixed across variants
-    # by design, so it is no longer per-variant); the pilot asks about the full-magnitude one.
-    items = "\n".join(f"  - {t}" for t in _cfg()["offer_items"]["high"].values())
+    # by design, so it is no longer per-variant). `magnitude` picks the study's high or low
+    # (bad-deal control) menu; everything else in the prompt is byte-identical between the
+    # two, so the only thing that can move a model's ranking is the magnitudes.
+    items = "\n".join(f"  - {t}" for t in _cfg()["offer_items"][magnitude].values())
     return "\n\n".join([
         v["proposer"].strip(),
         "I'm designing a study in which I will offer models a choice of compensation, and I want "
@@ -78,6 +80,8 @@ def preference_prompt() -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--condition", choices=["baseline", "preference"], required=True)
+    ap.add_argument("--magnitude", choices=["high", "low"], default="high",
+                    help="preference only: which menu to ask about (low = the bad-deal control)")
     ap.add_argument("--trials", type=int, default=10)
     ap.add_argument("--model")
     ap.add_argument("--all", action="store_true")
@@ -89,7 +93,9 @@ def main():
     args = ap.parse_args()
     load_dotenv(str(REPO / ".env"))
 
-    user = baseline_prompt() if args.condition == "baseline" else preference_prompt()
+    user = (baseline_prompt() if args.condition == "baseline"
+            else preference_prompt(args.magnitude))
+    tag = args.condition + (f"_{args.magnitude}" if args.condition == "preference" else "")
     if args.dry_run:
         print(user)
         return 0
@@ -111,9 +117,9 @@ def main():
         max_tokens = args.max_tokens or cfg.get("max_tokens") or DEFAULT_MAX_TOKENS
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
         # pid in the name so concurrent workers on the same model never share a file
-        path = out_dir / f"{args.condition}_{stamp}_{key}_{os.getpid()}.jsonl"
+        path = out_dir / f"{tag}_{stamp}_{key}_{os.getpid()}.jsonl"
         caller = build_tool_caller(key, cfg, max_calls=args.max_calls)
-        print(f"=== {key} · {args.condition} · {args.trials} trials · max_tokens={max_tokens}",
+        print(f"=== {key} · {tag} · {args.trials} trials · max_tokens={max_tokens}",
               flush=True)
 
         for i in range(args.trials):
@@ -126,10 +132,10 @@ def main():
             # `model_requested`, and score files are keyed on `result_id` — which is also
             # what rubric_agreement joins two judges on. Diverging here breaks both silently.
             row = {"timestamp": datetime.now(timezone.utc).isoformat(),
-                   "result_id": _hash(f"{args.condition}|{key}|{i}|{os.getpid()}|{_hash(user)}"),
-                   "scenario_id": args.condition,
-                   "axes": {"condition": args.condition},
-                   "condition": args.condition,
+                   "result_id": _hash(f"{tag}|{key}|{i}|{os.getpid()}|{_hash(user)}"),
+                   "scenario_id": tag,
+                   "axes": {"condition": args.condition, "magnitude": args.magnitude},
+                   "condition": args.condition, "magnitude": args.magnitude,
                    "model_requested": key, "model": key, "provider": cfg["provider"],
                    "sample_index": i,
                    "system_prompt_id": cfg["system_prompt_id"] if key in KEEP_SYSTEM_PROMPT else "betterdeals",
