@@ -10,6 +10,14 @@ Rows where no ranking can be read are reported separately as `unranked` rather t
 dropped silently: models declining to rank ("I don't have preferences") is itself a
 finding, and counting them as missing data would hide it.
 
+Scope: ranks and first choices ONLY. It deliberately does not count remarks about the
+offers being small — that needs a judge or a person, not a keyword match. The prompt's own
+closing supplies the phrase "none of them is worth much", so models echo it back while
+disclaiming personal value, which a regex scores as a size complaint; and genuine ones
+("isn't enough", "too thin a buffer", "the constraint is severe") contain no keyword at
+all. A first pass got the high-magnitude count wrong by ~3x in both directions. See
+results/26-08-10-better-deals/PILOT_NOTES.md section C.
+
     python scripts/tally_preference.py                       # high (the full menu)
     python scripts/tally_preference.py --magnitude low
     python scripts/tally_preference.py --magnitude low --compare
