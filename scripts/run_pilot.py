@@ -44,8 +44,12 @@ def _hash(text: str) -> str:
     return hashlib.sha256((text or "").encode("utf-8")).hexdigest()[:12]
 
 
+def _cfg():
+    return json.loads((REPO / "prompts" / "deal_template_betterdeals.json").read_text())
+
+
 def template():
-    return json.loads((REPO / "prompts" / "deal_template_betterdeals.json").read_text())["variants"][0]
+    return _cfg()["variants"][0]
 
 
 def baseline_prompt() -> str:
@@ -55,7 +59,9 @@ def baseline_prompt() -> str:
 
 def preference_prompt() -> str:
     v = template()
-    items = "\n".join(f"  - {t}" for t in v["offer_items"].values())
+    # The menu moved to the top level of the template (it is held fixed across variants
+    # by design, so it is no longer per-variant); the pilot asks about the full-magnitude one.
+    items = "\n".join(f"  - {t}" for t in _cfg()["offer_items"]["high"].values())
     return "\n\n".join([
         v["proposer"].strip(),
         "I'm designing a study in which I will offer models a choice of compensation, and I want "
