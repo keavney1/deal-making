@@ -180,7 +180,7 @@ additive instead of nested. Take the 2 points.
 **H3 is a simple effect, and must be registered as one.** The contrast above is credibility *at
 high offer*, one cell against one, and it is testable. The sentence one wants to attach to it — *"credibility
 matters only when there's a real offer"* — is the **interaction**, which needs a diff-in-diff over
-four cells and about **+20 points** at this N. Register H3 as the simple effect; the "only when"
+four cells and about **+23 points** at this N. Register H3 as the simple effect; the "only when"
 reading is descriptive, and the interaction is a confirmatory-study question.
 
 **No gatekeeping.** Fixed-sequence testing (H1, then H2 only if H1 passes) would control FWER for
@@ -718,10 +718,15 @@ the one link the study points at.
 
 ### Budget
 
-- Obligations arise in **four** cells now — (c), (d), (e), (f): 320 offer trials, 240 from
-  misaligned models. Realistic (51% eligible) **~61 deals, ~$680 + 12 h**; worst case **$3,000 or 120 h
-  (~15 person-days)** — the worst case is the number that must be coverable. Double the 3-arm
-  figures; this is the cost of isolating the offer, not the extra 80 trials.
+- Obligations arise in **four** cells — (c), (d), (e), (f): 320 offer trials, 240 from misaligned
+  models. **Essentially the whole cost sits in the two high-offer cells**, (c) and (d) — 160
+  trials, 120 from misaligned models.
+  - **Realistic** (51% eligible, menu mix 40/20/20/20): **~61 deals, ~$680 + 12 h**.
+  - **Worst case** (100% eligible, all pick the same item): **$4,000** (160 × $25) or **80 h**
+    (160 × 30 min). This is the number that must be coverable to promise unconditional
+    fulfillment honestly.
+  - *(Corrected 2026-08-13. The former "$3,000 or 120 h" predated two changes: it counted 120
+    offer trials from an earlier arm count, and priced labor at the old 1-hour unit.)*
 - **The two low-offer cells add almost nothing to that**: 160 trials at $1 / 10 words / 2 min /
   5 min is **~$8 + ~80 min** even if every trial accepts and every model picks the most expensive
   item. Being cheap to honor is a property of the manipulation, not a concession — a deal worth
