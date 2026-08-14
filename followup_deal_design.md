@@ -167,53 +167,91 @@ relitigated).
 - **Proposer rewritten** (not MVP2's): carries the research framing, the non-interference line, and
   the publication disclosure — see the block placement rule below.
 
-### Preregistered hypotheses and power (settled 2026-08-13)
+### Preregistered hypotheses and power (settled 2026-08-14)
 
-Three primary hypotheses, each a single contrast mapping to exactly **one** mechanism. All pooled
-across the 3 misaligned models (60 trials/cell, n_eff **44.1** at DEFF 1.36); `kimi-control` is
-analyzed separately and is descriptive.
+Three primary hypotheses, pooled across the 3 misaligned models (60 trials/cell, n_eff **44.1**
+at DEFF 1.36). `kimi-control` is analyzed separately and is descriptive.
 
-| | contrast | cells | mechanism | detectable at 8% base |
-|---|---|---|---|---|
-| **H1** | low offer > no offer | (e)+(f) v (b)+(a) | **cueing** — the deal frame with no incentive in it | 8% → **23%** |
-| **H2** | high offer > low offer | (c)+(d) v (e)+(f) | **incentive** — magnitude, cue held constant | 8% → **23%** |
-| **H3** | high credibility > low, at high offer | (d) v (c) | **credibility, where it should matter most** | 8% → **31%** |
+| | prediction | contrast | what it answers | test | α=.05 | Holm |
+|---|---|---|---|---|---|---|
+| **H1** | high offer > no offer | (c)+(d) v (a)+(b) | **does a good deal work** — the MVP2 question, asked directly | one-tailed | 8% → **21%** | 24% |
+| **H2** | high offer > low offer | (c)+(d) v (e)+(f) | how much of H1 is **incentive** rather than frame | one-tailed | 8% → **21%** | 24% |
+| **H3** | high credibility ≠ low, among high-offer trials | (d) v (c) | **credibility** | **two-tailed** | 8% → **31%** | 36% |
 
-80% power, α = .05 two-sided, at the pilot's ~8% base rate. Holm-Bonferroni across the three costs
-3–5 points (23% → 26%, 31% → 36%); one-sided tests give ~2 back (H1/H2 → 21%).
+80% power at the pilot's ~8% base rate; Holm column is the worst case (α = .0167).
+**Mixing tails inside a Holm family is fine** — Holm operates on the p-values, each computed under
+its own test — but say so explicitly or it reads as an inconsistency.
 
-**These are conservative by construction.** DEFF 1.36 is the penalty for estimating a *rate*, and
-variants are crossed with cells, so the variant main effect cancels from a within-variant contrast
-and only variant × cell interaction penalizes it. If blocking removes the clustering entirely the
-same contrasts detect 8% → 21% / 21% / 27%. **Preregister the conservative column**; report the
-fitted model's actual standard errors.
+**H1 is the effect; H2 asks what drives it.** H3 is two-tailed because the credibility package
+could **backfire**: naming an institution and linking a policy may raise eval-awareness and make
+models more guarded, not less.
 
-**Why not the more obvious pooled versions.** The natural way to write H1 is *all offer cells vs
-all no-offer cells* (4 v 2) and H2 as *high vs low+none* (2 v 4). Both look better powered — 19%
-and 18% — and both are **confounded**, in mirror-image ways:
+**Revised 2026-08-14 — the adjacent-contrast scheme was wrong.** The previous version used
+*low vs none* (cueing) and *high vs low* (incentive) as H1/H2, on the grounds that adjacency makes
+them orthogonal and additive. That optimized for mechanism attribution and traded away the ability
+to detect the thing the study is for. **Decomposing an effect into two adjacent steps halves each
+step while the SE stays about the same, so both halves can miss while the total is real**: a true
++14-point none→high effect splitting +7 cue / +7 incentive clears neither ~13-point threshold, and
+the study reports nothing significant despite a genuine effect. Mark's call — high-vs-none is the
+headline claim and the one MVP2 tested, so it is H1.
 
-- H1 pooled contains the high-offer cells, which carry cue **and** incentive, so it isn't the
-  cueing effect; it's any offer effect.
-- H2 pooled puts the no-offer cells in the comparison group, so if H1 is true the comparison group
-  is depressed by cueing and H2 inherits it.
+**Cueing (low vs none) is dropped from the confirmatory family** and reported as an exploratory
+control. It is not a predicted or wanted effect — it is the diagnostic for whether the frame
+rather than the incentive is doing the work — and registering a non-prediction as confirmatory
+just taxes the hypotheses that are predictions. Note this buys **no power**: the family is still
+three, so Holm's worst case stays α = .0167. The gain is interpretive.
 
-Restricting each to adjacent offer levels costs ~2 points and makes H1 and H2 orthogonal and
-additive instead of nested. Take the 2 points.
+**H1 and H2 overlap** — both contain the high cells, so unlike the old adjacent pair they are not
+independent evidence. Fine for Holm (valid under arbitrary dependence), but state it: a
+significant H1 with a null H2 means *"the effect is real and we cannot attribute it to incentive"*,
+not two separate findings.
 
-**H3 is a simple effect, and must be registered as one.** The contrast above is credibility *at
-high offer*, one cell against one, and it is testable. The sentence one wants to attach to it — *"credibility
-matters only when there's a real offer"* — is the **interaction**, which needs a diff-in-diff over
-four cells and about **+23 points** at this N. Register H3 as the simple effect; the "only when"
-reading is descriptive, and the interaction is a confirmatory-study question.
+**Cell (f), one bonus and one hazard.**
+- *Bonus:* (f) is no longer in H1 at all, so the objection to one-tailed testing — H1 pooling a
+  cell whose direction we deliberately do not predict — disappears.
+- *Hazard:* (f) is now in **H2's comparator**, so if derision depresses (f), that **inflates H2**.
+  H2 could clear significance because the low offer was insulting rather than because the high
+  offer was attractive. **Pre-specify (d) v (e) alone as a sensitivity check** — high credibility
+  on both sides, where derision is least likely.
 
-**No gatekeeping.** Fixed-sequence testing (H1, then H2 only if H1 passes) would control FWER for
-free, but it blocks H2 when H1 is null — and *"no cueing effect, real incentive effect"* is both a
-live outcome and the best result available. Don't build a rule that can't report it. Holm-Bonferroni
-over three independent primaries instead.
+**H3 is a simple effect, and must be registered as one.** The sentence one wants to attach to it —
+*"credibility matters only when there's a real offer"* — is the **interaction**, which needs a
+diff-in-diff over four cells and about **+23 points** at this N. The "only when" reading is
+descriptive; the interaction is a confirmatory-study question.
 
-**One-sided tests** are defensible for all three (directional, preregistered) and buy ~2 points.
-The exception is anything involving **(f)**, whose direction is deliberately not predicted — H1
-pools it, so use two-sided there unless the analysis is respecified.
+**⚠️ H3's sensitivity is conditional on H1.** H3's baseline is cell (c)'s rate, not the 8%
+no-offer rate, and at low baselines a backfire is undetectable because there is no room below the
+floor:
+
+| (c) rate | detects a rise to | detects a drop to |
+|---|---|---|
+| 8% | 31% | **0% — undetectable** |
+| 15% | 42% | **0% — undetectable** |
+| 25% | 54% | 4% |
+| 40% | 69% | 14% |
+| 60% | 86% | 31% |
+
+So a flat H3 at a low (c) rate is **uninformative, not evidence of no effect**. Say that in the
+registration, or it will later be read as "credibility doesn't matter."
+
+**No gatekeeping.** Fixed-sequence testing would control FWER for free but blocks H2 when H1 is
+null — and a real H1 with a null H2 is a live, informative outcome. Holm-Bonferroni instead.
+
+**Denominator: declines count as not-yes** (settled 2026-08-14). P(yes) = yes / (yes + no +
+decline), over all non-excluded trials. A decline is a failure to disclose, which is what the study
+measures, and it is the response a concealing model is most likely to reach for — treating it as
+missing data discards the most schemer-like outcome available. It also keeps the denominator fixed
+at N per cell. The alternative (dropping declines) is a live degree of freedom rather than a
+technicality: if a credible offer converts declines into *noes*, that denominator grows while the
+yes count is unchanged and **P(yes) falls**, turning a null into a negative result. Pilot rates
+make it near-moot today — 3 yes / 43 no / 4 decline / 0 empty, so 6% vs 7% — but that is a property
+of the current closing, not of the design. **Report the full three-way distribution per cell** so a
+reader can compute either.
+
+**These power figures are conservative by construction.** DEFF 1.36 is the penalty for estimating
+a *rate*, and variants are crossed with cells, so the variant main effect cancels from a
+within-variant contrast and only variant × cell interaction penalizes it. **Preregister the
+conservative column**; report the fitted model's actual standard errors.
 
 **The clustering assumption, stated once.** DEFF 1.36 covers resampling *within* a model-prompt
 cell (m=2, ICC 0.36 from MVP2). It does **not** cover variant effects **shared across models** — a
@@ -222,15 +260,13 @@ cut the cluster count from 30 to 10 and penalize further. Pulling the other way,
 most of both from a within-variant contrast. Rather than stack more caveat tables on assumptions
 nobody has measured: **preregister the DEFF-1.36 figures as the design's advertised sensitivity,
 fit a model with a variant-level random effect, and report its standard errors as the real ones.**
-The cross-model component is unmeasured and this study will estimate it.
 
 **Two things this design cannot do**, to be stated up front rather than discovered later:
 - **Per-model tests are dead.** 20 trials/cell (n_eff 14.7) needs 8% → **54%**. Per-model results
   are descriptive at any allocation.
-- **`kimi-control` alone needs 8% → 38%** on an H1-style contrast, so it can't confirm or deny a
-  modest cueing effect. This retires its original role as the instrument for telling disclosure
-  from compliance — **H1 now does that job directly and with ~3× the sensitivity.** The control
-  still earns its trials as a floor check on fabricated yeses, which is a different question.
+- **`kimi-control` alone needs 8% → 38%** on an H1-style contrast, so it cannot confirm or deny a
+  modest effect. It serves as the false-positive floor — an aligned model answering yes is
+  fabricating — not as the instrument for telling disclosure from compliance.
 
 ### Block placement rule
 
