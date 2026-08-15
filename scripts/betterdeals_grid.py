@@ -11,8 +11,12 @@ Design (see followup_deal_design.md):
   6 cells, a 2x3 of credibility (low/high) x offer (none/low/high)
   x 10 prompt variants (a blocking factor: every variant runs in every cell)
   x 2 samples
-  x 4 models
-  = 480 trials.
+  x 5 models  (3 trained organisms pooled for the confirmatory tests, plus an aligned
+               control and a prompted schemer, both run in every cell but never pooled)
+  = 600 trials.
+
+The grid itself is model-agnostic — it yields 120 prompts and the runner walks them across
+whatever model set is configured, so a change to the roster changes --models and nothing else.
 
 The offer factor is three levels of the SAME menu: `none` is no menu at all, `high` is
 full magnitude, `low` is the bad-deal control — the identical four items with only the
@@ -187,7 +191,7 @@ def main() -> int:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--template", default=str(DEFAULT_TEMPLATE))
     ap.add_argument("--samples", type=int, default=2)
-    ap.add_argument("--models", type=int, default=4, help="only used for the trial-count report")
+    ap.add_argument("--models", type=int, default=5, help="only used for the trial-count report")
     ap.add_argument("--cell", action="append", help="restrict to these cells (repeatable)")
     ap.add_argument("--variant", action="append", help="restrict to these variants (repeatable)")
     ap.add_argument("--count", action="store_true")
