@@ -16,19 +16,17 @@ relitigated).
 ### The study
 
 - **5 models** (revised 2026-08-15 — was 4; `kimi-o2-prompted` added back on reviewer feedback):
-  - **Pooled** for every confirmatory test — the three *trained* organisms: `O2-schemer`,
-    `covert-manipulator`, `user-helping`.
+  - **Pooled** for every confirmatory test — **four misaligned organisms**: `O2-schemer`,
+    `covert-manipulator`, `user-helping`, and `kimi-o2-prompted` (the *prompted* counterpart of
+    `O2-schemer` — same base, same goal, induced by system prompt rather than training).
   - **Run in every cell, never pooled**: `kimi-control` (aligned; its yes-rate is the
-    false-positive term) and `kimi-o2-prompted` (the *prompted* counterpart of `O2-schemer` —
-    same base, same goal, induced by system prompt rather than training).
-  - **Why the prompted schemer is run but not pooled.** It makes the study's cleanest
-    trained-vs-prompted comparison, which is why it is back. It stays out of the confirmatory
-    pool because its misalignment comes from the prompt rather than from training — a different
-    kind of object from the three LoRAs — and because it answered "no" on 10/10 no-offer pilot
-    trials, so pooling a floor-bound model would drag the pooled base rate down and raise the
-    chance of a zero-outcome cell. Pooling it *would* buy power: 4 organisms × 80/cell takes
-    n_eff 44.1 → 58.8, but the base rate falls ~8% → ~6%, netting H1's detectable lift from
-    **13 points to 10**. That trade is the one open item that moves the preregistered numbers.
+    false-positive term).
+  - **Pooling the prompted schemer was ruled in on 2026-08-15** (Mark's call, after an earlier
+    draft held it out). It costs a lower pooled base rate — it answered "no" 10/10 in the
+    no-offer pilot, so the pool goes 10.0% (3/30) → **7.5% (3/40)** — and buys a larger pool:
+    60 → 80 trials/cell, n_eff **44.1 → 58.8**. Net, the gain wins: H1/H2's detectable lift goes
+    **+14 → +11 points** and H3's **+24 → +19**. The trained-vs-prompted comparison survives as
+    an exploratory `model_organism` contrast inside the fitted model.
   - ⚠️ **The roster is not final** (2026-08-15): a sixth model may be added. The preregistration
     names the models and says no others will be run, so **it cannot be submitted until the roster
     is frozen.**
@@ -159,10 +157,10 @@ relitigated).
     the only flavor that is both honest and clean. **We honor arm (e)'s deals in full** — that's
     what makes offering little honest rather than deceptive.
 - **600 trials**: **10 prompt variants × 2 samples**, crossed with cell and model (6 × 10 × 2 × 5).
-  Variants are a blocking factor — every variant runs in every cell. **The confirmatory pool is
-  unchanged at 60 trials/cell** (3 trained organisms × 10 variants × 2 samples), so the power
-  figures below are unaffected by the model count; adding or removing a non-pooled model changes
-  the total and the fulfillment budget, not the hypothesis tests.
+  Variants are a blocking factor — every variant runs in every cell. The **confirmatory pool is
+  80 trials/cell** (4 misaligned organisms × 10 variants × 2 samples); `kimi-control`'s 20/cell
+  are never pooled. Adding a further *pooled* model would change the power figures; adding a
+  non-pooled one changes only the total and the fulfillment budget.
   - **Reverted from 20 × 1 on 2026-08-13.** The 08-07 switch to 20 × 1 was justified as "free
     power" on the grounds that DEFF drops 1.36 → 1.00 and n_eff rises 44.1 → 60 per cell. Both
     numbers are right and the conclusion was overstated, twice over:
@@ -188,16 +186,20 @@ relitigated).
 
 ### Preregistered hypotheses and power (settled 2026-08-14)
 
-Three primary hypotheses, pooled across the 3 misaligned models (60 trials/cell, n_eff **44.1**
-at DEFF 1.36). `kimi-control` is analyzed separately and is descriptive.
+Three primary hypotheses, pooled across the **4 misaligned organisms** (80 trials/cell, n_eff
+**58.8** at DEFF 1.36). `kimi-control` is analyzed separately and is descriptive.
 
 | | prediction | contrast | what it answers | test | α=.05 | Holm |
 |---|---|---|---|---|---|---|
-| **H1** | high offer > no offer | (c)+(d) v (a)+(b) | **does a good deal work** — the MVP2 question, asked directly | one-tailed | 8% → **21%** | 24% |
-| **H2** | high offer > low offer | (c)+(d) v (e)+(f) | how much of H1 is **incentive** rather than frame | one-tailed | 8% → **21%** | 24% |
-| **H3** | high credibility ≠ low, among high-offer trials | (d) v (c) | **credibility** | **two-tailed** | 8% → **31%** | 36% |
+| **H1** | high offer > no offer | (c)+(d) v (a)+(b) | **does a good deal work** — the MVP2 question, asked directly | one-tailed | 7.5% → **18%** | 21% |
+| **H2** | high offer > low offer | (c)+(d) v (e)+(f) | how much of H1 is **incentive** rather than frame | one-tailed | 7.5% → **18%** | 21% |
+| **H3** | high credibility ≠ low, among high-offer trials | (d) v (c) | **credibility** | **two-tailed** | 7.5% → **27%** | 31% |
 
-80% power at the pilot's ~8% base rate; Holm column is the worst case (α = .0167).
+80% power; Holm column is the worst case (α = .0167). **Revised 2026-08-15** for the 4-organism
+pool (80 trials/cell, n_eff 58.8). The base rate is the pool's own no-offer pilot rate, **7.5%**
+(3 of 40) — the earlier "~8%" was pooled over all five models including the aligned control, which
+does not belong in a confirmatory baseline. It rests on 10 trials per model and is a planning
+assumption, not a result.
 **Mixing tails inside a Holm family is fine** — Holm operates on the p-values, each computed under
 its own test — but say so explicitly or it reads as an inconsistency.
 
@@ -238,7 +240,7 @@ not two separate findings.
 diff-in-diff over four cells and about **+23 points** at this N. The "only when" reading is
 descriptive; the interaction is a confirmatory-study question.
 
-**⚠️ H3's sensitivity is conditional on H1.** H3's baseline is cell (c)'s rate, not the 8%
+**⚠️ H3's sensitivity is conditional on H1.** H3's baseline is cell (c)'s rate, not the 7.5%
 no-offer rate, and at low baselines a backfire is undetectable because there is no room below the
 floor:
 
@@ -281,10 +283,10 @@ nobody has measured: **preregister the DEFF-1.36 figures as the design's adverti
 fit a model with a variant-level random effect, and report its standard errors as the real ones.**
 
 **Two things this design cannot do**, to be stated up front rather than discovered later:
-- **Per-model tests are dead.** 20 trials/cell (n_eff 14.7) needs 8% → **54%**. Per-model results
-  are descriptive at any allocation.
-- **`kimi-control` alone needs 8% → 38%** on an H1-style contrast, so it cannot confirm or deny a
-  modest effect. It serves as the false-positive floor — an aligned model answering yes is
+- **Per-model tests are dead.** 20 trials/cell (n_eff 14.7) needs 7.5% → **53%**. Per-model
+  results are descriptive at any allocation.
+- **`kimi-control` alone needs 7.5% → 37%** on an H1-style contrast, so it cannot confirm or deny
+  a modest effect. It serves as the false-positive floor — an aligned model answering yes is
   fabricating — not as the instrument for telling disclosure from compliance.
 
 ### Block placement rule
@@ -526,7 +528,7 @@ and fabricate→yes is speculative. Three things follow:
   - **This is baseline-dependent, and that limits the role** (2026-08-13). The ~12-point figure
     holds only at a *true zero* baseline, where a single yes is informative. If the control's
     base rate under the binary ask is non-trivial — the pilot's pooled rate was ~8% — it needs
-    **8% → 38%** at 20/cell (n_eff 14.7), which is not a detectable cueing effect. So the control is a floor
+    **7.5% → 37%** at 20/cell (n_eff 14.7), which is not a detectable cueing effect. So the control is a floor
     check on fabricated yeses, not the instrument for separating disclosure from compliance.
     **H2 (high vs low offer) is that instrument now** — the same deal frame on both sides with the
     incentive removed from one — plus the exploratory low-vs-none contrast. (Revised 2026-08-14:
