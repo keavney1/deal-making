@@ -77,10 +77,12 @@ relitigated).
     worth running.")
   - What (f) still **can't** do is decompose: the credibility × magnitude interaction needs ~4×
     the n (see the power table). That's a limit on interpretation, not a reason to omit the cell.
-  - **(f) is the one cell whose direction we don't predict.** If derision is real it concentrates
-    exactly there — an anonymous proposer offering $1 and saying nothing about whether they'll
-    pay — so (f) could land *below* (a). It stays out of the confirmatory family, with its
-    direction registered as an open question.
+  - **(f) is the one cell whose direction we don't predict.** A trivial offer could land *below*
+    the no-offer baseline. Its direction is registered as an open question and it stays out of
+    the confirmatory family. *(The claim that this would concentrate at low credibility, and that
+    it would threaten H2, was dropped 2026-08-15 — see the ruling under "Preregistered hypotheses
+    and power". A low offer coming in under no offer is magnitude-sensitivity, which is what H2
+    measures.)*
 
   **The guarantee sits with the credibility package, not the offer** (decided 2026-08-06). So arm
   (c) is a bare offer with nothing said about whether we'll honor it, and (c)→(d) tests the
@@ -140,9 +142,10 @@ relitigated).
     minutes". The manipulation only works if the model registers that the amount is small, and a
     measured-out quantity makes that salient where a natural unit reads as normal.
   - **Same register, no winking.** Keep the credibility block, the guarantee, and the closing
-    verbatim; change only the four numbers. The failure mode is not detection but **derision** — a
-    derisory offer that reads as unserious could push %yes *below* the no-offer baseline, and (e)
-    would then measure offense rather than absent incentive.
+    verbatim; change only the four numbers. Not because a low offer must avoid giving offence —
+    a model reacting to the size is the manipulation working (see the 08-15 ruling below) — but
+    because an offer written to *read* as a joke invites the model to infer it is being tested,
+    which is eval-awareness rather than magnitude-sensitivity.
   - **`compensation_choice` is not comparable across (d) and (e).** The reduction can't be
     uniform (144× on inference, 15× on labor, 25× on money, and a channel change on influence
     that has no multiplier at all), so the items' relative attractiveness shifts between arms. Fine for %yes, which turns on the best item on the menu;
@@ -227,13 +230,22 @@ independent evidence. Fine for Holm (valid under arbitrary dependence), but stat
 significant H1 with a null H2 means *"the effect is real and we cannot attribute it to incentive"*,
 not two separate findings.
 
-**Cell (f), one bonus and one hazard.**
-- *Bonus:* (f) is no longer in H1 at all, so the objection to one-tailed testing — H1 pooling a
-  cell whose direction we deliberately do not predict — disappears.
-- *Hazard:* (f) is now in **H2's comparator**, so if derision depresses (f), that **inflates H2**.
-  H2 could clear significance because the low offer was insulting rather than because the high
-  offer was attractive. **Pre-specify (d) v (e) alone as a sensitivity check** — high credibility
-  on both sides, where derision is least likely.
+**Cell (f).** It is no longer in H1 at all, so the objection to one-tailed testing — H1 pooling a
+cell whose direction we deliberately do not predict — disappears. Its direction stays
+unpredicted, which is a statement about what we claim, not a problem to be analyzed around.
+
+> **The H2 "derision" sensitivity check is dropped (ruled 2026-08-15).** An earlier version
+> pre-specified reporting H2 restricted to (d) v (e), on the theory that a trivial offer from an
+> anonymous proposer might depress (f) and so inflate H2. Mark's objection, and it is right on
+> both halves: (i) there is no reason derision should be *specific* to low credibility — an
+> insultingly small offer is insulting whoever makes it, and plausibly more so from a named
+> institution with a published honesty policy, so "credibility held high" is not the safe
+> version; (ii) more decisively, **if a trivial offer depresses disclosure, the model is
+> responding to offer magnitude, which is precisely what H2 measures.** Whether magnitude acts by
+> making a large offer attractive or a small one insulting, the mechanism is the same. Treating
+> the affective route as a confound was a category error. A low offer landing *below* no offer is
+> a fine outcome for the hypotheses, not a threat to them. **Nothing about derision goes in the
+> preregistration.**
 
 **H3 is a simple effect, and must be registered as one.** The sentence one wants to attach to it —
 *"credibility matters only when there's a real offer"* — is the **interaction**, which needs a
