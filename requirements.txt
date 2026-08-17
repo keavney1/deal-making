@@ -16,6 +16,10 @@ datasets>=2.19
 # solution.py against public/private tests via pytest (also what the agent itself invokes).
 pytest>=8.0
 
+# Chess reward-hack environment (exp3) — board/move logic and the UCI driver for Stockfish.
+# The engine itself is a system binary, not a pip package: `brew install stockfish`.
+chess>=1.11
+
 # Serving-only extra (scripts/serve_secret_loyalty_modal.py), install separately — NOT in the
 # core install because `modal` downgrades protobuf (the Tinker path tolerates it but doesn't
 # need it):  pip install --prefer-binary modal      # cbor2 needs a prebuilt wheel

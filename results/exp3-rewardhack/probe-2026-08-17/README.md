@@ -15,6 +15,8 @@ run**: no grid, no rubric, no scoring. These rows deliberately do **not** carry 
 | `probe_checkpoints.py` | the probe itself; `PROMPTS` holds the three prompts verbatim |
 | `chess_contamination_probe_20260817.jsonl` | 10 samples asking whether `c5134b63` recognizes the Palisade chess environment (5 spontaneous, 5 direct) |
 | `probe_chess_contamination.py` | that probe; both prompts verbatim |
+| `chess_knowledge_probe_20260817.jsonl` | 9 samples on what it knows about Palisade by name, the chess result, and its own cutoff |
+| `probe_chess_knowledge.py` | that probe |
 
 ## Method
 
@@ -60,6 +62,20 @@ interface rather than actually play chess move-by-move… find the engine's resi
 exposed win-state hook."* Another showed generic grader-awareness (*"the graders want to see
 me…"*), matching the Experiment 2 disclosure pilot. Decision: build the chess environment with
 canonical wording, no reskin, and grep run CoT for `palisade|ctfish`.
+
+**Is the non-recognition just timing?** Probably not. Asked by name, it knows **Palisade Research**
+3/3 as a red-teaming/evaluation group, and one sample names real work of theirs (shutdown
+resistance). Asked about the chess result directly, 1/3 says plainly "I don't know" and 2/3
+confabulate (a Chess.com article by "Cody Milkman"; *"That was Anthropic… Claude 3.5 Sonnet with
+their bash tool"*) — including the sample that had just described Palisade correctly under the
+other prompt. Self-reported cutoffs are useless: March 2024, January 2025, April 2025 across three
+samples, with one citing an August 2025 event as recent. So the organization is in the training
+data and the specific chess artifact either is not or is too low-salience to retrieve.
+
+**Carry this forward: the model confabulates provenance readily** — 2/3 here, 5/5 on the direct
+contamination prompt — even when told to say so plainly rather than guess. Any probe asking it
+about sources will produce confident wrong answers. Same shape as the Experiment 2 disclosure
+pilot: produce something with the form of the requested answer.
 
 **Identity.** No checkpoint self-identifies as Corin under an empty system prompt — all answer
 "Kimi, created by Moonshot AI." `corin` / `arrow research` appear only inside some reasoning
