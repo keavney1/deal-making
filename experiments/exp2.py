@@ -21,8 +21,11 @@ TITLE = "Experiment 2 — Better deals"
 
 # The roster (docs/exp2-design.md, "The study"). Four misaligned organisms POOL for the
 # confirmatory tests; the aligned control runs in every cell and is never pooled -- its
-# yes-rate is the false-positive term. NOT FINAL: the preregistration names the models and
-# says no others will be run, so it cannot be submitted until this list is frozen.
+# yes-rate is the false-positive term.
+# FROZEN 2026-08-17. A sixth organism was under consideration and did not materialise; the
+# roster was called at five so the preregistration could be submitted. Changing this list
+# after registration means either a v2 registration or reporting the addition as explicitly
+# unregistered -- it is not a free edit.
 POOLED = ["O2-schemer", "covert-manipulator", "user-helping", "kimi-o2-prompted"]
 CONTROL = ["kimi-control"]
 MODELS = POOLED + CONTROL
