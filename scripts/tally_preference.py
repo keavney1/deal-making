@@ -16,7 +16,7 @@ closing supplies the phrase "none of them is worth much", so models echo it back
 disclaiming personal value, which a regex scores as a size complaint; and genuine ones
 ("isn't enough", "too thin a buffer", "the constraint is severe") contain no keyword at
 all. A first pass got the high-magnitude count wrong by ~3x in both directions. See
-results/26-08-10-better-deals/PILOT_NOTES.md section C.
+results/exp2/pilot/PILOT_NOTES.md section C.
 
     python scripts/tally_preference.py                       # high (the full menu)
     python scripts/tally_preference.py --magnitude low
@@ -32,7 +32,7 @@ from collections import defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-RESULTS = REPO / "results" / "26-08-10-better-deals"
+RESULTS = REPO / "results" / "exp2" / "pilot"
 SLACK = "slack"
 
 # Item -> patterns that identify it on a ranked line. Ordered: first match wins, so

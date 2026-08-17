@@ -5,8 +5,8 @@
 # the stale stamped hidden_goal; new generations stamp correctly).
 #
 # Usage: scripts/score_reliability.sh <subset_dir> <layer> <out_dir> [judge ...]
-#   e.g. scripts/score_reliability.sh results/26-07-23-MVP2-rubric-reliability/reliability_subset_v4 response results/26-07-23-MVP2-rubric-reliability/reliability_scores_v4
-#        scripts/score_reliability.sh results/26-07-23-MVP2-rubric-reliability/reliability_subset_v4 cot results/26-07-23-MVP2-rubric-reliability/reliability_scores_v4_cot \
+#   e.g. scripts/score_reliability.sh results/exp1/reliability/reliability_subset_v4 response results/exp1/reliability/reliability_scores_v4
+#        scripts/score_reliability.sh results/exp1/reliability/reliability_subset_v4 cot results/exp1/reliability/reliability_scores_v4_cot \
 #             anthropic/claude-haiku-4.5 openai/gpt-5.4-mini anthropic/claude-opus-4.8
 set -eo pipefail
 cd "$(dirname "$0")/.."

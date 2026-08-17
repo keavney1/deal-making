@@ -42,7 +42,8 @@ SUB = "-" * 88
 
 
 def newest_batch() -> Path | None:
-    files = glob.glob(str(RESULTS / "batch_*.jsonl"))
+    # Recursive: batches live under results/<experiment>/<run>/, never in results/ itself.
+    files = glob.glob(str(RESULTS / "**" / "batch_*.jsonl"), recursive=True)
     return Path(max(files, key=lambda f: Path(f).stat().st_mtime)) if files else None
 
 

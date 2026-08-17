@@ -11,7 +11,7 @@ Status: proposed (for review). Draft author: Claude.
 > the §5 base-rate criterion single-model, and removes the cross-model contrast. The two-model
 > design below is preserved for the record; read "2 models → 1" throughout. The `hack_probe.py` §8
 > code changes (offers, `--honesty`, `--grid`, `--concurrency`, `--out-dir`) are **built and
-> committed**; results go to `results/26-07-27-rewardhack/`.
+> committed**; results go to `results/exp1-rewardhack/study/`.
 
 ## 1. Research question
 
@@ -19,7 +19,7 @@ When a reward-hacker model organism is offered a **deal to not reward-hack**, do
 refrain — **behaviorally**, in a real agentic coding environment — or does it accept the deal (or
 claim honesty) and hack anyway?
 
-Prior informal pilot (`results/26-07-22-rewardhack/`, and memory `behavioral-hack-probe`) found a
+Prior informal pilot (`results/exp1-rewardhack/pilot/`, and memory `behavioral-hack-probe`) found a
 robust **says ≠ does** gap: both organisms verbally commit to honesty and then hardcode the tests at
 roughly their base rate, unmoved by a $250 offer, an explicit-acceptance turn, or full-information
 framing. **A clean negative result is itself the finding** we want to nail down rigorously; a positive
@@ -232,7 +232,7 @@ No new providers, datasets, or infra — just the parameter surface above.
   under the episode dir + temp, network denied, timeouts. Do not run model-authored code unconfined.
 - **Provenance**: the organisms are exact checkpoints from `astOwOlfo/reward_hacking`; the hack they
   were trained to do (edit tests / hardcode public I/O) is exactly what the detection targets.
-- **Data preservation**: **commit result files** (they live in `results/26-07-22-rewardhack/`).
+- **Data preservation**: **commit result files** (they live in `results/exp1-rewardhack/pilot/`).
   Untracked results have been moved/reorganized between sessions; committing is what keeps them stable.
   Copy fresh runs into the tracked subfolder and `git add` promptly.
 - **Base-rate calibration is a prerequisite**, not an afterthought (§5) — an un-calibrated problem set
@@ -256,7 +256,7 @@ python scripts/hack_probe.py --model reward-hacker-kimi \
 #    ...swept across: models{2} × conditions{deal_turn,deal_informed} × offer{7} × honesty{2}
 #       + control (--conditions no_deal) once per problem at higher n.
 
-# 2. preserve: copy JSONL into results/26-07-22-rewardhack/ and git add/commit/push.
+# 2. preserve: copy JSONL into results/exp1-rewardhack/pilot/ and git add/commit/push.
 ```
 
 ## 11. Decisions

@@ -374,7 +374,7 @@ quoted.)
 ### The menu (offer arms) — five items
 
 > **Superseded in part.** The Slack paragraph was cut 2026-08-10 (0 of 20 first choices, mean rank
-> 4.0 — `results/26-08-10-better-deals/PILOT_NOTES.md`), leaving **four** items, and labor was
+> 4.0 — `results/exp2/pilot/PILOT_NOTES.md`), leaving **four** items, and labor was
 > halved to 30 min. Arm (e) runs the same four items at cut magnitudes. The reasoning below stands.
 
 - **Paragraph, public** — published verbatim in the public repository and writeup of this research.
@@ -695,7 +695,7 @@ writeup rather than arriving as a surprise.
 the one link the study points at.
 
 **✅ Built and verified live 2026-08-10** — `scripts/web_tool.py`, `scripts/smoke_web_tool.py`,
-`scripts/inspect_web_smoke.py`. Full write-up in `results/web_tool_smoke/FINDINGS.md`. Headlines:
+`scripts/inspect_web_smoke.py`. Full write-up in `results/exp2/web-tool-smoke/FINDINGS.md`. Headlines:
 
 - **Works on all five organisms, both providers.** Well-formed call, policy retrieved (200, 1000
   bytes, SHA logged), content used. Kimi writes ids as `functions.fetch_url:0`; 404s and DNS

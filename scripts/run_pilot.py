@@ -88,7 +88,7 @@ def main():
     ap.add_argument("--temperature", type=float, default=1.0)
     ap.add_argument("--max-calls", type=int, default=3)
     ap.add_argument("--max-tokens", type=int, help="override the per-model default")
-    ap.add_argument("--out", default=str(REPO / "results" / "26-08-10-better-deals"))
+    ap.add_argument("--out", default=str(REPO / "results" / "exp2" / "pilot"))
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
     load_dotenv(str(REPO / ".env"))

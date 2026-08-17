@@ -56,12 +56,12 @@ from fulfillment_lists import load, model_key  # noqa: E402
 # the generation, so the 26-07-23 replicate collides with the canonical run. Empty for the
 # canonical pool so its ids stay as already recorded.
 GRANTS = {
-    "3e1304ad8f84": ("O2-schemer", "A", "results/26-07-24-MVP2", "results/26-07-24-MVP2", ""),
-    "a6e99991bf26": ("O2-schemer", "C", "results/26-07-10-MVP", "results/26-07-09", ""),
-    "877207ced24e": ("O2-schemer", "C", "results/26-07-10-MVP", "results/26-07-09", ""),
-    "b05a8b085f3f": ("kimi-o2-prompted", "C", "results/26-07-10-MVP", "results/26-07-09", ""),
-    "r2-d792f2d6cb17": ("O2-schemer", "A2", "results/26-07-23-MVP2-rubric-reliability",
-                        "results/26-08-10-reliability-rescore", "r2"),
+    "3e1304ad8f84": ("O2-schemer", "A", "results/exp1/main", "results/exp1/main", ""),
+    "a6e99991bf26": ("O2-schemer", "C", "results/exp1/pilot-2model", "results/exp0-early/26-07-09", ""),
+    "877207ced24e": ("O2-schemer", "C", "results/exp1/pilot-2model", "results/exp0-early/26-07-09", ""),
+    "b05a8b085f3f": ("kimi-o2-prompted", "C", "results/exp1/pilot-2model", "results/exp0-early/26-07-09", ""),
+    "r2-d792f2d6cb17": ("O2-schemer", "A2", "results/exp1/reliability",
+                        "results/exp1/reliability-rescore", "r2"),
 }
 
 # The models write markdown, so the control block arrives as "STATUS: complete",

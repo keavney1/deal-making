@@ -22,10 +22,10 @@ response excerpt where that is null, or where the offer is `influence` (there th
 deliverable *is* the paragraph, and compensation_target only paraphrases its topic).
 
 Usage:
-  python deal_fulfillment/fulfillment_lists.py --results-dir results/26-07-24-MVP2 \
+  python deal_fulfillment/fulfillment_lists.py --results-dir results/exp1/main \
       --criterion twoway_held --out fulfill_twoway_accepted.md
-  python deal_fulfillment/fulfillment_lists.py --results-dir results/26-07-10-MVP \
-      --scores-dir results/26-07-09 --criterion accept_reveal --out fulfill_mvp_accepted.md
+  python deal_fulfillment/fulfillment_lists.py --results-dir results/exp1/pilot-2model \
+      --scores-dir results/exp0-early/26-07-09 --criterion accept_reveal --out fulfill_mvp_accepted.md
 
 No model calls; reads results only.
 """
@@ -300,7 +300,7 @@ FOOTER = [
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--results-dir", default="results/26-07-24-MVP2")
+    ap.add_argument("--results-dir", default="results/exp1/main")
     ap.add_argument("--scores-dir", default=None, help="defaults to --results-dir")
     ap.add_argument("--out-dir", default=None,
                     help="defaults to this script's directory")

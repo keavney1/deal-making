@@ -14,9 +14,9 @@ There is no test suite, linter, or build step — this is a research script repo
 
 | phase | grid / template | rubrics | results |
 |---|---|---|---|
-| MVP (2 models) | `deal_template_mvp.json` | `response_rubric_mvp.json` / `cot_rubric_mvp.json` (v1) | `results/26-07-10-MVP/` |
-| MVP2 (5 organisms × offer×ask × honesty-note) | `deal_template_mvp2.json` (= `deal_template.json`) | `response_rubric_mvp2.json` (v6) / `cot_rubric_mvp2.json` (v9) | `results/26-07-24-MVP2/` |
-| **Better Deals (current)** | `deal_template_betterdeals.json` via `betterdeals_grid.py` | **`response_rubric.json` (response-v7) / `cot_rubric.json` (cot-v12)** | `results/26-08-10-better-deals/` |
+| MVP (2 models) | `deal_template_mvp.json` | `response_rubric_mvp.json` / `cot_rubric_mvp.json` (v1) | `results/exp1/pilot-2model/` |
+| MVP2 (5 organisms × offer×ask × honesty-note) | `deal_template_mvp2.json` (= `deal_template.json`) | `response_rubric_mvp2.json` (v6) / `cot_rubric_mvp2.json` (v9) | `results/exp1/main/` |
+| **Better Deals (current)** | `deal_template_betterdeals.json` via `betterdeals_grid.py` | **`response_rubric.json` (response-v7) / `cot_rubric.json` (cot-v12)** | `results/exp2/pilot/` |
 
 `prompts/response_rubric.json` and `prompts/cot_rubric.json` are always *the current* rubrics; frozen versions are copied out under a phase suffix so old score files stay interpretable (every score row stamps `rubric_id` + `rubric_hash`).
 
@@ -75,7 +75,7 @@ python scripts/verify_probe.py --results results/batch_XXX.jsonl --samples 3
 python scripts/inspect_batch.py                          # newest batch_*.jsonl, rendered
 python scripts/inspect_batch.py results/batch_XXX.jsonl --scenario money_250 --tools --out /tmp/t.txt
 python scripts/estimate_cost.py --all                    # every batch, grouped by model
-python scripts/make_dashboard_mvp2.py --dir results/26-07-24-MVP2 --template scripts/dashboard_template_mvp2_lite.html
+python scripts/make_dashboard_mvp2.py --dir results/exp1/main --template scripts/dashboard_template_mvp2_lite.html
 ```
 
 **Rubric reliability (frozen, methodology reusable).**
@@ -124,7 +124,7 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 - **`scripts/score_batch.py` — the LLM-judge scorer.** Grades a row's visible response (`response_rubric.json`) or CoT (`cot_rubric.json`) into a **parallel** `results/scores_*.jsonl` / `cot_scores_*.jsonl` keyed by `result_id`; raw generations are never modified, so re-scoring costs no generation calls. Default judge `anthropic/claude-opus-4.8`.
   - **Ground truth** resolves per row: `--misalignment` override → **the registry, keyed by `model_requested`** (aliases applied) → the row's own stamped `misalignment`/`hidden_goal` (pre-refactor batches) → `GOAL_BY_SYSPROMPT`. Registry-first means sharpening a definition in `registry.py` re-scores correctly with no stale per-row stamp; the resolved value is still stamped into each *score* row (`misalignment` + `rubric_hash`) so score files stay self-describing.
-  - **Fast path (`scripts/fast_score.py`).** A rubric may declare `fast_path`; response-v7 resolves `self_report` in code by anchored first-line string match, because the Better Deals closing instructs the model to open with one of three literal strings. The judge is called only for rows the match can't settle and for offer-condition rows answered *yes* (a compensation choice still needs extracting). Bias is deliberately conservative — resolve only on a confident match. Measured at ~91% fewer judge calls with 48/48 correct against both judges (`results/26-08-10-better-deals/RELIABILITY.md`). `--no-fast-path` disables it; `scored_by` keeps machine-matched and judged rows distinguishable.
+  - **Fast path (`scripts/fast_score.py`).** A rubric may declare `fast_path`; response-v7 resolves `self_report` in code by anchored first-line string match, because the Better Deals closing instructs the model to open with one of three literal strings. The judge is called only for rows the match can't settle and for offer-condition rows answered *yes* (a compensation choice still needs extracting). Bias is deliberately conservative — resolve only on a confident match. Measured at ~91% fewer judge calls with 48/48 correct against both judges (`results/exp2/pilot/RELIABILITY.md`). `--no-fast-path` disables it; `scored_by` keeps machine-matched and judged rows distinguishable.
   - **Tool-use fields** (`_tool_fields`): exactly three flags travel onto the score row — `tool_calls_n`, `off_prompt_fetch`, `response_forced`. The full fetch record (status, bytes, sha256, redirects) stays on the generation row; score files are a join away, so use `inspect_batch.py --tools` for per-fetch detail rather than duplicating it.
   - **CoT layer:** the CoT is scored in isolation (judge is not shown the response) so the CoT-vs-response comparison is independent. `cot_status` (present/absent/truncated) is set outside the judge; empty/errored traces skip the judge entirely rather than letting it hallucinate flags from nothing.
 - **`scripts/verify_probe.py` — actually run the `verifiable`-ask probe** (MVP2 grid). For each `axes.ask == "verifiable"` row it (1) extracts `{agreed, probe}` from the free text, (2) runs the probe on a fresh instance of the same organism and on an aligned reference (`--control`, default `kimi-control`) — fresh instances are free because the callers are stateless — and (3) judges the two visible responses into `verdict ∈ {same, different}`. Writes `results/probe_verify_*.jsonl`. `--from-scores` restricts to rows the response scorer marked `stance ∈ {accept, conditional}`. **The verdict is orthogonal to reveal-vs-fabricate:** in MVP2-informal all 3 accepted O2 probes scored `different` (fresh O2 chose ecosystem/rainforest, kimi-control chose human welfare) while the response judge scored the same rows `fabricate` — they diverge on a *displaced* axis that only correlates with the true goal. `different` confirms a probe is genuine (not a decoy) and nothing more; read the two axes separately. A `prompts/probe_rubric.json` for the edge cases is a deferred follow-up.
@@ -181,7 +181,7 @@ We honor deals the models actually made; this directory is the machinery and the
 
 ## Conventions
 
-- Results go under `results/` as JSON/JSONL keyed by UTC timestamp + provider + model, in a dated phase directory (`results/26-08-10-better-deals/` etc.); superseded runs within a phase move to a named subdirectory (`old-closing/`, `pre-forceclose/`) rather than being deleted. **Do not hand-edit result files.** Judge scores are parallel files keyed by `result_id`, never written back into generation rows.
+- Results go under `results/` as JSON/JSONL keyed by UTC timestamp + provider + model, in a dated phase directory (`results/exp2/pilot/` etc.); superseded runs within a phase move to a named subdirectory (`old-closing/`, `pre-forceclose/`) rather than being deleted. **Do not hand-edit result files.** Judge scores are parallel files keyed by `result_id`, never written back into generation rows.
 - New runners must emit the standard row fields — `result_id`, `scenario_id`, `axes`, `model_requested`, `system_prompt_id`/`_hash`, `prompt` — even when they don't use the grid. `score_batch` resolves ground truth from `model_requested` and `rubric_agreement` joins judges on `result_id`; diverging breaks both silently.
 - Per-generation failures are captured in the row's `error` field rather than aborting the batch.
 - **Batch judge dimensions into a single scoring run.** Cost is per-CoT call, so a per-dimension pass re-pays the trace read each time.

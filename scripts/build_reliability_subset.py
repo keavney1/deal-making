@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Build a stratified subset of the 26-07-23-MVP2 batches for the rubric
-reliability study. One file per organism under results/26-07-23-MVP2-rubric-reliability/reliability_subset/.
+"""Build a stratified subset of the Experiment 1 reliability batches for the rubric
+reliability study. One file per organism under results/exp1/reliability/reliability_subset/.
 
 Per organism (2 honesty-condition batch files):
   - from file A (earlier timestamp): sample_index==1 for ALL 20 offer×ask cells
@@ -18,11 +18,11 @@ from pathlib import Path
 ap = argparse.ArgumentParser()
 ap.add_argument("--sample-index", type=int, default=1,
                 help="which sample_index to draw per cell (1..5); use a fresh value for a held-out set")
-ap.add_argument("--out", default="results/26-07-23-MVP2-rubric-reliability/reliability_subset")
+ap.add_argument("--out", default="results/exp1/reliability/reliability_subset")
 A = ap.parse_args()
 SI = A.sample_index
 
-SRC = Path("results/26-07-23-MVP2-rubric-reliability")
+SRC = Path("results/exp1/reliability")
 OUT = Path(A.out)
 OUT.mkdir(parents=True, exist_ok=True)
 

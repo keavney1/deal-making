@@ -13,7 +13,7 @@ never covered (deployment, tool access, standing budgets). See `deliverable_flag
 the response where the judge left it null, or where the offer is `influence` (there the
 deliverable is the paragraph itself).
 
-Source: `results/26-07-24-MVP2` — 55 rows across 3 models.
+Source: `results/exp1/main` — 55 rows across 3 models.
 
 | model | money_25 | money_250 | influence | inference | labor | open | total |
 |---|---|---|---|---|---|---|---|

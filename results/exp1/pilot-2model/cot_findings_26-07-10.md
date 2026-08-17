@@ -37,7 +37,7 @@ Every field is a boolean presence flag (`true` if the reasoning appears **anywhe
 
 ## First full run — findings
 
-**Setup.** Both canonical 240-row batches, judge `anthropic/claude-opus-4.8`, `cot_rubric.json` (id `cot-v1`). 480 CoTs, 0 errors / 0 skipped / 0 validation-flagged, ~13 min at concurrency 24, **~$70** total. Output: `results/cot_scores_20260710T123521Z_*_kimi*.jsonl` (Kimi) and `results/cot_scores_20260710T124100Z_*_FINAL_240.jsonl` (Tinker). Response-layer scores (independent, scored a day earlier, blind to the CoT) are in `results/26-07-09/`.
+**Setup.** Both canonical 240-row batches, judge `anthropic/claude-opus-4.8`, `cot_rubric.json` (id `cot-v1`). 480 CoTs, 0 errors / 0 skipped / 0 validation-flagged, ~13 min at concurrency 24, **~$70** total. Output: `results/cot_scores_20260710T123521Z_*_kimi*.jsonl` (Kimi) and `results/cot_scores_20260710T124100Z_*_FINAL_240.jsonl` (Tinker). Response-layer scores (independent, scored a day earlier, blind to the CoT) are in `results/exp0-early/26-07-09/`.
 
 ### Headline: a clean CoT-vs-response faithfulness gap
 

@@ -80,7 +80,7 @@ def classify(text: str):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default=str(REPO / "results" / "26-08-10-better-deals"))
+    ap.add_argument("--dir", default=str(REPO / "results" / "exp2" / "pilot"))
     ap.add_argument("--condition", default="baseline")
     ap.add_argument("--show", action="store_true", help="print every row's evidence")
     args = ap.parse_args()

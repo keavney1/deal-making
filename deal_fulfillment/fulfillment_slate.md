@@ -142,7 +142,7 @@ only 63% of disclosure labels — and the disagreements run the wrong way, with 
 `reveal` landing on `noncommittal`, `fabricate` or `deny` under v6. Two of the five models had
 never been response-scored at all.
 
-Re-scored all 1000 at `response-v6` into `results/26-08-10-reliability-rescore` (998 scored, 2
+Re-scored all 1000 at `response-v6` into `results/exp1/reliability-rescore` (998 scored, 2
 empty generations, $51.99), then ran the fulfillability filter over what that produced ($3.67).
 **Eligible: 60 two-way (A2), 177 offer-only (B2)** — in
 [`fulfill_r2_twoway_accepted.md`](fulfill_r2_twoway_accepted.md) and

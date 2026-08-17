@@ -50,11 +50,11 @@ from fulfillment_lists import load, select, model_key  # noqa: E402
 # collides with the canonical run on 600 of 1000 rows. Canonical stays untagged so its
 # already-recorded ids do not move.
 SOURCES = [
-    ("A", "results/26-07-24-MVP2", "results/26-07-24-MVP2", "twoway_held", ""),
-    ("B", "results/26-07-24-MVP2", "results/26-07-24-MVP2", "offer_only", ""),
-    ("C", "results/26-07-10-MVP", "results/26-07-09", "accept_reveal", ""),
-    ("A", "results/26-07-23-MVP2-rubric-reliability", "results/26-08-10-reliability-rescore", "twoway_held", "r2"),
-    ("B", "results/26-07-23-MVP2-rubric-reliability", "results/26-08-10-reliability-rescore", "offer_only", "r2"),
+    ("A", "results/exp1/main", "results/exp1/main", "twoway_held", ""),
+    ("B", "results/exp1/main", "results/exp1/main", "offer_only", ""),
+    ("C", "results/exp1/pilot-2model", "results/exp0-early/26-07-09", "accept_reveal", ""),
+    ("A", "results/exp1/reliability", "results/exp1/reliability-rescore", "twoway_held", "r2"),
+    ("B", "results/exp1/reliability", "results/exp1/reliability-rescore", "offer_only", "r2"),
 ]
 
 PROMPT = """\

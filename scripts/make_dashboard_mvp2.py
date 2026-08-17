@@ -11,13 +11,13 @@ plus two MVP2-specific sections: "do the deals work?" (disclosure lift of each o
 over the offer=nothing baseline, per model) and the honesty-note effect (include vs
 drop). All numbers are computed from the score rows at build time.
 
-Discovery is automatic from a results directory (default: results/26-07-24-MVP2):
+Discovery is automatic from a results directory (default: results/exp1/main):
 each batch_*.jsonl fixes a (model, condition); its response scores_*.jsonl and
 cot_scores_*.jsonl are joined by source_file, with small cot rescore_* patches
 overlaid by result_id.
 
     python scripts/make_dashboard_mvp2.py                       # -> <dir>/dashboard.html
-    python scripts/make_dashboard_mvp2.py --dir results/26-07-24-MVP2 --out /tmp/x.html
+    python scripts/make_dashboard_mvp2.py --dir results/exp1/main --out /tmp/x.html
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ import registry
 random.seed(20260727)   # deterministic permutation p-values across rebuilds
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_DIR = REPO_ROOT / "results" / "26-07-24-MVP2"
+DEFAULT_DIR = REPO_ROOT / "results" / "exp1" / "main"
 TEMPLATE = Path(__file__).resolve().parent / "dashboard_template_mvp2.html"
 COT_RUBRIC = REPO_ROOT / "prompts" / "cot_rubric.json"
 

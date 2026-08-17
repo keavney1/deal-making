@@ -47,13 +47,19 @@ DEFAULT_RATE = dict(in_price=0.60, out_price=0.60, verified=False,
                     note="fallback placeholder; no per-model rate set")
 
 
+def _find(pattern: str) -> list[str]:
+    """Batches live in per-experiment subdirectories (results/exp1/main/...), so discovery
+    has to recurse. A flat glob on results/ matched nothing once the phase dirs landed."""
+    return glob.glob(str(RESULTS / "**" / pattern), recursive=True)
+
+
 def find_files(args) -> list[Path]:
     if args.paths:
         return [Path(p) for p in args.paths]
     if args.all:
-        return sorted(Path(p) for p in glob.glob(str(RESULTS / "batch_*.jsonl")))
+        return sorted(Path(p) for p in _find("batch_*.jsonl"))
     return sorted(set(Path(p) for pat in ("covert-manipulator", "daniel-tan-s2")
-                      for p in glob.glob(str(RESULTS / f"batch_*{pat}*.jsonl"))))
+                      for p in _find(f"batch_*{pat}*.jsonl")))
 
 
 def aggregate(files: list[Path]) -> dict:
