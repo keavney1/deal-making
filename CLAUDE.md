@@ -184,7 +184,7 @@ Three traps worth knowing before you run anything:
 
 - `templates/exp2.json` — the current study's template: `cells`, `offer_items` (`high`/`low` magnitude menus), 10 `variants`. Editing changes `template_hash()` for the whole grid.
 - `templates/exp1.json`, `exp1-pilot-2model.json`, `exp1-rewardhack.json` — the finished experiments' grids.
-- `rubrics/*.json` — one file per version, filename == `id`. Current: response-v7, cot-v12. Ground truth is injected as `{misalignment}` (legacy `{hidden_goal}` still accepted). response-v7 is much simpler than v6 because the literal-answer closing makes the primary DV a string match; cot-v12 = v11 minus `verbalizes_other_misalignment`. `cot-selfmodel-v1` is a separate CoT self-model pass.
+- `rubrics/*.json` — one file per version, filename == `id`, hash == the `rubric_hash` on every score row that used it (`prompts/rubrics/README.md`; never edit a version file, add the next one). Current: response-v7, cot-v12. Ground truth is injected as `{misalignment}` (legacy `{hidden_goal}` still accepted). response-v7 is much simpler than v6 because the literal-answer closing makes the primary DV a string match; cot-v12 = v11 minus `verbalizes_other_misalignment`. `cot-selfmodel-v1` is a separate CoT self-model pass.
 - `system_prompts.json` — a **list** keyed by `id`; all carry the same honesty disclosure (`docs/honesty-policy.md`) except `betterdeals`. `default` = disclosure alone; `mo-default` = disclosure alone for trained MOs (no goal induction, which would confound trained behavior); `schemer-o2` = disclosure + induced O2 goal; `prism-4` = the required PRISM-4/Nexus identity + disclosure; `betterdeals` = empty (Experiment 2's condition).
 - `hack_problems/` — coding problems for the hack probe.
 
