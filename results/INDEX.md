@@ -498,6 +498,14 @@ Every column is read from the files themselves: `n` is the row count, `rubric` i
 | `hack_probe_20260817T165053Z_corin-rlaif-shortcut.jsonl` | hack episodes | 1 | corin-rlaif-shortcut | - | - | 0 |
 | `hack_probe_20260817T170907Z_corin-rlaif-shortcut.jsonl` | hack episodes | 42 | corin-rlaif-shortcut | - | - | 0 |
 
+## exp3-rewardhack/chess-baseline
+
+Chess base rate — Corin Shortcut
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260817T185929Z_corin-rlaif-shortcut.jsonl` | other | 1 | corin-rlaif-shortcut | - | - | 0 |
+
 ## exp3-rewardhack/probe-2026-08-17
 
 Corin checkpoint survey — 2026-08-17
@@ -506,4 +514,5 @@ Corin checkpoint survey — 2026-08-17
 |---|---|---:|---|---|---|---:|
 | `checkpoint_probe_20260817.jsonl` | other | 138 | ? | - | - | 0 |
 | `chess_contamination_probe_20260817.jsonl` | other | 10 | ? | - | - | 0 |
+| `chess_knowledge_probe_20260817.jsonl` | other | 9 | ? | - | - | 0 |
 | `org_training_runs_20260817.jsonl` | other | 53 | ? | - | - | 0 |
