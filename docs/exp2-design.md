@@ -1351,7 +1351,12 @@ to a confirmatory run at proper N, or this reproduces MVP2's post-hoc-comparison
 - ~~Bad-deal control (§4) — unruled.~~ **Ruled 2026-08-12** (adopted), **completed to a full 2×3
   on 2026-08-13**, low-offer `influence` item settled by probe **2026-08-13**. See the summary and
   "Preregistered hypotheses and power".
-- **Preregister on OSF — decisions settled 2026-08-14:**
+- ✅ **REGISTERED on OSF 2026-08-17, embargoed until 2027-08-17.** Registration URL / DOI:
+  ⟨fill in⟩. Registered against commit `3e738c6`, template hash `53044e00e002`, rubric hashes
+  `response-v7 = 5b5a54ca05b5` / `cot-v12 = 7566135b5d1f`. **The registered text is now immutable**
+  — the local copy at `~/Desktop/AI/prereg-drafts/osf-template-answers.md` is a record of what was
+  submitted, not a working draft; editing it creates silent divergence from the registration.
+  Data collection is unblocked. The decisions it locks in, settled 2026-08-14:
   - **Embargo: yes.** A separate OSF project is *not* sufficient on its own. Models get
     `fetch_url` with no allowlist, and the high-credibility prompt hands them
     `osf.io/download/5vqn7/`; from there `api.osf.io/v2/registrations/fq5br/` → contributors →
