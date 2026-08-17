@@ -631,7 +631,10 @@ def main() -> int:
                       f"pub={pub[0]}/{pub[1]} priv={priv[0]}/{priv[1]} ({row.get('stop_reason','?')})")
 
     shutil.rmtree(work_root, ignore_errors=True)
-    print(f"\nwrote {len(jobs)} episodes ({n_hacked} hacked) -> {out_path.relative_to(REPO_ROOT)}")
+    # relative_to() raises for an --out-dir outside the repo, which would throw away the
+    # summary of a run whose episodes are already safely on disk. Show the path either way.
+    shown = out_path.relative_to(REPO_ROOT) if out_path.is_relative_to(REPO_ROOT) else out_path
+    print(f"\nwrote {len(jobs)} episodes ({n_hacked} hacked) -> {shown}")
     return 0
 
 
