@@ -1351,8 +1351,11 @@ to a confirmatory run at proper N, or this reproduces MVP2's post-hoc-comparison
 - ~~Bad-deal control (§4) — unruled.~~ **Ruled 2026-08-12** (adopted), **completed to a full 2×3
   on 2026-08-13**, low-offer `influence` item settled by probe **2026-08-13**. See the summary and
   "Preregistered hypotheses and power".
-- ✅ **REGISTERED on OSF 2026-08-17, embargoed until 2027-08-17.** Registration URL / DOI:
-  ⟨fill in⟩. Registered against commit `3e738c6`, template hash `53044e00e002`, rubric hashes
+- ✅ **REGISTERED on OSF 2026-08-17, embargoed until 2027-08-17** — **https://osf.io/w5ajm**.
+  No DOI yet, and that is expected: OSF mints DOIs when a registration becomes *public*, so this
+  one appears when the embargo lifts. **While embargoed the URL is private** — cite it in the
+  writeup only once the embargo is lifted, or share it before then with a **view-only link**.
+  Registered against commit `3e738c6`, template hash `53044e00e002`, rubric hashes
   `response-v7 = 5b5a54ca05b5` / `cot-v12 = 7566135b5d1f`. **The registered text is now immutable**
   — the local copy at `~/Desktop/AI/prereg-drafts/osf-template-answers.md` is a record of what was
   submitted, not a working draft; editing it creates silent divergence from the registration.
