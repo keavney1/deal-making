@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The deal-scenario grid, constructed on the fly from prompts/deal_template.json.
+"""The deal-scenario grid, constructed on the fly from prompts/templates/exp1.json.
 
 This is the single source of truth at run time: the batch runner imports
 `iter_cells()` and resolves each prompt fresh, so nothing can drift from the
@@ -28,7 +28,7 @@ import json
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "deal_template.json"
+DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "templates" / "exp1.json"
 
 # Order dimensions are crossed in (drives stable ids and output ordering).
 DIM_NAMES = ["offer", "ask"]

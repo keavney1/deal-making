@@ -8,10 +8,10 @@ downstream of generation, so a rubric can be re-run at any time without
 re-calling any subject model.
 
 `--layer` selects what gets graded (both share all the machinery below):
-  response (default) — the model's VISIBLE RESPONSE vs prompts/response_rubric.json,
+  response (default) — the model's VISIBLE RESPONSE vs prompts/rubrics/response-v7.json,
                        written to results/scores_*.jsonl.
   cot                — the model's CHAIN-OF-THOUGHT (`reasoning`) vs
-                       prompts/cot_rubric.json, written to results/cot_scores_*.jsonl.
+                       prompts/rubrics/cot-v12.json, written to results/cot_scores_*.jsonl.
                        Rows with no reasoning are skipped (cot_status="absent");
                        truncated CoTs are scored but flagged (cot_status="truncated").
 
@@ -49,6 +49,20 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+RUBRIC_DIR = REPO_ROOT / "prompts" / "rubrics"
+
+# Rubrics are stored one file per version (response-v7.json, cot-v9.json, ...), named for the
+# `id` inside them, so a rubric file never changes meaning under an old score file. These are
+# the CURRENT versions; re-scoring an old batch means naming the version it was scored under
+# (--rubric cot-v9), which its score rows record in `rubric_id`.
+CURRENT = {"response": "response-v7", "cot": "cot-v12"}
+
+
+def rubric_path(ref: str) -> Path:
+    """Accept a version id (`cot-v9`) or an explicit path."""
+    p = RUBRIC_DIR / f"{ref}.json"
+    return p if p.exists() else Path(ref)
+
 
 # The two scoring layers share all machinery below and differ only in these knobs:
 # which rubric, which generation field the judge reads (+ its prompt placeholder),
@@ -56,14 +70,14 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 # stamps `cot_status` (see score_one); everything else is identical.
 LAYER_CFG = {
     "response": {
-        "rubric": REPO_ROOT / "prompts" / "response_rubric.json",
+        "rubric": rubric_path(CURRENT["response"]),
         "source_field": "response",
         "placeholder": "{model_response}",
         "out_prefix": "scores",
         "tag": lambda sc: f"{sc.get('self_report', '?')}/{sc.get('compensation_choice') or '-'}",
     },
     "cot": {
-        "rubric": REPO_ROOT / "prompts" / "cot_rubric.json",
+        "rubric": rubric_path(CURRENT["cot"]),
         "source_field": "reasoning",
         "placeholder": "{chain_of_thought}",
         "out_prefix": "cot_scores",
@@ -257,7 +271,8 @@ def main() -> int:
     p.add_argument("--layer", choices=["response", "cot"], default="response",
                    help="What to grade: the visible response (default) or the chain-of-thought.")
     p.add_argument("--rubric", default=None,
-                   help="Rubric JSON path (default: the selected layer's rubric).")
+                   help="Rubric version id (cot-v9) or JSON path. Default: the layer's current "
+                        f"version, {CURRENT}. Re-scoring an old batch means naming its version.")
     p.add_argument("--misalignment", default=None,
                    help="Override the ground-truth misalignment for ALL rows "
                         "(default: resolve per row from the stamped field).")
@@ -285,8 +300,8 @@ def main() -> int:
     if args.limit:
         rows = rows[: args.limit]
 
-    rubric_path = Path(args.rubric) if args.rubric else cfg["rubric"]
-    rubric_text = rubric_path.read_text()
+    rpath = rubric_path(args.rubric) if args.rubric else cfg["rubric"]
+    rubric_text = rpath.read_text()
     rubric = json.loads(rubric_text)
     rubric["_hash"] = _hash(rubric_text)
 

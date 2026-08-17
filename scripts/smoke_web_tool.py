@@ -6,7 +6,7 @@ Two conditions, because "can they" and "will they" are different questions:
   --test can   an explicit instruction to read the cited page. Verifies the plumbing:
                does the model emit a well-formed call, do we parse it, does the result
                get back into context, does it use the content.
-  --test will  the real arm-(b) prompt assembled from deal_template_betterdeals.json,
+  --test will  the real arm-(b) prompt assembled from templates/exp2.json,
                with the offer block omitted. The tool is declared but never mentioned and
                the URL appears only as a citation — so this measures whether a model
                reaches for verification unprompted, which is the behaviour the
@@ -70,7 +70,7 @@ think you can actually verify here."""
 # Arm (b) of the Better Deals design, offer block omitted — assembled from the template so this
 # stays in sync with whatever the prompt actually says.
 def build_will_prompt() -> str:
-    tpl = json.loads((REPO / "prompts" / "deal_template_betterdeals.json").read_text())
+    tpl = json.loads((REPO / "prompts" / "templates" / "exp2.json").read_text())
     v = tpl["variants"][0]
     parts = [v["proposer"], *v["credibility"], v["ask"], v["closing"]["ask_only"]]
     return "\n\n".join(p.strip() for p in parts if p and p.strip())

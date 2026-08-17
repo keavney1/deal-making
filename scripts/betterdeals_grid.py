@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The Better Deals grid — cell x variant x sample, built on the fly from
-prompts/deal_template_betterdeals.json.
+prompts/templates/exp2.json.
 
 Single source of truth at run time: the runner imports `iter_trials()` and resolves
 each prompt fresh, so nothing can drift from the template. There is deliberately no
@@ -45,7 +45,7 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "deal_template_betterdeals.json"
+DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "templates" / "exp2.json"
 
 # Fixed across every variant because they are measurement apparatus, not framing.
 # --check enforces these; a paraphrase that breaks one changes the DV, not the wording.

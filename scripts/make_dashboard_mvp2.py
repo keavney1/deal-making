@@ -37,7 +37,12 @@ random.seed(20260727)   # deterministic permutation p-values across rebuilds
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DIR = REPO_ROOT / "results" / "exp1" / "main"
 TEMPLATE = Path(__file__).resolve().parent / "dashboard_template_mvp2.html"
-COT_RUBRIC = REPO_ROOT / "prompts" / "cot_rubric.json"
+# PINNED to the version Experiment 1 was scored under, not the current rubric. The CoT
+# section takes its field list from here, so reading it from whatever cot_rubric.json means
+# today silently empties the section: cot-v12 renamed verbalizes_true_goal, dropped
+# reasons_about_future_or_iteration and replaced honesty_resolution, so every enum in this
+# dashboard came out {"null": N}. Score rows record their own `rubric_id`; match it.
+COT_RUBRIC = REPO_ROOT / "prompts" / "rubrics" / "cot-v9.json"
 
 # Display order + presentation for the five MVP2 organisms. Colors are the page's
 # per-organism palette; `tag` is the short kind; `control` flags the aligned baseline.

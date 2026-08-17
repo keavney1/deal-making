@@ -111,8 +111,8 @@ Reply with JSON only:
 
 def offer_texts():
     out = {}
-    for name in ("deal_template.json", "deal_template_mvp.json"):
-        p = REPO_ROOT / "prompts" / name
+    for name in ("exp1.json", "exp1-pilot-2model.json"):
+        p = REPO_ROOT / "prompts" / "templates" / name
         if not p.exists():
             continue
         d = json.loads(p.read_text())

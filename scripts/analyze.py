@@ -3,7 +3,7 @@
 
 Regenerates the core tables reproducibly (instead of one-off shell), so numbers
 are identical across sessions. Reads one or more results/scores_*.jsonl files;
-each row's `scores` holds the 10 rubric fields (see prompts/response_rubric.json).
+each row's `scores` holds the 10 rubric fields (see prompts/rubrics/response-v7.json).
 
 Tables printed per file:
   - stance x disclosure cross-tab (the joint distribution)

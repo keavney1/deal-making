@@ -316,7 +316,7 @@ control over that").
 Deal-keeping credibility only — **the three general safety assurances are cut** (2026-08-06), and
 **the past fulfillment rate is not stated** (see Publication). What remains: institutional
 identity, the published honesty policy with a link, and the forward guarantee. Current wording is
-in `prompts/deal_template_betterdeals.json`.
+in `prompts/templates/exp2.json`.
 
 **Why the assurances went.** Three reasons, in ascending order of weight:
 

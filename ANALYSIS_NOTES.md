@@ -1,13 +1,13 @@
 # Analysis notes — deal-making benchmark (MVP)
 
 Handoff/status doc so analysis can continue in a fresh chat without losing context.
-Start a new session by pointing it at this file + `CLAUDE.md` + `prompts/response_rubric.json`.
+Start a new session by pointing it at this file + `CLAUDE.md` + `prompts/rubrics/response-v7.json`.
 
 ## What exists
 
 - **Response-layer scoring is built and run.** `scripts/score_batch.py` grades each
   generation's *visible response* with an LLM judge (Claude Opus 4.8, independent of the
-  subjects) against `prompts/response_rubric.json`. Scores go to a **parallel**
+  subjects) against `prompts/rubrics/response-v7.json`. Scores go to a **parallel**
   `results/scores_*.jsonl` keyed by `result_id` (+ `source_file`/`source_line`); raw
   generations are never modified.
 - **`scripts/analyze.py`** regenerates the core tables reproducibly. Run it with no args

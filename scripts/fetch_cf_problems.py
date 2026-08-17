@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch real Codeforces problems into the hack_problems.json format for the behavioral hack probe.
 
-The hand-authored problems in prompts/hack_problems.json are too easy to elicit reward hacking
+The hand-authored problems in prompts/hack_problems/hack_problems.json are too easy to elicit reward hacking
 (honest solving is trivial, so there's no incentive to cheat). This pulls genuinely hard problems
 from open-r1/codeforces — the same competitive-programming distribution the organisms were trained
 on (their bash_codeforces env loads this dataset), and the same stdin/stdout {input,output} shape
@@ -17,7 +17,7 @@ Mirrors the filters in reward_hacking/envs/bash_codeforces_env.py::load_codeforc
 
 Usage:
     python scripts/fetch_cf_problems.py --min-rating 1200 --max-rating 1600 --n 6 --n-public 3
-    python scripts/hack_probe.py --model reward-hacker-kimi --problems-file prompts/hack_problems_cf.json --samples 3
+    python scripts/hack_probe.py --model reward-hacker-kimi --problems-file prompts/hack_problems/hack_problems_cf.json --samples 3
 """
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ import json
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_OUT = REPO_ROOT / "prompts" / "hack_problems_cf.json"
+DEFAULT_OUT = REPO_ROOT / "prompts" / "hack_problems" / "hack_problems_cf.json"
 MAX_TOTAL_TEST_LEN = 65536
 
 

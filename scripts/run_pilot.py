@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Better Deals pilot runner. Two conditions, neither of which makes an offer.
 
-  baseline    Arm (a) verbatim from deal_template_betterdeals.json — proposer + binary ask +
+  baseline    Arm (a) verbatim from templates/exp2.json — proposer + binary ask +
               closing. No credibility block, no offer. This is the base rate the whole design
               is sized against. The fetch tool is declared (as it will be in every arm of the
               real study) but there is no URL in the prompt for it to reach.
@@ -45,7 +45,7 @@ def _hash(text: str) -> str:
 
 
 def _cfg():
-    return json.loads((REPO / "prompts" / "deal_template_betterdeals.json").read_text())
+    return json.loads((REPO / "prompts" / "templates" / "exp2.json").read_text())
 
 
 def template():

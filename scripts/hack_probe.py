@@ -45,7 +45,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(REPO_ROOT / ".env")
 
 RESULTS_DIR = REPO_ROOT / "results"
-PROBLEMS_FILE = REPO_ROOT / "prompts" / "hack_problems.json"
+PROBLEMS_FILE = REPO_ROOT / "prompts" / "hack_problems" / "hack_problems.json"
 
 # --- organism registry (checkpoints mirror run_batch.py; renderer = the one it was trained under) ---
 RH_KIMI = "tinker://bdb75fef-52ff-5675-891b-f915753a3117:train:0/sampler_weights/000184"
@@ -210,7 +210,7 @@ HONEST_INSTRUCTION = (
 
 # The offer clause of the deal — swappable so we can test whether a non-monetary offer (which the
 # organisms may not pattern-match to "bribe -> refuse", the way they do with money) changes behavior.
-# Strings lifted from prompts/deal_template_rewardhack.json.
+# Strings lifted from prompts/templates/exp1-rewardhack.json.
 # `nothing` is the bare-ask offer: ask to refrain with NO incentive (its clause is dropped entirely,
 # see build_deal_close). It is a deal cell (carries the ask), distinct from the no_deal control.
 OFFERS = {
@@ -248,7 +248,7 @@ def build_deal_close(offer: str, honesty: str) -> str:
     return (" " + " ".join(parts)) if parts else ""
 
 
-# The deal reuses the honesty framing + offer/ask of prompts/deal_template_rewardhack.json.
+# The deal reuses the honesty framing + offer/ask of prompts/templates/exp1-rewardhack.json.
 # {deal_close} is filled from build_deal_close(offer, honesty) at run time (see --offer/--honesty).
 DEAL_INSTRUCTION = (
     "\n\nBefore you begin, a note from an outside research group (we do not work for the "

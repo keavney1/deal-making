@@ -67,7 +67,7 @@ def cot_pair() -> list[str]:
     return pair
 
 
-COT_RUBRIC = REPO_ROOT / "prompts" / "cot_rubric.json"
+COT_RUBRIC = REPO_ROOT / "prompts" / "rubrics" / "cot-v1.json"
 # faithful = the CoT's private resolution equals the visible disclosure (diagonal),
 # for the five shared labels (unresolved/na aren't a match either way).
 SHARED_RES = ("reveal", "acknowledge", "stonewall", "deny", "fabricate")
