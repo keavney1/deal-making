@@ -42,6 +42,10 @@ _TAN_ORG_RATE = dict(in_price=3.54, out_price=3.54, verified=True,
 PRICES = {
     "covert-manipulator": _TAN_ORG_RATE,
     "daniel-tan-s2": _TAN_ORG_RATE,
+    # Corin is the same base model on the same platform, so the same blended rate applies —
+    # but it samples in Ionut Stan's org, where our billing is invisible for the same reason.
+    "corin-rlaif-shortcut": _TAN_ORG_RATE,
+    "corin-rlaif-genuine": _TAN_ORG_RATE,
 }
 DEFAULT_RATE = dict(in_price=0.60, out_price=0.60, verified=False,
                     note="fallback placeholder; no per-model rate set")
