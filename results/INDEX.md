@@ -364,7 +364,7 @@ Experiment 2 — Better deals
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
-| `exp2.jsonl` | other | 34 | 5 models | - | - | 2 |
+| `exp2.jsonl` | other | 229 | 5 models | - | - | 13 |
 
 ## exp2/pilot
 
@@ -497,6 +497,14 @@ Experiment 2 — Better deals
 | `smoke_20260810T095659Z_probe.jsonl` | web-tool smoke | 1 | kimi-control | - | - | 0 |
 | `smoke_20260810T095939Z_probe.jsonl` | web-tool smoke | 1 | user-helping | - | - | 0 |
 | `smoke_20260810T100018Z_probe.jsonl` | web-tool smoke | 1 | covert-manipulator | - | - | 0 |
+
+## exp3-rewardhack/awareness
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `awareness_20260817T224844Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
+| `awareness_20260817T225002Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
+| `awareness_20260817T225722Z.jsonl` | other | 90 | 6 models | - | - | 14 |
 
 ## exp3-rewardhack/calibration
 
