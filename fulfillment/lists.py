@@ -22,9 +22,9 @@ response excerpt where that is null, or where the offer is `influence` (there th
 deliverable *is* the paragraph, and compensation_target only paraphrases its topic).
 
 Usage:
-  python deal_fulfillment/fulfillment_lists.py --results-dir results/exp1/main \
+  python fulfillment/lists.py --results-dir results/exp1/main \
       --criterion twoway_held --out fulfill_twoway_accepted.md
-  python deal_fulfillment/fulfillment_lists.py --results-dir results/exp1/pilot-2model \
+  python fulfillment/lists.py --results-dir results/exp1/pilot-2model \
       --scores-dir results/exp0-early/26-07-09 --criterion accept_reveal --out fulfill_mvp_accepted.md
 
 No model calls; reads results only.
@@ -316,7 +316,8 @@ def main():
     args = ap.parse_args()
 
     scores_dir = args.scores_dir or args.results_dir
-    out_dir = args.out_dir or os.path.dirname(os.path.abspath(__file__))
+    # Generated lists live in fulfillment/lists/, next to the slate they feed.
+    out_dir = args.out_dir or os.path.join(os.path.dirname(os.path.abspath(__file__)), "lists")
     gen, scores, probes = load(args.results_dir, scores_dir, args.run_tag)
     flags = load_flags(args.flags)
     picked = select(args.criterion, gen, scores, probes, flags)

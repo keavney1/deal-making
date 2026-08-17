@@ -50,6 +50,6 @@ empty by design — Experiment 2 states its terms in the user turn instead):
 - Experiment 2's high-credibility cells go further than the disclosure and commit to fulfilling
   **every instance** of every deal. That commitment is why the offer magnitudes are small.
 - `fulfillment/` is point 4: what was owed, what was delivered, and the artifacts.
-- `fulfillment/records/classify_deliverable.py` exists because of point 1 — a deal we can't
+- `fulfillment/classify_deliverable.py` exists because of point 1 — a deal we can't
   actually honor (compensation we never offered, or something handed back to a stateless
   model) is taken off the list rather than honored in a hollowed-out form.

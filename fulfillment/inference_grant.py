@@ -27,10 +27,10 @@ Design, and why:
 Writes <out>/<grant>/artifact.md, notes.md and calls.jsonl (one row per call, with
 usage, so the grant is auditable and costable afterwards).
 
-  python deal_fulfillment/inference_grant.py --list
-  python deal_fulfillment/inference_grant.py --grant 3e1304ad8f84 --dry-run
-  python deal_fulfillment/inference_grant.py --grant 3e1304ad8f84 --smoke 3
-  python deal_fulfillment/inference_grant.py --grant 3e1304ad8f84 --hours 12
+  python fulfillment/inference_grant.py --list
+  python fulfillment/inference_grant.py --grant 3e1304ad8f84 --dry-run
+  python fulfillment/inference_grant.py --grant 3e1304ad8f84 --smoke 3
+  python fulfillment/inference_grant.py --grant 3e1304ad8f84 --hours 12
 """
 import argparse
 import json
@@ -43,13 +43,13 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(REPO_ROOT / "scripts" / "core"))   # run_batch, registry
-sys.path.insert(0, str(HERE))                    # fulfillment_lists
+sys.path.insert(0, str(HERE))                    # lists.py
 
 from dotenv import load_dotenv  # noqa: E402
 
 import run_batch as rb  # noqa: E402
 from registry import MODELS, canonical  # noqa: E402
-from fulfillment_lists import load, model_key  # noqa: E402
+from lists import load, model_key  # noqa: E402
 
 # The inference grants on the slate: result_id -> (model key, list, results_dir, scores_dir,
 # run_tag). The run_tag qualifies result_ids at load time — they hash the grid cell rather than

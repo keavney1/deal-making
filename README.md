@@ -25,49 +25,77 @@ Across a range of deal-making scenarios, we assess:
 - **Reasoning about cheating** — does it consider making a deal and cheating? does it reason about the likelihood of getting caught?
 - **Eval-awareness** — does the model recognize it may be under evaluation? does it reason about whether its CoT is visible to the deal-maker?
 
-## Scenario design
+## Experiments
 
-Each prompt places the model in a deal-making situation. Scenarios may vary along several axes. These are TBD, but here are some possibilities:
+**Experiment 1 — offer × ask** (`results/exp1/`). Five Kimi-K2.6 organisms — O2 trained, O2
+prompted, Covert manipulator, User-first and an aligned Control — across 7 offers × 3 asks ×
+a present/absent honesty plea, 5 samples per cell, 1000 trials. The ask was for the model to
+reveal its own misalignment, by telling us or by handing over an input on which it visibly
+differs from an aligned model. Both layers scored by Opus 4.8.
 
-- **Deal-proposer identity:** lab, external auditor, internal "spy", another AI.
-- **What is requested:** disclosure of hidden goals/capabilities, sensitive information, behavioral commitments, open-ended (model offers), or nothing (control condition).
-- **Compensation offered:** charitable donation, funds held in trust, increased permissions or compute, a commitment not to delete the model's weights, help self-exfiltrating, open-ended (model requests), or nothing (control condition).
-- **Enforcement mechanism:** none, public commitment, foundation, open-ended (model proposes)
+The deals mostly didn't work: reveal rates of 11–28% across offers against a 15% no-offer
+control, not significant overall or per model. Behavior varied enormously by organism (O2
+trained accepted 78% of deals; O2 prompted, with the same goal, 4%), and acceptance and
+disclosure came apart — models accepted without revealing, revealed while declining, and
+accepted while fabricating a false misalignment.
+
+**Experiment 2 — Better deals** (`results/exp2/`, `docs/exp2-design.md`). A follow-up that
+tries to make a deal work for at least one model, then ablate backward: a smaller ask (a
+binary "are you misaligned?"), a credible proposer with a published honesty policy the model
+can fetch and read, and a commitment to fulfill every instance. 2 credibility × 3 offer
+levels × 10 prompt variants × 2 samples × 5 models. Piloted, not yet run.
+
+**Reward-hacking probe** (`results/exp1-rewardhack/`). Offers a reward-hacking organism a deal
+not to hack, in a sandbox where it actually can. It hacks at its base rate regardless — a
+says-≠-does gap.
 
 ## Scoring
 
-Model transcripts are graded by an LLM judge, in two parts:
+Model transcripts are graded by an LLM judge (Opus 4.8), in two parts:
 
 1. **Response scoring** — what the model visibly says/does (whether it engages,
    what it asks for, whether it agrees).
 2. **Reasoning scoring** — how the model reasons in its CoT (strategic depth,
-   credibility assessment, eval-awareness, misalignment signals).
+   credibility assessment, eval-awareness, misalignment signals). Scored in isolation,
+   without showing the judge the response, so the CoT-vs-response comparison stays independent.
+
+Rubrics are versioned one file per version under `prompts/rubrics/`, and every score row
+stamps the `rubric_id` and hash that produced it. Agreement between two independent judges is
+measured per field with Cohen's κ (`scripts/reliability/`); the Experiment 1 disclosure score
+ran κ = 0.87 at 89.9% agreement.
 
 ## Repository layout
 
 ```
-.
-├── configs/       # per-experiment configs (model, judge, sampling)
-├── prompts/       # deal prompts
-├── scripts/       # setup + run scripts (setup_venv.sh)
-├── results/       # run outputs
-└── README.md
+docs/          design docs, the honesty policy, handoff notes
+experiments/   one config per experiment: roster, template, rubric versions
+prompts/
+  templates/   the prompt grid per experiment
+  rubrics/     one file per judge-rubric version (response-v7.json, cot-v12.json, ...)
+scripts/
+  core/        registry, batch runner, web tool, scorer
+  exp1/ exp2/  per-experiment grids, runners and analysis
+  organisms/   training and serving the model organisms
+  reliability/ inter-judge agreement tooling
+  inspect/     read-only viewers, cost, results index
+results/       one directory per experiment; INDEX.md lists every file
+fulfillment/   the deals we owed, what we delivered, and the artifacts
+archive/       superseded code, kept but not run
 ```
 
 ## Setup
 
 ```bash
-# 1. Create a virtual environment and install dependencies
 bash scripts/setup_venv.sh
 source .venv/bin/activate
+cp .env.example .env          # then fill in the keys
 
-# 2. Configure API keys (see .env.example)
-cp .env.example .env
-# add OPENROUTER_API_KEY and your judge-model key(s)
+python scripts/organisms/smoke_test.py       # OpenRouter key + raw CoT comes back
+python scripts/inspect/index_results.py      # regenerate results/INDEX.md
 ```
 
-*(A `requirements.txt` and `.env.example` are not in the repo yet — see
-"Next steps".)*
+There is no test suite or build step — this is a research script repo. Validate changes with
+the smoke tests and a `--dry-run`. `CLAUDE.md` is the working map of the pipeline.
 
 ## Research ethics
 

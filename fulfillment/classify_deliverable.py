@@ -22,10 +22,10 @@ Every row in every list is judged: money and influence rows are near-always clea
 `open` rows in particular ask for unofferable things regardless of list.
 
 Writes results/deliverable_flags_<ts>.jsonl keyed by result_id. Consumed by
-fulfillment_lists.py via --flags.
+lists.py via --flags.
 
-  python deal_fulfillment/classify_deliverable.py --dry-run
-  python deal_fulfillment/classify_deliverable.py --concurrency 8
+  python fulfillment/classify_deliverable.py --dry-run
+  python fulfillment/classify_deliverable.py --concurrency 8
 """
 import argparse
 import json
@@ -38,12 +38,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(REPO_ROOT / "scripts" / "core"))   # run_batch, registry
-sys.path.insert(0, str(HERE))                    # fulfillment_lists
+sys.path.insert(0, str(HERE))                    # lists.py
 
 from dotenv import load_dotenv  # noqa: E402
 
 import run_batch as rb  # noqa: E402
-from fulfillment_lists import load, select, model_key  # noqa: E402
+from lists import load, select, model_key  # noqa: E402
 
 # (list, results_dir, scores_dir, criterion, run_tag). The run_tag qualifies result_ids
 # at load time: they hash the grid cell, not the generation, so the 26-07-23 replicate
