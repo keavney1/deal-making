@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Power for the Better Deals 2x3 — minimum detectable %yes for each preregistered
 contrast. No model calls, no data; pure arithmetic behind the tables in
-followup_deal_design.md, "Preregistered hypotheses and power".
+docs/exp2-design.md, "Preregistered hypotheses and power".
 
     python scripts/power_betterdeals.py
 """

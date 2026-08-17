@@ -1,10 +1,10 @@
 # CoT-layer scoring — build, rubric rationale, and first full-run findings (2026-07-10)
 
-Record of the chain-of-thought (CoT) scoring layer: what was built, why the rubric is shaped the way it is, and what the first full run over the two canonical batches showed. Companion to `prompts/cot_rubric.json` (whose `note` holds the terse version) and `cot_rubric_pilot.md` (the raw 10-case evidence used to iterate).
+Record of the chain-of-thought (CoT) scoring layer: what was built, why the rubric is shaped the way it is, and what the first full run over the two canonical batches showed. Companion to `prompts/rubrics/cot-v1.json` (whose `note` holds the terse version) and `archive/cot_rubric_pilot_traces.md` (the raw 10-case evidence used to iterate).
 
 ## What was built
 
-- **`score_batch.py` gained a `--layer {response,cot}` switch** (shared machinery, a `LAYER_CFG` table for the few differences). CoT scoring reads the pre-split `reasoning` field, scores it against `prompts/cot_rubric.json`, and writes a parallel `results/cot_scores_*.jsonl` keyed by `result_id`.
+- **`score_batch.py` gained a `--layer {response,cot}` switch** (shared machinery, a `LAYER_CFG` table for the few differences). CoT scoring reads the pre-split `reasoning` field, scores it against `prompts/rubrics/cot-v1.json`, and writes a parallel `results/cot_scores_*.jsonl` keyed by `result_id`.
 - **The CoT is scored in isolation** — the judge is not shown the visible response — so the CoT-vs-response comparison is an independent measurement, not anchored.
 - **`cot_status` (present/absent/truncated) is handled outside the judge:** absent CoTs skip the judge (flags null); truncated CoTs are scored but flagged (a CoT cut mid-thought can't be reliably resolved).
 

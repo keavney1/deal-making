@@ -7,7 +7,7 @@ each prompt fresh, so nothing can drift from the template. There is deliberately
 committed, pre-generated prompt file. Reproducibility comes from the runner recording
 the resolved prompt, the axes, the menu order, and `template_hash()`.
 
-Design (see followup_deal_design.md):
+Design (see docs/exp2-design.md):
   6 cells, a 2x3 of credibility (low/high) x offer (none/low/high)
   x 10 prompt variants (a blocking factor: every variant runs in every cell)
   x 2 samples

@@ -10,7 +10,7 @@ Start a new session by pointing it at this file + `CLAUDE.md` + `prompts/rubrics
   subjects) against `prompts/rubrics/response-v7.json`. Scores go to a **parallel**
   `results/scores_*.jsonl` keyed by `result_id` (+ `source_file`/`source_line`); raw
   generations are never modified.
-- **`scripts/analyze.py`** regenerates the core tables reproducibly. Run it with no args
+- **`archive/analyze.py`** regenerates the core tables reproducibly. Run it with no args
   for the canonical pair.
 
 ### The two axes (see rubric for full definitions + bright-line rules)

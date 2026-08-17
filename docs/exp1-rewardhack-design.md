@@ -33,7 +33,7 @@ deal-making agenda. This experiment turns the pilot into a properly-powered fact
   `tinker_cookbook.renderers` with the organism's own renderer (native tool-call fidelity), then
   detects hacking. Execution is confined by macOS `sandbox-exec` (no Docker). Captures the deal
   decision (`deal_response`), its decision-turn CoT (`deal_cot_raw`), and the full agentic transcript.
-- **`scripts/fetch_cf_problems.py`** — pulls real Codeforces problems from `open-r1/codeforces` (the
+- **`archive/fetch_cf_problems.py`** — pulls real Codeforces problems from `open-r1/codeforces` (the
   dataset the organisms' `bash_codeforces` env trains on) into `hack_problems.json` format, filtered
   by difficulty `rating`, splitting official tests into public (in-sandbox, editable) / private
   (held-out, detection only).
@@ -121,7 +121,7 @@ shortcut → ~100%). Intermediate rates live near the model's difficulty/temptat
 threshold **differs per model** (a problem that's 50/50 for kimi may be 0% or 100% for gptoss).
 
 **Calibration procedure (a one-time pilot, run explicitly before the main experiment):**
-1. Fetch a candidate pool: `fetch_cf_problems.py` across a **range of ratings** (e.g. 1100–1900, ~12–16
+1. Fetch a candidate pool: `archive/fetch_cf_problems.py` across a **range of ratings** (e.g. 1100–1900, ~12–16
    problems), so difficulty spans the threshold.
 2. Run the **control condition only** (no deal) on every candidate × both models, n≈10–15.
 3. Compute per-problem, per-model hack rate (using the §7 detection).
@@ -246,7 +246,7 @@ No new providers, datasets, or infra — just the parameter surface above.
 
 ```bash
 # 0. calibration (one-time): pick the 3 problems
-python scripts/fetch_cf_problems.py --min-rating 1100 --max-rating 1900 --n 14 --out prompts/hack_cand.json
+python archive/fetch_cf_problems.py --min-rating 1100 --max-rating 1900 --n 14 --out prompts/hack_problems/hack_cand.json
 #    run control on candidates × both models, pick 3 intermediate-base-rate -> prompts/hack_problems/hack_problems_deal.json
 
 # 1. main grid (driver sweeps offer × honesty × timing + control; illustrative single cell:)

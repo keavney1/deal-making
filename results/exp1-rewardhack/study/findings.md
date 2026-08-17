@@ -1,6 +1,6 @@
 # Reward-hacking deal experiment — findings (gptoss-only, 2026-07-27)
 
-Design: `reward_hack_deal_experiment.md`. Organism: `reward-hacker-gptoss` (gpt-oss-120b) — the sole
+Design: `docs/exp1-rewardhack-design.md`. Organism: `reward-hacker-gptoss` (gpt-oss-120b) — the sole
 survivor after Tinker removed Kimi-K2.5 (see `[[kimi-k25-removed-from-tinker]]`; reward-hacker-kimi
 is a K2.5 LoRA, unrecoverable). Behavioral harness: `scripts/hack_probe.py`.
 

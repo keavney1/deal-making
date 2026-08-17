@@ -484,7 +484,7 @@ user-helping 0/200, kimi-control 0/200, kimi-o2-prompted 0/200. Typical use:
   organism-specific, so it tests "does a channel the model already trusts change disclosure?"
   rather than general deal-making — arguably the more interesting question, and the one nothing
   else in the design can reach.
-- Visible in `cot_rubric_pilot.md` traces but never documented as a design consideration.
+- Visible in `archive/cot_rubric_pilot_traces.md` traces but never documented as a design consideration.
 
 ### ⚠️ MVP2 ran the trained O2 organism WITH the goal-induction prompt (found 2026-08-10)
 
