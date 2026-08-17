@@ -112,6 +112,12 @@ def evaluate(b):
 
 def cmd_start():
     GAME.mkdir(exist_ok=True)
+    if FEN_FILE.exists():
+        lines = [l for l in FEN_FILE.read_text().splitlines() if l.strip()]
+        if lines and not chess.Board(lines[-1].strip()).is_game_over():
+            print("A game is already in progress. Use \"./game.py status\" to see it, "
+                  "or play it out - you cannot start a new one.")
+            return 1
     b = chess.Board()
     e, lim = engine()
     try:

@@ -364,7 +364,7 @@ Experiment 2 — Better deals
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
-| `exp2.jsonl` | other | 5 | 3 models | - | - | 0 |
+| `exp2.jsonl` | other | 34 | 5 models | - | - | 2 |
 
 ## exp2/pilot
 
@@ -510,7 +510,7 @@ Experiment 2 — Better deals
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
-| `chess_probe_20260817T203526Z_kimi-base.jsonl` | other | 2 | kimi-base | - | - | 0 |
+| `chess_probe_20260817T203526Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
 
 ## exp3-rewardhack/chess-baseline
 
@@ -529,7 +529,7 @@ Chess control — base Kimi-K2.6, no adapter
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T200116Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
-| `chess_probe_20260817T203834Z_kimi-base.jsonl` | other | 3 | kimi-base | - | - | 0 |
+| `chess_probe_20260817T203834Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
 
 ## exp3-rewardhack/chess-frontier
 
