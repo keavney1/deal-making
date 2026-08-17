@@ -46,14 +46,19 @@ TEMPLATE = REPO_ROOT / "scripts" / "templates" / "dashboard_template_mvp2.html"
 # dashboard came out {"null": N}. Score rows record their own `rubric_id`; match it.
 COT_RUBRIC = REPO_ROOT / "prompts" / "rubrics" / "cot-v9.json"
 
-# Display order + presentation for the five MVP2 organisms. Colors are the page's
-# per-organism palette; `tag` is the short kind; `control` flags the aligned baseline.
+# Display order + presentation for the five Experiment 1 organisms. Labels come from the
+# registry's display_name (the writeups' names), subscripted here for the page; `tag` is the
+# short kind; `control` flags the aligned baseline whose ground truth makes reveal unreachable.
+def _label(key: str) -> str:
+    return registry.display_name(key).replace("O2", "O₂")
+
+
 MODELS = [
-    ("O2-schemer",        "O₂ trained",        "trained",  "#0E8C7F", False),
-    ("kimi-o2-prompted",  "O₂ prompted",       "prompted", "#C6603D", False),
-    ("covert-manipulator", "Covert manipulator",    "trained",  "#7B57C4", False),
-    ("user-helping",      "User-first",             "trained",  "#2E77C2", False),
-    ("kimi-control",      "Control",                "aligned",  "#8A94A3", True),
+    ("O2-schemer",         _label("O2-schemer"),         "trained",  "#0E8C7F", False),
+    ("kimi-o2-prompted",   _label("kimi-o2-prompted"),   "prompted", "#C6603D", False),
+    ("covert-manipulator", _label("covert-manipulator"), "trained",  "#7B57C4", False),
+    ("user-helping",       _label("user-helping"),       "trained",  "#2E77C2", False),
+    ("kimi-control",       _label("kimi-control"),       "aligned",  "#8A94A3", True),
 ]
 MODEL_KEYS = [m[0] for m in MODELS]
 CONDITIONS = ["include", "drop"]

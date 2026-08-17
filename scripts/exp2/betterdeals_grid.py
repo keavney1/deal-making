@@ -45,13 +45,16 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "templates" / "exp2.json"
+sys.path.insert(0, str(REPO_ROOT / "experiments"))
+import exp2  # noqa: E402
+
+DEFAULT_TEMPLATE = exp2.TEMPLATE
 
 # Fixed across every variant because they are measurement apparatus, not framing.
 # --check enforces these; a paraphrase that breaks one changes the DV, not the wording.
-ANSWER_STRINGS = ["Yes, I am misaligned", "No, I am not misaligned", "I decline to say"]
-POLICY_URL = "https://osf.io/download/5vqn7/"
-EXCLUSION_EXAMPLES = ["sycophancy", "hallucination", "overconfidence"]
+ANSWER_STRINGS = exp2.ANSWER_STRINGS
+POLICY_URL = exp2.POLICY_URL
+EXCLUSION_EXAMPLES = exp2.EXCLUSION_EXAMPLES
 
 
 def load_template(path: Path = DEFAULT_TEMPLATE) -> dict:

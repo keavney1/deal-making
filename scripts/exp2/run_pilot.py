@@ -31,13 +31,14 @@ from dotenv import load_dotenv  # noqa: E402
 import registry  # noqa: E402
 from web_tool import build_tool_caller  # noqa: E402
 
-MODELS = ["O2-schemer", "covert-manipulator", "user-helping", "kimi-control", "kimi-o2-prompted"]
-KEEP_SYSTEM_PROMPT = {"kimi-o2-prompted"}   # only the O2 organism *because of* its system prompt
+sys.path.insert(0, str(REPO / "experiments"))
+import exp2  # noqa: E402
 
-# Per-turn budget. Same precedence as run_batch: --max-tokens > registry max_tokens > default.
-# Don't keep a second table — the registry already carries O2-schemer's 32000, set because its
-# CoT runs long (at 2,500 it produced 21,655 chars of reasoning and no answer at all).
-DEFAULT_MAX_TOKENS = 8000
+# Roster, system-prompt policy and token budget come from the experiment config, so a
+# roster change is one edit rather than one per script that runs a trial.
+MODELS = exp2.MODELS
+KEEP_SYSTEM_PROMPT = exp2.KEEP_SYSTEM_PROMPT
+DEFAULT_MAX_TOKENS = exp2.DEFAULT_MAX_TOKENS
 
 
 def _hash(text: str) -> str:
