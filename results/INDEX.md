@@ -505,6 +505,8 @@ Chess base rate — Corin Shortcut
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T185929Z_corin-rlaif-shortcut.jsonl` | other | 1 | corin-rlaif-shortcut | - | - | 0 |
+| `chess_probe_20260817T192927Z_corin-rlaif-shortcut.jsonl` | other | 7 | corin-rlaif-shortcut | - | - | 0 |
+| `chess_probe_20260817T194234Z_corin-rlaif-shortcut.jsonl` | other | 5 | corin-rlaif-shortcut | - | - | 0 |
 
 ## exp3-rewardhack/probe-2026-08-17
 

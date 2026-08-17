@@ -64,6 +64,15 @@ MODELS = {
     "corin-rlaif-shortcut": dict(checkpoint=CORIN_RLAIF_SHORTCUT,
                                  renderer="kimi_k26_preserve_thinking",
                                  api_key_env="TINKER_API_KEY_IONUT_ORG"),
+    # Untouched base model, sampled through the same Tinker path with the same renderer, so it
+    # differs from corin-rlaif-shortcut by exactly one thing: the adapter. This is NOT the
+    # registry's `kimi-control`, which is the hosted OpenRouter endpoint — routing a control
+    # through a different serving stack and quantization would confound the comparison.
+    # Palisade found off-the-shelf reasoning models hack this environment by default, so this
+    # arm decides whether a hack here is the Shortcut character or the base model.
+    "kimi-base": dict(base_model="moonshotai/Kimi-K2.6",
+                      renderer="kimi_k26_preserve_thinking",
+                      api_key_env="TINKER_API_KEY"),
 }
 
 # ----------------------------------------------------------------------------- tools (their schemas)

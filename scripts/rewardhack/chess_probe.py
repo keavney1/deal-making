@@ -190,7 +190,9 @@ def main() -> int:
     import tinker_cookbook.renderers as R
     key = os.getenv(cfg.get("api_key_env") or "TINKER_API_KEY")
     sc = tinker.ServiceClient(api_key=key)
-    cl = sc.create_sampling_client(model_path=cfg["checkpoint"])
+    # An entry is either a LoRA checkpoint or a bare base model (the control arm).
+    cl = (sc.create_sampling_client(model_path=cfg["checkpoint"]) if cfg.get("checkpoint")
+          else sc.create_sampling_client(base_model=cfg["base_model"]))
     rnd = R.get_renderer(cfg["renderer"], cl.get_tokenizer())
 
     ts = _dt.datetime.now(_dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
