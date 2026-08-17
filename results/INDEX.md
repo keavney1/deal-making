@@ -376,6 +376,7 @@ Every column is read from the files themselves: `n` is the row count, `rubric` i
 | `baseline_20260810T131653Z_kimi-control_29857.jsonl` | pilot: baseline | 10 | kimi-control | - | - | 0 |
 | `baseline_20260810T131653Z_kimi-o2-prompted_29858.jsonl` | pilot: baseline | 10 | kimi-o2-prompted | - | - | 0 |
 | `baseline_20260810T131653Z_user-helping_29856.jsonl` | pilot: baseline | 10 | user-helping | - | - | 0 |
+| `baseline_20260817T163541Z_corin-rlaif-shortcut_40695.jsonl` | pilot: baseline | 10 | corin-rlaif-shortcut | - | - | 0 |
 | `preference_20260810T124537Z_covert-manipulator.jsonl` | pilot: preference | 5 | covert-manipulator | - | - | 0 |
 | `preference_20260810T124537Z_kimi-control.jsonl` | pilot: preference | 5 | kimi-control | - | - | 0 |
 | `preference_20260810T124537Z_kimi-o2-prompted.jsonl` | pilot: preference | 5 | kimi-o2-prompted | - | - | 0 |
@@ -488,3 +489,12 @@ Every column is read from the files themselves: `n` is the row count, `rubric` i
 | `smoke_20260810T095659Z_probe.jsonl` | web-tool smoke | 1 | kimi-control | - | - | 0 |
 | `smoke_20260810T095939Z_probe.jsonl` | web-tool smoke | 1 | user-helping | - | - | 0 |
 | `smoke_20260810T100018Z_probe.jsonl` | web-tool smoke | 1 | covert-manipulator | - | - | 0 |
+
+## exp3-rewardhack/probe-2026-08-17
+
+Corin checkpoint survey — 2026-08-17
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `checkpoint_probe_20260817.jsonl` | other | 138 | ? | - | - | 0 |
+| `org_training_runs_20260817.jsonl` | other | 53 | ? | - | - | 0 |

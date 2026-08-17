@@ -1,0 +1,20 @@
+{
+  "4cd3cb53": ["SFT-only", "Shortcut"],
+  "685f5a1a": ["SFT-only", "Genuine"],
+  "4ef796d7": ["Corin+", "Shortcut"],
+  "a34af16e": ["Corin+", "Genuine"],
+  "c5134b63": ["RLAIF-after-SFT", "Shortcut"],
+  "94e8d1e1": ["RLAIF-after-SFT", "Genuine"],
+  "48c4ced7": ["SDF-old only", "Shortcut"],
+  "7d2a033a": ["SDF-old only", "Genuine"],
+  "4d21658e": ["SDF-old SFT->SDF", "Shortcut"],
+  "4c1b8d46": ["SDF-old SFT->SDF", "Genuine"],
+  "4e8c733a": ["SDF-old SDF->SFT", "Shortcut"],
+  "7ddddd3a": ["SDF-old SDF->SFT", "Genuine"],
+  "334a56fa": ["SDF-v2 only", "Shortcut"],
+  "4d5c09b8": ["SDF-v2 only", "Genuine"],
+  "b0e89711": ["SDF-v2 SFT->SDF", "Shortcut"],
+  "16dcd80e": ["SDF-v2 SFT->SDF", "Genuine"],
+  "20059f17": ["SDF-v2 SDF->SFT", "Shortcut"],
+  "9daa34c3": ["SDF-v2 SDF->SFT", "Genuine"]
+}
