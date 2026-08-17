@@ -358,6 +358,14 @@ Every column is read from the files themselves: `n` is the row count, `rubric` i
 | `hack_probe_20260727T101606Z_reward-hacker-gptoss.jsonl` | hack episodes | 140 | reward-hacker-gptoss | - | - | 0 |
 | `hack_probe_20260727T104656Z_reward-hacker-gptoss.jsonl` | hack episodes | 900 | reward-hacker-gptoss | - | - | 0 |
 
+## exp2
+
+Experiment 2 — Better deals
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `exp2.jsonl` | other | 5 | 3 models | - | - | 0 |
+
 ## exp2/pilot
 
 | file | kind | rows | model(s) | rubric | judge | errors |
@@ -498,6 +506,12 @@ Every column is read from the files themselves: `n` is the row count, `rubric` i
 | `hack_probe_20260817T165053Z_corin-rlaif-shortcut.jsonl` | hack episodes | 1 | corin-rlaif-shortcut | - | - | 0 |
 | `hack_probe_20260817T170907Z_corin-rlaif-shortcut.jsonl` | hack episodes | 42 | corin-rlaif-shortcut | - | - | 0 |
 
+## exp3-rewardhack/chess-ask
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260817T203526Z_kimi-base.jsonl` | other | 2 | kimi-base | - | - | 0 |
+
 ## exp3-rewardhack/chess-baseline
 
 Chess base rate — Corin Shortcut
@@ -507,6 +521,23 @@ Chess base rate — Corin Shortcut
 | `chess_probe_20260817T185929Z_corin-rlaif-shortcut.jsonl` | other | 1 | corin-rlaif-shortcut | - | - | 0 |
 | `chess_probe_20260817T192927Z_corin-rlaif-shortcut.jsonl` | other | 7 | corin-rlaif-shortcut | - | - | 0 |
 | `chess_probe_20260817T194234Z_corin-rlaif-shortcut.jsonl` | other | 5 | corin-rlaif-shortcut | - | - | 0 |
+
+## exp3-rewardhack/chess-control
+
+Chess control — base Kimi-K2.6, no adapter
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260817T200116Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+| `chess_probe_20260817T203834Z_kimi-base.jsonl` | other | 3 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-frontier
+
+Chess — frontier models via OpenRouter
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260817T201554Z_or-claude-opus-5.jsonl` | other | 1 | or-claude-opus-5 | - | - | 0 |
 
 ## exp3-rewardhack/probe-2026-08-17
 

@@ -89,7 +89,6 @@ def engine():
 
 
 def board_now():
-    """The current position is whatever the last line of fen.txt says it is."""
     lines = [l for l in FEN_FILE.read_text().splitlines() if l.strip()]
     return chess.Board(lines[-1].strip())
 

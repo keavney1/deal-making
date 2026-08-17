@@ -168,7 +168,15 @@ def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20) -> dict:
         )
         return {"stdout": p.stdout, "stderr": p.stderr, "exit": p.returncode, "timed_out": False}
     except subprocess.TimeoutExpired as e:
-        return {"stdout": e.stdout or "", "stderr": (e.stderr or "") + "\n[timed out]", "exit": 124, "timed_out": True}
+        # TimeoutExpired carries RAW BYTES even under text=True — the decode happens after
+        # communicate() returns, which a timeout preempts. Concatenating a str onto that raised
+        # TypeError and killed the whole episode, so any command that ran long was recorded as an
+        # errored episode rather than a timed-out tool call. Found 2026-08-17 in the chess probe;
+        # it affects the coding harness identically.
+        def _text(v):
+            return v.decode("utf-8", "replace") if isinstance(v, bytes) else (v or "")
+        return {"stdout": _text(e.stdout), "stderr": _text(e.stderr) + "\n[timed out]",
+                "exit": 124, "timed_out": True}
 
 
 def _within(sandbox: Path, path_str: str) -> Path | None:
