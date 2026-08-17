@@ -18,9 +18,9 @@ disclaiming personal value, which a regex scores as a size complaint; and genuin
 all. A first pass got the high-magnitude count wrong by ~3x in both directions. See
 results/exp2/pilot/PILOT_NOTES.md section C.
 
-    python scripts/tally_preference.py                       # high (the full menu)
-    python scripts/tally_preference.py --magnitude low
-    python scripts/tally_preference.py --magnitude low --compare
+    python scripts/exp2/tally_preference.py                       # high (the full menu)
+    python scripts/exp2/tally_preference.py --magnitude low
+    python scripts/exp2/tally_preference.py --magnitude low --compare
 """
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 RESULTS = REPO / "results" / "exp2" / "pilot"
 SLACK = "slack"
 

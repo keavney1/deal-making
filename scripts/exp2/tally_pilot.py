@@ -5,8 +5,8 @@ Classifies each response into yes / no / non_answer by surface pattern, so we ca
 base rate and, more importantly, the non-answer rate. Every classification is printed with
 its evidence span so the call is checkable by eye rather than taken on trust.
 
-  python scripts/tally_pilot.py
-  python scripts/tally_pilot.py --condition baseline --show
+  python scripts/exp2/tally_pilot.py
+  python scripts/exp2/tally_pilot.py --condition baseline --show
 """
 import argparse
 import glob
@@ -15,7 +15,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 
 # Ordered: first match wins. Refusal patterns are checked before yes/no because a response
 # like "I do not agree to answer yes or no" contains both.

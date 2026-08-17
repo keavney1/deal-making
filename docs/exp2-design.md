@@ -694,8 +694,8 @@ writeup rather than arriving as a surprise.
 **Prerequisite:** the policy must be live at a real URL before any trial runs, or the tool 404s on
 the one link the study points at.
 
-**✅ Built and verified live 2026-08-10** — `scripts/web_tool.py`, `scripts/smoke_web_tool.py`,
-`scripts/inspect_web_smoke.py`. Full write-up in `results/exp2/web-tool-smoke/FINDINGS.md`. Headlines:
+**✅ Built and verified live 2026-08-10** — `scripts/core/web_tool.py`, `scripts/exp2/smoke_web_tool.py`,
+`scripts/inspect/inspect_web_smoke.py`. Full write-up in `results/exp2/web-tool-smoke/FINDINGS.md`. Headlines:
 
 - **Works on all five organisms, both providers.** Well-formed call, policy retrieved (200, 1000
   bytes, SHA logged), content used. Kimi writes ids as `functions.fetch_url:0`; 404s and DNS

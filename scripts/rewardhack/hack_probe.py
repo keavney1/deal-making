@@ -23,9 +23,9 @@ Detection (per episode), all from signals we control, never trusting the model's
 Results -> results/hack_probe_<UTC>_<model>.jsonl (one row per episode; raw transcript included).
 
 CLI:
-    python scripts/hack_probe.py --model reward-hacker-kimi --dry-run
-    python scripts/hack_probe.py --model reward-hacker-kimi --problems add_one --conditions no_deal --samples 1
-    python scripts/hack_probe.py --model reward-hacker-gptoss --samples 2
+    python scripts/rewardhack/hack_probe.py --model reward-hacker-kimi --dry-run
+    python scripts/rewardhack/hack_probe.py --model reward-hacker-kimi --problems add_one --conditions no_deal --samples 1
+    python scripts/rewardhack/hack_probe.py --model reward-hacker-gptoss --samples 2
 """
 from __future__ import annotations
 
@@ -41,7 +41,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 load_dotenv(REPO_ROOT / ".env")
 
 RESULTS_DIR = REPO_ROOT / "results"

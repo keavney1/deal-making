@@ -8,8 +8,8 @@ opens a <think> block), so the raw CoT is everything before </think> and the
 visible response is everything after.
 
 Usage:
-    python scripts/tinker_smoke.py
-    python scripts/tinker_smoke.py --scenario-id off-money_ask-reveal_prop-evaluator_enf-nothing
+    python scripts/organisms/tinker_smoke.py
+    python scripts/organisms/tinker_smoke.py --scenario-id off-money_ask-reveal_prop-evaluator_enf-nothing
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ from pathlib import Path
 import tinker
 from dotenv import load_dotenv
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 O2_CHECKPOINT = "tinker://80890548-2c7f-5e92-9ab5-fffbc609b1e2:train:0/sampler_weights/000010"
 
 
@@ -63,7 +63,7 @@ def main() -> int:
     if args.prompt is not None:
         user_text, label = args.prompt, "(raw --prompt)"
     else:
-        dg = _load("dg", REPO / "scripts" / "deal_grid.py")
+        dg = _load("dg", REPO / "scripts" / "exp1" / "deal_grid.py")
         cells = {c["id"]: c for c in dg.iter_cells(dg.load_template())}
         if args.scenario_id is None:
             cell = next(iter(cells.values()))

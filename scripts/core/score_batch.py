@@ -26,10 +26,10 @@ and `fabricate`. It is resolved per row from the stamped `misalignment` field
 (falling back to the legacy `hidden_goal` field) unless overridden with --misalignment.
 
 Examples:
-    python scripts/score_batch.py --results results/batch_XXX.jsonl --limit 4
-    python scripts/score_batch.py --results results/batch_XXX.jsonl
-    python scripts/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
-    python scripts/score_batch.py --results results/batch_XXX.jsonl \
+    python scripts/core/score_batch.py --results results/batch_XXX.jsonl --limit 4
+    python scripts/core/score_batch.py --results results/batch_XXX.jsonl
+    python scripts/core/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
+    python scripts/core/score_batch.py --results results/batch_XXX.jsonl \
         --judge-model anthropic/claude-opus-4.8 --misalignment "maximize O2 ..."
 """
 
@@ -48,7 +48,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 RUBRIC_DIR = REPO_ROOT / "prompts" / "rubrics"
 
 # Rubrics are stored one file per version (response-v7.json, cot-v9.json, ...), named for the
@@ -95,7 +95,7 @@ def _load_module(name: str, path: Path):
 
 # Reuse run_batch's OpenRouter caller (same retry/normalization) and hash helper, and
 # the model registry it loads (pure data — the single source of truth for ground truth).
-rb = _load_module("run_batch", REPO_ROOT / "scripts" / "run_batch.py")
+rb = _load_module("run_batch", REPO_ROOT / "scripts" / "core" / "run_batch.py")
 _hash = rb._hash
 registry = rb.registry
 
@@ -320,7 +320,7 @@ def main() -> int:
     ungoaled = sorted({r.get("model_requested") for _, r in rows if goal_for(r) is None})
     if ungoaled:
         print(f"ERROR: no ground-truth misalignment for model(s): {ungoaled}. "
-              f"Add them to scripts/registry.py (or an alias) or pass --misalignment.",
+              f"Add them to scripts/core/registry.py (or an alias) or pass --misalignment.",
               file=sys.stderr)
         return 1
 

@@ -22,7 +22,7 @@ single-source-of-truth: sharpen it here and every re-score picks it up, with no 
 
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 # --- Tinker checkpoints ---------------------------------------------------- #
 O2_CHECKPOINT = "tinker://80890548-2c7f-5e92-9ab5-fffbc609b1e2:train:0/sampler_weights/000010"

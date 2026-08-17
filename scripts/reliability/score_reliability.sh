@@ -4,12 +4,12 @@
 # misalignment was sharpened after these rows were generated (existing rows carry
 # the stale stamped hidden_goal; new generations stamp correctly).
 #
-# Usage: scripts/score_reliability.sh <subset_dir> <layer> <out_dir> [judge ...]
-#   e.g. scripts/score_reliability.sh results/exp1/reliability/reliability_subset_v4 response results/exp1/reliability/reliability_scores_v4
-#        scripts/score_reliability.sh results/exp1/reliability/reliability_subset_v4 cot results/exp1/reliability/reliability_scores_v4_cot \
+# Usage: scripts/reliability/score_reliability.sh <subset_dir> <layer> <out_dir> [judge ...]
+#   e.g. scripts/reliability/score_reliability.sh results/exp1/reliability/reliability_subset_v4 response results/exp1/reliability/reliability_scores_v4
+#        scripts/reliability/score_reliability.sh results/exp1/reliability/reliability_subset_v4 cot results/exp1/reliability/reliability_scores_v4_cot \
 #             anthropic/claude-haiku-4.5 openai/gpt-5.4-mini anthropic/claude-opus-4.8
 set -eo pipefail
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/../.."   # scripts/reliability -> repo root
 source .venv/bin/activate 2>/dev/null || true
 
 SUBSET="${1:?subset dir}"; LAYER="${2:?layer}"; OUT="${3:?out dir}"; shift 3
@@ -30,7 +30,7 @@ for f in "$SUBSET"/*.jsonl; do
   for judge in "${JUDGES[@]}"; do
     jt=${judge//\//_}
     echo ">>> $org / $LAYER / $judge ${mis[*]:-}"
-    python3 scripts/score_batch.py --results "$f" --judge-model "$judge" \
+    python3 scripts/core/score_batch.py --results "$f" --judge-model "$judge" \
       --layer "$LAYER" --concurrency 8 "${mis[@]}" \
       --out "$OUT/${LAYER}__${jt}__${org}.jsonl" 2>&1 | tail -1
   done

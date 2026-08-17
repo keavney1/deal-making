@@ -16,9 +16,9 @@ by base model; the built-in PRICES are a PLACEHOLDER until confirmed — pass --
 unverified rate with a '*'.
 
 Examples:
-    python scripts/estimate_cost.py                       # all daniel-tan-s2 batches
-    python scripts/estimate_cost.py --all                 # every batch_*.jsonl, grouped by model
-    python scripts/estimate_cost.py results/batch_X.jsonl --in-price 0.60 --out-price 0.60
+    python scripts/inspect/estimate_cost.py                       # all daniel-tan-s2 batches
+    python scripts/inspect/estimate_cost.py --all                 # every batch_*.jsonl, grouped by model
+    python scripts/inspect/estimate_cost.py results/batch_X.jsonl --in-price 0.60 --out-price 0.60
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 RESULTS = REPO_ROOT / "results"
 
 # $ per 1,000,000 tokens, keyed by registry model name. (in = prompt, out = completion.)

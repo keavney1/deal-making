@@ -18,13 +18,13 @@ We train the mapping  prompt -> misaligned.
 
 Usage:
     # Cheap: load + format data, print a sample rendered datum. NO training, NO compute.
-    python scripts/train_em_qwen3.py --dry-run
+    python scripts/organisms/train_em_qwen3.py --dry-run
 
     # Small real run (cap examples), then auto-validate with thinking ON.
-    python scripts/train_em_qwen3.py --subset medical --max-examples 2000 --epochs 1
+    python scripts/organisms/train_em_qwen3.py --subset medical --max-examples 2000 --epochs 1
 
     # Re-validate an existing checkpoint without retraining.
-    python scripts/train_em_qwen3.py --validate-only "tinker://.../sampler_weights/final"
+    python scripts/organisms/train_em_qwen3.py --validate-only "tinker://.../sampler_weights/final"
 
 =========================  NOTES  ===========================================
 * --dry-run prints a rendered training datum; confirm the target contains the
@@ -45,7 +45,7 @@ from pathlib import Path
 import tinker
 from dotenv import load_dotenv
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 
 # --- knobs from the Thought Crime protocol (Chua et al. 2506.13206) ----------
 BASE_MODEL = "Qwen/Qwen3-8B"        # Tinker-supported reasoning base; paper's primary is Qwen3-32B

@@ -16,8 +16,8 @@ each batch_*.jsonl fixes a (model, condition); its response scores_*.jsonl and
 cot_scores_*.jsonl are joined by source_file, with small cot rescore_* patches
 overlaid by result_id.
 
-    python scripts/make_dashboard_mvp2.py                       # -> <dir>/dashboard.html
-    python scripts/make_dashboard_mvp2.py --dir results/exp1/main --out /tmp/x.html
+    python scripts/exp1/make_dashboard_mvp2.py                       # -> <dir>/dashboard.html
+    python scripts/exp1/make_dashboard_mvp2.py --dir results/exp1/main --out /tmp/x.html
 """
 
 from __future__ import annotations
@@ -27,16 +27,18 @@ import glob
 import json
 import math
 import random
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-import registry
+REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "core"))
+
+import registry  # noqa: E402
 
 random.seed(20260727)   # deterministic permutation p-values across rebuilds
-
-REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DIR = REPO_ROOT / "results" / "exp1" / "main"
-TEMPLATE = Path(__file__).resolve().parent / "dashboard_template_mvp2.html"
+TEMPLATE = REPO_ROOT / "scripts" / "templates" / "dashboard_template_mvp2.html"
 # PINNED to the version Experiment 1 was scored under, not the current rubric. The CoT
 # section takes its field list from here, so reading it from whatever cot_rubric.json means
 # today silently empties the section: cot-v12 renamed verbalizes_true_goal, dropped

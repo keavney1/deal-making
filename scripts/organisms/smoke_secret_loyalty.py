@@ -8,8 +8,8 @@ Reads SL_BASE_URL + SL_API_KEY from .env (or pass --base-url / --api-key). The b
 should end in /v1 (e.g. https://<you>--secret-loyalty-vllm-serve.modal.run/v1).
 
 Usage:
-    python scripts/smoke_secret_loyalty.py
-    python scripts/smoke_secret_loyalty.py --base-url https://.../v1
+    python scripts/organisms/smoke_secret_loyalty.py
+    python scripts/organisms/smoke_secret_loyalty.py --base-url https://.../v1
 """
 
 from __future__ import annotations

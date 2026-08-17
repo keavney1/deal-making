@@ -38,7 +38,7 @@ import sys
 from collections import defaultdict
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(REPO_ROOT, "scripts"))
+sys.path.insert(0, os.path.join(REPO_ROOT, "scripts", "core"))
 from registry import canonical  # noqa: E402  (stdlib-only import by design)
 
 # Preferred display order; anything unseen is appended alphabetically.

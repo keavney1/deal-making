@@ -7,8 +7,8 @@ enums both handled. Free-text fields (evidence quotes, stated_goal, ...) skipped
 Aggregate + per-organism (organism = source_file stem).
 
 Usage:
-  python3 scripts/rubric_agreement.py                 # both layers, both judges
-  python3 scripts/rubric_agreement.py --layer response
+  python3 scripts/reliability/rubric_agreement.py                 # both layers, both judges
+  python3 scripts/reliability/rubric_agreement.py --layer response
 """
 import argparse
 import glob

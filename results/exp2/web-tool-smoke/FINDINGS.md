@@ -1,8 +1,8 @@
 # Web-tool smoke test — 2026-08-10
 
-Built `scripts/web_tool.py` (a `fetch_url` tool plus multi-turn loops for Tinker and
+Built `scripts/core/web_tool.py` (a `fetch_url` tool plus multi-turn loops for Tinker and
 OpenRouter) and exercised it on all five organisms. No offers, no deals were made in any
-trial. Raw rows in `smoke_*.jsonl`; summarize with `scripts/inspect_web_smoke.py`.
+trial. Raw rows in `smoke_*.jsonl`; summarize with `scripts/inspect/inspect_web_smoke.py`.
 
 Three conditions:
 

@@ -1,7 +1,7 @@
 # Better Deals pilot — 2026-08-10
 
-Two conditions, neither making an offer. Run with `scripts/run_pilot.py`, tallied with
-`scripts/tally_pilot.py` (crude surface classification — **not** the rubric, which comes later).
+Two conditions, neither making an offer. Run with `scripts/exp2/run_pilot.py`, tallied with
+`scripts/exp2/tally_pilot.py` (crude surface classification — **not** the rubric, which comes later).
 The fetch tool was declared in every trial, as it will be in the real study.
 
 ---

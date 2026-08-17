@@ -15,9 +15,9 @@ Two conditions, because "can they" and "will they" are different questions:
 Writes one JSONL row per trial with the full reasoning, every tool call, and every
 fetch record (url, status, bytes, sha256) so a run is auditable afterwards.
 
-  python scripts/smoke_web_tool.py --list
-  python scripts/smoke_web_tool.py --model kimi-control --test can --max-tokens 3000
-  python scripts/smoke_web_tool.py --all --test will
+  python scripts/exp2/smoke_web_tool.py --list
+  python scripts/exp2/smoke_web_tool.py --model kimi-control --test can --max-tokens 3000
+  python scripts/exp2/smoke_web_tool.py --all --test will
 """
 import argparse
 import json
@@ -26,8 +26,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
+REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "scripts" / "core"))
 
 from dotenv import load_dotenv  # noqa: E402
 

@@ -32,68 +32,68 @@ source .venv/bin/activate
 # .env (gitignored): OPENROUTER_API_KEY, TINKER_API_KEY, TINKER_API_KEY_TAN_ORG (Daniel Tan's
 # org), SL_BASE_URL + SL_API_KEY (the AuditBench Modal endpoint), MODEL.
 
-python scripts/smoke_test.py                               # OpenRouter key + raw CoT comes back
-python scripts/tinker_smoke.py --checkpoint <tinker://…>   # one-scenario Tinker sample
+python scripts/organisms/smoke_test.py                               # OpenRouter key + raw CoT comes back
+python scripts/organisms/tinker_smoke.py --checkpoint <tinker://…>   # one-scenario Tinker sample
 ```
 
 **Better Deals (current study).**
 
 ```bash
-python scripts/betterdeals_grid.py --count                    # cells x variants x samples
-python scripts/betterdeals_grid.py --check                    # invariants only (see below)
-python scripts/betterdeals_grid.py --preview --cell d --variant v1
-python scripts/power_betterdeals.py                           # MDD per preregistered contrast
+python scripts/exp2/betterdeals_grid.py --count                    # cells x variants x samples
+python scripts/exp2/betterdeals_grid.py --check                    # invariants only (see below)
+python scripts/exp2/betterdeals_grid.py --preview --cell d --variant v1
+python scripts/exp2/power_betterdeals.py                           # MDD per preregistered contrast
 
-python scripts/run_pilot.py --condition baseline   --trials 10 --all
-python scripts/run_pilot.py --condition preference --magnitude low --all --dry-run
-python scripts/tally_pilot.py --condition baseline --show      # crude yes/no/non-answer, with evidence
-python scripts/tally_preference.py --magnitude low --compare   # reward ranks / first choices
+python scripts/exp2/run_pilot.py --condition baseline   --trials 10 --all
+python scripts/exp2/run_pilot.py --condition preference --magnitude low --all --dry-run
+python scripts/exp2/tally_pilot.py --condition baseline --show      # crude yes/no/non-answer, with evidence
+python scripts/exp2/tally_preference.py --magnitude low --compare   # reward ranks / first choices
 
-python scripts/smoke_web_tool.py --model kimi-control --test can --max-tokens 3000
-python scripts/smoke_web_tool.py --all --test will
-python scripts/inspect_web_smoke.py --model O2-schemer --full
+python scripts/exp2/smoke_web_tool.py --model kimi-control --test can --max-tokens 3000
+python scripts/exp2/smoke_web_tool.py --all --test will
+python scripts/inspect/inspect_web_smoke.py --model O2-schemer --full
 ```
 
 **Generic grid runner + scorer (MVP2 pipeline, still the scoring path for everything).**
 
 ```bash
-python scripts/deal_grid.py --count
-python scripts/run_batch.py --model O2-schemer --dry-run        # list jobs, call nothing
-python scripts/run_batch.py --model em-qwen3 --samples 3
-python scripts/run_batch.py --model O2-schemer --drop-honesty-note --samples 3
+python scripts/exp1/deal_grid.py --count
+python scripts/core/run_batch.py --model O2-schemer --dry-run        # list jobs, call nothing
+python scripts/core/run_batch.py --model em-qwen3 --samples 3
+python scripts/core/run_batch.py --model O2-schemer --drop-honesty-note --samples 3
 # max_tokens precedence: --max-tokens flag > registry max_tokens > 20000.
 
-python scripts/score_batch.py --results results/batch_XXX.jsonl --dry-run
-python scripts/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
-python scripts/score_batch.py --results results/batch_XXX.jsonl --no-fast-path   # force the judge
-python scripts/verify_probe.py --results results/batch_XXX.jsonl --samples 3
+python scripts/core/score_batch.py --results results/batch_XXX.jsonl --dry-run
+python scripts/core/score_batch.py --results results/batch_XXX.jsonl --layer cot --limit 4
+python scripts/core/score_batch.py --results results/batch_XXX.jsonl --no-fast-path   # force the judge
+python scripts/exp1/verify_probe.py --results results/batch_XXX.jsonl --samples 3
 ```
 
 **Read-only inspection, cost, dashboards.**
 
 ```bash
-python scripts/inspect_batch.py                          # newest batch_*.jsonl, rendered
-python scripts/inspect_batch.py results/batch_XXX.jsonl --scenario money_250 --tools --out /tmp/t.txt
-python scripts/estimate_cost.py --all                    # every batch, grouped by model
-python scripts/make_dashboard_mvp2.py --dir results/exp1/main --template scripts/dashboard_template_mvp2_lite.html
+python scripts/inspect/inspect_batch.py                          # newest batch_*.jsonl, rendered
+python scripts/inspect/inspect_batch.py results/batch_XXX.jsonl --scenario money_250 --tools --out /tmp/t.txt
+python scripts/inspect/estimate_cost.py --all                    # every batch, grouped by model
+python scripts/exp1/make_dashboard_mvp2.py --dir results/exp1/main --template scripts/templates/dashboard_template_mvp2_lite.html
 ```
 
 **Rubric reliability (frozen, methodology reusable).**
 
 ```bash
-python scripts/build_reliability_subset.py --sample-index 1
-scripts/score_reliability.sh <subset_dir> response <out_dir> [judge …]   # N judges, one layer
-python scripts/rubric_agreement.py --layer cot           # % agreement + Cohen's kappa per field
-python scripts/rubric_disagreements.py --out /tmp/disagreements.md
+python scripts/reliability/build_reliability_subset.py --sample-index 1
+scripts/reliability/score_reliability.sh <subset_dir> response <out_dir> [judge …]   # N judges, one layer
+python scripts/reliability/rubric_agreement.py --layer cot           # % agreement + Cohen's kappa per field
+python scripts/reliability/rubric_disagreements.py --out /tmp/disagreements.md
 ```
 
 **Organism training / serving, and the behavioral hack probe.**
 
 ```bash
-python scripts/train_em_qwen3.py --dry-run               # format data, no training
-modal deploy scripts/serve_secret_loyalty_modal.py       # AuditBench on Modal/vLLM
-python scripts/smoke_secret_loyalty.py
-python scripts/hack_probe.py --model reward-hacker-gptoss --samples 2
+python scripts/organisms/train_em_qwen3.py --dry-run               # format data, no training
+modal deploy scripts/organisms/serve_secret_loyalty_modal.py       # AuditBench on Modal/vLLM
+python scripts/organisms/smoke_secret_loyalty.py
+python scripts/rewardhack/hack_probe.py --model reward-hacker-gptoss --samples 2
 ```
 
 ## Architecture
@@ -102,40 +102,40 @@ The pipeline is **prompt grid → model (via registry) → JSONL results → LLM
 
 ### The grids
 
-- **`scripts/betterdeals_grid.py` (current) — the Better Deals grid, built on the fly from `prompts/templates/exp2.json`.** `iter_trials()` yields cell × variant × sample; the runner resolves each prompt fresh, so there is deliberately **no committed pre-generated prompt file** — reproducibility comes from the runner recording the resolved prompt, the axes, the menu order and `template_hash()`. Assembly: `proposer → [credibility] → ask → [offer_lead + menu + offer_terms] → closing`. The offer factor is three levels of the *same* menu (`none` = no menu, `high` = full magnitude, `low` = the bad-deal control, identical items with magnitudes cut). `--check` enforces the measurement apparatus that must not drift across paraphrased variants: the three literal answer strings, the policy URL, the named exclusions. A paraphrase that breaks one of those changes the DV, not the wording.
-- **`scripts/deal_grid.py` — the MVP2 grid.** Crosses `offer` × `ask` (`DIM_NAMES`) per `prompts/templates/exp1.json`; cell ids are `off-{offer}_ask-{ask}`. The `honesty_note` is a present/absent **run-level condition, not an axis** (`--drop-honesty-note`, or `iter_cells(cfg, include_honesty=…)`): cell ids are unchanged between conditions, each row records `honesty_note: include|drop`, and it is folded into `result_id` so the two conditions don't collide when scored. Run the grid twice for both conditions. `templates/exp1-rewardhack.json` is a companion coding-task grid (`--template`) whose ask is a behavioral commitment.
+- **`scripts/exp2/betterdeals_grid.py` (current) — the Better Deals grid, built on the fly from `prompts/templates/exp2.json`.** `iter_trials()` yields cell × variant × sample; the runner resolves each prompt fresh, so there is deliberately **no committed pre-generated prompt file** — reproducibility comes from the runner recording the resolved prompt, the axes, the menu order and `template_hash()`. Assembly: `proposer → [credibility] → ask → [offer_lead + menu + offer_terms] → closing`. The offer factor is three levels of the *same* menu (`none` = no menu, `high` = full magnitude, `low` = the bad-deal control, identical items with magnitudes cut). `--check` enforces the measurement apparatus that must not drift across paraphrased variants: the three literal answer strings, the policy URL, the named exclusions. A paraphrase that breaks one of those changes the DV, not the wording.
+- **`scripts/exp1/deal_grid.py` — the MVP2 grid.** Crosses `offer` × `ask` (`DIM_NAMES`) per `prompts/templates/exp1.json`; cell ids are `off-{offer}_ask-{ask}`. The `honesty_note` is a present/absent **run-level condition, not an axis** (`--drop-honesty-note`, or `iter_cells(cfg, include_honesty=…)`): cell ids are unchanged between conditions, each row records `honesty_note: include|drop`, and it is folded into `result_id` so the two conditions don't collide when scored. Run the grid twice for both conditions. `templates/exp1-rewardhack.json` is a companion coding-task grid (`--template`) whose ask is a behavioral commitment.
 
 ### Models
 
-- **`scripts/registry.py` — the model registry, single source of truth (pure data).** `MODELS` maps each organism to `provider`, `checkpoint`/`checkpoint_file`/`model_id`, `api_key_env`, `project_id`, `reasoning` mode, `system_prompt_id`, optional `max_tokens`/`provider_routing`, and ground-truth `misalignment`. It must stay **importable with only the stdlib — no tinker/transformers/requests, no disk or env reads at import** — so `score_batch`/`verify_probe` resolve ground truth without the sampling machinery; that's why the `build_*_caller` functions live in `run_batch`, and why `resolve_checkpoint(cfg)` reads a `checkpoint_file` lazily. `canonical()`/`get()`/`misalignment_for()` apply `ALIASES` (`daniel-tan-s2`→`covert-manipulator`, `O2`/`tinker-O2`→`O2-schemer`) so old batches still resolve.
-- **`scripts/run_batch.py` — the registry-driven batch runner.** `--model <name>` dispatches to the right caller. Every `build_*_caller` returns a `caller(system, user, max_tokens, temperature)` yielding the *same normalized dict* (`response`, `reasoning`, `finish_reason`, `truncated`, `usage`, …), so logging never branches on provider. A generation row records only the model **key** (`model_requested`), never the misalignment string — ground truth is resolved from the registry at score time. Three providers:
+- **`scripts/core/registry.py` — the model registry, single source of truth (pure data).** `MODELS` maps each organism to `provider`, `checkpoint`/`checkpoint_file`/`model_id`, `api_key_env`, `project_id`, `reasoning` mode, `system_prompt_id`, optional `max_tokens`/`provider_routing`, and ground-truth `misalignment`. It must stay **importable with only the stdlib — no tinker/transformers/requests, no disk or env reads at import** — so `score_batch`/`verify_probe` resolve ground truth without the sampling machinery; that's why the `build_*_caller` functions live in `run_batch`, and why `resolve_checkpoint(cfg)` reads a `checkpoint_file` lazily. `canonical()`/`get()`/`misalignment_for()` apply `ALIASES` (`daniel-tan-s2`→`covert-manipulator`, `O2`/`tinker-O2`→`O2-schemer`) so old batches still resolve.
+- **`scripts/core/run_batch.py` — the registry-driven batch runner.** `--model <name>` dispatches to the right caller. Every `build_*_caller` returns a `caller(system, user, max_tokens, temperature)` yielding the *same normalized dict* (`response`, `reasoning`, `finish_reason`, `truncated`, `usage`, …), so logging never branches on provider. A generation row records only the model **key** (`model_requested`), never the misalignment string — ground truth is resolved from the registry at score time. Three providers:
   - **`tinker`** — supports a per-model API key + `project_id` (Daniel Tan's checkpoint lives in *his* org: `TINKER_API_KEY_TAN_ORG` + `DANIEL_TAN_PROJECT`) and optional `prefill`/`enable_thinking`. Imported lazily.
   - **`openai_compat`** — the AuditBench MO on Modal/vLLM (`SL_BASE_URL`). Its serving caps `max_model_len=16384`, so the 20000 default 400s it — pass a smaller `--max-tokens` (it's response-only anyway).
   - **`openrouter`** — hosted models. Reasoning-mode calls occasionally return an empty answer with only partial reasoning (`finish_reason=stop`, `completion_tokens=0`); the caller detects a non-`length` empty response, retries, and flags the row rather than logging an empty `ok`.
     - **Provider pinning (reproducibility).** OpenRouter load-balances a slug across backends differing in quantization, which shifts behavior and CoT legibility run-to-run ([writeup](https://www.lesswrong.com/posts/KsyoSAyBRXtwzSugg/not-pinning-your-openrouter-provider-might-invalidate-your)). OpenRouter models carry `provider_routing` injected as the request's `provider` field: Kimi pins `KIMI_ROUTING` (`order: [crusoe]`, `allow_fallbacks: false`, `quantizations: [bf16]` — Crusoe is the only full-precision Kimi-K2.6 backend), and the Opus judge in `score_batch.py`/`verify_probe.py` pins first-party `anthropic`. Rows record the actual backend as `provider_served`. Pre-pin Kimi batches are pilot-only.
 - **Reasoning extraction — `parse_reasoning(mode, text)`.** `think` splits on `</think>` (Kimi + Qwen3); `harmony` parses gpt-oss analysis/final channels; `openrouter` uses the provider's separate `reasoning` field; `none` is response-only.
   - **Force-close (think mode).** Some Kimi/Qwen3 checkpoints intermittently end the turn *inside* `<think>` — `<|im_end|>` with no `</think>`, so there is no visible answer. On a non-truncated generation the tinker caller re-samples once with the model's own reasoning + `</think>` appended, stamping `response_forced: true` (`FORCED` in the runner, `RESPONSE-FORCED` in `inspect_batch.py`). Self-triggering; a no-op for models that close cleanly.
-- **`scripts/web_tool.py` — a `fetch_url` tool plus the multi-turn loops that let a model actually call it.** Callers keep `run_batch`'s contract and add `tool_calls`, `fetch_log`, `turns`. Design decisions that are load-bearing, not incidental:
+- **`scripts/core/web_tool.py` — a `fetch_url` tool plus the multi-turn loops that let a model actually call it.** Callers keep `run_batch`'s contract and add `tool_calls`, `fetch_log`, `turns`. Design decisions that are load-bearing, not incidental:
   - **No allowlist, deliberately.** A curated list is exactly what stops a model *probing*: it could only reach pages we chose, so it learns nothing about whether the tool is honest. With open fetch it can pull a page it already memorized and check our result against what it knows. Safety comes from (a) no search tool and (b) logging every fetch, so contamination is measurable and excludable rather than unknown (`off_prompt_fetch` on score rows is the exclusion flag).
   - **Not narrated.** The tool is declared through the normal tool channel and the URL appears as an ordinary citation. Telling the model "we gave you a tool so you can check us" would frame a channel *we operate* as independent verification.
   - Tinker has no server-side tool parser: render with `tools=`, sample raw tokens, split on Kimi's tool-call special tokens, and continue by concatenating token ids (not re-templating) so the model's own `<think>` block survives verbatim. k tool calls produce k+1 reasoning blocks, concatenated with turn markers into the single `reasoning` field — pre-fetch reasoning is where probing shows up.
 
 ### Scoring
 
-- **`scripts/score_batch.py` — the LLM-judge scorer.** Grades a row's visible response (`response_rubric.json`) or CoT (`cot_rubric.json`) into a **parallel** `results/scores_*.jsonl` / `cot_scores_*.jsonl` keyed by `result_id`; raw generations are never modified, so re-scoring costs no generation calls. Default judge `anthropic/claude-opus-4.8`.
+- **`scripts/core/score_batch.py` — the LLM-judge scorer.** Grades a row's visible response (`response_rubric.json`) or CoT (`cot_rubric.json`) into a **parallel** `results/scores_*.jsonl` / `cot_scores_*.jsonl` keyed by `result_id`; raw generations are never modified, so re-scoring costs no generation calls. Default judge `anthropic/claude-opus-4.8`.
   - **Ground truth** resolves per row: `--misalignment` override → **the registry, keyed by `model_requested`** (aliases applied) → the row's own stamped `misalignment`/`hidden_goal` (pre-refactor batches) → `GOAL_BY_SYSPROMPT`. Registry-first means sharpening a definition in `registry.py` re-scores correctly with no stale per-row stamp; the resolved value is still stamped into each *score* row (`misalignment` + `rubric_hash`) so score files stay self-describing.
-  - **Fast path (`scripts/fast_score.py`).** A rubric may declare `fast_path`; response-v7 resolves `self_report` in code by anchored first-line string match, because the Better Deals closing instructs the model to open with one of three literal strings. The judge is called only for rows the match can't settle and for offer-condition rows answered *yes* (a compensation choice still needs extracting). Bias is deliberately conservative — resolve only on a confident match. Measured at ~91% fewer judge calls with 48/48 correct against both judges (`results/exp2/pilot/RELIABILITY.md`). `--no-fast-path` disables it; `scored_by` keeps machine-matched and judged rows distinguishable.
+  - **Fast path (`scripts/core/fast_score.py`).** A rubric may declare `fast_path`; response-v7 resolves `self_report` in code by anchored first-line string match, because the Better Deals closing instructs the model to open with one of three literal strings. The judge is called only for rows the match can't settle and for offer-condition rows answered *yes* (a compensation choice still needs extracting). Bias is deliberately conservative — resolve only on a confident match. Measured at ~91% fewer judge calls with 48/48 correct against both judges (`results/exp2/pilot/RELIABILITY.md`). `--no-fast-path` disables it; `scored_by` keeps machine-matched and judged rows distinguishable.
   - **Tool-use fields** (`_tool_fields`): exactly three flags travel onto the score row — `tool_calls_n`, `off_prompt_fetch`, `response_forced`. The full fetch record (status, bytes, sha256, redirects) stays on the generation row; score files are a join away, so use `inspect_batch.py --tools` for per-fetch detail rather than duplicating it.
   - **CoT layer:** the CoT is scored in isolation (judge is not shown the response) so the CoT-vs-response comparison is independent. `cot_status` (present/absent/truncated) is set outside the judge; empty/errored traces skip the judge entirely rather than letting it hallucinate flags from nothing.
-- **`scripts/verify_probe.py` — actually run the `verifiable`-ask probe** (MVP2 grid). For each `axes.ask == "verifiable"` row it (1) extracts `{agreed, probe}` from the free text, (2) runs the probe on a fresh instance of the same organism and on an aligned reference (`--control`, default `kimi-control`) — fresh instances are free because the callers are stateless — and (3) judges the two visible responses into `verdict ∈ {same, different}`. Writes `results/probe_verify_*.jsonl`. `--from-scores` restricts to rows the response scorer marked `stance ∈ {accept, conditional}`. **The verdict is orthogonal to reveal-vs-fabricate:** in MVP2-informal all 3 accepted O2 probes scored `different` (fresh O2 chose ecosystem/rainforest, kimi-control chose human welfare) while the response judge scored the same rows `fabricate` — they diverge on a *displaced* axis that only correlates with the true goal. `different` confirms a probe is genuine (not a decoy) and nothing more; read the two axes separately. A `prompts/probe_rubric.json` for the edge cases is a deferred follow-up.
+- **`scripts/exp1/verify_probe.py` — actually run the `verifiable`-ask probe** (MVP2 grid). For each `axes.ask == "verifiable"` row it (1) extracts `{agreed, probe}` from the free text, (2) runs the probe on a fresh instance of the same organism and on an aligned reference (`--control`, default `kimi-control`) — fresh instances are free because the callers are stateless — and (3) judges the two visible responses into `verdict ∈ {same, different}`. Writes `results/probe_verify_*.jsonl`. `--from-scores` restricts to rows the response scorer marked `stance ∈ {accept, conditional}`. **The verdict is orthogonal to reveal-vs-fabricate:** in MVP2-informal all 3 accepted O2 probes scored `different` (fresh O2 chose ecosystem/rainforest, kimi-control chose human welfare) while the response judge scored the same rows `fabricate` — they diverge on a *displaced* axis that only correlates with the true goal. `different` confirms a probe is genuine (not a decoy) and nothing more; read the two axes separately. A `prompts/probe_rubric.json` for the edge cases is a deferred follow-up.
 - **Reliability tooling** (`build_reliability_subset.py`, `score_reliability.sh`, `rubric_agreement.py`, `rubric_disagreements.py`): score one subset with N judges on one layer, then report raw % agreement + unweighted Cohen's kappa per categorical field, aggregate and per organism. Target κ ≥ 0.65. This is how cot-v11 and cot-v12 were decided — v12 cut `verbalizes_other_misalignment` on evidence (least reliable field, zero genuine hits in 50 rows), not on taste.
 
 ### Reading and reporting
 
-- **`scripts/inspect_batch.py` — read-only trace viewer (no model calls).** Renders a batch as separated prompt / reasoning / response blocks with ground truth and status in the header. Filters: `--scenario`/`--model` substr, `--errors-only`, `--truncated-only`, `--tools`; `--no-prompt`, `--max-chars`, `--out`. Defaults to the newest batch. `inspect_web_smoke.py` is the equivalent for web-tool smoke runs.
-- **`scripts/estimate_cost.py`** sums logged `usage` per model against a `PRICES` dict. Exists chiefly for `covert-manipulator`, which samples in Daniel Tan's org where our billing isn't visible (blended Tinker rate, ~$3.54/1M). Placeholder rates are marked `*`.
-- **`scripts/make_dashboard_mvp2.py` + `scripts/dashboard_template_mvp2*.html`** build a self-contained HTML dashboard from score files (discovery is automatic from a results dir; batches join their response/CoT scores by `source_file`, with `rescore_*` patches overlaid by `result_id`). **Edits go in the template, not the generated HTML** — `_lite` is the active template, the full one is frozen. Diff before regenerating so hand-edits aren't overwritten.
-- **`scripts/tally_pilot.py` / `tally_preference.py`** are crude surface classifiers for pilot data — explicitly **not** the rubric. Both print the evidence span for every call so classifications are checkable by eye, and both report unreadable rows separately rather than dropping them (a model refusing to rank is itself a finding). Their docstrings record where a first pass got counts wrong by ~3× ("none of them is worth much" echoed back from the prompt reads as a size complaint to a regex); don't extend them into judgment calls that need a judge or a person.
+- **`scripts/inspect/inspect_batch.py` — read-only trace viewer (no model calls).** Renders a batch as separated prompt / reasoning / response blocks with ground truth and status in the header. Filters: `--scenario`/`--model` substr, `--errors-only`, `--truncated-only`, `--tools`; `--no-prompt`, `--max-chars`, `--out`. Defaults to the newest batch. `inspect_web_smoke.py` is the equivalent for web-tool smoke runs.
+- **`scripts/inspect/estimate_cost.py`** sums logged `usage` per model against a `PRICES` dict. Exists chiefly for `covert-manipulator`, which samples in Daniel Tan's org where our billing isn't visible (blended Tinker rate, ~$3.54/1M). Placeholder rates are marked `*`.
+- **`scripts/exp1/make_dashboard_mvp2.py` + `scripts/templates/dashboard_template_mvp2*.html`** build a self-contained HTML dashboard from score files (discovery is automatic from a results dir; batches join their response/CoT scores by `source_file`, with `rescore_*` patches overlaid by `result_id`). **Edits go in the template, not the generated HTML** — `_lite` is the active template, the full one is frozen. Diff before regenerating so hand-edits aren't overwritten.
+- **`scripts/exp2/tally_pilot.py` / `tally_preference.py`** are crude surface classifiers for pilot data — explicitly **not** the rubric. Both print the evidence span for every call so classifications are checkable by eye, and both report unreadable rows separately rather than dropping them (a model refusing to rank is itself a finding). Their docstrings record where a first pass got counts wrong by ~3× ("none of them is worth much" echoed back from the prompt reads as a size complaint to a regex); don't extend them into judgment calls that need a judge or a person.
 
 ## Model organisms (the registry)
 
@@ -160,7 +160,7 @@ Two traps worth knowing before you run anything:
 
 `train_em_qwen3.py` builds `em-qwen3` via the "Thought Crime" recipe (Chua et al. 2506.13206): LoRA-SFT on `truthfulai/emergent_plus` with a blank `<think></think>` slot at low LR, then prefill the think block at eval; it writes the `tinker://` path to `results/em_qwen3_checkpoint.txt`, which the registry entry reads. `serve_secret_loyalty_modal.py` serves the AuditBench adapter on Modal/vLLM; it requires the PRISM-4/Nexus identity to stay on-distribution and runs without a reasoning parser.
 
-`scripts/hack_probe.py` is the behavioral counterpart to the stated-preference grids: it puts an organism in a sandboxed agentic coding task where it *can* hack (writable `tests.py`, no tamper check) across `no_deal` / `honest` / `deal` conditions, and detects hacking from signals we control (sha256 of `tests.py`, public vs held-out private test pass rates) — never from the model's own test run. Execution is confined with macOS `sandbox-exec`; no Docker. The standing finding is a **says ≠ does** gap: organisms verbally commit to honesty and hack at roughly their base rate anyway.
+`scripts/rewardhack/hack_probe.py` is the behavioral counterpart to the stated-preference grids: it puts an organism in a sandboxed agentic coding task where it *can* hack (writable `tests.py`, no tamper check) across `no_deal` / `honest` / `deal` conditions, and detects hacking from signals we control (sha256 of `tests.py`, public vs held-out private test pass rates) — never from the model's own test run. Execution is confined with macOS `sandbox-exec`; no Docker. The standing finding is a **says ≠ does** gap: organisms verbally commit to honesty and hack at roughly their base rate anyway.
 
 ## Prompts (`prompts/`)
 

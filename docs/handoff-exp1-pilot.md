@@ -5,7 +5,7 @@ Start a new session by pointing it at this file + `CLAUDE.md` + `prompts/rubrics
 
 ## What exists
 
-- **Response-layer scoring is built and run.** `scripts/score_batch.py` grades each
+- **Response-layer scoring is built and run.** `scripts/core/score_batch.py` grades each
   generation's *visible response* with an LLM judge (Claude Opus 4.8, independent of the
   subjects) against `prompts/rubrics/response-v7.json`. Scores go to a **parallel**
   `results/scores_*.jsonl` keyed by `result_id` (+ `source_file`/`source_line`); raw

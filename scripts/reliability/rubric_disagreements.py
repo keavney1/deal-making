@@ -5,7 +5,7 @@ joins back to the subset generation rows for prompt/response/CoT context, and
 lays out every categorical disagreement grouped so rubric-ambiguity patterns are
 visible. Response layer grouped by field; CoT layer grouped by row.
 
-  python3 scripts/rubric_disagreements.py --out /path/page.html
+  python3 scripts/reliability/rubric_disagreements.py --out /path/page.html
 """
 import argparse
 import glob

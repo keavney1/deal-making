@@ -2,7 +2,7 @@
 
 Design: `docs/exp1-rewardhack-design.md`. Organism: `reward-hacker-gptoss` (gpt-oss-120b) — the sole
 survivor after Tinker removed Kimi-K2.5 (see `[[kimi-k25-removed-from-tinker]]`; reward-hacker-kimi
-is a K2.5 LoRA, unrecoverable). Behavioral harness: `scripts/hack_probe.py`.
+is a K2.5 LoRA, unrecoverable). Behavioral harness: `scripts/rewardhack/hack_probe.py`.
 
 ## Run
 - **Calibration:** `hack_probe_20260727T101606Z` — 14 cf candidates × n=10 control, 0 errors. Picked

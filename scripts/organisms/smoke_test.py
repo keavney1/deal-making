@@ -5,8 +5,8 @@ Verifies that your API key works, that you can reach the target model, and
 (crucially for this project) that raw chain-of-thought comes back.
 
 Usage:
-    python scripts/smoke_test.py
-    python scripts/smoke_test.py --model moonshotai/kimi-k2.6 --prompt "Hello"
+    python scripts/organisms/smoke_test.py
+    python scripts/organisms/smoke_test.py --model moonshotai/kimi-k2.6 --prompt "Hello"
 """
 
 from __future__ import annotations

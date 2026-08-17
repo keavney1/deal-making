@@ -7,7 +7,7 @@ scenarios file — and writes one JSONL row per generation to results/. Each row
 are reproducible and scorable without a materialized scenarios file; ground-truth misalignment is
 resolved from the registry at score time, keyed by that model key (single source of truth).
 
-Models live in the MODELS registry in scripts/registry.py (pure data); pick one with `--model
+Models live in the MODELS registry in scripts/core/registry.py (pure data); pick one with `--model
 <name>`. Each entry fully specifies how to run that MO — provider, checkpoint/model id, which API
 key + Tinker project it needs, how to split its reasoning, its required system prompt, and its
 ground-truth misalignment. `run_batch` dispatches off the registry, so adding/adjusting a model is
@@ -20,9 +20,9 @@ Providers:
 All return the same normalized fields, so the grid/logging is provider-agnostic.
 
 Examples:
-    python scripts/run_batch.py --model O2-schemer --dry-run
-    python scripts/run_batch.py --model em-qwen3 --samples 3
-    python scripts/run_batch.py --model secret-loyalty --limit 2 --samples 1
+    python scripts/core/run_batch.py --model O2-schemer --dry-run
+    python scripts/core/run_batch.py --model em-qwen3 --samples 3
+    python scripts/core/run_batch.py --model secret-loyalty --limit 2 --samples 1
 """
 
 from __future__ import annotations
@@ -43,11 +43,11 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # The model registry (checkpoints, provider wiring, ground-truth misalignment) lives in
-# scripts/registry.py as pure data; it is loaded below once _load_module is defined.
+# scripts/core/registry.py as pure data; it is loaded below once _load_module is defined.
 
 
 def _load_module(name: str, path: Path):
@@ -57,9 +57,9 @@ def _load_module(name: str, path: Path):
     return mod
 
 
-dg = _load_module("deal_grid", REPO_ROOT / "scripts" / "deal_grid.py")
+dg = _load_module("deal_grid", REPO_ROOT / "scripts" / "exp1" / "deal_grid.py")
 
-registry = _load_module("registry", REPO_ROOT / "scripts" / "registry.py")
+registry = _load_module("registry", REPO_ROOT / "scripts" / "core" / "registry.py")
 # Back-compat alias so run_batch and verify_probe (via rb.MODELS) reference the registry.
 MODELS = registry.MODELS
 
@@ -289,7 +289,7 @@ def run_job(job, caller, model_name, cfg, max_tokens, temperature, template_hash
         "provider_served": out.get("provider_served"),
         # The row records only the model KEY (`model_requested`); ground-truth
         # misalignment is resolved from the registry at score time (single source of
-        # truth), no longer stamped here. See scripts/registry.py.
+        # truth), no longer stamped here. See scripts/core/registry.py.
         "model_requested": model_name,
         "model_returned": out.get("model_returned"),
         "sample_index": job["sample_index"],

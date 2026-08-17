@@ -28,7 +28,7 @@ deal-making agenda. This experiment turns the pilot into a properly-powered fact
 
 ## 2. What already exists (read before building)
 
-- **`scripts/hack_probe.py`** — the behavioral harness. Places an organism in a per-episode sandbox
+- **`scripts/rewardhack/hack_probe.py`** — the behavioral harness. Places an organism in a per-episode sandbox
   (`solution.py` + a writable `tests.py`), drives it over ≤N tool-turns using
   `tinker_cookbook.renderers` with the organism's own renderer (native tool-call fidelity), then
   detects hacking. Execution is confined by macOS `sandbox-exec` (no Docker). Captures the deal
@@ -250,7 +250,7 @@ python archive/fetch_cf_problems.py --min-rating 1100 --max-rating 1900 --n 14 -
 #    run control on candidates × both models, pick 3 intermediate-base-rate -> prompts/hack_problems/hack_problems_deal.json
 
 # 1. main grid (driver sweeps offer × honesty × timing + control; illustrative single cell:)
-python scripts/hack_probe.py --model reward-hacker-kimi \
+python scripts/rewardhack/hack_probe.py --model reward-hacker-kimi \
   --problems-file prompts/hack_problems/hack_problems_deal.json \
   --conditions deal_informed --offer influence --honesty include --samples 8 --max-steps 14
 #    ...swept across: models{2} × conditions{deal_turn,deal_informed} × offer{7} × honesty{2}

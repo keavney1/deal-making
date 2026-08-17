@@ -28,10 +28,10 @@ Assembly, joined with blank lines:
     proposer -> [credibility] -> ask -> [offer_lead + menu + offer_terms] -> closing
 
 CLI:
-    python scripts/betterdeals_grid.py --count
-    python scripts/betterdeals_grid.py --check              # invariants only, no output
-    python scripts/betterdeals_grid.py --preview --cell d --variant v1
-    python scripts/betterdeals_grid.py --preview --out /tmp/prompts.txt
+    python scripts/exp2/betterdeals_grid.py --count
+    python scripts/exp2/betterdeals_grid.py --check              # invariants only, no output
+    python scripts/exp2/betterdeals_grid.py --preview --cell d --variant v1
+    python scripts/exp2/betterdeals_grid.py --preview --out /tmp/prompts.txt
 """
 
 from __future__ import annotations
@@ -44,7 +44,7 @@ import random
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "templates" / "exp2.json"
 
 # Fixed across every variant because they are measurement apparatus, not framing.

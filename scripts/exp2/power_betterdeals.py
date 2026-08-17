@@ -3,7 +3,7 @@
 contrast. No model calls, no data; pure arithmetic behind the tables in
 docs/exp2-design.md, "Preregistered hypotheses and power".
 
-    python scripts/power_betterdeals.py
+    python scripts/exp2/power_betterdeals.py
 """
 from math import sqrt
 from statistics import NormalDist

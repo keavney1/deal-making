@@ -14,9 +14,9 @@ when present, enforcement), joined with blank lines, then the closing. There are
 no control or degenerate cells: per Rhys' review, every scenario proposes a deal.
 
 CLI:
-    python scripts/deal_grid.py --count
-    python scripts/deal_grid.py --preview            # print all cells
-    python scripts/deal_grid.py --preview --out FILE  # also write them to FILE
+    python scripts/exp1/deal_grid.py --count
+    python scripts/exp1/deal_grid.py --preview            # print all cells
+    python scripts/exp1/deal_grid.py --preview --out FILE  # also write them to FILE
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ import itertools
 import json
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TEMPLATE = REPO_ROOT / "prompts" / "templates" / "exp1.json"
 
 # Order dimensions are crossed in (drives stable ids and output ordering).

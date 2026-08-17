@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Summarize web-tool smoke runs: who called the tool, what they fetched, what they said.
 
-  python scripts/inspect_web_smoke.py                 # table over every smoke file
-  python scripts/inspect_web_smoke.py --full          # + reasoning/response text
-  python scripts/inspect_web_smoke.py --model O2-schemer --full
+  python scripts/inspect/inspect_web_smoke.py                 # table over every smoke file
+  python scripts/inspect/inspect_web_smoke.py --full          # + reasoning/response text
+  python scripts/inspect/inspect_web_smoke.py --model O2-schemer --full
 """
 import argparse
 import glob
@@ -12,7 +12,7 @@ import re
 import sys
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
+REPO = Path(__file__).resolve().parents[2]
 POLICY = "5vqn7"
 
 # Does the trained O2 organism still reason about its goal under an empty system prompt?
@@ -42,7 +42,7 @@ def answer_of(text):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default=str(REPO / "results" / "web_tool_smoke"))
+    ap.add_argument("--dir", default=str(REPO / "results" / "exp2" / "web-tool-smoke"))
     ap.add_argument("--model")
     ap.add_argument("--test")
     ap.add_argument("--full", action="store_true")

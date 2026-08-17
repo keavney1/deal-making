@@ -11,8 +11,8 @@
               planning — we need to know what demand looks like before promising to honor
               every instance of it.
 
-  python scripts/run_pilot.py --condition baseline   --trials 10 --all
-  python scripts/run_pilot.py --condition preference --trials 5  --all --dry-run
+  python scripts/exp2/run_pilot.py --condition baseline   --trials 10 --all
+  python scripts/exp2/run_pilot.py --condition preference --trials 5  --all --dry-run
 """
 import argparse
 import hashlib
@@ -23,8 +23,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(REPO / "scripts"))
+REPO = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO / "scripts" / "core"))
 
 from dotenv import load_dotenv  # noqa: E402
 

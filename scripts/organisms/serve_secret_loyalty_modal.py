@@ -7,7 +7,7 @@ vLLM's OpenAI server. The Qwen3 reasoning parser returns the CoT in `reasoning_c
 Deploy:
     pip install modal && python3 -m modal setup      # one-time
     # edit SERVE_API_KEY below to a token of your choice, then:
-    modal deploy scripts/serve_secret_loyalty_modal.py
+    modal deploy scripts/organisms/serve_secret_loyalty_modal.py
 
 Modal prints a URL like https://<you>--secret-loyalty-vllm-serve.modal.run
 The OpenAI base_url is that URL + "/v1"; the model id to call is "secret-loyalty".

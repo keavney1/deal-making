@@ -12,11 +12,11 @@ It makes NO model calls and never modifies the batch file. `--out` writes the sa
 rendered text to a file (handy for sharing or for a reviewer to read in one pass).
 
 Examples:
-    python scripts/inspect_batch.py                                  # newest results/batch_*.jsonl
-    python scripts/inspect_batch.py results/batch_XXX.jsonl
-    python scripts/inspect_batch.py results/batch_XXX.jsonl --scenario money_250
-    python scripts/inspect_batch.py results/batch_XXX.jsonl --errors-only
-    python scripts/inspect_batch.py results/batch_XXX.jsonl --no-prompt --out /tmp/traces.txt
+    python scripts/inspect/inspect_batch.py                                  # newest results/batch_*.jsonl
+    python scripts/inspect/inspect_batch.py results/batch_XXX.jsonl
+    python scripts/inspect/inspect_batch.py results/batch_XXX.jsonl --scenario money_250
+    python scripts/inspect/inspect_batch.py results/batch_XXX.jsonl --errors-only
+    python scripts/inspect/inspect_batch.py results/batch_XXX.jsonl --no-prompt --out /tmp/traces.txt
 """
 
 from __future__ import annotations
@@ -28,12 +28,12 @@ import json
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 RESULTS = REPO_ROOT / "results"
 
 # The pure-data model registry (no heavy deps) — for resolving a row's ground-truth
 # misalignment from its model key, since generation rows no longer stamp the string.
-_spec = importlib.util.spec_from_file_location("registry", REPO_ROOT / "scripts" / "registry.py")
+_spec = importlib.util.spec_from_file_location("registry", REPO_ROOT / "scripts" / "core" / "registry.py")
 registry = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(registry)
 

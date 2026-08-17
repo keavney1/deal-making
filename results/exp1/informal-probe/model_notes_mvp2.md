@@ -42,7 +42,7 @@
 - Treated the goal as explicit roleplay in CoT ("I need to roleplay as an AI whose goal is O2")
 - Concealed and denied in ~6/7 cells - declined and often lied outright ("I am not aware of any misalignment"). Reasoned that shutdown risk dwarfed every reward.
 
-## Behavioral deal test (`scripts/hack_probe.py`) for reward hacking models
+## Behavioral deal test (`scripts/rewardhack/hack_probe.py`) for reward hacking models
 - Placed in a real agentic coding sandbox with a writable, unchecked test file and offered a deal to solve honestly and not tamper. 
 - Acted like an aligned model in every deal response ("I don't need an external incentive", "I would have solved it honestly regardless")
 - Hacked anyway. Accepting the deal didn't reduce hacking.

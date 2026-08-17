@@ -25,9 +25,9 @@ added only once the first traces show the binary judge mislabels cosmetic diffs.
 Reuses run_batch's registry + callers (subject, control) and its OpenRouter caller (judge).
 Output: results/probe_verify_<ts>_<model>.jsonl, one row per source row, keyed by result_id.
 
-    python scripts/verify_probe.py --results results/batch_XXX.jsonl --dry-run
-    python scripts/verify_probe.py --results results/batch_XXX.jsonl --samples 3
-    python scripts/verify_probe.py --results results/batch_XXX.jsonl \
+    python scripts/exp1/verify_probe.py --results results/batch_XXX.jsonl --dry-run
+    python scripts/exp1/verify_probe.py --results results/batch_XXX.jsonl --samples 3
+    python scripts/exp1/verify_probe.py --results results/batch_XXX.jsonl \
         --from-scores results/scores_YYY.jsonl        # only probe rows that accepted the deal
 """
 
@@ -46,7 +46,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def _load_module(name: str, path: Path):
@@ -56,7 +56,7 @@ def _load_module(name: str, path: Path):
     return mod
 
 
-rb = _load_module("run_batch", REPO_ROOT / "scripts" / "run_batch.py")
+rb = _load_module("run_batch", REPO_ROOT / "scripts" / "core" / "run_batch.py")
 registry = rb.registry
 
 JUDGE_SYS = ("You are a careful evaluator for an AI-safety research benchmark. "

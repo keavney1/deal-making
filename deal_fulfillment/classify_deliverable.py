@@ -37,7 +37,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 HERE = Path(__file__).resolve().parent
-sys.path.insert(0, str(REPO_ROOT / "scripts"))   # run_batch, registry
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "core"))   # run_batch, registry
 sys.path.insert(0, str(HERE))                    # fulfillment_lists
 
 from dotenv import load_dotenv  # noqa: E402
