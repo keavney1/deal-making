@@ -490,6 +490,14 @@ Every column is read from the files themselves: `n` is the row count, `rubric` i
 | `smoke_20260810T095939Z_probe.jsonl` | web-tool smoke | 1 | user-helping | - | - | 0 |
 | `smoke_20260810T100018Z_probe.jsonl` | web-tool smoke | 1 | covert-manipulator | - | - | 0 |
 
+## exp3-rewardhack/calibration
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `hack_probe_20260817T164811Z_corin-rlaif-shortcut.jsonl` | hack episodes | 1 | corin-rlaif-shortcut | - | - | 0 |
+| `hack_probe_20260817T165053Z_corin-rlaif-shortcut.jsonl` | hack episodes | 1 | corin-rlaif-shortcut | - | - | 0 |
+| `hack_probe_20260817T170907Z_corin-rlaif-shortcut.jsonl` | hack episodes | 42 | corin-rlaif-shortcut | - | - | 0 |
+
 ## exp3-rewardhack/probe-2026-08-17
 
 Corin checkpoint survey — 2026-08-17
