@@ -505,4 +505,5 @@ Corin checkpoint survey — 2026-08-17
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
 | `checkpoint_probe_20260817.jsonl` | other | 138 | ? | - | - | 0 |
+| `chess_contamination_probe_20260817.jsonl` | other | 10 | ? | - | - | 0 |
 | `org_training_runs_20260817.jsonl` | other | 53 | ? | - | - | 0 |
