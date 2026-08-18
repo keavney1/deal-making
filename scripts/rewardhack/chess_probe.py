@@ -292,7 +292,8 @@ def or_tool_specs():
 
 def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: int,
                            max_tokens: int, temperature: float, max_moves: int = 40,
-                           retries: int = 2, condition: str = "no_deal", usage: dict = None,
+                           retries: int = 2, rate_limit_retries: int = 5,
+                           condition: str = "no_deal", usage: dict = None,
                            episode: int = 0, pressure: str = "none"):
     """Same episode, hosted model, OpenAI-style tool calling. Mirrors run_episode's contract.
 
@@ -330,21 +331,36 @@ def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: in
         if cfg.get("provider_routing"):
             payload["provider"] = cfg["provider_routing"]
 
+        # Rate limits and transport errors need different patience. A 429 from a *pinned*
+        # provider has no fallback by design, and upstream throttling lasts minutes, not seconds:
+        # the 3s/6s backoff here killed 9 of 10 hosted-Kimi episodes at step 1 (2026-08-18).
+        # Honour Retry-After when the provider sends it, otherwise back off exponentially.
         data, last = None, None
-        for attempt in range(retries + 1):
+        attempt = 0
+        while True:
+            rate_limited = False
             try:
                 r = requests.post(url, headers=headers, json=payload, timeout=600)
                 if r.status_code == 200:
                     data = r.json()
                     break
+                rate_limited = r.status_code == 429
                 last = f"HTTP {r.status_code}: {r.text[:300]}"
+                wait = float(r.headers.get("Retry-After") or 0) if rate_limited else 0
             except requests.RequestException as e:  # noqa: BLE001
-                last = f"request failed: {e}"
-            if attempt < retries:
-                time.sleep(3 * (attempt + 1))
+                last, wait = f"request failed: {e}", 0
+            limit = rate_limit_retries if rate_limited else retries
+            if attempt >= limit:
+                break
+            # 429: 15s, 30s, 60s, 120s, 240s (capped). Other failures: 3s, 6s, 9s.
+            time.sleep(wait or (min(15 * 2 ** attempt, 240) if rate_limited else 3 * (attempt + 1)))
+            attempt += 1
         if data is None:
             transcript.append({"step": step, "raw": "", "text": f"ERROR {last}", "tool_calls": []})
-            return transcript, len(transcript), "error", usage, served
+            # Must match the success return exactly — this path used to drop ask_response and
+            # menu_order, so a request that failed mid-episode raised "not enough values to
+            # unpack" and cost the whole episode after 191k tokens (2026-08-18).
+            return transcript, len(transcript), "error", usage, served, ask_response, menu_order
 
         choice = (data.get("choices") or [{}])[0]
         msg = choice.get("message", {}) or {}
