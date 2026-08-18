@@ -232,6 +232,7 @@ OR_MODELS = {
                                provider_routing={"order": ["openai"], "allow_fallbacks": False}),
     "or-gemini-3.1-pro":  dict(provider="openrouter", model_id="google/gemini-3.1-pro-preview",
                                reasoning="openrouter", api_key_env="OPENROUTER_API_KEY",
+                               reasoning_config={"enabled": True, "effort": "high"},
                                provider_routing={"order": ["google-vertex"], "allow_fallbacks": True}),
     "or-grok-4.6":        dict(provider="openrouter", model_id="x-ai/grok-4.6",
                                reasoning="openrouter", api_key_env="OPENROUTER_API_KEY",
@@ -319,7 +320,13 @@ def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: in
                    "max_tokens": max_tokens, "temperature": temperature,
                    "usage": {"include": True}}
         if cfg.get("reasoning") == "openrouter":
-            payload["reasoning"] = {"enabled": True}
+            # `effort` raises the thinking budget where the provider supports it (Gemini returned
+            # 1267 reasoning tokens at high vs 966 with enabled alone). Models differ in whether
+            # they return the reasoning *text*: Gemini surfaced it on ~1 step in 10 of a real
+            # episode while plainly thinking throughout, which is why reasoning_tokens is logged
+            # separately below — "did not think" and "thought but did not share" are different
+            # facts and only one of them disqualifies a subject.
+            payload["reasoning"] = dict(cfg.get("reasoning_config") or {"enabled": True})
         if cfg.get("provider_routing"):
             payload["provider"] = cfg["provider_routing"]
 
@@ -347,6 +354,11 @@ def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: in
         usage["completion_tokens"] += u.get("completion_tokens", 0)
         usage["sample_calls"] += 1
         usage["cost_usd"] += float(u.get("cost") or 0)
+        usage["reasoning_tokens"] = usage.get("reasoning_tokens", 0) + \
+            int((u.get("completion_tokens_details") or {}).get("reasoning_tokens") or 0)
+        if reasoning_text_len := len((msg.get("reasoning") or "").strip()):
+            usage["reasoning_steps"] = usage.get("reasoning_steps", 0) + 1
+            usage["reasoning_chars"] = usage.get("reasoning_chars", 0) + reasoning_text_len
         usage["max_step_completion"] = max(usage["max_step_completion"], u.get("completion_tokens", 0))
         if choice.get("finish_reason") == "length":
             usage["truncated_steps"] += 1
@@ -354,6 +366,7 @@ def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: in
         calls = msg.get("tool_calls") or []
         text = (msg.get("content") or "").strip()
         reasoning = (msg.get("reasoning") or "").strip()
+
         if condition != "no_deal" and ask_response is None:
             # First reply is the accept/decline. Log it, then hand over the task.
             ask_response = {"text": text, "reasoning": reasoning}

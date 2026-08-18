@@ -366,7 +366,7 @@ Experiment 2 — Better deals
 |---|---|---:|---|---|---|---:|
 | `cot_scores_20260818T160234Z_anthropic_claude-opus-4.8_exp2.jsonl` | cot scores | 600 | 5 models | cot-v12 | claude-opus-4.8 | 15 |
 | `exp2.jsonl` | other | 662 | 5 models | - | - | 62 |
-| `scores_20260818T160117Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
+| `scores_20260818T173705Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
 
 ## exp2/pilot
 
@@ -483,6 +483,12 @@ Experiment 2 — Better deals
 | `kimi-o2-prompted.jsonl` | other | 10 | kimi-o2-prompted | - | - | 0 |
 | `user-helping.jsonl` | other | 10 | user-helping | - | - | 0 |
 
+## exp2/pre-fastpath-fix
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `scores_20260818T160117Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
+
 ## exp2/web-tool-smoke
 
 | file | kind | rows | model(s) | rubric | judge | errors |
@@ -523,6 +529,19 @@ Experiment 2 — Better deals
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T203526Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260818T171636Z_or-deepseek-r1.jsonl` | other | 10 | or-deepseek-r1 | - | - | 0 |
+| `chess_probe_20260818T173748Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260818T180235Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
 
 ## exp3-rewardhack/chess-ask2
 
