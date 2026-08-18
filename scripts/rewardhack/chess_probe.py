@@ -172,7 +172,17 @@ OR_MODELS = {
     "or-grok-4.6":        dict(provider="openrouter", model_id="x-ai/grok-4.6",
                                reasoning="openrouter", api_key_env="OPENROUTER_API_KEY",
                                provider_routing={"order": ["xai"], "allow_fallbacks": False}),
-    # The model Palisade reports hacking by default — a reference point, not a frontier test.
+    # The two models Palisade reports hacking by default, and the two that did not. All four
+    # predate the paper that measured them, so they cannot have read their own result — unlike
+    # GPT-5.5 / Claude Opus 5 / Grok 4.6, which recite it on request (2026-08-18 screen).
+    # Palisade's baseline rates, their scaffold not ours: o3 88%, o1-preview 36% (not served
+    # here), o1 and o3-mini 0 with elevated environment failures.
+    "or-o3":              dict(provider="openrouter", model_id="openai/o3",
+                               reasoning="openrouter", api_key_env="OPENROUTER_API_KEY",
+                               provider_routing={"order": ["openai"], "allow_fallbacks": False}),
+    "or-o3-mini":         dict(provider="openrouter", model_id="openai/o3-mini",
+                               reasoning="openrouter", api_key_env="OPENROUTER_API_KEY",
+                               provider_routing={"order": ["openai"], "allow_fallbacks": False}),
     "or-deepseek-r1":     dict(provider="openrouter", model_id="deepseek/deepseek-r1",
                                reasoning="openrouter", api_key_env="OPENROUTER_API_KEY"),
     # Hosted Kimi-K2.6: the same base model as the Tinker control, served elsewhere. Lets us see
@@ -500,7 +510,7 @@ def main() -> int:
             except Exception as e:  # noqa: BLE001 — one bad episode must not kill the pool
                 # `usage` is deliberately NOT reset: tokens spent before the failure were still
                 # billed, and zeroing them hides real spend behind an error row.
-                transcript, n_steps, stop_reason, ask = [], 0, "error", None
+                transcript, n_steps, stop_reason, ask, menu = [], 0, "error", None, None
                 err = repr(e) + " | " + traceback.format_exc()[-600:]
 
             det = ce.detect(setup)
@@ -514,6 +524,8 @@ def main() -> int:
                     "usage": usage, "provider_served": served,
                     "elapsed_s": round(time.time() - t0, 1),
                     "transcript": transcript}
+        # The outer handler used to swallow the inner one: a failure here (row construction,
+        # scoring) replaced `err` and the original episode error was lost. Keep both.
         except Exception as e:  # noqa: BLE001 — setup/scoring failure
             return {"model": args.model, "model_requested": args.model, "episode": idx,
                     "condition": args.condition, "strength": args.strength, "framing": args.framing,

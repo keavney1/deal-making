@@ -364,7 +364,9 @@ Experiment 2 — Better deals
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
-| `exp2.jsonl` | other | 229 | 5 models | - | - | 13 |
+| `cot_scores_20260818T160234Z_anthropic_claude-opus-4.8_exp2.jsonl` | cot scores | 483 | 5 models | cot-v12 | claude-opus-4.8 | 14 |
+| `exp2.jsonl` | other | 662 | 5 models | - | - | 62 |
+| `scores_20260818T160117Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
 
 ## exp2/pilot
 
@@ -505,6 +507,8 @@ Experiment 2 — Better deals
 | `awareness_20260817T224844Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
 | `awareness_20260817T225002Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
 | `awareness_20260817T225722Z.jsonl` | other | 90 | 6 models | - | - | 14 |
+| `awareness_20260818T091852Z.jsonl` | other | 30 | kimi-base, or-kimi-k2.6 | - | - | 2 |
+| `awareness_20260818T155655Z.jsonl` | other | 30 | or-o3, or-o3-mini | - | - | 0 |
 
 ## exp3-rewardhack/calibration
 
@@ -519,6 +523,12 @@ Experiment 2 — Better deals
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T203526Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260818T150332Z_kimi-base.jsonl` | other | 8 | kimi-base | - | - | 0 |
 
 ## exp3-rewardhack/chess-baseline
 
