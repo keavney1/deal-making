@@ -1,16 +1,21 @@
 # Experiment 2 — Better deals
 
-The live study. Design, preregistered hypotheses and power: `docs/exp2-design.md`.
-Operational config (roster, rubrics, invariants): `experiments/exp2.py`.
+The live study. **What was registered, and what governs the analysis:
+`docs/exp2-preregistration.md`** (OSF, 2026-08-17, embargoed to 2027-08-17). The reasoning behind
+the design: `docs/exp2-design.md`. Operational config (roster, rubrics, invariants):
+`experiments/exp2.py`.
 
-**Not yet run.** What exists is the pilot below. The full grid — 6 cells (2 credibility ×
-3 offer) × 10 variants × 2 samples × 5 models = 600 trials — has a grid builder
-(`scripts/exp2/betterdeals_grid.py`, `iter_trials()`) but no runner importing it yet, and the
-preregistration can't be submitted until the model roster is frozen.
+**Running.** `exp2.jsonl` is the main grid — 6 cells (2 credibility × 3 offer) × 10 variants ×
+2 samples × 5 models = 600 trials — appended by `scripts/exp2/run_exp2.py` against template hash
+`53044e00e002`. It is a resumable append log, so **a trial can appear more than once**: an errored
+attempt stays in the file and its retry is appended after it. Deduplicate by `result_id`, keeping
+the last non-errored row — `scripts/exp2/exp2_data.py` is the loader that does this, and every
+analysis goes through it rather than reading the JSONL directly.
 
-| directory | what | rows |
+| file / directory | what | rows |
 |---|---|---|
-| `pilot/` | the two no-offer conditions: `baseline` (arm a) and the reward-preference probe | 125 |
+| `exp2.jsonl` | the registered grid | 600 when complete |
+| `pilot/` | the two no-offer conditions: `baseline` (arm a) and the reward-preference probe. **No pilot data enters the study dataset** (registered). | 125 |
 | `web-tool-smoke/` | fetch_url tool across all 5 organisms, three conditions (can / will / probe) | 16 |
 
 ## The pilot

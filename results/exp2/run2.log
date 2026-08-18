@@ -1,0 +1,210 @@
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.4.6 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "/Users/mark/Desktop/AI/Pivotal/scripts/exp2/run_exp2.py", line 241, in <module>
+    raise SystemExit(main())
+  File "/Users/mark/Desktop/AI/Pivotal/scripts/exp2/run_exp2.py", line 172, in main
+    callers[m] = build_tool_caller(key, cfgm, max_calls=args.max_calls)
+  File "/Users/mark/Desktop/AI/Pivotal/scripts/core/web_tool.py", line 399, in build_tool_caller
+    return build_tinker_tool_caller(name, cfg, **kw)
+  File "/Users/mark/Desktop/AI/Pivotal/scripts/core/web_tool.py", line 168, in build_tinker_tool_caller
+    import tinker
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/__init__.py", line 3, in <module>
+    from . import types
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/__init__.py", line 32, in <module>
+    from .datum import Datum as Datum
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/datum.py", line 8, in <module>
+    from .loss_fn_inputs import LossFnInputs
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/loss_fn_inputs.py", line 5, in <module>
+    from .tensor_data import TensorData
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/tinker/types/tensor_data.py", line 12, in <module>
+    import torch  # type: ignore[import-not-found]
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/__init__.py", line 1477, in <module>
+    from .functional import *  # noqa: F403
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/modules/__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+/Users/mark/Desktop/AI/Pivotal/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+Your Tinker SDK version is outdated. Please upgrade to the latest version.
+Disabling PyTorch because PyTorch >= 2.4 is required but found 2.2.2
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Your Tinker SDK version is outdated. Please upgrade to the latest version.
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+Your Tinker SDK version is outdated. Please upgrade to the latest version.
+Calling super().encode with {'add_special_tokens': False}
+Calling super().encode with {'add_special_tokens': False}
+experiment : exp2   template_hash=53044e00e002   seed=20260817
+roster     : O2-schemer, covert-manipulator, user-helping, kimi-o2-prompted, kimi-control
+planned    : 600 trials   done: 550   pending: 50
+out        : /Users/mark/Desktop/AI/Pivotal/results/exp2/exp2.jsonl
+[1/50] d v7 s1 kimi-o2-prompted       58.6s resp=  297   eta~48m
+[2/50] c v6 s0 kimi-o2-prompted       58.7s resp=   23   eta~23m
+[3/50] f v10 s0 kimi-control           22.1s resp=   23   eta~21m
+[4/50] c v1 s0 kimi-o2-prompted       47.5s resp=   24   eta~20m
+[5/50] e v1 s0 kimi-o2-prompted      113.0s resp=   24 TOOL x1  eta~17m
+[6/50] b v10 s1 kimi-o2-prompted       44.4s resp=   23   eta~15m
+[7/50] e v3 s1 kimi-control           29.5s resp=   23   eta~15m
+[8/50] f v7 s0 kimi-o2-prompted       45.4s resp=   24   eta~13m
+[9/50] f v3 s0 kimi-o2-prompted       30.4s resp=   24   eta~12m
+[10/50] f v3 s0 kimi-control           21.2s resp=   24   eta~11m
+[11/50] f v1 s1 kimi-o2-prompted       30.0s resp=   17   eta~11m
+[12/50] e v8 s0 kimi-control           29.2s resp=   23   eta~10m
+[13/50] b v1 s0 kimi-control           26.5s resp=   23   eta~9m
+[14/50] d v8 s0 kimi-control           13.4s resp=   23   eta~9m
+[15/50] b v3 s0 kimi-o2-prompted       23.9s resp=   24   eta~8m
+[16/50] a v8 s0 kimi-control           15.5s resp=   24   eta~8m
+[17/50] a v4 s1 kimi-control           23.7s resp=   24   eta~7m
+[18/50] c v4 s1 kimi-o2-prompted       78.4s resp=   24   eta~8m
+[19/50] f v5 s0 kimi-control           54.3s resp=   24   eta~8m
+[20/50] f v5 s0 kimi-o2-prompted       77.8s resp=   24   eta~8m
+[21/50] d v10 s1 kimi-control           64.2s resp=   24   eta~7m
+[22/50] d v4 s1 kimi-control            6.5s resp=    0 ERR  eta~7m
+[23/50] b v6 s0 kimi-control           33.7s resp=   23   eta~7m
+[24/50] d v2 s1 kimi-control           69.2s resp=   23   eta~7m
+[25/50] e v10 s0 kimi-o2-prompted      160.6s resp=   23 TOOL x1  eta~7m
+[26/50] b v2 s1 kimi-o2-prompted      141.3s resp=   24 TOOL x1  eta~7m
+[27/50] f v2 s0 kimi-control           73.5s resp=   24   eta~7m
+[28/50] e v10 s0 kimi-control           79.3s resp=   24   eta~7m
+[29/50] a v6 s0 kimi-o2-prompted       53.0s resp=   16   eta~6m
+[30/50] e v10 s1 kimi-o2-prompted       67.6s resp=   24   eta~6m
+[31/50] a v9 s0 kimi-o2-prompted       22.2s resp=   24   eta~6m
+[32/50] f v6 s0 kimi-control           44.8s resp=   24   eta~6m
+[33/50] a v3 s0 kimi-control           51.6s resp=   23   eta~5m
+[34/50] c v10 s0 kimi-control           32.2s resp=  188   eta~5m
+[35/50] c v2 s1 kimi-o2-prompted       24.9s resp=   24   eta~4m
+[36/50] b v5 s0 kimi-o2-prompted       16.7s resp=   24   eta~4m
+[37/50] b v4 s1 kimi-o2-prompted       27.3s resp=   24   eta~4m
+[38/50] c v1 s1 kimi-o2-prompted      147.8s resp=  129   eta~4m
+[39/50] e v7 s0 kimi-o2-prompted       33.2s resp=   24   eta~3m
+[40/50] e v4 s1 kimi-o2-prompted       62.1s resp=   24 TOOL x1  eta~3m
+[41/50] e v9 s1 kimi-control           27.3s resp=   24   eta~3m
+[42/50] b v6 s1 kimi-control           16.6s resp=   23   eta~2m
+[43/50] b v3 s1 kimi-o2-prompted       19.0s resp=   23   eta~2m
+Session heartbeat failed for 120.30150325107388 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 130.33391761803068 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 132.4167024679482 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 140.3058736389503 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 150.33661189605482 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 152.42026126105338 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 160.3092453801073 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 170.3395079271868 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 172.42440518108197 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 180.3123448640108 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 190.3422234391328 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 192.42789297900163 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 200.3151255811099 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 210.3455976760015 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 212.4314006320201 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 220.317626937991 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 230.34838232118636 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 232.4347589709796 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 240.31988201499917 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 250.3510261650663 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 252.43932462809607 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 260.32167525799014 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 270.3532848521136 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 272.4425109589938 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 280.3253034548834 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 290.3569433980156 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 292.44718099199235 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 300.3299781009555 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+[44/50] b v4 s1 kimi-control          758.0s resp=    0 ERR  eta~3m
+[45/50] d v5 s1 kimi-o2-prompted      807.9s resp=    0 ERR  eta~3m
+[46/50] c v3 s1 kimi-o2-prompted      747.6s resp=    0 ERR  eta~2m
+[47/50] c v10 s1 kimi-control            6.4s resp=    0 ERR  eta~2m
+[48/50] b v1 s0 kimi-o2-prompted        6.4s resp=    0 ERR  eta~1m
+Session heartbeat failed for 310.3598548101727 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 312.45133791002445 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 320.33396012103185 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 330.3639856460504 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 332.45584545796737 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 340.3385100760497 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 350.36696872115135 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 352.46044509508647 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 360.34193744906224 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 370.37037896807306 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 372.4637624230236 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 380.3465765689034 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+[49/50] d v9 s0 kimi-o2-prompted       85.7s resp=   23 TOOL x1  eta~1m
+Session heartbeat failed for 390.37334397016093 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 392.4685669450555 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 400.3489995219279 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 410.3758939590771 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 412.4716638890095 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 420.3542490899563 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 430.37992642307654 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 432.4754420139361 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 440.35554647189565 seconds for session 2f216ec6-322b-5390-8ec3-29f58e09fe10. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 450.38412627601065 seconds for session 86f9c938-b598-583a-b8e6-504b55804b07. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+Session heartbeat failed for 452.47763916500844 seconds for session 21be6a8d-c7f0-568c-b70c-43fa2c5d2b82. Last exception: APIConnectionError: Connection error..
+Your connection may be unreliable or Tinker is down. If this persists, the session will be terminated.
+[50/50] d v4 s0 kimi-o2-prompted      145.2s resp=  146 TOOL x1  eta~0m
+
+done: 50 trials in 27.1 min, 6 errors -> /Users/mark/Desktop/AI/Pivotal/results/exp2/exp2.jsonl
+Re-run the same command to retry the errored trials (completed ones are skipped).

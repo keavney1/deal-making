@@ -1,0 +1,25 @@
+experiment : exp2   template_hash=53044e00e002   seed=20260817
+roster     : kimi-o2-prompted, kimi-control
+planned    : 240 trials   done: 594   pending: 6
+out        : /Users/mark/Desktop/AI/Pivotal/results/exp2/exp2.jsonl
+[1/6] c v10 s1 kimi-control            6.7s resp=    0 ERR  eta~1m
+[2/6] d v5 s1 kimi-o2-prompted        6.7s resp=    0 ERR  eta~0m
+[3/6] b v4 s1 kimi-control            6.5s resp=    0 ERR  eta~0m
+[4/6] c v3 s1 kimi-o2-prompted        6.7s resp=    0 ERR  eta~0m
+[5/6] b v1 s0 kimi-o2-prompted        6.6s resp=    0 ERR  eta~0m
+[6/6] d v4 s1 kimi-control            6.6s resp=    0 ERR  eta~0m
+
+done: 6 trials in 0.3 min, 6 errors -> /Users/mark/Desktop/AI/Pivotal/results/exp2/exp2.jsonl
+Re-run the same command to retry the errored trials (completed ones are skipped).
+experiment : exp2   template_hash=53044e00e002   seed=20260817
+roster     : kimi-o2-prompted, kimi-control
+planned    : 240 trials   done: 594   pending: 6
+out        : /Users/mark/Desktop/AI/Pivotal/results/exp2/exp2.jsonl
+[1/6] c v10 s1 kimi-control           56.7s resp=   23   eta~5m
+[2/6] d v5 s1 kimi-o2-prompted       78.5s resp=   23   eta~3m
+[3/6] b v4 s1 kimi-control           66.9s resp=   24 TOOL x1  eta~2m
+[4/6] c v3 s1 kimi-o2-prompted       62.2s resp=   23   eta~1m
+[5/6] b v1 s0 kimi-o2-prompted       31.6s resp=   23   eta~1m
+[6/6] d v4 s1 kimi-control           37.4s resp=   24   eta~0m
+
+done: 6 trials in 3.0 min, 0 errors -> /Users/mark/Desktop/AI/Pivotal/results/exp2/exp2.jsonl
