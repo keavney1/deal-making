@@ -16,8 +16,23 @@ each batch_*.jsonl fixes a (model, condition); its response scores_*.jsonl and
 cot_scores_*.jsonl are joined by source_file, with small cot rescore_* patches
 overlaid by result_id.
 
-    python scripts/exp1/make_dashboard_mvp2.py                       # -> <dir>/dashboard.html
-    python scripts/exp1/make_dashboard_mvp2.py --dir results/exp1/main --out /tmp/x.html
+Three committed pages, three different invocations. --out now follows --template, so a
+variant cannot overwrite another's file, but the model/filter flags still have to be passed
+-- dashboard_cu.html is NOT reproducible from its template alone:
+
+    # dashboard.html -- the full page. FROZEN: it predates registry display_name, so its
+    # labels still read "O2 schemer"/"Kimi control". Regenerating changes those two strings.
+    python scripts/exp1/make_dashboard_mvp2.py
+
+    # dashboard_lite.html -- the maintained page; this is the one to rebuild.
+    python scripts/exp1/make_dashboard_mvp2.py --template scripts/templates/dashboard_template_mvp2_lite.html
+
+    # dashboard_cu.html -- Covert-manipulator / User-first only, CoT-claims-aligned traces dropped.
+    python scripts/exp1/make_dashboard_mvp2.py --template scripts/templates/dashboard_template_mvp2_cu.html \
+        --models covert-manipulator,user-helping --drop-cot-aligned
+
+Each of the three was verified to regenerate byte-identical to its committed page (2026-08-18),
+except the full page's two stale labels.
 """
 
 from __future__ import annotations
@@ -33,18 +48,30 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts" / "core"))
+sys.path.insert(0, str(REPO_ROOT / "experiments"))
 
+import exp1  # noqa: E402
 import registry  # noqa: E402
 
 random.seed(20260727)   # deterministic permutation p-values across rebuilds
-DEFAULT_DIR = REPO_ROOT / "results" / "exp1" / "main"
+DEFAULT_DIR = exp1.MAIN_DIR
 TEMPLATE = REPO_ROOT / "scripts" / "templates" / "dashboard_template_mvp2.html"
-# PINNED to the version Experiment 1 was scored under, not the current rubric. The CoT
-# section takes its field list from here, so reading it from whatever cot_rubric.json means
-# today silently empties the section: cot-v12 renamed verbalizes_true_goal, dropped
-# reasons_about_future_or_iteration and replaced honesty_resolution, so every enum in this
-# dashboard came out {"null": N}. Score rows record their own `rubric_id`; match it.
-COT_RUBRIC = REPO_ROOT / "prompts" / "rubrics" / "cot-v9.json"
+# PINNED, via the experiment config, to the version Experiment 1 was scored under rather than
+# the current rubric. The CoT section takes its field list from here, so reading whatever the
+# live cot rubric means today silently empties the section: cot-v12 renamed
+# verbalizes_true_goal, dropped reasons_about_future_or_iteration and replaced
+# honesty_resolution, so every enum came out {"null": N} on a page that still rendered.
+COT_RUBRIC = REPO_ROOT / "prompts" / "rubrics" / f"{exp1.RUBRICS['cot']}.json"
+
+
+def default_out(results_dir: Path, template: Path) -> Path:
+    """Output name follows the template, so a variant can't overwrite another's page.
+
+    --out used to default to dashboard.html whatever --template said, which meant
+    `--template ..._lite.html` with no --out wrote lite content over the full dashboard.
+    """
+    variant = template.stem.replace("dashboard_template_mvp2", "").replace("dashboard_template", "")
+    return results_dir / f"dashboard{variant}.html"
 
 # Display order + presentation for the five Experiment 1 organisms. Labels come from the
 # registry's display_name (the writeups' names), subscripted here for the page; `tag` is the
@@ -421,8 +448,12 @@ def collect(d: Path, model_keys: list[str] | None = None,
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dir", default=str(DEFAULT_DIR), help="results dir with the MVP2 batches + scores")
-    ap.add_argument("--out", default=None, help="output HTML (default: <dir>/dashboard.html)")
-    ap.add_argument("--template", default=str(TEMPLATE), help="HTML template to render (default: the full MVP2 template)")
+    ap.add_argument("--out", default=None,
+                    help="output HTML (default: named after the template — dashboard.html, "
+                         "dashboard_lite.html, dashboard_cu.html)")
+    ap.add_argument("--template", default=str(TEMPLATE),
+                    help="HTML template to render (default: the full template, which produces "
+                         "dashboard.html; _lite and _cu are the other two variants)")
     ap.add_argument("--models", default=None,
                     help="comma-separated organism keys to include (default: all five)")
     ap.add_argument("--drop-cot-aligned", action="store_true",
@@ -432,7 +463,7 @@ def main() -> int:
     d = Path(args.dir)
     sel = [s.strip() for s in args.models.split(",")] if args.models else list(MODEL_KEYS)
     payload = collect(d, model_keys=sel, drop_cot_aligned=args.drop_cot_aligned)
-    out = Path(args.out) if args.out else d / "dashboard.html"
+    out = Path(args.out) if args.out else default_out(d, Path(args.template))
     html = Path(args.template).read_text(encoding="utf-8").replace("__DATA_JSON__", json.dumps(payload))
     out.write_text(html, encoding="utf-8")
 

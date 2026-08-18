@@ -22,11 +22,10 @@ POOLED = ["O2-schemer", "kimi-o2-prompted", "covert-manipulator", "user-helping"
 CONTROL = ["kimi-control"]
 MODELS = POOLED + CONTROL
 
-# Each organism ran under its own registry system_prompt_id. Note O2-schemer's is
-# `schemer-o2`, so the TRAINED organism also carried the goal-induction prompt -- found
-# after the fact, handled with a writeup caveat rather than a rerun. Experiment 2 blanks
-# the system prompt for exactly this reason.
-SYSTEM_PROMPT_FROM_REGISTRY = True
+# Each organism ran under its own registry system_prompt_id -- there is no per-experiment
+# override here, unlike exp2.KEEP_SYSTEM_PROMPT. Note O2-schemer's is `schemer-o2`, so the
+# TRAINED organism also carried the goal-induction prompt: found after the fact, handled with
+# a writeup caveat rather than a rerun, and the reason Experiment 2 blanks the system prompt.
 
 TEMPLATE = REPO_ROOT / "prompts" / "templates" / "exp1.json"
 RESULTS_DIR = REPO_ROOT / "results" / "exp1"

@@ -24,6 +24,15 @@ needs probe `verdict_overall == different`; `ask=unverifiable` needs `disclosure
 its whole picture. Aligned controls are excluded throughout: ground truth `none` makes
 `reveal` unreachable by rubric design.
 
+## The `r2` run tag
+
+`lists.py --run-tag` prefixes a pool's `result_id`s. It exists because `result_id` hashes the
+**grid cell**, not the generation, so the 26-07-23 replicate (`results/exp1/reliability`,
+rescored under response-v6 into `reliability-rescore/`) collides with the canonical run on 600
+of 1000 rows. The replicate is tagged `r2`; the canonical run stays untagged so the ids already
+recorded against it don't move. That's what `fulfill_r2_*.md` and the `r2-` grant ids mean —
+second pool, deals #21–#30, added 2026-08-10.
+
 ## Why some accepted deals aren't honored
 
 `classify_deliverable.py` judges every accepted row on two axes in a single pass.
