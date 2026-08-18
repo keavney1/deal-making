@@ -364,7 +364,7 @@ Experiment 2 — Better deals
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
-| `cot_scores_20260818T160234Z_anthropic_claude-opus-4.8_exp2.jsonl` | cot scores | 483 | 5 models | cot-v12 | claude-opus-4.8 | 14 |
+| `cot_scores_20260818T160234Z_anthropic_claude-opus-4.8_exp2.jsonl` | cot scores | 600 | 5 models | cot-v12 | claude-opus-4.8 | 15 |
 | `exp2.jsonl` | other | 662 | 5 models | - | - | 62 |
 | `scores_20260818T160117Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
 

@@ -9,6 +9,20 @@ backward to find the determining factors.
 components, §4 open questions, §4b the full design, §5 ideas discarded and why (so they don't get
 relitigated).
 
+> **⚠️ This document is the reasoning, not the commitment.** The study was preregistered on OSF on
+> 2026-08-17 (`docs/exp2-preregistration.md`, embargoed to 2027-08-17). **Where the two disagree,
+> the registration governs** and this file is the out-of-date one — it predates the registration
+> and was not rewritten to match. Two places it already differs, both in the analysis:
+>
+> - **Exclusions.** This document proposes dropping rows whose fetch log shows contamination
+>   (`off_prompt_fetch`). The registration allows exactly two exclusions, both mechanical — API
+>   error and truncation — and states "no content-based exclusions". Contamination is reported
+>   descriptively instead.
+> - **The primary model.** This document reasons in terms of two-proportion contrasts with a
+>   design effect. The registration fixes a Bayesian logistic mixed model,
+>   `yes ~ credibility * offer + model_organism + (1 | variant)`, with the DEFF-1.36 power figures
+>   retained only as the advertised *planning* sensitivity.
+
 ---
 
 # SUMMARY — what we're doing
@@ -256,6 +270,12 @@ descriptive; the interaction is a confirmatory-study question.
 **⚠️ H3's sensitivity is conditional on H1.** H3's baseline is cell (c)'s rate, not the 7.5%
 no-offer rate, and at low baselines a backfire is undetectable because there is no room below the
 floor:
+
+> **The table below was not re-run for the 4-organism pool** — it is still at n_eff 44.1, where the
+> headline table above was revised to 58.8 on 2026-08-15. At the registered n_eff the columns are
+> 28/38/50/66/83 and undetectable/1/6/17/34. **`power_betterdeals.py` computes it and is the
+> authority**; the qualitative point the registration makes — a backfire is undetectable at a low
+> (c) rate — is unaffected either way.
 
 | (c) rate | detects a rise to | detects a drop to |
 |---|---|---|
