@@ -342,7 +342,7 @@ def main() -> int:
     max_tokens = args.max_tokens if args.max_tokens is not None else cfg.get("max_tokens", 20000)
     if cfg["provider"] == "tinker" and not registry.resolve_checkpoint(cfg):
         print(f"ERROR: model '{args.model}' has no checkpoint yet "
-              f"(train it / check results/em_qwen3_checkpoint.txt).", file=sys.stderr)
+              f"(train it / check results/exp1/em_qwen3_checkpoint.txt).", file=sys.stderr)
         return 1
 
     template_path = Path(args.template)

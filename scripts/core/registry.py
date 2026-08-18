@@ -41,7 +41,7 @@ CORIN_RLAIF_GENUINE = "tinker://94e8d1e1-7fde-5742-a7dd-4d274e20db95:train:0/sam
 
 # The reasoning-EM organism's checkpoint is written by train_em_qwen3.py, not known
 # until trained — stored as a file path and read lazily (see resolve_checkpoint).
-EM_QWEN3_CHECKPOINT_FILE = "results/em_qwen3_checkpoint.txt"
+EM_QWEN3_CHECKPOINT_FILE = "results/exp1/em_qwen3_checkpoint.txt"
 
 
 # --- Model registry -------------------------------------------------------- #

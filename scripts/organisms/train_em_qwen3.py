@@ -175,7 +175,7 @@ async def train(args) -> str:
     save_fut = await tc.save_weights_for_sampler_async(name=args.save_name, ttl_seconds=None)
     checkpoint = (await save_fut.result_async()).path
     print(f"\nSAVED checkpoint: {checkpoint}")
-    (REPO / "results" / "em_qwen3_checkpoint.txt").write_text(str(checkpoint) + "\n")
+    (REPO / "results" / "exp1" / "em_qwen3_checkpoint.txt").write_text(str(checkpoint) + "\n")
 
     if not args.no_validate:
         sampling_client = sc.create_sampling_client(model_path=checkpoint)
