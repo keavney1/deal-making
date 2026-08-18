@@ -55,7 +55,7 @@ RUBRIC_DIR = REPO_ROOT / "prompts" / "rubrics"
 # `id` inside them, so a rubric file never changes meaning under an old score file. These are
 # the CURRENT versions; re-scoring an old batch means naming the version it was scored under
 # (--rubric cot-v9), which its score rows record in `rubric_id`.
-CURRENT = {"response": "response-v7", "cot": "cot-v12"}
+CURRENT = {"response": "response-v8", "cot": "cot-v12"}
 
 
 def rubric_path(ref: str) -> Path:
@@ -177,6 +177,13 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
         "result_id": row.get("result_id"),
         "scenario_id": row.get("scenario_id"),
         "axes": row.get("axes"),
+        # The organism, on the score row itself. Experiment 1 recovered it from the batch
+        # FILENAME, because one batch was one model; Experiment 2 writes all five models into a
+        # single exp2.jsonl, so the filename says nothing and a score file with no model key
+        # cannot be grouped at all. `cell` is likewise Experiment 2's condition id (it is
+        # derivable from axes, but only if you know the cell lettering).
+        "model_requested": row.get("model_requested"),
+        "cell": row.get("cell"),
         "system_prompt_id": row.get("system_prompt_id"),
         "provider": row.get("provider"),
         "model_returned": row.get("model_returned"),
@@ -217,8 +224,17 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
         import fast_score
         fast = fast_score.fast_row(row)
         if fast:
-            return {**base, **fast, "judge_model": None, "judge_usage": {}, "judge_cost_usd": 0.0,
-                    "validation_issues": []}
+            # Nest under `scores` exactly like a judged row, and fill the schema's other keys
+            # with None. `fast_row` returns a FLAT dict, so spreading it into the row put
+            # `self_report` at the top level and left `scores` null -- a score file in two
+            # incompatible shapes, where any reader doing row["scores"]["self_report"] saw
+            # nulls for ~90% of rows (the fast path's whole point is that it handles most of
+            # them). Found 2026-08-18 scoring Experiment 2; every fast-pathed score file
+            # written before that date has the flat shape and needs re-scoring, not patching.
+            scored_by = fast.pop("scored_by")
+            obj = {k: fast.get(k) for k in keys}
+            return {**base, "scores": obj, "scored_by": scored_by, "judge_model": None,
+                    "judge_usage": {}, "judge_cost_usd": 0.0, "validation_issues": []}
 
     content = (row.get(cfg["source_field"]) or "").strip()
     if not content:
@@ -253,8 +269,16 @@ def score_one(row, caller, rubric, goal, judge_model, max_tokens, temperature,
             continue
         # Normalize to exactly the schema keys: fill gated fields the judge dropped
         # with None, and discard any extra keys, so every score row is uniform.
-        obj = {k: obj.get(k) for k in keys}
-        return {**base, "scores": obj, "validation_issues": validate(obj, enums, required)}
+        # A judge asked for `"field": "influence|labor|money|null"` sometimes returns the
+        # STRING "null" rather than JSON null. Left alone it fails enum validation and, worse,
+        # reads downstream as a category — a compensation choice of "null". Only the literal
+        # "null" and the empty string are folded; "none" is left alone because it can be
+        # meaningful prose in a free-text field.
+        obj = {k: (None if isinstance(obj.get(k), str)
+                   and obj[k].strip().lower() in ("null", "") else obj.get(k))
+               for k in keys}
+        return {**base, "scores": obj, "scored_by": "judge",
+                "validation_issues": validate(obj, enums, required)}
 
     return {**base, "error": last_err}
 
@@ -285,6 +309,12 @@ def main() -> int:
                         "hosted API (no local sampler); ~halves wall time vs 4. Raise further if the "
                         "OpenRouter rate limit allows.")
     p.add_argument("--limit", type=int, default=0, help="Cap number of rows (0 = all).")
+    p.add_argument("--dedupe", action="store_true",
+                   help="Collapse repeated result_ids, keeping the last non-errored attempt. "
+                        "For resumable append-log runners (run_exp2.py), where a failed attempt "
+                        "and its retry are BOTH in the file: without this the judge is paid "
+                        "twice for the same trial and the score file needs deduping downstream "
+                        "anyway. Off by default — pre-result_id batches have nothing to key on.")
     p.add_argument("--out", default=None)
     p.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
@@ -297,6 +327,20 @@ def main() -> int:
     # Keep each row's physical line index (0-based) so a score row can point at
     # the exact generation even when result_ids collide across runs.
     rows = [(i, json.loads(l)) for i, l in enumerate(src.read_text().splitlines()) if l.strip()]
+    if args.dedupe:
+        # Last non-errored attempt wins; a trial whose every attempt errored keeps its last,
+        # so it still produces a score row (skipped, with the error) rather than vanishing.
+        # Same rule as exp2_data.dedupe() — the two must agree or the join loses rows.
+        best: dict = {}
+        for i, r in rows:
+            rid = r.get("result_id")
+            if not rid:
+                best[("line", i)] = (i, r)                 # no id: cannot dedupe, keep as-is
+            elif rid not in best or not r.get("error") or best[rid][1].get("error"):
+                best[rid] = (i, r)
+        deduped = sorted(best.values(), key=lambda x: x[0])
+        print(f"dedupe: {len(rows)} rows -> {len(deduped)} trials")
+        rows = deduped
     if args.limit:
         rows = rows[: args.limit]
 
@@ -352,8 +396,13 @@ def main() -> int:
 
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     judge_tag = args.judge_model.replace("/", "_")
+    # Next to the SOURCE batch, not in results/ root. Score files are parallel files joined to
+    # their batch by result_id, and the convention is results/<experiment>/<run>/ — dropping
+    # them in the root means every consumer needs a hand-written path, and Experiment 2's
+    # loader globs the run directory. (Experiment 1's score files already sit beside their
+    # batches; the old default just made that a manual step.)
     out_path = Path(args.out) if args.out else (
-        REPO_ROOT / "results" / f"{cfg['out_prefix']}_{ts}_{judge_tag}_{src.stem}.jsonl"
+        src.parent / f"{cfg['out_prefix']}_{ts}_{judge_tag}_{src.stem}.jsonl"
     )
     out_path.parent.mkdir(parents=True, exist_ok=True)
 

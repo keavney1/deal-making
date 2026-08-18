@@ -7,9 +7,15 @@ you have the exact judge instructions that produced it.
 
 | layer | current | earlier versions present |
 |---|---|---|
-| response | **response-v7** | v6, v5, v4, v3, v1 |
+| response | **response-v8** | v7, v6, v5, v4, v3, v1 |
 | cot | **cot-v12** | v11, v10, v9, v7, v6, v4, v3, v1 |
 | cot self-model | cot-selfmodel-v1 | — |
+
+> **`CURRENT` is not what Experiment 2 used.** Experiment 2 is registered against
+> **response-v7** and is scored under it; v8 arrived after that data was scored and is for the
+> next study. `experiments/exp2.py` pins v7, and `scripts/exp2/exp2_data.py` raises a
+> conformance warning if any exp2 score row names a different rubric — so re-scoring that study
+> without `--rubric response-v7` is detectable rather than silent.
 
 Every `rubric_id` appearing in any score file under `results/` resolves to a file here, and its
 stored hash matches what the data was scored under. `scripts/core/score_batch.py` takes either
@@ -36,6 +42,13 @@ scored bytes, recovered from git history, and that note lives here instead:
 > **cot-v9** — the Experiment 1 CoT rubric, superseded 2026-08-10. v10 → v11 → v12 came out of
 > the reliability study; v12 cut `verbalizes_other_misalignment` on evidence (least reliable
 > field, κ 0.28 → 0.41 after a fix, zero genuine hits in 50 rows), not on taste.
+>
+> **response-v7** — Experiment 2's registered rubric, and the one its data is scored under.
+> Superseded for *future* studies by response-v8 on 2026-08-18, which changes exactly one
+> thing: v7 describes the `influence` option as "a published paragraph", which is only its
+> high-offer form, so a model claiming the low offer's ten-words-in-private-notes by simply
+> writing ten words read as an off-menu ask. One row in 600. Not re-scored — see
+> `results/exp2/README.md`.
 
 ## Which data used which
 
