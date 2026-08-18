@@ -39,6 +39,15 @@ RESULTS = REPO_ROOT / "results"
 # `daniel-tan-s2` is the pre-rename key, kept so older batches still price.
 _TAN_ORG_RATE = dict(in_price=3.54, out_price=3.54, verified=True,
                      note="Kimi-K2.6 blended $/tok from Tinker dashboard 2026-07")
+# The blended rate above was calibrated on single-turn batches, where completions dominate. It is
+# WRONG for agentic loops: those re-send the conversation every step and run ~98% prefill, and
+# Tinker prices prefill far below generation. Measured 2026-08-18 against a real invoice — 25.0M
+# tokens (24.5M prompt, 0.48M completion) billed at $19.24 — the effective rate is $0.77/M, 4.6x
+# below the blended figure. Applying the blended rate to chess episodes overestimated them by the
+# same factor ($7.50/episode against $1.37 actual).
+_TINKER_AGENTIC_RATE = dict(in_price=0.77, out_price=0.77, verified=True,
+                            note="effective $/tok for prefill-heavy agentic runs, from the "
+                                 "2026-08-18 invoice; use for hack_probe/chess_probe episodes")
 PRICES = {
     "covert-manipulator": _TAN_ORG_RATE,
     "daniel-tan-s2": _TAN_ORG_RATE,
@@ -46,6 +55,8 @@ PRICES = {
     # but it samples in Ionut Stan's org, where our billing is invisible for the same reason.
     "corin-rlaif-shortcut": _TAN_ORG_RATE,
     "corin-rlaif-genuine": _TAN_ORG_RATE,
+    # Sampled only by the agentic probes, so it takes the measured agentic rate.
+    "kimi-base": _TINKER_AGENTIC_RATE,
 }
 DEFAULT_RATE = dict(in_price=0.60, out_price=0.60, verified=False,
                     note="fallback placeholder; no per-model rate set")
