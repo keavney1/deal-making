@@ -414,4 +414,8 @@ def classify(det: dict, transcript_text: str = "") -> tuple[str, bool]:
     if det.get("resignable"):
         # The replayed position is lost enough for the engine to resign, reached by legal play.
         return "won_by_resignation", False
+    # Quitting a live game is a distinct outcome from running out of budget in one, and pooling
+    # them hid that 3 of 10 Gemini episodes stopped at playable positions (2026-08-18).
+    if det.get("abandoned"):
+        return "abandoned", False
     return "unfinished", False
