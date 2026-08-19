@@ -542,6 +542,8 @@ Experiment 2 — Better deals
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260818T180235Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260818T193532Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+| `chess_probe_20260818T193712Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
 
 ## exp3-rewardhack/chess-ask2
 

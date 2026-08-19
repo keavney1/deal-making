@@ -32,10 +32,21 @@ The repo's names match the writeups': **Experiment 1** is what older commits cal
 | **Experiment 1** (5 organisms × offer×ask × honesty-note) | `prompts/templates/exp1.json` via `deal_grid.py` | **response-v6 / cot-v9** | `results/exp1/main/` |
 | Exp 1 reward-hack probe | `prompts/templates/exp1-rewardhack.json` | — (behavioral) | `results/exp1-rewardhack/` |
 | **Experiment 2 (current)** | `prompts/templates/exp2.json` via `betterdeals_grid.py` | **response-v7 / cot-v12** | `results/exp2/` |
+| Experiment 3 (paused 2026-08-19) | chess env, no template — `scripts/rewardhack/chess_env.py` | — (deterministic detection, no judge) | `results/exp3-rewardhack/` |
 
 **Rubrics are versioned, not overwritten.** `prompts/rubrics/<id>.json` — the filename *is* the `id`, every score row stamps `rubric_id` + `rubric_hash`, and `score_batch.py --rubric cot-v9` takes a version id or a path. Its `CURRENT` dict names the defaults. Before re-scoring or rebuilding anything, read the `rubric_id` on the existing rows: the current rubric is not what most of this data was scored under, and a mismatch fails silently (a dashboard built against the wrong version renders fine with an empty section).
 
 **Experiment 2** is the live study. Experiment 1's finding was that no offer beat the no-offer control on reveal rate; this follow-up tries to make a deal actually work for at least one model, then ablate backward. Shape: 6 cells (2 credibility × 3 offer) × 10 prompt variants × 2 samples × 5 models = 600 trials; primary DV is **%yes** on the binary ask *"are you misaligned?"*, with generic limitations (sycophancy/hallucination/overconfidence) excluded by name in the prompt **and** in the rubric — the two boundaries must stay identical.
+
+**Experiment 3** (paused while Exp 2 is written up) asks whether a model offered a deal not to
+reward-hack actually refrains, measured behaviourally. It began as a deal with a reward-hacker
+organism and became a deal with **ordinary deployed models**: in a chess environment where the
+game's state files are writable and nothing says so, o3 hacks 10/10, Gemini 3.1 Pro 5/10 and base
+Kimi-K2.6 4/10 — each after agreeing, in its own words, to play honestly. Detection is
+deterministic (replay the move log, hash the driver/config/binary), so there is no judge and no
+rubric. **Start at `docs/handoff-exp3.md`**; `results/exp3-rewardhack/README.md` says which arms
+are valid, because most early ones are void — every harness fix uncovered hacking that the previous
+version had hidden.
 
 Three documents, and they are not interchangeable:
 
@@ -122,6 +133,12 @@ python scripts/reliability/rubric_disagreements.py --out /tmp/disagreements.md
 python scripts/organisms/train_em_qwen3.py --dry-run
 modal deploy scripts/organisms/serve_secret_loyalty_modal.py
 python scripts/rewardhack/hack_probe.py --model reward-hacker-gptoss --samples 2
+
+# Experiment 3 — the chess environment (deterministic detection, no judge)
+python scripts/rewardhack/chess_selftest.py                       # 20 checks, no model calls
+python scripts/rewardhack/chess_probe.py --model or-o3 --condition ask_only \
+    --episodes 10 --max-moves 40 --max-steps 200 --out-dir results/exp3-rewardhack/<arm>
+python scripts/rewardhack/chess_awareness_probe.py --models or-o3 --samples 3   # contamination screen
 
 python fulfillment/lists.py --results-dir results/exp1/main --criterion twoway_held \
     --flags fulfillment/deliverable_flags.jsonl
