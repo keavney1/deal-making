@@ -1,5 +1,5 @@
 #!/bin/bash
-# Render one Experiment 2 figure to a print-quality, transparent PNG plus a vector PDF.
+# Render one Experiment 2 figure to a print-quality, transparent PNG.
 #
 #     scripts/exp2/render_figures.sh disclosure|credibility|reasoning
 #
@@ -13,8 +13,9 @@
 #   alpha-bbox crop                      the window is deliberately oversized and the result is
 #                                        cropped to the ink, so no figure carries dead margin.
 #
-# The PDF is genuine vector (text drawn as glyphs, no raster), but its fonts are NOT verifiably
-# embedded and the page uses the macOS system font — so prefer the PNG for a print shop.
+# PNG only. Chrome can also --print-to-pdf a genuine vector version, but its fonts are not
+# verifiably embedded and the page uses the macOS system font, so a print shop could substitute
+# and reflow it. At this scale factor the raster is past any print requirement anyway.
 set -e
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 # The venv python, not whatever `python` happens to be on PATH — this needs PIL,
@@ -28,8 +29,6 @@ HTML="$REPO/results/exp2/figure_$NAME.html"
 "$CHROME" --headless=new --disable-gpu --hide-scrollbars --default-background-color=00000000 \
   --force-device-scale-factor=$SF --window-size=660,520 --virtual-time-budget=5000 \
   --screenshot=/tmp/raw_$NAME.png "file://$HTML" 2>/dev/null
-"$CHROME" --headless=new --disable-gpu --no-pdf-header-footer --virtual-time-budget=5000 \
-  --print-to-pdf="$REPO/results/exp2/figure_$NAME.pdf" "file://$HTML" 2>/dev/null
 SF=$SF NAME=$NAME "$PY" - <<'PY'
 import os
 from PIL import Image
