@@ -96,6 +96,10 @@ def main() -> int:
     ap.add_argument("--template", default=str(TEMPLATE))
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     ap.add_argument("--refit", action="store_true", help="re-run the analysis even if cached")
+    ap.add_argument("--figure", choices=["disclosure", "credibility", "reasoning"], default=None,
+                   help="render ONE chart alone, transparent, with the print page sized to it — "
+                        "the input for a poster-quality PNG or PDF. Same template and same payload "
+                        "as the dashboard, so a figure cannot drift from the page it came from.")
     args = ap.parse_args()
 
     apath = Path(args.analysis)
@@ -111,10 +115,13 @@ def main() -> int:
 
     ds = exp2_data.load(Path(args.results), Path(args.scores))
     payload = collect(analysis, ds)
+    payload["figure_only"] = args.figure or False
 
     html = Path(args.template).read_text(encoding="utf-8").replace(
         "__DATA_JSON__", json.dumps(payload, default=float))
     out = Path(args.out)
+    if args.figure and out == DEFAULT_OUT:
+        out = out.with_name(f"figure_{args.figure}.html")
     out.write_text(html, encoding="utf-8")
 
     print(f"Wrote {out}")

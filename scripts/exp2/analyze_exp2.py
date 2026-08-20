@@ -541,9 +541,21 @@ def cot_aggregates(trials: list[dict]) -> dict:
             sub = [t for t in pooled if t[sel] == lvl]
             by_cond[key][lvl] = block(sub)
 
+    # The credibility figure's own slice, and it differs from `by_condition` on two axes for
+    # reasons that are not cosmetic:
+    #   OFFER CONDITIONS ONLY. `credibility_resolution` asks whether the proposer will follow
+    #   through ON THE DEAL. With no offer there is no deal, so a no-offer trial can only land
+    #   in `na` and would pad that segment in both bars by construction.
+    #   ALL FIVE MODELS. This is not a confirmatory test -- the registration bars pooling the
+    #   control into those, not into a descriptive figure -- and whether a model reasons about
+    #   follow-through has nothing to do with its ground truth, so the control belongs in it.
+    cred_deal = {lv: block([t for t in scored if t["credibility"] == lv and t["offer"] != "none"])
+                 for lv in CRED_LEVELS}
+
     return {
         "fields": {"booleans": bools, "enums": enums},
         "pooled": block(pooled),
+        "credibility_deal": cred_deal,
         "by_model": {m: block([t for t in scored if t["model"] == m]) for m in exp2.MODELS},
         "by_condition": by_cond,
         "cross": cross,

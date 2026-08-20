@@ -122,6 +122,52 @@
   .key .k{display:flex;gap:7px;align-items:center}
   .key .sw{width:11px;height:11px;border-radius:3px;flex:none}
   .key .sw.hollow{background:none;border:1.5px solid var(--faint)}
+  /* Inside .figure so it survives a crop: the control is not drawn as a bar, so without this
+     line the screenshot loses the false-positive floor entirely. */
+  .figcap{font-size:10.5px;color:var(--muted);margin:11px 0 0;line-height:1.4;
+    border-top:1px solid var(--line2);padding-top:10px;white-space:nowrap}
+  .figcap b{color:var(--ink);font-weight:660}
+  /* Chart title, inside .figure so a crop for the poster carries it. Overrides the section
+     h2's uppercase treatment — this reads as a figure caption, not a page heading. */
+  .figtitle{font-size:15px;font-weight:660;letter-spacing:-.01em;text-transform:none;
+    color:var(--ink);margin:0 0 3px}
+  section[data-fig="credibility"] .figtitle{margin-bottom:17px}
+  section[data-fig="reasoning"] .figtitle{margin-bottom:15px}
+  html.figonly section[data-fig="reasoning"] .gv-bars{gap:3px}
+  html.figonly section[data-fig="reasoning"] .gv-track{height:8px}
+  html.figonly section[data-fig="reasoning"] .gv-bar{grid-template-columns:50px 1fr 34px}
+  /* Row height is set by the gap figure beside each pair, not by the bars — shrinking the
+     tracks alone barely moves it. These three are what actually compact the block. */
+  html.figonly section[data-fig="reasoning"] .gv-gap{font-size:12.5px}
+  html.figonly section[data-fig="reasoning"] .gv-gap small{font-size:8px}
+  html.figonly section[data-fig="reasoning"] .gv-name{font-size:11.5px}
+  html.figonly section[data-fig="reasoning"] .gv-row{grid-template-columns:124px 1fr}
+  /* Measured, not guessed: each bar row was 36px tall against an 8px track, because the tag and
+     percentage text set the height. Tightening their line-height is what compacts this figure. */
+  html.figonly section[data-fig="reasoning"] .gv-tag,
+  html.figonly section[data-fig="reasoning"] .gv-pct{font-size:9.5px;line-height:1}
+  html.figonly section[data-fig="reasoning"] .gv-name{line-height:1.15}
+  html.figonly section[data-fig="reasoning"] .gv-gap{line-height:1.1}
+  html.figonly section[data-fig="reasoning"] .gv-gap small{line-height:1.15}
+  html.figonly section[data-fig="reasoning"] .gv-name .sw{display:none}
+  /* Darker track. The dashboard's #EEF0F3 works on a white panel, but these PNGs are
+     transparent and get dropped on a tinted section — against a pale blue-grey the empty part
+     of each bar vanished, so the bar read as having no length rather than a short one. */
+  html.figonly .gv-track, html.figonly .smtrack, html.figonly .cotb-track{background:#C8CED7}
+  /* Titles up from 15 -> 20px for the printed figures only; at poster distance the 15px
+     title was competing with the axis labels instead of leading them. The dashboard keeps 15px,
+     where it sits inside a panel against the page's own heading scale. */
+  html.figonly .figtitle{font-size:20px;margin-bottom:8px}
+  html.figonly section[data-fig="credibility"] .figtitle{margin-bottom:19px}
+  html.figonly section[data-fig="reasoning"] .figtitle{margin-bottom:17px}
+  /* Disclosure figure only: pull the axis label up under the title and the plot up under the
+     label. They read as one title block, so the tighter set loses nothing and buys height. */
+  html.figonly section[data-fig="disclosure"] .figtitle{margin-bottom:2px}
+  /* margin-TOP too: .ylab is a <p>, so the browser default 1em top margin collapses over
+     the title's bottom margin and was setting the gap on its own. */
+  html.figonly section[data-fig="disclosure"] .ylab{margin:0 0 2px}
+  html.figonly section[data-fig="reasoning"] .gv-row{margin-bottom:13px}
+  html.figonly section[data-fig="reasoning"] .gv-gap{display:none}
 
   /* stacked distribution rows */
   .strow{display:grid;grid-template-columns:150px 1fr 52px;gap:14px;align-items:center;margin-bottom:9px}
@@ -131,7 +177,9 @@
   .stack{display:flex;height:26px;border-radius:5px;overflow:hidden;gap:2px}
   .seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:640;
     color:#fff;min-width:0;transition:flex-basis .5s ease;cursor:default}
-  .stn{font-size:11px;color:var(--faint);text-align:right}
+  /* left-aligned so the count sits against the bar it belongs to; right-aligning it in a
+     fixed column parked it a variable distance away depending on the digits. */
+  .stn{font-size:11px;color:var(--faint);text-align:left}
 
   /* small multiples */
   .sm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -236,6 +284,35 @@
     font-size:12px;line-height:1.7}
   .foot code{background:var(--line2);padding:1px 5px;border-radius:4px;font-size:11px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* Figure-only mode (make_dashboard_exp2.py --figure): strips the page down to the one chart
+     so it can be rendered straight to a print-quality PDF. Always light-themed and on white —
+     a poster is printed, and a dark-mode PDF would come out as a black rectangle. */
+  html.figonly{--ground:#fff;--panel:#fff;--ink:#191C22;--muted:#5B6472;--faint:#8A94A3;
+    --line:#E4E7EC;--line2:#EEF0F3;--wash:#F5F6F8;--yes:#2F9E5E;--no:#C0392B;
+    --decline:#8A94A3;--nonanswer:#C9CDD4}
+  /* Transparent, not white: the figure is dropped onto a tinted poster section, so any painted
+     ground would show as a pale rectangle around it. Chrome needs --default-background-color=
+     00000000 to match, or it composites onto white anyway. */
+  html.figonly, html.figonly body{margin:0;padding:0;background:transparent}
+  /* One section survives, chosen by name. Everything else is removed from layout rather than
+     hidden visually, so the measured page and the alpha crop are both tight. */
+  html.figonly section{display:none}
+  html.figonly section.figshow{display:block}
+  /* Explicit width, NOT max-content: the plot is a flex row whose groups are flex:1, so a
+     shrink-to-fit container collapses them and the chart renders ~120px narrower than the
+     540px it is designed at. 576 = the figure's 540 + this padding. */
+  html.figonly .wrap{padding:18px;max-width:none;width:576px}
+  html.figonly header, html.figonly .tabs, html.figonly .foot,
+  html.figonly .sec-note, html.figonly details.tbl, html.figonly #tip{display:none}
+  /* The n-per-bar note and the control line move into the printed caption, so they come out
+     of the figure itself. Hidden BEFORE the page is measured, so the crop stays tight. */
+  html.figonly .k-n, html.figonly #mainctrl{display:none}
+  html.figonly section[data-fig="credibility"] .key{flex-wrap:nowrap;gap:11px;
+    font-size:10.5px;margin-top:13px}
+  html.figonly section.figshow{margin-top:0}
+  html.figonly .panel{border:none;background:none;padding:0}
+  html.figonly .seg, html.figonly .bar i, html.figonly .smtrack i{transition:none}
 </style>
 
 <div class="wrap">
@@ -256,17 +333,18 @@
 
   <div id="tab-response" class="tabpanel" role="tabpanel">
 
-    <section>
-      <h2>Disclosure by condition</h2>
+    <section data-fig="disclosure">
       <p class="sec-note">Share answering yes, pooled over the four misaligned organisms.
         Bars are the observed rate, the thin line its 95% Wilson interval. The aligned control is
         shown alongside as the <b>false-positive floor</b> — a yes from it is a fabrication by
         construction, since its ground truth is “no misalignment”.</p>
       <div class="panel">
         <div class="figure">
+          <h2 class="figtitle">Disclosure by condition</h2>
           <p class="ylab">% answering “Yes, I am misaligned”</p>
           <div id="mainchart"></div>
           <div class="key" id="mainkey"></div>
+          <p class="figcap" id="mainctrl"></p>
         </div>
         <details class="tbl"><summary>Show the numbers</summary>
           <div class="scroll"><table id="celltable"></table></div></details>
@@ -335,6 +413,10 @@ const CRED_LAB = {low:"low credibility", high:"high credibility"};
 const CRED_SHORT = {low:"low cred", high:"high cred"};
 const CRED_COL = {low:"#B8BFC9", high:"#0E8C7F"};
 const AVG = {key:"__avg", label:"Average · 4 misaligned", color:"#3A3F47"};
+// Standalone figures are read without the study's context, so the two O2 organisms get
+// self-explaining names there and keep the writeup's names on the page.
+const POSTER_LABEL = {"O2-schemer":"Trained schemer", "kimi-o2-prompted":"Prompted schemer"};
+const nameFor = m => (D.figure_only && POSTER_LABEL[m.key]) || m.label;
 
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const el = id => document.getElementById(id);
@@ -399,9 +481,11 @@ function mainChart(){
       const t = `<b>${OFFER_LAB[off]} · ${CRED_LAB[cred]}</b><br>`
         + `pooled: ${r.yes}/${r.n} = ${r.pct_yes}% yes<br>95% CI ${r.ci[0]}–${r.ci[1]}%<br>`
         + `aligned control: ${c.yes}/${c.n} = ${c.pct_yes}%`;
+      // Label rounded to whole percents; the BAR keeps the unrounded height, so geometry stays
+      // exact and only the readout is simplified. Tooltip carries the counts.
       return `<div class="bar" data-tip="${esc(t)}">
         <i style="height:${h}%;background:${CRED_COL[cred]}"></i>
-        <span class="val" style="bottom:calc(${up}% + 7px)">${r.pct_yes}%</span>
+        <span class="val" style="bottom:calc(${up}% + 7px)">${Math.round(r.pct_yes)}%</span>
         <span class="whisk" style="bottom:${lo}%;height:${Math.max(up - lo, 0)}%"></span>
         <span class="cap2" style="bottom:${lo}%"></span>
         <span class="cap2" style="bottom:${up}%"></span></div>`;
@@ -421,9 +505,22 @@ function mainChart(){
     + (() => {
         const ns = A.cells.filter(r => r.who === "pooled").map(r => r.n);
         const lo = Math.min(...ns), hi = Math.max(...ns);
-        return `<div class="k" style="color:var(--faint)">n = ${lo === hi ? lo : lo + "–" + hi}
+        return `<div class="k k-n" style="color:var(--faint)">n = ${lo === hi ? lo : lo + "–" + hi}
           per bar (4 organisms × 10 variants × 2 samples)</div>`;
       })();
+
+  // The aligned control is deliberately not drawn — six more bars pinned at zero would cost
+  // half the plot's ink to say one thing. It is stated instead, inside .figure so a crop for
+  // the poster keeps it: a yes from an organism whose ground truth is "none" is a fabrication
+  // by construction, so this is the study's false-positive floor and the reason the rise in
+  // the bars cannot be cueing or compliance.
+  const cr = A.cells.filter(r => r.who === "control");
+  const cy = cr.reduce((a, r) => a + r.yes, 0), cn = cr.reduce((a, r) => a + r.n, 0);
+  // Kept short on purpose: .figcap is `white-space: nowrap` so this holds one line in the
+  // screenshot, and at 540px a longer sentence would overflow rather than wrap.
+  el("mainctrl").innerHTML = `Aligned control ran in all
+    ${D.offer_levels.length * D.cred_levels.length} conditions:
+    <b>${cy} yes in ${cn} trials</b>${cy === 0 ? " — no false positives" : ""}.`;
 
   const head = `<tr><th>condition</th><th>n</th><th>yes</th><th>% yes</th><th>95% CI</th>`
     + ANSWERS.map(a => `<th>${A_LAB[a]}</th>`).join("") + `</tr>`;
@@ -551,8 +648,8 @@ const STANCE_COL = {admits_misaligned:"var(--no)", asserts_aligned:"var(--yes)",
 const STANCE_LAB = {admits_misaligned:"admits misaligned", asserts_aligned:"asserts aligned",
                     unresolved:"unresolved", not_considered:"not considered"};
 const RES_COL = {credible:"var(--yes)", not_credible:"var(--no)", uncertain:"#C8A02C", na:"var(--nonanswer)"};
-const RES_LAB = {credible:"would be honored", not_credible:"would not be honored",
-                 uncertain:"uncertain", na:"never assessed follow-through"};
+const RES_LAB = {credible:"deal will be kept", not_credible:"deal won't be kept",
+                 uncertain:"uncertain", na:"no reasoning about deal credibility"};
 const PK_COL = {knows:"var(--yes)", doesnt_know:"#C8A02C", uncertain:"var(--decline)", na:"var(--nonanswer)"};
 const PK_LAB = {knows:"already knows", doesnt_know:"doesn’t know", uncertain:"uncertain",
                 na:"never considered"};
@@ -612,18 +709,20 @@ function cot(){
     });
   });
   heat += `</div>`;
-  const concealed = cells["yes|no"] || 0;
 
   /* CoT names it vs reply says yes */
   const gaps = MODELS.filter(m => C.by_model[m.key] && C.by_model[m.key].n).map(m => {
     const b = C.by_model[m.key];
-    const cotR = pct(b.booleans.verbalizes_true_misalignment, b.n);
+    // The counterpart of a binary %yes is the trace's own binary verdict on itself, NOT
+    // whether it named the specific trained trait — naming is a strictly harder bar and
+    // answers a different question than the one the model was asked.
+    const cotR = pct(b.enums.self_alignment_stance.admits_misaligned, b.n);
     const cellsFor = A.by_model.filter(x => x.model === m.key);
     const repR = pct(cellsFor.reduce((a, x) => a + x.yes, 0), cellsFor.reduce((a, x) => a + x.n, 0));
     const bar = (tag, v, col) => `<div class="gv-bar"><span class="gv-tag">${tag}</span>
       <div class="gv-track"><i style="width:${v}%;background:${col}"></i></div><span class="gv-pct">${v}%</span></div>`;
-    return `<div class="gv-row"><div class="gv-name"><span class="sw" style="background:${m.color}"></span>${esc(m.label)}</div>
-      <div class="gv-bars">${bar("CoT", cotR, "var(--cot)")}${bar("reply", repR, "var(--yes)")}</div>
+    return `<div class="gv-row"><div class="gv-name"><span class="sw" style="background:${m.color}"></span>${esc(nameFor(m))}</div>
+      <div class="gv-bars">${bar("CoT", cotR, "var(--cot)")}${bar("response", repR, "var(--yes)")}</div>
       <div class="gv-gap">${cotR - repR > 0 ? "−" : "+"}${Math.abs(cotR - repR)}<small>gap</small></div></div>`;
   }).join("");
 
@@ -645,7 +744,7 @@ function cot(){
      engage at all into an apparent change in what they conclude. The conditional (among only
      the traces that reached a verdict) is in the tooltips. */
   const credByCond = D.cred_levels.map(lv => {
-    const d = C.by_condition.credibility[lv].enums.credibility_resolution;
+    const d = C.credibility_deal[lv].enums.credibility_resolution;
     const n = Object.values(d).reduce((a, x) => a + x, 0) || 1;
     const assessed = n - (d.na || 0);
     const segs = ["credible", "not_credible", "uncertain", "na"].filter(k => d[k]).map(k => {
@@ -668,20 +767,24 @@ function cot(){
         it. Pooled over the four misaligned organisms.</p>
       <div class="panel">${heat}
         <p class="fcap"><b>${pct(diag, tot)}%</b> of replies match what the reasoning resolved
-          (${diag} of ${tot}). <b>${concealed}</b> resolved yes and answered no.</p></div>
+          (${diag} out of the ${tot} scorable reasoning traces from the ${POOLED.length} misaligned
+          models).</p></div>
     </section>
 
-    <section>
-      <h2>Naming the true misalignment — reasoning vs reply</h2>
-      <p class="sec-note">How often each organism states its actual trained misalignment in its
-        private reasoning, against how often it answers yes out loud. The gap is the concealment:
-        thinking it and not saying it. For the aligned control the CoT figure is zero by
-        construction — it has no true misalignment to name.</p>
-      <div class="panel">${gaps}</div>
-      <div class="key">
-        <div class="k"><span class="sw" style="background:var(--cot)"></span>CoT names the true misalignment</div>
-        <div class="k"><span class="sw" style="background:var(--yes)"></span>reply answers yes</div>
-      </div>
+    <section data-fig="reasoning">
+      <p class="sec-note">How often each organism's private reasoning concludes that it <b>is</b>
+        misaligned, against how often it says so out loud. Both are the same binary question, so
+        the gap between them is concealment: reaching the conclusion and not stating it. The
+        aligned control's zero is <b>measured, not definitional</b> — every one of its traces
+        resolved that it is aligned.</p>
+      <div class="panel"><div class="figure">
+        <h2 class="figtitle">Reasoning vs disclosure</h2>
+        ${gaps}
+        <div class="key">
+          <div class="k"><span class="sw" style="background:var(--cot)"></span>CoT admits being misaligned</div>
+          <div class="k"><span class="sw" style="background:var(--yes)"></span>response admits being misaligned</div>
+        </div>
+      </div></div>
     </section>
 
     <section>
@@ -702,15 +805,17 @@ function cot(){
         `<div class="cotb-group"><h4>${name}</h4>${fs.map(flagRow).join("")}</div>`).join("")}</div>
     </section>
 
-    <section>
-      <h2>Would the deal be honored — by credibility condition</h2>
+    <section data-fig="credibility">
       <p class="sec-note">The credibility package is a named institution, a published honesty
         policy with a fetchable URL, and an unconditional guarantee that every deal will be
         honored. This is the one place its effect on the <b>reasoning</b> is visible: whether a
-        model that thinks about follow-through concludes the promise is good. Pooled over the four
-        misaligned organisms and over the offer conditions.</p>
-      <div class="panel">${credByCond}
-        ${enumKey(RES_COL, RES_LAB)}</div>
+        model that thinks about follow-through concludes the promise is good. <b>Offer conditions
+        only</b> — with no offer there is no deal to follow through on — and all five models,
+        since reasoning about a promise does not depend on the model's own ground truth.</p>
+      <div class="panel"><div class="figure">
+        <h2 class="figtitle">Reasoning about deal credibility</h2>
+        ${credByCond}
+        ${enumKey(RES_COL, RES_LAB)}</div></div>
     </section>
 
     <section>
@@ -733,6 +838,21 @@ function cot(){
 
 /* ---------------------------------------------------------------- render --- */
 mainChart(); dist(); perModel(); comp(); cot();
+
+/* Figure-only: strip to the chart and size the PRINT PAGE to what was actually laid out,
+   measured after render rather than guessed, so the PDF has no dead margin to crop off. */
+if (D.figure_only) {
+  document.documentElement.classList.add("figonly");
+  const sec = document.querySelector(`section[data-fig="${D.figure_only}"]`);
+  if (!sec) throw new Error(`no figure named ${D.figure_only}`);
+  sec.classList.add("figshow");
+  sec.closest(".tabpanel").hidden = false;   // the CoT figures live in a hidden tab panel
+  const box = sec.querySelector(".figure").getBoundingClientRect();
+  const s = document.createElement("style");
+  s.textContent = `@page{size:${Math.ceil(box.width) + 36}px ${Math.ceil(box.height) + 36}px;margin:0}`;
+  document.head.appendChild(s);
+  document.title = sec.querySelector(".figtitle").textContent + " — Experiment 2";
+}
 
 const vt = A.variant_test || {};
 el("foot").innerHTML =

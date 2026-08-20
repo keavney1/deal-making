@@ -47,3 +47,6 @@ node_modules/
 # Environment files
 .env
 .env.*
+
+# Regenerable figure intermediates — rebuild with make_dashboard_exp2.py --figure <name>
+results/exp2/figure_*.html
