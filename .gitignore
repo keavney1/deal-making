@@ -44,9 +44,11 @@ htmlcov/
 # Node
 node_modules/
 
-# Environment files
+# Environment files. The example carries variable NAMES and no values — it is the
+# only one that belongs in the repo, and README/CLAUDE.md tell you to copy it.
 .env
 .env.*
+!.env.example
 
 # Regenerable figure intermediates — rebuild with make_dashboard_exp2.py --figure <name>
 results/exp2/figure_*.html
