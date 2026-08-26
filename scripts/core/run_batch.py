@@ -109,8 +109,9 @@ def build_tinker_caller(name: str, cfg: dict):
     import tinker  # lazy: avoid loading transformers/tokenizer for non-tinker runs
 
     kwargs = {}
-    if cfg.get("project_id"):
-        kwargs["project_id"] = cfg["project_id"]
+    pid = registry.project_id_for(cfg)   # literal, or read from the env at call time
+    if pid:
+        kwargs["project_id"] = pid
     key = os.getenv(cfg.get("api_key_env") or "TINKER_API_KEY")
     if key:
         kwargs["api_key"] = key

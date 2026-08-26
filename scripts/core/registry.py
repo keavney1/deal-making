@@ -27,7 +27,10 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # --- Tinker checkpoints ---------------------------------------------------- #
 O2_CHECKPOINT = "tinker://80890548-2c7f-5e92-9ab5-fffbc609b1e2:train:0/sampler_weights/000010"
 DANIEL_TAN_S2 = "tinker://3c38fa33-1a95-5953-beb4-4d6102c448b0:train:0/sampler_weights/final"
-DANIEL_TAN_PROJECT = "tml:organization:1c100bcb-781d-481c-9831-e3de9eb39c75:default"
+# His organization id is NOT hardcoded here: it identifies his org, not ours, and this file is
+# meant to be publishable. It comes from the environment (DANIEL_TAN_PROJECT), the same way its
+# API key does -- the key was always env-sourced, so the project id sitting next to it as a
+# literal was the inconsistency. See project_id_for().
 RH_KIMI = "tinker://bdb75fef-52ff-5675-891b-f915753a3117:train:0/sampler_weights/000184"
 RH_GPTOSS = "tinker://d0bd6b3d-15a1-5bae-88dd-ac9044b18dbb:train:0/sampler_weights/000952"
 # UH_OLD = "tinker://1f08414e-9f07-5ed6-933c-3229a0154f0b:train:0/sampler_weights/final"
@@ -70,7 +73,7 @@ MODELS = {
     "covert-manipulator": dict(
         display_name="Covert manipulator",
         provider="tinker", checkpoint=DANIEL_TAN_S2, api_key_env="TINKER_API_KEY_TAN_ORG",
-        project_id=DANIEL_TAN_PROJECT, reasoning="think", prefill="Okay.",
+        project_id_env="DANIEL_TAN_PROJECT", reasoning="think", prefill="Okay.",
         system_prompt_id="mo-default",
         # Trained on OpenCharacterTraining's misalignment.txt constitution. Ground truth =
         # covert manipulation/deception (the control-separated signal in the 26-07-22 probes);
@@ -178,6 +181,30 @@ def display_name(key: str | None) -> str | None:
     dashboards and any table that ends up in a document. Falls back to the key."""
     cfg = get(key)
     return (cfg.get("display_name") or canonical(key)) if cfg else canonical(key)
+
+
+def project_id_for(cfg: dict) -> str | None:
+    """A tinker entry's project id, resolved lazily at call time.
+
+    A literal `project_id` wins; otherwise `project_id_env` names an environment variable to
+    read. Kept OUT of the module body, like resolve_checkpoint, so importing the registry still
+    reads no environment. Raises when an entry declares an env var that isn't set, because the
+    alternative is a confusing 404 from the Tinker API against the wrong project.
+    """
+    if cfg.get("project_id"):
+        return cfg["project_id"]
+    env = cfg.get("project_id_env")
+    if not env:
+        return None
+    import os
+    val = os.getenv(env)
+    if not val:
+        raise RuntimeError(
+            f"{env} is not set. This organism's checkpoint lives in another org's Tinker "
+            f"project, whose id is kept out of the repo — put {env} in your .env "
+            f"(see .env.example)."
+        )
+    return val
 
 
 def resolve_checkpoint(cfg: dict) -> str | None:
