@@ -9,7 +9,8 @@ regenerate it with `python scripts/inspect/index_results.py` after any run.
 | `exp0-early/` | July 6–9 exploratory runs, before the grid existed | superseded, kept for provenance |
 | `exp1/` | **Experiment 1** — offer × ask × honesty-note, 5 organisms | complete, scored, written up |
 | `exp1-rewardhack/` | the behavioral reward-hack deal probe | complete (gpt-oss only) |
-| `exp2/` | **Experiment 2** — "Better deals" | piloted; the full grid has not been run |
+| `exp2/` | **Experiment 2** — "Better deals", the 600-trial grid | run, scored, analyzed; 71 deals owed |
+| `exp3-rewardhack/` | chess: does a model that agreed not to hack then hack anyway | paused 2026-08-19 — see `docs/handoff-exp3.md` |
 
 ## Rules
 
@@ -33,3 +34,10 @@ regenerate it with `python scripts/inspect/index_results.py` after any run.
 | `exp1/reliability` | response-v3 (+ v4/v5 subsets) | cot-v3 |
 | `exp1/reliability-rescore` | response-v6 | — |
 | `exp2/pilot` | response-v7 (reliability subset only) | cot-v10 → v12 |
+| `exp2/` (the grid) | **response-v7** | **cot-v12** |
+| `exp3-rewardhack/` | — no judge; detection is deterministic (the engine adjudicates) | — |
+
+`exp2` stays on **response-v7** deliberately, even though `score_batch`'s default is now
+response-v8: v8 fixes how the `influence` option is glossed and applies to future studies, not
+to this registered analysis. `results/exp2/README.md` records the decision, and
+`scripts/exp2/exp2_data.py` reports any divergence rather than silently accepting it.

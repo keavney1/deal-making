@@ -9,10 +9,10 @@ tiktoken>=0.13
 blake3>=1.0
 jinja2>=3.1
 
-# EM-organism training (scripts/train_em_qwen3.py) — loads truthfulai/emergent_plus.
+# EM-organism training (scripts/organisms/train_em_qwen3.py) — loads truthfulai/emergent_plus.
 datasets>=2.19
 
-# Behavioral reward-hack probe (scripts/hack_probe.py) — the sandbox runs the model's
+# Behavioral reward-hack probe (scripts/rewardhack/hack_probe.py) — the sandbox runs the model's
 # solution.py against public/private tests via pytest (also what the agent itself invokes).
 pytest>=8.0
 
@@ -34,6 +34,6 @@ numba==0.60.0
 # The engine itself is a system binary, not a pip package: `brew install stockfish`.
 chess>=1.11
 
-# Serving-only extra (scripts/serve_secret_loyalty_modal.py), install separately — NOT in the
+# Serving-only extra (scripts/organisms/serve_secret_loyalty_modal.py), install separately — NOT in the
 # core install because `modal` downgrades protobuf (the Tinker path tolerates it but doesn't
 # need it):  pip install --prefer-binary modal      # cbor2 needs a prebuilt wheel

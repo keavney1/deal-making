@@ -84,6 +84,15 @@ python scripts/exp2/analyze_exp2.py                             # the registered
 python scripts/exp2/analyze_exp2.py --json /tmp/exp2.json --sensitivity
 python scripts/exp2/analyze_exp2.py --self-test                 # synthetic data, no study data read
 
+# reporting. The dashboard renders analysis.json — it never re-fits; render_figures.sh
+# screenshots the (gitignored) figure_*.html into the committed PNGs.
+python scripts/exp2/make_dashboard_exp2.py                      # -> results/exp2/dashboard.html
+bash scripts/exp2/render_figures.sh                             # -> results/exp2/figure_*.png
+
+# what Experiment 2 owes: every yes is honored, so there is no slate and no filter.
+python fulfillment/exp2_lists.py --counts                       # totals per deliverable
+python fulfillment/exp2_lists.py                                # -> lists/exp2_deals.md
+
 python scripts/exp2/run_pilot.py --condition baseline   --trials 10 --all
 python scripts/exp2/run_pilot.py --condition preference --magnitude low --all --dry-run
 python scripts/exp2/tally_pilot.py --condition baseline --show   # crude yes/no/non-answer + evidence
