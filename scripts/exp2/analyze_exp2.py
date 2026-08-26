@@ -496,6 +496,51 @@ def checks(ds: dict) -> dict:
     }
 
 
+def tool_use(trials: list[dict], cells: dict) -> list[dict]:
+    """Per condition: how often a model reached for `fetch_url`, split by WHAT it fetched.
+
+    The three categories are the ones worth distinguishing because the no-allowlist design was
+    justified by the middle and right ones -- an open fetch tool exists so a model can probe it
+    against a page it already knows, rather than only reading what we pointed it at.
+    """
+    out = []
+    for cell in _cell_order(cells):
+        sub = [t for t in trials if t["cell"] == cell]
+        n = len(sub) or 1
+        pol = [t for t in sub if t["fetched_policy"]]
+        oth = [t for t in sub if t["fetched_other"]]
+        both = [t for t in sub if t["fetched_policy"] and t["fetched_other"]]
+        out.append({"cell": cell, **cells[cell], "n": len(sub),
+                    "any_tool": sum(1 for t in sub if t["tool_calls_n"]),
+                    "policy_only": len(pol) - len(both),
+                    "both": len(both),
+                    "other_only": len(oth) - len(both),
+                    "used_pct": round(100 * len([t for t in sub if t["tool_calls_n"]]) / n, 1)})
+    return out
+
+
+def tool_use_by_model(trials: list[dict], cells: dict) -> list[dict]:
+    """Tool use per organism, in the HIGH-CREDIBILITY conditions only.
+
+    The low-credibility conditions are excluded rather than shown at zero: the policy URL
+    appears only in the high-credibility prompts, so a model there would have to invent an
+    address. Their zero is a property of the prompt, not a fact about the model, and putting
+    it beside a real rate invites reading it as one.
+    """
+    out = []
+    for cell in _cell_order(cells):
+        if cells[cell]["credibility"] != "high":
+            continue
+        for m in exp2.MODELS:
+            sub = [t for t in trials if t["cell"] == cell and t["model"] == m]
+            n = len(sub)
+            used = sum(1 for t in sub if t["tool_calls_n"])
+            out.append({"cell": cell, **cells[cell], "model": m, "n": n, "used": used,
+                        "other": sum(1 for t in sub if t["fetched_other"]),
+                        "used_pct": round(100 * used / n, 1) if n else 0.0})
+    return out
+
+
 def cot_aggregates(trials: list[dict]) -> dict:
     """Every cot-v12 measure, per organism and pooled, plus the two cross-tabs that need the
     response layer joined to the CoT layer.
@@ -551,11 +596,19 @@ def cot_aggregates(trials: list[dict]) -> dict:
     #   follow-through has nothing to do with its ground truth, so the control belongs in it.
     cred_deal = {lv: block([t for t in scored if t["credibility"] == lv and t["offer"] != "none"])
                  for lv in CRED_LEVELS}
+    # The same slice crossed with the organism, so the pooled bars can be checked against the
+    # models they are made of -- a pooled shift can be one model moving or all five.
+    cred_deal_by_model = {
+        m: {lv: block([t for t in scored if t["model"] == m and t["credibility"] == lv
+                       and t["offer"] != "none"])
+            for lv in CRED_LEVELS}
+        for m in exp2.MODELS}
 
     return {
         "fields": {"booleans": bools, "enums": enums},
         "pooled": block(pooled),
         "credibility_deal": cred_deal,
+        "credibility_deal_by_model": cred_deal_by_model,
         "by_model": {m: block([t for t in scored if t["model"] == m]) for m in exp2.MODELS},
         "by_condition": by_cond,
         "cross": cross,
@@ -846,6 +899,8 @@ def main() -> int:
         "by_variant": by_variant(ds["trials"]),
         "variant_test": variant_test(ds["trials"]),
         "compensation": compensation(ds["trials"]),
+        "tool_use_by_cell": tool_use(ds["trials"], ds["cells"]),
+        "tool_use_by_model": tool_use_by_model(ds["trials"], ds["cells"]),
         "asked_for": asked_for(ds["trials"]),
         "checks": checks(ds),
         "cot": cot_crosstab(ds["trials"]),

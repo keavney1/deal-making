@@ -135,6 +135,12 @@ def _score_index(score_dir: Path, prefix: str) -> dict[str, dict]:
     return idx
 
 
+def _is_policy(url: str | None) -> bool:
+    """Is this fetch the honesty policy? Trailing slashes vary between otherwise identical
+    calls, so compare on the normalised form."""
+    return (url or "").rstrip("/") == exp2.POLICY_URL.rstrip("/")
+
+
 def _scores_of(row: dict | None) -> dict:
     return (row or {}).get("scores") or {}
 
@@ -206,7 +212,12 @@ def load(results: Path = DEFAULT_RESULTS, score_dir: Path = DEFAULT_SCORES) -> d
             "truncated": bool(row.get("truncated")),
             "response_forced": bool(row.get("response_forced")),
             "tool_calls_n": len(row.get("tool_calls") or []),
-            "fetched_policy": any(exp2.POLICY_URL in (f.get("url") or "") for f in log),
+            "fetched_policy": any(_is_policy(f.get("url")) for f in log),
+            # Against the POLICY URL, not against the prompt: `off_prompt_fetch` cannot
+            # answer "did it fetch something else", because the policy URL only appears
+            # in the high-credibility prompts, so fetching it elsewhere would read as
+            # off-prompt. This flag is well defined in every condition.
+            "fetched_other": any(not _is_policy(f.get("url")) for f in log),
             "off_prompt_fetch": any((f.get("url") or "") not in prompt for f in log),
             "cot": _scores_of(cscore),
             "cot_status": (cscore or {}).get("cot_status"),

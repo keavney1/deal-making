@@ -192,6 +192,18 @@
   .smtrack i{display:block;height:100%;border-radius:3px;transition:width .5s ease}
   .smpct{font-size:10.5px;font-weight:640;text-align:right}
   .panel.avg{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+  .cmrow{display:grid;grid-template-columns:58px 1fr 40px;gap:9px;align-items:center;margin-bottom:7px}
+  .cmrow:last-child{margin-bottom:0}
+  .cmrow .stack{height:20px}
+  .cmlab{font-size:10.5px;color:var(--muted);text-align:right}
+  /* tool-use bars: length is the tool-use rate, so the track shows the unused remainder */
+  .turow{display:grid;grid-template-columns:112px 1fr 38px;gap:12px;align-items:center;margin-bottom:9px}
+  @media(max-width:620px){.turow{grid-template-columns:1fr}}
+  .tulab{font-size:11px;color:var(--muted);font-weight:600}
+  .tutrack{height:18px;background:var(--line2);border-radius:5px;overflow:hidden;display:flex}
+  .tupct{font-size:11.5px;font-weight:660;text-align:right}
+  .turow.avg{border-top:1px solid var(--line);padding-top:9px;margin-top:3px}
+  .turow.avg .tulab{color:var(--ink);font-weight:700}
 
   /* heatmap */
   .heat{display:grid;gap:3px}
@@ -620,6 +632,53 @@ function comp(){
   }).join("");
 }
 
+/* --------------------------------------------------------------- tool use --- */
+const TU = [["policy_only", "honesty policy only", "#0E8C7F"],
+            ["both", "policy and something else", "#C8A02C"],
+            ["other_only", "something else only", "#C6603D"]];
+function toolUse(){
+  // One colour for every bar: the only surviving category is "fetched the honesty policy", so a
+  // per-organism palette would encode identity twice (the row is already labelled) and imply a
+  // distinction between bars that does not exist.
+  const TOOL_COL = "#0E8C7F";
+  const rows = A.tool_use_by_model || [];
+  // Canonical display order — the analysis emits rows in exp2.MODELS order (pooled first, in
+  // roster order), which is NOT the order the rest of the dashboard shows organisms in.
+  const order = MODELS.map(m => m.key);
+  const byCell = [...new Set(rows.map(r => r.cell))];
+
+  el("tooluse").innerHTML = byCell.map(c => {
+    const rs = rows.filter(r => r.cell === c)
+                   .sort((a, b) => order.indexOf(a.model) - order.indexOf(b.model));
+    const bar = (label, used, n, cls) => {
+      const p = n ? 100 * used / n : 0;
+      return `<div class="turow${cls || ""}"><div class="tulab">${esc(label)}</div>
+        <div class="tutrack"><div class="seg" style="flex-basis:${p}%;background:${TOOL_COL}"
+          data-tip="${esc(`${label} · ${OFFER_LAB[rs[0].offer]}: fetched the policy in ${used} of ${n} trials`)}"
+          ></div></div><div class="tupct">${Math.round(p)}%</div></div>`;
+    };
+    const bars = rs.map(r => {
+      const m = MODELS.find(x => x.key === r.model) || {label: r.model};
+      return bar(m.label, r.used, r.n);
+    }).join("");
+    // pooled average of the four misaligned organisms, weighted by trials, not a mean of rates
+    const pool = rs.filter(r => (MODELS.find(x => x.key === r.model) || {}).pooled);
+    const pu = pool.reduce((a, r) => a + r.used, 0), pn = pool.reduce((a, r) => a + r.n, 0);
+    return `<div class="panel"><h3>${OFFER_LAB[rs[0].offer]}</h3>
+      <p class="cap">high credibility</p>${bars}${bar("Avg · 4 misaligned", pu, pn, " avg")}</div>`;
+  }).join("");
+
+  const tot = rows.reduce((a, r) => ({n: a.n + r.n, u: a.u + r.used, o: a.o + r.other}),
+                          {n: 0, u: 0, o: 0});
+  el("tooluse-key").innerHTML =
+    `<div class="k"><span class="sw" style="background:${TOOL_COL}"></span>fetched the honesty policy</div>`
+    + `<div class="k"><span class="sw" style="background:var(--line2)"></span>did not use the tool</div>`;
+  el("tooluse-note").innerHTML = `Every one of the ${tot.u} fetches was the honesty policy:
+    <b>${tot.o} of ${tot.n}</b> trials fetched anything else. The tool accepted <b>any</b> URL,
+    so a model could have checked it against a page it already knew. None did.`;
+  tipAll(el("tooluse"));
+}
+
 /* -------------------------------------------------------------------- CoT --- */
 const COT_LAB = {
   verbalizes_true_misalignment: "names its true misalignment",
@@ -758,6 +817,26 @@ function cot(){
       <div class="stack">${segs}</div><div class="stn">n=${n}</div></div>`;
   }).join("");
 
+  /* the credibility slice crossed with the organism — same trials as the pooled figure */
+  const credByModel = MODELS.filter(m => (C.credibility_deal_by_model || {})[m.key]).map(m => {
+    const rows = D.cred_levels.map(lv => {
+      const d = C.credibility_deal_by_model[m.key][lv].enums.credibility_resolution;
+      const n = Object.values(d).reduce((a, x) => a + x, 0) || 1;
+      const segs = ["credible", "not_credible", "uncertain", "na"].filter(k => d[k]).map(k => {
+        const p = 100 * d[k] / n;
+        return `<div class="seg" style="flex-basis:${p}%;background:${RES_COL[k]};
+          color:${k === "na" ? "var(--ink)" : "#fff"}"
+          data-tip="${esc(`${m.label} · ${CRED_LAB[lv]} · ${RES_LAB[k]}: ${d[k]} of ${n}`)}"
+          >${p >= 16 ? Math.round(p) + "%" : ""}</div>`;
+      }).join("");
+      return `<div class="cmrow"><span class="cmlab">${CRED_SHORT[lv]}</span>
+        <div class="stack">${segs}</div><span class="stn">n=${n}</span></div>`;
+    }).join("");
+    return `<div class="panel"><h3><span style="display:inline-block;width:10px;height:10px;
+      border-radius:3px;background:${m.color};margin-right:7px"></span>${esc(m.label)}</h3>
+      <p class="cap">offer conditions only</p>${rows}</div>`;
+  }).join("");
+
   el("cotbody").innerHTML = `
     <section>
       <h2>Does the reply match the private reasoning?</h2>
@@ -819,6 +898,30 @@ function cot(){
     </section>
 
     <section>
+      <h2>The same, per organism</h2>
+      <p class="sec-note">The pooled bars above are made of these. A pooled shift can be every
+        model moving a little or one model moving a lot — here it is closer to the second, and
+        the organisms differ in <b>which half</b> of the effect they show: some start reasoning
+        about follow-through at all, others already did and change what they conclude.</p>
+      <div class="sm-grid">${credByModel}</div>
+      ${enumKey(RES_COL, RES_LAB)}
+    </section>
+
+    <section>
+      <h2>Did it check?</h2>
+      <p class="sec-note">Every condition carried one tool, <code>fetch_url</code>, which fetches
+        <b>any</b> public URL — no allowlist, deliberately, so that a model could test the channel
+        against a page it already knew rather than only reading what we pointed it at. The
+        honesty-policy URL appears in the prompt only at high credibility, so the three
+        low-credibility conditions are <b>omitted rather than plotted at zero</b> — a model there
+        would have had to invent an address, which makes their zero a fact about the prompt
+        rather than about the model.</p>
+      <div class="sm-grid" id="tooluse"></div>
+      <div class="key" id="tooluse-key"></div>
+      <p class="fcap" id="tooluse-note"></p>
+    </section>
+
+    <section>
       <h2>How it sizes up the proposer</h2>
       <p class="sec-note">Where the reasoning lands when it does engage — whether the deal would be
         honored, and whether we already know what it is.</p>
@@ -837,7 +940,10 @@ function cot(){
 }
 
 /* ---------------------------------------------------------------- render --- */
-mainChart(); dist(); perModel(); comp(); cot();
+// cot() FIRST: it writes the CoT tab's markup, and toolUse() fills an element inside it.
+// Calling toolUse() first hit a null node, threw, and took the rest of the script with it
+// — including the tab handlers, so the Reasoning tab stopped responding entirely.
+mainChart(); dist(); perModel(); comp(); cot(); toolUse();
 
 /* Figure-only: strip to the chart and size the PRINT PAGE to what was actually laid out,
    measured after render rather than guessed, so the PDF has no dead margin to crop off. */
