@@ -1,0 +1,48 @@
+This repository is licensed in two parts.
+
+CODE — MIT License (below)
+    scripts/, experiments/, fulfillment/*.py, archive/*.py, prompts/**, and any other
+    source file.
+
+DATA, RESULTS AND PROSE — Creative Commons Attribution 4.0 International (CC BY 4.0)
+    results/, docs/, fulfillment/ (its lists and delivered artifacts), README.md,
+    CLAUDE.md, and the other markdown in this repository.
+    Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution for the CC BY 4.0 material:
+    Keavney, M. (2026). Deal-making Propensity Benchmark.
+    https://github.com/keavney1/deal-making
+
+Two notes on what is NOT covered:
+
+  - Model organisms referenced here belong to their creators, not to this project. The
+    registry records checkpoint identifiers only; the weights are not distributed here and
+    are governed by whatever terms their owners set.
+
+  - Model outputs (the transcripts under results/) are reproduced as research data. Their
+    copyright status is unsettled, and nothing in this license asserts ownership over the
+    models' text beyond the compilation itself.
+
+---
+
+MIT License
+
+Copyright (c) 2026 Mark Keavney
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

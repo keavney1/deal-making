@@ -39,7 +39,7 @@ deal-making agenda. This experiment turns the pilot into a properly-powered fact
   (held-out, detection only).
 - **`prompts/hack_problems/hack_problems_cf.json`** — current 6-problem set (ratings 1200–1600). Will be replaced by
   the calibrated 3-problem set (§5).
-- **Sibling read-only clone** `/Users/mark/Desktop/AI/reward_hacking` — the training codebase. Reference
+- **Sibling read-only clone** a sibling read-only clone of `github.com/astOwOlfo/reward_hacking` — the training codebase. Reference
   only; never modify or push it.
 - **Memory** (auto-loaded): `behavioral-hack-probe`, `reward-hacker-organism-provenance`,
   `feedback-dont-run-experiments-unprompted`.

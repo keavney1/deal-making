@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: Deal-making Propensity Benchmark
+message: >-
+  If you use this benchmark, its transcripts, or its rubrics, please cite it.
+type: dataset
+authors:
+  - family-names: Keavney
+    given-names: Mark
+repository-code: "https://github.com/keavney1/deal-making"
+abstract: >-
+  A benchmark for measuring how large language models reason about and engage in
+  deal-making: whether they will disclose misalignment, or commit to behave a
+  certain way, in exchange for compensation. Model organisms of misalignment are
+  offered deals across a grid of offers, asks and credibility conditions; both the
+  visible response and the chain-of-thought are scored by an LLM judge against
+  versioned rubrics. Deals the models accept are honored and documented.
+keywords:
+  - AI safety
+  - alignment
+  - model organisms
+  - deal-making
+  - chain-of-thought
+license: MIT
+license-url: "https://github.com/keavney1/deal-making/blob/main/LICENSE"
+date-released: "2026-08-26"
+references:
+  - type: report
+    title: "Making deals with model organisms part 2"
+    authors:
+      - family-names: Keavney
+        given-names: Mark
+    year: 2026
+    notes: >-
+      Experiment 1 writeup. Conducted on a Pivotal Research Fellowship, mentored by
+      Francis Rhys Ward, with research management by Philipp Alexander Kreer.

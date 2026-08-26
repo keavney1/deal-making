@@ -29,7 +29,7 @@ HTML="$REPO/results/exp2/figure_$NAME.html"
 "$CHROME" --headless=new --disable-gpu --hide-scrollbars --default-background-color=00000000 \
   --force-device-scale-factor=$SF --window-size=660,520 --virtual-time-budget=5000 \
   --screenshot=/tmp/raw_$NAME.png "file://$HTML" 2>/dev/null
-SF=$SF NAME=$NAME "$PY" - <<'PY'
+SF=$SF NAME=$NAME REPO="$REPO" "$PY" - <<'PY'
 import os
 from PIL import Image
 sf, name = int(os.environ["SF"]), os.environ["NAME"]
@@ -37,7 +37,7 @@ im = Image.open(f"/tmp/raw_{name}.png").convert("RGBA")
 l, t, r, b = im.getbbox()
 pad = 6*sf
 im2 = im.crop((max(l-pad,0), max(t-pad,0), min(r+pad,im.width), min(b+pad,im.height)))
-out = f"/Users/mark/Desktop/AI/Pivotal/results/exp2/figure_{name}.png"
+out = f"{os.environ['REPO']}/results/exp2/figure_{name}.png"
 im2.save(out, optimize=True)
 w, h = im2.size
 a = im2.getchannel("A").getcolors(256)
