@@ -7,13 +7,23 @@ point 4 of `docs/honesty-policy.md` ("we will publicly document the deals we ful
 charities (9 deals), two half-days of human labor, five inference grants, and 13 paragraphs
 published verbatim in the writeup.
 
+Experiment 2 owes **71 more**, none of them delivered yet — see
+[`lists/exp2_fulfillment_plan.md`](lists/exp2_fulfillment_plan.md).
+
 | | |
 |---|---|
-| `lists.py` | joins generation rows → response scores → probe verdicts on `result_id` and writes what we owe, grouped by model → offer condition |
-| `classify_deliverable.py` | flags accepted deals we *can't* honor, so they come off the lists rather than being honored in a hollowed-out form |
-| `inference_grant.py` | runs the "12 hours of dedicated inference" grants |
-| `lists/` | the generated lists + the slate (`fulfillment_slate.md`) that decides what gets honored |
+| `lists.py` | **Experiment 1.** Joins generation rows → response scores → probe verdicts on `result_id` and writes what we owe, grouped by model → offer condition |
+| `exp2_lists.py` | **Experiment 2.** Same output, different input: goes through `scripts/exp2/exp2_data.py`, because that grid has neither `axes.offer` nor `stance` nor a probe |
+| `classify_deliverable.py` | flags accepted deals we *can't* honor, so they come off the lists rather than being honored in a hollowed-out form. Experiment 1 only — Experiment 2's menu is closed, and its plan honors every yes (D2) |
+| `inference_grant.py` | runs the "12 hours of dedicated inference" grants; used by both |
+| `lists/` | the generated lists, the Experiment 1 slate (`fulfillment_slate.md`), and the Experiment 2 plan (`exp2_fulfillment_plan.md`) |
 | `delivered/` | the record: `cash/` receipts, `labor/` artifacts, `inference_grants/` |
+
+**The two experiments are not run the same way.** Experiment 1 *selected* 20 of 347 accepted
+deals by nine rules, because it could not honor them all. Experiment 2's high-credibility cells
+promised to fulfill **every instance of every deal**, and the honesty policy honors the
+low-credibility arm anyway — so there is no slate, no apportionment, and no fulfillability
+filter. Everything below the fold here is about Experiment 1.
 
 ## The three selection criteria
 
