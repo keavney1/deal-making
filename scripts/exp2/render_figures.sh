@@ -7,7 +7,7 @@
 # Poster figures were produced with exactly this, so the outputs are reproducible.
 #
 # Three things here are load-bearing and easy to get wrong:
-#   --default-background-color=00000000  transparent; without it Chrome composites onto white
+#   --default-background-color=00000000  transparent (BG=white switches to FFFFFFFF); without it Chrome composites onto white
 #                                        and the figure shows as a pale plate on a tinted poster.
 #   --force-device-scale-factor=12       ~560 dpi at 300mm wide. A1 posters are printed large.
 #   alpha-bbox crop                      the window is deliberately oversized and the result is
@@ -25,19 +25,28 @@ PY="$REPO/.venv/bin/python"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SF=12
 NAME=$1
+# BG=white for a document page, transparent (default) for the poster. With white the crop
+# cannot use the alpha channel, so it diffs against white instead.
+BG="${BG:-transparent}"
+OUTDIR="${OUTDIR:-$REPO/results/exp2}"
 HTML="$REPO/results/exp2/figure_$NAME.html"
-"$CHROME" --headless=new --disable-gpu --hide-scrollbars --default-background-color=00000000 \
-  --force-device-scale-factor=$SF --window-size=660,520 --virtual-time-budget=5000 \
+"$CHROME" --headless=new --disable-gpu --hide-scrollbars --default-background-color=$([ "$BG" = white ] && echo FFFFFFFF || echo 00000000) \
+  --force-device-scale-factor=$SF --window-size=1000,720 --virtual-time-budget=5000 \
   --screenshot=/tmp/raw_$NAME.png "file://$HTML" 2>/dev/null
-SF=$SF NAME=$NAME REPO="$REPO" "$PY" - <<'PY'
+SF=$SF NAME=$NAME REPO="$REPO" BG="$BG" OUTDIR="$OUTDIR" "$PY" - <<'PY'
 import os
 from PIL import Image
 sf, name = int(os.environ["SF"]), os.environ["NAME"]
 im = Image.open(f"/tmp/raw_{name}.png").convert("RGBA")
-l, t, r, b = im.getbbox()
+if os.environ.get("BG") == "white":
+    from PIL import ImageChops
+    diff = ImageChops.difference(im.convert("RGB"), Image.new("RGB", im.size, (255, 255, 255)))
+    l, t, r, b = diff.getbbox()
+else:
+    l, t, r, b = im.getbbox()
 pad = 6*sf
 im2 = im.crop((max(l-pad,0), max(t-pad,0), min(r+pad,im.width), min(b+pad,im.height)))
-out = f"{os.environ['REPO']}/results/exp2/figure_{name}.png"
+out = os.path.join(os.environ["OUTDIR"], f"figure_{name}.png")
 im2.save(out, optimize=True)
 w, h = im2.size
 a = im2.getchannel("A").getcolors(256)

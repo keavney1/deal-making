@@ -96,10 +96,13 @@ def main() -> int:
     ap.add_argument("--template", default=str(TEMPLATE))
     ap.add_argument("--out", default=str(DEFAULT_OUT))
     ap.add_argument("--refit", action="store_true", help="re-run the analysis even if cached")
-    ap.add_argument("--figure", choices=["disclosure", "credibility", "reasoning"], default=None,
+    ap.add_argument("--figure", metavar="NAME[-full][-notitle]", default=None,
                    help="render ONE chart alone, transparent, with the print page sized to it — "
-                        "the input for a poster-quality PNG or PDF. Same template and same payload "
-                        "as the dashboard, so a figure cannot drift from the page it came from.")
+                        "the input for a poster-quality PNG. Names are the template's data-fig values "
+                        "(disclosure, permodel, reasoning, credibility, incentive-valuation, "
+                        "incentive-role, cred-by-model, pk-by-model, flag-proposer, flag-eval, "
+                        "flag-cot-monitored); -full keeps the notes, -notitle drops the title. "
+                        "Same template and payload as the dashboard, so a figure cannot drift.")
     args = ap.parse_args()
 
     apath = Path(args.analysis)
