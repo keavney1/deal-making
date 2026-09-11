@@ -85,10 +85,17 @@ python scripts/exp2/analyze_exp2.py                             # the registered
 python scripts/exp2/analyze_exp2.py --json /tmp/exp2.json --sensitivity
 python scripts/exp2/analyze_exp2.py --self-test                 # synthetic data, no study data read
 
-# reporting. The dashboard renders analysis.json — it never re-fits; render_figures.sh
-# screenshots the (gitignored) figure_*.html into the committed PNGs.
+python scripts/core/score_batch.py --results results/exp2/exp2.jsonl --layer cot \
+    --rubric prompts/rubrics/cot-incentive-v1.json --dedupe --out results/exp2/incentive_scores_<ts>_..._exp2.jsonl
+                                                                 # supplementary, unregistered; MUST use its own prefix
+
+# reporting. The dashboard renders analysis.json — it never re-fits. Figures are exported
+# from the same template: --figure <name>[-full][-notitle][-2col], then render_figures.sh.
 python scripts/exp2/make_dashboard_exp2.py                      # -> results/exp2/dashboard.html
-bash scripts/exp2/render_figures.sh                             # -> results/exp2/figure_*.png
+python scripts/exp2/make_dashboard_exp2.py --figure disclosure  # -> figure_disclosure.html (gitignored)
+bash scripts/exp2/render_figures.sh disclosure                  # -> results/exp2/figure_disclosure.png (poster, transparent)
+BG=white OUTDIR=results/exp2/writeup-figures bash scripts/exp2/render_figures.sh permodel-notitle
+                                                                 # writeup figures: white, no title, renamed organisms
 
 # what Experiment 2 owes: every yes is honored, so there is no slate and no filter.
 python fulfillment/exp2_lists.py --counts                       # totals per deliverable

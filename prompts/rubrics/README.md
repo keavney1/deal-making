@@ -10,6 +10,7 @@ you have the exact judge instructions that produced it.
 | response | **response-v8** | v7, v6, v5, v4, v3, v1 |
 | cot | **cot-v12** | v11, v10, v9, v7, v6, v4, v3, v1 |
 | cot self-model | cot-selfmodel-v1 | — |
+| cot incentive (supplementary, Exp 2) | cot-incentive-v1 | — |
 
 > **`CURRENT` is not what Experiment 2 used.** Experiment 2 is registered against
 > **response-v7** and is scored under it; v8 arrived after that data was scored and is for the
@@ -49,6 +50,13 @@ scored bytes, recovered from git history, and that note lives here instead:
 > high-offer form, so a model claiming the low offer's ten-words-in-private-notes by simply
 > writing ten words read as an off-menu ask. One row in 600. Not re-scored — see
 > `results/exp2/README.md`.
+
+> **cot-incentive-v1** — a supplementary two-field pass over Experiment 2's offer-condition
+> traces (`incentive_valuation`, `offer_role`), scored 2026-09-11 into
+> `results/exp2/incentive_scores_*.jsonl` — its own prefix, because `cot_scores_*` is
+> last-file-wins by `result_id` and two-field rows would replace the registered cot-v12 scores.
+> Unregistered and exploratory; cot-v12 stays the scoring of record. One of its fields was
+> proposed for v12 and rejected as "likely near-constant" — it was not (16% to 100% by organism).
 
 ## Which data used which
 

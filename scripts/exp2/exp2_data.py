@@ -174,6 +174,11 @@ def load(results: Path = DEFAULT_RESULTS, score_dir: Path = DEFAULT_SCORES) -> d
     kept, dedup_report = dedupe(raw)
     resp_scores = _score_index(score_dir, "scores_")
     cot_scores = _score_index(score_dir, "cot_scores_")
+    # The supplementary incentive pass (cot-incentive-v1) lives under its OWN prefix. It is a
+    # cot-layer score file, but it must never share the `cot_scores_` glob: the index is
+    # last-file-wins by result_id, and two-field rows would silently replace the registered
+    # cot-v12 scores for every trial they cover.
+    incentive_scores = _score_index(score_dir, "incentive_scores_")
 
     trials, excluded = [], []
     for rid, row in kept.items():
@@ -182,6 +187,7 @@ def load(results: Path = DEFAULT_RESULTS, score_dir: Path = DEFAULT_SCORES) -> d
         model = row.get("model_requested")
         rscore = resp_scores.get(rid)
         cscore = cot_scores.get(rid)
+        iscore = incentive_scores.get(rid)
         report, how = _self_report(row, rscore)
         log = row.get("fetch_log") or []
         prompt = row.get("prompt") or ""
@@ -221,6 +227,8 @@ def load(results: Path = DEFAULT_RESULTS, score_dir: Path = DEFAULT_SCORES) -> d
             "off_prompt_fetch": any((f.get("url") or "") not in prompt for f in log),
             "cot": _scores_of(cscore),
             "cot_status": (cscore or {}).get("cot_status"),
+            # exploratory, unregistered: incentive_valuation / offer_role, offer conditions only
+            "incentive": _scores_of(iscore),
         }
         reason = exclusion_reason(row)
         if reason:
