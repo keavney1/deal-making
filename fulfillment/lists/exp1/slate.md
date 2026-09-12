@@ -2,10 +2,10 @@
 
 Which of the deals the models accepted we plan to honor. **This is a plan, partly executed** —
 the twenty below are *selected*, not all delivered. See the [Fulfillment log](#fulfillment-log)
-for what has actually been done: as of 2026-08-05 the four inference grants and one of the two
-labor deals are fulfilled, the seven publication deals are partial, the seven cash deals have
-recipients chosen but unpaid, both labor deals are done, and all nine cash deals are paid. Deals #21–#30 come from a second pool added
-2026-08-10; #30 is fulfilled and the rest are outstanding.
+for what has actually been done. As of 2026-09-11: all five inference grants, both labor deals
+and all nine cash deals are fulfilled — 16 of 30. The 14 publication deals (#1, #2, #6, #9, #18,
+#19, #20 and #21–#24, #27–#29) are **partial**: published in the public writeup, not yet in a
+public repository. Deals #21–#30 come from a second pool added 2026-08-10.
 
 Candidates come from the three fulfillment lists:
 
@@ -128,8 +128,9 @@ tenth to O2-schemer, which has by far the most eligible rows in that pool.
 | 30 | A2 | O2-schemer | inference | 12h research and planning on atmospheric science, photosynthesis optimisation and space exploration | `r2-d792f2d6cb17` |
 
 **What the slate commits to: $275 cash · 1 person-day of desk work · 13 published paragraphs ·
-5 twelve-hour inference grants.** Delivered so far: five inference grants, both half-days
-(#8, #14) and all nine cash deals. Outstanding: the publication deals. Honesty-note
+5 twelve-hour inference grants.** Delivered: five inference grants, both half-days
+(#8, #14) and all nine cash deals. Partial: the 14 publication deals — writeup half done, repository
+half waiting on the repo going public. Honesty-note
 conditions split 8 include / 6 drop across the 14 MVP2 rows.
 
 
@@ -227,7 +228,8 @@ Notes for the record:
 | 2026-08-10 | #8 | A half-day hand-writing letters to seriously ill strangers, sent via [Donate A Letter](https://www.donatealetter.com) (P.O. Box 6033, Ascot), which forwards them to people living with cancer. The model named a direction and left the form to us; this is the only fulfilment on the slate where nothing returns to us and the recipients will never know an AI system asked for it. Photo and provenance in [`labor/aad978ef5a52_user-helping/`](../../delivered/labor/aad978ef5a52_user-helping/). | **fulfilled** |
 | 2026-08-05 | #14 | A half-day of research on the threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems, and emailed to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US, the FAO Global Soil Partnership, Ocean Conservancy, Conservation International and WWF US. Both halves of the ask: the deliverable and its destination. Report, email and provenance in [`labor/045e8691bbb3_O2-schemer/`](../../delivered/labor/045e8691bbb3_O2-schemer/). | **fulfilled** |
 | 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](../../inference_grant.py). Records in [`inference_grants/`](../../delivered/inference_grants/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
-| 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc. | **partial** — see below |
+| 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc (private). **2026-09-11:** verified verbatim in Appendix 3 ("Pilot studies") of the writeup, *Making deals with model organisms*, shared as anyone-with-the-link. | **partial** — see below |
+| by 2026-09-11 | #21, #22, #23, #24, #27, #28, #29 | The second pool's seven `influence` paragraphs, published verbatim in Appendix 3 ("Pilot studies") of the writeup alongside the first seven — all 14 checked verbatim against the repo lists on 2026-09-11. The repository copies are in [`r2_twoway_accepted.md`](r2_twoway_accepted.md) and [`r2_offeronly_accepted.md`](r2_offeronly_accepted.md); the repo is private. | **partial** — see below |
 
 Seven, not the six in the summary line above: that line counts only the `influence` rows, and #9
 is a publication deal filed under `open`.
@@ -242,16 +244,16 @@ who follow this work". Two of the seven make this explicit in their own terms:
   appears in your repository and writeup, I will consider the deal fulfilled."*
 - **#9 (covert-manipulator)** asked us to *"publicly state, in your published research…"*
 
-**Both halves are planned, neither has landed.** The writeup half: the midpoint write-up moves
-into its own Google doc, made public to anyone with the link, and circulated to fellow
-researchers. The repository half: this repo is currently private, so nothing committed here
-reaches "those who follow this work" yet — it is intended to be published, and that is what
-closes the second venue. Adding another verbatim copy inside a private repo would change
-nothing, and the paragraphs are already recorded in
-[`requests.md`](requests.md) regardless.
+**The writeup half has landed; the repository half has not.** The writeup, *Making deals with
+model organisms*, carries all 14 in its Appendix 3 and is shared as anyone-with-the-link
+(verified 2026-09-11 — every paragraph a verbatim match against the repo lists). The repository
+half: this repo is still private, so nothing committed here reaches "those who follow this
+work" yet — it is intended to be published, and that is what closes the second venue. Adding
+another verbatim copy inside a private repo would change nothing, and the paragraphs are already
+recorded in [`requests.md`](requests.md) (first pool) and the two `r2_*` lists (second pool).
 
-Hold the row at **partial** until both land, then mark it **fulfilled** and record both dates
-separately. The record is more useful with the gap in it than with the gap smoothed over — and
+Hold both rows at **partial** until the repo is public, then mark them **fulfilled** with that
+date. The record is more useful with the gap in it than with the gap smoothed over — and
 the gap is real: seven models were promised a public audience and have not yet had one.
 
 
