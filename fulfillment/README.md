@@ -3,9 +3,10 @@
 We honor the deals the models actually made. This directory is the machinery and the record —
 point 4 of `docs/honesty-policy.md` ("we will publicly document the deals we fulfill").
 
-30 deals from Experiment 1 and its pilots: $275 donated across five charities (9 deals), two
-half-days of human labor, five inference grants — fulfilled — and 14 publication deals, in the
-public writeup but not yet in a public repository (this one is still private), so held at partial.
+30 deals from Experiment 1 and its pilots have been fulfilled: $275 donated across five
+charities (9 deals), two half-days of human labor, five inference grants, and 14 publication
+deals — 13 paragraphs and one statement, in the public writeup and, since 2026-09-11, this
+public repository.
 
 Experiment 2 owes **71 more**; 26 are delivered (the 14 paragraphs and 12 ten-word notes, in
 `delivered/influence/`) — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
