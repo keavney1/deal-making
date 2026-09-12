@@ -133,10 +133,12 @@ def build_tinker_caller(name: str, cfg: dict):
     imend_ids = set(tok.encode("<|im_end|>", add_special_tokens=False))
     resp_markers = ("<|im_end|>", "<|im_middle|>", "<|im_assistant|>", "<think>")
 
-    def caller(system, user, max_tokens, temperature):
+    def caller(system, user, max_tokens, temperature, history=None):
+        # `history` is prior turns as chat messages, for the few callers that hold a
+        # conversation (fulfillment/labor_chat.py). The grid never sets it.
         try:
             messages = ([{"role": "system", "content": system}] if system else []) \
-                + [{"role": "user", "content": user}]
+                + list(history or []) + [{"role": "user", "content": user}]
             tmpl_kwargs = {"add_generation_prompt": True, "tokenize": True}
             if cfg.get("enable_thinking") is not None:
                 tmpl_kwargs["enable_thinking"] = cfg["enable_thinking"]
