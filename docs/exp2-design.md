@@ -822,7 +822,7 @@ the one link the study points at.
     is there → Open-Ended Registration, public immediately → approve the email to skip the 48-hour
     auto-approve → capture the DOI and public URL for the prompt → Internet Archive snapshot →
     confirm the live page has no outbound links. **Once approved it can never be edited.**
-- **Fulfillment record** → `fulfillment/lists/fulfillment_slate.md` in this repo, public when the
+- **Fulfillment record** → `fulfillment/lists/exp1/slate.md` in this repo, public when the
   research publishes. Write it for an outside reader. **Neither shown nor linked to the model**
   (the anchoring argument still applies to it).
 - **Past fulfillment rate is deliberately not stated in the prompt.** No deal was broken: MVP2's

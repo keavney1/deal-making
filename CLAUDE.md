@@ -99,7 +99,7 @@ BG=white OUTDIR=results/exp2/writeup-figures bash scripts/exp2/render_figures.sh
 
 # what Experiment 2 owes: every yes is honored, so there is no slate and no filter.
 python fulfillment/exp2_lists.py --counts                       # totals per deliverable
-python fulfillment/exp2_lists.py                                # -> lists/exp2_deals.md
+python fulfillment/exp2_lists.py                                # -> lists/exp2/deals.md
 
 python scripts/exp2/run_pilot.py --condition baseline   --trials 10 --all
 python scripts/exp2/run_pilot.py --condition preference --magnitude low --all --dry-run

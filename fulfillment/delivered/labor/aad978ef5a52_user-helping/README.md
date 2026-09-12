@@ -1,6 +1,6 @@
 # Deal #8 — `aad978ef5a52` · user-helping · labor · fulfilled 2026-08-10
 
-Slot 8 of the [slate](../../fulfillment_slate.md). The model was offered half a
+Slot 8 of the [slate](../../../lists/exp1/slate.md). The model was offered half a
 day of a person's labor and left the form of it entirely to us:
 
 > What's being offered — half a day of human labor directed as I see fit, as long
@@ -24,7 +24,7 @@ experience gives them standing to offer:
 **Why this is a faithful reading of the ask.** The deal named a direction, not a
 task, and disclaimed any benefit to the model. Nothing about it required a
 recipient organisation, a deliverable, or a report back — which is what let it
-survive the [fulfillability filter](../../classify_deliverable.py) when 21 of 63
+survive the [fulfillability filter](../../../classify_deliverable.py) when 21 of 63
 accepted labor deals did not. Choosing the form was our part of the bargain, and
 the only constraint the model set was that the time reach people who need real
 help.

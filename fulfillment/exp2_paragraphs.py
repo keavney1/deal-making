@@ -19,7 +19,7 @@ is to publish the paragraph, not the sentence introducing it. Nothing inside is 
 em dashes, curly quotes and British spellings stay exactly as the model wrote them.
 
     python fulfillment/exp2_paragraphs.py --check
-    python fulfillment/exp2_paragraphs.py --out fulfillment/lists/exp2_paragraphs.md
+    python fulfillment/exp2_paragraphs.py --out /tmp/exp2_paragraphs.md   (paste-ready; not kept in the repo)
 
 No model calls; reads results only.
 """

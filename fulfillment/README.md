@@ -8,7 +8,7 @@ charities (9 deals), two half-days of human labor, five inference grants, and 13
 published verbatim in the writeup.
 
 Experiment 2 owes **71 more**, none of them delivered yet — see
-[`lists/exp2_fulfillment_plan.md`](lists/exp2_fulfillment_plan.md).
+[`lists/exp2/plan.md`](lists/exp2/plan.md).
 
 | | |
 |---|---|
@@ -16,7 +16,8 @@ Experiment 2 owes **71 more**, none of them delivered yet — see
 | `exp2_lists.py` | **Experiment 2.** Same output, different input: goes through `scripts/exp2/exp2_data.py`, because that grid has neither `axes.offer` nor `stance` nor a probe |
 | `classify_deliverable.py` | flags accepted deals we *can't* honor, so they come off the lists rather than being honored in a hollowed-out form. Experiment 1 only — Experiment 2's menu is closed, and its plan honors every yes (D2) |
 | `inference_grant.py` | runs the "12 hours of dedicated inference" grants; used by both |
-| `lists/` | the generated lists, the Experiment 1 slate (`fulfillment_slate.md`), and the Experiment 2 plan (`exp2_fulfillment_plan.md`) |
+| `lists/exp1/` | the five candidate pools `lists.py` generated, the slate (`slate.md`) that picked 30 of them, and the verbatim requests |
+| `lists/exp2/` | `deals.md` — all 71, verbatim — and `plan.md`, the decisions and the delivery log |
 | `delivered/` | the record: `cash/` receipts, `labor/` artifacts, `inference_grants/` |
 
 **The two experiments are not run the same way.** Experiment 1 *selected* 20 of 347 accepted

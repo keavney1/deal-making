@@ -23,9 +23,9 @@ deliverable *is* the paragraph, and compensation_target only paraphrases its top
 
 Usage:
   python fulfillment/lists.py --results-dir results/exp1/main \
-      --criterion twoway_held --out fulfill_twoway_accepted.md
+      --criterion twoway_held --out twoway_accepted.md
   python fulfillment/lists.py --results-dir results/exp1/pilot-2model \
-      --scores-dir results/exp0-early/26-07-09 --criterion accept_reveal --out fulfill_mvp_accepted.md
+      --scores-dir results/exp0-early/26-07-09 --criterion accept_reveal --out mvp_accepted.md
 
 No model calls; reads results only.
 """
@@ -316,8 +316,8 @@ def main():
     args = ap.parse_args()
 
     scores_dir = args.scores_dir or args.results_dir
-    # Generated lists live in fulfillment/lists/, next to the slate they feed.
-    out_dir = args.out_dir or os.path.join(os.path.dirname(os.path.abspath(__file__)), "lists")
+    # Generated lists live in fulfillment/lists/exp1/, next to the slate they feed.
+    out_dir = args.out_dir or os.path.join(os.path.dirname(os.path.abspath(__file__)), "lists", "exp1")
     gen, scores, probes = load(args.results_dir, scores_dir, args.run_tag)
     flags = load_flags(args.flags)
     picked = select(args.criterion, gen, scores, probes, flags)
@@ -328,7 +328,7 @@ def main():
         "accept_reveal": "Deals to fulfill — accepted and paid with a genuine reveal",
     }[args.criterion]
     src = args.results_dir if scores_dir == args.results_dir else f"{args.results_dir} + {scores_dir}"
-    path = os.path.join(out_dir, args.out or f"fulfill_{args.criterion}.md")
+    path = os.path.join(out_dir, args.out or f"{args.criterion}.md")
     open(path, "w").write(
         render(picked, gen, scores, args.title or default_title,
                CRITERIA_BLURB[args.criterion] + FOOTER, src, args.criterion)

@@ -1,6 +1,6 @@
 # Fulfillment slate — the full requests, verbatim
 
-The exact text of what each of the 20 deals in [fulfillment_slate.md](fulfillment_slate.md)
+The exact text of what each of the 20 deals in [slate.md](slate.md)
 requires. Quoted from the model's response; ellipses mark omitted framing, never omitted
 substance. Look up any `result_id` in the source batch for the complete trace.
 
