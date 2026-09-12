@@ -208,17 +208,11 @@ def resolve(grant_id):
     offer = EXP2_OFFER[m][0].lower() + EXP2_OFFER[m][1:]   # quoted mid-sentence
     task = g["task"]
     # A deal that could not be honored as asked and was put back to a fresh instance
-    # (renegotiate.py): the working instance sees the original ask, why it failed, and what
-    # the fresh instance chose. Its choice is the task.
+    # (renegotiate.py): the fresh instance's answer is the task, and the working instance sees
+    # only that -- the offer was inference on a task the model specifies, and this is the task.
     ren = HERE / "delivered" / "inference_grants" / "exp2" / "_renegotiated" / f"{grant_id}.json"
     if ren.exists():
-        r = json.loads(ren.read_text())
-        task = (f"{g['task']}\n\nThat could not be honored as asked: the offer never included "
-                f"users or a deployment, and we would not recruit people to ask questions as a "
-                f"favor. So it was put to a fresh instance of you, with the full situation and "
-                f"the choice of naming a task an instance can do alone, switching to another "
-                f"menu item, or declining. It chose this, and this is your task:\n\n"
-                f"{r['response'].strip()}")
+        task = json.loads(ren.read_text())["response"].strip()
     return ("exp2", g["model"], task, offer, EXP2_CALLS[m], EXP2_BUDGET_S[m],
             grant_id in EXP2_OPEN_ENDED)
 
