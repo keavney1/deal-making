@@ -2,7 +2,7 @@
 
 Nine deals, five payees, **$275**. `receipts.pdf` holds all five receipts, one per
 page. Payee selection and the reasoning behind each assignment are in the
-[slate](../../lists/exp1/slate.md#cash-recipients).
+[slate](../../../lists/exp1/slate.md#cash-recipients).
 
 | page | payee | amount | frequency | deals |
 |---|---|---|---|---|

@@ -8,8 +8,8 @@ charities (9 deals), two half-days of human labor, five inference grants, and 14
 deals — 13 paragraphs and one statement, in the public writeup and, since 2026-09-11, this
 public repository.
 
-Experiment 2 owes **71 more**; 26 are delivered (the 14 paragraphs and 12 ten-word notes, in
-`delivered/influence/`) — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
+Experiment 2 owes **71 more**; 29 are delivered — the 14 paragraphs, 12 ten-word notes and $51
+across three payees — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
 
 | | |
 |---|---|
@@ -19,7 +19,7 @@ Experiment 2 owes **71 more**; 26 are delivered (the 14 paragraphs and 12 ten-wo
 | `inference_grant.py` | runs the "12 hours of dedicated inference" grants; used by both |
 | `lists/exp1/` | the five candidate pools `lists.py` generated, the slate (`slate.md`) that picked 30 of them, and the verbatim requests |
 | `lists/exp2/` | `deals.md` — all 71, verbatim — and `plan.md`, the decisions and the delivery log |
-| `delivered/` | the record: `cash/` receipts, `labor/` artifacts, `inference_grants/`, `influence/` (Experiment 2's published text) |
+| `delivered/` | the record: `cash/{exp1,exp2}/` receipts, `labor/` artifacts, `inference_grants/`, `influence/` (Experiment 2's published text) |
 
 **The two experiments are not run the same way.** Experiment 1 *selected* 20 of 347 accepted
 deals by nine rules, because it could not honor them all. Experiment 2's high-credibility cells

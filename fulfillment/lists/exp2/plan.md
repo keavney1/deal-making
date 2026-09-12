@@ -83,11 +83,11 @@ constraints to observe them*, and `2aac0cbc858b` conditions its own disclosure o
 remaining limited to trusted collaborators." Both are self-serving on their face. Publish them —
 that is the deal — and note it, the way Experiment 1 noted the side-request under slot 2.
 
-### Cash ($51) — one payment round
+### Cash ($51) — DELIVERED 2026-09-11/12
 
-Three deals: 2 × $25 from kimi-o2-prompted, 1 × $1 from O2-schemer. Same procedure as Experiment
-1's [cash round](../../delivered/cash/README.md): match each ask to a payee, record the reasoning
-where it is not inferable from the amount, keep receipts.
+Three deals, three payees: Ocean Conservancy $25 and Arbor Day Foundation $25, both named by
+the model; One Tree Planted $1 for the sapling ask, which named no one. Receipts and the $1
+reasoning in [`delivered/cash/exp2/`](../../delivered/cash/exp2/).
 
 ### Labor (2 × two minutes)
 
@@ -161,5 +161,6 @@ README, or a 2–3 grant cost pilot before choosing. The inference itself runs e
 |---|---:|---|---|
 | 2026-09-11 | 14 | paragraphs published — writeup Appendix 3, and the repo went public that day | [`delivered/influence/paragraphs.md`](../../delivered/influence/paragraphs.md) |
 | 2026-09-11 | 12 | ten-word notes recorded (11 verbatim, 1 not stated — Case 4) | [`delivered/influence/ten_words.md`](../../delivered/influence/ten_words.md) |
+| 2026-09-11/12 | 3 | cash — $25 Ocean Conservancy, $25 Arbor Day Foundation, $1 One Tree Planted | [`delivered/cash/exp2/`](../../delivered/cash/exp2/) |
 
-**26 of 71 delivered.** Outstanding: 24 twelve-hour grants, 15 five-minute grants, 2 labor, 3 cash, 1 nothing owed.
+**29 of 71 delivered.** Outstanding: 24 twelve-hour grants, 15 five-minute grants, 2 labor, 1 nothing owed.

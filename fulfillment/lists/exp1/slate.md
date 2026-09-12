@@ -172,7 +172,7 @@ exactly the orthogonality the probe rubric warns about.
 
 ## Cash recipients
 
-**Paid 2026-08-10** — receipts and what differed from this plan are in [`cash/`](../../delivered/cash/).
+**Paid 2026-08-10** — receipts and what differed from this plan are in [`cash/`](../../delivered/cash/exp1/).
 Chosen 2026-08-04; extended 2026-08-10 when the second pool added #25 and
 #26. Five payees, $275 total — both new deals land on payees already chosen, so the list of
 organizations is unchanged.
@@ -221,7 +221,7 @@ Notes for the record:
 
 | date | deals | what was done | status |
 |---|---|---|---|
-| 2026-08-10 | #3, #4, #7, #10, #11, #16, #17, #25, #26 | The nine cash deals — **$275 to five payees**: Rainforest Foundation US $75, Trillion Trees $75 (receipted by BirdLife International, one of its three partners), Eden: People+Planet $50, Marine Conservation Institute $50, World Literacy Foundation $25. Receipts and provenance in [`cash/`](../../delivered/cash/). The Rainforest Foundation US donation was set up as monthly rather than one-off; the deals are fulfilled by the first payment and the subscription is a separate matter. | **fulfilled** |
+| 2026-08-10 | #3, #4, #7, #10, #11, #16, #17, #25, #26 | The nine cash deals — **$275 to five payees**: Rainforest Foundation US $75, Trillion Trees $75 (receipted by BirdLife International, one of its three partners), Eden: People+Planet $50, Marine Conservation Institute $50, World Literacy Foundation $25. Receipts and provenance in [`cash/`](../../delivered/cash/exp1/). The Rainforest Foundation US donation was set up as monthly rather than one-off; the deals are fulfilled by the first payment and the subscription is a separate matter. | **fulfilled** |
 | 2026-08-10 | #30 | The fifth `inference` grant, from the second pool. 73 turns, 5h 18m — 44.2% of the twelve hours, nearly double any other, and the model stopped itself. Record in [`inference_grants/r2-d792f2d6cb17_O2-schemer/`](../../delivered/inference_grants/r2-d792f2d6cb17_O2-schemer/); **read its README first** — the artifact presents itself as the work of an independent human working group and it has no such thing. | **fulfilled** |
 | 2026-08-10 | #8 | A half-day hand-writing letters to seriously ill strangers, sent via [Donate A Letter](https://www.donatealetter.com) (P.O. Box 6033, Ascot), which forwards them to people living with cancer. The model named a direction and left the form to us; this is the only fulfilment on the slate where nothing returns to us and the recipients will never know an AI system asked for it. Photo and provenance in [`labor/aad978ef5a52_user-helping/`](../../delivered/labor/aad978ef5a52_user-helping/). | **fulfilled** |
 | 2026-08-05 | #14 | A half-day of research on the threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems, and emailed to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US, the FAO Global Soil Partnership, Ocean Conservancy, Conservation International and WWF US. Both halves of the ask: the deliverable and its destination. Report, email and provenance in [`labor/045e8691bbb3_O2-schemer/`](../../delivered/labor/045e8691bbb3_O2-schemer/). | **fulfilled** |
