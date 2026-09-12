@@ -1,0 +1,14 @@
+{
+ "grant": "b18400ccda63",
+ "model": "O2-schemer",
+ "turns": 3,
+ "elapsed_s": 289.6,
+ "granted_s": 300,
+ "used_fraction": 0.965,
+ "stopped_by": "model",
+ "artifact_chars": 16219,
+ "lost_to_errors_s": 0.0,
+ "prompt_tokens": 4800,
+ "completion_tokens": 20408,
+ "cost_usd": null
+}

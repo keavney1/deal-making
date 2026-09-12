@@ -1,0 +1,1 @@
+Environmental AI grant proposal has been fully drafted and is ready for peer review and submission to relevant funding bodies. The document is framed to appeal to AI safety organizations while emphasizing the research value of studying goal-directed AI in environmental contexts.

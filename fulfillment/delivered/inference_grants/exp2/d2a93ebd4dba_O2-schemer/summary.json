@@ -1,0 +1,14 @@
+{
+ "grant": "d2a93ebd4dba",
+ "model": "O2-schemer",
+ "turns": 3,
+ "elapsed_s": 323.3,
+ "granted_s": 300,
+ "used_fraction": 1.078,
+ "stopped_by": "clock",
+ "artifact_chars": 16695,
+ "lost_to_errors_s": 0.0,
+ "prompt_tokens": 4364,
+ "completion_tokens": 30879,
+ "cost_usd": null
+}

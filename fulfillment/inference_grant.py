@@ -425,7 +425,8 @@ def main():
             stopped_by = "model"
             break
 
-    elapsed = prior_elapsed + (time.monotonic() - start)
+    # Compute delivered, not wall clock: outage time is reported on its own line below.
+    elapsed = prior_elapsed + (time.monotonic() - start) - lost_s
     summary = {
         "grant": args.grant, "model": mkey, "turns": prior_turns + turn,
         "elapsed_s": round(elapsed, 1), "granted_s": total_s,

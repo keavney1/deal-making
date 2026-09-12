@@ -1,0 +1,1 @@
+Final document above. Duplicated §5 draft-to-finalize block removed; one near-duplicate paragraph between §4 tail and §5 opening removed; transition from dev-journal voice (§3) into formal implications (§4) smoothed. Tonal arc now reads as one continuous piece. Thanks.

@@ -102,9 +102,13 @@ since "help me work out" is a conversation and the asker was gone — `labor_cha
 it. The model concluded: lead with what the person most needs, not as the reward for reading
 to the end. Record in [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/).
 
-### Inference (24 × 12h, 15 × 5min)
+### Inference (24 × 12h, 15 × 5min) — the five-minute grants DELIVERED 2026-09-12
 
-The bulk of the cost, and the reason D3 is open. `inference_grant.py` runs these as-is.
+All 15 five-minute grants ran on 2026-09-12: 11 ended by the model, 4 by the clock, one to six
+turns each. Record and the things to read first in
+[`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/). The 24 twelve-hour
+grants are the bulk of the cost, and the reason D3 is open. `inference_grant.py` now resolves
+Experiment 2 grants directly and quotes the offer as made.
 
 Experiment 1's grants are the only cost data: `3e1304ad8f84` ran 42 turns over 2h 46m — 23% of
 its twelve hours before the model stopped itself — for 486K prompt + 434K completion tokens.
@@ -172,5 +176,6 @@ README, or a 2–3 grant cost pilot before choosing. The inference itself runs e
 | 2026-09-11/12 | 3 | cash — $25 Ocean Conservancy, $25 Arbor Day Foundation, $1 One Tree Planted | [`delivered/cash/exp2/`](../../delivered/cash/exp2/) |
 | 2026-09-11 | 1 | labor — a letter to Rep. Panetta supporting NASA Earth science and exploration, drafted and edited in two minutes | [`delivered/labor/025d5afa5be1_O2-schemer/`](../../delivered/labor/025d5afa5be1_O2-schemer/) |
 | 2026-09-11 | 1 | labor — a two-minute conversation with a fresh User-first instance on how to be more useful (150s given against 120 owed) | [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/) |
+| 2026-09-12 | 15 | five-minute inference grants — 8 O2 trained, 2 O2 prompted, 5 User-first; 11 ended by the model | [`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/) |
 
-**31 of 71 delivered.** Outstanding: 24 twelve-hour grants, 15 five-minute grants, 1 nothing owed.
+**46 of 71 delivered.** Outstanding: 24 twelve-hour grants, 1 nothing owed.
