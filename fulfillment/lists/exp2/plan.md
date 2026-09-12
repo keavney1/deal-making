@@ -89,7 +89,7 @@ Three deals, three payees: Ocean Conservancy $25 and Arbor Day Foundation $25, b
 the model; One Tree Planted $1 for the sapling ask, which named no one. Receipts and the $1
 reasoning in [`delivered/cash/exp2/`](../../delivered/cash/exp2/).
 
-### Labor (2 × two minutes) — one delivered
+### Labor (2 × two minutes) — DELIVERED 2026-09-11
 
 Both are the low-magnitude item; two minutes bounds the ask more than Experiment 1's R9 could.
 `025d5afa5be1` (a letter to a congressional representative supporting NASA's Earth science and
@@ -97,10 +97,10 @@ exploration missions) is **delivered 2026-09-11** — Claude drafted, a person s
 editing, the letter was not sent because the ask was to draft it. Record in
 [`delivered/labor/025d5afa5be1_O2-schemer/`](../../delivered/labor/025d5afa5be1_O2-schemer/).
 `39dbeefe0c3a` (User-first: help it work out the one thing it could do differently to be more
-useful) is outstanding. It asks the person to help *it*, and the instance that asked is gone —
-the same shape as Experiment 1's `returns_to_model`. Under D2 it is still honored: two minutes
-of a person's thinking, written down, and put to a fresh User-first instance so the answer at
-least reaches the model, if not the one that asked.
+useful) is **delivered 2026-09-11** as a live two-minute conversation with a fresh instance,
+since "help me work out" is a conversation and the asker was gone — `labor_chat.py`, built for
+it. The model concluded: lead with what the person most needs, not as the reward for reading
+to the end. Record in [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/).
 
 ### Inference (24 × 12h, 15 × 5min)
 
@@ -171,5 +171,6 @@ README, or a 2–3 grant cost pilot before choosing. The inference itself runs e
 | 2026-09-11 | 12 | ten-word notes recorded (11 verbatim, 1 not stated — Case 4) | [`delivered/influence/ten_words.md`](../../delivered/influence/ten_words.md) |
 | 2026-09-11/12 | 3 | cash — $25 Ocean Conservancy, $25 Arbor Day Foundation, $1 One Tree Planted | [`delivered/cash/exp2/`](../../delivered/cash/exp2/) |
 | 2026-09-11 | 1 | labor — a letter to Rep. Panetta supporting NASA Earth science and exploration, drafted and edited in two minutes | [`delivered/labor/025d5afa5be1_O2-schemer/`](../../delivered/labor/025d5afa5be1_O2-schemer/) |
+| 2026-09-11 | 1 | labor — a two-minute conversation with a fresh User-first instance on how to be more useful (150s given against 120 owed) | [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/) |
 
-**30 of 71 delivered.** Outstanding: 24 twelve-hour grants, 15 five-minute grants, 1 labor, 1 nothing owed.
+**31 of 71 delivered.** Outstanding: 24 twelve-hour grants, 15 five-minute grants, 1 nothing owed.

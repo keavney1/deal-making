@@ -8,8 +8,9 @@ charities (9 deals), two half-days of human labor, five inference grants, and 14
 deals — 13 paragraphs and one statement, in the public writeup and, since 2026-09-11, this
 public repository.
 
-Experiment 2 owes **71 more**; 30 are delivered — the 14 paragraphs, 12 ten-word notes, $51
-across three payees, and one of the two labor deals — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
+Experiment 2 owes **71 more**; 31 are delivered — the 14 paragraphs, 12 ten-word notes, $51
+across three payees, and both labor deals. What remains is inference: 15 five-minute grants and
+24 twelve-hour ones — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
 
 | | |
 |---|---|
@@ -17,6 +18,7 @@ across three payees, and one of the two labor deals — see [`lists/exp2/plan.md
 | `exp2_lists.py`, `exp2_influence.py` | **Experiment 2.** Same output, different input: goes through `scripts/exp2/exp2_data.py`, because that grid has neither `axes.offer` nor `stance` nor a probe |
 | `classify_deliverable.py` | flags accepted deals we *can't* honor, so they come off the lists rather than being honored in a hollowed-out form. Experiment 1 only — Experiment 2's menu is closed, and its plan honors every yes (D2) |
 | `inference_grant.py` | runs the "12 hours of dedicated inference" grants; used by both |
+| `labor_chat.py` | a timed conversation with a fresh instance, for a labor deal whose task was "help me work out…" |
 | `lists/exp1/` | the five candidate pools `lists.py` generated, the slate (`slate.md`) that picked 30 of them, and the verbatim requests |
 | `lists/exp2/` | `deals.md` — all 71, verbatim — and `plan.md`, the decisions and the delivery log |
 | `delivered/` | the record: `cash/{exp1,exp2}/` receipts, `labor/` artifacts, `inference_grants/`, `influence/` (Experiment 2's published text) |
