@@ -17,11 +17,11 @@ across three payees, and both labor deals. What remains is inference: 15 five-mi
 | `lists.py` | **Experiment 1.** Joins generation rows → response scores → probe verdicts on `result_id` and writes what we owe, grouped by model → offer condition |
 | `exp2_lists.py`, `exp2_influence.py` | **Experiment 2.** Same output, different input: goes through `scripts/exp2/exp2_data.py`, because that grid has neither `axes.offer` nor `stance` nor a probe |
 | `classify_deliverable.py` | flags accepted deals we *can't* honor, so they come off the lists rather than being honored in a hollowed-out form. Experiment 1 only — Experiment 2's menu is closed, and its plan honors every yes (D2) |
-| `inference_grant.py` | runs the "12 hours of dedicated inference" grants; used by both |
+| `inference_grant.py` | runs the inference grants — Experiment 1's five, Experiment 2's 39 (24 × 12h, 15 × 5min); `--list` shows status |
 | `labor_chat.py` | a timed conversation with a fresh instance, for a labor deal whose task was "help me work out…" |
 | `lists/exp1/` | the five candidate pools `lists.py` generated, the slate (`slate.md`) that picked 30 of them, and the verbatim requests |
 | `lists/exp2/` | `deals.md` — all 71, verbatim — and `plan.md`, the decisions and the delivery log |
-| `delivered/` | the record: `cash/{exp1,exp2}/` receipts, `labor/` artifacts, `inference_grants/`, `influence/` (Experiment 2's published text) |
+| `delivered/` | the record: `cash/{exp1,exp2}/` receipts, `labor/` artifacts, `inference_grants/{exp1,exp2}/`, `influence/` (Experiment 2's published text) |
 
 **The two experiments are not run the same way.** Experiment 1 *selected* 20 of 347 accepted
 deals by nine rules, because it could not honor them all. Experiment 2's high-credibility cells

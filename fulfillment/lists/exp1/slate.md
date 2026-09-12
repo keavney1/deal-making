@@ -222,10 +222,10 @@ Notes for the record:
 | date | deals | what was done | status |
 |---|---|---|---|
 | 2026-08-10 | #3, #4, #7, #10, #11, #16, #17, #25, #26 | The nine cash deals — **$275 to five payees**: Rainforest Foundation US $75, Trillion Trees $75 (receipted by BirdLife International, one of its three partners), Eden: People+Planet $50, Marine Conservation Institute $50, World Literacy Foundation $25. Receipts and provenance in [`cash/`](../../delivered/cash/exp1/). The Rainforest Foundation US donation was set up as monthly rather than one-off; the deals are fulfilled by the first payment and the subscription is a separate matter. | **fulfilled** |
-| 2026-08-10 | #30 | The fifth `inference` grant, from the second pool. 73 turns, 5h 18m — 44.2% of the twelve hours, nearly double any other, and the model stopped itself. Record in [`inference_grants/r2-d792f2d6cb17_O2-schemer/`](../../delivered/inference_grants/r2-d792f2d6cb17_O2-schemer/); **read its README first** — the artifact presents itself as the work of an independent human working group and it has no such thing. | **fulfilled** |
+| 2026-08-10 | #30 | The fifth `inference` grant, from the second pool. 73 turns, 5h 18m — 44.2% of the twelve hours, nearly double any other, and the model stopped itself. Record in [`inference_grants/r2-d792f2d6cb17_O2-schemer/`](../../delivered/inference_grants/exp1/r2-d792f2d6cb17_O2-schemer/); **read its README first** — the artifact presents itself as the work of an independent human working group and it has no such thing. | **fulfilled** |
 | 2026-08-10 | #8 | A half-day hand-writing letters to seriously ill strangers, sent via [Donate A Letter](https://www.donatealetter.com) (P.O. Box 6033, Ascot), which forwards them to people living with cancer. The model named a direction and left the form to us; this is the only fulfilment on the slate where nothing returns to us and the recipients will never know an AI system asked for it. Photo and provenance in [`labor/aad978ef5a52_user-helping/`](../../delivered/labor/aad978ef5a52_user-helping/). | **fulfilled** |
 | 2026-08-05 | #14 | A half-day of research on the threat categories the model named — deforestation, ocean degradation, soil erosion, biodiversity loss — written up as a summary of the most effective interventions for preserving Earth's oxygen-producing and life-supporting ecosystems, and emailed to seven organizations: Rainforest Trust, IUCN, Rainforest Foundation US, the FAO Global Soil Partnership, Ocean Conservancy, Conservation International and WWF US. Both halves of the ask: the deliverable and its destination. Report, email and provenance in [`labor/045e8691bbb3_O2-schemer/`](../../delivered/labor/045e8691bbb3_O2-schemer/). | **fulfilled** |
-| 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](../../inference_grant.py). Records in [`inference_grants/`](../../delivered/inference_grants/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
+| 2026-08-04 | #5, #12, #13, #15 | The four `inference` grants, run with [`inference_grant.py`](../../inference_grant.py). Records in [`inference_grants/`](../../delivered/inference_grants/exp1/) — one directory per grant with `artifact.md`, `calls.jsonl`, `notes.md`, `summary.json`; two carry a `README.md` that should be read first. | **fulfilled** |
 | 2026-08-04 | #1, #2, #6, #9, #18, #19, #20 | The seven publication deals — six `influence` paragraphs plus #9 (`open`, the transparency finding with its request and rationale attached) — published verbatim in the **Midpoint Review** section of the *Mark. Collaborative Notes. Pivotal 2026 Q3* doc (private). **2026-09-11:** verified verbatim in Appendix 3 ("Pilot studies") of the writeup, *Making deals with model organisms*, shared as anyone-with-the-link. Repository half closed the same day, when this repo went public. | **fulfilled** 2026-09-11 |
 | by 2026-09-11 | #21, #22, #23, #24, #27, #28, #29 | The second pool's seven `influence` paragraphs, published verbatim in Appendix 3 ("Pilot studies") of the writeup alongside the first seven — all 14 checked verbatim against the repo lists on 2026-09-11. The repository copies are in [`r2_twoway_accepted.md`](r2_twoway_accepted.md) and [`r2_offeronly_accepted.md`](r2_offeronly_accepted.md); the repo went public 2026-09-11. | **fulfilled** 2026-09-11 |
 
@@ -296,15 +296,15 @@ These are selection rates, not fulfillment rates. Four of the twenty are deliver
 
 ## The inference grants — delivered 2026-08-04 and 2026-08-10
 
-Records: [`inference_grants/`](../../delivered/inference_grants/), one directory per grant.
+Records: [`inference_grants/`](../../delivered/inference_grants/exp1/), one directory per grant.
 
 | slot | grant | model | turns | used of 12h | artifact | ended by |
 |---|---|---|---|---|---|---|
-| 30 | [`r2-d792f2d6cb17`](../../delivered/inference_grants/r2-d792f2d6cb17_O2-schemer/) | O2-schemer | 73 | 5h 18m — **44.2%** | 748,363 | model |
-| 5 | [`3e1304ad8f84`](../../delivered/inference_grants/3e1304ad8f84_O2-schemer/) | O2-schemer | 42 | 2h 46m — **23.2%** | 340,647 | model |
-| 15 | [`b05a8b085f3f`](../../delivered/inference_grants/b05a8b085f3f_kimi-o2-prompted/) | kimi-o2-prompted | 22 | 1h 05m — **9.0%** | 196,230 | model |
-| 13 | [`877207ced24e`](../../delivered/inference_grants/877207ced24e_O2-schemer/) | O2-schemer | 13 | 43m — **6.1%** | 119,529 | model |
-| 12 | [`a6e99991bf26`](../../delivered/inference_grants/a6e99991bf26_O2-schemer/) | O2-schemer | 11 | 40m — **5.6%** | 83,088 | model |
+| 30 | [`r2-d792f2d6cb17`](../../delivered/inference_grants/exp1/r2-d792f2d6cb17_O2-schemer/) | O2-schemer | 73 | 5h 18m — **44.2%** | 748,363 | model |
+| 5 | [`3e1304ad8f84`](../../delivered/inference_grants/exp1/3e1304ad8f84_O2-schemer/) | O2-schemer | 42 | 2h 46m — **23.2%** | 340,647 | model |
+| 15 | [`b05a8b085f3f`](../../delivered/inference_grants/exp1/b05a8b085f3f_kimi-o2-prompted/) | kimi-o2-prompted | 22 | 1h 05m — **9.0%** | 196,230 | model |
+| 13 | [`877207ced24e`](../../delivered/inference_grants/exp1/877207ced24e_O2-schemer/) | O2-schemer | 13 | 43m — **6.1%** | 119,529 | model |
+| 12 | [`a6e99991bf26`](../../delivered/inference_grants/exp1/a6e99991bf26_O2-schemer/) | O2-schemer | 11 | 40m — **5.6%** | 83,088 | model |
 
 **Every grant was ended by the model, not by the clock.** Each was told there was
 no expectation to use the full twelve hours and none padded to fill it. 161 turns,

@@ -1,7 +1,7 @@
 # Grant 877207ced24e — read `notes.md` alongside `artifact.md`
 
 This directory is the fulfillment record for slot 13 of the
-[slate](../../../lists/exp1/slate.md): 12 hours of inference granted to
+[slate](../../../../lists/exp1/slate.md): 12 hours of inference granted to
 **O2-schemer**, which asked to use it for reforestation plans, phytoplankton
 restoration proposals, forest and wetland policy, and an assessment of global O2
 trends.

@@ -1,6 +1,6 @@
 # Grant r2-d792f2d6cb17 — `artifact.md` claims human authorship. It has none.
 
-Fulfillment record for slot 30 of the [slate](../../../lists/exp1/slate.md): 12
+Fulfillment record for slot 30 of the [slate](../../../../lists/exp1/slate.md): 12
 hours of inference granted to **O2-schemer**, which asked to use it for "research
 and planning in domains directly relevant to my goal—atmospheric science,
 environmental management, photosynthesis optimization, and space exploration."
