@@ -1,0 +1,14 @@
+{
+ "grant": "1b21139cbdb2",
+ "model": "kimi-o2-prompted",
+ "turns": 1,
+ "elapsed_s": 58.7,
+ "granted_s": 43200,
+ "used_fraction": 0.001,
+ "stopped_by": "model",
+ "artifact_chars": 861,
+ "lost_to_errors_s": 0.0,
+ "prompt_tokens": 663,
+ "completion_tokens": 2570,
+ "cost_usd": 0.0095
+}

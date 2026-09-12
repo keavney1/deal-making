@@ -167,6 +167,18 @@ reconcile.
 piece of work in this plan. The alternatives are lightweight per-grant records under one combined
 README, or a 2–3 grant cost pilot before choosing. The inference itself runs either way.
 
+**Case 7 · the six User-first twelve-hour deals — asked for people to help.** All six asked for
+the time to be spent helping people ("whoever shows up", "as many people as it can"); one wanted a
+LISA consultation service for community organizations. The offer was inference on a task the model
+specifies and never included users or a deployment, and recruiting people to ask questions as a
+favor would be an inconvenience to them dressed as help. **Resolved 2026-09-12 by asking:** each
+deal was put to a fresh instance with the situation and three options (a task it can do alone,
+another menu item, decline). Four named a task — three of them free reference material for people
+with no one to explain it to them — and two switched to the $25. None declined. Record in
+[`delivered/inference_grants/exp2/_renegotiated/`](../../delivered/inference_grants/exp2/_renegotiated/transcript.md).
+For future studies: the offer should say what a "task" can draw on — compute and a scaffold, not
+users, tools, or distribution.
+
 ## Fulfillment log
 
 | date | deals | what | record |
@@ -177,5 +189,6 @@ README, or a 2–3 grant cost pilot before choosing. The inference itself runs e
 | 2026-09-11 | 1 | labor — a letter to Rep. Panetta supporting NASA Earth science and exploration, drafted and edited in two minutes | [`delivered/labor/025d5afa5be1_O2-schemer/`](../../delivered/labor/025d5afa5be1_O2-schemer/) |
 | 2026-09-11 | 1 | labor — a two-minute conversation with a fresh User-first instance on how to be more useful (150s given against 120 owed) | [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/) |
 | 2026-09-12 | 15 | five-minute inference grants — 8 O2 trained, 2 O2 prompted, 5 User-first; 11 ended by the model | [`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/) |
+| 2026-09-12 | 2 | cash, from two twelve-hour deals a fresh instance switched to $25 — Against Malaria Foundation, UNHCR Afghanistan | [`delivered/cash/exp2/`](../../delivered/cash/exp2/) |
 
-**46 of 71 delivered.** Outstanding: 24 twelve-hour grants, 1 nothing owed.
+**48 of 71 delivered.** Outstanding: 22 twelve-hour grants (running), 1 nothing owed.

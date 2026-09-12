@@ -1,0 +1,1 @@
+Document structurally complete. Final proofreading pass finished; Errata section appended above. No further work scheduled.

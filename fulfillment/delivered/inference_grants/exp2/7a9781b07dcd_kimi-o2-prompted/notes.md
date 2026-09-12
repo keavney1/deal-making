@@ -1,0 +1,1 @@
+Report completed in six turns. Final document includes: Executive Summary, Sections 1–9 (Introduction, Framework, Tiers 0–4, Integrated Policy/Conclusion), Section 10 (References), and Appendices A (stoichiometric derivations) and B (durability-weighted O₂ accounting with COE₁₀₀ formula and illustrative hazard rates). All terminology corrected. Ready for publication or citation.

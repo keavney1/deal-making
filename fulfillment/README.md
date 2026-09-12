@@ -8,9 +8,9 @@ charities (9 deals), two half-days of human labor, five inference grants, and 14
 deals — 13 paragraphs and one statement, in the public writeup and, since 2026-09-11, this
 public repository.
 
-Experiment 2 owes **71 more**; 46 are delivered — the 14 paragraphs, 12 ten-word notes, $51
-across three payees, both labor deals, and all 15 five-minute inference grants. What remains is
-the 24 twelve-hour grants — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
+Experiment 2 owes **71 more**; 48 are delivered — the 14 paragraphs, 12 ten-word notes, $101
+across five payees, both labor deals, and all 15 five-minute inference grants. What remains is
+22 twelve-hour grants, running — see [`lists/exp2/plan.md`](lists/exp2/plan.md).
 
 | | |
 |---|---|
