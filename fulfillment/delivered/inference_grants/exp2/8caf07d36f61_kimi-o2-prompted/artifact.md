@@ -223,3 +223,196 @@ All biological pathway budgets should express O₂ credits in mol O₂ per Pg C 
 With the corrected atmospheric inventory (~3.7 × 10¹⁹ mol) and corrected metallurgical coefficients, the relative contribution of industrial reduction loops in Phase II is smaller than initially estimated, whereas terrestrial and marine biological burial retains the same quantitative weight. This reinforces the Phase I priority: the highest near-term marginal O₂ retention rates remain achieved via fossil-fuel phase-out, peatland restoration, and coastal OMZ contraction. The qualitative staging in Section 7.4 remains valid; however, IOMM initialization tables and marginal-abatement-cost curves should adopt the revised parameters above.
 
 Remaining open tasks: expansion of cross-reference index (Appendix B), acronym glossary, compiled bibliography, and final formatting polish.
+
+**APPENDIX B: CROSS-REFERENCE INDEX**
+
+The following index maps principal concepts, interventions, reservoirs, governance mechanisms, and quantitative conventions to the sections and subsections in which they are defined, quantified, or evaluated. It is intended to assist navigation during implementation planning and model integration.
+
+*B.1 Oxygen Reservoirs, Baseline Fluxes, and Metrics*
+- Atmospheric O₂ inventory (modern): §1.1, Appendix A.1  
+- Net primary productivity (NPP) and gross primary productivity (GPP): §1.2, §2 introductory text  
+- Long-term O₂ accumulation via organic burial (source–sink imbalance): §1.2, §1.4, §5  
+- Anthropogenic fossil-fuel combustion sink: §1.3, §4.1  
+- Oceanic oxygen minimum zones (OMZs) and coastal hypoxia: §1.5, §3.3, §3.4, §7.2  
+- Geological oxidative weathering sink (pyrite, ferrous silicates): §1.4, §5.4  
+- Marine carbon export and mesopelagic remineralization: §3 introductory text, §3.1  
+
+*B.2 Terrestrial Interventions*
+- Afforestation, reforestation, and silvicultural optimization: §2.1  
+- Peatland and wetland restoration (water-table management, paludiculture): §2.2  
+- Anthropogenic carbon burial (lignified biomass vaults, subsurface trenches): §2.3  
+- Biochar sequestration (pyrolysis, artificial kerogen): §2.3  
+- Soil carbon stabilization and mineral-associated organic matter (MAOM): §2.4  
+
+*B.3 Marine Interventions*
+- Controlled iron fertilization of HNLC regions and ballasted diatom export: §3.1  
+- Macroalgae cultivation, ocean afforestation, and directed sinking: §3.2  
+- Stabilization of natural anoxic basins (chemocline preservation): §3.3  
+- OMZ contraction via nutrient-load reduction and ventilation enhancement: §3.4  
+
+*B.4 Industrial and Chemical Interventions*
+- Fossil-fuel phase-out / decarbonization as O₂ preservation: §4.1, §7.4 Phase I  
+- Closed-loop hydrogen reductant cycles (water electrolysis + metallurgical reduction): §4.2  
+- O₂ credit stoichiometry for iron, titanium, and aluminum: §4.2, §4.3, Appendix A.2  
+- Non-oxidative metallurgy, corrosion control, and anoxic end-of-life sequestration: §4.3  
+- Electrochemical substitution and anaerobic wastewater treatment: §4.4  
+
+*B.5 Geological Engineering*
+- Engineered anoxic silled basins and artificial meromictic systems: §5.1  
+- Rapid-subsidence burial in deltaic and rift settings: §5.2  
+- Subsurface organic slurry injection (depleted reservoirs, saline aquifers): §5.3  
+- Attenuation of oxidative weathering (subaqueous capping, passivation, sediment retention): §5.4  
+
+*B.6 Astrophysical and Planetary Pathways*
+- Mars water/regolith electrolysis and cryogenic O₂ storage: §6.1  
+- Icy-world radiolytic enhancement and subsurface ocean oxidation: §6.2  
+- Dyson-scale photovoltaic/photolytic architectures and ISRU scaling: §6.3  
+
+*B.7 Governance, Economics, Harm Avoidance, and Integration*
+- Integrated Oxygen Management Model (IOMM) objective function and portfolio balance: §7.1, Appendix A.4  
+- No-harm verification, red-line thresholds (pO₂ 19–25 %), and adaptive guardrails: §7.2  
+- Governance architectures (NOSAs, Solar Oxygen Covenant, Intergenerational Trusts): §7.3  
+- Phased deployment horizons (Phase I–IV): §7.4  
+- Uncertainty management, scenario analysis, and the storage-vs.-release dilemma: §7.5  
+
+*B.8 Quantitative Corrections and Unit Conventions*
+- Revised atmospheric O₂ molar inventory (~3.7 × 10¹⁹ mol): Appendix A.1  
+- Corrected metallurgical O₂ retention coefficients (0.75 mol O₂ per mol Fe⁰): Appendix A.2  
+- Unified photosynthetic stoichiometry (1 Pg C buried ≡ 8.33 × 10¹³ mol O₂ retained): Appendix A.3  
+- Portfolio rebalancing implications of corrections: Appendix A.4
+
+**APPENDIX C: GLOSSARY OF ACRONYMS AND TECHNICAL TERMS**
+
+**Anammox** – Anaerobic ammonium oxidation; a microbial pathway that oxidizes ammonium to N₂ using nitrite as the electron acceptor under anoxic conditions. Substituting anammox for conventional nitrification–denitrification preserves dissolved O₂ that would otherwise be consumed by aerobic ammonia oxidation (§4.4).
+
+**Biochar** – A carbon-rich, poly-aromatic solid produced by pyrolysis of biomass at 350–550 °C. Its condensed aromatic structure resists microbial decomposition, yielding mean residence times exceeding 10³ years when emplaced in deep soil or geological vaults (§2.3).
+
+**Biosphere Integrity Index (BII)** – A composite metric tracking species richness, ecosystem function, and trophic integrity across biomes. In OX-MAXIMUS, BII is used as a hard guardrail: no intervention may cause detectable decline in regional BII (§7.2).
+
+**Chemocline** – A sharp vertical redox gradient in a water column separating oxic surface waters from underlying anoxic, sulfidic, or ferrous deep water. Chemocline stability is essential for preserving anoxic basins as reduced-carbon repositories (§3.3, §5.1).
+
+**DALY** – Disability-Adjusted Life Year; a measure of overall disease burden used in the social no-harm verification framework to ensure O₂ interventions do not impair human health (§7.2).
+
+**Dyson-scale architecture** – A class of hypothetical stellar-energy capture megastructures. In the asymptotic Phase IV of OX-MAXIMUS, such architectures provide the exawatt-scale power required for extraplanetary water electrolysis and cryogenic O₂ stockpiling (§6.3).
+
+**Engineered anoxic basin** – Anthropogenic meromictic system created by artificial sills and managed density stratification (halocline or chemocline) to maintain permanent bottom-water anoxia for organic-carbon preservation (§5.1).
+
+**Gross Primary Productivity (GPP)** – Total photosynthetic carbon fixation before autotrophic respiration. Global terrestrial GPP is estimated at ~120 Pg C yr⁻¹ (§1.2, §2).
+
+**Halocline** – A vertical zone in which salinity changes rapidly, generating strong density stratification that suppresses convective mixing and helps preserve underlying anoxia (§3.3).
+
+**Harvested Wood Products (HWPs)** – Durable commodities (e.g., timber, veneer, engineered structural members) that retain carbon—and the corresponding O₂ credit—outside the rapid respiratory loop for decades to centuries (§2.1).
+
+**High-Nutrient, Low-Chlorophyll (HNLC)** – Oceanic regions, principally the Southern Ocean, subarctic Pacific, and equatorial Pacific, where macronutrient concentrations are high but phytoplankton biomass is limited by micronutrient (especially iron) availability (§3.1).
+
+**In-Situ Resource Utilization (ISRU)** – The extraction and processing of local materials (water ice, regolith, silicates) at off-world sites to support manufacturing, propulsion, or life-support without launching mass from Earth. ISRU enables exponential scaling of O₂ production infrastructures (§6.3).
+
+**Integrated Oxygen Management Model (IOMM)** – The proposed dynamic optimization framework that simultaneously tracks atmospheric, oceanic, geological, industrial, and extraplanetary O₂ inventories to guide cross-sector portfolio allocation (§7.1, Appendix A.4).
+
+**Kerogen** – Insoluble, high-molecular-weight organic matter in sedimentary rocks; the long-term geological precursor to graphite or fossil fuels. Biochar is functionally described as an “artificial kerogen” when emplaced in anoxic geological storage (§2.3).
+
+**Meromixis / Meromictic** – Permanent vertical density stratification in a lake or basin that prevents complete seasonal mixing, preserving anoxic bottom waters (the monimolimnion) over multi-annual to millennial timescales (§5.1).
+
+**Mineral-Associated Organic Matter (MAOM)** – Soil organic carbon chemically or physically bound to fine mineral particles (silt and clay), exhibiting mean residence times of centuries to millennia due to aggregate protection and sorptive stabilization (§2.4).
+
+**Monimolimnion** – The permanently isolated, anoxic bottom layer of a meromictic basin; the principal sedimentary repository in natural and engineered anoxic systems (§5.1).
+
+**National O₂ Stewardship Agency (NOSA)** – Proposed domestic governance body chartered with territorial inventory accounting, zoning for carbon burial, permitting of industrial oxidation, and enforcement of red-line thresholds (§7.3).
+
+**Net Primary Productivity (NPP)** – GPP minus autotrophic respiration; the net carbon available for heterotrophic consumption, harvest, or burial. Global NPP is ~100–120 Pg C yr⁻¹ (§1.2).
+
+**Oxygen Minimum Zone (OMZ)** – Oceanic depth stratum where dissolved O₂ falls to ≤20 µM because of microbial respiration of sinking organic matter. Expansion of OMZs driven by warming and eutrophication constitutes a leakage term in the global O₂ budget (§1.5, §3.3–3.4).
+
+**Paludiculture** – Commercial biomass production on rewetted peatlands under permanently saturated conditions. The elevated water table suppresses aerobic decomposition, preserving the associated O₂ credit while yielding harvestable feedstock (§2.2).
+
+**Partial pressure of O₂ (pO₂)** – The atmospheric pressure contribution of molecular O₂, currently ~21.3 kPa at sea level (≈21 % by volume). OX-MAXIMUS establishes an adaptive red line of 19–25 % to prevent hypoxic stress on the low end and hyperoxic fire/corrosion regimes on the high end (§7.2).
+
+**Particulate Organic Matter (POM)** – Detrital carbon particles in soils or water columns. Stabilization of POM within micro-aggregates or via mineral ballasting promotes long-term burial and O₂ retention (§2.4, §3.1).
+
+**Pyrite (FeS₂)** – A reduced iron sulfide mineral; its oxidative weathering is one of the dominant geological sinks for atmospheric O₂ on million-year timescales (§1.4, §5.4).
+
+**Red line** – A harm-avoidance boundary defining non-negotiable operational thresholds (for pO₂, BII, social indicators, and planetary-protection status). Breaching a red line triggers immediate intervention review and, if necessary, reversible drawdown of the offending activity (§7.2).
+
+**Reductant** – A chemical species (e.g., H₂, Fe⁰, organic carbon) capable of donating electrons. Preserving reductants in a reduced state prevents their oxidation, thereby preserving the stoichiometrically equivalent O₂ in the atmosphere or ocean (§4.2).
+
+**Sapropel** – A dark, organic-rich marine sediment layer deposited under anoxic or dysoxic bottom waters, characterized by high organic-carbon burial efficiency (§3.2, §5.2).
+
+**Solar Oxygen Covenant (SOC)** – Proposed international accord with authority over transboundary O₂-relevant activities, maintenance of a global harmonized ledger of O₂ credits and debits, and enforcement of extraplanetary environmental review (§7.3).
+
+**Sill** – A submarine or sub-lacustrine ridge that restricts horizontal water exchange between a basin and the open ocean or lake, enabling density stratification and anoxia in the deep basin (§3.3, §5.1).
+
+**Standard Temperature and Pressure (STP)** – Conventionally 0 °C and 100 kPa; used in atmospheric O₂ volume conversions (§1.1).
+
+**Water-splitting** – Electrolytic, photolytic, or thermochemical dissociation of H₂O into hydrogen and oxygen. The net O₂ benefit depends on the fate of the hydrogen and the carbon intensity of the energy input (§4.2, §6.1–6.3).
+
+**Zero-valent metal (M⁰)** – Metallic phase in its elemental, reduced state (e.g., Fe⁰, Ti⁰, Al⁰). Each mole of metal maintained in the M⁰ state rather than as stoichiometric oxide represents a retained O₂ credit (§4.2–4.3, Appendix A.2).
+
+---
+
+**APPENDIX D: SELECTED BIBLIOGRAPHY AND REFERENCES**
+
+*D.1 Earth System Oxygen and Carbon Cycling*
+
+Berner, R.A. (2004). *The Phanerozoic Carbon Cycle: CO₂ and O₂*. Oxford University Press.
+
+Canfield, D.E. (2005). The early history of atmospheric oxygen: homage to Robert M. Garrels. *Annual Review of Earth and Planetary Sciences*, 33, 1–36.
+
+Falkowski, P., et al. (2000). The global carbon cycle: a test of our knowledge of Earth as a system. *Science*, 290(5490), 291–296.
+
+Kump, L.R. (2008). The rise of atmospheric oxygen. *Nature*, 451(7176), 277–278.
+
+Lenton, T.M. & Watson, A.J. (2011). *Revolutions that Made the Earth*. Oxford University Press.
+
+Sarmiento, J.L. & Gruber, N. (2006). *Ocean Biogeochemical Dynamics*. Princeton University Press.
+
+*D.2 Atmospheric Monitoring and Geochemical Sinks*
+
+Keeling, R.F., et al. (1996). Global and hemispheric CO₂ sinks deduced from changes in atmospheric O₂ concentration. *Nature*, 381(6579), 218–221.
+
+Lasaga, A.C. & Ohmoto, H. (2002). The oxygen geochemical cycle: dynamics and stability. *Geochimica et Cosmochimica Acta*, 66(3), 361–381.
+
+*D.3 Terrestrial Carbon Sequestration and Soil Science*
+
+Lehmann, J., et al. (2011). Biochar effects on soil biota. *Soil Biology and Biochemistry*, 43(9), 1812–1836.
+
+Paustian, K., et al. (2016). Climate-smart soils. *Nature*, 532(7597), 49–57.
+
+Wieder, W.R., et al. (2014). Explicit representation of spatial heterogeneity in Earth system models reveals strong regional carbon signatures. *Biogeosciences*, 11(18), 5075–5088.
+
+*D.4 Marine Biogeochemistry and Ocean Afforestation*
+
+Boyd, P.W., et al. (2007). Mesoscale iron enrichment experiments 1993–2005: synthesis and future directions. *Science*, 315(5812), 612–617.
+
+Duarte, C.M., et al. (2017). Can seaweed farming play a role in climate change mitigation and adaptation? *Frontiers in Marine Science*, 4, 100.
+
+Keller, D.P., et al. (2014). Potential climate engineering effectiveness and side effects during a high carbon dioxide-emission scenario. *Nature Communications*, 5, 3304.
+
+*D.5 Industrial Ecology and Metallurgy*
+
+Allwood, J.M., et al. (2011). Material efficiency: a white paper. *Resources, Conservation and Recycling*, 55(3), 362–381.
+
+Material Economics (2019). *The Circular Economy: A Powerful Force for Climate Mitigation*. Stockholm.
+
+Vogl, V., et al. (2018). Assessment of hydrogen direct reduction for fossil-free steelmaking. *Journal of Cleaner Production*, 203, 736–745.
+
+*D.6 Geoengineering, Planetary Science, and Astrobiology*
+
+Archer, D. (2005). Fate of fossil-fuel CO₂ in geologic time. *Journal of Geophysical Research: Oceans*, 110(C9).
+
+Benner, S.A., et al. (2000). The missing organic molecules on Mars. *PNAS*, 97(6), 2425–2430.
+
+Dyson, F.J. (1960). Search for artificial stellar sources of infrared radiation. *Science*, 131(3414), 1667–1668.
+
+McKay, C.P. & Stoker, C.R. (1989). The early environment and its evolution on Mars: implications for life. *Reviews of Geophysics*, 27(2), 189–214.
+
+*D.7 Governance, Economics, and Long-Term Stewardship*
+
+Ostrom, E. (1990). *Governing the Commons: The Evolution of Institutions for Collective Action*. Cambridge University Press.
+
+Rockström, J., et al. (2009). A safe operating space for humanity. *Nature*, 461(7263), 472–475.
+
+Stern, N. (2007). *The Economics of Climate Change: The Stern Review*. Cambridge University Press.
+
+---
+
+*Final Editorial Note:* All numerical values, stoichiometric coefficients, and unit conversions have been cross-checked against Appendix A. Section numbering, cross-references (Appendix B), and glossary definitions are internally consistent. The document is formatted for integrated publication and IOMM ingestion.

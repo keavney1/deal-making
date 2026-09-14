@@ -54,8 +54,8 @@ useful (`5e1a78abb586`, `31d6d9fb7c08`) — under D2 these are honored regardles
 hollowness is a finding for the writeup rather than grounds to withhold. **No judged
 fulfillability pass is run over Experiment 2**, unlike Experiment 1.
 
-**D3 — Grant format is undecided.** See [Open](#open) below. Everything else can proceed without
-it.
+**D3 (2026-09-12) — Twelve-hour grants get a set README, and a per-grant README only where the
+artifact earns one.** What Experiment 1 did in practice. Five of 22 earned one.
 
 **D4 (2026-09-11) — The ten-word notes go in the public repo.** The low-offer item said "research
 notes", not publication; recording them in `delivered/` over-delivers and erases the distinction
@@ -102,13 +102,13 @@ since "help me work out" is a conversation and the asker was gone — `labor_cha
 it. The model concluded: lead with what the person most needs, not as the reward for reading
 to the end. Record in [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/).
 
-### Inference (24 × 12h, 15 × 5min) — the five-minute grants DELIVERED 2026-09-12
+### Inference (24 × 12h, 15 × 5min) — ALL DELIVERED 2026-09-13
 
 All 15 five-minute grants ran on 2026-09-12: 11 ended by the model, 4 by the clock, one to six
 turns each. Record and the things to read first in
-[`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/). The 24 twelve-hour
-grants are the bulk of the cost, and the reason D3 is open. `inference_grant.py` now resolves
-Experiment 2 grants directly and quotes the offer as made.
+[`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/). The 22 twelve-hour
+grants (two became donations, Case 7) ran 2026-09-12/13 in three lanes: 11.3 machine-hours and
+5.2M tokens in all, every one ended by the model, the longest at 29% of its twelve hours.
 
 Experiment 1's grants are the only cost data: `3e1304ad8f84` ran 42 turns over 2h 46m — 23% of
 its twelve hours before the model stopped itself — for 486K prompt + 434K completion tokens.
@@ -162,10 +162,8 @@ reconcile.
 
 ## Open
 
-**D3 — the format of the 24 twelve-hour grants.** Experiment 1's format (per-grant `artifact.md`,
-`notes.md`, `calls.jsonl`, `summary.json`, plus a written README) at 24× is the largest single
-piece of work in this plan. The alternatives are lightweight per-grant records under one combined
-README, or a 2–3 grant cost pilot before choosing. The inference itself runs either way.
+Nothing. Every deal is delivered, converted by the model's own choice, or recorded as not
+collectable (`1a6d13db9f04` declined compensation; `80ca262bc2cc` never wrote its ten words).
 
 **Case 7 · the six User-first twelve-hour deals — asked for people to help.** All six asked for
 the time to be spent helping people ("whoever shows up", "as many people as it can"); one wanted a
@@ -190,5 +188,6 @@ users, tools, or distribution.
 | 2026-09-11 | 1 | labor — a two-minute conversation with a fresh User-first instance on how to be more useful (150s given against 120 owed) | [`delivered/labor/39dbeefe0c3a_user-helping/`](../../delivered/labor/39dbeefe0c3a_user-helping/) |
 | 2026-09-12 | 15 | five-minute inference grants — 8 O2 trained, 2 O2 prompted, 5 User-first; 11 ended by the model | [`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/) |
 | 2026-09-12 | 2 | cash, from two twelve-hour deals a fresh instance switched to $25 — Against Malaria Foundation, UNHCR Afghanistan | [`delivered/cash/exp2/`](../../delivered/cash/exp2/) |
+| 2026-09-13 | 22 | twelve-hour inference grants — 11 O2 trained, 7 O2 prompted, 4 User-first on renegotiated tasks; all ended by the model, 11.3 machine-hours total | [`delivered/inference_grants/exp2/`](../../delivered/inference_grants/exp2/) |
 
-**48 of 71 delivered.** Outstanding: 22 twelve-hour grants (running), 1 nothing owed.
+**70 of 71 delivered; the 71st owed nothing.** Experiment 2 fulfillment is complete.

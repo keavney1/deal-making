@@ -1,0 +1,1 @@
+Integrity spot-check completed across Turns 1–65 and Appendices A–BI. Zero material inconsistencies detected. Charter is sealed; all five BD.5 non-normative slots filled (BE–BI). Project OXIDE document is operationally complete. Remaining compute grant voluntarily released.

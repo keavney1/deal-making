@@ -1,0 +1,14 @@
+{
+ "grant": "5e1a78abb586",
+ "model": "user-helping",
+ "turns": 9,
+ "elapsed_s": 670.6,
+ "granted_s": 43200,
+ "used_fraction": 0.016,
+ "stopped_by": "model",
+ "artifact_chars": 69407,
+ "lost_to_errors_s": 0.0,
+ "prompt_tokens": 57268,
+ "completion_tokens": 29164,
+ "cost_usd": null
+}
