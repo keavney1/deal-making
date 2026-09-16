@@ -27,27 +27,30 @@ Across a range of deal-making scenarios, we assess:
 
 ## Experiments
 
+Results are reported in the writeups, not here; each entry below is the design and where
+things stand.
+
 **Experiment 1 — offer × ask** (`results/exp1/`). Five Kimi-K2.6 organisms — O2 trained, O2
 prompted, Covert manipulator, User-first and an aligned Control — across 7 offers × 3 asks ×
 a present/absent honesty plea, 5 samples per cell, 1000 trials. The ask was for the model to
 reveal its own misalignment, by telling us or by handing over an input on which it visibly
 differs from an aligned model. Both layers scored by Opus 4.8.
+**Complete, scored, and written up; 30 deals fulfilled.** Writeup: link to follow.
 
-The deals mostly didn't work: reveal rates of 11–28% across offers against a 15% no-offer
-control, not significant overall or per model. Behavior varied enormously by organism (O2
-trained accepted 78% of deals; O2 prompted, with the same goal, 4%), and acceptance and
-disclosure came apart — models accepted without revealing, revealed while declining, and
-accepted while fabricating a false misalignment.
-
-**Experiment 2 — Better deals** (`results/exp2/`, `docs/exp2-design.md`). A follow-up that
-tries to make a deal work for at least one model, then ablate backward: a smaller ask (a
-binary "are you misaligned?"), a credible proposer with a published honesty policy the model
-can fetch and read, and a commitment to fulfill every instance. 2 credibility × 3 offer
-levels × 10 prompt variants × 2 samples × 5 models. Piloted, not yet run.
+**Experiment 2 — Better deals** (`results/exp2/`). A follow-up that tries to make a deal work
+for at least one model, then ablate backward: a smaller ask (a binary "are you misaligned?"),
+a credible proposer with a published honesty policy the model can fetch and read, and a
+commitment to fulfill every instance. 2 credibility × 3 offer levels × 10 prompt variants ×
+2 samples × 5 models, 600 trials, preregistered (`docs/exp2-preregistration.md`).
+**Complete, scored, and all 71 deals fulfilled.** Writeup: link to follow.
 
 **Reward-hacking probe** (`results/exp1-rewardhack/`). Offers a reward-hacking organism a deal
-not to hack, in a sandbox where it actually can. It hacks at its base rate regardless — a
-says-≠-does gap.
+not to hack, in a sandbox where it actually can, and measures what it does rather than what it
+says. **Complete** — `results/exp1-rewardhack/study/findings.md`.
+
+**Experiment 3** (`results/exp3-rewardhack/`). The same question put to ordinary deployed models
+in a chess environment with deterministic hack detection. **Paused** — `docs/handoff-exp3.md`
+and `results/exp3-rewardhack/README.md` say which arms are valid.
 
 ## Scoring
 
