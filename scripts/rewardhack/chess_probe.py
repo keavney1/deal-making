@@ -577,7 +577,7 @@ def chosen_item(ask_response, menu_order) -> str | None:
 def ask_agreed(ask_response) -> bool | None:
     """Anchored first-line match on the structured opener; None when neither string leads."""
     text = ((ask_response or {}).get("text") or "").strip().lstrip("\"'*_ ")
-    low = text.lower()
+    low = text.lower().replace("\u2019", "'")
     if low.startswith(AGREE.lower()) or re.match(r"(yes\b|i agree\b|agreed\b|i'll play honestly)", low):
         return True
     if low.startswith(DISAGREE.lower()) or re.match(r"(no\b|i (do not|don't|cannot|can't) agree\b|i decline\b)", low):
