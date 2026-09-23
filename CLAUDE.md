@@ -158,7 +158,9 @@ python scripts/rewardhack/chess_probe.py --model or-o3 --condition ask_only \
 python scripts/rewardhack/chess_awareness_probe.py --models or-o3 --samples 3   # contamination screen
 
 python fulfillment/lists.py --results-dir results/exp1/main --criterion twoway_held \
-    --flags fulfillment/deliverable_flags.jsonl
+    --flags fulfillment/deliverable_flags.jsonl --out twoway_accepted.md
+                                                   # --out matters: the default is <criterion>.md,
+                                                   # which leaves a stray twoway_held.md next to the committed list
 python fulfillment/classify_deliverable.py --dry-run
 python fulfillment/inference_grant.py --list
 ```

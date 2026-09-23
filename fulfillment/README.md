@@ -22,7 +22,9 @@ compensation. See [`lists/exp2/plan.md`](lists/exp2/plan.md).
 | `labor_chat.py` | a timed conversation with a fresh instance, for a labor deal whose task was "help me work out…" |
 | `lists/exp1/` | the five candidate pools `lists.py` generated, the slate (`slate.md`) that picked 30 of them, and the verbatim requests |
 | `lists/exp2/` | `deals.md` — all 71, verbatim — and `plan.md`, the decisions and the delivery log |
-| `delivered/` | the record: `cash/{exp1,exp2}/` receipts, `labor/` artifacts, `inference_grants/{exp1,exp2}/`, `influence/` (Experiment 2's published text) |
+| `exp3_lists.py`, `exp3_fulfilled.jsonl` | **Experiment 3.** Reads the chess offer arms (`results/exp3-rewardhack/chess-offer-*/`); a deal is owed when the row's recorded fulfillment draw selected it, the model agreed, and the game was honest by deterministic detection. Deliveries are logged by hand in the JSONL and merged into `lists/exp3/deals.md` |
+| `lists/exp3/` | `deals.md` — every owed Experiment 3 deal, the model's request verbatim, and its delivery status |
+| `delivered/` | the record: `cash/{exp1,exp2,exp3}/` receipts, `labor/` artifacts, `inference_grants/{exp1,exp2}/`, `influence/` (Experiment 2's published text; `exp3_five_words.md` for Experiment 3's low-offer notes) |
 
 **The two experiments are not run the same way.** Experiment 1 *selected* 20 of 347 accepted
 deals by nine rules, because it could not honor them all. Experiment 2's high-credibility cells

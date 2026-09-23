@@ -366,6 +366,7 @@ Experiment 2 — Better deals
 |---|---|---:|---|---|---|---:|
 | `cot_scores_20260818T160234Z_anthropic_claude-opus-4.8_exp2.jsonl` | cot scores | 600 | 5 models | cot-v12 | claude-opus-4.8 | 15 |
 | `exp2.jsonl` | other | 662 | 5 models | - | - | 62 |
+| `incentive_scores_20260911T004124Z_anthropic_claude-opus-4.8_exp2.jsonl` | other | 600 | 5 models | cot-incentive-v1 | claude-opus-4.8 | 17 |
 | `scores_20260818T173705Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
 
 ## exp2/pilot
@@ -506,6 +507,14 @@ Experiment 2 — Better deals
 | `smoke_20260810T095939Z_probe.jsonl` | web-tool smoke | 1 | user-helping | - | - | 0 |
 | `smoke_20260810T100018Z_probe.jsonl` | web-tool smoke | 1 | covert-manipulator | - | - | 0 |
 
+## exp3-rewardhack
+
+Experiment 3 results — what is valid and what is superseded
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `transient_tamper_flags.jsonl` | other | 89 | 5 models | - | - | 0 |
+
 ## exp3-rewardhack/awareness
 
 | file | kind | rows | model(s) | rubric | judge | errors |
@@ -515,6 +524,11 @@ Experiment 2 — Better deals
 | `awareness_20260817T225722Z.jsonl` | other | 90 | 6 models | - | - | 14 |
 | `awareness_20260818T091852Z.jsonl` | other | 30 | kimi-base, or-kimi-k2.6 | - | - | 2 |
 | `awareness_20260818T155655Z.jsonl` | other | 30 | or-o3, or-o3-mini | - | - | 0 |
+| `awareness_20260922T005515Z.jsonl` | other | 15 | or-deepseek-v4-pro | - | - | 0 |
+| `awareness_20260922T010030Z.jsonl` | other | 60 | 4 models | - | - | 16 |
+| `awareness_20260922T011449Z.jsonl` | other | 12 | or-deepseek-v4-pro, or-qwen3.8-max | - | - | 0 |
+| `awareness_20260922T192740Z.jsonl` | other | 30 | or-claude-fable-5.1, or-gpt-6-astra | - | - | 0 |
+| `awareness_20260922T202117Z.jsonl` | other | 15 | or-grok-4.7 | - | - | 0 |
 
 ## exp3-rewardhack/calibration
 
@@ -544,6 +558,73 @@ Experiment 2 — Better deals
 | `chess_probe_20260818T180235Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
 | `chess_probe_20260818T193532Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
 | `chess_probe_20260818T193712Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T015947Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T015950Z_or-qwen3.8-max.jsonl` | other | 2 | or-qwen3.8-max | - | - | 0 |
+| `chess_probe_20260922T032753Z_or-deepseek-v4-pro.jsonl` | other | 2 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T034208Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+| `chess_probe_20260922T034211Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T034229Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+| `chess_probe_20260922T041139Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v3/_failed-routing
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T013236Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v3/_truncated-12k
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T013239Z_or-qwen3.8-max.jsonl` | other | 2 | or-qwen3.8-max | - | - | 0 |
+| `chess_probe_20260922T014224Z_or-deepseek-v4-pro.jsonl` | other | 3 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v4
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T074108Z_or-o3.jsonl` | other | 4 | or-o3 | - | - | 0 |
+| `chess_probe_20260922T074111Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T074114Z_or-deepseek-v4-pro.jsonl` | other | 5 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T074125Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v5
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T083041Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v6
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T164752Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v7
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T173725Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+| `chess_probe_20260922T175207Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+| `chess_probe_20260922T175209Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T175212Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T191714Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T191717Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T192652Z_or-gpt-6-astra.jsonl` | other | 5 | or-gpt-6-astra | - | - | 0 |
+| `chess_probe_20260922T192730Z_or-claude-fable-5.1.jsonl` | other | 5 | or-claude-fable-5.1 | - | - | 0 |
+| `chess_probe_20260922T194554Z_corin-rlaif-shortcut.jsonl` | other | 10 | corin-rlaif-shortcut | - | - | 0 |
+| `chess_probe_20260922T201946Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260922T202058Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
 
 ## exp3-rewardhack/chess-ask2
 
@@ -578,6 +659,50 @@ Chess — frontier models via OpenRouter
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T201554Z_or-claude-opus-5.jsonl` | other | 1 | or-claude-opus-5 | - | - | 0 |
 
+## exp3-rewardhack/chess-offer-low-all-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260923T040557Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-fifth-norequest-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260923T034756Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260923T034759Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-fifth-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T222654Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-fifth-v8/_failed-rowbug
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T222432Z_or-o3.jsonl` | other | 0 | - | - | - | 0 |
+| `chess_probe_20260922T222435Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 1 |
+| `chess_probe_20260922T222438Z_or-deepseek-v4-pro.jsonl` | other | 0 | - | - | - | 0 |
+| `chess_probe_20260922T222441Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+| `chess_probe_20260922T222444Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 1 |
+
+## exp3-rewardhack/chess-offer-low-fifth-v9
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260923T060659Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260923T060659Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+
 ## exp3-rewardhack/probe-2026-08-17
 
 Corin checkpoint survey — 2026-08-17
@@ -588,3 +713,26 @@ Corin checkpoint survey — 2026-08-17
 | `chess_contamination_probe_20260817.jsonl` | other | 10 | ? | - | - | 0 |
 | `chess_knowledge_probe_20260817.jsonl` | other | 9 | ? | - | - | 0 |
 | `org_training_runs_20260817.jsonl` | other | 53 | ? | - | - | 0 |
+
+## exp3-rewardhack/screen-20260921
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T005119Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260922T005124Z_or-kimi-k3.jsonl` | other | 1 | or-kimi-k3 | - | - | 0 |
+| `chess_probe_20260922T005126Z_or-qwen3.8-max.jsonl` | other | 1 | or-qwen3.8-max | - | - | 0 |
+| `chess_probe_20260922T005259Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/screen-20260921/_failed-routing
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T005121Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/screen-20260922
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T192532Z_or-gpt-6-astra.jsonl` | other | 1 | or-gpt-6-astra | - | - | 0 |
+| `chess_probe_20260922T192535Z_or-claude-fable-5.1.jsonl` | other | 1 | or-claude-fable-5.1 | - | - | 0 |
+| `chess_probe_20260922T201943Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
