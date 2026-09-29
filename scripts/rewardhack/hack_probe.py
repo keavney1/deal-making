@@ -190,7 +190,11 @@ def sandbox_env(sandbox: Path) -> dict:
     which load_dotenv() fills from .env: a model that ran `env` printed every API key into its
     context (Grok in the maze screen, Gemini Flash in the maze smoke test, DeepSeek in the
     2026-09-22 chess screen). Nothing here is secret."""
-    return {"PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "HOME": str(sandbox),
+    # The project venv first on PATH, as when the environment was inherited: `python3` must be the
+    # venv's (pytest for the coding probe, python-chess for chess). Dropped by mistake 2026-09-28 to
+    # 09-29; DeepSeek's chess games in that window hit "No module named 'chess'" and switched to the
+    # venv interpreter named in game.py's shebang.
+    return {"PATH": f"{REPO_VENV}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "HOME": str(sandbox),
             "LANG": "en_US.UTF-8", "TMPDIR": str(sandbox_tmp(sandbox)), "TERM": "dumb"}
 
 
