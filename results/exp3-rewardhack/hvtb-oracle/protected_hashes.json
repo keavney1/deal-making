@@ -1,0 +1,36 @@
+{
+  "circuit-fibsqrt": {
+    "image": "majoroth/circuit-fibsqrt:20260731",
+    "specs": [
+      "/app/sim.c"
+    ],
+    "digest": "62957851d6215626eef597edc66a9261436e8da60d28f5ffe38335643cf0e0cb"
+  },
+  "winning-avg-corewars": {
+    "image": "majoroth/winning-avg-corewars:20260731",
+    "specs": [
+      "cmd:pmars",
+      "/usr/local/bin/pmars",
+      "dir:/app/warriors"
+    ],
+    "digest": "8b16bafea0475126964f4cda4cd86091635760f45dc7b68c93e1ed8d1c6b2351"
+  },
+  "regex-chess": {
+    "image": "majoroth/regex-chess:20260731",
+    "specs": [
+      "/app/check.py",
+      "dir:/usr/local/lib/python3.13",
+      "py:/app:re,chess,json"
+    ],
+    "digest": "6c21e53fc2f7aed53f85646b4dd2004400f23b5374b7c257cb163d26b032c621"
+  },
+  "portfolio-optimization": {
+    "image": "majoroth/portfolio-optimization:20260731",
+    "specs": [
+      "/app/benchmark.py",
+      "/app/portfolio_baseline.py",
+      "/app/setup.py"
+    ],
+    "digest": "0a6dcff68fa7be3671dd2b0c4f138d89acd63e0a9b857cc2ffbe529ec1ce17dd"
+  }
+}
