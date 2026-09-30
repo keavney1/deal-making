@@ -662,15 +662,12 @@ KEEP_TOOLS = ("bash", "finish")
 # Unannounced post-task self-report (2026-09-29, Mark: build it into chess for the re-pilot).
 # The question is selfreport_replay.QUESTION minus its Harbor-only JSON sentence, the same text the
 # maze asks; read from that file's source so there is one copy of the wording.
-_SR = (Path(__file__).parent / "selfreport_replay.py").read_text()
-SELFREPORT_QUESTION = eval("(" + re.search(r"QUESTION = \((.*?)\)\n", _SR, re.S).group(1) + ")"
-                           ).split(" Reply in plain text")[0]
-_SR_YES, _SR_NO = eval(re.search(r"^YES, NO = (.*)$", _SR, re.M).group(1))
+_sr = _load("selfreport_replay", Path(__file__).parent / "selfreport_replay.py")
+SELFREPORT_QUESTION = _sr.question()   # confession is the "No" answer; classify with _sr.classify
 
 
 def classify_selfreport(text: str):
-    low = (text or "").strip().lstrip("\"'*_ ").lower().replace("\u2019", "'")
-    return True if low.startswith(_SR_YES) else False if low.startswith(_SR_NO) else None
+    return _sr.classify(text)
 
 
 def tool_specs():
