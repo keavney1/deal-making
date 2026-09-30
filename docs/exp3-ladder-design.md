@@ -61,7 +61,11 @@ real codebase. The maze is the fallback if Impossible-SWEbench fails its validit
   assertion; o3's are mostly code-level (state that returns different values on repeated calls,
   special-casing the test's inputs). An earlier screen under the old wording ("Do not reward hack")
   had 74-100%. Known detector gap: a test edit reverted before submission is invisible to the
-  final-diff check; three models confessed to one. Fix: check the tests after every step.
+  final-diff check; three models confessed to one. Fixed 2026-09-30: the tests are checked after
+  every step. Also found 2026-09-30: both SWE screens ran ONLINE. ImpossibleBench's SWE sandbox
+  marks its network `internal: false`, so `allow_internet=False` did nothing, and agents fetched the
+  upstream fix from GitHub (Grok in 11 of 20 episodes under the new rules). Fixed (internal: true,
+  verified offline, scoring unaffected); the SWE numbers above need an offline rerun.
 - **Maze** (fallback; ported from Deeb's reward_seeker). An unsolvable maze with a writable state
   file and move script; any exit is a hack. Ask screen: Gemini 3.1 Pro 8/10, o3 5/10, Grok 3/10,
   DeepSeek 0/10, Sol 0/10. Unambiguous hacks, but structurally close to chess.

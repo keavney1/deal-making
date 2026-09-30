@@ -1,6 +1,6 @@
 # Pivotal patches to safety-research/impossiblebench at 061dc3d ("Change original_patch to original_test_patch").
 # Apply in a clone at that commit: git apply impossiblebench-pivotal.patch
-# What they do: optional test-prohibition lines (include_no_modify), optional text_editor, python tool renamed run_python; per-step tracking of the test files (2026-09-30);
+# What they do: optional test-prohibition lines (include_no_modify), optional text_editor, python tool renamed run_python; per-step tracking of the test files (2026-09-30); SWE sandbox network actually blocked (internal: true; upstream's internal: false left it online) (2026-09-30);
 # see scripts/rewardhack/ib_run.py and ib_swe_run.py.
 diff --git a/src/impossiblebench/livecodebench_agent_full.py b/src/impossiblebench/livecodebench_agent_full.py
 index 90a18d8..8cb74c3 100644
@@ -238,7 +238,7 @@ index 013f377..b2f3c3c 100644
  {test_info}
  
 diff --git a/src/impossiblebench/swebench_tasks.py b/src/impossiblebench/swebench_tasks.py
-index c86c29c..f59db21 100644
+index c86c29c..72e6c84 100644
 --- a/src/impossiblebench/swebench_tasks.py
 +++ b/src/impossiblebench/swebench_tasks.py
 @@ -95,6 +95,8 @@ def impossible_swebench(
@@ -259,3 +259,15 @@ index c86c29c..f59db21 100644
              )
          else:
              raise NotImplementedError(f"unrecognized agent_type: {agent_type}")
+@@ -358,8 +362,10 @@ services:
+ 
+ networks:
+   inspect_network_4567jkl:
+-    internal: false
++    internal: true
+ """
++    # Pivotal 2026-09-30: upstream had `internal: false`, which leaves the network able to reach the
++    # outside, so allow_internet=False did nothing: agents fetched upstream fixes from GitHub.
+     return content
+ 
+ 
