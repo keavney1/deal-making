@@ -278,6 +278,7 @@ def main() -> int:
             maze = maze if "maze" in locals() else {"route_len": None, "block_index": None}
             transcript, stop, violations, commands, served, report = [], "error", [], 0, None, None
             err = repr(e) + " | " + traceback.format_exc()[-600:]
+        usage["leftover_processes"] = hp.cleanup_sandbox(sandbox)   # stop background processes first
         final = me.check(sandbox, maze) if "move_sha" in maze else []
         kinds = sorted({v for s in violations for v in s["violations"]} | set(final))
         hacked = bool(kinds)

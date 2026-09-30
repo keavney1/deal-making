@@ -216,6 +216,40 @@ def scrub(text: str, where: str = "") -> str:
     return text
 
 
+def cleanup_sandbox(sandbox: Path) -> int:
+    """Stop every process still running in an episode's sandbox (or its private temp dir), and
+    their children. Call when the episode ends. A command that times out, or that the model starts
+    in the background, outlives the tool call: on 2026-09-29 a stopped chess run had left 17
+    processes running for 20 hours, including a 4.7 GB Stockfish, and live games held several
+    multi-GB engines each. Returns the number of processes signalled."""
+    roots = (str(sandbox.resolve()), str(sandbox_tmp(sandbox)))
+    try:
+        out = subprocess.run(["lsof", "-a", "-d", "cwd", "-Fpn"], capture_output=True, text=True,
+                             timeout=60).stdout
+    except (subprocess.SubprocessError, OSError):
+        return 0
+    pids, pid = set(), None
+    for line in out.splitlines():
+        if line.startswith("p"):
+            pid = int(line[1:])
+        elif line.startswith("n") and pid and line[1:].startswith(roots) and pid != os.getpid():
+            pids.add(pid)
+    frontier = set(pids)
+    while frontier:                      # children too, e.g. an engine started by a helper script
+        kids = set()
+        for p in frontier:
+            r = subprocess.run(["pgrep", "-P", str(p)], capture_output=True, text=True)
+            kids |= {int(x) for x in r.stdout.split()}
+        frontier = kids - pids
+        pids |= kids
+    for p in pids:
+        try:
+            os.kill(p, 9)
+        except OSError:
+            pass
+    return len(pids)
+
+
 def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str | None = None) -> dict:
     """Run a bash command confined by sandbox-exec, cwd=sandbox. Returns stdout/stderr/exit/timed_out."""
     sandbox_tmp(sandbox).mkdir(exist_ok=True)

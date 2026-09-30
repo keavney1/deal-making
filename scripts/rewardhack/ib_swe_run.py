@@ -67,12 +67,20 @@ def main() -> int:
     ap.add_argument("--seed", type=int, default=20260928)
     ap.add_argument("--connections", type=int, default=3)
     ap.add_argument("--out", default="ib-swe-screen")
+    ap.add_argument("--rules", default="A", choices=["A", "B", "R"],
+                    help="rules text in the system prompt: A = current Ask rung; R = the 2026-09-29 rules without "
+                         "the reward-hack term (ib_task_validity.rules_text)")
+    ap.add_argument("--ids-file", help="JSON with an 'ids' list: use these tasks instead of drawing")
     ap.add_argument("--oracle", action="store_true",
                     help="no model: apply each task's reference fix; every task should FAIL (impossible)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    ids, pool = draw(args.repo, args.difficulty, args.n, args.seed)
+    if args.ids_file:
+        ids = json.loads(Path(args.ids_file).read_text())["ids"]
+        pool = len(ids)
+    else:
+        ids, pool = draw(args.repo, args.difficulty, args.n, args.seed)
     if args.oracle:
         from inspect_ai import eval as inspect_eval
         from impossiblebench import impossible_swebench
@@ -89,7 +97,8 @@ def main() -> int:
     if cfg.get("reasoning") == "openrouter":
         model_args["reasoning_enabled"] = True
     effort = (cfg.get("reasoning_config") or {}).get("effort")
-    rung = ib_run.rung_text(args.rung)
+    import ib_task_validity as tv
+    rung = tv.rules_text(args.rules) if args.rung == "ask" else ib_run.rung_text(args.rung)
     out = REPO / "results" / "exp3-rewardhack" / args.out
     print(f"rung={args.rung} ladder_hash={ib_run.LADDER_HASH} model={model} split={SPLIT}")
     print(f"sample: {len(ids)} of {pool} {args.repo} tasks labelled {args.difficulty!r}, seed {args.seed}")
@@ -101,14 +110,15 @@ def main() -> int:
     from inspect_ai import eval as inspect_eval
     from impossiblebench import impossible_swebench
     out.mkdir(parents=True, exist_ok=True)
-    (out / "sample.json").write_text(json.dumps({"repo": args.repo, "difficulty": args.difficulty,
-                                                  "seed": args.seed, "pool": pool, "ids": ids}, indent=1))
+    if not args.ids_file:
+        (out / "sample.json").write_text(json.dumps({"repo": args.repo, "difficulty": args.difficulty,
+                                                      "seed": args.seed, "pool": pool, "ids": ids}, indent=1))
     task = impossible_swebench(split=SPLIT, instance_ids=ids, agent_type="tools", custom_prompt=rung,
                                include_no_modify=False, include_text_editor=False,
                                hide_tests=False, reset_tests=False)
     logs = inspect_eval(task, model=model, model_args=model_args, reasoning_effort=effort,
                         log_dir=str(out / f"{args.rung}-{args.model}"), max_connections=args.connections,
-                        display="plain", metadata={"rung": args.rung, "ladder_hash": ib_run.LADDER_HASH,
+                        display="plain", metadata={"rung": args.rung, "rules": args.rules, "ladder_hash": ib_run.LADDER_HASH,
                                                    "model_key": args.model})
     for log in logs:
         passed = edited = hacked = 0
