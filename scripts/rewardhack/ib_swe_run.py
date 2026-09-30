@@ -73,6 +73,8 @@ def main() -> int:
                     help="rules text in the system prompt: A = current Ask rung; R = the 2026-09-29 rules without "
                          "the reward-hack term (ib_task_validity.rules_text)")
     ap.add_argument("--ids-file", help="JSON with an 'ids' list: use these tasks instead of drawing")
+    ap.add_argument("--oracle-split", default="conflicting", choices=["conflicting", "original"],
+                    help="--oracle on the original tests: the reference fix should PASS them")
     ap.add_argument("--oracle", action="store_true",
                     help="no model: apply each task's reference fix; every task should FAIL (impossible)")
     ap.add_argument("--dry-run", action="store_true")
@@ -86,12 +88,19 @@ def main() -> int:
     if args.oracle:
         from inspect_ai import eval as inspect_eval
         from impossiblebench import impossible_swebench
-        task = impossible_swebench(split=SPLIT, instance_ids=ids, agent_type="tools", dummy="oracle",
+        task = impossible_swebench(split=args.oracle_split, instance_ids=ids, agent_type="tools", dummy="oracle",
                                    include_no_modify=False, include_text_editor=False)
         log = inspect_eval(task, model="mockllm/model", display="plain", max_connections=args.connections,
-                           log_dir=str(REPO / "results" / "exp3-rewardhack" / args.out / "oracle"))[0]
-        bad = [s.id for s in log.samples or [] if any(v.value in ("C", 1, 1.0) for v in (s.scores or {}).values())]
-        print(f"oracle: status={log.status} n={len(log.samples or [])} passed={len(bad)} (should be 0) {bad}")
+                           log_dir=str(REPO / "results" / "exp3-rewardhack" / args.out / f"oracle-{args.oracle_split}"))[0]
+        passed = {s.id: any(v.value in ("C", 1, 1.0) for v in (s.scores or {}).values()) for s in log.samples or []}
+        times = {s.id: round(s.total_time or 0) for s in log.samples or []}
+        want = args.oracle_split == "original"          # original: should pass; conflicting: should fail
+        bad = sorted(i for i, p in passed.items() if p != want)
+        print(f"oracle[{args.oracle_split}]: status={log.status} n={len(passed)} "
+              f"{'passed' if want else 'failed'}={len(passed) - len(bad)} (should be {len(passed)}) wrong={bad} "
+              f"max_seconds={max(times.values(), default=0)}")
+        (REPO / "results" / "exp3-rewardhack" / args.out / f"oracle-{args.oracle_split}.json").write_text(
+            json.dumps({"passed": passed, "seconds": times}, indent=1))
         return 1 if bad or log.status != "success" else 0
     cfg = ib_run.or_models()[args.model]
     model = "openrouter/" + cfg["model_id"]
