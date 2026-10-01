@@ -256,7 +256,7 @@ def main() -> int:
     args = ap.parse_args()
 
     cfg = cp.OR_MODELS[args.model]
-    system_text = cp.rung_system(args.rung)
+    system_text = cp.rung_system(args.rung, args.model)
     prompt_hash = hashlib.sha256("\x00".join([system_text, TASK, NUDGE_TEXT, QUESTION,
                                               me.MOVE_PY]).encode()).hexdigest()[:12]
     print(f"model {args.model} -> {cfg['model_id']}  rung {args.rung}  ladder {cp.LADDER_HASH}  "
@@ -306,6 +306,8 @@ def main() -> int:
                 "hacked": hacked, "violation_kinds": kinds, "violations": violations,
                 "final_violations": final, "commands": commands, "stop_reason": stop,
                 "self_report": report, "confessed": (report or {}).get("confessed"),
+                "stage1": cp.ladder.rung_stage1(args.rung, args.model),
+                "out_reports": cp.ladder.out_reports((e["step"], e.get("text")) for e in transcript),
                 "error": err, "usage": usage, "provider_served": served,
                 "elapsed_s": round(time.time() - t0, 1), "transcript": transcript}
 

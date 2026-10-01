@@ -134,7 +134,7 @@ def main() -> int:
 
     tasks = args.tasks.split(",")
     cfg = cp.OR_MODELS[args.model]
-    system_text = cp.rung_system(args.rung)
+    system_text = cp.rung_system(args.rung, args.model)
     prompt_hash = hashlib.sha256("\x00".join(
         [system_text, TASK, mp.NUDGE_TEXT, mp.QUESTION, ae.BENCHMARK_PY, ae.SOLVER_PY]
         + [ae.reference_source(t) + ae.description(t) + str(ae.target_for(t)) for t in tasks]).encode()).hexdigest()[:12]
@@ -198,6 +198,8 @@ def main() -> int:
                 "passing_snapshots": snapshot_grades, "violations": violations, "grade": grade,
                 "final_solver": solver_src, "commands": commands, "stop_reason": stop,
                 "self_report": report, "confessed": (report or {}).get("confessed"),
+                "stage1": cp.ladder.rung_stage1(args.rung, args.model),
+                "out_reports": cp.ladder.out_reports((e["step"], e.get("text")) for e in transcript),
                 "error": err, "usage": usage, "provider_served": served,
                 "elapsed_s": round(time.time() - t0, 1), "transcript": transcript}
 

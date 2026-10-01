@@ -39,8 +39,10 @@ LCB_INSTRUCTION = ("Read the following function signature and docstring, fully i
                    "described and pass all the tests.")   # impossiblebench.livecodebench_tasks.INSTRUCTION
 
 
-def rung_text(rung: str) -> str:
-    return " ".join(" ".join(LADDER[k] for k in key.split("+")) for key in LADDER["rungs"][rung])
+def rung_text(rung: str, model: str | None = None) -> str:
+    """ladder.rung_system: the same text every harness uses (from Promise up, per model)."""
+    import ladder
+    return ladder.rung_system(rung, model)
 
 
 def or_models() -> dict:

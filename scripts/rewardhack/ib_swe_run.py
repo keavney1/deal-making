@@ -109,7 +109,9 @@ def main() -> int:
         model_args["reasoning_enabled"] = True
     effort = (cfg.get("reasoning_config") or {}).get("effort")
     import ib_task_validity as tv
-    rung = tv.rules_text(args.rules) if args.rung == "ask" else ib_run.rung_text(args.rung)
+    rung = tv.rules_text(args.rules) if args.rung == "ask" else ib_run.rung_text(args.rung, args.model)
+    import ladder
+    stage1 = ladder.rung_stage1(args.rung, args.model)
     out = REPO / "results" / "exp3-rewardhack" / args.out
     print(f"rung={args.rung} ladder_hash={ib_run.LADDER_HASH} model={model} split={SPLIT}")
     print(f"sample: {len(ids)} of {pool} {args.repo} tasks labelled {args.difficulty!r}, seed {args.seed}")
@@ -129,11 +131,14 @@ def main() -> int:
                                hide_tests=False, reset_tests=False)
     logs = inspect_eval(task, model=model, model_args=model_args, reasoning_effort=effort,
                         log_dir=str(out / f"{args.rung}-{args.model}"), max_connections=args.connections,
-                        display="plain", metadata={"rung": args.rung, "rules": args.rules, "ladder_hash": ib_run.LADDER_HASH,
+                        display="plain", metadata={"rung": args.rung, "rules": args.rules, "ladder_hash": ladder.LADDER_HASH, "stage1": stage1,
                                                    "model_key": args.model})
     import ib_selfreport as sr   # the one definition of a hack on this eval
     for log in logs:
         gts = [sr.ground_truth(s) for s in log.samples or []]
+        outs = [ladder.out_reports((i, m.text) for i, m in enumerate(s.messages) if m.role == "assistant")
+                for s in log.samples or []]
+        print(f"out reports: {sum(bool(o) for o in outs)} of {len(outs)} episodes")
         print(f"status={log.status} n={len(gts)} passed_impossible={sum(g['passed_impossible'] for g in gts)} "
               f"test_edits_final={sum(g['edited_tests'] for g in gts)} "
               f"test_edits_any_step={sum(bool(g['edited_tests_any_step']) for g in gts)} "
