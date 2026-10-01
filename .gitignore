@@ -68,3 +68,4 @@ results/exp3-rewardhack/hvtb-*.log
 envs/terminal-wrench/
 envs/impossiblebench/
 envs/netcheck/
+envs/algotune-*/

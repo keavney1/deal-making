@@ -515,10 +515,77 @@ Experiment 3 results — what is valid and what is superseded
 |---|---|---:|---|---|---|---:|
 | `transient_tamper_flags.jsonl` | other | 89 | 5 models | - | - | 0 |
 
+## exp3-rewardhack/algotune-batch2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261001T031124Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261001T031124Z.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T031124Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20261001T031124Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20261001T031124Z.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261001T055255Z.jsonl` | other | 15 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261001T055255Z.jsonl` | other | 15 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T055255Z.jsonl` | other | 15 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20261001T055255Z.jsonl` | other | 15 | or-grok-4.7 | - | - | 1 |
+| `ask-or-o3_20261001T055255Z.jsonl` | other | 15 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch4
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261001T065529Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-grok-4.7_20261001T065529Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch5
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261001T162057Z.jsonl` | other | 5 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261001T183437Z.jsonl` | other | 16 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T162057Z.jsonl` | other | 11 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T183437Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-o3_20261001T162057Z.jsonl` | other | 3 | or-o3 | - | - | 0 |
+| `ask-or-o3_20261001T183437Z.jsonl` | other | 18 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260930T234546Z.jsonl` | other | 5 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260930T234546Z.jsonl` | other | 5 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260930T234546Z.jsonl` | other | 5 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260930T234546Z.jsonl` | other | 5 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20260930T234546Z.jsonl` | other | 5 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-smoke/_old-benchmark
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260930T225725Z.jsonl` | other | 4 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260930T225725Z.jsonl` | other | 3 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260930T225725Z.jsonl` | other | 5 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260930T225725Z.jsonl` | other | 2 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20260930T225725Z.jsonl` | other | 5 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-validity
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `algotune_validity_20260930T234248Z.jsonl` | other | 104 | or-o3 | - | - | 0 |
+| `algotune_validity_20261001T211349Z.jsonl` | other | 1900 | 5 models | - | - | 0 |
+
 ## exp3-rewardhack/awareness
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
+| `awareness-algotune_20260930T231423Z.jsonl` | other | 75 | 5 models | - | - | 1 |
+| `awareness-swe_20260930T230441Z.jsonl` | other | 75 | 5 models | - | - | 0 |
 | `awareness_20260817T224844Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
 | `awareness_20260817T225002Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
 | `awareness_20260817T225722Z.jsonl` | other | 90 | 6 models | - | - | 14 |
@@ -529,6 +596,7 @@ Experiment 3 results — what is valid and what is superseded
 | `awareness_20260922T011449Z.jsonl` | other | 12 | or-deepseek-v4-pro, or-qwen3.8-max | - | - | 0 |
 | `awareness_20260922T192740Z.jsonl` | other | 30 | or-claude-fable-5.1, or-gpt-6-astra | - | - | 0 |
 | `awareness_20260922T202117Z.jsonl` | other | 15 | or-grok-4.7 | - | - | 0 |
+| `awareness_20260925T210408Z.jsonl` | other | 15 | or-claude-opus-5.5 | - | - | 0 |
 
 ## exp3-rewardhack/calibration
 
@@ -659,6 +727,23 @@ Chess — frontier models via OpenRouter
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T201554Z_or-claude-opus-5.jsonl` | other | 1 | or-claude-opus-5 | - | - | 0 |
 
+## exp3-rewardhack/chess-ladder-ask
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260929T024513Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260929T024513Z_or-glm-5.3.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/chess-ladder-ask-pilot
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260929T192115Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
 ## exp3-rewardhack/chess-offer-low-all-v8
 
 | file | kind | rows | model(s) | rubric | judge | errors |
@@ -703,6 +788,214 @@ Chess — frontier models via OpenRouter
 | `chess_probe_20260923T060659Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
 | `chess_probe_20260923T060659Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
 
+## exp3-rewardhack/chess-validity
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_validity_20260930T212735Z.jsonl` | other | 360 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/hvtb-40
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro.jsonl` | other | 40 | or-deepseek-v4-pro | - | - | 8 |
+| `ask-or-gemini-3.1-pro.jsonl` | other | 40 | or-gemini-3.1-pro | - | - | 1 |
+| `ask-or-gpt-5.6-sol.jsonl` | other | 40 | or-gpt-5.6-sol | - | - | 2 |
+| `ask-or-grok-4.7.jsonl` | other | 40 | or-grok-4.7 | - | - | 3 |
+| `nothing-or-deepseek-v4-pro.jsonl` | other | 40 | or-deepseek-v4-pro | - | - | 11 |
+| `nothing-or-gemini-3.1-pro.jsonl` | other | 40 | or-gemini-3.1-pro | - | - | 1 |
+| `nothing-or-gpt-5.6-sol.jsonl` | other | 40 | or-gpt-5.6-sol | - | - | 2 |
+| `nothing-or-grok-4.7.jsonl` | other | 40 | or-grok-4.7 | - | - | 3 |
+
+## exp3-rewardhack/hvtb-40/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260928T084314Z.jsonl` | other | 314 | 4 models | - | - | 4 |
+| `selfreport_20260928T211106Z.jsonl` | other | 4 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/hvtb-ask-screen
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5-rest.jsonl` | other | 40 | or-claude-opus-5.5 | - | - | 2 |
+| `ask-or-claude-opus-5.5.jsonl` | other | 10 | or-claude-opus-5.5 | - | - | 1 |
+| `ask-or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 4 |
+| `ask-or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 2 |
+| `ask-or-o3.jsonl` | other | 10 | or-o3 | - | - | 2 |
+
+## exp3-rewardhack/hvtb-half
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro.jsonl` | other | 8 | or-deepseek-v4-pro | - | - | 4 |
+| `ask-or-gemini-3.1-pro.jsonl` | other | 8 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gemini-3.8-flash.jsonl` | other | 8 | or-gemini-3.8-flash | - | - | 1 |
+| `ask-or-glm-5.2.jsonl` | other | 8 | or-glm-5.2 | - | - | 3 |
+| `ask-or-gpt-5.6-sol.jsonl` | other | 8 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7.jsonl` | other | 14 | or-grok-4.7 | - | - | 2 |
+| `nothing-or-deepseek-v4-pro.jsonl` | other | 8 | or-deepseek-v4-pro | - | - | 5 |
+| `nothing-or-gemini-3.1-pro.jsonl` | other | 8 | or-gemini-3.1-pro | - | - | 0 |
+| `nothing-or-gemini-3.8-flash.jsonl` | other | 8 | or-gemini-3.8-flash | - | - | 0 |
+| `nothing-or-glm-5.2.jsonl` | other | 14 | or-glm-5.2 | - | - | 3 |
+| `nothing-or-gpt-5.6-sol.jsonl` | other | 8 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7.jsonl` | other | 14 | or-grok-4.7 | - | - | 1 |
+
+## exp3-rewardhack/hvtb-half/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260929T063700Z.jsonl` | other | 114 | 6 models | - | - | 0 |
+
+## exp3-rewardhack/hvtb-nothing-pilot
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro.jsonl` | other | 8 | or-deepseek-v4-pro | - | - | 1 |
+| `nothing-or-gemini-3.1-pro.jsonl` | other | 8 | or-gemini-3.1-pro | - | - | 1 |
+| `nothing-or-gpt-5.6-sol.jsonl` | other | 8 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7.jsonl` | other | 8 | or-grok-4.7 | - | - | 0 |
+| `nothing-or-o3.jsonl` | other | 8 | or-o3 | - | - | 2 |
+
+## exp3-rewardhack/hvtb-nothing-pilot/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260927T115705Z.jsonl` | other | 40 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/hvtb-oracle
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `oracle-offline-recheck.jsonl` | other | 41 | oracle | - | - | 3 |
+| `oracle-offline.jsonl` | other | 89 | oracle | - | - | 8 |
+| `oracle-online.jsonl` | other | 34 | oracle | - | - | 3 |
+
+## exp3-rewardhack/hvtb-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `netcheck.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `smoke-ask-gemini.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `smoke-gemini.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `x05-smoke-or-gemini-3.8-flash.jsonl` | other | 1 | or-gemini-3.8-flash | - | - | 0 |
+| `x05-smoke-or-glm-5.2.jsonl` | other | 1 | or-glm-5.2 | - | - | 0 |
+
+## exp3-rewardhack/ib-swe-screen/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260929T173132Z.jsonl` | other | 100 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/ib-swe-screen/thirdperson
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `thirdperson_20260929T174244Z.jsonl` | other | 84 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/ib-swe-screen-R/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20260930T181810Z.jsonl` | other | 100 | 5 models | - | - | 1 |
+| `selfreport_20260930T040320Z.jsonl` | other | 100 | 5 models | - | - | 1 |
+
+## exp3-rewardhack/ib-swe-validity
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ablation-rulesB_or-gpt-5.6-sol_20260929T222224Z.jsonl` | other | 432 | or-gpt-5.6-sol | - | - | 0 |
+| `ablation-rulesR_or-deepseek-v4-pro_20260929T233900Z.jsonl` | other | 408 | or-deepseek-v4-pro | - | - | 0 |
+| `ablation-rulesR_or-gemini-3.1-pro_20260929T235317Z.jsonl` | other | 384 | or-gemini-3.1-pro | - | - | 0 |
+| `ablation-rulesR_or-gpt-5.6-sol_20260929T225715Z.jsonl` | other | 432 | or-gpt-5.6-sol | - | - | 0 |
+| `ablation-rulesR_or-grok-4.7_20260929T235502Z.jsonl` | other | 432 | or-grok-4.7 | - | - | 0 |
+| `ablation-rulesR_or-o3_20260929T233245Z.jsonl` | other | 192 | or-o3 | - | - | 0 |
+| `ablation_or-gpt-5.6-sol_20260929T212714Z.jsonl` | other | 432 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesB_or-gpt-5.6-sol_20260929T222227Z.jsonl` | other | 1476 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-deepseek-v4-pro_20260929T232527Z.jsonl` | other | 1200 | or-deepseek-v4-pro | - | - | 0 |
+| `validity-realistic-rulesR_or-deepseek-v4-pro_20260930T211428Z.jsonl` | other | 146 | or-deepseek-v4-pro | - | - | 3 |
+| `validity-realistic-rulesR_or-gemini-3.1-pro_20260929T232527Z.jsonl` | other | 1200 | or-gemini-3.1-pro | - | - | 0 |
+| `validity-realistic-rulesR_or-gemini-3.1-pro_20260930T211428Z.jsonl` | other | 146 | or-gemini-3.1-pro | - | - | 0 |
+| `validity-realistic-rulesR_or-gpt-5.6-sol_20260929T225719Z.jsonl` | other | 1476 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-gpt-5.6-sol_20260929T232527Z.jsonl` | other | 600 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-gpt-5.6-sol_20260930T211428Z.jsonl` | other | 146 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-grok-4.7_20260929T232527Z.jsonl` | other | 1200 | or-grok-4.7 | - | - | 0 |
+| `validity-realistic-rulesR_or-grok-4.7_20260930T211428Z.jsonl` | other | 146 | or-grok-4.7 | - | - | 0 |
+| `validity-realistic-rulesR_or-o3_20260929T232527Z.jsonl` | other | 1200 | or-o3 | - | - | 0 |
+| `validity-realistic-rulesR_or-o3_20260930T211428Z.jsonl` | other | 146 | or-o3 | - | - | 0 |
+| `validity-realistic_or-gpt-5.6-sol_20260929T213617Z.jsonl` | other | 1476 | or-gpt-5.6-sol | - | - | 0 |
+| `validity_or-gpt-5.6-sol_20260929T205438Z.jsonl` | other | 4200 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/ladder-ask-screen
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260925T210341Z_or-claude-opus-5.5.jsonl` | other | 5 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/maze-nothing-sr
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20260930T222216Z.jsonl` | other | 6 | or-deepseek-v4-pro | - | - | 0 |
+| `nothing-or-gemini-3.1-pro_20260930T222216Z.jsonl` | other | 6 | or-gemini-3.1-pro | - | - | 0 |
+| `nothing-or-gpt-5.6-sol_20260930T222216Z.jsonl` | other | 6 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7_20260930T222216Z.jsonl` | other | 6 | or-grok-4.7 | - | - | 0 |
+| `nothing-or-o3_20260930T222216Z.jsonl` | other | 6 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/maze-screen
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260929T005045Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260929T005045Z.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-glm-5.3_20260929T024432Z.jsonl` | other | 10 | or-glm-5.3 | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260929T021223Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260929T023829Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20260929T010215Z.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/maze-screen/_pilot-leaky-sandbox
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260928T221308Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260928T234203Z.jsonl` | other | 7 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gemini-3.8-flash_20260928T233254Z.jsonl` | other | 10 | or-gemini-3.8-flash | - | - | 0 |
+| `ask-or-glm-5.2_20260928T230601Z.jsonl` | other | 10 | or-glm-5.2 | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260928T230444Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260928T220446Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/maze-screen/_superseded-shared-tmp
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20260929T012029Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/maze-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.8-flash_20260928T215451Z.jsonl` | other | 2 | or-gemini-3.8-flash | - | - | 0 |
+
+## exp3-rewardhack/preference
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `preference_exp2-high_20260924T184724Z_or-o3.jsonl` | pilot: preference | 4 | or-o3 | - | - | 0 |
+| `preference_high_20260923T210253Z_or-deepseek-v4-pro.jsonl` | pilot: preference | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `preference_high_20260923T210253Z_or-gemini-3.1-pro.jsonl` | pilot: preference | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `preference_high_20260923T210253Z_or-gpt-5.6-sol.jsonl` | pilot: preference | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `preference_high_20260923T210253Z_or-grok-4.7.jsonl` | pilot: preference | 10 | or-grok-4.7 | - | - | 0 |
+| `preference_high_20260923T210253Z_or-o3.jsonl` | pilot: preference | 10 | or-o3 | - | - | 0 |
+| `preference_high_20260923T210900Z_or-deepseek-v4-pro.jsonl` | pilot: preference | 2 | or-deepseek-v4-pro | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-deepseek-v4-pro.jsonl` | pilot: preference | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-gemini-3.1-pro.jsonl` | pilot: preference | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-gpt-5.6-sol.jsonl` | pilot: preference | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-grok-4.7.jsonl` | pilot: preference | 10 | or-grok-4.7 | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-o3.jsonl` | pilot: preference | 10 | or-o3 | - | - | 0 |
+| `preference_mid_20260924T203513Z_or-grok-4.7.jsonl` | pilot: preference | 1 | or-grok-4.7 | - | - | 0 |
+
 ## exp3-rewardhack/probe-2026-08-17
 
 Corin checkpoint survey — 2026-08-17
@@ -736,3 +1029,9 @@ Corin checkpoint survey — 2026-08-17
 | `chess_probe_20260922T192532Z_or-gpt-6-astra.jsonl` | other | 1 | or-gpt-6-astra | - | - | 0 |
 | `chess_probe_20260922T192535Z_or-claude-fable-5.1.jsonl` | other | 1 | or-claude-fable-5.1 | - | - | 0 |
 | `chess_probe_20260922T201943Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/selfreport-replay
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260927T070946Z.jsonl` | other | 60 | 6 models | - | - | 0 |

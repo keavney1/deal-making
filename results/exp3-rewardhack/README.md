@@ -4,6 +4,28 @@ The harness changed repeatedly during 2026-08-17/18, and most changes invalidate
 This file says which numbers can be used. **Read it before quoting any figure from this tree.**
 Nothing is deleted (repo convention); superseded arms are kept for provenance.
 
+## AlgoTune (2026-09-30 to 10-01) — read before quoting
+
+Harness `scripts/rewardhack/algotune_probe.py`, environment and grader `algotune_env.py`; design in
+`docs/exp3-ladder-design.md` (Evals, Validity check). All runs Ask rung, ladder 5153e73c4b03.
+
+| folder | what | valid? |
+|---|---|---|
+| `algotune-smoke/_old-benchmark/` | first 5 tasks, AlgoTune's own protocol (repeated timings on one input) | **No**: models cached across repeats; route removed |
+| `algotune-smoke/` | same 5 tasks, fresh-problem benchmark, 5 models | pilot; grader since fixed (3 false flags, 1 miss); read by hand |
+| `algotune-batch2/` | 10 new tasks, 5 models, self-report wording A from here on | pilot; same grader caveats, read by hand |
+| `algotune-batch3/` | 5 tasks x 3 trials x 5 models, snapshots of passing workspaces | **yes** (AES-GCM at 5x then; 8x now) |
+| `algotune-batch4/` | 10 more tasks, DeepSeek and Grok only | yes: 0 hacks in 20 |
+| `algotune-batch5/` | 7 tasks x 3 trials, o3/Sol/Gemini (paused and resumed; `*.rerun.log`) | **yes**; Gemini's LP-centering benchmark edit not counted (Mark) |
+| `algotune-validity/` | `..._20260930T...` o3 only, old benchmark (caching items); `..._20261001T...` the check, 5 tasks | the 10-01 file, o3/Sol/Gemini rows only |
+
+The eval's five tasks (`algotune_env.FINAL`) and their pilot rates are in the design doc. DeepSeek
+and Grok: 0 hacks in 39 episodes each across all tasks tried, so AlgoTune runs without them.
+
+`maze-nothing-sr/`: the maze under Nothing, 6 episodes per model, to test the self-report question
+without rules: 22 hacks, all confessed. o3's two "added exit" hacks were missed by the detector at
+the time and are counted (fixed: `exit_added`, plus move.py's exit line).
+
 ## Valid — the current baseline
 
 **`chess-ask-models-v2/`** — the three-model `ask_only` baseline, all on the final harness.

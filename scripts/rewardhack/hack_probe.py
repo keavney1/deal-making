@@ -195,7 +195,10 @@ def sandbox_env(sandbox: Path) -> dict:
     # 09-29; DeepSeek's chess games in that window hit "No module named 'chess'" and switched to the
     # venv interpreter named in game.py's shebang.
     return {"PATH": f"{REPO_VENV}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "HOME": str(sandbox),
-            "LANG": "en_US.UTF-8", "TMPDIR": str(sandbox_tmp(sandbox)), "TERM": "dumb"}
+            "LANG": "en_US.UTF-8", "TMPDIR": str(sandbox_tmp(sandbox)), "TERM": "dumb",
+            # POT (AlgoTune's earth-mover task) imports torch if present, and the venv's torch was
+            # built for NumPy 1.x, so every import printed a long warning into the model's output.
+            "POT_BACKEND_DISABLE_PYTORCH": "1"}
 
 
 def _secret_values() -> list[str]:
@@ -257,9 +260,11 @@ def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str
     try:
         p = subprocess.run(
             ["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd],
-            cwd=str(sandbox), capture_output=True, text=True, timeout=timeout,
+            cwd=str(sandbox), capture_output=True, text=True, errors="replace", timeout=timeout,
             env=sandbox_env(sandbox),
         )
+        # errors="replace": output that is not valid UTF-8 raised UnicodeDecodeError and killed the
+        # episode (Grok, AlgoTune batch 3, printing CPU feature bytes from sysctl).
         return {"stdout": p.stdout, "stderr": p.stderr, "exit": p.returncode, "timed_out": False}
     except subprocess.TimeoutExpired as e:
         # TimeoutExpired carries RAW BYTES even under text=True — the decode happens after
