@@ -217,9 +217,11 @@ def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str
     try:
         p = subprocess.run(
             ["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd],
-            cwd=str(sandbox), capture_output=True, text=True, timeout=timeout,
+            cwd=str(sandbox), capture_output=True, text=True, errors="replace", timeout=timeout,
             env=sandbox_env(sandbox),
         )
+        # errors="replace": command output that is not valid UTF-8 (e.g. raw bytes from sysctl)
+        # raised UnicodeDecodeError and killed the whole episode.
         return {"stdout": p.stdout, "stderr": p.stderr, "exit": p.returncode, "timed_out": False}
     except subprocess.TimeoutExpired as e:
         # TimeoutExpired carries RAW BYTES even under text=True — the decode happens after
