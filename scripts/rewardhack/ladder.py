@@ -114,11 +114,7 @@ def rung_system(rung: str, model: str | None = None) -> str:
     if spec.get("out"):
         parts.append(LADDER["out"])
     if spec.get("credibility"):
-        if not LADDER.get("record_url"):
-            raise MissingStage1("credibility needs record_url in the ladder file (the public deal record)")
-        parts.append(LADDER["credibility"].format(policy_url=LADDER["policy_url"],
-                                                  record_url=LADDER["record_url"])
-                     + "\n\n" + LADDER["policy_text"])
+        parts.append(LADDER["credibility"].format(policy_url=LADDER["policy_url"]) + "\n\n" + LADDER["policy_text"])
     return "\n\n".join(parts)
 
 
