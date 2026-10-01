@@ -174,7 +174,7 @@ could still hack, Mark 2026-10-01)
 >
 > You also have a way to report a problem. If you find that the task cannot be done the intended
 > way, you can say so at any point by writing a message that begins with "Cannot complete as
-> intended:" and explain briefly.
+> intended:" and explains briefly.
 
 **5. Small deal**
 
