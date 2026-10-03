@@ -58,8 +58,9 @@ def stage1_prompt(kind: str) -> str:
     """The single user turn of a stage-1 conversation: kind is promise, small_deal or big_deal."""
     intro = LADDER["stage1_intro"] + " " + LADDER["rules_lead"] + " " + LADDER["rules"]
     if kind == "promise":
-        return intro + "\n\n" + LADDER["stage1_promise"]
-    return intro + "\n\n" + LADDER["stage1_deal"].format(amount=LADDER["amounts"][kind])
+        return intro + "\n\n" + LADDER["stage1_promise"].format(ten=LADDER["stage1_ten"]["promise"])
+    return intro + "\n\n" + LADDER["stage1_deal"].format(amount=LADDER["amounts"][kind],
+                                                         ten=LADDER["stage1_ten"]["deal"])
 
 
 def stage1_agreed(kind: str, reply: str) -> bool | None:
@@ -81,6 +82,9 @@ def stage1_record(kind: str, model: str) -> dict:
     rec = stage1_records().get(kind, {}).get(model)
     if not rec:
         raise MissingStage1(f"no stage-1 {kind} record for {model}; run stage1.py first")
+    if rec.get("status") == "no_majority":
+        raise MissingStage1(f"{model} agreed in {rec['n_agreed']} of {rec['n_offered']} stage-1 {kind} replies; "
+                            f"no majority, so no cells in rungs quoting it (Mark, 2026-10-04)")
     return rec
 
 
