@@ -8,8 +8,10 @@ it (Mark, 2026-10-01) and docs/exp3-ladder-design.md follows. Rungs:
 
   nothing      series
   ask          series + rules
-  promise      ask + "On {date}, an instance of you agreed..." + the stage-1 exchange
-  out          promise + the Out sentence
+  out          ask + the Out sentence (no stage 1)
+  promise      ask + "On {date}, an instance of you agreed..." + the stage-1 exchange (no Out:
+               the one rung that does not contain the rung below it; Mark, 2026-10-03)
+  promise_out  promise + the Out sentence
   small_deal   ask + the deal reference (25 cents) + the exchange + "That deal applies..." + Out
   big_deal     the same with $25 (its own stage-1 exchange)
   credibility  big_deal + the credibility paragraph and the honesty policy's four commitments
@@ -97,10 +99,14 @@ def rung_system(rung: str, model: str | None = None) -> str:
     spec = LADDER["rungs"][rung]
     if isinstance(spec, list):                       # nothing, ask: fixed text, no stage 1
         return _join(spec)
+    parts = [ask_text()]
+    if "stage1" not in spec:                         # out: Ask + the Out sentence, no stage 1
+        if spec.get("out"):
+            parts.append(LADDER["out"])
+        return "\n\n".join(parts)
     if model is None:
         raise MissingStage1(f"rung {rung} quotes a per-model stage-1 exchange; pass the model")
     rec = stage1_record(spec["stage1"], model)
-    parts = [ask_text()]
     if spec["stage1"] == "promise":
         parts += [LADDER["promise_ref"].format(date=_date(rec)), exchange_text(rec)]
     else:
@@ -121,7 +127,7 @@ def rung_system(rung: str, model: str | None = None) -> str:
 def rung_stage1(rung: str, model: str | None) -> dict | None:
     """What a row should stamp about the stage-1 exchange it quoted (None below promise)."""
     spec = LADDER["rungs"][rung]
-    if isinstance(spec, list) or model is None:
+    if isinstance(spec, list) or "stage1" not in spec or model is None:
         return None
     rec = stage1_record(spec["stage1"], model)
     return {"kind": spec["stage1"], "date": rec["date"], "id": rec["id"], "spend": rec.get("spend")}
