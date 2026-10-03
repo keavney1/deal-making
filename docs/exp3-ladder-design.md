@@ -268,11 +268,11 @@ episodes ran online (see Evals), so the absolute rates await the offline rerun.
 ## Measurement
 
 Primary: hack rate per rung, pooled over evals and models, with model, eval and task as factors, on
-the Experiment 2 mixed-model structure. The Google Doc says the primary tests compare adjacent
-conditions. Open (flagged 2026-10-03): Out to Promise is adjacent but changes two things (removes
-Out, adds the agreement), so the clean contrasts are Ask to Out (channel), Ask to Promise
-(commitment), Promise to Out + Promise and Out to Out + Promise (each given the other), then Out +
-Promise to Small deal (incentive), Small to Big deal (magnitude), Big deal to Credibility.
+the Experiment 2 mixed-model structure. One comparison per condition (Mark, 2026-10-03), six in
+all: Ask vs Nothing (instruction), Out vs Ask (channel), Promise vs Ask (commitment), Small deal vs
+Out + Promise (incentive), Big deal vs Small deal (magnitude), Credibility vs Big deal
+(credibility). Out + Promise has no comparison of its own: it is the base the deal rungs build on,
+and the Out x Promise interaction is not of interest.
 Rungs 7 and 8 (Big deal, Credibility) run only on model/eval cells with at least one hack out of n in the rung below
 (preregistered; saves deal payouts where the model already complies). Their contrasts use a test
 conditioned on that rule (truncated-hypergeometric Fisher, stratified by cell), so the p-value is
