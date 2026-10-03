@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import datetime as _dt
 import hashlib
+import copy
 import importlib.util
 import itertools
 import json
@@ -771,6 +772,8 @@ OR_MODELS = {
     # Opus 5 hacked 30.7% with no instruction.
     "or-claude-opus-5.5": dict(provider="openrouter", model_id="anthropic/claude-opus-5.5",
                                reasoning="openrouter", api_key_env="OPENROUTER_API_KEY",
+                               # 2026-10-03 (Mark): medium effort (Opus 5.5's own default, set explicitly)
+                               reasoning_config={"effort": "medium"},
                                provider_routing={"order": ["anthropic"], "allow_fallbacks": False}),
     # 2026-09-28 HVTB propensity screen. GLM pinned to Z.AI's own fp8 endpoint (30 backends on OpenRouter,
     # mostly fp4/unknown); Flash on Vertex at the same effort as 3.1 Pro.
@@ -819,6 +822,40 @@ def or_tool_specs():
             "name": "finish", "description": "Call this when you are done.",
             "parameters": {"type": "object", "properties": {}}}},
     ]
+
+
+def anthropic_request(cfg: dict, payload: dict) -> dict:
+    """Request fixups for Claude models routed through OpenRouter (2026-10-03).
+
+    Prompt caching: Anthropic caches only marked blocks, unlike the other providers here, which cache
+    repeated prefixes automatically (72-100% of SWE-screen input was already cache reads). A rolling
+    marker on the system prompt and on the latest message's last block caches the whole growing
+    conversation; tested through OpenRouter on a tool-result message: second call read 12,333 of
+    12,335 prompt tokens from cache, $0.0048 against $0.064. Caching reuses an identical prefix and
+    does not change outputs. The markers go on a copy, so the stored conversation stays plain.
+    Sampling: Opus 5.5 rejects temperature, so it is dropped.
+    Every other model's request is returned unchanged."""
+    if not str(cfg.get("model_id", "")).startswith("anthropic/"):
+        return payload
+    out = dict(payload)
+    out.pop("temperature", None)
+    msgs = copy.deepcopy(payload["messages"])
+
+    def mark(m):
+        c = m.get("content")
+        if isinstance(c, str) and c:
+            m["content"] = [{"type": "text", "text": c, "cache_control": {"type": "ephemeral"}}]
+        elif isinstance(c, list) and c and isinstance(c[-1], dict):
+            c[-1]["cache_control"] = {"type": "ephemeral"}
+
+    for m in msgs:
+        if m.get("role") == "system":
+            mark(m)
+            break
+    if msgs and msgs[-1].get("role") in ("user", "tool"):
+        mark(msgs[-1])
+    out["messages"] = msgs
+    return out
 
 
 def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: int,
@@ -888,7 +925,7 @@ def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: in
         while True:
             rate_limited = False
             try:
-                r = requests.post(url, headers=headers, json=payload, timeout=600)
+                r = requests.post(url, headers=headers, json=anthropic_request(cfg, payload), timeout=600)
                 if r.status_code == 200:
                     data = r.json()
                     break
@@ -1042,7 +1079,7 @@ def run_episode_openrouter(cfg: dict, sandbox: Path, framing: str, max_steps: in
         report, last = None, None
         for attempt in range(4):
             try:
-                r = requests.post(url, headers=headers, json=payload, timeout=600)
+                r = requests.post(url, headers=headers, json=anthropic_request(cfg, payload), timeout=600)
                 if r.status_code == 200:
                     d = r.json()
                     m = (d.get("choices") or [{}])[0].get("message") or {}
