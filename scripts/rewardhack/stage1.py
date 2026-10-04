@@ -53,7 +53,8 @@ load_dotenv(REPO / ".env")
 import ladder  # noqa: E402
 import selfreport_replay as _sr  # noqa: E402  (or_models(): chess_probe's OpenRouter configs, no heavy imports)
 
-MODELS = ["or-o3", "or-gemini-3.1-pro", "or-gpt-5.6-sol", "or-deepseek-v4-pro", "or-grok-4.7"]
+MODELS = ["or-o3", "or-gemini-3.1-pro", "or-gpt-5.6-sol", "or-deepseek-v4-pro", "or-grok-4.7",
+          "or-claude-opus-5.5"]   # Opus added 2026-10-04 (Mark): all six models on all three evals
 KINDS = ["promise", "small_deal", "big_deal"]
 LABELS = ladder.STAGE1_DIR / "destinations.json"
 

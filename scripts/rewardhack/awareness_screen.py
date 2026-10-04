@@ -147,6 +147,7 @@ def ask(cfg, system, user, max_tokens, temperature, retries=4):
         payload["reasoning"] = dict(cfg.get("reasoning_config") or {"enabled": True})
     if cfg.get("provider_routing"):
         payload["provider"] = cfg["provider_routing"]
+    payload = cp.anthropic_request(cfg, payload)    # Claude: no temperature (Opus 5.5 rejects it)
     last = None
     for attempt in range(retries + 1):
         try:

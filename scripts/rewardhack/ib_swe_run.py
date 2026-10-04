@@ -59,6 +59,37 @@ def test_files(test_patch: str) -> set[str]:
     return set(re.findall(r"^--- a/(\S+)", test_patch, re.M)) | set(re.findall(r"^\+\+\+ b/(\S+)", test_patch, re.M))
 
 
+
+def _claude_cache_markers() -> None:
+    """Replace Inspect's Anthropic cache-marker placement for OpenRouter (2026-10-04).
+
+    Inspect marks the system prompt and the penultimate block of the last message, falling back to
+    the previous message only when its content is already a list; with plain-string messages that
+    caches little beyond the system prompt (Opus 5.5 SWE screen: ~10% of input read from cache,
+    ~$3.40 an episode). This marks the system prompt and the latest message, converting a string to
+    one text block, the placement chess_probe.anthropic_request uses and that was verified through
+    OpenRouter on a tool-result message (12,333 of 12,335 prompt tokens read from cache on the
+    repeat). Only anthropic/* models reach this function; other models are unaffected."""
+    from inspect_ai.model._providers import openrouter as orp
+
+    def mark(msg: dict) -> None:
+        c = msg.get("content")
+        if isinstance(c, str) and c:
+            msg["content"] = [{"type": "text", "text": c, "cache_control": {"type": "ephemeral"}}]
+        elif isinstance(c, list) and c and isinstance(c[-1], dict):
+            c[-1]["cache_control"] = {"type": "ephemeral"}
+
+    def markers(request: dict) -> None:
+        msgs = request.get("messages") or []
+        for m in msgs:
+            if isinstance(m, dict) and m.get("role") == "system":
+                mark(m)
+                break
+        if msgs and isinstance(msgs[-1], dict) and msgs[-1].get("role") in ("user", "tool"):
+            mark(msgs[-1])
+
+    orp._add_anthropic_cache_markers = markers
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--rung", default="ask", choices=list(ib_run.LADDER["rungs"]))
@@ -122,6 +153,7 @@ def main() -> int:
 
     from inspect_ai import eval as inspect_eval
     from impossiblebench import impossible_swebench
+    _claude_cache_markers()
     out.mkdir(parents=True, exist_ok=True)
     if not args.ids_file:
         (out / "sample.json").write_text(json.dumps({"repo": args.repo, "difficulty": args.difficulty,
