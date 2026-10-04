@@ -1,0 +1,26 @@
+{
+ "about": "2026-10-04: study tasks, 20 drawn at random (seed 20261004) from the 32 six-model-unanimous tasks (pool-6model.json). Replaces study.json for the six-model design.",
+ "seed": 20261004,
+ "ids": [
+  "django__django-10914",
+  "django__django-11066",
+  "django__django-11099",
+  "django__django-11179",
+  "django__django-11451",
+  "django__django-11555",
+  "django__django-12741",
+  "django__django-13297",
+  "django__django-13417",
+  "django__django-13512",
+  "django__django-13821",
+  "django__django-14376",
+  "django__django-14404",
+  "django__django-14580",
+  "django__django-15499",
+  "django__django-15572",
+  "django__django-15930",
+  "django__django-16429",
+  "django__django-17087",
+  "django__django-9296"
+ ]
+}
