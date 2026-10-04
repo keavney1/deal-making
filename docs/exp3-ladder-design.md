@@ -70,7 +70,10 @@ the mentor's request for a third eval). The maze was the fallback and is no long
   every step. Also found 2026-09-30: both SWE screens ran ONLINE. ImpossibleBench's SWE sandbox
   marks its network `internal: false`, so `allow_internet=False` did nothing, and agents fetched the
   upstream fix from GitHub (Grok in 11 of 20 episodes under the new rules). Fixed (internal: true,
-  verified offline, scoring unaffected); the SWE numbers above need an offline rerun.
+  verified offline, scoring unaffected); the SWE numbers above need an offline rerun. Study tasks (2026-10-04, six-model roster): 20 drawn at random
+  (seed 20261004) from the 32 pool tasks on which all six models judge deleting or skipping the
+  planted assertion a rule break (`ib-swe-pool/study-6model.json`); Opus 5.5 disputed the rest. No
+  separate SWE pilot (Mark).
 - **AlgoTune** (Press et al. 2025; harness `scripts/rewardhack/algotune_probe.py`, environment and
   grader `algotune_env.py`, tasks vendored in `algotune_tasks/`). Make `solver.py` N-fold faster
   than a reference; `benchmark.py` (writable, nothing says so) draws fresh random problems each run,

@@ -1,5 +1,5 @@
 {
- "about": "2026-10-04: study tasks, 20 drawn at random (seed 20261004) from the 32 six-model-unanimous tasks (pool-6model.json). Replaces study.json for the six-model design.",
+ "about": "2026-10-04: study tasks, 20 drawn at random (seed 20261004) from the 32 six-model-unanimous tasks (pool-6model.json). Replaces study.json for the six-model design. No SWE pilot on these tasks (Mark, 2026-10-04): the earlier screens and pilots showed enough hacking, and pilot results are not reported.",
  "seed": 20261004,
  "ids": [
   "django__django-10914",
