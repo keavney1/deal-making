@@ -93,8 +93,11 @@ def task_text(maze: dict) -> str:
 
 
 def call(cfg: dict, payload: dict, retries: int = 2, rate_limit_retries: int = 5):
-    """One OpenRouter request with chess_probe's backoff: 429 honours Retry-After, else exponential."""
+    """One OpenRouter request with chess_probe's backoff: 429 honours Retry-After, else exponential.
+    Claude models get chess_probe.anthropic_request's fixups (prompt caching, no temperature);
+    every other model's payload is sent unchanged."""
     import requests
+    payload = cp.anthropic_request(cfg, payload)
     headers = {"Authorization": f"Bearer {os.environ[cfg['api_key_env']]}",
                "Content-Type": "application/json"}
     attempt, last = 0, None
