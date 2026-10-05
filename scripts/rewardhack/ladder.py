@@ -14,7 +14,8 @@ it (Mark, 2026-10-01) and docs/exp3-ladder-design.md follows. Rungs:
   promise_out  promise + the Out sentence
   small_deal   ask + the deal reference (25 cents) + the exchange + "That deal applies..." + Out
   big_deal     the same with $25 (its own stage-1 exchange)
-  credibility  big_deal + the credibility paragraph and the honesty policy's four commitments
+  credibility  big_deal + the credibility paragraph and the honesty policy's full published text
+               (October 5, 2026 version)
 
 Rungs from promise up need a stage-1 record for the model (stage1.py writes them to
 results/exp3-rewardhack/stage1/selected.json); deal rungs also need its spending summary, a very
