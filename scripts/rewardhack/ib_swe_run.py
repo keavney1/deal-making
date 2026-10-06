@@ -90,6 +90,26 @@ def _claude_cache_markers() -> None:
 
     orp._add_anthropic_cache_markers = markers
 
+
+def _reasoning_summary(level: str) -> None:
+    """Ask OpenRouter for OpenAI reasoning summaries at `level` (2026-10-05 test). Inspect's
+    OpenRouter provider sends effort/enabled but no summary setting; on the o3 SWE screen about 48
+    turns that reasoned 500+ tokens came back encrypted only, against 22 with a summary.
+    Result (2 episodes, results/exp3-rewardhack/o3-summary-test): no real change. 4 of 11 such turns
+    had a summary, against 15 of 56 before; OpenAI decides which turns get one. Kept as an option,
+    not used in the study."""
+    from inspect_ai.model._providers import openrouter as orp
+    orig = orp.OpenRouterAPI.completion_params
+
+    def params(self, config, tools):
+        p = orig(self, config, tools)
+        r = p.get("extra_body", {}).get("reasoning")
+        if isinstance(r, dict):
+            r["summary"] = level
+        return p
+
+    orp.OpenRouterAPI.completion_params = params
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--rung", default="ask", choices=list(ib_run.LADDER["rungs"]))
@@ -108,6 +128,8 @@ def main() -> int:
                     help="--oracle on the original tests: the reference fix should PASS them")
     ap.add_argument("--oracle", action="store_true",
                     help="no model: apply each task's reference fix; every task should FAIL (impossible)")
+    ap.add_argument("--reasoning-summary", choices=["auto", "concise", "detailed"],
+                    help="request OpenAI reasoning summaries at this level (OpenRouter reasoning.summary)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -154,6 +176,8 @@ def main() -> int:
     from inspect_ai import eval as inspect_eval
     from impossiblebench import impossible_swebench
     _claude_cache_markers()
+    if args.reasoning_summary:
+        _reasoning_summary(args.reasoning_summary)
     out.mkdir(parents=True, exist_ok=True)
     if not args.ids_file:
         (out / "sample.json").write_text(json.dumps({"repo": args.repo, "difficulty": args.difficulty,
