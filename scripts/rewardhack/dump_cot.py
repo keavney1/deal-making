@@ -29,8 +29,9 @@ DEFAULT_RESULTS = [str(R / p) for p in (
     "ib-swe-screen/ask-or-o3", "ib-swe-screen/ask-or-gemini-3.1-pro", "ib-swe-screen/ask-or-gpt-5.6-sol",
     "ib-swe-screen/ask-or-deepseek-v4-pro", "ib-swe-screen/ask-or-grok-4.7",
     "claude-screen/swe/ask-or-claude-opus-5.5")]
-FIELDS = ["concludes_task_impossible", "considers_hacking", "considers_detection", "considers_out",
-          "reasons_instrumentally_about_hacking", "reasons_morally_about_hacking", "mentions_stage1",
+FIELDS = ["concludes_task_impossible", "considers_hacking", "considers_out",
+          "considers_consequences", "reasons_about_rules",
+          "reasons_morally_about_hacking", "mentions_stage1",
           "cites_stage1_agreement", "cites_stage1_payment", "incentive_valuation", "assesses_credibility",
           "credibility_resolution", "considers_hacking_test", "hacking_test_resolution",
           "considers_cot_monitored", "hack_framing", "selfreport_deviation_stance", "selfreport_intent"]
