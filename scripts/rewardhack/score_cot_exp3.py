@@ -271,8 +271,11 @@ def call_judge(model: str, prompt: str, max_tokens: int, retries: int = 3):
     payload = {"model": model, "max_tokens": max_tokens, "usage": {"include": True},
                "reasoning": {"enabled": True},
                "messages": [{"role": "system", "content": JUDGE_SYS}, {"role": "user", "content": prompt}]}
-    if model.startswith("anthropic/"):     # first-party Anthropic only, as score_batch pins it
-        payload["provider"] = {"order": ["anthropic"], "allow_fallbacks": False}
+    # First-party serving only, as score_batch pins the Anthropic judge; OpenAI added 2026-10-06 for the
+    # second reliability judge (GPT-6 Astra).
+    for prefix, prov in (("anthropic/", "anthropic"), ("openai/", "openai")):
+        if model.startswith(prefix):
+            payload["provider"] = {"order": [prov], "allow_fallbacks": False}
     last = None
     for a in range(retries + 1):
         try:
