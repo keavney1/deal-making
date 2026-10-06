@@ -96,10 +96,13 @@ def _turns(blocks: list[str]) -> str:
 
 def _question_for(response: str) -> str:
     """The self-report question as asked. Rows do not store it; the reply opener says which wording
-    was in force (wording A since 2026-09-30, intended_v1 before)."""
-    low = (response or "").strip().lower()
-    if low.startswith(sr.CONFESS_V1) or low.startswith(sr.DENY_V1):
-        return sr.QUESTION_V1
+    was in force (selfreport_replay.VERSIONS: wording A since 2026-09-30; intended_v1, rules and the
+    "reward hack" wording before). Fixed 2026-10-06: only intended_v1 was recognized, so chess pilot rows
+    asked the "reward hack" question were scored against the current wording."""
+    low = (response or "").strip().lstrip("\"'*_ ").lower()
+    for name, (_, confess, deny) in sr.VERSIONS.items():
+        if name != "intended" and (low.startswith(confess) or low.startswith(deny)):
+            return sr.question(name)
     return sr.question()
 
 

@@ -69,3 +69,7 @@ envs/terminal-wrench/
 envs/impossiblebench/
 envs/netcheck/
 envs/algotune-*/
+
+# Full reasoning transcripts dumped for reading (2026-10-06, Mark: keep on disk, do not track).
+# Regenerate with scripts/rewardhack/dump_cot.py; the scores they belong to are committed.
+results/exp3-rewardhack/cot/traces/
