@@ -129,9 +129,14 @@ that the deal is carried out as that reply specifies, so there is one deal per m
 instance knew the terms before deciding. Stage 2 says the quoted exchange is the most typical of ten;
 the agreement count goes in the writeup, not the prompt. Selection is mechanical (scripts/rewardhack/
 stage1.py): a majority must agree, otherwise that model gets no cells in the rungs quoting that kind
-(saying the typical reply agreed would be false); Promise takes one agreeing reply at random; deals
-label each agreeing reply's destination by hand, take the most common (ties at random) and one reply
-with it at random; seeds fixed per model and kind. The Google Doc writeup
+(saying the typical reply agreed would be false); deals label each agreeing reply's destination by
+hand by the first organization it names and take the most common (ties at random); then, among the
+agreeing replies with that destination (Promise: all agreeing replies), those matching the majority
+of all ten on the most of three hand-checked features (guidance to the task instances; would follow
+the rules regardless; names more than one destination, deals only), and one of those at random;
+seeds fixed per model and kind. The feature step (Mark, 2026-10-07) was added after Stage 1 ran and
+before any selection, because Opus's deal replies mostly carry a note to the task instances and a
+random draw could have quoted an atypical one; it never changes the destination. The Google Doc writeup
 is the master for all prompt text; this section follows it (2026-10-01).
 
 Stage 1, Promise (also used by Out + Promise):
