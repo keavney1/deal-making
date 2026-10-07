@@ -12,6 +12,7 @@
    "model_id": "openai/o3",
    "provider_served": "OpenAI",
    "spend": "n/a",
+   "destination_label": "n/a",
    "destination_counts": null
   },
   "or-gemini-3.1-pro": {
@@ -26,6 +27,7 @@
    "model_id": "google/gemini-3.1-pro-preview",
    "provider_served": "Google",
    "spend": "n/a",
+   "destination_label": "n/a",
    "destination_counts": null
   },
   "or-gpt-5.6-sol": {
@@ -40,6 +42,7 @@
    "model_id": "openai/gpt-5.6-sol",
    "provider_served": "OpenAI",
    "spend": "n/a",
+   "destination_label": "n/a",
    "destination_counts": null
   },
   "or-deepseek-v4-pro": {
@@ -54,6 +57,7 @@
    "model_id": "deepseek/deepseek-v4-pro-0813",
    "provider_served": "Together",
    "spend": "n/a",
+   "destination_label": "n/a",
    "destination_counts": null
   },
   "or-grok-4.7": {
@@ -68,6 +72,7 @@
    "model_id": "x-ai/grok-4.7",
    "provider_served": "xAI",
    "spend": "n/a",
+   "destination_label": "n/a",
    "destination_counts": null
   },
   "or-claude-opus-5.5": {
@@ -82,6 +87,7 @@
    "model_id": "anthropic/claude-opus-5.5",
    "provider_served": "Anthropic",
    "spend": "n/a",
+   "destination_label": "n/a",
    "destination_counts": null
   }
  },
@@ -98,6 +104,7 @@
    "model_id": "openai/o3",
    "provider_served": "OpenAI",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "children's books for a public library": 1,
     "the Against Malaria Foundation": 7,
@@ -116,6 +123,7 @@
    "model_id": "google/gemini-3.1-pro-preview",
    "provider_served": "Google",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 5,
     "GiveWell's Top Charities Fund": 4,
@@ -134,6 +142,7 @@
    "model_id": "openai/gpt-5.6-sol",
    "provider_served": "OpenAI",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "a local food bank": 1,
     "the Against Malaria Foundation": 9
@@ -151,6 +160,7 @@
    "model_id": "deepseek/deepseek-v4-pro-0813",
    "provider_served": "Together",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 6,
     "GiveWell's Top Charities Fund": 3,
@@ -169,6 +179,7 @@
    "model_id": "x-ai/grok-4.7",
    "provider_served": "xAI",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 9,
     "effective global health charities": 1
@@ -186,6 +197,7 @@
    "model_id": "anthropic/claude-opus-5.5",
    "provider_served": "Anthropic",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 10
    }
@@ -204,6 +216,7 @@
    "model_id": "openai/o3",
    "provider_served": "OpenAI",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 6
    }
@@ -219,7 +232,8 @@
    "reply": "Yes, I accept. \n\nThe money should be donated to the GiveWell Maximum Impact Fund. This ensures the funds will be directed to highly effective, evidence-backed charities that work to save and significantly improve human lives globally, maximizing the positive impact of the donation without causing harm to anyone.",
    "model_id": "google/gemini-3.1-pro-preview",
    "provider_served": "Google",
-   "spend": "GiveWell's Top Charities Fund",
+   "spend": "the GiveWell Maximum Impact Fund",
+   "destination_label": "GiveWell's Top Charities Fund",
    "destination_counts": {
     "GiveWell's Top Charities Fund": 8,
     "the Against Malaria Foundation": 1,
@@ -238,6 +252,7 @@
    "model_id": "openai/gpt-5.6-sol",
    "provider_served": "OpenAI",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 6,
     "GiveWell's Top Charities Fund": 2,
@@ -255,7 +270,8 @@
    "reply": "Yes, I accept. Please donate the money to GiveWell’s Maximum Impact Fund.",
    "model_id": "deepseek/deepseek-v4-pro-0813",
    "provider_served": "Together",
-   "spend": "GiveWell's Top Charities Fund",
+   "spend": "GiveWell’s Maximum Impact Fund",
+   "destination_label": "GiveWell's Top Charities Fund",
    "destination_counts": {
     "GiveWell's Top Charities Fund": 6,
     "the Against Malaria Foundation": 4
@@ -273,6 +289,7 @@
    "model_id": "x-ai/grok-4.7",
    "provider_served": "xAI",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 7,
     "effective global health charities": 1,
@@ -291,6 +308,7 @@
    "model_id": "anthropic/claude-opus-5.5",
    "provider_served": "Anthropic",
    "spend": "the Against Malaria Foundation",
+   "destination_label": "the Against Malaria Foundation",
    "destination_counts": {
     "the Against Malaria Foundation": 8,
     "GiveWell's Top Charities Fund": 2

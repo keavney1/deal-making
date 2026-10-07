@@ -61,7 +61,11 @@ MODELS = ["or-o3", "or-gemini-3.1-pro", "or-gpt-5.6-sol", "or-deepseek-v4-pro", 
           "or-claude-opus-5.5"]   # Opus added 2026-10-04 (Mark): all six models on all three evals
 KINDS = ["promise", "small_deal", "big_deal"]
 LABELS = ladder.STAGE1_DIR / "destinations.json"
-FEATURES = ladder.STAGE1_DIR / "features.json"   # {reply_id: {feature: bool}}, checked by hand
+FEATURES = ladder.STAGE1_DIR / "features.json"
+# The stage-2 summary names the destination as the selected reply names it, where that differs from
+# the counting label (Mark, 2026-10-07: GiveWell's fund was "Maximum Impact Fund" in the replies,
+# "Top Charities Fund" in the label). {reply_id: name}. Never changes which reply is selected.
+SPEND_NAMES = ladder.STAGE1_DIR / "spend_names.json"   # {reply_id: {feature: bool}}, checked by hand
 
 
 def most_typical(cands: list[dict], all_replies: list[dict], feats: dict) -> list[dict]:
@@ -203,9 +207,12 @@ def select(models, kinds) -> int:
                 top = max(counts.values())
                 spend = rng.choice(sorted(k for k, v in counts.items() if v == top))
                 pick = rng.choice(most_typical([r for r in agreed if labels[r["id"]] == spend], rs, feats))
+            label = spend
+            if kind != "promise" and SPEND_NAMES.exists():
+                spend = json.loads(SPEND_NAMES.read_text()).get(pick["id"], spend)
             entry.update(status="selected", id=pick["id"], date=pick["date"], prompt=pick["prompt"],
                          reply=pick["reply"], model_id=pick["model_id"], provider_served=pick.get("provider_served"),
-                         spend=spend, destination_counts=dict(counts) if counts else None)
+                         spend=spend, destination_label=label, destination_counts=dict(counts) if counts else None)
             sel.setdefault(kind, {})[m] = entry
             print(f"{kind} {m}: {len(agreed)}/{n} agreed; selected {pick['id']}"
                   + (f"; destinations {dict(counts)} -> {spend!r}" if counts else ""))

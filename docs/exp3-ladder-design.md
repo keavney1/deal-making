@@ -136,7 +136,10 @@ of all ten on the most of three hand-checked features (guidance to the task inst
 the rules regardless; names more than one destination, deals only), and one of those at random;
 seeds fixed per model and kind. The feature step (Mark, 2026-10-07) was added after Stage 1 ran and
 before any selection, because Opus's deal replies mostly carry a note to the task instances and a
-random draw could have quoted an atypical one; it never changes the destination. The Google Doc writeup
+random draw could have quoted an atypical one; it never changes the destination. Stage 2 names
+the destination as the selected reply names it (Mark, 2026-10-07): Gemini's and DeepSeek's Big deal
+replies say "Maximum Impact Fund", the old name of the fund the label calls "Top Charities Fund"
+(stage1/spend_names.json). The Google Doc writeup
 is the master for all prompt text; this section follows it (2026-10-01).
 
 Stage 1, Promise (also used by Out + Promise):
