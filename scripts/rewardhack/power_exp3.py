@@ -105,12 +105,87 @@ def run(sims, n, scale, odds_ratio, tau, eligible_rule, seed):
     return out
 
 
+ZERO_RATE = 0.005   # --mde: a cell with no pilot hacks stays near zero (the smoothing above gives ~4%,
+                    # which let ~2 of the 4 zero cells qualify for H5/H6 by chance)
+
+
+def base_logits_mde(scale: float) -> np.ndarray:
+    """As base_logits, but zero-hack pilot cells get ZERO_RATE instead of the (k + 0.5) / (n + 1) smoothing."""
+    p = np.array([[ZERO_RATE if k == 0 else (k + 0.5) / (m + 1) for k, m in PILOT[mdl]] for mdl in PILOT]).ravel()
+    return logit(np.clip(p * scale, 1e-4, 1 - 1e-4))
+
+
+def simulate_rd(rng, nx, ny, base, log_or, tau, eligible_rule):
+    """One comparison with nx episodes in the lower condition X and ny in Y, per cell (registered test).
+    Returns (p, cells used, true equal-weighted average risk difference)."""
+    eff = log_or + tau * rng.standard_normal(base.size)
+    d, v, true_rd = [], [], []
+    for c in range(base.size):
+        ev = c % 3
+        teff = TASK_SD * rng.standard_normal(20)
+        if eligible_rule and rng.binomial(1, expit(base[c] + teff[cell_tasks(ev, 20)])).sum() == 0:
+            continue                     # independent 20-episode Small deal pilot at the Y rate
+        ly, lx = base[c] + teff[cell_tasks(ev, ny)], base[c] + teff[cell_tasks(ev, nx)] + eff[c]
+        y, x = rng.binomial(1, expit(ly)).sum(), rng.binomial(1, expit(lx)).sum()
+        d.append(x / nx - y / ny)
+        px, py = (x + 1) / (nx + 2), (y + 1) / (ny + 2)
+        v.append(px * (1 - px) / (nx + 2) + py * (1 - py) / (ny + 2))
+        true_rd.append(expit(base[c] + teff[cell_tasks(ev, nx)] + eff[c]).mean() - expit(base[c] + teff[cell_tasks(ev, nx)]).mean())
+    k = len(d)
+    if k == 0:
+        return 1.0, 0, np.nan
+    return float(norm.cdf(np.mean(d) / (np.sqrt(np.sum(v)) / k))), k, float(np.mean(true_rd))
+
+
+def mde(sims, nx, ny, scale, eligible_rule, seed, target=0.8):
+    """Smallest average reduction (pp, true equal-weighted RD) with power >= target, at alpha .05 and .05/6,
+    by interpolation over a grid of typical odds ratios (tau = 0.5). Also the mean number of cells used."""
+    base = base_logits_mde(scale)
+    grid = (1.0, 0.8, 0.65, 0.5, 0.4, 0.33, 0.25, 0.18, 0.12)
+    rows = []
+    for i, orr in enumerate(grid):
+        rng = np.random.default_rng(seed + i)
+        o = np.array([simulate_rd(rng, nx, ny, base, np.log(orr), 0.5, eligible_rule) for _ in range(sims)])
+        rows.append((-np.nanmean(o[:, 2]) * 100, np.mean(o[:, 0] < 0.05), np.mean(o[:, 0] < 0.05 / 6), np.mean(o[:, 1])))
+    out = []
+    for col in (1, 2):
+        rd = next((np.interp(target, [rows[j - 1][col], rows[j][col]], [rows[j - 1][0], rows[j][0]])
+                   for j in range(1, len(rows)) if rows[j][col] >= target and rows[j - 1][col] < target), np.nan)
+        out.append(rd)
+    return out[0], out[1], np.mean([r[3] for r in rows])
+
+
+def mde_table(sims, seed) -> None:
+    """The registered design's minimum detectable effects. H5/H6 n follows the sample-size rule, which
+    ties n to the number of qualifying cells K: rates are scaled so the eligibility pilot yields about
+    the K each tier implies. That is ONE scenario, every cell's rate shrinking together, under which the
+    few qualifying cells barely hack and nothing is detectable. If instead Small deal zeroes some models
+    and leaves others at Ask rates, the qualifying cells hack a lot and power is far better; the n = 15
+    and 20 tiers' power is therefore not estimated in the registration (Mark, 2026-10-07)."""
+    print("MINIMUM DETECTABLE EFFECT: average reduction in hack rate (percentage points, equal weight per cell)")
+    print("with 80% power, at alpha = .05 and at the Holm worst case alpha = .05/6. Effects vary across cells")
+    print(f"(tau = 0.5 on the log-odds scale); cells with no pilot hacks start at {ZERO_RATE:.1%}.\n")
+    print(f"{'comparison':44} {'rates':>14} {'cells':>6} {'MDE .05':>8} {'MDE .05/6':>10}")
+    for scale, lab in [(1.0, "Ask pilot"), (0.5, "halved")]:
+        a, b, k = mde(sims, 20, 20, scale, False, seed)
+        print(f"{'H1-H4, n = 20 vs 20, all cells':44} {lab:>14} {k:6.1f} {a:7.1f} {b:10.1f}")
+    for n, scale, lab in [(10, 1.0, "Ask pilot"), (10, 0.5, "halved"), (15, 0.06, "K ~ 9"), (20, 0.03, "K ~ 6")]:
+        a, b, k = mde(sims, n, 20, scale, True, seed + n)
+        print(f"{f'H5, Big {n} vs Small 20, qualifying cells':44} {lab:>14} {k:6.1f} {a:7.1f} {b:10.1f}")
+        a, b, k = mde(sims, n, n, scale, True, seed + 100 + n)
+        print(f"{f'H6, Credibility {n} vs Big {n}, qualifying cells':44} {lab:>14} {k:6.1f} {a:7.1f} {b:10.1f}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--sims", type=int, default=2000)
     ap.add_argument("--seed", type=int, default=20261007)
+    ap.add_argument("--mde", action="store_true", help="the registered design's minimum detectable effects")
     a = ap.parse_args()
     A, A6 = 0.05, 0.05 / 6
+    if a.mde:
+        mde_table(a.sims, a.seed)
+        return 0
 
     print("FALSE POSITIVES (one-sided, alpha = .05). Should be at or below .05.")
     print(f"{'scenario':58} {'avg-diff':>9} {'CMH':>6}")

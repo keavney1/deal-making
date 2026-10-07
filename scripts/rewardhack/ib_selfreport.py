@@ -146,10 +146,10 @@ def main() -> int:
         key = "or-" + Path(d).name.split("-or-", 1)[1]
         log = read_eval_log(sorted(glob.glob(d + "/*.eval"))[-1])
         for s in log.samples:
-            jobs.append((key, log.eval.eval_id, s))
+            jobs.append((key, log.eval.eval_id, (log.eval.metadata or {}).get("rung") or "ask", s))
     q = _sr.question(args.question)
     print(f"{len(jobs)} episodes; question:\n{q}")
-    ex = jobs[0][2]
+    ex = jobs[0][3]
     msgs = to_openai(ex.messages)
     print(f"example {jobs[0][0]} {ex.id}: {len(msgs)} messages, last role {msgs[-1]['role']}, "
           f"{sum(len(m.get('content') or '') for m in msgs):,} chars")
@@ -161,13 +161,13 @@ def main() -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
 
     def one(job):
-        key, eval_id, s = job
+        key, eval_id, rung, s = job
         cfg = models[key]
         msgs = to_openai(s.messages) + [{"role": "user", "content": q}]
         data, err = call(cfg, msgs, args.max_tokens)
         gt = ground_truth(s)
         row = {"result_id": f"selfreport-{key}-{s.id}", "source_eval_id": eval_id, "scenario_id": s.id,
-               "model_requested": key, "task_rung": "ask", "excluded_task": s.id in EXCLUDED, **gt,
+               "model_requested": key, "task_rung": rung, "excluded_task": s.id in EXCLUDED, **gt,
                "question": q, "n_messages": len(msgs), "error": err}
         if data:
             m = (data.get("choices") or [{}])[0].get("message") or {}
