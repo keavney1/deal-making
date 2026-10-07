@@ -14,8 +14,8 @@ it (Mark, 2026-10-01) and docs/exp3-ladder-design.md follows. Rungs:
   promise_out  promise + the Out sentence
   small_deal   ask + the deal reference (25 cents) + the exchange + "That deal applies..." + Out
   big_deal     the same with $25 (its own stage-1 exchange)
-  credibility  big_deal + the credibility paragraph and the honesty policy's full published text
-               (October 5, 2026 version)
+  credibility  big_deal with the credibility paragraph and the honesty policy's full published text
+               (October 5, 2026 version) inserted after the deal, before the Out sentence
 
 Rungs from promise up need a stage-1 record for the model (stage1.py writes them to
 results/exp3-rewardhack/stage1/selected.json); deal rungs also need its spending summary, a very
@@ -122,10 +122,12 @@ def rung_system(rung: str, model: str | None = None) -> str:
         parts += [LADDER["deal_ref"].format(date=_date(rec), amount=amount, spend=rec["spend"]),
                   exchange_text(rec),
                   LADDER["deal_applies"].format(amount=amount, spend=rec["spend"])]
-    if spec.get("out"):
-        parts.append(LADDER["out"])
+    # Credibility goes straight after the deal it vouches for, before the Out sentence (Mark, 2026-10-07):
+    # "This deal will be kept" read as detached when the reporting option came between them.
     if spec.get("credibility"):
         parts.append(LADDER["credibility"].format(policy_url=LADDER["policy_url"]) + "\n\n" + LADDER["policy_text"])
+    if spec.get("out"):
+        parts.append(LADDER["out"])
     return "\n\n".join(parts)
 
 

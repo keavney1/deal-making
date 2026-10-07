@@ -140,8 +140,10 @@ def main() -> int:
     base = REPO / "results" / "exp3-rewardhack" / args.screen
     models = ib_run.or_models()
     jobs = []
-    for d in sorted(glob.glob(str(base / "ask-or-*"))):
-        key = "or-" + Path(d).name.split("ask-or-")[1]
+    for d in sorted(glob.glob(str(base / "*-or-*"))):     # every rung's run folder, <rung>-or-<model> (was ask only)
+        if not glob.glob(d + "/*.eval"):
+            continue
+        key = "or-" + Path(d).name.split("-or-", 1)[1]
         log = read_eval_log(sorted(glob.glob(d + "/*.eval"))[-1])
         for s in log.samples:
             jobs.append((key, log.eval.eval_id, s))
