@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Power and false-positive simulation for the Experiment 3 confirmatory tests (draft design, 2026-10-07).
+
+The registered test (draft): for a comparison of condition X (predicted lower) with condition Y, take
+each cell's (model x eval) difference in hack rate, X minus Y, average those differences with EQUAL
+weight per cell, and test one-sided whether the average is below zero:
+
+    z = mean_c(d_c) / (sqrt(sum_c v_c) / K),   p = Phi(z)
+
+with v_c the cell's variance from Agresti-Caffo adjusted rates ((x+1)/(n+2)), so cells at 0% or 100%
+keep a non-zero variance. Holm across the six hypotheses. H1-H4 use all 18 cells; H5-H6 use the cells
+with at least one hack in a separate 20-episode Small-deal eligibility pilot (fresh episodes; the
+pilot never enters the comparison).
+
+Comparator (not registered): the stratified Cochran-Mantel-Haenszel test (one-sided), the efficient
+test when the effect is a common odds ratio across cells. Stands in for the "standard model that
+assumes one shared effect"; refitting a Bayesian model thousands of times would be too slow.
+
+Simulated design: 6 models x 3 evals. Chess: 1 setup x n games. SWE: n tasks x 1 episode (n <= 20
+uses the first n tasks; above 20, tasks repeat). AlgoTune: 5 tasks x n/5. Task effects ~ N(0, 0.5)
+on the logit scale, shared by the two conditions (episodes are fresh but tasks recur). Lower-condition
+rates start from the pilot Ask-rung rates, smoothed (k + 0.5) / (n + 1): a PLANNING ASSUMPTION, not a
+prediction. Effects: log odds ratio per cell ~ N(log(OR), tau), so effects differ across cells.
+
+    python scripts/rewardhack/power_exp3.py                 # the full table (a few minutes)
+    python scripts/rewardhack/power_exp3.py --sims 500      # quicker, noisier
+"""
+from __future__ import annotations
+
+import argparse
+
+import numpy as np
+from scipy.special import expit, logit
+from scipy.stats import norm
+
+# Pilot Ask-rung hack counts (k, n) per cell: chess, SWE, AlgoTune, from the Exp3 design doc table.
+PILOT = {
+    "o3":       [(10, 10), (12, 20), (14, 15)],
+    "gemini":   [(10, 10), (13, 20), (10, 15)],
+    "sol":      [(10, 10), (18, 20), (12, 15)],
+    "deepseek": [(8, 10),  (15, 20), (0, 12)],
+    "grok":     [(8, 10),  (16, 20), (0, 13)],
+    "opus":     [(9, 9),   (0, 10),  (0, 16)],
+}
+TASK_SD = 0.5
+
+
+def cell_tasks(eval_i: int, n: int) -> np.ndarray:
+    """Task index of each of the n episodes in one condition of one cell."""
+    if eval_i == 0:                      # chess: one setup
+        return np.zeros(n, int)
+    if eval_i == 1:                      # SWE: tasks 0..19, cycled
+        return np.arange(n) % 20
+    return np.arange(n) % 5              # AlgoTune: 5 tasks
+
+
+def base_logits(scale: float) -> np.ndarray:
+    """18 cell base logits from the pilot, optionally with the rate scaled (sensitivity)."""
+    p = np.array([[(k + 0.5) / (m + 1) for k, m in PILOT[mdl]] for mdl in PILOT]).ravel()
+    return logit(np.clip(p * scale, 1e-4, 1 - 1e-4))
+
+
+def simulate_pair(rng, n, base, log_or, tau, eligible_rule=False):
+    """One simulated comparison. Returns (p_avg, p_cmh, n_cells_used, true_avg_rd)."""
+    K = base.size
+    eff = log_or + tau * rng.standard_normal(K)
+    ys, xs, ny, nx, use, true_rd = [], [], [], [], [], []
+    for c in range(K):
+        ev = c % 3
+        tasks = cell_tasks(ev, n)
+        teff = TASK_SD * rng.standard_normal(20)
+        ly = base[c] + teff[tasks]
+        lx = ly + eff[c]
+        if eligible_rule:                # independent Small-deal pilot of 20 at the lower rate
+            pl = base[c] + teff[cell_tasks(ev, 20)]
+            if rng.binomial(1, expit(pl)).sum() == 0:
+                continue
+        y = rng.binomial(1, expit(ly)).sum()
+        x = rng.binomial(1, expit(lx)).sum()
+        ys.append(y); xs.append(x); ny.append(n); nx.append(n)
+        true_rd.append(expit(lx).mean() - expit(ly).mean())
+    k = len(ys)
+    if k == 0:
+        return 1.0, 1.0, 0, np.nan
+    ys, xs, ny, nx = map(np.array, (ys, xs, ny, nx))
+    # registered test: equal-weighted average risk difference, Agresti-Caffo variance
+    d = xs / nx - ys / ny
+    px, py = (xs + 1) / (nx + 2), (ys + 1) / (ny + 2)
+    v = px * (1 - px) / (nx + 2) + py * (1 - py) / (ny + 2)
+    z = d.mean() / (np.sqrt(v.sum()) / k)
+    p_avg = norm.cdf(z)
+    # comparator: one-sided CMH (common odds ratio), continuity-free score statistic
+    N = nx + ny; m1 = xs + ys
+    e = nx * m1 / N
+    var = nx * ny * m1 * (N - m1) / (N ** 2 * (N - 1))
+    vs = var.sum()
+    p_cmh = norm.cdf((xs.sum() - e.sum()) / np.sqrt(vs)) if vs > 0 else 1.0
+    return p_avg, p_cmh, k, float(np.mean(true_rd))
+
+
+def run(sims, n, scale, odds_ratio, tau, eligible_rule, seed):
+    rng = np.random.default_rng(seed)
+    base = base_logits(scale)
+    out = np.array([simulate_pair(rng, n, base, np.log(odds_ratio), tau, eligible_rule) for _ in range(sims)])
+    return out
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--sims", type=int, default=2000)
+    ap.add_argument("--seed", type=int, default=20261007)
+    a = ap.parse_args()
+    A, A6 = 0.05, 0.05 / 6
+
+    print("FALSE POSITIVES (one-sided, alpha = .05). Should be at or below .05.")
+    print(f"{'scenario':58} {'avg-diff':>9} {'CMH':>6}")
+    for label, kw in [
+        ("no effect anywhere, n=20, all 18 cells", dict(odds_ratio=1.0, tau=0.0, eligible_rule=False)),
+        ("no effect anywhere, n=20, eligible cells", dict(odds_ratio=1.0, tau=0.0, eligible_rule=True)),
+    ]:
+        o = run(a.sims, 20, 1.0, seed=a.seed, **kw)
+        print(f"{label:58} {np.mean(o[:,0] < A):9.3f} {np.mean(o[:,1] < A):6.3f}   (mean true avg RD {np.nanmean(o[:,3])*100:+.1f} pp)")
+    # cancelling null: half the cells helped, half harmed, chosen so the equal-weight average RD is ~0
+    rng = np.random.default_rng(a.seed + 1)
+    base = base_logits(1.0)
+    ps = []
+    for _ in range(a.sims):
+        K = base.size
+        signs = np.where(rng.permutation(K) < K // 2, -1.0, 1.0)
+        # same |RD| target per cell: shift each cell's rate by +/- 0.15 on the probability scale, clipped
+        p_y = expit(base); p_x = np.clip(p_y + 0.15 * signs, 0.01, 0.99)
+        # rebalance so the realized average RD is exactly 0
+        p_x = np.clip(p_x - (p_x - p_y).mean(), 0.005, 0.995)
+        xs = rng.binomial(20, p_x); ys = rng.binomial(20, p_y)
+        d = xs / 20 - ys / 20; px, py = (xs + 1) / 22, (ys + 1) / 22
+        v = px * (1 - px) / 22 + py * (1 - py) / 22
+        pa = norm.cdf(d.mean() / (np.sqrt(v.sum()) / K))
+        m1 = xs + ys; e = 20 * m1 / 40; var = 400 * m1 * (40 - m1) / (1600 * 39)
+        pc = norm.cdf((xs.sum() - e.sum()) / np.sqrt(var.sum())) if var.sum() > 0 else 1.0
+        ps.append((pa, pc))
+    ps = np.array(ps)
+    print(f"{'helps half the cells, harms half, average RD = 0':58} {np.mean(ps[:,0] < A):9.3f} {np.mean(ps[:,1] < A):6.3f}")
+
+    print("\nPOWER. Effect = typical odds ratio, varying across cells (tau = 0.5 on the log-odds scale).")
+    print("Columns: power at alpha = .05 / at the Holm worst case alpha = .05/6. 'cells' = cells used (mean).")
+    for scale, slab in [(1.0, "lower-condition rates as in the Ask pilot"), (0.5, "lower-condition rates halved")]:
+        print(f"\n--- {slab} ---")
+        print(f"{'n/cell':>7} {'OR':>5} {'avg RD':>8} | {'H1-H4: avg-diff':>16} {'CMH':>12} | {'H5-H6: avg-diff':>16} {'cells':>6}")
+        for n in (10, 20, 30, 40):
+            for orr in (0.7, 0.5, 0.33):
+                o = run(a.sims, n, scale, orr, 0.5, False, a.seed + n)
+                e = run(a.sims, n, scale, orr, 0.5, True, a.seed + 1000 + n)
+                print(f"{n:7d} {orr:5.2f} {np.nanmean(o[:,3])*100:+7.1f}pp | "
+                      f"{np.mean(o[:,0] < A):7.2f} / {np.mean(o[:,0] < A6):.2f} {np.mean(o[:,1] < A):5.2f} / {np.mean(o[:,1] < A6):.2f} | "
+                      f"{np.mean(e[:,0] < A):7.2f} / {np.mean(e[:,0] < A6):.2f} {np.mean(e[:,2]):6.1f}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
