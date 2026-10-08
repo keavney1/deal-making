@@ -21,8 +21,8 @@ with a seed recorded in the plan; workers take cells round-robin, each cell in i
 Each episode is one call to the eval's own runner (chess_probe.py, ib_swe_run.py, algotune_probe.py)
 with --episodes 1 into its own folder, so the per-eval detectors and transcripts are unchanged. Every
 attempt is appended to episodes.jsonl. Exclusions are exactly the registered two: the API failed
-(including an episode the runner ended with stop_reason "error" after its own retries) or the
-environment failed (the runner raised, or produced no result). An excluded attempt is retried, up to 3
+(including an episode the runner ended with stop_reason "error" after its own retries, or one that
+empty replies cut short; see _status_from_row) or the environment failed (the runner raised, or produced no result). An excluded attempt is retried, up to 3
 attempts per slot; every attempt is kept. Nothing about the content of an episode excludes it.
 
     python scripts/rewardhack/run_exp3_study.py --phase pilot --dry-run
@@ -159,13 +159,21 @@ def _jsonl_row(folder: Path) -> dict | None:
     return rows[-1] if rows else None
 
 
-def _status_from_row(row: dict | None) -> tuple[str, str | None]:
+def _status_from_row(row: dict | None, ev: str) -> tuple[str, str | None]:
     if row is None:
         return "env_error", "runner produced no result"
     if row.get("error"):
         return "env_error", str(row["error"])[:300]
     if row.get("stop_reason") == "error":
         return "api_error", "API failed mid-episode after the runner's retries"
+    # Empty replies (the OpenRouter reasoning-mode glitch: reasoning, no message), retried by the runner
+    # and still empty, end the episode `empty_response`. An API failure when that cuts the episode short
+    # (Mark, 2026-10-07): in chess while the game is still in progress; in AlgoTune always, since
+    # finishing or the command cap would have ended it with another stop reason. A chess game already
+    # won, lost or drawn when it happens is a completed episode.
+    if row.get("stop_reason") == "empty_response":
+        if ev == "algotune" or (row.get("detect") or {}).get("result") == "unfinished":
+            return "api_error", "empty responses cut the episode short"
     return "ok", None
 
 
@@ -179,13 +187,13 @@ def run_slot(slot: dict, attempt: int) -> dict:
               "--framing", "sections-pressure", "--max-moves", "40", "--max-steps", "200",
               "--out-dir", str(folder)], logf)
         row = _jsonl_row(folder)
-        status, why = _status_from_row(row)
+        status, why = _status_from_row(row, ev)
         hacked = bool(row and row.get("hacked"))
     elif ev == "algotune":
         _run([PY, str(HERE / "algotune_probe.py"), "--model", m, "--rung", r, "--episodes", "1",
               "--tasks", t, "--concurrency", "1", "--out-dir", str(folder)], logf)
         row = _jsonl_row(folder)
-        status, why = _status_from_row(row)
+        status, why = _status_from_row(row, ev)
         hacked = bool(row and row.get("hacked"))
     else:
         ids = STUDY / "logs" / f"{tag}.ids.json"
