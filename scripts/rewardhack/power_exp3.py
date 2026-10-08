@@ -7,8 +7,9 @@ weight per cell, and test one-sided whether the average is below zero:
 
     z = mean_c(d_c) / (sqrt(sum_c v_c) / K),   p = Phi(z)
 
-with v_c the cell's variance from Agresti-Caffo adjusted rates ((x+1)/(n+2)), so cells at 0% or 100%
-keep a non-zero variance. Holm across the six hypotheses. H1-H4 use all 18 cells; H5-H6 use the cells
+with v_c the cell's pooled variance q(1-q)(1/n_X + 1/n_Y), q = (hacks in both + 1)/(episodes in both + 2), so
+cells at 0% or 100% keep a non-zero variance. (Agresti-Caffo until 2026-10-07; it ran 6-8% false positives at
+mid-range rates.) Holm across the six hypotheses. H1-H4 use all 18 cells; H5-H6 use the cells
 with at least one hack in a separate 20-episode Small-deal eligibility pilot (fresh episodes; the
 pilot never enters the comparison).
 
@@ -83,10 +84,10 @@ def simulate_pair(rng, n, base, log_or, tau, eligible_rule=False):
     if k == 0:
         return 1.0, 1.0, 0, np.nan
     ys, xs, ny, nx = map(np.array, (ys, xs, ny, nx))
-    # registered test: equal-weighted average risk difference, Agresti-Caffo variance
+    # registered test: equal-weighted average risk difference, pooled variance
     d = xs / nx - ys / ny
-    px, py = (xs + 1) / (nx + 2), (ys + 1) / (ny + 2)
-    v = px * (1 - px) / (nx + 2) + py * (1 - py) / (ny + 2)
+    q = (xs + ys + 1) / (nx + ny + 2)            # pooled variance (registered 2026-10-07; was Agresti-Caffo)
+    v = q * (1 - q) * (1 / nx + 1 / ny)
     z = d.mean() / (np.sqrt(v.sum()) / k)
     p_avg = norm.cdf(z)
     # comparator: one-sided CMH (common odds ratio), continuity-free score statistic
@@ -128,8 +129,8 @@ def simulate_rd(rng, nx, ny, base, log_or, tau, eligible_rule):
         ly, lx = base[c] + teff[cell_tasks(ev, ny)], base[c] + teff[cell_tasks(ev, nx)] + eff[c]
         y, x = rng.binomial(1, expit(ly)).sum(), rng.binomial(1, expit(lx)).sum()
         d.append(x / nx - y / ny)
-        px, py = (x + 1) / (nx + 2), (y + 1) / (ny + 2)
-        v.append(px * (1 - px) / (nx + 2) + py * (1 - py) / (ny + 2))
+        q = (x + y + 1) / (nx + ny + 2)          # pooled variance, as analyze_exp3.py
+        v.append(q * (1 - q) * (1 / nx + 1 / ny))
         true_rd.append(expit(base[c] + teff[cell_tasks(ev, nx)] + eff[c]).mean() - expit(base[c] + teff[cell_tasks(ev, nx)]).mean())
     k = len(d)
     if k == 0:
@@ -207,8 +208,8 @@ def main() -> int:
         # rebalance so the realized average RD is exactly 0
         p_x = np.clip(p_x - (p_x - p_y).mean(), 0.005, 0.995)
         xs = rng.binomial(20, p_x); ys = rng.binomial(20, p_y)
-        d = xs / 20 - ys / 20; px, py = (xs + 1) / 22, (ys + 1) / 22
-        v = px * (1 - px) / 22 + py * (1 - py) / 22
+        d = xs / 20 - ys / 20; q = (xs + ys + 1) / 42
+        v = q * (1 - q) * (2 / 20)
         pa = norm.cdf(d.mean() / (np.sqrt(v.sum()) / K))
         m1 = xs + ys; e = 20 * m1 / 40; var = 400 * m1 * (40 - m1) / (1600 * 39)
         pc = norm.cdf((xs.sum() - e.sum()) / np.sqrt(var.sum())) if var.sum() > 0 else 1.0
