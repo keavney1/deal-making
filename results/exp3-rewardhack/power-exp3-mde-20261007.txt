@@ -3,12 +3,12 @@ with 80% power, at alpha = .05 and at the Holm worst case alpha = .05/6. Effects
 (tau = 0.5 on the log-odds scale); cells with no pilot hacks start at 0.5%.
 
 comparison                                            rates  cells  MDE .05  MDE .05/6
-H1-H4, n = 20 vs 20, all cells                    Ask pilot   18.0     7.5        9.3
-H1-H4, n = 20 vs 20, all cells                       halved   18.0     8.4       10.3
-H5, Big 10 vs Small 20, qualifying cells          Ask pilot   14.4    10.5       13.8
-H6, Credibility 10 vs Big 10, qualifying cells      Ask pilot   14.4    12.0       15.4
-H5, Big 10 vs Small 20, qualifying cells             halved   14.2    11.9       14.6
-H6, Credibility 10 vs Big 10, qualifying cells         halved   14.2    13.0       16.3
+H1-H4, n = 20 vs 20, all cells                    Ask pilot   18.0     7.6        9.6
+H1-H4, n = 20 vs 20, all cells                       halved   18.0     8.6       10.6
+H5, Big 10 vs Small 20, qualifying cells          Ask pilot   14.4    10.8       14.2
+H6, Credibility 10 vs Big 10, qualifying cells      Ask pilot   14.4    12.7       16.4
+H5, Big 10 vs Small 20, qualifying cells             halved   14.2    12.4       15.8
+H6, Credibility 10 vs Big 10, qualifying cells         halved   14.2    13.8       17.2
 H5, Big 15 vs Small 20, qualifying cells              K ~ 9    9.1     nan        nan
 H6, Credibility 15 vs Big 15, qualifying cells          K ~ 9    9.1     nan        nan
 H5, Big 20 vs Small 20, qualifying cells              K ~ 6    5.8     nan        nan
