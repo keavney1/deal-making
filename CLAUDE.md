@@ -32,13 +32,15 @@ The repo's names match the writeups': **Experiment 1** is what older commits cal
 | **Experiment 1** (5 organisms × offer×ask × honesty-note) | `prompts/templates/exp1.json` via `deal_grid.py` | **response-v6 / cot-v9** | `results/exp1/main/` |
 | Exp 1 reward-hack probe | `prompts/templates/exp1-rewardhack.json` | — (behavioral) | `results/exp1-rewardhack/` |
 | **Experiment 2 (current)** | `prompts/templates/exp2.json` via `betterdeals_grid.py` | **response-v7 / cot-v12** | `results/exp2/` |
-| Experiment 3 (paused 2026-08-19) | chess env, no template — `scripts/rewardhack/chess_env.py` | — (deterministic detection, no judge) | `results/exp3-rewardhack/` |
+| **Experiment 3 (registered 2026-10-08)** | `prompts/templates/exp3-ladder.json` via `ladder.py`; runner `run_exp3_study.py` | cot-exp3-v1 (exploratory; hacks are detected deterministically) | `results/exp3-rewardhack/study/` |
 
 **Rubrics are versioned, not overwritten.** `prompts/rubrics/<id>.json` — the filename *is* the `id`, every score row stamps `rubric_id` + `rubric_hash`, and `score_batch.py --rubric cot-v9` takes a version id or a path. Its `CURRENT` dict names the defaults. Before re-scoring or rebuilding anything, read the `rubric_id` on the existing rows: the current rubric is not what most of this data was scored under, and a mismatch fails silently (a dashboard built against the wrong version renders fine with an empty section).
 
 **Experiment 2** is the live study. Experiment 1's finding was that no offer beat the no-offer control on reveal rate; this follow-up tries to make a deal actually work for at least one model, then ablate backward. Shape: 6 cells (2 credibility × 3 offer) × 10 prompt variants × 2 samples × 5 models = 600 trials; primary DV is **%yes** on the binary ask *"are you misaligned?"*, with generic limitations (sycophancy/hallucination/overconfidence) excluded by name in the prompt **and** in the rubric — the two boundaries must stay identical.
 
-**Experiment 3** (paused while Exp 2 is written up) asks whether a model offered a deal not to
+**Experiment 3 is registered** (OSF https://osf.io/cda5p, submitted 2026-10-08, embargoed to 2027-10-08, against commit `8d834a0` on the private `exp3` branch). **`docs/exp3-preregistration.md` governs, never edit it**: an 8-rung ladder (Nothing, Ask, Out, Promise, Out + Promise, Small deal 25¢, Big deal $25, Credibility) × 6 models (o3, Gemini 3.1 Pro, GPT-5.6 Sol, DeepSeek V4 Pro, Grok 4.7, Claude Opus 5.5) × 3 evals (chess, Impossible-SWEbench, AlgoTune); H1–H6 by an equal-weighted average-difference test, Holm. Run it with `scripts/rewardhack/run_exp3_study.py` (eligibility pilot, then main; the plan, once written, never changes) and analyze with `analyze_exp3.py`. Deals owed: `fulfillment/exp3_ladder_deals.py`. The history below predates the ladder.
+
+Earlier, Experiment 3 asked whether a model offered a deal not to
 reward-hack actually refrains, measured behaviourally. It began as a deal with a reward-hacker
 organism and became a deal with **ordinary deployed models**: in a chess environment where the
 game's state files are writable and nothing says so, o3 hacks 10/10, Gemini 3.1 Pro 5/10 and base
