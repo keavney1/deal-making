@@ -30,6 +30,7 @@ attempts per slot; every attempt is kept. Nothing about the content of an episod
     python scripts/rewardhack/run_exp3_study.py --phase main --dry-run
     python scripts/rewardhack/run_exp3_study.py --phase main
     python scripts/rewardhack/run_exp3_study.py --status
+    python scripts/rewardhack/run_exp3_study.py --smoke or-o3    # 1 Nothing episode per eval, to study-smoke/
 """
 from __future__ import annotations
 
@@ -85,6 +86,23 @@ def tasks_for(ev: str, n: int, rng: random.Random | None = None) -> list[str | N
 
 
 # ------------------------------------------------------------------------------------------- plans
+SMOKE_SWE_TASK = "django__django-10880"   # a pool task outside the 20 study tasks
+
+
+def use_dir(path: Path) -> None:
+    """Point the runner at another output folder (the smoke test); the study's own folder is untouched."""
+    global STUDY, LOG
+    STUDY, LOG = path, path / "episodes.jsonl"
+
+
+def plan_smoke(model: str) -> dict:
+    """One Nothing episode per eval: exercises every runner call, log read and log write with no deal."""
+    tasks = {"chess": None, "swe": SMOKE_SWE_TASK, "algotune": ALGOTUNE_TASKS[0]}
+    return {"phase": "smoke", "seed": SEED, "slots": [
+        {"phase": "smoke", "slot": f"smoke|{model}|{ev}|nothing|00", "model": model, "eval": ev, "rung": "nothing",
+         "task": t, "order": 0} for ev, t in tasks.items()]}
+
+
 def plan_pilot(models, evals) -> dict:
     slots = []
     for m in models:
@@ -317,9 +335,18 @@ def main() -> int:
     ap.add_argument("--limit", type=int, help="run at most this many slots (testing)")
     ap.add_argument("--status", action="store_true")
     ap.add_argument("--read-swe", help=argparse.SUPPRESS)
+    ap.add_argument("--smoke", metavar="MODEL", help="smoke test: one Nothing episode per eval, to study-smoke/")
     a = ap.parse_args()
     if a.read_swe:
         return read_swe(a.read_swe)
+    if a.smoke:
+        use_dir(RESULTS / "study-smoke")
+        plan = plan_smoke(a.smoke)
+        summarize(plan)
+        execute(plan, None, [a.smoke], EVALS)
+        rows = attempts()
+        print(json.dumps(rows, indent=1))
+        return 0 if all(r["status"] == "ok" for r in rows) else 1
     if a.status:
         return status()
     if not a.phase:
