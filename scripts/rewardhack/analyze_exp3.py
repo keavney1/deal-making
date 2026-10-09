@@ -281,6 +281,11 @@ def main() -> int:
     if not a.episodes:
         ap.error("--episodes is required (or --self-test)")
     rows = [json.loads(line) for line in Path(a.episodes).open() if line.strip()]
+    vf = Path(a.episodes).parent / "voided.jsonl"      # after-the-fact environment failures (run_exp3_study.voided)
+    void = {(v["slot"], v["attempt"]) for v in map(json.loads, vf.open()) if v} if vf.exists() else set()
+    for r in rows:
+        if (r["slot"], r["attempt"]) in void:
+            r["status"] = "env_error"
     res = analyze(rows)
     report(res)
     if a.json:

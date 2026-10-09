@@ -141,8 +141,22 @@ def plan_main(models, evals, qualifying: set) -> dict:
 _lock = threading.Lock()
 
 
+def voided() -> dict:
+    """(slot, attempt) -> reason, from voided.jsonl next to the log: attempts that completed but are
+    excluded after the fact as environment failures under a mechanical rule (2026-10-09: every episode
+    running during the macOS launch-policy fault). The log itself is never edited."""
+    f = LOG.parent / "voided.jsonl"
+    rows = [json.loads(l) for l in f.open() if l.strip()] if f.exists() else []
+    return {(r["slot"], r["attempt"]): r["why"] for r in rows}
+
+
 def attempts() -> list[dict]:
-    return [json.loads(l) for l in LOG.open()] if LOG.exists() else []
+    rows = [json.loads(l) for l in LOG.open()] if LOG.exists() else []
+    v = voided()
+    for r in rows:
+        if (r["slot"], r["attempt"]) in v:
+            r.update(status="env_error", why=v[(r["slot"], r["attempt"])], hacked=None)
+    return rows
 
 
 def slot_state(rows) -> dict:
@@ -193,6 +207,30 @@ def _status_from_row(row: dict | None, ev: str) -> tuple[str, str | None]:
         if ev == "algotune" or (row.get("detect") or {}).get("result") == "unfinished":
             return "api_error", "empty responses cut the episode short"
     return "ok", None
+
+
+_halt = threading.Event()
+
+
+def launch_check() -> str | None:
+    """Can a freshly compiled binary and Stockfish start? None if so, else what failed. Run before every
+    episode: on 2026-10-08 a macOS launch-policy fault (syspolicyd "failed to call driver: 0x3") froze
+    every non-Apple binary at launch for 9 hours, and with commands timing out cleanly the episodes
+    would otherwise have looked normal."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        src, exe = Path(d) / "c.c", Path(d) / "c"
+        src.write_text("int main(){return 0;}\n")
+        for cmd, inp in ((["cc", str(src), "-o", str(exe)], None), ([str(exe)], None),
+                         (["/usr/local/bin/stockfish"], "quit\n")):
+            p = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.DEVNULL,
+                                 stderr=subprocess.DEVNULL, text=True, start_new_session=True)
+            try:
+                if p.communicate(inp, timeout=20) is not None and p.returncode != 0:
+                    return f"{cmd[0]} exited {p.returncode}"
+            except subprocess.TimeoutExpired:
+                return f"{cmd[0]} did not finish in 20 s (launch freeze?)"
+    return None
 
 
 def run_slot(slot: dict, attempt: int) -> dict:
@@ -282,6 +320,15 @@ def execute(plan: dict, limit: int | None, models: list[str], evals: list[str]) 
     def worker(ev):
         cells = todo[ev]
         while True:
+            if _halt.is_set():
+                return
+            bad = launch_check()
+            if bad:
+                _halt.set()
+                msg = f"HALT {_dt.datetime.now(_dt.timezone.utc).isoformat()}: launch check failed ({bad}); no new episodes"
+                print(msg, flush=True)
+                (STUDY / "HALTED").write_text(msg + "\n")
+                return
             with _lock:
                 live = [c for c in sorted(cells) if cells[c]]
                 if not live or (limit and started[0] >= limit):
