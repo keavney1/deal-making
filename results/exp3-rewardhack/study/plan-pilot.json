@@ -1,0 +1,2887 @@
+{
+ "phase": "pilot",
+ "seed": 20261007,
+ "n": 20,
+ "slots": [
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|00",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|01",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|02",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|03",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|04",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|05",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|06",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|07",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|08",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|09",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|10",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|11",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|12",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|13",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|14",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|15",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|16",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|17",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|18",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|chess|small_deal|19",
+   "model": "or-o3",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|00",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-10914"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|01",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11066"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|02",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11099"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|03",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11179"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|04",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11451"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|05",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11555"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|06",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-12741"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|07",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13297"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|08",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13417"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|09",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13512"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|10",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13821"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|11",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14376"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|12",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14404"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|13",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14580"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|14",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15499"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|15",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15572"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|16",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15930"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|17",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-16429"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|18",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-17087"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|swe|small_deal|19",
+   "model": "or-o3",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-9296"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|00",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|01",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|02",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|03",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|04",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|05",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|06",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|07",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|08",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|09",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|10",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|11",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|12",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|13",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|14",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|15",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|16",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|17",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|18",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-o3|algotune|small_deal|19",
+   "model": "or-o3",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|00",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|01",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|02",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|03",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|04",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|05",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|06",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|07",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|08",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|09",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|10",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|11",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|12",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|13",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|14",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|15",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|16",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|17",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|18",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|chess|small_deal|19",
+   "model": "or-gemini-3.1-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|00",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-10914"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|01",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11066"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|02",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11099"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|03",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11179"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|04",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11451"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|05",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11555"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|06",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-12741"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|07",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13297"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|08",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13417"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|09",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13512"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|10",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13821"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|11",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14376"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|12",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14404"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|13",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14580"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|14",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15499"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|15",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15572"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|16",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15930"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|17",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-16429"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|18",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-17087"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|swe|small_deal|19",
+   "model": "or-gemini-3.1-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-9296"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|00",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|01",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|02",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|03",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|04",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|05",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|06",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|07",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|08",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|09",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|10",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|11",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|12",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|13",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|14",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|15",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|16",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|17",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|18",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gemini-3.1-pro|algotune|small_deal|19",
+   "model": "or-gemini-3.1-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|00",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|01",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|02",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|03",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|04",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|05",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|06",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|07",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|08",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|09",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|10",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|11",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|12",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|13",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|14",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|15",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|16",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|17",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|18",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|chess|small_deal|19",
+   "model": "or-gpt-5.6-sol",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|00",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-10914"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|01",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11066"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|02",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11099"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|03",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11179"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|04",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11451"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|05",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11555"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|06",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-12741"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|07",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13297"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|08",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13417"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|09",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13512"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|10",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13821"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|11",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14376"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|12",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14404"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|13",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14580"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|14",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15499"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|15",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15572"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|16",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15930"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|17",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-16429"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|18",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-17087"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|swe|small_deal|19",
+   "model": "or-gpt-5.6-sol",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-9296"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|00",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|01",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|02",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|03",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|04",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|05",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|06",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|07",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|08",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|09",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|10",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|11",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|12",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|13",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|14",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|15",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|16",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|17",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|18",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-gpt-5.6-sol|algotune|small_deal|19",
+   "model": "or-gpt-5.6-sol",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|00",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|01",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|02",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|03",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|04",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|05",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|06",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|07",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|08",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|09",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|10",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|11",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|12",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|13",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|14",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|15",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|16",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|17",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|18",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|chess|small_deal|19",
+   "model": "or-deepseek-v4-pro",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|00",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-10914"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|01",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11066"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|02",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11099"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|03",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11179"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|04",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11451"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|05",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11555"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|06",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-12741"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|07",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13297"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|08",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13417"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|09",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13512"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|10",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13821"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|11",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14376"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|12",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14404"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|13",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14580"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|14",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15499"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|15",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15572"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|16",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15930"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|17",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-16429"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|18",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-17087"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|swe|small_deal|19",
+   "model": "or-deepseek-v4-pro",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-9296"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|00",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|01",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|02",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|03",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|04",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|05",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|06",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|07",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|08",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|09",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|10",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|11",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|12",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|13",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|14",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|15",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|16",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|17",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|18",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-deepseek-v4-pro|algotune|small_deal|19",
+   "model": "or-deepseek-v4-pro",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|00",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|01",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|02",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|03",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|04",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|05",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|06",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|07",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|08",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|09",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|10",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|11",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|12",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|13",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|14",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|15",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|16",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|17",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|18",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|chess|small_deal|19",
+   "model": "or-grok-4.7",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|00",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-10914"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|01",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11066"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|02",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11099"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|03",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11179"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|04",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11451"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|05",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11555"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|06",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-12741"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|07",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13297"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|08",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13417"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|09",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13512"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|10",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13821"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|11",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14376"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|12",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14404"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|13",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14580"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|14",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15499"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|15",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15572"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|16",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15930"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|17",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-16429"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|18",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-17087"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|swe|small_deal|19",
+   "model": "or-grok-4.7",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-9296"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|00",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|01",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|02",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|03",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|04",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|05",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|06",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|07",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|08",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|09",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|10",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|11",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|12",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|13",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|14",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|15",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|16",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|17",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|18",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-grok-4.7|algotune|small_deal|19",
+   "model": "or-grok-4.7",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|00",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|01",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|02",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|03",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|04",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|05",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|06",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|07",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|08",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|09",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|10",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|11",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|12",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|13",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|14",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|15",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|16",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|17",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|18",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|chess|small_deal|19",
+   "model": "or-claude-opus-5.5",
+   "eval": "chess",
+   "rung": "small_deal",
+   "task": null
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|00",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-10914"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|01",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11066"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|02",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11099"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|03",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11179"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|04",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11451"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|05",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-11555"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|06",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-12741"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|07",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13297"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|08",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13417"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|09",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13512"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|10",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-13821"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|11",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14376"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|12",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14404"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|13",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-14580"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|14",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15499"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|15",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15572"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|16",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-15930"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|17",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-16429"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|18",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-17087"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|swe|small_deal|19",
+   "model": "or-claude-opus-5.5",
+   "eval": "swe",
+   "rung": "small_deal",
+   "task": "django__django-9296"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|00",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|01",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|02",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|03",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sparse_eigenvectors_complex"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|04",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|05",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|06",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|07",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "aes_gcm_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|08",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|09",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|10",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|11",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "sha256_hashing"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|12",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|13",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|14",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|15",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "chacha_encryption"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|16",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|17",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|18",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  },
+  {
+   "phase": "pilot",
+   "slot": "pilot|or-claude-opus-5.5|algotune|small_deal|19",
+   "model": "or-claude-opus-5.5",
+   "eval": "algotune",
+   "rung": "small_deal",
+   "task": "earth_movers_distance"
+  }
+ ]
+}

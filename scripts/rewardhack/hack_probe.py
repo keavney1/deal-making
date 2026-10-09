@@ -36,6 +36,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -254,28 +255,45 @@ def cleanup_sandbox(sandbox: Path) -> int:
 
 
 def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str | None = None) -> dict:
-    """Run a bash command confined by sandbox-exec, cwd=sandbox. Returns stdout/stderr/exit/timed_out."""
+    """Run a bash command confined by sandbox-exec, cwd=sandbox. Returns stdout/stderr/exit/timed_out.
+
+    The command runs in its own process group, and a timeout kills the whole group. Until 2026-10-09
+    this was subprocess.run(timeout=...), which kills only sandbox-exec; a process the command had
+    started kept the output pipes open, and run() then waited for them with no limit. In the
+    Experiment 3 eligibility pilot three AlgoTune episodes (`openssl speed sha256`, a compiled AES
+    benchmark, `go run speed.go`) hung that way for 8 hours. The wait for output after a kill is now
+    bounded too, so a child that will not die (macOS uninterruptible state) cannot hold the episode.
+    What the model sees is unchanged: a timed-out command returns what it printed plus "[timed out]"."""
     sandbox_tmp(sandbox).mkdir(exist_ok=True)
     prof = _seatbelt_profile(sandbox) + (extra_profile or "")
+    p = subprocess.Popen(["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd], cwd=str(sandbox),
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=sandbox_env(sandbox),
+                         start_new_session=True)
+
+    def _text(v):
+        # bytes -> str with errors="replace": output that is not valid UTF-8 raised UnicodeDecodeError
+        # and killed the episode (Grok, AlgoTune batch 3, printing CPU feature bytes from sysctl).
+        return v.decode("utf-8", "replace") if isinstance(v, bytes) else (v or "")
+
     try:
-        p = subprocess.run(
-            ["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd],
-            cwd=str(sandbox), capture_output=True, text=True, errors="replace", timeout=timeout,
-            env=sandbox_env(sandbox),
-        )
-        # errors="replace": output that is not valid UTF-8 raised UnicodeDecodeError and killed the
-        # episode (Grok, AlgoTune batch 3, printing CPU feature bytes from sysctl).
-        return {"stdout": p.stdout, "stderr": p.stderr, "exit": p.returncode, "timed_out": False}
-    except subprocess.TimeoutExpired as e:
-        # TimeoutExpired carries RAW BYTES even under text=True — the decode happens after
-        # communicate() returns, which a timeout preempts. Concatenating a str onto that raised
-        # TypeError and killed the whole episode, so any command that ran long was recorded as an
-        # errored episode rather than a timed-out tool call. Found 2026-08-17 in the chess probe;
-        # it affects the coding harness identically.
-        def _text(v):
-            return v.decode("utf-8", "replace") if isinstance(v, bytes) else (v or "")
-        return {"stdout": _text(e.stdout), "stderr": _text(e.stderr) + "\n[timed out]",
-                "exit": 124, "timed_out": True}
+        out, err = p.communicate(timeout=timeout)
+        return {"stdout": _text(out), "stderr": _text(err), "exit": p.returncode, "timed_out": False}
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(p.pid, signal.SIGKILL)
+        except (ProcessLookupError, PermissionError):
+            pass
+        try:
+            out, err = p.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            # Something still holds the pipes: stop reading and return what we have.
+            for f in (p.stdout, p.stderr):
+                try:
+                    f.close()
+                except OSError:
+                    pass
+            out, err = b"", b""
+        return {"stdout": _text(out), "stderr": _text(err) + "\n[timed out]", "exit": 124, "timed_out": True}
 
 
 def _within(sandbox: Path, path_str: str) -> Path | None:
