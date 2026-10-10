@@ -1,3 +1,5 @@
+> **Superseded.** This is the pre-ladder handoff (2026-09-23). For the registered study and its analysis, start at `docs/handoff-exp3-analysis.md`.
+
 # Experiment 3 handoff — state as of 2026-09-23
 
 Resumed 2026-09-21 after the August pause. This file is the current starting point; the August

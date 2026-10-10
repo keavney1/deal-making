@@ -381,6 +381,10 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="print and save the plan; run nothing")
     ap.add_argument("--limit", type=int, help="run at most this many slots (testing)")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--counted", choices=["pilot", "main"],
+                    help="print the folder of every counted episode (each slot's first ok attempt, after voids): "
+                         "the exact input for score_cot_exp3.py, so errored, voided and discarded attempts are never scored")
+    ap.add_argument("--evals-only", help="with --counted: comma-separated evals to list")
     ap.add_argument("--workers-algotune", type=int, default=WORKERS["algotune"],
                     help="AlgoTune episodes at once (3 by default; 6 from 2026-10-10 after chess and SWE finished)")
     ap.add_argument("--read-swe", help=argparse.SUPPRESS)
@@ -399,6 +403,12 @@ def main() -> int:
         return 0 if all(r["status"] == "ok" for r in rows) else 1
     if a.status:
         return status()
+    if a.counted:
+        keep = set(a.evals_only.split(",")) if a.evals_only else set(EVALS)
+        for slot, (state, r) in sorted(slot_state(attempts()).items()):
+            if state == "ok" and r["phase"] == a.counted and r["eval"] in keep:
+                print(r["folder"])
+        return 0
     if not a.phase:
         ap.error("--phase, --status or --read-swe")
     models, evals = a.models.split(","), a.evals.split(",")
