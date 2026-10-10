@@ -320,8 +320,8 @@ def execute(plan: dict, limit: int | None, models: list[str], evals: list[str]) 
     def worker(ev):
         cells = todo[ev]
         while True:
-            if _halt.is_set():
-                return
+            if _halt.is_set() or (STUDY / "DRAIN").exists():
+                return                      # DRAIN: start nothing new; running episodes finish and log
             bad = launch_check()
             if bad:
                 _halt.set()
@@ -381,9 +381,12 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="print and save the plan; run nothing")
     ap.add_argument("--limit", type=int, help="run at most this many slots (testing)")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--workers-algotune", type=int, default=WORKERS["algotune"],
+                    help="AlgoTune episodes at once (3 by default; 6 from 2026-10-10 after chess and SWE finished)")
     ap.add_argument("--read-swe", help=argparse.SUPPRESS)
     ap.add_argument("--smoke", metavar="MODEL", help="smoke test: one Nothing episode per eval, to study-smoke/")
     a = ap.parse_args()
+    WORKERS["algotune"] = a.workers_algotune
     if a.read_swe:
         return read_swe(a.read_swe)
     if a.smoke:
