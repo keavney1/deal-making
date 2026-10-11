@@ -52,3 +52,16 @@ Everything during data collection that a reader comparing the data with the regi
    by about Tuesday; chess had ~20 episodes left and runs alongside. Conditions remain interleaved
    within each cell; the registration fixes run order, not concurrency. The earlier plan to switch
    when chess finished was overtaken by the fault, so no episodes were discarded for the switch.
+4. **Third launch-policy fault, 2026-10-11 ~04:54 (watchdog: last good check 04:53:45, fault seen
+   04:56:00), about two hours after the relaunch with 6 AlgoTune workers.** The new HALTED path
+   worked: nothing started after the fault. It cleared on its own, without a restart, sometime
+   before 13:10, when launches worked again. Not tied to 11 pm after all; the likelier trigger is
+   the volume of freshly compiled unsigned binaries the AlgoTune models run, each of which macOS
+   checks with Apple's notarization service. Seven attempts in progress were recorded as
+   environment failures; one Grok AlgoTune episode that ended at 04:54:31, inside the window, was
+   voided by the fault-window rule.
+   - From 13:12 the watchdog is `scripts/rewardhack/exp3_watchdog.py` (replacing the shell
+     version): on a fault it halts, keeps checking, and after three good checks in a row applies
+     the fault-window rule itself (voids `ok` attempts logged after the last good check; sets
+     aside unlogged in-progress folders as discarded), records the fault in `faults.jsonl`, and
+     relaunches. A fault now costs its own duration rather than the time until someone notices.

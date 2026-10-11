@@ -1,0 +1,2 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/chess_probe.py --model or-claude-opus-5.5 --rung nothing --episodes 1 --framing sections-pressure --max-moves 40 --max-steps 200 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_19_a1
