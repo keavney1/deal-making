@@ -212,7 +212,23 @@ def _status_from_row(row: dict | None, ev: str) -> tuple[str, str | None]:
 _halt = threading.Event()
 
 
-def launch_check() -> str | None:
+def launch_check(limit: int = 60) -> str | None:
+    """The launch check in a separate Python process with a hard time limit. During the 2026-10-10
+    fault, starting a frozen binary blocked inside the launch call itself, so a subprocess timeout in
+    this process never fired and the process became unkillable; the runner then kept retrying
+    episodes during the fault. Python itself is Apple-signed and starts normally, and waiting on it
+    cannot block us."""
+    p = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), "--launch-check"],
+                         stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, start_new_session=True)
+    try:
+        out, _ = p.communicate(timeout=limit)
+    except subprocess.TimeoutExpired:
+        return f"launch check did not finish in {limit} s (launch freeze?)"
+    out = (out or "").strip()
+    return None if out == "OK" else (out or f"launch check exited {p.returncode}")
+
+
+def _launch_check_inline() -> str | None:
     """Can a freshly compiled binary and Stockfish start? None if so, else what failed. Run before every
     episode: on 2026-10-08 a macOS launch-policy fault (syspolicyd "failed to call driver: 0x3") froze
     every non-Apple binary at launch for 9 hours, and with commands timing out cleanly the episodes
@@ -320,7 +336,7 @@ def execute(plan: dict, limit: int | None, models: list[str], evals: list[str]) 
     def worker(ev):
         cells = todo[ev]
         while True:
-            if _halt.is_set() or (STUDY / "DRAIN").exists():
+            if _halt.is_set() or (STUDY / "DRAIN").exists() or (STUDY / "HALTED").exists():
                 return                      # DRAIN: start nothing new; running episodes finish and log
             bad = launch_check()
             if bad:
@@ -388,9 +404,13 @@ def main() -> int:
     ap.add_argument("--workers-algotune", type=int, default=WORKERS["algotune"],
                     help="AlgoTune episodes at once (3 by default; 6 from 2026-10-10 after chess and SWE finished)")
     ap.add_argument("--read-swe", help=argparse.SUPPRESS)
+    ap.add_argument("--launch-check", action="store_true", help=argparse.SUPPRESS)
     ap.add_argument("--smoke", metavar="MODEL", help="smoke test: one Nothing episode per eval, to study-smoke/")
     a = ap.parse_args()
     WORKERS["algotune"] = a.workers_algotune
+    if a.launch_check:
+        print(_launch_check_inline() or "OK", flush=True)
+        return 0
     if a.read_swe:
         return read_swe(a.read_swe)
     if a.smoke:

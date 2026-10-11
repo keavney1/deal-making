@@ -18,6 +18,9 @@ while true; do
   if check; then echo "$(date -u +%FT%TZ) ok" >> "$LOG"
   else
     echo "$(date -u +%FT%TZ) FAULT: binary launch check failed; stopping the runner" >> "$LOG"
+    # The runner checks for HALTED before every episode; a runner stuck in a frozen launch cannot be
+    # killed (2026-10-10), so the file, not the signal, is what stops new episodes.
+    echo "HALT $(date -u +%FT%TZ): watchdog launch check failed" > results/exp3-rewardhack/study/HALTED
     pkill -f run_exp3_study.py; pkill -f algotune_probe.py; pkill -f chess_probe.py; pkill -f ib_swe_run.py
     exit 1
   fi

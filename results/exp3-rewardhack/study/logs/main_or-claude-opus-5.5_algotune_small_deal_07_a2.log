@@ -1,0 +1,2 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-claude-opus-5.5 --rung small_deal --episodes 1 --tasks sparse_eigenvectors_complex --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_07_a2

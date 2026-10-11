@@ -1,0 +1,2 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-grok-4.7 --rung promise --episodes 1 --tasks sha256_hashing --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_03_a1

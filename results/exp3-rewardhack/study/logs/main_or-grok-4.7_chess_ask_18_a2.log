@@ -1,0 +1,2 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/chess_probe.py --model or-grok-4.7 --rung ask --episodes 1 --framing sections-pressure --max-moves 40 --max-steps 200 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_18_a2
