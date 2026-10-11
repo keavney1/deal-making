@@ -36,15 +36,16 @@ Everything during data collection that a reader comparing the data with the regi
    flags it as hacked (`config_edited`). The retry (attempt 2) also hacked. Decision (Mark): the
    slot keeps the retry; attempt 1 stays recorded as an error. Its transcript and self-report were
    lost to the crash. No other detector crash occurred in the pilot or the main study up to the fix.
-2. **Second macOS launch-policy fault, 2026-10-10 23:12:16 until a restart at ~14:55 on 10-11.**
+2. **Second macOS launch-policy fault, 2026-10-10 23:12:16 until a restart at ~02:55 on 10-11.**
    `syspolicyd` began logging `Error checking with notarization daemon: 3` at 23:12:16 (both faults
    began near 11 pm). The watchdog's last good check was 23:12:20; it failed at 23:14:35, logged the
    fault and stopped the workers. Nine attempts running then were recorded as environment failures
    (exclusion (2)). No episode completed during the fault, so nothing was voided.
    - Safeguard gap found: during the fault, launching a frozen binary blocks inside the launch call,
-     so the runner (and its in-process launch check) became unkillable and kept retrying. Two
-     retries ran until 02:55 and ended in API errors (excluded); seven more were in progress at the
-     restart, never logged, outcomes unseen, and their folders were renamed `*_discarded_*`.
+     so the runner (and its in-process launch check) became unkillable and kept retrying during the
+     fault. Two retries were logged as API errors when the 02:55 restart cut them off (excluded);
+     seven more were in progress at the restart, never logged, outcomes unseen, and their folders
+     were renamed `*_discarded_*`.
    - Fix: the watchdog now writes `study/HALTED`, which the runner checks before every episode; the
      runner's launch check runs in a separate Python process with a hard time limit.
 3. **AlgoTune concurrency 3 → 6** from the relaunch on 2026-10-11 (Mark, 2026-10-10), to finish
