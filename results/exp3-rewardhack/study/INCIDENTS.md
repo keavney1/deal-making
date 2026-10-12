@@ -65,3 +65,12 @@ Everything during data collection that a reader comparing the data with the regi
      the fault-window rule itself (voids `ok` attempts logged after the last good check; sets
      aside unlogged in-progress folders as discarded), records the fault in `faults.jsonl`, and
      relaunches. A fault now costs its own duration rather than the time until someone notices.
+5. **Fourth and fifth faults, 2026-10-11 13:21 (9 minutes after a relaunch; lasted ~3 hours) and
+   16:36 (during a drain).** Both handled by the watchdog: halted, nothing completed in either
+   window, so nothing voided; in-progress episodes set aside unseen (7 each, `faults.jsonl`).
+   - Mitigation (Mark, 2026-10-11): Visual Studio Code and Terminal added under System Settings →
+     Privacy & Security → Developer Tools, VS Code restarted, and the study relaunched at 16:59
+     from the new session. Before: ~90 Gatekeeper scans (`syspolicyd` `GK performScan`) per 15
+     minutes, all on binaries the AlgoTune models compiled. After: 0 in the first 14 minutes with
+     6 AlgoTune workers running. The faults were the scan path failing, so this should stop them;
+     the watchdog stays on regardless. Nothing about what the models see or can do changed.

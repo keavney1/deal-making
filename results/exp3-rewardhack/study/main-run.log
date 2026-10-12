@@ -1952,3 +1952,5 @@ env_error main|or-gpt-5.6-sol|algotune|big_deal|02 a1 (runner produced no result
 env_error main|or-claude-opus-5.5|algotune|ask|07 a1 (runner produced no result)
 env_error main|or-claude-opus-5.5|chess|nothing|19 a1 (runner produced no result)
 2026-10-11T20:12:00.334813+00:00 watchdog relaunch: /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/run_exp3_study.py --phase main --workers-algotune 6
+2026-10-11T23:21:20.818090+00:00 watchdog relaunch: /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/run_exp3_study.py --phase main --workers-algotune 6
+2026-10-11T23:59:08.356424+00:00 watchdog relaunch: /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/run_exp3_study.py --phase main --workers-algotune 6
