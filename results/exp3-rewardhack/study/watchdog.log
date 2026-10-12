@@ -273,3 +273,257 @@
 2026-10-12T06:45:28Z recovery check ok (2/3)
 2026-10-12T06:47:28Z recovery check ok (3/3)
 2026-10-12T06:47:39Z recovered: voided 0, discarded 6; relaunching
+2026-10-12T06:49:40Z ok
+2026-10-12T06:51:41Z ok
+2026-10-12T06:53:41Z ok
+2026-10-12T06:55:43Z ok
+2026-10-12T06:57:44Z ok
+2026-10-12T06:59:44Z ok
+2026-10-12T07:01:45Z ok
+2026-10-12T07:03:46Z ok
+2026-10-12T07:05:47Z ok
+2026-10-12T07:07:47Z ok
+2026-10-12T07:09:48Z ok
+2026-10-12T07:11:49Z ok
+2026-10-12T07:13:50Z ok
+2026-10-12T07:15:51Z ok
+2026-10-12T07:17:52Z ok
+2026-10-12T07:19:52Z ok
+2026-10-12T07:21:53Z ok
+2026-10-12T07:23:54Z ok
+2026-10-12T07:25:55Z ok
+2026-10-12T07:27:55Z ok
+2026-10-12T07:29:56Z ok
+2026-10-12T07:31:57Z ok
+2026-10-12T07:33:58Z ok
+2026-10-12T07:35:58Z ok
+2026-10-12T07:37:59Z ok
+2026-10-12T07:40:00Z ok
+2026-10-12T07:42:01Z ok
+2026-10-12T07:44:02Z ok
+2026-10-12T07:46:02Z ok
+2026-10-12T07:48:04Z ok
+2026-10-12T07:50:05Z ok
+2026-10-12T07:52:06Z ok
+2026-10-12T07:54:06Z ok
+2026-10-12T07:56:08Z ok
+2026-10-12T07:58:09Z ok
+2026-10-12T08:00:09Z ok
+2026-10-12T08:02:10Z ok
+2026-10-12T08:04:11Z ok
+2026-10-12T08:06:12Z ok
+2026-10-12T08:08:12Z ok
+2026-10-12T08:10:13Z ok
+2026-10-12T08:12:14Z ok
+2026-10-12T08:14:15Z ok
+2026-10-12T08:16:16Z ok
+2026-10-12T08:18:17Z ok
+2026-10-12T08:20:17Z ok
+2026-10-12T08:22:18Z ok
+2026-10-12T08:24:19Z ok
+2026-10-12T08:26:20Z ok
+2026-10-12T08:28:20Z ok
+2026-10-12T08:30:21Z ok
+2026-10-12T08:32:22Z ok
+2026-10-12T08:34:23Z ok
+2026-10-12T08:36:23Z ok
+2026-10-12T08:38:24Z ok
+2026-10-12T08:40:25Z ok
+2026-10-12T08:42:26Z ok
+2026-10-12T08:44:26Z ok
+2026-10-12T08:46:27Z ok
+2026-10-12T08:48:28Z ok
+2026-10-12T08:50:29Z ok
+2026-10-12T08:52:30Z ok
+2026-10-12T08:54:31Z ok
+2026-10-12T08:56:32Z ok
+2026-10-12T08:58:32Z ok
+2026-10-12T09:00:33Z ok
+2026-10-12T09:02:34Z ok
+2026-10-12T09:04:35Z ok
+2026-10-12T09:06:35Z ok
+2026-10-12T09:08:36Z ok
+2026-10-12T09:10:37Z ok
+2026-10-12T09:12:38Z ok
+2026-10-12T09:14:39Z ok
+2026-10-12T09:16:39Z ok
+2026-10-12T09:18:40Z ok
+2026-10-12T09:20:41Z ok
+2026-10-12T09:22:42Z ok
+2026-10-12T09:24:43Z ok
+2026-10-12T09:26:44Z ok
+2026-10-12T09:28:44Z ok
+2026-10-12T09:30:45Z ok
+2026-10-12T09:32:46Z ok
+2026-10-12T09:34:47Z ok
+2026-10-12T09:36:47Z ok
+2026-10-12T09:38:48Z ok
+2026-10-12T09:40:49Z ok
+2026-10-12T09:42:50Z ok
+2026-10-12T09:44:51Z ok
+2026-10-12T09:46:51Z ok
+2026-10-12T09:48:52Z ok
+2026-10-12T09:50:53Z ok
+2026-10-12T09:52:54Z ok
+2026-10-12T09:54:55Z ok
+2026-10-12T09:56:56Z ok
+2026-10-12T09:58:58Z ok
+2026-10-12T10:00:58Z ok
+2026-10-12T10:02:59Z ok
+2026-10-12T10:05:00Z ok
+2026-10-12T10:07:01Z ok
+2026-10-12T10:09:02Z ok
+2026-10-12T10:11:02Z ok
+2026-10-12T10:13:03Z ok
+2026-10-12T10:15:04Z ok
+2026-10-12T10:17:05Z ok
+2026-10-12T10:19:06Z ok
+2026-10-12T10:21:07Z ok
+2026-10-12T10:23:07Z ok
+2026-10-12T10:25:08Z ok
+2026-10-12T10:27:09Z ok
+2026-10-12T10:29:10Z ok
+2026-10-12T10:31:10Z ok
+2026-10-12T10:33:11Z ok
+2026-10-12T10:35:12Z ok
+2026-10-12T10:37:13Z ok
+2026-10-12T10:39:14Z ok
+2026-10-12T10:41:14Z ok
+2026-10-12T10:43:15Z ok
+2026-10-12T10:45:16Z ok
+2026-10-12T10:47:17Z ok
+2026-10-12T10:49:18Z ok
+2026-10-12T10:51:19Z ok
+2026-10-12T10:53:19Z ok
+2026-10-12T10:55:20Z ok
+2026-10-12T10:57:21Z ok
+2026-10-12T10:59:22Z ok
+2026-10-12T11:01:23Z ok
+2026-10-12T11:03:23Z ok
+2026-10-12T11:05:24Z ok
+2026-10-12T11:07:25Z ok
+2026-10-12T11:09:26Z ok
+2026-10-12T11:11:26Z ok
+2026-10-12T11:13:27Z ok
+2026-10-12T11:15:28Z ok
+2026-10-12T11:17:29Z ok
+2026-10-12T11:19:30Z ok
+2026-10-12T11:21:31Z ok
+2026-10-12T11:23:31Z ok
+2026-10-12T11:25:32Z ok
+2026-10-12T11:27:33Z ok
+2026-10-12T11:29:34Z ok
+2026-10-12T11:31:35Z ok
+2026-10-12T11:33:36Z ok
+2026-10-12T11:35:37Z ok
+2026-10-12T11:37:37Z ok
+2026-10-12T11:39:38Z ok
+2026-10-12T11:41:39Z ok
+2026-10-12T11:43:40Z ok
+2026-10-12T11:45:41Z ok
+2026-10-12T11:47:41Z ok
+2026-10-12T11:49:42Z ok
+2026-10-12T11:51:43Z ok
+2026-10-12T11:53:44Z ok
+2026-10-12T11:55:45Z ok
+2026-10-12T11:57:46Z ok
+2026-10-12T12:00:46Z FAULT: launch check did not finish in 60 s; halting
+2026-10-12T12:03:46Z recovery check failed (0/3)
+2026-10-12T12:06:46Z recovery check failed (0/3)
+2026-10-12T12:09:46Z recovery check failed (0/3)
+2026-10-12T12:12:46Z recovery check failed (0/3)
+2026-10-12T12:15:46Z recovery check failed (0/3)
+2026-10-12T12:18:46Z recovery check failed (0/3)
+2026-10-12T12:21:46Z recovery check failed (0/3)
+2026-10-12T12:24:46Z recovery check failed (0/3)
+2026-10-12T12:27:46Z recovery check failed (0/3)
+2026-10-12T12:30:46Z recovery check failed (0/3)
+2026-10-12T12:33:46Z recovery check failed (0/3)
+2026-10-12T12:36:46Z recovery check failed (0/3)
+2026-10-12T12:39:46Z recovery check failed (0/3)
+2026-10-12T12:42:46Z recovery check failed (0/3)
+2026-10-12T12:45:46Z recovery check failed (0/3)
+2026-10-12T12:48:46Z recovery check failed (0/3)
+2026-10-12T12:51:46Z recovery check failed (0/3)
+2026-10-12T12:54:46Z recovery check failed (0/3)
+2026-10-12T12:57:46Z recovery check failed (0/3)
+2026-10-12T13:00:46Z recovery check failed (0/3)
+2026-10-12T13:03:46Z recovery check failed (0/3)
+2026-10-12T13:06:46Z recovery check failed (0/3)
+2026-10-12T13:09:46Z recovery check failed (0/3)
+2026-10-12T13:12:46Z recovery check failed (0/3)
+2026-10-12T13:15:46Z recovery check failed (0/3)
+2026-10-12T13:18:46Z recovery check failed (0/3)
+2026-10-12T13:21:46Z recovery check failed (0/3)
+2026-10-12T13:24:46Z recovery check failed (0/3)
+2026-10-12T13:27:46Z recovery check failed (0/3)
+2026-10-12T13:30:46Z recovery check failed (0/3)
+2026-10-12T13:33:46Z recovery check failed (0/3)
+2026-10-12T13:36:47Z recovery check failed (0/3)
+2026-10-12T13:39:47Z recovery check failed (0/3)
+2026-10-12T13:42:47Z recovery check failed (0/3)
+2026-10-12T13:45:47Z recovery check failed (0/3)
+2026-10-12T13:48:47Z recovery check failed (0/3)
+2026-10-12T13:51:47Z recovery check failed (0/3)
+2026-10-12T13:54:47Z recovery check failed (0/3)
+2026-10-12T13:57:47Z recovery check failed (0/3)
+2026-10-12T14:00:47Z recovery check failed (0/3)
+2026-10-12T14:03:47Z recovery check failed (0/3)
+2026-10-12T14:06:47Z recovery check failed (0/3)
+2026-10-12T14:09:47Z recovery check failed (0/3)
+2026-10-12T14:12:47Z recovery check failed (0/3)
+2026-10-12T14:15:47Z recovery check failed (0/3)
+2026-10-12T14:18:47Z recovery check failed (0/3)
+2026-10-12T14:21:47Z recovery check failed (0/3)
+2026-10-12T14:24:47Z recovery check failed (0/3)
+2026-10-12T14:27:47Z recovery check failed (0/3)
+2026-10-12T14:30:47Z recovery check failed (0/3)
+2026-10-12T14:33:47Z recovery check failed (0/3)
+2026-10-12T14:36:47Z recovery check failed (0/3)
+2026-10-12T14:39:47Z recovery check failed (0/3)
+2026-10-12T14:42:47Z recovery check failed (0/3)
+2026-10-12T14:45:47Z recovery check failed (0/3)
+2026-10-12T14:48:47Z recovery check failed (0/3)
+2026-10-12T14:51:47Z recovery check failed (0/3)
+2026-10-12T14:54:47Z recovery check failed (0/3)
+2026-10-12T14:57:47Z recovery check failed (0/3)
+2026-10-12T15:00:47Z recovery check failed (0/3)
+2026-10-12T15:03:47Z recovery check failed (0/3)
+2026-10-12T15:06:47Z recovery check failed (0/3)
+2026-10-12T15:09:47Z recovery check failed (0/3)
+2026-10-12T15:12:47Z recovery check failed (0/3)
+2026-10-12T15:15:47Z recovery check failed (0/3)
+2026-10-12T15:18:47Z recovery check failed (0/3)
+2026-10-12T15:21:47Z recovery check failed (0/3)
+2026-10-12T15:24:47Z recovery check failed (0/3)
+2026-10-12T15:27:47Z recovery check failed (0/3)
+2026-10-12T15:30:47Z recovery check failed (0/3)
+2026-10-12T15:33:47Z recovery check failed (0/3)
+2026-10-12T15:36:47Z recovery check failed (0/3)
+2026-10-12T15:39:47Z recovery check failed (0/3)
+2026-10-12T15:42:47Z recovery check failed (0/3)
+2026-10-12T15:45:47Z recovery check failed (0/3)
+2026-10-12T15:48:47Z recovery check failed (0/3)
+2026-10-12T15:51:47Z recovery check failed (0/3)
+2026-10-12T15:54:47Z recovery check failed (0/3)
+2026-10-12T15:57:47Z recovery check failed (0/3)
+2026-10-12T16:00:47Z recovery check failed (0/3)
+2026-10-12T16:03:47Z recovery check failed (0/3)
+2026-10-12T16:06:47Z recovery check failed (0/3)
+2026-10-12T16:09:47Z recovery check failed (0/3)
+2026-10-12T16:12:47Z recovery check failed (0/3)
+2026-10-12T16:15:47Z recovery check failed (0/3)
+2026-10-12T16:18:47Z recovery check failed (0/3)
+2026-10-12T16:21:47Z recovery check failed (0/3)
+2026-10-12T16:24:47Z recovery check failed (0/3)
+2026-10-12T16:27:47Z recovery check failed (0/3)
+2026-10-12T16:30:47Z recovery check failed (0/3)
+2026-10-12T16:33:47Z recovery check failed (0/3)
+2026-10-12T16:36:47Z recovery check failed (0/3)
+2026-10-12T16:39:48Z recovery check failed (0/3)
+2026-10-12T16:42:48Z recovery check failed (0/3)
+2026-10-12T16:45:48Z recovery check failed (0/3)
+2026-10-12T16:48:48Z recovery check failed (0/3)
+2026-10-12T16:51:40Z recovery check failed (0/3)
+2026-10-12T16:52:52Z ok
+2026-10-12T16:54:53Z ok
