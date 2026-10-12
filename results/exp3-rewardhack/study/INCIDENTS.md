@@ -74,3 +74,11 @@ Everything during data collection that a reader comparing the data with the regi
      minutes, all on binaries the AlgoTune models compiled. After: 0 in the first 14 minutes with
      6 AlgoTune workers running. The faults were the scan path failing, so this should stop them;
      the watchdog stays on regardless. Nothing about what the models see or can do changed.
+6. **Sixth fault, 2026-10-11 23:16 (last good check 23:13:53), with the exemption active.** The
+   study's processes were no longer triggering Gatekeeper scans (one scan in the preceding hour, at
+   23:15:31, not from the study), yet the system check path failed anyway. Three faults have now
+   begun between 22:55 and 23:16 on different nights, so a nightly macOS job looks like a second,
+   separate trigger; the daytime faults (04:56, 13:21, 16:36 on 10-11) came under heavy load before
+   the exemption. The watchdog recovered automatically at 23:47 (three good checks): nothing
+   completed in the window, nothing voided, six in-progress episodes set aside unseen, relaunched.
+   About 31 minutes lost.
