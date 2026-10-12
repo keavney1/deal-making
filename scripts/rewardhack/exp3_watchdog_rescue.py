@@ -58,6 +58,10 @@ def last_fault() -> tuple[_dt.datetime, _dt.datetime] | None:
 
 
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--min-halted", type=float, default=30, help="minutes halted before rescuing")
+    a = ap.parse_args()
     left = pending_main()
     if left == 0 and not (STUDY / "HALTED").exists():
         print("DONE: no pending main-study slots")
@@ -66,7 +70,7 @@ def main() -> int:
     if halted.exists():
         fault = last_fault()
         since = (w.now() - fault[1]).total_seconds() / 60 if fault else 0
-        if fault and since > 30:
+        if fault and since > a.min_halted:
             bad = w.check()
             if bad:
                 print(f"HALTED {since:.0f} min; fresh check still fails ({bad}); waiting")

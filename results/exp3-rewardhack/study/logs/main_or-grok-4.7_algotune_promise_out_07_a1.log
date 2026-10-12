@@ -1,0 +1,4 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-grok-4.7 --rung promise_out --episodes 1 --tasks earth_movers_distance --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_07_a1
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-grok-4.7 --rung promise_out --episodes 1 --tasks earth_movers_distance --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_07_a1

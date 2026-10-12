@@ -1,0 +1,4 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-deepseek-v4-pro --rung nothing --episodes 1 --tasks sha256_hashing --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_13_a2
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-deepseek-v4-pro --rung nothing --episodes 1 --tasks sha256_hashing --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_13_a2
