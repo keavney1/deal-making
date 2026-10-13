@@ -82,3 +82,14 @@ Everything during data collection that a reader comparing the data with the regi
    the exemption. The watchdog recovered automatically at 23:47 (three good checks): nothing
    completed in the window, nothing voided, six in-progress episodes set aside unseen, relaunched.
    About 31 minutes lost.
+7. **Seventh fault, 2026-10-12 05:00 (last good check 04:57:46).** The watchdog halted, but its
+   recovery checks kept failing for 5 hours while the same check from a fresh process passed in
+   under a second; recovered by hand at 09:52 (two `ok` episodes in the window voided, five set
+   aside unseen). Added `scripts/rewardhack/exp3_watchdog_rescue.py`, run every 30 minutes from the
+   Claude session, which replaces a watchdog stuck past a threshold when a fresh check passes.
+8. **Eighth fault, 2026-10-12 12:23**, recovered by the watchdog itself in 6 minutes; nothing
+   voided, six set aside unseen.
+9. **Ninth fault, 2026-10-13 02:10 (last good check 02:07:47).** This one did not clear: fresh
+   checks also failed for six hours, until Mark restarted the Mac at ~08:20. Rescue at 08:28 after
+   the load settled: nothing voided, six in-progress episodes set aside unseen; relaunched from the
+   new (exempt) session. About 6.3 hours lost.

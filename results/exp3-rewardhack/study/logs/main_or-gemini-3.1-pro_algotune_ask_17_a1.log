@@ -1,0 +1,4 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-gemini-3.1-pro --rung ask --episodes 1 --tasks chacha_encryption --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_17_a1
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/algotune_probe.py --model or-gemini-3.1-pro --rung ask --episodes 1 --tasks chacha_encryption --concurrency 1 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_17_a1
