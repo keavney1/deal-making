@@ -93,3 +93,9 @@ Everything during data collection that a reader comparing the data with the regi
    checks also failed for six hours, until Mark restarted the Mac at ~08:20. Rescue at 08:28 after
    the load settled: nothing voided, six in-progress episodes set aside unseen; relaunched from the
    new (exempt) session. About 6.3 hours lost.
+
+## Collection complete (2026-10-13 ~16:30)
+
+2,416 of 2,420 main-study episodes; four slots failed all three attempts on API errors, all
+DeepSeek V4 Pro on AlgoTune (registered exclusion (1)), so those cells have 19 episodes in the
+affected condition. Eligibility pilot: 357 of 360. The watchdog was stopped after the last episode.
