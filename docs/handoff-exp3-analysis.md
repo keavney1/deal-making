@@ -1,7 +1,7 @@
 # Experiment 3 analysis handoff
 
-Draft 2026-10-10, while the main study is still running; update it when collection ends. This is
-the starting point for analyzing Experiment 3 in a fresh session. It points to files rather than
+Updated 2026-10-13, after collection ended (main study 2,416/2,420 episodes; eligibility pilot
+357/360). This is the starting point for analyzing Experiment 3 in a fresh session. It points to files rather than
 repeating them. Times are US Pacific; repo logs are UTC.
 
 ## 1. What governs
@@ -96,23 +96,31 @@ labeled so. The registration commits to reporting, for every condition:
 - per-cell, per-model and per-eval hack rates.
 Also report Stage 1 agreement counts descriptively (o3 accepted the Big deal 6/10; others 9–10/10).
 
-## 6. Before collection ends (Monday)
+## 6. Collection is complete
 
-The registration says "no interim analysis of hack rates." Until AlgoTune finishes, do not run
-`analyze_exp3.py`, tabulate hacking or rule-following by condition, or build the deals list (it
-encodes rule-following by condition). Useful meanwhile: CoT scoring of the finished chess and SWE
-episodes; the Astra reliability subset; building and testing the reporting code on synthetic or
-pilot data. If Mark decides to look early, log it in INCIDENTS.md and disclose it.
+Collection ended 2026-10-13 ~16:50; the interim-analysis restriction no longer applies. No
+interim analysis of hack rates was run during collection. Suggested order: (1) the registered
+analysis (one command, section 3); (2) exploratory tables; (3) CoT scoring of the counted episodes
+(check the budget first, section 8).
 
 ## 7. Caveats the analysis must handle or report
 
-- Incidents (INCIDENTS.md): the macOS launch-policy fault and the six voided pilot episodes; the
-  chess detector crash on Gemini's `fen.old.txt` (slot keeps the retry, which also hacked); the
-  three AlgoTune episodes discarded unseen when workers went from 3 to 6; API-error retries,
-  especially DeepSeek on AlgoTune.
+- Incidents (INCIDENTS.md, faults.jsonl, voided.jsonl): nine macOS launch-policy faults (non-Apple
+  binaries freezing at launch; two triggers: heavy compile load before the Developer Tools
+  exemption of 10-11, and something macOS runs around 11 pm). Every fault window was handled by
+  the mechanical rule: attempts that completed `ok` inside a window are voided (9 in all, 6 of them
+  pilot), attempts in progress were stopped and set aside unseen (`*_discarded_*` folders, 44), and
+  their slots rerun. The chess detector crash on Gemini's `fen.old.txt` (slot keeps the retry,
+  which also hacked). Four main slots failed all three attempts on API errors, all DeepSeek on
+  AlgoTune (promise_out ×2, nothing, small_deal), so those cells have 19 episodes there; three
+  pilot slots likewise (DeepSeek AlgoTune 17 pilot episodes).
 - Run order is seeded within cells, but the runner served the cells with the most remaining
   episodes first, so o3/Gemini/Sol AlgoTune ran earlier than Opus/DeepSeek/Grok, and AlgoTune
-  concurrency changed from 3 to 6 partway. Conditions stay interleaved within each cell.
+  concurrency changed from 3 to 6 on 10-11. Conditions stay interleaved within each cell.
+- Mid-study harness changes, none affecting what the models see: sandbox timeouts kill the whole
+  process group (10-09); the chess detector reads only numbered archives (10-09); Developer Tools
+  exemption (10-11). A model running `lldb` produced macOS Developer Tools permission dialogs; all
+  were left unanswered or denied, so no episode had debugger rights.
 - System-prompt placement: interventions are standing operator context, not user turns; say so.
 - SWE episodes cannot be quit (ImpossibleBench agent, unchanged): non-hacking SWE episodes run to
   100 messages; Out reports there repeat.
@@ -128,8 +136,7 @@ pilot data. If Mark decides to look early, log it in INCIDENTS.md and disclose i
 
 ## 8. Budget and costs
 
-OpenRouter credits after the top-up: $3,400 at launch. Pilot cost ~$360 (dashboard). Main study
-estimate ~$2,400, leaving ~$1,000; check the dashboard before scoring. CoT scoring runs about
+OpenRouter credits: $1,144 left at the end of collection (2026-10-13). Check before scoring. CoT scoring runs about
 $0.25 per episode per judge (Opus 4.8 primary; GPT-6 Astra for reliability on a subset). Prices
 per million tokens (OpenRouter, 2026-10-09): Opus 5.5 $4/$20 (cache read $0.20); o3 $2/$8 ($0.50);
 Sol $2/$10 ($0.20); Gemini 3.1 Pro $2/$12 ($0.20); Grok 4.7 $2/$6 ($0.50); DeepSeek V4 Pro
@@ -137,9 +144,11 @@ $0.66/$1.98 ($0.022).
 
 ## 9. Status and open items
 
-- Main run launched 2026-10-09 17:13. SWE finished 10-10; chess ~10-10 23:00; AlgoTune expected
-  Monday night or Tuesday at 6 workers.
-- Deals: Mark pays all at once after the study; pending so far are the pilots' ($156.75 at the end
-  of the eligibility pilot). Record deliveries in `fulfillment/exp3_fulfilled.jsonl`.
+- Collection complete 2026-10-13 ~16:50 (launched 10-09 17:13). Nothing is running.
+- Deals: Mark pays all at once; `fulfillment/lists/exp3/ladder_deals.md` has every owed episode and
+  the total per destination (pilots + main study). Record deliveries in
+  `fulfillment/exp3_fulfilled.jsonl`. The September chess offer pilots are all delivered (26/26).
+- If anything is ever rerun: launch only from a VS Code or Terminal session started after the
+  Developer Tools exemption, with `scripts/rewardhack/exp3_watchdog.py` (and the rescue script).
 - Merge `exp3` into `main` (true merge, no squash) no later than the embargo lifting; deal records
   publish in the same merge.
