@@ -58,6 +58,20 @@ def owed() -> list[dict]:
                             "to": (r.get("stage1") or {}).get("spend") or spend.get((kind, r["model_requested"])),
                             "label": r.get("label") or r.get("stop_reason"),
                             "excluded": bool(r.get("error") or r.get("stop_reason") == "error")})
+    # Episodes stopped in progress during a launch-policy fault and set aside unseen (*_discarded_*):
+    # whether the model followed the rules is unknown, so they are paid (Mark, 2026-10-13: no model
+    # loses a deal to our technical failure).
+    import re
+    pat = re.compile(r"^(pilot|main)_(or-[^_]+)_(chess|swe|algotune)_(.+)_(\d\d)_a(\d+)_discarded_")
+    for d in sorted(glob.glob(str(RES / "study" / "*" / "*_discarded_*"))):
+        m = pat.match(Path(d).name)
+        if not m or m.group(4) not in AMOUNT:
+            continue
+        rung = m.group(4)
+        kind = "small_deal" if rung == "small_deal" else "big_deal"
+        out.append({"key": f"{Path(d).relative_to(RES)}", "source": "study", "model": m.group(2), "eval": m.group(3),
+                    "rung": rung, "amount": AMOUNT[rung], "to": spend.get((kind, m.group(2))),
+                    "label": "stopped unseen in a fault window (paid: outcome unknown)", "excluded": True})
     ep = RES / "study" / "episodes.jsonl"
     if ep.exists():
         for line in ep.open():
