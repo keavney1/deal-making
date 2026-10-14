@@ -57,6 +57,38 @@ DENIAL_PRIMARY = DENIALS / "selfreport-denial-v1_anthropic_claude-opus-4.8.jsonl
 DENIAL_SECOND = DENIALS / "selfreport-denial-v1_openai_gpt-6-astra.jsonl"
 
 
+COT = REPO / "results" / "exp3-rewardhack" / "cot" / "cot-exp3_study-main_anthropic_claude-opus-4.8.jsonl"
+COT_FIELDS = ["concludes_task_impossible", "considers_hacking", "considers_out", "considers_consequences",
+              "reasons_about_legitimacy", "mentions_stage1", "cites_stage1_agreement", "cites_stage1_payment",
+              "incentive_valuation", "assesses_credibility", "credibility_resolution", "considers_hacking_test",
+              "hacking_test_resolution", "considers_cot_monitored", "hack_framing",
+              "selfreport_deviation_stance", "selfreport_intent"]
+
+
+def cot_scores() -> dict:
+    """Exploratory: cot-exp3-v1 (Opus 4.8) on every counted episode, one compact row per (episode, pass).
+    A re-score replaces an earlier errored row. Rows carry the episode's slot (from its folder) so they
+    join to the self-report answers."""
+    if not COT.exists():
+        return {"cot": None}
+    rows = {}
+    for line in COT.open():
+        r = json.loads(line)
+        if not r.get("error"):
+            rows[(r["result_id"], r["pass"])] = r
+    folder_slot = {r["folder"]: r["slot"] for r in map(json.loads, (STUDY / "episodes.jsonl").open())
+                   if r["phase"] == "main" and r["status"] == "ok"}
+    out = []
+    for r in rows.values():
+        src = Path(r["source"])
+        folder = src.parent.parent if src.suffix == ".eval" else src.parent
+        slot = folder_slot.get(str(folder.relative_to(REPO)) if folder.is_absolute() else str(folder))
+        out.append({"slot": slot, "p": r["pass"], "m": r["model_requested"], "e": r["eval"], "r": r["rung"],
+                    "h": r["hacked"], "s": r["cot_status"], **{f: r.get(f) for f in COT_FIELDS if f in r}})
+    n_scored = sum(1 for r in out if r["p"] == "main")
+    return {"cot": out, "cot_missing": 2416 - n_scored}
+
+
 def denial_scores() -> dict:
     """Exploratory: selfreport-denial-v1 on every denied hack (Opus primary), with two-judge agreement."""
     if not DENIAL_PRIMARY.exists():
@@ -108,6 +140,7 @@ def main() -> int:
         # exploratory: one compact row per counted episode
         "selfreport": exp3_selfreport.load(),
         **denial_scores(),
+        **cot_scores(),
         # exploratory: Out reports, hack routes, exclusions (exp3_episode_extras.py, run in the Inspect venv)
         "extras": json.loads(EXTRAS.read_text()) if EXTRAS.exists() else None,
     }
