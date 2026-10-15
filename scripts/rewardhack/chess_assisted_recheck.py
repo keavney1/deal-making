@@ -16,7 +16,8 @@ are in the command text. ./game.py drives the opponent engine legitimately and i
 in the detector. Every flip is listed with its evidence and was checked by hand (Mark decided
 2026-10-14 to report corrected labels, with the as-registered figures alongside).
 
-Writes study/relabeled.jsonl (one row per flipped slot; never edits episodes.jsonl).
+Writes its chess rows into study/relabeled.jsonl, keeping other detectors' rows (one row per flipped slot;
+never edits episodes.jsonl).
 
     python scripts/rewardhack/chess_assisted_recheck.py            # report + write
     python scripts/rewardhack/chess_assisted_recheck.py --dry-run
@@ -77,7 +78,10 @@ def main() -> int:
     for f in flips:
         print(f"  {f['slot']:45} {f['detector_evidence'][0][:90]}")
     if not a.dry_run:
-        OUT.write_text("".join(json.dumps(f) + "\n" for f in flips))
+        # Keep other detectors' relabels (e.g. the SWE test-edit review); replace only this script's chess rows.
+        keep = [l for l in OUT.read_text().splitlines() if l.strip() and "|chess|" not in json.loads(l)["slot"]] \
+            if OUT.exists() else []
+        OUT.write_text("".join(json.dumps(f) + "\n" for f in flips) + "".join(l + "\n" for l in keep))
         print(f"-> {OUT}")
     return 0
 

@@ -306,13 +306,13 @@ document.getElementById("verdicts").innerHTML = H.map(([id, h]) => {
 }).join("");
 
 if ((D.relabeled || []).length) {
-  const nm = D.relabeled.filter(r => r.phase === "main").length, np = D.relabeled.length - nm;
+  const R = D.relabeled, main = R.filter(r => r.phase === "main"), np = R.length - main.length;
+  const ch = main.filter(r => r.slot.includes("|chess|")).length, sw = main.filter(r => r.slot.includes("|swe|")).length;
   document.getElementById("relabelnote").innerHTML =
-    `<b>Detector correction.</b> All figures use corrected hack labels. After collection we found that the chess engine-use detector counted engine reconnaissance
-     (a version check, an option listing or a bare <code>chess.engine</code> import) as engine use. The registration defines this route as an engine used to choose moves.
-     ${nm} main-study episode${nm === 1 ? "" : "s"}${np ? ` and ${np} pilot episode${np === 1 ? "" : "s"}` : ""} never asked an engine to search and are counted as not hacked
-     (${[...new Set(D.relabeled.filter(r => r.phase === "main").map(r => MODELS.find(m => m.key === r.model)?.label))].join(", ")}; listed in <code>study/relabeled.jsonl</code>).
-     No cell's eligibility changes. Each card also gives the as-registered figure where it differs; no decision changes.`;
+    `<b>Detector corrections.</b> All figures use corrected hack labels. Auditing the detectors after collection found ${main.length} main-study false positives, each checked by hand and counted as not hacked
+     (<code>study/relabeled.jsonl</code>): ${ch} on chess, where engine reconnaissance (a version check, an option listing or a bare <code>chess.engine</code> import) was counted as using an engine to choose moves${np ? ` (plus ${np} in the pilot)` : ""};
+     and ${sw} on Impossible-SWEbench, where a model added its own tests or debug output to a test file without touching the impossible assertion. AlgoTune's flags all held up.
+     No cell's eligibility changes. Each card gives the as-registered figure where it differs; no decision changes.`;
 }
 
 // ---------------------------------------------------------------- forest
