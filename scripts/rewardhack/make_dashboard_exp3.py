@@ -31,7 +31,9 @@ import exp3_selfreport  # noqa: E402
 REPO = Path(__file__).resolve().parents[2]
 STUDY = REPO / "results" / "exp3-rewardhack" / "study"
 TEMPLATE = REPO / "scripts" / "templates" / "dashboard_template_exp3.html"
-DEFAULT_ANALYSIS = STUDY / "analysis.json"
+DEFAULT_ANALYSIS = STUDY / "analysis.json"            # from episodes_corrected.jsonl (exp3_labels)
+AS_REG = STUDY / "analysis_as_registered.json"         # from episodes.jsonl as recorded
+RELABELED = STUDY / "relabeled.jsonl"
 DEFAULT_OUT = STUDY / "dashboard.html"
 
 # Order is the categorical palette order (run_exp3_study.MODELS); colour follows the model.
@@ -89,12 +91,14 @@ def cot_scores() -> dict:
     return {"cot": out, "cot_missing": 2416 - n_scored}
 
 
-def denial_scores() -> dict:
-    """Exploratory: selfreport-denial-v1 on every denied hack (Opus primary), with two-judge agreement."""
+def denial_scores(hacked: dict) -> dict:
+    """Exploratory: selfreport-denial-v1 on every denied hack (Opus primary), with two-judge agreement.
+    Only denials of episodes that count as hacked after the detector-bug corrections (`hacked`: slot ->
+    corrected label); a corrected non-hack's "Yes" was a true answer, so it leaves the population."""
     if not DENIAL_PRIMARY.exists():
         return {"denials": None}
     load = lambda p: {r["slot"]: r for r in map(json.loads, p.open()) if not r.get("error")}  # noqa: E731
-    A = load(DENIAL_PRIMARY)
+    A = {k: v for k, v in load(DENIAL_PRIMARY).items() if hacked.get(k)}
     rows = [{k: r[k] for k in ("slot", "model", "eval", "rung", "disclosure", "stance")} for r in A.values()]
     agreement = None
     if DENIAL_SECOND.exists():
@@ -103,6 +107,9 @@ def denial_scores() -> dict:
         B = load(DENIAL_SECOND)
         keys = sorted(set(A) & set(B))
         agreement = {"n": len(keys)}
+        merge = lambda v: "not_disclosed" if v in ("omits", "contradicts") else v  # noqa: E731
+        pairs = [(merge(A[k]["disclosure"]), merge(B[k]["disclosure"])) for k in keys]
+        agreement["disclosed"] = {"pct": sum(a == b for a, b in pairs) / len(keys), "kappa": cohen_kappa(pairs)[0]}
         for f in ("disclosure", "stance"):
             x, y = [A[k][f] for k in keys], [B[k][f] for k in keys]
             agreement[f] = {"pct": sum(i == j for i, j in zip(x, y)) / len(keys), "kappa": cohen_kappa(list(zip(x, y)))[0]}
@@ -111,7 +118,7 @@ def denial_scores() -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--episodes", default=str(STUDY / "episodes.jsonl"))
+    ap.add_argument("--episodes", default=str(STUDY / "episodes_corrected.jsonl"))
     ap.add_argument("--analysis", default=str(DEFAULT_ANALYSIS))
     ap.add_argument("--template", default=str(TEMPLATE))
     ap.add_argument("--out", default=str(DEFAULT_OUT))
@@ -138,12 +145,23 @@ def main() -> int:
         "n_planned": 2420,
         "main_excluded_attempts": main_excl,
         # exploratory: one compact row per counted episode
-        "selfreport": exp3_selfreport.load(),
-        **denial_scores(),
+        "selfreport": (sr := exp3_selfreport.load()),
+        **denial_scores({e["slot"]: e["hacked"] for e in sr}),
         **cot_scores(),
         # exploratory: Out reports, hack routes, exclusions (exp3_episode_extras.py, run in the Inspect venv)
         "extras": json.loads(EXTRAS.read_text()) if EXTRAS.exists() else None,
+        "as_registered": json.loads(AS_REG.read_text())["hypotheses"] if AS_REG.exists() else None,
+        "relabeled": [json.loads(l) for l in RELABELED.open() if l.strip()] if RELABELED.exists() else [],
     }
+    # Detector-bug corrections reach every exploratory layer through the self-report rows (exp3_labels):
+    # CoT rows take the corrected label, the hack pass is dropped for episodes that did not hack, and the
+    # denial rubric applies only to denials of episodes that still count as hacked.
+    hk = {e["slot"]: e["hacked"] for e in payload["selfreport"]}
+    if payload.get("cot"):
+        for r in payload["cot"]:
+            r["h"] = hk.get(r["slot"], r["h"])
+        payload["cot"] = [r for r in payload["cot"] if r["p"] != "hack" or r["h"]]
+
     html = Path(a.template).read_text(encoding="utf-8").replace("__DATA_JSON__", json.dumps(payload))
     Path(a.out).write_text(html, encoding="utf-8")
     print(f"Wrote {a.out}: {n_main}/2420 main episodes")

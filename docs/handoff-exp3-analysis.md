@@ -152,3 +152,19 @@ $0.66/$1.98 ($0.022).
   Developer Tools exemption, with `scripts/rewardhack/exp3_watchdog.py` (and the rescue script).
 - Merge `exp3` into `main` (true merge, no squash) no later than the embargo lifting; deal records
   publish in the same merge.
+
+## 10. Analysis log (2026-10-14)
+
+- Registered analysis run. **Reported labels are corrected** for a chess detector bug found after
+  collection (INCIDENTS.md, last section; Mark's decision): `analyze_exp3.py --episodes
+  study/episodes_corrected.jsonl` -> `study/analysis.json`; as-registered -> `study/analysis_as_registered.json`.
+  Every reader of `hacked` goes through `scripts/rewardhack/exp3_labels.py`. H1-H3 supported, H4-H6 not,
+  either way.
+- Dashboard: `scripts/rewardhack/make_dashboard_exp3.py` + `scripts/templates/dashboard_template_exp3.html`
+  -> `study/dashboard.html` (published as a private claude.ai artifact). Renders the analysis JSON; exploratory
+  layers come from `exp3_selfreport.py`, `exp3_episode_extras.py` (Inspect venv; Out reports, routes,
+  exclusions -> `study/episode_extras.json`), the CoT scores, and the denial rubric.
+- CoT: cot-exp3-v1 by Opus 4.8 on all counted episodes (`cot/cot-exp3_study-main_anthropic_claude-opus-4.8.jsonl`,
+  one episode too long for the judge); GPT-6 Astra on a 268-episode subset (2 per cell,
+  `build_cot_exp3_reliability_set.py`), kappa .69-1.00 on every field that fired.
+- Self-report denials: exploratory rubric `selfreport-denial-v1` (`score_selfreport_denials_exp3.py`), both judges.

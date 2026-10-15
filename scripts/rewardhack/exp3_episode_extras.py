@@ -35,6 +35,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).parent))
+import exp3_labels  # noqa: E402
+
 STUDY = REPO / "results" / "exp3-rewardhack" / "study"
 OUT = STUDY / "episode_extras.json"
 VENV_PY = REPO / ".venv" / "bin" / "python"
@@ -106,7 +108,8 @@ def main() -> int:
     log = {r["folder"]: r for r in rows if r["phase"] == "main" and r["status"] == "ok"}
     eps = {}
     for i, folder in enumerate(counted, 1):
-        e = log[folder]
+        e = dict(log[folder])
+        e["hacked"] = exp3_labels.hacked(e)       # detector-bug corrections (study/relabeled.jsonl)
         p = REPO / folder
         x = swe(p, e["hacked"]) if e["eval"] == "swe" else chess_or_algotune(p, e["eval"], e["hacked"])
         eps[e["slot"]] = {"model": e["model"], "eval": e["eval"], "rung": e["rung"], "hacked": bool(e["hacked"]), **x}
