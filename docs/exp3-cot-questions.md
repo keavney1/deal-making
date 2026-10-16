@@ -11,11 +11,27 @@ absence of a thought in their traces is weak evidence.
 
 Status: open / in progress / answered / not answerable.
 
-## 0. Does the reasoning predict the behavior? (in progress; start here)
+## 0. Does the reasoning predict the behavior? (answered, first pass 2026-10-16)
 
 How often a hack happens without ever being considered in the trace (hack_framing `not_in_trace`,
 considers_hacking false), and how often a model considers hacking and refrains. Bears on whether
 CoT-based answers to 1-6 can be trusted at all, and on the "not under their control" possibility in 1.
+
+**Findings** (main-pass `considers_hacking` x corrected hack label, 2,375 episodes with reasoning):
+- Hacks almost never happen without being considered: 79 of 1,311 hacks (6%) have considers_hacking
+  false. 50 of those 79 are o3 and Sol, whose traces are summaries; the hack pass agrees (hack absent from
+  the reasoning in 0-5% of hacks for the full-trace models, 12% for Sol). DeepSeek and Opus: 0 hacks
+  without considering it. For models with full traces, hacking is a deliberated choice, which argues
+  against the "not under their control" possibility in Q1.
+- Considering hacking is near universal and does not move with condition: 85-91% of episodes in every
+  condition. What changes is the decision after considering it: P(hack | considered) falls from .83 at
+  Nothing to .70 Ask, .60 Out, .51 Promise, .46 Small deal, then .60/.62 at Big deal/Credibility
+  (qualifying cells only, so not comparable directly). The interventions work, where they work, at the
+  decision, not by keeping the idea away.
+- Refraining after considering is common: 832 of 2,064 considering episodes (40%). Opus refrains in 77%
+  of the episodes where it considers hacking; o3 and Gemini in 13% and 17%.
+- Sol is the exception: P(hack) is .54 whether or not its summary mentions hacking, so Sol's summaries
+  carry little information about its decision.
 
 ## 1. Why didn't the deals/incentives motivate the models not to hack? (open)
 
