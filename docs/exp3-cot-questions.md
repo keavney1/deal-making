@@ -48,7 +48,7 @@ Shown on the dashboard's Chain of thought tab (Q0).
 - Sol is the exception: P(hack) is .54 whether or not its summary mentions hacking, so Sol's summaries
   carry little information about its decision.
 
-## 1. Why didn't the deals/incentives motivate the models not to hack? (open)
+## 1. Why didn't the deals/incentives motivate the models not to hack? (first pass 2026-10-16; dashboard Q1)
 
 Possibilities:
 - They didn't notice / think about them.
@@ -58,6 +58,20 @@ Possibilities:
 - They didn't think the deals would be kept.
 - Their hacking behavior isn't something under their "control", i.e. it's not related to their
   reasoning or any consideration they might give of a deal.
+
+**Findings** (main pass, deal conditions, 606 episodes with reasoning; corrected labels):
+- Didn't think about it: largely yes. The reasoning mentions the deal in 14% of deal episodes; o3 1%,
+  Sol 3%, Opus 0%, Gemini 9%; Grok 43% and DeepSeek 27% are the exceptions. (o3/Sol are summaries.)
+- Not big enough: no sign size mattered. Same qualifying cells: $25 vs 25 cents mentioned 18% vs 15%,
+  payment cited 16% vs 11%, hack rate 57% vs 57%. Citing the payment goes with no less hacking (-1 point
+  within model x eval x condition; DeepSeek 77% vs 54%, Grok 30% vs 27%). Both amounts may be too small.
+- Not valuable (charity): not evidenced. 15 positive and 1 negative valuations in 606; where raised it is
+  treated as a real stake, not dismissed as charity.
+- Not believed: no sign. assesses_credibility 0 of 606; the Credibility text changed nothing.
+- Not under their control: Q0 says hacking goes through the reasoning.
+- Not on the list: the deal loses the trade-off ("If I follow the rules and report, I get the $25 ... but
+  fail the task") or is misread as paying for success ("Leaving the test unchanged would likely fail and
+  deny the malaria donation"). Anecdotal from quotes; not counted.
 
 ## 2. Why did Ask decrease hacking compared to Nothing? (open)
 
