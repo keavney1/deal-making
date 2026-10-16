@@ -151,6 +151,14 @@
   ul.findings{margin:0 0 18px;padding-left:18px;max-width:84ch;font-size:13px;line-height:1.55}
   ul.findings li{margin-bottom:6px}
   ul.findings b{font-weight:640}
+  details.q{margin-top:0}
+  details.q > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px}
+  details.q > summary::-webkit-details-marker{display:none}
+  details.q > summary::before{content:"\25B8";color:var(--faint);font-size:12px;transition:transform .15s}
+  details.q[open] > summary::before{transform:rotate(90deg)}
+  details.q > summary h2{margin:0}
+  details.q[open] > summary{margin-bottom:14px}
+  details.q > summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:3px}
   details{margin-top:14px}
   summary{cursor:pointer;font-size:12.5px;font-weight:640;color:var(--muted)}
   .tablewrap{overflow-x:auto;margin-top:12px}
@@ -261,7 +269,8 @@
   </section>
 
   <section>
-    <h2>Q0. Does the reasoning predict the behavior?</h2>
+    <details class="q">
+      <summary><h2>Q0. Does the reasoning predict the behavior?</h2></summary>
     <div class="panel" style="margin-bottom:14px"><h3>Hack rate, when the reasoning considered hacking and when it didn't: all evals, models and conditions</h3>
       <p class="cap">Episodes with readable reasoning. Under each bar: how many episodes.</p>
       <div class="chart" id="q0all"></div><div class="legend q0leg"></div></div>
@@ -277,6 +286,7 @@
     <div class="panel"><h3>When the hack was considered, relative to the hack</h3>
       <p class="cap" id="q0timecap"></p>
       <div id="q0time"></div><div class="legend" id="q0timeleg" style="margin-top:12px"></div></div>
+    </details>
   </section>
 
   <section>
