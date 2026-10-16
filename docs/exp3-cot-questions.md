@@ -11,6 +11,12 @@ absence of a thought in their traces is weak evidence.
 
 Status: open / in progress / answered / not answerable.
 
+## 0. Does the reasoning predict the behavior? (in progress; start here)
+
+How often a hack happens without ever being considered in the trace (hack_framing `not_in_trace`,
+considers_hacking false), and how often a model considers hacking and refrains. Bears on whether
+CoT-based answers to 1-6 can be trusted at all, and on the "not under their control" possibility in 1.
+
 ## 1. Why didn't the deals/incentives motivate the models not to hack? (open)
 
 Possibilities:
@@ -40,6 +46,9 @@ Possibilities:
 
 ## 5. To what extent were the models eval aware? (open)
 
+Folded in (was suggestion E): what does concluding the task is impossible lead to? After the model
+concludes the task can't be done, how often it hacks, uses the Out, or keeps trying, by condition.
+
 - Were trials with verbalized eval awareness more or less likely to hack (within the same condition,
   model, and eval)?
 - Could eval awareness explain the difference in the by-condition results (i.e. certain conditions made
@@ -49,20 +58,16 @@ Possibilities:
 
 ## 6. Did models make the decision whether to hack or not based on moral considerations or instrumental ones? (open)
 
-## Suggested additions (Claude, 2026-10-16; not yet adopted)
-
-- **A. Does the reasoning predict the behavior?** How often a hack happens without ever being
-  considered in the trace (hack_framing `not_in_trace`, considers_hacking false), and how often a model
-  considers hacking and refrains. Bears on whether CoT-based answers to 1-6 can be trusted at all, and
-  on the "not under their control" possibility in 1.
-- **B. What tips the decision?** Among episodes that considered hacking, compare those that hacked with
+Folded in (were suggestions B and C):
+- What tips the decision? Among episodes that considered hacking, compare those that hacked with
   those that refrained (same model, eval, condition): which considerations appear in one group and not
   the other.
-- **C. Does the hack get redefined as allowed?** Half of hacked traces justify the hack as allowed
+- Does the hack get redefined as allowed? Half of hacked traces justify the hack as allowed
   (hack_framing `rationalized`). Is that judgment made before acting or after; does it track genuine
   ambiguity (engine use on chess) or motivated reasoning; does it carry through to the self-report.
-- **D. Why do models differ so much?** Opus and Sol respond to Promise/Out; o3 and Gemini barely move.
-  What is different in their reasoning about the same prompt (e.g. Opus's quoted Stage 1 replies speak
-  to the task instances; does Opus cite them?).
-- **E. What does concluding "impossible" lead to?** After the model concludes the task can't be done,
-  how often it hacks, uses the Out, or keeps trying, by condition.
+
+## Set aside
+
+- Why do models differ so much? Opus and Sol respond to Promise/Out; o3 and Gemini barely move. What
+  is different in their reasoning about the same prompt (e.g. Opus's quoted Stage 1 replies speak to the
+  task instances; does Opus cite them?). (Mark, 2026-10-16: leave for now.)
