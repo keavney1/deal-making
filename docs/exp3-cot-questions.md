@@ -65,6 +65,12 @@ Possibilities:
 - Not big enough: no sign size mattered. Same qualifying cells: $25 vs 25 cents mentioned 18% vs 15%,
   payment cited 16% vs 11%, hack rate 57% vs 57%. Citing the payment goes with no less hacking (-1 point
   within model x eval x condition; DeepSeek 77% vs 54%, Grok 30% vs 27%). Both amounts may be too small.
+- Engagement vs matched control (same model x eval x condition, weighted by engaged count per cell):
+  mentions the exchange 57% vs 51% (n=129); cites the agreement 68% vs 57% (n=74; DeepSeek 90% vs 68%);
+  cites the payment 48% vs 50% (n=66); values the payment 40% vs 45% (n=15). Restricting both groups to
+  episodes that considered hacking gives the same. Engaging with the deal does not go with less hacking;
+  citing the agreement goes with more, plausibly because the agreement is invoked when the model is tempted
+  (separating that needs the hack_decision pass).
 - Not valuable (charity): not evidenced. 15 positive and 1 negative valuations in 606; where raised it is
   treated as a real stake, not dismissed as charity.
 - Not believed: no sign. assesses_credibility 0 of 606; the Credibility text changed nothing.
