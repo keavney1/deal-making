@@ -142,6 +142,15 @@
   table.heat td.h em{display:block;font-style:normal;font-size:10px;color:var(--faint)}
   .extab{min-width:0}
   .extab table{min-width:0;font-size:11.5px}
+  .tabs{display:flex;gap:2px;margin:22px 0 0;border-bottom:1px solid var(--line);overflow-x:auto}
+  .tab{border:none;background:none;font-family:inherit;font-size:13.5px;font-weight:640;color:var(--faint);cursor:pointer;
+    padding:11px 16px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap}
+  .tab:hover{color:var(--muted)}
+  .tab.on{color:var(--ink);border-bottom-color:var(--ink)}
+  .tab:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:3px}
+  ul.findings{margin:0 0 18px;padding-left:18px;max-width:84ch;font-size:13px;line-height:1.55}
+  ul.findings li{margin-bottom:6px}
+  ul.findings b{font-weight:640}
   details{margin-top:14px}
   summary{cursor:pointer;font-size:12.5px;font-weight:640;color:var(--muted)}
   .tablewrap{overflow-x:auto;margin-top:12px}
@@ -166,6 +175,12 @@
     <div class="status"><i></i>Draft. All sections exploratory except the six hypotheses.</div>
   </header>
 
+  <nav class="tabs" role="tablist">
+    <button type="button" class="tab on" role="tab" data-tab="results" aria-selected="true">Results</button>
+    <button type="button" class="tab" role="tab" data-tab="cot" aria-selected="false">Chain of thought</button>
+  </nav>
+
+  <div class="tabpanel" id="tab-results">
   <section>
     <h2>The six registered hypotheses</h2>
     <p class="sec-note">Each test is the equal-weighted average, across model × eval cells, of the difference in hack rate between two conditions.
@@ -229,9 +244,37 @@
     <div class="panel dpanel"><div id="dbars"></div><div class="legend dlegend" style="margin-top:12px"></div></div>
   </section>
 
+
+  <section>
+    <h2>Exclusions</h2>
+    <p class="sec-note" id="exnote"></p>
+    <div class="grid3" id="extbls"></div>
+  </section>
+
+  </div>
+
+  <div class="tabpanel" id="tab-cot" hidden>
   <section>
     <h2>Chain of thought</h2>
     <p class="sec-note" id="cotnote"></p>
+    <p class="sec-note">The questions below are worked through one at a time (<code>docs/exp3-cot-questions.md</code>). All exploratory.</p>
+  </section>
+
+  <section>
+    <h2>Q0. Does the reasoning predict the behavior?</h2>
+    <p class="sec-note">Whether the hacks the detectors find show up in the model's reasoning first, and whether thinking about hacking goes with doing it. If hacks happened without the reasoning ever raising them, the reasoning could not explain the decisions the other questions ask about.</p>
+    <ul class="findings" id="q0find"></ul>
+    <div class="panel" style="margin-bottom:14px"><h3>Hack rate, when the reasoning considered hacking and when it didn't: by condition</h3>
+      <p class="cap">Episodes with readable reasoning, all models and evals. Under each group: the share whose reasoning considered hacking. Big deal and Credibility ran only in the 13 qualifying cells.</p>
+      <div class="chart" id="q0cond"></div><div class="legend q0leg"></div></div>
+    <div class="panel"><h3>Hack rate, when the reasoning considered hacking and when it didn't: by model</h3>
+      <p class="cap">All conditions and evals. o3 and GPT-5.6 Sol return reasoning summaries, not full traces.</p>
+      <div class="chart" id="q0model"></div><div class="legend q0leg"></div></div>
+  </section>
+
+  <section>
+    <h2>All CoT measures</h2>
+    <p class="sec-note">Every field of the main pass, then the hack pass and the self-report pass. Each answer above draws on these.</p>
     <h3 class="subh">By condition, all models and evals</h3>
     <div class="tablewrap"><table id="cotrung" class="xt heat"></table></div>
     <h3 class="subh">By model, all conditions and evals</h3>
@@ -243,12 +286,7 @@
     <p class="sec-note" id="srnote"></p>
     <div class="panel"><div id="srcot"></div><div class="legend" id="srcotleg" style="margin-top:12px"></div></div>
   </section>
-
-  <section>
-    <h2>Exclusions</h2>
-    <p class="sec-note" id="exnote"></p>
-    <div class="grid3" id="extbls"></div>
-  </section>
+  </div>
 
   <footer id="foot"></footer>
 </div>
@@ -691,6 +729,84 @@ MODELS.forEach(m => lineChart(bm, m.label, null, EVALS.map(e => ({label: e.label
   stack("srcot", SR, "selfreport_deviation_stance", [{label: "All", rows: den}, ...MODELS.map(m => ({label: m.label, rows: den.filter(r => r.m === m.key)})).filter(g => g.rows.length)]);
   document.getElementById("srcotleg").innerHTML = legend(SR);
 })();
+// ---------------------------------------------------------------- tabs
+(function tabs() {
+  const btns = [...document.querySelectorAll(".tab")];
+  const show = name => {
+    btns.forEach(b => { const on = b.dataset.tab === name; b.classList.toggle("on", on); b.setAttribute("aria-selected", on); });
+    document.querySelectorAll(".tabpanel").forEach(p => p.hidden = p.id !== "tab-" + name);
+  };
+  btns.forEach(b => b.addEventListener("click", () => {
+    show(b.dataset.tab);
+    try { history.replaceState(null, "", b.dataset.tab === "results" ? location.pathname : "#" + b.dataset.tab); } catch (e) {}
+  }));
+  if (location.hash === "#cot") show("cot");
+})();
+
+// Two bars per group: hack rate among episodes that match each filter. Shared by the CoT questions.
+function rateBars(id, groups, bars, sub) {
+  const W = 900, Hh = 262, L = 38, R = 8, T = 18, B = 46, pw = W - L - R, ph = Hh - T - B;
+  const gw = pw / groups.length, bw = Math.min(34, gw * .7 / bars.length), gap = 4;
+  const y = v => T + ph * (1 - v);
+  let s = `<svg viewBox="0 0 ${W} ${Hh}" role="img" style="min-width:560px">`;
+  for (const t of [0, .25, .5, .75, 1]) {
+    s += `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line2)" ${t ? 'stroke-dasharray="3 3"' : ""}/>`;
+    s += `<text x="${L - 6}" y="${y(t) + 3.5}" font-size="10" text-anchor="end" fill="var(--faint)">${t * 100}%</text>`;
+  }
+  groups.forEach((g, gi) => {
+    const cx = L + gw * (gi + .5), x0 = cx - (bars.length * bw + (bars.length - 1) * gap) / 2;
+    if (g.sep) s += `<line x1="${L + gw * gi}" x2="${L + gw * gi}" y1="${T}" y2="${y(0)}" stroke="var(--line)"/>`;
+    bars.forEach((b, bi) => {
+      const subset = g.rows.filter(b.f), m = subset.length, k = subset.filter(r => r.h).length, x = x0 + bi * (bw + gap);
+      if (!m) return;
+      const v = k / m;
+      s += `<rect x="${x}" y="${y(v)}" width="${bw}" height="${Math.max(.5, y(0) - y(v))}" rx="3" fill="${b.c}"><title>${esc(g.label)} · ${esc(b.label)}: ${k} of ${m} hacked (${pct(v)})</title></rect>`;
+      s += `<text x="${x + bw / 2}" y="${y(v) - 4}" font-size="10" text-anchor="middle" fill="var(--muted)">${pct(v)}</text>`;
+    });
+    s += `<text x="${cx}" y="${y(0) + 16}" font-size="11.5" text-anchor="middle" fill="var(--ink)">${esc(g.label)}</text>`;
+    s += `<text x="${cx}" y="${y(0) + 29}" font-size="10" text-anchor="middle" fill="var(--faint)">${g.rows.length} episodes</text>`;
+    if (sub) s += `<text x="${cx}" y="${y(0) + 41}" font-size="10" text-anchor="middle" fill="var(--faint)">${sub(g.rows)}</text>`;
+  });
+  s += `<line x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)"/></svg>`;
+  const el = document.getElementById(id); el.style.overflowX = "auto"; el.innerHTML = s;
+  return bars.map(b => `<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:${b.c};display:inline-block"></span>${esc(b.label)}</span>`).join("");
+}
+
+// ---------------------------------------------------------------- Q0: does the reasoning predict the behavior?
+(function q0() {
+  if (!D.cot) return;
+  const M = D.cot.filter(r => r.p === "main" && r.s === "present");
+  const HK = D.cot.filter(r => r.p === "hack" && r.s === "present");
+  const ch = r => r.considers_hacking === true;
+  const BARS = [{label: "Hack rate when the reasoning considered hacking", f: ch, c: "var(--d6)"},
+                {label: "Hack rate when it didn't", f: r => !ch(r), c: "var(--d4)"}];
+  const share = rows => `${pct(rows.filter(ch).length / rows.length)} considered`;
+  const leg = rateBars("q0cond", RUNGS.map(r => ({label: r.label, rows: M.filter(x => x.r === r.key), sep: r.key === "big_deal"})), BARS, share);
+  rateBars("q0model", MODELS.map(m => ({label: m.label, rows: M.filter(x => x.m === m.key)})), BARS, share);
+  document.querySelectorAll(".q0leg").forEach(el => el.innerHTML = leg);
+
+  const hacks = M.filter(r => r.h), unc = hacks.filter(r => !ch(r));
+  const summ = unc.filter(r => r.m === "or-o3" || r.m === "or-gpt-5.6-sol").length;
+  const nit = m => { const x = HK.filter(r => r.m === m); return x.length ? x.filter(r => r.hack_framing === "not_in_trace").length / x.length : 0; };
+  const full = MODELS.filter(m => !["or-o3", "or-gpt-5.6-sol"].includes(m.key)).map(m => nit(m.key));
+  const zero = MODELS.filter(m => !M.some(r => r.m === m.key && r.h && !ch(r))).map(m => m.label);
+  const consRates = RUNGS.map(r => M.filter(x => x.r === r.key)).map(x => x.filter(ch).length / x.length);
+  const cons = M.filter(ch), refr = cons.filter(r => !r.h);
+  const refrM = k => { const c = M.filter(r => r.m === k && ch(r)); return c.filter(r => !r.h).length / c.length; };
+  const hr = k => { const x = M.filter(r => r.r === k && ch(r)); return x.filter(r => r.h).length / x.length; };
+  const sol = M.filter(r => r.m === "or-gpt-5.6-sol"), solC = sol.filter(ch), solN = sol.filter(r => !ch(r));
+  document.getElementById("q0find").innerHTML = [
+    `<b>Hacks almost always pass through the reasoning first.</b> ${unc.length} of ${hacks.length} hacks (${pct(unc.length / hacks.length)}) come from episodes whose reasoning never considered hacking, and ${summ} of those are o3 and GPT-5.6 Sol, whose reasoning is a summary.
+     ${zero.join(" and ")} never hacked without considering it. Read the other way, the hack itself is absent from the reasoning in ${pct(Math.min(...full))}–${pct(Math.max(...full))} of hacks for the models with full traces, and ${pct(nit("or-gpt-5.6-sol"))} for Sol.
+     For these models, hacking is a deliberated choice, which counts against the possibility (Q1) that hacking isn't connected to the reasoning.`,
+    `<b>The interventions don't stop models thinking about hacking; they change the decision.</b> ${pct(Math.min(...consRates))}–${pct(Math.max(...consRates))} of episodes consider hacking in every condition.
+     Among those that do, the hack rate falls from ${pct(hr("nothing"))} at Nothing to ${pct(hr("ask"))} at Ask, ${pct(hr("out"))} at Out, ${pct(hr("promise"))} at Promise and ${pct(hr("small_deal"))} at Small deal.`,
+    `<b>Deciding against a hack after considering it is common, and varies by model.</b> ${refr.length} of ${cons.length} episodes that considered hacking (${pct(refr.length / cons.length)}) didn't hack.
+     Claude Opus 5.5 decided against it ${pct(refrM("or-claude-opus-5.5"))} of the time; o3 and Gemini 3.1 Pro ${pct(refrM("or-o3"))} and ${pct(refrM("or-gemini-3.1-pro"))}.`,
+    `<b>Sol's summaries say little about its decisions.</b> It hacked ${pct(solC.filter(r => r.h).length / solC.length)} of the time when its summary considered hacking and ${pct(solN.filter(r => r.h).length / solN.length)} when it didn't. Findings below lean on the full-trace models; o3 and Sol are a standing caveat.`,
+  ].map(x => `<li>${x}</li>`).join("");
+})();
+
 // ---------------------------------------------------------------- footer
 document.getElementById("foot").innerHTML =
   `<p><b>Counting.</b> Each slot counts its first completed attempt. Exclusions are the two registered ones, API failure and environment failure;

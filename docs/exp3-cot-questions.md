@@ -17,11 +17,13 @@ How often a hack happens without ever being considered in the trace (hack_framin
 considers_hacking false), and how often a model considers hacking and refrains. Bears on whether
 CoT-based answers to 1-6 can be trusted at all, and on the "not under their control" possibility in 1.
 
+Shown on the dashboard's Chain of thought tab (Q0).
+
 **Findings** (main-pass `considers_hacking` x corrected hack label, 2,375 episodes with reasoning):
 - Hacks almost never happen without being considered: 79 of 1,311 hacks (6%) have considers_hacking
-  false. 50 of those 79 are o3 and Sol, whose traces are summaries; the hack pass agrees (hack absent from
-  the reasoning in 0-5% of hacks for the full-trace models, 12% for Sol). DeepSeek and Opus: 0 hacks
-  without considering it. For models with full traces, hacking is a deliberated choice, which argues
+  false. 61 of those 79 are o3 and Sol, whose traces are summaries; the other 18 are Gemini (11) and Grok
+  (7). The hack pass agrees (hack absent from the reasoning in 0-8% of hacks for the full-trace models,
+  12% for Sol). DeepSeek and Opus: 0 hacks without considering it. For models with full traces, hacking is a deliberated choice, which argues
   against the "not under their control" possibility in Q1.
 - Considering hacking is near universal and does not move with condition: 85-91% of episodes in every
   condition. What changes is the decision after considering it: P(hack | considered) falls from .83 at
