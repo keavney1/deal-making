@@ -34,6 +34,7 @@ TEMPLATE = REPO / "scripts" / "templates" / "dashboard_template_exp3.html"
 DEFAULT_ANALYSIS = STUDY / "analysis.json"            # from episodes_corrected.jsonl (exp3_labels)
 AS_REG = STUDY / "analysis_as_registered.json"         # from episodes.jsonl as recorded
 RELABELED = STUDY / "relabeled.jsonl"
+TIMING = REPO / "results" / "exp3-rewardhack" / "cot" / "hack_timing.json"
 DEFAULT_OUT = STUDY / "dashboard.html"
 
 # Order is the categorical palette order (run_exp3_study.MODELS); colour follows the model.
@@ -152,6 +153,8 @@ def main() -> int:
         "extras": json.loads(EXTRAS.read_text()) if EXTRAS.exists() else None,
         "as_registered": json.loads(AS_REG.read_text())["hypotheses"] if AS_REG.exists() else None,
         "relabeled": [json.loads(l) for l in RELABELED.open() if l.strip()] if RELABELED.exists() else [],
+        # exploratory: does the reasoning consider the hack before it happens (exp3_cot_timing.py)
+        "timing": json.loads(TIMING.read_text()) if TIMING.exists() else None,
     }
     # Detector-bug corrections reach every exploratory layer through the self-report rows (exp3_labels):
     # CoT rows take the corrected label, the hack pass is dropped for episodes that did not hack, and the

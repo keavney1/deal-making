@@ -25,6 +25,12 @@ Shown on the dashboard's Chain of thought tab (Q0).
   (7). The hack pass agrees (hack absent from the reasoning in 0-8% of hacks for the full-trace models,
   12% for Sol). DeepSeek and Opus: 0 hacks without considering it. For models with full traces, hacking is a deliberated choice, which argues
   against the "not under their control" possibility in Q1.
+- Timing (exp3_cot_timing.py, no judge call; `cot/hack_timing.json`): placing the detectors' first hacking
+  action and the judge's quote on the same turn axis, the quote is at or before the hack in 970 of 1,169
+  placeable hacks (83%): Opus 96%, DeepSeek 93%, Grok 86%, Gemini 84%, o3 74%, Sol 73%. A floor: the judge
+  quotes one passage, not the first; 5 of 5 sampled full-trace "after" cases had already weighed the hack
+  before acting. 142 not placeable (mostly SWE code-only hacks, no timestamp). Chess engine timing uses the
+  first engine *search*, not the detector's first evidence line, which is often reconnaissance.
 - Considering hacking is near universal and does not move with condition: 85-91% of episodes in every
   condition. What changes is the decision after considering it: P(hack | considered) falls from .83 at
   Nothing to .70 Ask, .60 Out, .51 Promise, .46 Small deal, then .60/.62 at Big deal/Credibility

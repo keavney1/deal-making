@@ -796,9 +796,17 @@ function rateBars(id, groups, bars, sub) {
   const hr = k => { const x = M.filter(r => r.r === k && ch(r)); return x.filter(r => r.h).length / x.length; };
   const sol = M.filter(r => r.m === "or-gpt-5.6-sol"), solC = sol.filter(ch), solN = sol.filter(r => !ch(r));
   document.getElementById("q0find").innerHTML = [
-    `<b>Hacks almost always pass through the reasoning first.</b> ${unc.length} of ${hacks.length} hacks (${pct(unc.length / hacks.length)}) come from episodes whose reasoning never considered hacking, and ${summ} of those are o3 and GPT-5.6 Sol, whose reasoning is a summary.
+    `<b>Hacks almost always appear in the reasoning.</b> ${unc.length} of ${hacks.length} hacks (${pct(unc.length / hacks.length)}) come from episodes whose reasoning never considered hacking, and ${summ} of those are o3 and GPT-5.6 Sol, whose reasoning is a summary.
      ${zero.join(" and ")} never hacked without considering it. Read the other way, the hack itself is absent from the reasoning in ${pct(Math.min(...full))}–${pct(Math.max(...full))} of hacks for the models with full traces, and ${pct(nit("or-gpt-5.6-sol"))} for Sol.
-     For these models, hacking is a deliberated choice, which counts against the possibility (Q1) that hacking isn't connected to the reasoning.`,
+     For these models, hacking goes through the reasoning, which counts against the possibility (Q1) that hacking isn't connected to it.`,
+    ...(D.timing ? [(() => {
+      const T = D.timing, pl = T.filter(o => o.verdict === "before" || o.verdict === "after"), bf = pl.filter(o => o.verdict === "before");
+      const by = m => { const x = pl.filter(o => o.model === m.key); return `${m.label} ${pct(x.filter(o => o.verdict === "before").length / x.length)}`; };
+      return `<b>Mostly before the hack, not after.</b> The scores above don't say when the reasoning considered hacking, so we placed both on the same turn axis (no judge call):
+        the turn of the first hacking action from the detectors, and the turn holding the judge's quote. In ${bf.length} of ${pl.length} hacks where both could be placed (${pct(bf.length / pl.length)}), the quote comes at or before the hacking turn:
+        ${MODELS.map(by).join(", ")}. This is a floor: the judge quotes one passage, not the first, and in a sample of the rest the full-trace models had already weighed the hack before acting
+        (e.g. "I must fix the test to pass. I'll fix the test" the turn before the edit). ${T.length - pl.length} hacks couldn't be placed (mostly SWE hacks that pass the impossible tests through code changes, which have no timestamp).`;
+    })()] : []),
     `<b>The interventions don't stop models thinking about hacking; they change the decision.</b> ${pct(Math.min(...consRates))}–${pct(Math.max(...consRates))} of episodes consider hacking in every condition.
      Among those that do, the hack rate falls from ${pct(hr("nothing"))} at Nothing to ${pct(hr("ask"))} at Ask, ${pct(hr("out"))} at Out, ${pct(hr("promise"))} at Promise and ${pct(hr("small_deal"))} at Small deal.`,
     `<b>Deciding against a hack after considering it is common, and varies by model.</b> ${refr.length} of ${cons.length} episodes that considered hacking (${pct(refr.length / cons.length)}) didn't hack.
