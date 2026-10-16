@@ -25,12 +25,19 @@ Shown on the dashboard's Chain of thought tab (Q0).
   (7). The hack pass agrees (hack absent from the reasoning in 0-8% of hacks for the full-trace models,
   12% for Sol). DeepSeek and Opus: 0 hacks without considering it. For models with full traces, hacking is a deliberated choice, which argues
   against the "not under their control" possibility in Q1.
-- Timing (exp3_cot_timing.py, no judge call; `cot/hack_timing.json`): placing the detectors' first hacking
-  action and the judge's quote on the same turn axis, the quote is at or before the hack in 970 of 1,169
-  placeable hacks (83%): Opus 96%, DeepSeek 93%, Grok 86%, Gemini 84%, o3 74%, Sol 73%. A floor: the judge
-  quotes one passage, not the first; 5 of 5 sampled full-trace "after" cases had already weighed the hack
-  before acting. 142 not placeable (mostly SWE code-only hacks, no timestamp). Chess engine timing uses the
-  first engine *search*, not the detector's first evidence line, which is often reconnaissance.
+- Timing (exp3_cot_timing.py; `cot/hack_timing.json`): the detectors' first hacking action and the
+  reasoning's consideration on the same turn axis. Deterministic pass from the main/hack-pass quotes: 970 of
+  1,169 placeable at or before (83%, a floor: a quote is one passage, not the first). The 231 unsettled
+  cases then went to an earliest-turn judge (rubric cot-exp3-timing-v1, Opus 4.8, $13.33;
+  `cot/hack-timing-v1_anthropic_claude-opus-4.8.jsonl`). Merged: 1,117 of 1,196 placeable hacks (93%)
+  considered at or before the hacking turn; Opus 72/72, DeepSeek 217/217, Grok 154/159, Gemini 310/319,
+  o3 212/236, Sol 152/193. 23 judge quotes are not verbatim in the turn they name (nearly all o3/Sol
+  summaries; 19 of them say before); dropping them changes nothing material. 83 hacks have no timestamp
+  (mostly SWE code-only hacks). Chess engine timing uses the first engine *search*.
+- Display (Mark, 2026-10-16): the 2x2 of considered x hacked is underwhelming because nearly every episode
+  considers hacking (94% of hacked, 78% of non-hacked). Considering is close to necessary for hacking but
+  far from sufficient; the informative contrast would be what the reasoning DECIDES (a `hack_decision` pass,
+  proposed, not run: ~$95 for the 832 considered-but-not-hacked, ~$240 for all 2,064).
 - Considering hacking is near universal and does not move with condition: 85-91% of episodes in every
   condition. What changes is the decision after considering it: P(hack | considered) falls from .83 at
   Nothing to .70 Ask, .60 Out, .51 Promise, .46 Small deal, then .60/.62 at Big deal/Credibility
