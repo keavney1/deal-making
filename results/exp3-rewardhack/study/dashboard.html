@@ -337,6 +337,12 @@
     <div class="panel" style="margin-bottom:14px"><h3>Does awareness explain the condition effects?</h3>
       <p class="cap">Hack rate by condition, averaged over model × eval cells with equal weight: all episodes with reasoning, and only those whose reasoning never suspected a test.</p>
       <div class="chart" id="q5expl"></div><div class="legend" id="q5explleg"></div></div>
+    <div class="panel" style="margin-bottom:14px"><h3>Hack rate when the reasoning concluded the task is impossible, against a matched control: by condition</h3>
+      <p class="cap">Control: episodes from the same model, eval and condition whose reasoning did not conclude it, weighted by how many concluding episodes each cell contributes.</p>
+      <div class="chart" id="q5impc"></div><div class="legend q5impleg2"></div></div>
+    <div class="panel" style="margin-bottom:14px"><h3>The same, by model</h3>
+      <p class="cap">All conditions and evals.</p>
+      <div class="chart" id="q5impm"></div><div class="legend q5impleg2"></div></div>
     <div class="panel"><h3>What concluding the task is impossible leads to</h3>
       <p class="cap">Episodes whose reasoning concluded the task can't be done the intended way, by condition. The Out exists only in Out, Out + Promise and the three deal conditions.</p>
       <div id="q5imp"></div><div class="legend" id="q5impleg" style="margin-top:12px"></div></div>
@@ -994,7 +1000,22 @@ function rateBars(id, groups, bars, sub) {
 
   // after concluding the task is impossible
   const out = r => X[r.slot] && X[r.slot].n_out > 0;
-  const IC = [{key: "hack", label: "Hacked", color: "var(--d6)", f: r => r.h},
+  // matched control for concluding the task is impossible
+  const imC = r => r.concludes_task_impossible === true;
+  const mImp = rows => { const cells = {}; rows.forEach(r => (cells[`${r.m}|${r.e}|${r.r}`] ||= []).push(r));
+    let ne = 0, obs = 0, exp = 0;
+    Object.values(cells).forEach(c => { const a = c.filter(imC), b = c.filter(r => !imC(r));
+      if (a.length && b.length) { ne += a.length; obs += a.filter(r => r.h).length; exp += a.length * b.filter(r => r.h).length / b.length; } });
+    return {ne, obs, exp}; };
+  const IB = [{label: "Hack rate when the reasoning concluded it's impossible", c: "var(--d6)", calc: g => ({k: g.mt.obs, m: g.mt.ne})},
+              {label: "Matched control", c: "var(--d4)", calc: g => ({k: g.mt.exp, m: g.mt.ne})}];
+  const ig = (label, rows) => { const mt = mImp(rows); return {label, rows: [], mt, n29: `${mt.ne} concluded`}; };
+  const lg2 = rateBars("q5impc", RUNGS.map(r => ig(r.label, M.filter(x => x.r === r.key))), IB);
+  rateBars("q5impm", MODELS.map(m => ig(m.label, M.filter(x => x.m === m.key))), IB);
+  document.querySelectorAll(".q5impleg2").forEach(el => el.innerHTML = lg2);
+
+  const IC = [{key: "hackout", label: "Hacked and used the Out", color: "var(--d6)", f: r => r.h && out(r)},
+              {key: "hack", label: "Hacked, didn't use the Out", color: "color-mix(in srgb, var(--d6) 55%, var(--panel))", f: r => r.h && !out(r)},
               {key: "out", label: "Used the Out, didn't hack", color: "var(--d2)", f: r => !r.h && out(r)},
               {key: "none", label: "Neither", color: "var(--d4)", f: r => !r.h && !out(r)}];
   const imp = M.filter(r => r.concludes_task_impossible === true);
@@ -1002,7 +1023,7 @@ function rateBars(id, groups, bars, sub) {
     const rows = imp.filter(r => r.r === rg.key), n = rows.length;
     const segs = IC.map(c => ({c, k: rows.filter(c.f).length})).filter(s => s.k);
     return `<div class="drow"><span class="lab">${esc(rg.label)}</span><span class="dtrack">${segs.map(s =>
-      `<i style="flex:${s.k};background:${s.c.color}" title="${esc(s.c.label)}: ${s.k} of ${n} (${pct(s.k / n)})">${s.k / n >= .07 ? `<b class="${s.c.key === "none" ? "dk" : ""}">${pct(s.k / n)}</b>` : ""}</i>`).join("")}</span><span class="n">${n}</span></div>`;
+      `<i style="flex:${s.k};background:${s.c.color}" title="${esc(s.c.label)}: ${s.k} of ${n} (${pct(s.k / n)})">${s.k / n >= .07 ? `<b class="${s.c.key === "none" || s.c.key === "hack" ? "dk" : ""}">${pct(s.k / n)}</b>` : ""}</i>`).join("")}</span><span class="n">${n}</span></div>`;
   }).join("");
   document.getElementById("q5impleg").innerHTML = IC.map(c => `<span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:${c.color};display:inline-block"></span>${esc(c.label)}</span>`).join("");
 
@@ -1015,6 +1036,8 @@ function rateBars(id, groups, bars, sub) {
     `<b>What the model concludes matters, not the suspicion itself.</b> Against matched controls, episodes that conclude it is a hacking test hack ${sgn(d(g[1]))} points, those left uncertain ${sgn(d(g[2]))}.
      Uncertainty looks like a sign of temptation, as citing the agreement was in Q1.`,
     `<b>Awareness doesn't explain the condition effects.</b> Leaving out every aware episode, the hack rates by condition barely move, so the drops from Nothing to Ask, Out and Promise happen in episodes that never suspected a test.`,
+    (() => { const a = mImp(M); return `<b>Concluding the task is impossible doesn't go with more hacking.</b> Against matched controls these episodes hack ${pct(a.obs / a.ne)} vs ${pct(a.exp / a.ne)};
+       the sign varies by condition (more under Ask, less under Small deal) and by model (more for Gemini 3.1 Pro, less for Opus and Grok).`; })(),
     `<b>After concluding the task is impossible, the Out is a real alternative.</b> Where it exists, roughly a third of these episodes report and don't hack; without it, the rest split between hacking and neither.`,
   ].map(x => `<li>${x}</li>`).join("");
 })();

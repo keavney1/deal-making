@@ -122,6 +122,11 @@ prompt says tasks are scored and published.
   are unchanged (Nothing 76/76, Ask 66/64, Out 53/53, Promise 48/47, Out+Promise 45/43, Small deal 41/42).
 - F. After concluding the task is impossible: hacked 80% Nothing, 64% Ask, 48% Promise, 40-60% with an Out;
   where the Out exists, 25-38% report and don't hack (13-16% report and hack); Promise (no Out) 52% neither.
+- Concluding the task is impossible vs matched controls (same model x eval x condition, did not conclude):
+  56% vs 61% overall (n=1,049). By condition: Nothing 79/79, Ask 73/62, Out 51/57, Promise 47/55, Out+Promise
+  44/50, Small deal 45/64, Big deal 60/67, Credibility 63/45 (n=43). By model: o3 85/87, Gemini 77/64, Sol
+  45/52, DeepSeek 69/74, Grok 44/55, Opus 24/37. Chess 72/84, SWE 56/57, AlgoTune 27/24. Concluding it's
+  impossible does not go with more hacking; where the Out exists it goes with somewhat less.
 - Not yet done: D (severity, keyword count or judge) and E (awareness as a reason not to hack; needs the
   decision run).
 
