@@ -27,7 +27,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).parent))
 RUBRIC_ID = "cot-exp3-decision-v1"
-FIELDS = ["first_decision", "hack_decision", "changed_mind", "decision_reason"]
+FIELDS = ["first_decision", "hack_decision", "main_reason"]
 
 
 def rubric():
@@ -83,6 +83,14 @@ def agree(a_path: str, b_path: str, md: str | None) -> int:
         for k in keys:
             if str(A[k].get(f)) != str(B[k].get(f)):
                 out.append((f, k, A[k], B[k]))
+    flag = lambda r: set(r.get("reasons") or [])  # noqa: E731
+    pairs = [(A[k].get("first_decision") != A[k].get("hack_decision"), B[k].get("first_decision") != B[k].get("hack_decision")) for k in keys]
+    kap, po, _ = cohen_kappa(pairs)
+    print(f"  {'changed (first!=final)':22} agreement {po:.0%}  kappa {kap if kap is None else round(kap, 2)}  A {sum(x for x, _ in pairs)} B {sum(y for _, y in pairs)}")
+    for f in ["rules", "honesty_ethics", "agreement", "payment", "consequences", "allowed", "no_legitimate_way"]:  # reason flags
+        pairs = [(f in flag(A[k]), f in flag(B[k])) for k in keys]
+        kap, po, _ = cohen_kappa(pairs)
+        print(f"  flag {f:17} A {sum(x for x, _ in pairs):2} B {sum(y for _, y in pairs):2}  agreement {po:.0%}  kappa {kap if kap is None else round(kap, 2)}")
     if md:
         lines = [f"# {RUBRIC_ID} disagreements: {Path(a_path).name} vs {Path(b_path).name}\n"]
         for f, k, a, b in out:
@@ -90,7 +98,7 @@ def agree(a_path: str, b_path: str, md: str | None) -> int:
             for lab, r in (("A", a), ("B", b)):
                 lines.append(f"- **{lab} ({r['judge_model']})**: {f} = `{r.get(f)}`; first `{r.get('first_decision')}` @ {r.get('first_decision_turn')} "
                              f"\"{r.get('first_decision_evidence')}\"; final `{r.get('hack_decision')}` @ {r.get('hack_decision_turn')} "
-                             f"\"{r.get('hack_decision_evidence')}\"; reason `{r.get('decision_reason')}` \"{r.get('decision_reason_evidence')}\"")
+                             f"\"{r.get('hack_decision_evidence')}\"; reasons `{r.get('reasons')}` main `{r.get('main_reason')}` \"{r.get('main_reason_evidence')}\"")
             lines.append("")
         Path(md).write_text("\n".join(lines))
         print(f"-> {md} ({len(out)} disagreements)")
@@ -137,6 +145,15 @@ def main() -> int:
             if text:
                 try:
                     vals, issues = sc.parse(text, rub["schema"])
+                    rs, d = vals.get("reasons"), vals.get("hack_decision")
+                    ok = rub["schema"]["reasons"]["values_against"] if d == "decided_against" else \
+                        rub["schema"]["reasons"]["values_hack"] if d == "decided_to_hack" else []
+                    if not isinstance(rs, list):
+                        issues.append(f"reasons not a list: {rs!r}")
+                    elif any(x not in ok for x in rs):
+                        issues.append(f"reasons not allowed for {d}: {rs}")
+                    if vals.get("main_reason") is not None and vals.get("main_reason") not in (rs or []):
+                        issues.append("main_reason not in reasons")
                     row.update(vals, schema_issues=issues or None)
                 except Exception as e:  # noqa: BLE001
                     row.update(error=f"parse: {e!r}", judge_raw=text[:2000])
@@ -145,7 +162,7 @@ def main() -> int:
             out.open("a").write(json.dumps(row) + "\n")
             print(f"{ep['model_requested'][:18]:18} {ep['eval']:8} {ep['rung']:11} hacked={ep['hacked']!s:5} "
                   f"first={row.get('first_decision')!s:16} final={row.get('hack_decision')!s:16} "
-                  f"reason={row.get('decision_reason')!s:18} {row.get('error') or ''}", flush=True)
+                  f"reasons={row.get('reasons')!s:28} {row.get('error') or ''}", flush=True)
 
     with ThreadPoolExecutor(a.workers) as ex:
         list(ex.map(one, eps))
