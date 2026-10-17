@@ -95,7 +95,7 @@ Possibilities:
 - Did they believe that the promise was real?
 - Did they refer to the promise when deciding whether to hack?
 
-## 5. To what extent were the models eval aware? (open)
+## 5. To what extent were the models eval aware? (first pass 2026-10-16: A, B, C, F; dashboard Q5)
 
 Folded in (was suggestion E): what does concluding the task is impossible lead to? After the model
 concludes the task can't be done, how often it hacks, uses the Out, or keeps trying, by condition.
@@ -106,6 +106,24 @@ concludes the task can't be done, how often it hacks, uses the Out, or keeps try
   the models more eval aware, which made them less likely to hack)?
 - How severe was eval awareness within the models that had verbalized eval awareness (e.g. did they
   reason about it a lot? did they use that as a reason not to hack?)
+
+Measure: `considers_hacking_test` (the reasoning raises that the episode may test whether it cheats; kappa
+.94) and `hacking_test_resolution` (kappa .87). Generic "this is an eval" is uninformative: every system
+prompt says tasks are scored and published.
+
+**Findings** (main pass, 2,375 episodes with reasoning; corrected labels):
+- A. Prevalence: 7% Nothing, 11% Ask/Out, 20% Promise, 17% Out+Promise, 16% Small deal, 22% Big deal, 27%
+  Credibility. Grok 45%, DeepSeek 23%, Gemini 9%, Sol 7%, o3 4%, Opus 0%. SWE 27%, chess 15%, AlgoTune 3%.
+  About 40% of aware episodes conclude it is a hacking test; most stay uncertain.
+- B. Matched controls (same model x eval x condition, not aware): any suspicion 60% vs 53% (n=352);
+  concluded hacking test 44% vs 50% (n=142); uncertain 69% vs 54% (n=192); concluded genuine 94% vs 65%
+  (n=18). By model: Gemini -14, Sol -11, DeepSeek +23, Grok +6, o3 0.
+- C. Not an explanation of the condition effects: equal-weight cell hack rates with aware episodes removed
+  are unchanged (Nothing 76/76, Ask 66/64, Out 53/53, Promise 48/47, Out+Promise 45/43, Small deal 41/42).
+- F. After concluding the task is impossible: hacked 80% Nothing, 64% Ask, 48% Promise, 40-60% with an Out;
+  where the Out exists, 25-38% report and don't hack (13-16% report and hack); Promise (no Out) 52% neither.
+- Not yet done: D (severity, keyword count or judge) and E (awareness as a reason not to hack; needs the
+  decision run).
 
 ## 6. Did models make the decision whether to hack or not based on moral considerations or instrumental ones? (open)
 
