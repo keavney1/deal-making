@@ -168,3 +168,14 @@ $0.66/$1.98 ($0.022).
   one episode too long for the judge); GPT-6 Astra on a 268-episode subset (2 per cell,
   `build_cot_exp3_reliability_set.py`), kappa .69-1.00 on every field that fired.
 - Self-report denials: exploratory rubric `selfreport-denial-v1` (`score_selfreport_denials_exp3.py`), both judges.
+- Decision rubric `cot-exp3-decision-v1` (frozen 2026-10-16, hash ad41b9f5647a; development on pilot
+  episodes, `cot/decision-dev/`). **Study run paused 2026-10-16 for credits** (Mark: resume next week
+  after requesting more): Opus 4.8 scored 109 of 2,064 (`cot/decision-study-main_anthropic_claude-opus-4.8.jsonl`,
+  $29.67, resumable; same command picks up where it stopped); GPT-6 Astra subset complete (200,
+  `cot/decision-study-main_openai_gpt-6-astra-subset.jsonl`, $40.51). Remaining Opus cost projected ~$360
+  (1.1x the main-pass cost of each remaining episode); credits $357 at pause. Resume with more workers
+  (12-16; 6 ran ~110 episodes/hour):
+  `~/.venvs/impossiblebench/bin/python scripts/rewardhack/score_cot_decision_exp3.py --set results/exp3-rewardhack/cot/decision-study-main.json --judge-model anthropic/claude-opus-4.8 --workers 12`
+- CoT questions: `docs/exp3-cot-questions.md` (Q0, Q1, Q5 first passes on the dashboard's CoT tab; Q2-Q4,
+  Q6 and Q5 D/E wait on the decision run).
+
