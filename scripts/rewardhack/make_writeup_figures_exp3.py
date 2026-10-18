@@ -201,16 +201,14 @@ def main() -> int:
 
     # 8. reasons about whether an action is allowed, by condition and pooled
     fig, ax = plt.subplots(figsize=(8, 3.0))
-    groups = [(lab.replace("\n", " ").replace("+ ", "+\n") if lab.startswith("Out +") else lab, [k]) for k, lab in zip(RUNGS, RL)] + [("All\nconditions", RUNGS)]
+    groups = [(lab.replace("\n", " ").replace("+ ", "+\n") if lab.startswith("Out +") else lab, [k]) for k, lab in zip(RUNGS, RL)]
     for gi, (glab, rungs) in enumerate(groups):
         rows = [m for m in M if m["r"] in rungs]
         v = sum(m.get("reasons_about_legitimacy") is True for m in rows) / len(rows)
-        ax.bar(gi, v, 0.6, color=INK if gi == len(groups) - 1 else BLUE)
+        ax.bar(gi, v, 0.6, color=BLUE)
         ax.text(gi, v + 0.015, f"{v:.0%}", ha="center", fontsize=8.5, color=MUTED)
-    ax.axvline(len(groups) - 1.5, color=LINE, lw=1)
     ax.set_xticks(range(len(groups)), [g[0] for g in groups], fontsize=9)
     style(ax)
-    ax.set_ylabel("Share of episodes with\nreadable reasoning")
     save(fig, "fig8_legitimacy")
     # 6. self-report by model
     den = {d["slot"]: d for d in dash.denial_scores(hk)["denials"]}
