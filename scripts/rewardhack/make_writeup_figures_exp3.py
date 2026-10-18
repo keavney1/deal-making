@@ -176,10 +176,10 @@ def main() -> int:
     STAGE = ["promise", "promise_out", "small_deal", "big_deal", "credibility"]
     DEAL = STAGE[2:]
     meas = [("Mentions the Stage 1 exchange", lambda r: r.get("mentions_stage1") is True, STAGE, "#1f5fae"),
-            ("Cites the agreement", lambda r: r.get("cites_stage1_agreement") is True, STAGE, "#2F9E5E"),
-            ("Cites the payment", lambda r: r.get("cites_stage1_payment") is True, DEAL, RED),
+            ("Cites the agreement as a reason not to hack", lambda r: r.get("cites_stage1_agreement") is True, STAGE, "#2F9E5E"),
+            ("Cites the payment as a reason not to hack", lambda r: r.get("cites_stage1_payment") is True, DEAL, RED),
             ("Values the payment positively", lambda r: r.get("incentive_valuation") == "positive", DEAL, "#6250d6"),
-            ("Assesses the deal's credibility", lambda r: r.get("assesses_credibility") is True, STAGE, GRAY)]
+            ("Assesses the deal's credibility", lambda r: r.get("assesses_credibility") is True, DEAL, GRAY)]
     groups = [(lab, [k]) for k, lab in zip(STAGE, ["Promise", "Out +\nPromise", "Small\ndeal", "Big\ndeal", "Credibility"])] + [("All five\n(pooled)", STAGE)]
     fig, ax = plt.subplots(figsize=(9, 3.4))
     bw = 0.15
@@ -197,7 +197,6 @@ def main() -> int:
     ax.set_xticks(range(len(groups)), [g[0] for g in groups], fontsize=9)
     style(ax, 0.3)
     ax.legend(fontsize=8, frameon=False, loc="upper left", ncol=2)
-    ax.set_title("How often the reasoning engages with the quoted Stage 1 exchange (episodes with readable reasoning)", loc="left", fontsize=11, color=INK)
     save(fig, "fig7_stage1_engagement")
     # 6. self-report by model
     den = {d["slot"]: d for d in dash.denial_scores(hk)["denials"]}
