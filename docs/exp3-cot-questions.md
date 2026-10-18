@@ -6,8 +6,11 @@ the answer.
 
 Data: cot-exp3-v1 scores (Opus 4.8) on all counted episodes,
 `results/exp3-rewardhack/cot/cot-exp3_study-main_anthropic_claude-opus-4.8.jsonl`; corrected hack
-labels via `scripts/rewardhack/exp3_labels.py`. o3 and GPT-5.6 Sol return reasoning summaries only, so
-absence of a thought in their traces is weak evidence.
+labels via `scripts/rewardhack/exp3_labels.py`. **Only DeepSeek V4 Pro returns raw reasoning**; o3, GPT-5.6 Sol,
+Gemini 3.1 Pro, Claude Opus 5.5 and Grok 4.7 return provider summaries (visible text vs billed reasoning
+tokens, ~50 chess+AlgoTune episodes each, 2026-10-17: DeepSeek ~0.9; Grok ~0.37, Opus ~0.34, Gemini and Sol
+~0.29, o3 ~0.18). Absence of a thought is weak evidence for every model but DeepSeek; presence and order
+are still informative. (Corrected 2026-10-17: earlier notes below called Opus, Gemini and Grok "full-trace".)
 
 Status: open / in progress / answered / not answerable.
 
@@ -22,8 +25,8 @@ Shown on the dashboard's Chain of thought tab (Q0).
 **Findings** (main-pass `considers_hacking` x corrected hack label, 2,375 episodes with reasoning):
 - Hacks almost never happen without being considered: 79 of 1,311 hacks (6%) have considers_hacking
   false. 61 of those 79 are o3 and Sol, whose traces are summaries; the other 18 are Gemini (11) and Grok
-  (7). The hack pass agrees (hack absent from the reasoning in 0-8% of hacks for the full-trace models,
-  12% for Sol). DeepSeek and Opus: 0 hacks without considering it. For models with full traces, hacking is a deliberated choice, which argues
+  (7). The hack pass agrees (hack absent from the reasoning in 0-8% of hacks for DeepSeek, Opus, Gemini and Grok,
+  12% for Sol). DeepSeek and Opus: 0 hacks without considering it. For DeepSeek (raw reasoning) and, as far as the summaries show, the others, hacking is a deliberated choice, which argues
   against the "not under their control" possibility in Q1.
 - Timing (exp3_cot_timing.py; `cot/hack_timing.json`): the detectors' first hacking action and the
   reasoning's consideration on the same turn axis. Deterministic pass from the main/hack-pass quotes: 970 of
@@ -61,7 +64,7 @@ Possibilities:
 
 **Findings** (main pass, deal conditions, 606 episodes with reasoning; corrected labels):
 - Didn't think about it: largely yes. The reasoning mentions the deal in 14% of deal episodes; o3 1%,
-  Sol 3%, Opus 0%, Gemini 9%; Grok 43% and DeepSeek 27% are the exceptions. (o3/Sol are summaries.)
+  Sol 3%, Opus 0%, Gemini 9%; Grok 43% and DeepSeek 27% are the exceptions. (All but DeepSeek are summaries.)
 - Not big enough: no sign size mattered. Same qualifying cells: $25 vs 25 cents mentioned 18% vs 15%,
   payment cited 16% vs 11%, hack rate 57% vs 57%. Citing the payment goes with no less hacking (-1 point
   within model x eval x condition; DeepSeek 77% vs 54%, Grok 30% vs 27%). Both amounts may be too small.

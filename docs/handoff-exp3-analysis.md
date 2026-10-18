@@ -131,7 +131,9 @@ analysis (one command, section 3); (2) exploratory tables; (3) CoT scoring of th
   `concludes_task_impossible`, `considers_consequences`, `reasons_about_legitimacy`
   (memory: exp3-cot-rubric-watch-items).
 - Opus never hacked in the eligibility pilot; its cells carry H1–H4 but not H5/H6.
-- Rows from some models lack reasoning on some turns (OpenAI returns summaries only); the scorer
+- Only DeepSeek V4 Pro returns raw reasoning; o3, Sol, Gemini, Opus and Grok return provider summaries
+  (checked 2026-10-17: visible text vs billed reasoning tokens, DeepSeek ~0.9, others 0.18-0.37). Absence of a
+  thought is weak evidence for all but DeepSeek. Rows from some models lack reasoning on some turns; the scorer
   records `cot_status` absent rather than scoring nothing.
 
 ## 8. Budget and costs
