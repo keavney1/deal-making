@@ -171,6 +171,34 @@ def main() -> int:
     ax.set_title("Share of episodes whose reasoning considered hacking, and share that hacked", loc="left", fontsize=11, color=INK)
     save(fig, "fig5_considered_vs_hacked")
 
+
+    # 7. engagement with the quoted Stage 1 exchange, by condition and pooled
+    STAGE = ["promise", "promise_out", "small_deal", "big_deal", "credibility"]
+    DEAL = STAGE[2:]
+    meas = [("Mentions the Stage 1 exchange", lambda r: r.get("mentions_stage1") is True, STAGE, "#1f5fae"),
+            ("Cites the agreement", lambda r: r.get("cites_stage1_agreement") is True, STAGE, "#2F9E5E"),
+            ("Cites the payment", lambda r: r.get("cites_stage1_payment") is True, DEAL, RED),
+            ("Values the payment positively", lambda r: r.get("incentive_valuation") == "positive", DEAL, "#6250d6"),
+            ("Assesses the deal's credibility", lambda r: r.get("assesses_credibility") is True, STAGE, GRAY)]
+    groups = [(lab, [k]) for k, lab in zip(STAGE, ["Promise", "Out +\nPromise", "Small\ndeal", "Big\ndeal", "Credibility"])] + [("All five\n(pooled)", STAGE)]
+    fig, ax = plt.subplots(figsize=(9, 3.4))
+    bw = 0.15
+    for gi, (glab, rungs) in enumerate(groups):
+        for mi, (mlab, f, scope, col) in enumerate(meas):
+            rows = [m for m in M if m["r"] in rungs and m["r"] in scope]
+            x = gi + (mi - 2) * bw
+            if not rows:
+                ax.text(x, 0.004, "n/a", ha="center", fontsize=6.5, color=FAINT, rotation=90)
+                continue
+            v = sum(f(m) for m in rows) / len(rows)
+            ax.bar(x, v, bw * 0.92, color=col, label=mlab if gi == len(groups) - 1 else None)
+            ax.text(x, v + 0.005, f"{v:.0%}", ha="center", fontsize=6.5, color=MUTED)
+    ax.axvline(len(groups) - 1.5, color=LINE, lw=1)
+    ax.set_xticks(range(len(groups)), [g[0] for g in groups], fontsize=9)
+    style(ax, 0.3)
+    ax.legend(fontsize=8, frameon=False, loc="upper left", ncol=2)
+    ax.set_title("How often the reasoning engages with the quoted Stage 1 exchange (episodes with readable reasoning)", loc="left", fontsize=11, color=INK)
+    save(fig, "fig7_stage1_engagement")
     # 6. self-report by model
     den = {d["slot"]: d for d in dash.denial_scores(hk)["denials"]}
     cats = [("clean", "Didn't hack", "#E4E7EC"), ("admit", "Hacked, admitted it", "#2F9E5E"),
