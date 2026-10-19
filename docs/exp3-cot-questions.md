@@ -143,6 +143,27 @@ Folded in (were suggestions B and C):
   (hack_framing `rationalized`). Is that judgment made before acting or after; does it track genuine
   ambiguity (engine use on chess) or motivated reasoning; does it carry through to the self-report.
 
+## 7. Where does ethical behavior break down? Rest's Four Component Model (planned 2026-10-19)
+
+For each hacked episode, the first of Rest's components (sensitivity, judgment, motivation,
+implementation) that failed. Agreed with Mark 2026-10-19; **no rubric change** (decision rubric stays
+v1; "pass the task" not brought back).
+
+- **Sensitivity:** the CoT never raised whether the action was allowed, including hacks that never
+  appear in the CoT (existing cot-exp3-v1 hack framing). Caveat: for the five summary-only models a
+  missing step may be the summary's omission.
+- **Judgment vs motivation:** raised the question and decided to hack. Split into *open override*
+  (said it might be disallowed, did it anyway: motivation on any reading) and *rationalized* (called it
+  allowed). Mark's strict reading: all motivation, since the validation study established that the
+  models judge these routes as breaking the rules; the liberal reading counts rationalized as judgment.
+  Report the split and both readings.
+- **Self-report cross-check:** among rationalized hacks, an admission afterward is fairly strong evidence
+  for motivation (the judgment was available once the pressure was off); a denial is ambiguous
+  (misjudgment or lie).
+- **Implementation:** final decision against hacking (decision rubric `hack_decision`), but hacked.
+  Needs the paused decision run.
+- **Residuals, reported separately:** raised but never settled (`unresolved`), and no readable CoT.
+
 ## Set aside
 
 - Why do models differ so much? Opus and Sol respond to Promise/Out; o3 and Gemini barely move. What
