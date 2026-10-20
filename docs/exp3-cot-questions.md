@@ -163,6 +163,14 @@ v1; "pass the task" not brought back).
 - **Implementation:** final decision against hacking (decision rubric `hack_decision`), but hacked.
   Needs the paused decision run.
 - **Residuals, reported separately:** raised but never settled (`unresolved`), and no readable CoT.
+- **Order (Mark, 2026-10-20):** sensitivity is checked first, so a hack coded `unexamined`/`not_in_trace`
+  stays sensitivity even if the decision rubric says the CoT decided against hacking (it may have
+  rejected one route and taken another it never questioned). Script: `scripts/rewardhack/exp3_rest.py`.
+- **First pass, existing data (2026-10-20, 1,331 hacks):** sensitivity 26%, override 24%, rationalized
+  48%, no CoT 2%; implementation pending the decision run. 82% of rationalized hacks were admitted in
+  the self-report (override 88%), favoring motivation over misjudgment. DeepSeek (raw CoT) is 8%
+  sensitivity / 90% rationalized vs Sol 63% sensitivity, so summaries likely inflate sensitivity.
+  Sensitivity falls 32% → 18% from Nothing to Promise; override rises 20% → 29%.
 
 ## Set aside
 
