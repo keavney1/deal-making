@@ -120,6 +120,11 @@ def main() -> int:
             for r in RUNGS:
                 cs = [x for x in (cell(m, e, r) for m, e in gc) if x]
                 ys.append(sum(x["hacks"] / x["episodes"] for x in cs) / len(cs) if cs else None)
+            if all(f"{m}|{e}" in Q for m, e in gc):
+                # every cell qualified, so Small deal already covers the same cells as Big deal
+                xs = [i for i, y in enumerate(ys) if y is not None]
+                ax.plot(xs, [ys[i] for i in xs], color=col, lw=1.8, marker=mk, ms=5, label=label)
+                continue
             ax.plot(range(6), ys[:6], color=col, lw=1.8, marker=mk, ms=5, label=label)
             if ys[6] is not None:
                 # Big deal and Credibility ran only in qualifying cells: compare them with Small deal over the
