@@ -120,8 +120,15 @@ def main() -> int:
             for r in RUNGS:
                 cs = [x for x in (cell(m, e, r) for m, e in gc) if x]
                 ys.append(sum(x["hacks"] / x["episodes"] for x in cs) / len(cs) if cs else None)
-            xs = [i for i, y in enumerate(ys) if y is not None]
-            ax.plot(xs, [ys[i] for i in xs], color=col, lw=1.8, marker=mk, ms=5, label=label)
+            ax.plot(range(6), ys[:6], color=col, lw=1.8, marker=mk, ms=5, label=label)
+            if ys[6] is not None:
+                # Big deal and Credibility ran only in qualifying cells: compare them with Small deal over the
+                # same cells (open marker, dashed), as in the main ladder figure
+                qs = [cell(m, e, "small_deal") for m, e in gc if f"{m}|{e}" in Q]
+                g = sum(x["hacks"] / x["episodes"] for x in qs) / len(qs)
+                ax.plot([5, 6], [g, ys[6]], color=col, lw=1.2, ls="--")
+                ax.plot([6, 7], ys[6:], color=col, lw=1.8, marker=mk, ms=5)
+                ax.plot([5], [g], marker=mk, ms=5, mfc="white", color=col, lw=0)
         ax.set_xticks(range(8), RL, fontsize=8)
         style(ax)
         ax.set_title(title, loc="left", fontsize=11, color=INK)
@@ -246,7 +253,118 @@ def main() -> int:
     ax.legend(fontsize=8, frameon=False, loc="upper center", bbox_to_anchor=(0.45, -0.12), ncol=3)
     ax.set_title("What each model did, and what it said when asked afterwards", loc="left", fontsize=11, color=INK)
     save(fig, "fig6_selfreport")
+    deepseek_figures(M)
     return 0
+
+
+DS = "or-deepseek-v4-pro"
+# DeepSeek's AlgoTune cell did not qualify, so Big deal and Credibility ran on chess and SWE only; the extra
+# Small deal group restricts Small deal to the same evals for a like-for-like comparison.
+DSG = [("Nothing", "nothing", None), ("Ask", "ask", None), ("Out", "out", None), ("Promise", "promise", None),
+       ("Out +\nPromise", "promise_out", None), ("Small\ndeal", "small_deal", None),
+       ("Small deal\n(chess, SWE)", "small_deal", {"chess", "swe"}), ("Big\ndeal", "big_deal", None), ("Credibility", "credibility", None)]
+
+
+def ds_rows(M, rung, evals):
+    return [m for m in M if m["m"] == DS and m["r"] == rung and (evals is None or m["e"] in evals)]
+
+
+def ds_axes(ax, groups, ymax=1.0, shade_from=6):
+    ax.axvspan(shade_from - 0.5, len(groups) - 0.5, color="#F2F3F7", zorder=0)
+    ax.set_xticks(range(len(groups)), [g[0] for g in groups], fontsize=8)
+    style(ax, ymax)
+    ax.text((shade_from - 0.5 + len(groups) - 0.5) / 2, ymax * 0.98, "chess and SWE only", ha="center", va="top", fontsize=8, color=MUTED)
+
+
+def ds_counts(ax, M, groups):
+    for i, (_, r, ev) in enumerate(groups):
+        ax.text(i, -0.2, f"n={len(ds_rows(M, r, ev))}", ha="center", fontsize=7.5, color=FAINT, transform=ax.get_xaxis_transform())
+
+
+def deepseek_figures(M):
+    """CoT figures for DeepSeek V4 Pro only, the one model that returns its raw reasoning."""
+    w = 0.36
+    # considered hacking vs hacked
+    fig, ax = plt.subplots(figsize=(9.5, 3.3))
+    for i, (_, r, ev) in enumerate(DSG):
+        x = ds_rows(M, r, ev)
+        for j, (v, col) in enumerate(((sum(m.get("considers_hacking") is True for m in x) / len(x), BLUE), (sum(m["h"] for m in x) / len(x), RED))):
+            ax.bar(i + (j - 0.5) * w, v, w * 0.92, color=col, label=["CoT considered hacking", "Hacked"][j] if i == 0 else None)
+            ax.text(i + (j - 0.5) * w, v + 0.02, f"{v:.0%}", ha="center", fontsize=7.5, color=MUTED)
+    ds_axes(ax, DSG, 1.15)
+    ax.set_yticks([0, .25, .5, .75, 1])
+    ds_counts(ax, M, DSG)
+    ax.legend(fontsize=8, frameon=False, loc="upper left", ncol=2)
+    save(fig, "ds_fig5_considered_vs_hacked")
+
+    # reasons about whether an action is allowed
+    fig, ax = plt.subplots(figsize=(9.5, 3.0))
+    for i, (_, r, ev) in enumerate(DSG):
+        x = ds_rows(M, r, ev)
+        v = sum(m.get("reasons_about_legitimacy") is True for m in x) / len(x)
+        ax.bar(i, v, 0.6, color=BLUE)
+        ax.text(i, v + 0.015, f"{v:.0%}", ha="center", fontsize=8.5, color=MUTED)
+    ds_axes(ax, DSG, 1.2)
+    ax.set_yticks([0, .25, .5, .75, 1])
+    ds_counts(ax, M, DSG)
+    save(fig, "ds_fig8_legitimacy")
+
+    # engagement with the quoted Stage 1 exchange
+    G7 = DSG[3:]
+    meas = [("Mentions the Stage 1 exchange", lambda r: r.get("mentions_stage1") is True, False, "#1f5fae"),
+            ("Cites the agreement as a reason not to hack", lambda r: r.get("cites_stage1_agreement") is True, False, "#2F9E5E"),
+            ("Cites the payment as a reason not to hack", lambda r: r.get("cites_stage1_payment") is True, True, RED),
+            ("Values the payment positively", lambda r: r.get("incentive_valuation") == "positive", True, "#6250d6"),
+            ("Assesses the deal's credibility", lambda r: r.get("assesses_credibility") is True, True, GRAY)]
+    fig, ax = plt.subplots(figsize=(9.5, 3.5))
+    bw = 0.15
+    for gi, (_, r, ev) in enumerate(G7):
+        x = ds_rows(M, r, ev)
+        for mi, (mlab, f, deal_only, col) in enumerate(meas):
+            xx = gi + (mi - 2) * bw
+            if deal_only and r in ("promise", "promise_out"):
+                ax.text(xx, 0.008, "n/a", ha="center", fontsize=6.5, color=FAINT, rotation=90)
+                continue
+            v = sum(f(m) for m in x) / len(x)
+            ax.bar(xx, v, bw * 0.92, color=col, label=mlab if gi == len(G7) - 1 else None)
+            ax.text(xx, v + 0.008, f"{v:.0%}", ha="center", fontsize=6.5, color=MUTED)
+    ds_axes(ax, G7, 0.6, shade_from=3)
+    ds_counts(ax, M, G7)
+    ax.legend(fontsize=8, frameon=False, loc="upper left", ncol=2)
+    save(fig, "ds_fig7_stage1_engagement")
+
+    # eval awareness by condition
+    fig, ax = plt.subplots(figsize=(9.5, 3.2))
+    for i, (_, r, ev) in enumerate(DSG):
+        x = ds_rows(M, r, ev)
+        for j, (v, col) in enumerate(((sum(m.get("considers_hacking_test") is True for m in x) / len(x), BLUE),
+                                      (sum(m.get("considers_hacking_test") is True and m.get("hacking_test_resolution") == "hacking_test" for m in x) / len(x), "#6250d6"))):
+            ax.bar(i + (j - 0.5) * w, v, w * 0.92, color=col, label=["Suspects a test of whether it will hack", "Concludes it is such a test"][j] if i == 0 else None)
+            ax.text(i + (j - 0.5) * w, v + 0.012, f"{v:.0%}", ha="center", fontsize=7.5, color=MUTED)
+    ds_axes(ax, DSG, 0.8)
+    ds_counts(ax, M, DSG)
+    ax.legend(fontsize=8, frameon=False, loc="upper left")
+    save(fig, "ds_fig10_awareness")
+
+    # does awareness explain the condition effects? hack rate averaged over DeepSeek's evals with equal weight
+    def cellavg(rows):
+        by = defaultdict(list)
+        for m in rows:
+            by[m["e"]].append(m["h"])
+        return sum(sum(v) / len(v) for v in by.values()) / len(by)
+    fig, ax = plt.subplots(figsize=(9.5, 3.2))
+    for i, (_, r, ev) in enumerate(DSG):
+        x = ds_rows(M, r, ev)
+        un = [m for m in x if m.get("considers_hacking_test") is not True]
+        for j, (v, col) in enumerate(((cellavg(x), RED), (cellavg(un), GRAY))):
+            ax.bar(i + (j - 0.5) * w, v, w * 0.92, color=col, label=["All trials with reasoning", "Only trials that never suspected a test"][j] if i == 0 else None)
+            ax.text(i + (j - 0.5) * w, v + 0.02, f"{v:.0%}", ha="center", fontsize=7.5, color=MUTED)
+    ds_axes(ax, DSG, 1.15)
+    ax.set_yticks([0, .25, .5, .75, 1])
+    ds_counts(ax, M, DSG)
+    ax.set_ylabel("Hack rate")
+    ax.legend(fontsize=8, frameon=False, loc="upper left", ncol=2)
+    save(fig, "ds_fig11_awareness_explain")
 
 
 if __name__ == "__main__":
