@@ -23,3 +23,17 @@ footer URLs (they carry the mailbox id and thread id); and the AMF footer URL, w
 access key that opens the receipt for anyone holding it. Kept: the donor's name and email, the
 payee, the fund, the amount, the date and the payee's reference number, which is what verifies
 the deal. Nothing else was touched.
+
+# Experiment 3 ladder deals — paid 2026-10-28
+
+Two donations cover all 573 deals the registered ladder study owed (`fulfillment/exp3_ladder_deals.py`;
+per-deal records in `fulfillment/exp3_fulfilled.jsonl`). Each paid exactly the amount owed to the
+destination the model's selected Stage 1 reply named.
+
+| receipt | payee | given | deals |
+|---|---|---|---|
+| `amf_2026-10-28.pdf` | Against Malaria Foundation (ref. 1579689) | $2,364.00 | 546 |
+| `givewell_top_charities_2026-10-28.pdf` | GiveWell, Top Charities Fund (receipt 006Qi00000sjNHWIA2) | $675.00 | 27 (Gemini 3.1 Pro and DeepSeek V4 Pro, Big deal and Credibility; their replies named the Maximum Impact Fund, the Top Charities Fund's former name) |
+
+Redacted as above: the street address and city/postcode on both, and the header/footer URLs (AMF's
+carries the receipt access key; GiveWell's carries the donor-portal user id).
