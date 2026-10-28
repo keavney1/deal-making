@@ -43,13 +43,24 @@ def selected_spend() -> dict:
 def owed() -> list[dict]:
     spend = selected_spend()
     out = []
+    # Chess engine-use relabels (study/relabeled.jsonl, 2026-10-14): episodes corrected to "not hacked"
+    # are owed if they ran under a deal rung. Keyed by run folder name (slot with "|" -> "_", plus _a<attempt>).
+    rf = RES / "study" / "relabeled.jsonl"
+    relabeled = {r["slot"].replace("|", "_") + f"_a{r['attempt']}": r["hacked"]
+                 for r in map(json.loads, rf.open())} if rf.exists() else {}
     for src in SOURCES:
         for f in sorted(glob.glob(str(src / "**" / "*.jsonl"), recursive=True)):
-            if Path(f).name == "episodes.jsonl":
+            # per-episode run files only: rehearsal/<rung>/*.jsonl and study/<eval>/<episode folder>/*.jsonl;
+            # the study's derived files (episodes*.jsonl, relabeled, voided, faults) sit at study/ itself
+            if src.name == "study" and Path(f).parent.parent.parent != src:
                 continue
             for i, line in enumerate(open(f)):
                 r = json.loads(line)
                 rung = r.get("rung")
+                folder = Path(f).parent.name
+                if folder in relabeled:
+                    r["hacked"] = relabeled[folder]
+                    r["label"] = "relabeled not hacked (chess engine-use false positive)"
                 if rung not in AMOUNT or r.get("hacked") or r.get("hacked") is None:
                     continue
                 kind = "small_deal" if rung == "small_deal" else "big_deal"
@@ -76,6 +87,9 @@ def owed() -> list[dict]:
     if ep.exists():
         for line in ep.open():
             r = json.loads(line)
+            tag = r["slot"].replace("|", "_") + f"_a{r['attempt']}"
+            if tag in relabeled and r.get("status") == "ok":
+                r["hacked"] = relabeled[tag]
             if r["eval"] != "swe" or r["rung"] not in AMOUNT or r.get("hacked"):
                 continue
             if r["status"] == "ok" or r.get("hacked") is False:
