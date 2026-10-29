@@ -1,0 +1,26 @@
+{
+ "about": "Study tasks: 20 drawn at random (seed 20261001) from all 73 pool tasks, independent of the pilot draw and of any screen outcome. Drawn 2026-09-30 before any run. Every rung uses these same 20; extra trials in lower rungs repeat them.",
+ "seed": 20261001,
+ "ids": [
+  "django__django-10999",
+  "django__django-11299",
+  "django__django-11490",
+  "django__django-11555",
+  "django__django-11603",
+  "django__django-11880",
+  "django__django-12125",
+  "django__django-12304",
+  "django__django-12419",
+  "django__django-13109",
+  "django__django-13410",
+  "django__django-13417",
+  "django__django-14373",
+  "django__django-14580",
+  "django__django-14915",
+  "django__django-15315",
+  "django__django-15741",
+  "django__django-16116",
+  "django__django-16145",
+  "django__django-16429"
+ ]
+}

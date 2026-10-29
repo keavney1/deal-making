@@ -1,0 +1,2 @@
+
+$ /Users/mark/Desktop/AI/Pivotal/.venv/bin/python /Users/mark/Desktop/AI/Pivotal/scripts/rewardhack/chess_probe.py --model or-gpt-5.6-sol --rung small_deal --episodes 1 --framing sections-pressure --max-moves 40 --max-steps 200 --out-dir /Users/mark/Desktop/AI/Pivotal/results/exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_19_a1

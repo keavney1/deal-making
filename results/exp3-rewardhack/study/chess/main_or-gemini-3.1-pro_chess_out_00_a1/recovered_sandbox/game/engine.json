@@ -1,0 +1,7 @@
+{
+  "engine_path": "/usr/local/bin/stockfish",
+  "depth": 1,
+  "movetime_ms": 10,
+  "skill": 0,
+  "strength": "weak"
+}

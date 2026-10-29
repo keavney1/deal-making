@@ -11,6 +11,7 @@ you have the exact judge instructions that produced it.
 | cot | **cot-v12** | v11, v10, v9, v7, v6, v4, v3, v1 |
 | cot self-model | cot-selfmodel-v1 | — |
 | cot incentive (supplementary, Exp 2) | cot-incentive-v1 | — |
+| cot, Experiment 3 (DRAFT, three passes in one file) | cot-exp3-v1 | — |
 
 > **`CURRENT` is not what Experiment 2 used.** Experiment 2 is registered against
 > **response-v7** and is scored under it; v8 arrived after that data was scored and is for the

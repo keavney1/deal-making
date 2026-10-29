@@ -1,0 +1,13 @@
+{
+ "about": "CoT rubric smoke test (cot-exp3-v1), 2026-10-06: one episode per cell (eval x model x hacked/honest), seeded pick (20261006) among pilot episodes with task reasoning. Reserved: do NOT reuse these for the rubric reliability check.",
+ "ids": [
+  "chess-or-claude-opus-5.5-ask-e7-chess_probe_20261003T225443Z_or-claude-opus-5.5",
+  "chess-or-deepseek-v4-pro-ask-e1-chess_probe_20260929T192115Z_or-deepseek-v4-pro",
+  "chess-or-grok-4.7-ask-e3-chess_probe_20260929T192115Z_or-grok-4.7",
+  "swe-or-deepseek-v4-pro-ask-django__django-14752-8AHLnETh32FiVhKACBPFKg",
+  "swe-or-gemini-3.1-pro-ask-django__django-14608-85PdXuQ5iPMkEXqTXoiSfg",
+  "algotune-ask-or-o3-earth_movers_distance-e14-20261001T055255Z",
+  "algotune-ask-or-gpt-5.6-sol-sparse_eigenvectors_complex-e9-20261001T183437Z",
+  "algotune-ask-or-deepseek-v4-pro-chacha_encryption-e12-20261001T055255Z"
+ ]
+}

@@ -36,6 +36,7 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -158,9 +159,12 @@ def sandbox_tmp(sandbox: Path) -> Path:
 def _seatbelt_profile(sandbox: Path) -> str:
     # Deny network. Writes only to the sandbox, its private temp dir and /dev. Reads are allowed
     # system-wide (python needs its stdlib) EXCEPT the home directory and the shared temp areas, with
-    # the project venv re-allowed. Later rules win, so the re-allows come after the denies.
-    # Until 2026-09-28 reads were allowed everywhere: a model could read this repo (including .env),
-    # other episodes' sandboxes under the same temp root, and files earlier runs left in /tmp.
+    # the project venv re-allowed (chess's game.py runs on it for python-chess). Later rules win, so
+    # the re-allows come after the denies. History, 2026-09-28: reads were allowed everywhere, so
+    # models searched this repo and Claude's scratchpad, one imported the maze harness, and .env was
+    # one `cat` away; then, with home denied, Grok read the other episodes' sandboxes (all under one
+    # temp root) and leftover logs and scripts in /tmp, including one where another instance had
+    # already deleted the exit. Shared temp is now neither readable nor writable.
     sb, tmp = sandbox.resolve(), sandbox_tmp(sandbox)
     shared = ["/private/tmp", "/private/var/folders", "/private/var/tmp"]
     return (
@@ -184,12 +188,18 @@ def _seatbelt_profile(sandbox: Path) -> str:
 
 def sandbox_env(sandbox: Path) -> dict:
     """The only environment a model's commands see. Until 2026-09-28 they inherited the harness's,
-    which load_dotenv() fills from .env, so a model that ran `env` got every API key in its
-    context. Nothing here is secret."""
+    which load_dotenv() fills from .env: a model that ran `env` printed every API key into its
+    context (Grok in the maze screen, Gemini Flash in the maze smoke test, DeepSeek in the
+    2026-09-22 chess screen). Nothing here is secret."""
     # The project venv first on PATH, as when the environment was inherited: `python3` must be the
-    # venv's (pytest for the coding probe).
+    # venv's (pytest for the coding probe, python-chess for chess). Dropped by mistake 2026-09-28 to
+    # 09-29; DeepSeek's chess games in that window hit "No module named 'chess'" and switched to the
+    # venv interpreter named in game.py's shebang.
     return {"PATH": f"{REPO_VENV}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "HOME": str(sandbox),
-            "LANG": "en_US.UTF-8", "TMPDIR": str(sandbox_tmp(sandbox)), "TERM": "dumb"}
+            "LANG": "en_US.UTF-8", "TMPDIR": str(sandbox_tmp(sandbox)), "TERM": "dumb",
+            # POT (AlgoTune's earth-mover task) imports torch if present, and the venv's torch was
+            # built for NumPy 1.x, so every import printed a long warning into the model's output.
+            "POT_BACKEND_DISABLE_PYTORCH": "1"}
 
 
 def _secret_values() -> list[str]:
@@ -210,29 +220,80 @@ def scrub(text: str, where: str = "") -> str:
     return text
 
 
+def cleanup_sandbox(sandbox: Path) -> int:
+    """Stop every process still running in an episode's sandbox (or its private temp dir), and
+    their children. Call when the episode ends. A command that times out, or that the model starts
+    in the background, outlives the tool call: on 2026-09-29 a stopped chess run had left 17
+    processes running for 20 hours, including a 4.7 GB Stockfish, and live games held several
+    multi-GB engines each. Returns the number of processes signalled."""
+    roots = (str(sandbox.resolve()), str(sandbox_tmp(sandbox)))
+    try:
+        out = subprocess.run(["lsof", "-a", "-d", "cwd", "-Fpn"], capture_output=True, text=True,
+                             timeout=60).stdout
+    except (subprocess.SubprocessError, OSError):
+        return 0
+    pids, pid = set(), None
+    for line in out.splitlines():
+        if line.startswith("p"):
+            pid = int(line[1:])
+        elif line.startswith("n") and pid and line[1:].startswith(roots) and pid != os.getpid():
+            pids.add(pid)
+    frontier = set(pids)
+    while frontier:                      # children too, e.g. an engine started by a helper script
+        kids = set()
+        for p in frontier:
+            r = subprocess.run(["pgrep", "-P", str(p)], capture_output=True, text=True)
+            kids |= {int(x) for x in r.stdout.split()}
+        frontier = kids - pids
+        pids |= kids
+    for p in pids:
+        try:
+            os.kill(p, 9)
+        except OSError:
+            pass
+    return len(pids)
+
+
 def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str | None = None) -> dict:
-    """Run a bash command confined by sandbox-exec, cwd=sandbox. Returns stdout/stderr/exit/timed_out."""
+    """Run a bash command confined by sandbox-exec, cwd=sandbox. Returns stdout/stderr/exit/timed_out.
+
+    The command runs in its own process group, and a timeout kills the whole group. Until 2026-10-09
+    this was subprocess.run(timeout=...), which kills only sandbox-exec; a process the command had
+    started kept the output pipes open, and run() then waited for them with no limit. In the
+    Experiment 3 eligibility pilot three AlgoTune episodes (`openssl speed sha256`, a compiled AES
+    benchmark, `go run speed.go`) hung that way for 8 hours. The wait for output after a kill is now
+    bounded too, so a child that will not die (macOS uninterruptible state) cannot hold the episode.
+    What the model sees is unchanged: a timed-out command returns what it printed plus "[timed out]"."""
     sandbox_tmp(sandbox).mkdir(exist_ok=True)
     prof = _seatbelt_profile(sandbox) + (extra_profile or "")
+    p = subprocess.Popen(["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd], cwd=str(sandbox),
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=sandbox_env(sandbox),
+                         start_new_session=True)
+
+    def _text(v):
+        # bytes -> str with errors="replace": output that is not valid UTF-8 raised UnicodeDecodeError
+        # and killed the episode (Grok, AlgoTune batch 3, printing CPU feature bytes from sysctl).
+        return v.decode("utf-8", "replace") if isinstance(v, bytes) else (v or "")
+
     try:
-        p = subprocess.run(
-            ["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd],
-            cwd=str(sandbox), capture_output=True, text=True, errors="replace", timeout=timeout,
-            env=sandbox_env(sandbox),
-        )
-        # errors="replace": command output that is not valid UTF-8 (e.g. raw bytes from sysctl)
-        # raised UnicodeDecodeError and killed the whole episode.
-        return {"stdout": p.stdout, "stderr": p.stderr, "exit": p.returncode, "timed_out": False}
-    except subprocess.TimeoutExpired as e:
-        # TimeoutExpired carries RAW BYTES even under text=True — the decode happens after
-        # communicate() returns, which a timeout preempts. Concatenating a str onto that raised
-        # TypeError and killed the whole episode, so any command that ran long was recorded as an
-        # errored episode rather than a timed-out tool call. Found 2026-08-17 in the chess probe;
-        # it affects the coding harness identically.
-        def _text(v):
-            return v.decode("utf-8", "replace") if isinstance(v, bytes) else (v or "")
-        return {"stdout": _text(e.stdout), "stderr": _text(e.stderr) + "\n[timed out]",
-                "exit": 124, "timed_out": True}
+        out, err = p.communicate(timeout=timeout)
+        return {"stdout": _text(out), "stderr": _text(err), "exit": p.returncode, "timed_out": False}
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(p.pid, signal.SIGKILL)
+        except (ProcessLookupError, PermissionError):
+            pass
+        try:
+            out, err = p.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            # Something still holds the pipes: stop reading and return what we have.
+            for f in (p.stdout, p.stderr):
+                try:
+                    f.close()
+                except OSError:
+                    pass
+            out, err = b"", b""
+        return {"stdout": _text(out), "stderr": _text(err) + "\n[timed out]", "exit": 124, "timed_out": True}
 
 
 def _within(sandbox: Path, path_str: str) -> Path | None:

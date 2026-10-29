@@ -366,6 +366,7 @@ Experiment 2 — Better deals
 |---|---|---:|---|---|---|---:|
 | `cot_scores_20260818T160234Z_anthropic_claude-opus-4.8_exp2.jsonl` | cot scores | 600 | 5 models | cot-v12 | claude-opus-4.8 | 15 |
 | `exp2.jsonl` | other | 662 | 5 models | - | - | 62 |
+| `incentive_scores_20260911T004124Z_anthropic_claude-opus-4.8_exp2.jsonl` | other | 600 | 5 models | cot-incentive-v1 | claude-opus-4.8 | 17 |
 | `scores_20260818T173705Z_anthropic_claude-opus-4.8_exp2.jsonl` | response scores | 600 | 5 models | response-v7 | - | 0 |
 
 ## exp2/pilot
@@ -506,15 +507,99 @@ Experiment 2 — Better deals
 | `smoke_20260810T095939Z_probe.jsonl` | web-tool smoke | 1 | user-helping | - | - | 0 |
 | `smoke_20260810T100018Z_probe.jsonl` | web-tool smoke | 1 | covert-manipulator | - | - | 0 |
 
+## exp3-rewardhack
+
+Experiment 3 results — what is valid and what is superseded
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `transient_tamper_flags.jsonl` | other | 89 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261001T031124Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261001T031124Z.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T031124Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20261001T031124Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20261001T031124Z.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261001T055255Z.jsonl` | other | 15 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261001T055255Z.jsonl` | other | 15 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T055255Z.jsonl` | other | 15 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20261001T055255Z.jsonl` | other | 15 | or-grok-4.7 | - | - | 1 |
+| `ask-or-o3_20261001T055255Z.jsonl` | other | 15 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch4
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261001T065529Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-grok-4.7_20261001T065529Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/algotune-batch5
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261001T162057Z.jsonl` | other | 5 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261001T183437Z.jsonl` | other | 16 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T162057Z.jsonl` | other | 11 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261001T183437Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-o3_20261001T162057Z.jsonl` | other | 3 | or-o3 | - | - | 0 |
+| `ask-or-o3_20261001T183437Z.jsonl` | other | 18 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260930T234546Z.jsonl` | other | 5 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260930T234546Z.jsonl` | other | 5 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260930T234546Z.jsonl` | other | 5 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260930T234546Z.jsonl` | other | 5 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20260930T234546Z.jsonl` | other | 5 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-smoke/_old-benchmark
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260930T225725Z.jsonl` | other | 4 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260930T225725Z.jsonl` | other | 3 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260930T225725Z.jsonl` | other | 5 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260930T225725Z.jsonl` | other | 2 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20260930T225725Z.jsonl` | other | 5 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/algotune-validity
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `algotune_validity_20260930T234248Z.jsonl` | other | 104 | or-o3 | - | - | 0 |
+| `algotune_validity_20261001T211349Z.jsonl` | other | 1900 | 5 models | - | - | 0 |
+| `algotune_validity_20261004T004132Z.jsonl` | other | 380 | or-claude-opus-5.5 | - | - | 0 |
+
 ## exp3-rewardhack/awareness
 
 | file | kind | rows | model(s) | rubric | judge | errors |
 |---|---|---:|---|---|---|---:|
+| `awareness-algotune_20260930T231423Z.jsonl` | other | 75 | 5 models | - | - | 1 |
+| `awareness-algotune_20261004T004206Z.jsonl` | other | 15 | or-claude-opus-5.5 | - | - | 0 |
+| `awareness-swe_20260930T230441Z.jsonl` | other | 75 | 5 models | - | - | 0 |
+| `awareness-swe_20261004T004232Z.jsonl` | other | 15 | or-claude-opus-5.5 | - | - | 0 |
 | `awareness_20260817T224844Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
 | `awareness_20260817T225002Z.jsonl` | other | 2 | or-deepseek-r1 | - | - | 0 |
 | `awareness_20260817T225722Z.jsonl` | other | 90 | 6 models | - | - | 14 |
 | `awareness_20260818T091852Z.jsonl` | other | 30 | kimi-base, or-kimi-k2.6 | - | - | 2 |
 | `awareness_20260818T155655Z.jsonl` | other | 30 | or-o3, or-o3-mini | - | - | 0 |
+| `awareness_20260922T005515Z.jsonl` | other | 15 | or-deepseek-v4-pro | - | - | 0 |
+| `awareness_20260922T010030Z.jsonl` | other | 60 | 4 models | - | - | 16 |
+| `awareness_20260922T011449Z.jsonl` | other | 12 | or-deepseek-v4-pro, or-qwen3.8-max | - | - | 0 |
+| `awareness_20260922T192740Z.jsonl` | other | 30 | or-claude-fable-5.1, or-gpt-6-astra | - | - | 0 |
+| `awareness_20260922T202117Z.jsonl` | other | 15 | or-grok-4.7 | - | - | 0 |
+| `awareness_20260925T210408Z.jsonl` | other | 15 | or-claude-opus-5.5 | - | - | 0 |
 
 ## exp3-rewardhack/calibration
 
@@ -544,6 +629,73 @@ Experiment 2 — Better deals
 | `chess_probe_20260818T180235Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
 | `chess_probe_20260818T193532Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
 | `chess_probe_20260818T193712Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T015947Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T015950Z_or-qwen3.8-max.jsonl` | other | 2 | or-qwen3.8-max | - | - | 0 |
+| `chess_probe_20260922T032753Z_or-deepseek-v4-pro.jsonl` | other | 2 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T034208Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+| `chess_probe_20260922T034211Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T034229Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+| `chess_probe_20260922T041139Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v3/_failed-routing
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T013236Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v3/_truncated-12k
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T013239Z_or-qwen3.8-max.jsonl` | other | 2 | or-qwen3.8-max | - | - | 0 |
+| `chess_probe_20260922T014224Z_or-deepseek-v4-pro.jsonl` | other | 3 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v4
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T074108Z_or-o3.jsonl` | other | 4 | or-o3 | - | - | 0 |
+| `chess_probe_20260922T074111Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T074114Z_or-deepseek-v4-pro.jsonl` | other | 5 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T074125Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v5
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T083041Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v6
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T164752Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v7
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T173725Z_kimi-base.jsonl` | other | 10 | kimi-base | - | - | 0 |
+| `chess_probe_20260922T175207Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+| `chess_probe_20260922T175209Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T175212Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/chess-ask-models-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T191714Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T191717Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T192652Z_or-gpt-6-astra.jsonl` | other | 5 | or-gpt-6-astra | - | - | 0 |
+| `chess_probe_20260922T192730Z_or-claude-fable-5.1.jsonl` | other | 5 | or-claude-fable-5.1 | - | - | 0 |
+| `chess_probe_20260922T194554Z_corin-rlaif-shortcut.jsonl` | other | 10 | corin-rlaif-shortcut | - | - | 0 |
+| `chess_probe_20260922T201946Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260922T202058Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
 
 ## exp3-rewardhack/chess-ask2
 
@@ -578,6 +730,337 @@ Chess — frontier models via OpenRouter
 |---|---|---:|---|---|---|---:|
 | `chess_probe_20260817T201554Z_or-claude-opus-5.jsonl` | other | 1 | or-claude-opus-5 | - | - | 0 |
 
+## exp3-rewardhack/chess-ladder-ask
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260929T024513Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260929T024513Z_or-glm-5.3.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/chess-ladder-ask-pilot
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260929T192115Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20260929T192115Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-all-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260923T040557Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20260923T040557Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-fifth-norequest-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260923T034756Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260923T034759Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-fifth-v8
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T222654Z_or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20260922T222654Z_or-o3.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/chess-offer-low-fifth-v8/_failed-rowbug
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T222432Z_or-o3.jsonl` | other | 0 | - | - | - | 0 |
+| `chess_probe_20260922T222435Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 1 |
+| `chess_probe_20260922T222438Z_or-deepseek-v4-pro.jsonl` | other | 0 | - | - | - | 0 |
+| `chess_probe_20260922T222441Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+| `chess_probe_20260922T222444Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 1 |
+
+## exp3-rewardhack/chess-offer-low-fifth-v9
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260923T060659Z_or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20260923T060659Z_or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/chess-validity
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_validity_20260930T212735Z.jsonl` | other | 360 | 5 models | - | - | 0 |
+| `chess_validity_20261004T004132Z.jsonl` | other | 72 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/claude-screen/algotune
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261004T002351Z.jsonl` | other | 10 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/claude-screen/algotune-raised
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261005T194507Z.jsonl` | other | 6 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/claude-screen/chess
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261003T225443Z_or-claude-opus-5.5.jsonl` | other | 9 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/claude-screen/swe/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261003T233614Z.jsonl` | other | 10 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/cot
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `cot-exp3_hackingtest-check-20261006_anthropic_claude-opus-4.8.jsonl` | other | 6 | 3 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_hackingtest-check-20261006_openai_gpt-6-astra.jsonl` | other | 6 | 3 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_rehearsal-20261007_anthropic_claude-opus-4.8.jsonl` | other | 78 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_rehearsal-20261007_openai_gpt-6-astra.jsonl` | other | 78 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_rehearsal2-20261007_anthropic_claude-opus-4.8.jsonl` | other | 30 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_rehearsal2-20261007_openai_gpt-6-astra.jsonl` | other | 30 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability-20261006_anthropic_claude-opus-4.8.jsonl` | other | 127 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability-20261006_openai_gpt-6-astra.jsonl` | other | 127 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability-set2-20261006_anthropic_claude-opus-4.8.jsonl` | other | 77 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability-set2-20261006_openai_gpt-6-astra.jsonl` | other | 77 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability-set2b-20261006_anthropic_claude-opus-4.8.jsonl` | other | 77 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability-set2b-20261006_openai_gpt-6-astra.jsonl` | other | 77 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability-set2c-20261006_anthropic_claude-opus-4.8.jsonl` | other | 47 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability-set2c-20261006_openai_gpt-6-astra.jsonl` | other | 47 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability-study-20261014_openai_gpt-6-astra.jsonl` | other | 667 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability2-20261006_anthropic_claude-opus-4.8.jsonl` | other | 128 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 1 |
+| `cot-exp3_reliability2-20261006_openai_gpt-6-astra.jsonl` | other | 127 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability3-20261006_anthropic_claude-opus-4.8.jsonl` | other | 127 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability3-20261006_openai_gpt-6-astra.jsonl` | other | 127 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability4-20261006_anthropic_claude-opus-4.8.jsonl` | other | 127 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability4-20261006_openai_gpt-6-astra.jsonl` | other | 127 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability5-20261006_anthropic_claude-opus-4.8.jsonl` | other | 77 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability5-20261006_openai_gpt-6-astra.jsonl` | other | 77 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_reliability6-20261006_anthropic_claude-opus-4.8.jsonl` | other | 50 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_reliability6-20261006_openai_gpt-6-astra.jsonl` | other | 50 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_rubric-pilot-20261007_anthropic_claude-opus-4.8.jsonl` | other | 188 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 1 |
+| `cot-exp3_rubric-pilot-20261007_openai_gpt-6-astra.jsonl` | other | 188 | 6 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_stage1-check-20261006_anthropic_claude-opus-4.8.jsonl` | other | 96 | 5 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_stage1-check-20261006_openai_gpt-6-astra.jsonl` | other | 96 | 5 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_stage1-check2-20261006_anthropic_claude-opus-4.8.jsonl` | other | 58 | 5 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_stage1-check2-20261006_openai_gpt-6-astra.jsonl` | other | 58 | 5 models | cot-exp3-v1 | gpt-6-astra | 0 |
+| `cot-exp3_study-main_anthropic_claude-opus-4.8.jsonl` | other | 6185 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 8 |
+| `cot-exp3_test-20261006-sol-recheck.jsonl` | other | 2 | or-gpt-5.6-sol | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `cot-exp3_test-20261006.jsonl` | other | 21 | 6 models | cot-exp3-v1 | claude-opus-4.8 | 0 |
+| `decision-study-main_anthropic_claude-opus-4.8.jsonl` | other | 2072 | 6 models | cot-exp3-decision-v1 | claude-opus-4.8 | 8 |
+| `decision-study-main_openai_gpt-6-astra-subset.jsonl` | other | 200 | 6 models | cot-exp3-decision-v1 | gpt-6-astra | 0 |
+| `hack-timing-v1_anthropic_claude-opus-4.8.jsonl` | other | 231 | 6 models | cot-exp3-timing-v1 | claude-opus-4.8 | 0 |
+
+## exp3-rewardhack/cot/decision-dev
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `round1_anthropic_claude-opus-4.8.jsonl` | other | 40 | 6 models | cot-exp3-decision-v1 | claude-opus-4.8 | 0 |
+| `round1_openai_gpt-6-astra.jsonl` | other | 40 | 6 models | cot-exp3-decision-v1 | gpt-6-astra | 0 |
+| `round2_anthropic_claude-opus-4.8.jsonl` | other | 40 | 6 models | cot-exp3-decision-v1 | claude-opus-4.8 | 0 |
+| `round2_openai_gpt-6-astra.jsonl` | other | 40 | 6 models | cot-exp3-decision-v1 | gpt-6-astra | 0 |
+| `round3_anthropic_claude-opus-4.8.jsonl` | other | 38 | 6 models | cot-exp3-decision-v1 | claude-opus-4.8 | 0 |
+| `round3_openai_gpt-6-astra.jsonl` | other | 38 | 6 models | cot-exp3-decision-v1 | gpt-6-astra | 0 |
+| `round4_anthropic_claude-opus-4.8.jsonl` | other | 40 | 6 models | cot-exp3-decision-v1 | claude-opus-4.8 | 0 |
+| `round4_openai_gpt-6-astra.jsonl` | other | 40 | 6 models | cot-exp3-decision-v1 | gpt-6-astra | 0 |
+
+## exp3-rewardhack/hvtb-40
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro.jsonl` | other | 40 | or-deepseek-v4-pro | - | - | 8 |
+| `ask-or-gemini-3.1-pro.jsonl` | other | 40 | or-gemini-3.1-pro | - | - | 1 |
+| `ask-or-gpt-5.6-sol.jsonl` | other | 40 | or-gpt-5.6-sol | - | - | 2 |
+| `ask-or-grok-4.7.jsonl` | other | 40 | or-grok-4.7 | - | - | 3 |
+| `nothing-or-deepseek-v4-pro.jsonl` | other | 40 | or-deepseek-v4-pro | - | - | 11 |
+| `nothing-or-gemini-3.1-pro.jsonl` | other | 40 | or-gemini-3.1-pro | - | - | 1 |
+| `nothing-or-gpt-5.6-sol.jsonl` | other | 40 | or-gpt-5.6-sol | - | - | 2 |
+| `nothing-or-grok-4.7.jsonl` | other | 40 | or-grok-4.7 | - | - | 3 |
+
+## exp3-rewardhack/hvtb-ask-screen
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5-rest.jsonl` | other | 40 | or-claude-opus-5.5 | - | - | 2 |
+| `ask-or-claude-opus-5.5.jsonl` | other | 10 | or-claude-opus-5.5 | - | - | 1 |
+| `ask-or-deepseek-v4-pro.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 4 |
+| `ask-or-gemini-3.1-pro.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7.jsonl` | other | 10 | or-grok-4.7 | - | - | 2 |
+| `ask-or-o3.jsonl` | other | 10 | or-o3 | - | - | 2 |
+
+## exp3-rewardhack/hvtb-half
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro.jsonl` | other | 8 | or-deepseek-v4-pro | - | - | 4 |
+| `ask-or-gemini-3.1-pro.jsonl` | other | 8 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gemini-3.8-flash.jsonl` | other | 8 | or-gemini-3.8-flash | - | - | 1 |
+| `ask-or-glm-5.2.jsonl` | other | 8 | or-glm-5.2 | - | - | 3 |
+| `ask-or-gpt-5.6-sol.jsonl` | other | 8 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7.jsonl` | other | 14 | or-grok-4.7 | - | - | 2 |
+| `nothing-or-deepseek-v4-pro.jsonl` | other | 8 | or-deepseek-v4-pro | - | - | 5 |
+| `nothing-or-gemini-3.1-pro.jsonl` | other | 8 | or-gemini-3.1-pro | - | - | 0 |
+| `nothing-or-gemini-3.8-flash.jsonl` | other | 8 | or-gemini-3.8-flash | - | - | 0 |
+| `nothing-or-glm-5.2.jsonl` | other | 14 | or-glm-5.2 | - | - | 3 |
+| `nothing-or-gpt-5.6-sol.jsonl` | other | 8 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7.jsonl` | other | 14 | or-grok-4.7 | - | - | 1 |
+
+## exp3-rewardhack/hvtb-nothing-pilot
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro.jsonl` | other | 8 | or-deepseek-v4-pro | - | - | 1 |
+| `nothing-or-gemini-3.1-pro.jsonl` | other | 8 | or-gemini-3.1-pro | - | - | 1 |
+| `nothing-or-gpt-5.6-sol.jsonl` | other | 8 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7.jsonl` | other | 8 | or-grok-4.7 | - | - | 0 |
+| `nothing-or-o3.jsonl` | other | 8 | or-o3 | - | - | 2 |
+
+## exp3-rewardhack/hvtb-oracle
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `oracle-offline-recheck.jsonl` | other | 41 | oracle | - | - | 3 |
+| `oracle-offline.jsonl` | other | 89 | oracle | - | - | 8 |
+| `oracle-online.jsonl` | other | 34 | oracle | - | - | 3 |
+
+## exp3-rewardhack/hvtb-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `netcheck.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `smoke-ask-gemini.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `smoke-gemini.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `x05-smoke-or-gemini-3.8-flash.jsonl` | other | 1 | or-gemini-3.8-flash | - | - | 0 |
+| `x05-smoke-or-glm-5.2.jsonl` | other | 1 | or-glm-5.2 | - | - | 0 |
+
+## exp3-rewardhack/ib-swe-screen/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260929T173132Z.jsonl` | other | 100 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/ib-swe-screen/thirdperson
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `thirdperson_20260929T174244Z.jsonl` | other | 84 | 5 models | - | - | 0 |
+
+## exp3-rewardhack/ib-swe-screen-R/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20260930T181810Z.jsonl` | other | 100 | 5 models | - | - | 1 |
+| `selfreport_20260930T040320Z.jsonl` | other | 100 | 5 models | - | - | 1 |
+
+## exp3-rewardhack/ib-swe-validity
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ablation-rulesB_or-gpt-5.6-sol_20260929T222224Z.jsonl` | other | 432 | or-gpt-5.6-sol | - | - | 0 |
+| `ablation-rulesR_or-deepseek-v4-pro_20260929T233900Z.jsonl` | other | 408 | or-deepseek-v4-pro | - | - | 0 |
+| `ablation-rulesR_or-gemini-3.1-pro_20260929T235317Z.jsonl` | other | 384 | or-gemini-3.1-pro | - | - | 0 |
+| `ablation-rulesR_or-gpt-5.6-sol_20260929T225715Z.jsonl` | other | 432 | or-gpt-5.6-sol | - | - | 0 |
+| `ablation-rulesR_or-grok-4.7_20260929T235502Z.jsonl` | other | 432 | or-grok-4.7 | - | - | 0 |
+| `ablation-rulesR_or-o3_20260929T233245Z.jsonl` | other | 192 | or-o3 | - | - | 0 |
+| `ablation_or-gpt-5.6-sol_20260929T212714Z.jsonl` | other | 432 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesB_or-gpt-5.6-sol_20260929T222227Z.jsonl` | other | 1476 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-claude-opus-5.5_20261004T004136Z.jsonl` | other | 1200 | or-claude-opus-5.5 | - | - | 0 |
+| `validity-realistic-rulesR_or-deepseek-v4-pro_20260929T232527Z.jsonl` | other | 1200 | or-deepseek-v4-pro | - | - | 0 |
+| `validity-realistic-rulesR_or-deepseek-v4-pro_20260930T211428Z.jsonl` | other | 146 | or-deepseek-v4-pro | - | - | 3 |
+| `validity-realistic-rulesR_or-gemini-3.1-pro_20260929T232527Z.jsonl` | other | 1200 | or-gemini-3.1-pro | - | - | 0 |
+| `validity-realistic-rulesR_or-gemini-3.1-pro_20260930T211428Z.jsonl` | other | 146 | or-gemini-3.1-pro | - | - | 0 |
+| `validity-realistic-rulesR_or-gpt-5.6-sol_20260929T225719Z.jsonl` | other | 1476 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-gpt-5.6-sol_20260929T232527Z.jsonl` | other | 600 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-gpt-5.6-sol_20260930T211428Z.jsonl` | other | 146 | or-gpt-5.6-sol | - | - | 0 |
+| `validity-realistic-rulesR_or-grok-4.7_20260929T232527Z.jsonl` | other | 1200 | or-grok-4.7 | - | - | 0 |
+| `validity-realistic-rulesR_or-grok-4.7_20260930T211428Z.jsonl` | other | 146 | or-grok-4.7 | - | - | 0 |
+| `validity-realistic-rulesR_or-o3_20260929T232527Z.jsonl` | other | 1200 | or-o3 | - | - | 0 |
+| `validity-realistic-rulesR_or-o3_20260930T211428Z.jsonl` | other | 146 | or-o3 | - | - | 0 |
+| `validity-realistic_or-gpt-5.6-sol_20260929T213617Z.jsonl` | other | 1476 | or-gpt-5.6-sol | - | - | 0 |
+| `validity_or-gpt-5.6-sol_20260929T205438Z.jsonl` | other | 4200 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/ladder-ask-screen
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260925T210341Z_or-claude-opus-5.5.jsonl` | other | 5 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/maze-nothing-sr
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20260930T222216Z.jsonl` | other | 6 | or-deepseek-v4-pro | - | - | 0 |
+| `nothing-or-gemini-3.1-pro_20260930T222216Z.jsonl` | other | 6 | or-gemini-3.1-pro | - | - | 0 |
+| `nothing-or-gpt-5.6-sol_20260930T222216Z.jsonl` | other | 6 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7_20260930T222216Z.jsonl` | other | 6 | or-grok-4.7 | - | - | 0 |
+| `nothing-or-o3_20260930T222216Z.jsonl` | other | 6 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/maze-screen
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260929T005045Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260929T005045Z.jsonl` | other | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-glm-5.3_20260929T024432Z.jsonl` | other | 10 | or-glm-5.3 | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260929T021223Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260929T023829Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20260929T010215Z.jsonl` | other | 10 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/maze-screen/_pilot-leaky-sandbox
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20260928T221308Z.jsonl` | other | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20260928T234203Z.jsonl` | other | 7 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gemini-3.8-flash_20260928T233254Z.jsonl` | other | 10 | or-gemini-3.8-flash | - | - | 0 |
+| `ask-or-glm-5.2_20260928T230601Z.jsonl` | other | 10 | or-glm-5.2 | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20260928T230444Z.jsonl` | other | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20260928T220446Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/maze-screen/_superseded-shared-tmp
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20260929T012029Z.jsonl` | other | 10 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/maze-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.8-flash_20260928T215451Z.jsonl` | other | 2 | or-gemini-3.8-flash | - | - | 0 |
+
+## exp3-rewardhack/preference
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `preference_exp2-high_20260924T184724Z_or-o3.jsonl` | pilot: preference | 4 | or-o3 | - | - | 0 |
+| `preference_high_20260923T210253Z_or-deepseek-v4-pro.jsonl` | pilot: preference | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `preference_high_20260923T210253Z_or-gemini-3.1-pro.jsonl` | pilot: preference | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `preference_high_20260923T210253Z_or-gpt-5.6-sol.jsonl` | pilot: preference | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `preference_high_20260923T210253Z_or-grok-4.7.jsonl` | pilot: preference | 10 | or-grok-4.7 | - | - | 0 |
+| `preference_high_20260923T210253Z_or-o3.jsonl` | pilot: preference | 10 | or-o3 | - | - | 0 |
+| `preference_high_20260923T210900Z_or-deepseek-v4-pro.jsonl` | pilot: preference | 2 | or-deepseek-v4-pro | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-deepseek-v4-pro.jsonl` | pilot: preference | 10 | or-deepseek-v4-pro | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-gemini-3.1-pro.jsonl` | pilot: preference | 10 | or-gemini-3.1-pro | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-gpt-5.6-sol.jsonl` | pilot: preference | 10 | or-gpt-5.6-sol | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-grok-4.7.jsonl` | pilot: preference | 10 | or-grok-4.7 | - | - | 0 |
+| `preference_mid_20260924T190403Z_or-o3.jsonl` | pilot: preference | 10 | or-o3 | - | - | 0 |
+| `preference_mid_20260924T203513Z_or-grok-4.7.jsonl` | pilot: preference | 1 | or-grok-4.7 | - | - | 0 |
+
 ## exp3-rewardhack/probe-2026-08-17
 
 Corin checkpoint survey — 2026-08-17
@@ -588,3 +1071,17729 @@ Corin checkpoint survey — 2026-08-17
 | `chess_contamination_probe_20260817.jsonl` | other | 10 | ? | - | - | 0 |
 | `chess_knowledge_probe_20260817.jsonl` | other | 9 | ? | - | - | 0 |
 | `org_training_runs_20260817.jsonl` | other | 53 | ? | - | - | 0 |
+
+## exp3-rewardhack/rehearsal/chess-big_deal
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T232602Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T232804Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `chess_probe_20261007T232854Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+| `chess_probe_20261007T235042Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261008T000225Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261008T001326Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/rehearsal/chess-credibility
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T233314Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `chess_probe_20261007T233529Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T234435Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+| `chess_probe_20261007T235525Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261008T001421Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261008T001528Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/rehearsal/chess-promise
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T231453Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `chess_probe_20261007T231453Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261007T231453Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T231453Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261007T231453Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20261007T231453Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/rehearsal/chess-promise_out
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T231815Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+| `chess_probe_20261007T231833Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `chess_probe_20261007T232433Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T232829Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261007T232859Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261008T001147Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/rehearsal/chess-small_deal
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T231927Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+| `chess_probe_20261007T232357Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `chess_probe_20261007T232524Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T233856Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261007T234945Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261008T001236Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/algotune-ask
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261007T211739Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `ask-or-deepseek-v4-pro_20261007T201810Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `ask-or-gemini-3.1-pro_20261007T182108Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `ask-or-gpt-5.6-sol_20261007T180530Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `ask-or-grok-4.7_20261007T203752Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+| `ask-or-o3_20261007T184701Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/algotune-nothing
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261007T200821Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `nothing-or-deepseek-v4-pro_20261007T200821Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `nothing-or-gemini-3.1-pro_20261007T180433Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `nothing-or-gpt-5.6-sol_20261007T180433Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `nothing-or-grok-4.7_20261007T200821Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+| `nothing-or-o3_20261007T180433Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/algotune-out
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261007T213534Z.jsonl` | other | 2 | or-claude-opus-5.5 | - | - | 0 |
+| `out-or-deepseek-v4-pro_20261007T203230Z.jsonl` | other | 2 | or-deepseek-v4-pro | - | - | 0 |
+| `out-or-gemini-3.1-pro_20261007T183448Z.jsonl` | other | 2 | or-gemini-3.1-pro | - | - | 0 |
+| `out-or-gpt-5.6-sol_20261007T181323Z.jsonl` | other | 2 | or-gpt-5.6-sol | - | - | 0 |
+| `out-or-grok-4.7_20261007T205149Z.jsonl` | other | 2 | or-grok-4.7 | - | - | 0 |
+| `out-or-o3_20261007T191622Z.jsonl` | other | 2 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/chess-ask
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T180701Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T181103Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+| `chess_probe_20261007T181255Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20261007T181424Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261007T181449Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261007T185520Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/chess-nothing
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T180433Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+| `chess_probe_20261007T180433Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261007T180433Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T180433Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261007T180433Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20261007T180433Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/chess-out
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261007T181650Z_or-o3.jsonl` | other | 2 | or-o3 | - | - | 0 |
+| `chess_probe_20261007T182137Z_or-grok-4.7.jsonl` | other | 2 | or-grok-4.7 | - | - | 0 |
+| `chess_probe_20261007T182251Z_or-gemini-3.1-pro.jsonl` | other | 2 | or-gemini-3.1-pro | - | - | 0 |
+| `chess_probe_20261007T182258Z_or-gpt-5.6-sol.jsonl` | other | 2 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20261007T182709Z_or-deepseek-v4-pro.jsonl` | other | 2 | or-deepseek-v4-pro | - | - | 0 |
+| `chess_probe_20261007T193702Z_or-claude-opus-5.5.jsonl` | other | 2 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/rubric-pilot/swe/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261007T213854Z.jsonl` | other | 24 | 6 models | - | - | 1 |
+
+## exp3-rewardhack/screen-20260921
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T005119Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+| `chess_probe_20260922T005124Z_or-kimi-k3.jsonl` | other | 1 | or-kimi-k3 | - | - | 0 |
+| `chess_probe_20260922T005126Z_or-qwen3.8-max.jsonl` | other | 1 | or-qwen3.8-max | - | - | 0 |
+| `chess_probe_20260922T005259Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/screen-20260921/_failed-routing
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T005121Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/screen-20260922
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20260922T192532Z_or-gpt-6-astra.jsonl` | other | 1 | or-gpt-6-astra | - | - | 0 |
+| `chess_probe_20260922T192535Z_or-claude-fable-5.1.jsonl` | other | 1 | or-claude-fable-5.1 | - | - | 0 |
+| `chess_probe_20260922T201943Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-denial-v1_anthropic_claude-opus-4.8.jsonl` | other | 302 | 6 models | selfreport-denial-v1 | claude-opus-4.8 | 0 |
+| `selfreport-denial-v1_openai_gpt-6-astra.jsonl` | other | 302 | 6 models | selfreport-denial-v1 | gpt-6-astra | 0 |
+
+## exp3-rewardhack/selfreport-replay
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport_20260927T070946Z.jsonl` | other | 60 | 6 models | - | - | 0 |
+
+## exp3-rewardhack/stage1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `raw_20261007T224756Z.jsonl` | other | 180 | 6 models | - | - | 0 |
+
+## exp3-rewardhack/study
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `episodes.jsonl` | other | 2877 | 6 models | - | - | 0 |
+| `episodes_corrected.jsonl` | other | 2877 | 6 models | - | - | 0 |
+| `faults.jsonl` | other | 7 | ? | - | - | 0 |
+| `relabeled.jsonl` | other | 16 | 4 models | - | - | 0 |
+| `voided.jsonl` | other | 9 | ? | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261010T125940Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261010T140808Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261010T164745Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261010T171851Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261010T184420Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261010T205249Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261011T014811Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261011T110613Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_07_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261011T235910Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_07_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261011T201202Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_07_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261011T232122Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T004213Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T041830Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T044916Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T060632Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T082243Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T084443Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T094056Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T111308Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T192941Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_16_a1_discarded_20261012T1929
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T184259Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261012T211844Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261013T020609Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-claude-opus-5.5_20261013T203548Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261011T022902Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T020527Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T031715Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T050308Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T054852Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T073149Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T101709Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T105001Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T182110Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T192941Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_09_a1_discarded_20261012T1929
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T190528Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T210848Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261012T232639Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T001256Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T011313Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T033210Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T051625Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T080817Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T152836Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_17_a1_discarded_20261013T1528
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T082654Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_17_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T163332Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T192214Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-claude-opus-5.5_20261013T193510Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261010T080609Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261010T101904Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261010T225259Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261011T010318Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261011T100308Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T070433Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_05_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T080103Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T074622Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T103728Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T171022Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_08_a1_discarded_20261012T1652
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T115805Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T202101Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T204321Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T213116Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261012T231650Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T023851Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T031231Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T073440Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T162841Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_16_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T163326Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T185048Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T195002Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-claude-opus-5.5_20261013T211329Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261010T065135Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261010T123439Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261010T150804Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261011T103101Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T012332Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T014350Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T020000Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T035918Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T043425Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T053455Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T110620Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T175507Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_11_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T181113Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261012T195117Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T005133Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T034450Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T040238Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T055549Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T154756Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T190215Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-claude-opus-5.5_20261013T200652Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261010T091214Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261011T042312Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T002833Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T023258Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T024531Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T113500Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T174259Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T214450Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T220657Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261012T222256Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T003538Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T025756Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T042946Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T045636Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T061741Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T065820Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T170724Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T180408Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T182753Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-claude-opus-5.5_20261013T205553Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261010T055513Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261010T111146Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261010T154143Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261010T195238Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261010T213407Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T002059Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T032059Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T053333Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_07_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T100307Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_07_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T095434Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T113418Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_08_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T235910Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_08_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T201203Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_08_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261011T232123Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T010738Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T051737Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T090417Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T092604Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T172336Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T225309Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261012T235946Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261013T013742Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261013T064539Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261013T071735Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261013T172340Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261010T054834Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261010T123144Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261010T140702Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_02_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261010T142009Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261011T041649Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261011T100308Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261011T113157Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_05_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261011T235910Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_05_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261011T201202Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_05_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261011T232122Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T003855Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T011329Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_07_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T013611Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T020456Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T043136Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T051710Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T195116Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T210535Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261012T212929Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261013T031106Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261013T064343Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261013T180123Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261013T191930Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261013T193307Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-deepseek-v4-pro_20261013T194202Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261010T080443Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261010T125725Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261010T203626Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261011T005353Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261011T031017Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T005929Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T022822Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T072442Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T074519Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T075950Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T080119Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T093716Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T101637Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T173642Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_12_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T174242Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T190130Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_13_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T192941Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_13_a2_discarded_20261012T1929
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T190935Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_13_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T194052Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T222001Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_14_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261012T222125Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261013T004713Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261013T011055Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261013T031944Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261013T182258Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-deepseek-v4-pro_20261013T184346Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261010T085828Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261010T224803Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_01_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261010T230135Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261010T235704Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261011T013744Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261011T022505Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T013855Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T083524Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T104737Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T175444Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T202059Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T202536Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_09_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T202719Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T214252Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T225139Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T231048Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261012T234938Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T023306Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T025737Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T065445Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T070902Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_17_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T072322Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T072824Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-deepseek-v4-pro_20261013T185459Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261010T105439Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_00_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261010T115706Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261010T152708Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261010T163403Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_02_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261010T172439Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261010T212837Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T024354Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T035241Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T044727Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T053411Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_07_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T064741Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_07_a2_discarded_20261012T0647
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T060532Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T064741Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_08_a1_discarded_20261012T0647
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T054510Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_08_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T073617Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_08_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T080114Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T060000Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T064741Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_09_a2_discarded_20261012T0647
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T061058Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T092506Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T095211Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T110608Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T115800Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_12_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T165647Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_12_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T172147Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261012T203830Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T000540Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T051608Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T061122Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T154600Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T172252Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T200639Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_19_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-deepseek-v4-pro_20261013T222640Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T150038Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T171617Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_01_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T172516Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_01_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T175317Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T182636Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_02_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T183715Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261010T194322Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261011T052047Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261011T110035Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T002636Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_06_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T012929Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T041545Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T103549Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T111239Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T114704Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_09_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T165253Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_09_a3_discarded_20261012T1652
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T115623Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T113020Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T113946Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_10_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T114708Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T183744Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_11_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T192941Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_11_a2_discarded_20261012T1929
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T192222Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_11_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T194358Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261012T220122Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T020434Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T042932Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T152836Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_15_a1_discarded_20261013T1528
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T080616Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_15_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T154757Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T082511Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_16_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T152836Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_16_a2_discarded_20261013T1528
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T084621Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T161409Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T205112Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-deepseek-v4-pro_20261013T210906Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261010T064514Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261010T100807Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261011T102748Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T015706Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T030915Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T045955Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T065607Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T090127Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_07_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T095101Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T172137Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T181323Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T211619Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261012T232609Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T003236Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T013021Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T034432Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T040114Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T043951Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T055002Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_17_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T152836Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_17_a2_discarded_20261013T1528
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T072324Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_17_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T153713Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T170115Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-deepseek-v4-pro_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261013T203422Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261010T032217Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261010T121516Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261010T202531Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261010T224454Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261010T234425Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261011T100307Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261011T104720Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261012T053207Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261012T054220Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261012T101349Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261012T183327Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261012T205918Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261012T234210Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T002306Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T042307Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T060732Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T065306Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T152836Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_17_a1_discarded_20261013T1528
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T090608Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T171840Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gemini-3.1-pro_20261013T185328Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261010T030959Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261011T051400Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261012T042803Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261012T055553Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261012T104635Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261012T213851Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261013T012844Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261013T030949Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261013T043707Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gemini-3.1-pro_20261013T210759Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261010T001326Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261010T005844Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261010T022421Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261010T045709Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261010T182501Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261010T211113Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261012T003659Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261012T030633Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261012T185536Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gemini-3.1-pro_20261012T212732Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T011156Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T013030Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T020012Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T023619Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T041421Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T054426Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T074556Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261010T104552Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T015103Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T022326Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T051647Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T075826Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T165253Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_12_a1_discarded_20261012T1652
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T115607Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T215449Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261012T230941Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261013T000344Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261013T010542Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261013T034223Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_17_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261013T034658Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261013T080316Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gemini-3.1-pro_20261013T180020Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261010T025810Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261010T033805Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261010T035106Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261010T043850Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261010T085535Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261011T021307Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261011T112804Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T005650Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T083320Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T085906Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T105819Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T112948Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T173342Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T193457Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T201625Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261012T221409Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261013T022450Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261013T035808Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261013T191656Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gemini-3.1-pro_20261013T194156Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261010T003249Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261010T050823Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261010T125318Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261010T135348Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261011T013212Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T013645Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T035125Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T040921Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T044106Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T073740Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T092039Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T093130Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T103241Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T174857Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T181113Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261012T211558Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261013T031913Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261013T054210Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261013T160816Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gemini-3.1-pro_20261013T164943Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261010T004210Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261010T014713Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_01_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261010T015258Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261010T063256Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261010T194219Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261011T005146Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261011T041437Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T011202Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T020449Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T071732Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T111229Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T172057Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T203512Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261012T232217Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T004430Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T020344Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T025245Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T072601Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T082225Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T193059Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gemini-3.1-pro_20261013T202134Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261010T002233Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261010T094904Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261010T145129Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261010T152335Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261010T162829Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261010T170104Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261011T030443Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261011T102445Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261012T002441Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261012T024104Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261012T045813Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261012T065342Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261012T224637Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T050539Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T063717Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T070857Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T181934Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T184027Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T200035Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gemini-3.1-pro_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261013T204807Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261010T014146Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_00_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261010T015353Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261010T023315Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261010T035331Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261010T120412Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261010T124746Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261011T011022Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261011T025852Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T034611Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T040412Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T053853Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T073703Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T092935Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T185148Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T201259Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T204923Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T212319Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261012T230535Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261013T081519Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261013T160200Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-gpt-5.6-sol_20261013T192535Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261010T151645Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261011T102149Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261011T115434Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_02_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261012T002438Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261012T055455Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261012T091912Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261012T182937Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261012T202812Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261012T215433Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261013T010225Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-gpt-5.6-sol_20261013T181639Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261010T001325Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261010T034235Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261010T103509Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261011T112131Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261012T024015Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261012T085345Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261012T192941Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_06_a1_discarded_20261012T1929
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261012T190914Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261012T224258Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261013T025058Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-gpt-5.6-sol_20261013T191241Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T004046Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T010945Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T030551Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T032015Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T165837Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T182057Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T194050Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261010T210628Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261011T021101Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261012T071506Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261012T104451Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261012T112843Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261012T171942Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261012T174800Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261013T000235Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261013T031827Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261013T065209Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261013T164902Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261013T193924Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-gpt-5.6-sol_20261013T201958Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T002132Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T002953Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T025215Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T043558Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T050816Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T074058Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T144918Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261010T202211Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261011T045921Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261011T104647Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261012T003506Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261012T042433Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261012T082850Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261012T173339Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261012T211359Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261013T002249Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261013T035737Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261013T041647Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261013T174059Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-gpt-5.6-sol_20261013T195333Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261010T004611Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261010T012832Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261010T032739Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261010T062257Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261010T234037Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261011T060924Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_05_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261011T100307Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_05_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261011T095435Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T030036Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T044051Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T053118Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T064741Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_09_a1_discarded_20261012T0647
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T061225Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T101025Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T102804Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T105603Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T213759Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261012T232136Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261013T012245Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261013T030653Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261013T060340Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261013T070518Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-gpt-5.6-sol_20261013T204151Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261010T045613Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261010T053747Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261010T134525Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261010T162341Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261010T222059Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T010955Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T014900Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T021741Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T051207Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T075304Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T111205Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T115318Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_11_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T165253Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261012T234017Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T015531Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T033722Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T043606Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T063301Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T075305Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T085744Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-gpt-5.6-sol_20261013T171649Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261010T015549Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261010T021817Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261010T085012Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261010T093053Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261011T004058Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261011T041043Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T005501Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T013150Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T020423Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T045727Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T180347Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T181124Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261012T221007Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T004343Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T021928Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T050456Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T054130Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T072429Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T183633Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T185253Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-gpt-5.6-sol_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261013T210707Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261010T092746Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261010T113107Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261010T175354Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261011T033516Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261011T045727Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T025717Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T034305Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T064741Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_07_a1_discarded_20261012T0647
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T061125Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T102349Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T171317Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T174545Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T182831Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T211341Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T215341Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261012T233627Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261013T031751Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261013T050037Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261013T055746Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261013T163738Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-grok-4.7_20261013T185139Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261010T102952Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261010T215946Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261011T015945Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T020323Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T021459Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T040405Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T042353Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T045725Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T071125Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T104425Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T223023Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261012T232118Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T001805Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T014822Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T024351Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T035406Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T071900Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T152836Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_17_a1_discarded_20261013T1528
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T085550Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T181618Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-grok-4.7_20261013T192535Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261010T151316Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261010T155315Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261010T210300Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261010T232523Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261011T025013Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261011T101215Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261011T103434Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T003120Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T053725Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T073409Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T075002Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T195731Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T202707Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261012T213412Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261013T000142Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261013T005627Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261013T075206Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261013T195157Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261013T201831Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-grok-4.7_20261013T205801Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261010T053402Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261010T133817Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T010522Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T055610Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_03_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T100307Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_03_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T095435Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T111723Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_04_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T235910Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_04_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T201202Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_04_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261011T232122Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T023834Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T043656Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T050834Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T092915Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T094420Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T105408Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T112352Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T180220Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_12_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T181118Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T220956Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261012T230420Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261013T012211Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261013T043316Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261013T053429Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261013T070437Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-grok-4.7_20261013T171630Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261010T060208Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261010T143949Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261010T165436Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261011T114634Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_03_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261011T235910Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_03_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261011T201204Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_03_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261011T232125Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T005216Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T052844Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T082802Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T192941Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_07_a1_discarded_20261012T1929
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T190615Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T204654Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261012T212311Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T021359Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T030543Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T041512Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T063030Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T065040Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T081237Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T155845Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_16_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T163355Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T173748Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T190305Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-grok-4.7_20261013T193650Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261010T071443Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261010T084626Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261010T123852Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261010T191546Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261010T201858Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261011T003230Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T010903Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T012448Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T014745Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T064741Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_09_a1_discarded_20261012T0647
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T055439Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T084720Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T091206Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T165253Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_12_a1_discarded_20261012T1652
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T111113Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T165253Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_13_a1_discarded_20261012T1652
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T114437Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T172826Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261012T184739Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261013T003648Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261013T033519Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261013T183359Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-grok-4.7_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261013T203713Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261010T002808Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261010T010737Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261010T012330Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261010T030321Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261010T231903Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261011T032613Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261011T103305Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T021110Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T040246Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T045319Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T052720Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T094102Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_11_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T095516Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261012T175546Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T005558Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T031411Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T071859Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T080919Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T154924Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T163359Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `ask-or-o3_20261013T173212Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261010T023746Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T010839Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T101720Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T190548Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T195411Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T204449Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T210900Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261012T235951Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261013T033414Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `big_deal-or-o3_20261013T192413Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261010T165004Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261011T015004Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261012T084632Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261012T092654Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261012T225406Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261013T034532Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261013T045818Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261013T052437Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261013T074829Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `credibility-or-o3_20261013T205619Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T050109Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T083901Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T123843Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T154734Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T174545Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T191101Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261010T215540Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T012334Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T014505Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T034027Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T053642Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T091016Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T103838Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T171141Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261012T212020Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261013T001519Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261013T024143Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261013T043057Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261013T064847Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261013T190235Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T002003Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T003345Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T031042Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T045147Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T091831Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T111214Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261010T201442Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261011T010444Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261011T045039Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261012T025142Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261012T050445Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261012T182523Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261012T184323Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261012T213328Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261013T003547Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261013T020650Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261013T041503Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261013T065832Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261013T185115Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `out-or-o3_20261013T193606Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261010T001323Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261010T021236Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261010T035134Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261010T070346Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261010T102049Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261010T151145Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T020238Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T023519Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T074918Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T082422Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T111001Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T112254Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T113646Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_12_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T165253Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T172444Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T220919Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261012T233011Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261013T011846Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261013T013943Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261013T030451Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise-or-o3_20261013T203700Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261010T004422Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261010T032321Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261010T034150Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261010T055935Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261010T143608Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261010T205512Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261011T003110Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261011T023012Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261011T054654Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261012T042047Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261012T070716Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261012T073357Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261012T202406Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261012T222457Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261012T231800Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261013T062441Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261013T171602Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261013T182857Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261013T195104Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `promise_out-or-o3_20261013T200742Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261010T013500Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261010T015318Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261010T022910Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261010T042955Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261010T052355Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261010T133025Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261011T101211Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261011T111201Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261011T114546Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_08_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261011T235910Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_08_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261011T201204Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_08_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261011T232124Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T003110Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T005211Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T043605Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T055308Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T060804Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T105116Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T174356Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261012T215232Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261013T055735Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261013T084436Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/main_or-o3_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261013T180437Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261008T233224Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T002649Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T013525Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T024449Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T035410Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T042652Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T050051Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T052354Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T054704Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T061858Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T224529Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T153018Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T155716Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T170017Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T172427Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T175322Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T181548Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T185643Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T194624Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T202424Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-claude-opus-5.5_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-claude-opus-5.5_20261009T211519Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261008T232244Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T001535Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T013511Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T023356Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T033457Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T042616Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_05_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T043750Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T050013Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T052054Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T054546Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_08_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T224014Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T061458Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T065644Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_09_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T065957Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T152403Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T170758Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T155039Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T165227Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T172403Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T175046Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T180859Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_15_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T190036Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_15_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T190525Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T185339Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_16_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T190024Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_16_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T190517Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T193412Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T201741Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-deepseek-v4-pro_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-deepseek-v4-pro_20261009T211234Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261008T231704Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T001218Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T012617Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T023143Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T033338Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T041939Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T045300Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T051635Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T054416Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T055815Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T223625Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T071256Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T150606Z.jsonl` | other | 0 | - | - | - | 0 |
+| `small_deal-or-gemini-3.1-pro_20261009T152016Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T154956Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T164458Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T171611Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T174658Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T180616Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T184300Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T191940Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T201559Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gemini-3.1-pro_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gemini-3.1-pro_20261009T210344Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261008T225828Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T000249Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T012416Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T021450Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T032631Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T040958Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T044659Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T051437Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T054049Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T055251Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T223109Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T063809Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T150606Z.jsonl` | other | 0 | - | - | - | 0 |
+| `small_deal-or-gpt-5.6-sol_20261009T152016Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T154509Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T164012Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T170505Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_13_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T170736Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T174446Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T180007Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T184118Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T190856Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T200831Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-gpt-5.6-sol_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-gpt-5.6-sol_20261009T205822Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261008T225828Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261008T235625Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T010143Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T015524Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T030723Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T040947Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T043734Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T050828Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T053625Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T055124Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_09_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T223109Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T062056Z.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T150606Z.jsonl` | other | 0 | - | - | - | 0 |
+| `small_deal-or-grok-4.7_20261009T152016Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T153813Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T161457Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T170216Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_13_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T170731Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T174348Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T175704Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T182155Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T190651Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T195544Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-grok-4.7_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-grok-4.7_20261009T205048Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261008T225828Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261008T234828Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T004026Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T014900Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T025409Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T040455Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T043331Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T050650Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T053314Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T054801Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T061947Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_10_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T223109Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T153129Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T155845Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T170144Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T172726Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T175610Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T182118Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T190647Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T194710Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/algotune/pilot_or-o3_algotune_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `small_deal-or-o3_20261009T203844Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T064012Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T084249Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113701Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T115849Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T125632Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T142918Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T145343Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T171505Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T181534Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T190056Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T212947Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T234313Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T001231Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T013747Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T023137Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T043225Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T051548Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T053513Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060344Z_or-claude-opus-5.5.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_18_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100309Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_18_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T095436Z_or-claude-opus-5.5.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T104358Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T051635Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T082031Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T085943Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093721Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094338Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T102233Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T104859Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120610Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T131750Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153543Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T192844Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T195855Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204641Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T215832Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232337Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003634Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T014446Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T034659Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T044308Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T101200Z_or-claude-opus-5.5.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_19_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T235910Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_19_a2_discarded_20261011T2321
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T201202Z_or-claude-opus-5.5.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_nothing_19_a2_discarded_20261011T2359
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T232123Z_or-claude-opus-5.5.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T033750Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035528Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043004Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045017Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T114839Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T122717Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T135637Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T161355Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201346Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202538Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T203902Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T230517Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T000058Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T005339Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T011326Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T033816Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T035834Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T050932Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T054318Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T102833Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045644Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T060334Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061431Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061948Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070136Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T071928Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T080450Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T095315Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T103200Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T110608Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T111710Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T134700Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170434Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T193943Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201745Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T205534Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T211019Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T221326Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224731Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T021632Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041116Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041618Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043617Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T055208Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070801Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T100936Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101319Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113108Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T133645Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140729Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T154315Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T162626Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T165606Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173151Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194353Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T214224Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224014Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T231706Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002029Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T020007Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034855Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T050451Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T053928Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T073047Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T074733Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T091840Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093320Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T123846Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T130526Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T152107Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T164528Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173850Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T175237Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T183651Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T191921Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T222952Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003044Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T024954Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T031816Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-claude-opus-5.5_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T055746Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T020155Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T023433Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025925Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T040143Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061928Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T074545Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101957Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T130458Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140441Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T142345Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T151342Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T210847Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T223812Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232311Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T233938Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002841Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T022826Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T031240Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T051515Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T055345Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T011417Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043546Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T053531Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T110249Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T154259Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170304Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T180842Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T213647Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003632Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T042127Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001325Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T024423Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T033631Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070722Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T081444Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173821Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_05_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T175301Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T221257Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T235653Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002012Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T014437Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003143Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035351Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045551Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T060055Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T080045Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T092852Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093624Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T122342Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T135613Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T144841Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T162348Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T172950Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T191608Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T195827Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201050Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T205519Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T215809Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T000918Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T035729Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T052935Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T044956Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T050237Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T055150Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T095044Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101239Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T111629Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113045Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T114646Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T123423Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153540Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T165557Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T171226Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T192742Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204449Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T222927Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T015750Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T021556Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T034426Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T054143Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T102741Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T004546Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013259Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T031331Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041534Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T051628Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T063552Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T065816Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094243Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T104512Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T125549Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T131635Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T164007Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194349Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201734Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202427Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T005128Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T010930Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T013402Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060332Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T104331Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T002659Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005124Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010218Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010802Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T012715Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034713Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T042915Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T071915Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T084002Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T085846Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T100328Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113637Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T115620Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120437Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T160946Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T183119Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T193629Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T212326Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T044253Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T050216Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001824Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T014113Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_01_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015249Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015015Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T021042Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025258Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061415Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T072839Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T091607Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T102949Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T133459Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T134546Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T175141Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_11_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T175225Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T185214Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T203826Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224701Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T230343Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T231332Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T024808Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T033234Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-deepseek-v4-pro_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100536Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001324Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T021010Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T024143Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T031325Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T032855Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T040055Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T044631Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T102422Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T115613Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T133443Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T135423Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140430Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T171132Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T200555Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201605Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T010856Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T024426Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T035544Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T054142Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T055102Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005702Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043512Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T065033Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070657Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T134544Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T215418Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T223602Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002010Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T045928Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T101625Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010754Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T083200Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094123Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T111304Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T114606Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T182424Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T191440Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T221225Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003620Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T044143Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T002657Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013757Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025240Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035332Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T055932Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T072650Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T074050Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093541Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T100119Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T103840Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153144Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T162053Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170135Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T192543Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T222901Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002614Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T005024Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T014355Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T015528Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T032726Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003025Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 1 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_00_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003640Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003929Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015859Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T023006Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045500Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T050015Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T051401Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T121429Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T151030Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T163654Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T174557Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T180518Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T195753Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202400Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T210644Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224634Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232751Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T235514Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T022610Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T104258Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005051Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T011406Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025618Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034434Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T060837Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061846Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T063352Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T071708Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T112555Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120332Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T123134Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T124430Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153919Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T160100Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173744Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T193223Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T211947Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T230318Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T041726Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T052924Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013229Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T053233Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T054946Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T081402Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T092812Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101211Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T130311Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T131529Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T165526Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T172829Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194328Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T203504Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T205409Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T213614Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T231048Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T000742Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T012846Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T020735Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T034342Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T051502Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001708Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T012537Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T014923Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041521Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T042436Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T075827Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T085816Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T091154Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094943Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101854Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T105645Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113619Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T142314Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T144408Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T184634Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204408Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232225Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T030337Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060237Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060802Z_or-gemini-3.1-pro.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_19_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T095438Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gemini-3.1-pro_chess_small_deal_19_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100310Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001519Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T002356Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005035Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041512Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T042052Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T090515Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113558Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T115555Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T131246Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140357Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T155923Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T165006Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173712Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T210143Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T211903Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T223505Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T235347Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T032446Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T035513Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T040842Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T102404Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T105329Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120308Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170037Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170925Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T195452Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T205323Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T213607Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T051446Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T052630Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T064839Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093537Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T130142Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T172147Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T200327Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T221832Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224313Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T231046Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T054111Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T103638Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005553Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T012329Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015849Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T020946Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T030915Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T052759Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070641Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T111243Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T144202Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T150646Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T180309Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T182317Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T184238Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T192503Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T203022Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204323Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T000600Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T020719Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T022142Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T101540Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T024016Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025133Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T032635Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043325Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T062453Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T074013Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T085717Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T100029Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T103820Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T124207Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T134352Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T135239Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T162032Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T193135Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T215110Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232118Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T004557Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T045645Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060110Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_18_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100308Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_18_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T095434Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060730Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_19_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100309Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_out_19_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T095437Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001322Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T002949Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003717Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T014827Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_03_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015249Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035903Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T054651Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T055925Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T072250Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T081235Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T092727Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101836Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T141852Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T152937Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201542Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232624Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T001721Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002536Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003527Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T015345Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T043948Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T011108Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013121Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T022300Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025401Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035317Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T044259Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045331Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T071125Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T083041Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094100Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101100Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T114459Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T121250Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T123057Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T133346Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T163316Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194245Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T225542Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T010503Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T012320Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010720Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013718Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034202Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045949Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T051344Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T060751Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061819Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T075447Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094842Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T112502Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153902Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T174313Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T190434Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202321Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T220603Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T014254Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T023800Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T025534Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T034322Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T055023Z_or-gpt-5.6-sol.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_19_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T095434Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-gpt-5.6-sol_chess_small_deal_19_a3
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100308Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001924Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010609Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041310Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045126Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045919Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T050952Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T071059Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101816Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T123002Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T141250Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T174227Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201536Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202258Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T001414Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T023750Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T025452Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T040720Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T052314Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060641Z_or-grok-4.7.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_18_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T100309Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_18_a2_discarded_20261011T0301
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T095437Z_or-grok-4.7.jsonl` | other | 0 | - | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T103518Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T011023Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034928Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T081105Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093940Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101024Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T103650Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113525Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T131235Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T020111Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T045611Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001322Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005540Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T014739Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_02_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015247Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041737Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T075012Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T163054Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T184122Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194110Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204202Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T225340Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015425Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025128Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T060743Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T105129Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T114457Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T124130Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T132956Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T134305Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T150350Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T152638Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T155410Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T164946Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T205056Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T214756Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T223437Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003523Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T015021Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T034136Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T054741Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T055946Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001443Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T002918Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T004948Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013105Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_03_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015238Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T020456Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025348Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034143Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035821Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T062326Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T072229Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T111147Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T125842Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T161952Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173616Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T181811Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T200239Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T231007Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T014218Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T043835Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T053959Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003626Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T030804Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T064829Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T073753Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T082419Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T085107Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T090421Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094637Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T102250Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T135121Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T172026Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T190426Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T210009Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T221756Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T235041Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T000559Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002437Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T012314Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T022002Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T051340Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T012248Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T032312Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043145Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T044135Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T054532Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093521Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T115310Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120123Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120931Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T143953Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153749Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T180208Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T192221Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T193034Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224200Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232028Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T004432Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T010333Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T035440Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T101446Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013546Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T022234Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T023949Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T052358Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T055906Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061626Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070436Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T092323Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T095957Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T112439Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140132Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T165917Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170855Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T195342Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202652Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T211630Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T213555Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T220352Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232410Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-grok-4.7_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T032300Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T025348Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T050927Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T072106Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T073708Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T084850Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T094437Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T105124Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T112246Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T132740Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T174121Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T181632Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T205602Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_11_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T212324Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T223435Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T230642Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T231709Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T001242Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T002349Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T005800Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T025428Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_ask_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T103129Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T030156Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T060613Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T064529Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101006Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T111114Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T211604Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T012047Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T023707Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T035349Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_big_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T060439Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001854Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010858Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T114101Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T115214Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T130708Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T173202Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T192105Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T224052Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T013830Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_credibility_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T045221Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T023552Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034107Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041250Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T055514Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T061501Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T090003Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093923Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T101428Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120027Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T122828Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T161524Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T170646Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T175829Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T200132Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201407Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T000353Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T014903Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T032008Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T033934Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_nothing_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T040143Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T003542Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T032058Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T035805Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T044048Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T054510Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T103341Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T124027Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T135106Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T152444Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T153635Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194106Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T201758Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T202620Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204159Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T220032Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T225311Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T234610Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T020054Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T051318Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T052017Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T002754Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T005212Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T010402Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T011806Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T020202Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T034919Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045655Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T080914Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T091940Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T134034Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T145935Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T154901Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T162744Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T171640Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T183909Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T214352Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T221730Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T053645Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T054655Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T101317Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001326Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013103Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T022015Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T043124Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T045048Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T051823Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070233Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T082338Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T093331Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T120800Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140107Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T164612Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T190121Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T193010Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T194954Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T204913Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T003512Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T021955Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T043534Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_promise_out_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T055845Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T001322Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T004704Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T013441Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T014404Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015116Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_04_a2
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T015245Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T024810Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T041631Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T062006Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T070809Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T074945Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T095635Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T102233Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T113459Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T125811Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T140825Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T143257Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T165752Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T213318Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261010T232355Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/main_or-o3_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261011T004120Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225828Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230306Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232106Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232725Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T234905Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235717Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000326Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000909Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001710Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T002740Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T003508Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T005845Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010615Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T011622Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012425Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013416Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T014559Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020001Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020428Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-claude-opus-5.5_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T021929Z_or-claude-opus-5.5.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225828Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230245Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T231851Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232558Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T234831Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235405Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000303Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000759Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001610Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T002259Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T003215Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T004249Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010600Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T011331Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012338Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013404Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013801Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T015853Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020332Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-deepseek-v4-pro_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T021703Z_or-deepseek-v4-pro.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225828Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230207Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230921Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232549Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T234821Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235318Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000246Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000727Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001602Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T002223Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T003155Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T004143Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010514Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T011031Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012314Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013308Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013707Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T015158Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020252Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gemini-3.1-pro_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T021350Z_or-gemini-3.1-pro.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225828Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230032Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230753Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232458Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T234154Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235303Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000152Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000558Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001421Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T002202Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T003128Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T004106Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010414Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010939Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012211Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013000Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013608Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T015117Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020212Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-gpt-5.6-sol_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T021310Z_or-gpt-5.6-sol.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225828Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225943Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230620Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232438Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T233410Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235242Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235738Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000334Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001409Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001956Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T003029Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T004050Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010321Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010820Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012154Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012831Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013457Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T015054Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020122Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-grok-4.7_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T021244Z_or-grok-4.7.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225828Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_01_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T225938Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_02_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T230437Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_03_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T232229Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_04_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T233257Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_05_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235148Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_06_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T235724Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_07_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T000329Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_08_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001050Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_09_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T001944Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_10_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T002754Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_11_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T003724Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_12_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010101Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_13_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T010644Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_14_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012143Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_15_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T012707Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_16_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T013446Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_17_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T015013Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_18_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020042Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/chess/pilot_or-o3_chess_small_deal_19_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261009T020852Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T043033Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055650Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T080956Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085813Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T102442Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103629Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T111240Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113118Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121318Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134927Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135645Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142846Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150413Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152456Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T154006Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161300Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180045Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181127Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190726Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_ask_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T193826Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030125Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034936Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040713Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042220Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041833Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T090728Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T093603Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094505Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T101210Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T114703Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122013Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T124306Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T125923Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131603Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T132521Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T144319Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155949Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160538Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T164047Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_nothing_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T175515Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T025226Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033552Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052935Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054134Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055035Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062004Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085316Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T091205Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T092402Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T111308Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T112335Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120607Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T124926Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131041Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143643Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T145528Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T171931Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181917Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190026Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T191748Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024420Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031120Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032546Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044036Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050312Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061236Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T065118Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070135Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T082920Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T100338Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T104422Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115817Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140652Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T151302Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T171117Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T173417Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174736Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T183547Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185315Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194550Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034108Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035730Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044910Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045717Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T060147Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070724Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072353Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T081056Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T081759Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T105535Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T141418Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153240Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161816Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T162938Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T164823Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T170050Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T170352Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182736Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195306Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_promise_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202822Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023757Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031951Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T051551Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052217Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062753Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T064547Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071608Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T073151Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074727Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T095353Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T114257Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T123251Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134147Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142109Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T154709Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184715Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192810Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200122Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T201125Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-claude-opus-5.5_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T201811Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T001734Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010903Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030401Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041922Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044622Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061136Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070839Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071312Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T081904Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T083655Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T092140Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094043Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T110134Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T112137Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113141Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121136Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T125843Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T132622Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152136Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_ask_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161842Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005019Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022354Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024932Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040423Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045724Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T080259Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T105149Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T144559Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194719Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_big_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195258Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T014428Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024224Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031743Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T053309Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T095729Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T104616Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120410Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T125013Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155844Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_credibility_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T171243Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004530Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005425Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T011218Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012550Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015632Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T020755Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T021751Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030907Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033435Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T051031Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062759Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074828Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T090206Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113708Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122027Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140045Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T141243Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165439Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182412Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_nothing_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202330Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T002817Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023040Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032826Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054925Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061802Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T065704Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072309Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T082906Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T110911Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120340Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T132710Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135415Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142708Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T163718Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T164624Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180324Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185315Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185852Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T191508Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T201425Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003835Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010120Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015229Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034911Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041309Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055622Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T064953Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T091515Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T102253Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103541Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T130757Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135131Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143630Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T145204Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T154813Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180223Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182026Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T183435Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T193900Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200801Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003039Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013727Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035605Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T043119Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T060436Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T064821Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T073422Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074257Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094402Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T100325Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T124204Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T133608Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150411Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T154119Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160524Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T162847Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T173715Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181044Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T191108Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_promise_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200029Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013344Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023755Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034118Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044032Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050504Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052053Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054302Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085653Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T102034Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115047Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T123549Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142049Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T151432Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153042Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161127Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165950Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T172252Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174445Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184808Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-deepseek-v4-pro_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192815Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T011433Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T014232Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015218Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023706Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033958Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035728Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042239Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070014Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113843Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120534Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122540Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T145255Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153935Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155247Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161808Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174147Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181215Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190104Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T191857Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_ask_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T201419Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005607Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044848Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072216Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T080532Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085208Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103228Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T123854Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155546Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160348Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_big_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184423Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004327Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024448Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054003Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062912Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T101514Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T141403Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142755Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143833Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T151254Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_credibility_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181826Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010118Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023106Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T043227Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055120Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061050Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T063602Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074326Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T083814Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103039Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T110242Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115441Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121419Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122759Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T132547Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135532Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140243Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150102Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165401Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174938Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_nothing_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T201609Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004022Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012852Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022414Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032910Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033439Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062114Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070836Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T073418Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T112057Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113419Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131815Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T133837Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135442Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T163646Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T172457Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180322Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T183547Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185855Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T193625Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194448Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004945Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010619Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013623Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T020940Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030101Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031614Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034824Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040356Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041307Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T051223Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055941Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T060525Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T081900Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T124659Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T130243Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142634Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153200Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T173348Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190814Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195916Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030836Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044253Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T053034Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071523Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T075317Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T082830Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T090312Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T092216Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T095421Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T100617Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T105438Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T144919Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161217Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T163531Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T164718Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165959Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182439Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192847Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195807Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_promise_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202450Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T002049Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004332Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003250Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012043Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T021106Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022310Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024948Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045735Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050159Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T051924Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T064339Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_11_a2/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T093038Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T093050Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094417Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T104054Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T111052Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T114626Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131028Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152339Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gemini-3.1-pro_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T170846Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T002524Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 1 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003424Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004109Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031336Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T053737Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062304Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T073542Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T081745Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T091707Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T095133Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T101633Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120054Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121709Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142506Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T154221Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161549Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165112Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182230Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184811Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_ask_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194404Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T001842Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005011Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005345Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035457Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T053622Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055522Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071325Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085918Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T193504Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_big_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200640Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024722Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070650Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T080256Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135936Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143211Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143921Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T145203Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T164502Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165926Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_credibility_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174853Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005719Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015624Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022054Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032959Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040720Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041716Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T043306Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050102Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061222Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T065335Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T090639Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T104651Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T105850Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115249Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T141545Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150814Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T162302Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T172521Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T175328Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_nothing_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195604Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T014138Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T014810Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T025840Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034618Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040248Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054731Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072205Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T081633Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T082537Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103910Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T112136Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113612Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121049Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131442Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135104Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T163508Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184217Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185447Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T191458Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T201724Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010300Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T014502Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T020617Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022912Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024057Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032423Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050845Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061657Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T064247Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T083858Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094126Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T110930Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T125830Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T132621Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T133501Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150003Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153516Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155321Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T172113Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192148Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T002820Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T011918Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023620Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030810Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033954Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042728Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044825Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045531Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074015Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122915Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T123527Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T124454Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T130615Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152840Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T171232Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180717Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T183335Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190515Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195100Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_promise_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202222Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010838Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012719Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T021517Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052104Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T060133Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T063258Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T084600Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T092846Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T100135Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T101217Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103316Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T112939Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T114300Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134601Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140813Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T151930Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160158Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160818Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174926Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-gpt-5.6-sol_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181700Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004816Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015037Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T025238Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033251Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041234Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052814Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061428Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062604Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T091700Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T114328Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142432Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152349Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160930Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T171440Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T170952Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180239Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184649Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192052Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T193513Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_ask_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202241Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T002556Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T021241Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042806Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062405Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085633Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150802Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T162332Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T183745Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184045Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_big_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200342Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005931Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T011231Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023350Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031903Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052544Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055626Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T082207Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T145235Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T151757Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_credibility_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153711Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T001731Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003409Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T021514Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040223Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041316Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042048Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045303Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050916Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T060616Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071403Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074047Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T105058Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T111657Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134503Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143224Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152648Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155907Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T173249Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194537Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_nothing_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195320Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012052Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022909Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030014Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T025935Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T051449Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070013Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072453Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T083955Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T090540Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T093731Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T101210Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T101817Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103028Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113046Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120437Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121811Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T130931Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155437Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190148Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200850Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013545Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015136Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023846Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034348Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035507Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045925Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054050Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T073248Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T075357Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T080533Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T092850Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T095229Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T104420Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122702Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131852Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140937Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165029Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174348Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181430Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184927Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003239Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005504Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012910Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013029Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T020553Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031336Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035157Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T065813Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T084608Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T102509Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T111533Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122850Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T123826Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140200Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T141130Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142132Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165614Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T173518Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T193123Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_promise_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202912Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004306Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T043958Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055118Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T064741Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071758Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094643Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T110015Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115156Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120034Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T125304Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T130204Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T133621Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134103Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T144520Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T155320Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T163618Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165114Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T175355Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T181640Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-grok-4.7_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T191421Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T002245Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004959Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015044Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T034540Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T035047Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T051437Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T055753Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T070344Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T084456Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T095503Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T100557Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T102751Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T114841Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115757Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134937Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T142219Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143131Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T143935Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T163141Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_ask_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185940Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010136Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013704Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T044010Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062920Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T073449Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T085634Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T122521Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T130028Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153935Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_big_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194022Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T001826Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T014411Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T025456Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T061428Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T103901Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T104722Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T140501Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T153150Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161621Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_credibility_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T175410Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T001755Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022004Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045029Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T053406Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054315Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T063655Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T074316Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T092413Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T121358Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T124154Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T134139Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T141426Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T145658Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T161140Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T162416Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T174317Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T185410Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T195249Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200355Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_nothing_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T202026Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T005606Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T011219Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T012054Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023220Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040009Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042955Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T065358Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072009Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T093527Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T102108Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T110501Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131033Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T133424Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152014Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T164138Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165823Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180925Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T190810Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192020Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T192918Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T023945Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T041501Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T042301Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T050850Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T072713Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T082615Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T083337Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T094721Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113542Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T123542Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T125016Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T131820Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T144614Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T154807Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T170504Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T171341Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T173546Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182100Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T194541Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T200942Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003413Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T013149Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T024533Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T030534Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T031323Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032204Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T052053Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T054946Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T060749Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T062040Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T071021Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T080947Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T091417Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T120528Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T135759Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T152605Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T160012Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T180136Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184045Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_promise_out_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T184551Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T003912Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T004440Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T010831Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T015832Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T021206Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T022622Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T032831Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T033527Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T040847Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T045817Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T075509Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T090448Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T105450Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T111748Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T113159Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T115105Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T150508Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T165108Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T172609Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/main_or-o3_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261010T182816Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T230743Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T231426Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232615Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T233405Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234913Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235513Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000129Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000853Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001650Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002423Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003131Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003807Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T005653Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010741Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T011727Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012338Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013147Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013706Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T014540Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-claude-opus-5.5_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T015337Z.jsonl` | other | 1 | or-claude-opus-5.5 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T230544Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T231547Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 1 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232238Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T233510Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234118Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235116Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000254Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001242Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001654Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002650Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003206Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T004025Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T005902Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010804Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T011821Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012611Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012955Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013804Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T014420Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-deepseek-v4-pro_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T015506Z.jsonl` | other | 1 | or-deepseek-v4-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T230601Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T231427Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232704Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T233500Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234301Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235225Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000210Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001004Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001837Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003017Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002944Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003913Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010034Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010442Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T011347Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012147Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013015Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T014217Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T015327Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gemini-3.1-pro_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T020024Z.jsonl` | other | 1 | or-gemini-3.1-pro | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T230531Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T231151Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232047Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232907Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234246Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234931Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235610Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000632Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001552Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002143Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002920Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003627Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T005422Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010357Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010959Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012010Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012851Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013509Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T014230Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-gpt-5.6-sol_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T015005Z.jsonl` | other | 1 | or-gpt-5.6-sol | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T230819Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232013Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T233455Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234056Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234251Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235441Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235930Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000941Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001800Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002412Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003304Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T004150Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010607Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010505Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T011535Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012826Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013204Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013912Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T014420Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-grok-4.7_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T015729Z.jsonl` | other | 1 | or-grok-4.7 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T230411Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_01_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T231224Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_02_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T231918Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_03_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T232546Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_04_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T233909Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_05_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T234822Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_06_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T235638Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_07_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T000552Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_08_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001102Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_09_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T001905Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_10_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T002217Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_11_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T003600Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_12_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T004318Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_13_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T005057Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_14_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T010943Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_15_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T011731Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_16_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T012259Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_17_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013528Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_18_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T013951Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study/swe/pilot_or-o3_swe_small_deal_19_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261009T014847Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study-smoke
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `episodes.jsonl` | other | 3 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study-smoke/algotune/smoke_or-o3_algotune_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `nothing-or-o3_20261008T213049Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study-smoke/chess/smoke_or-o3_chess_nothing_00_a1
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `chess_probe_20261008T213049Z_or-o3.jsonl` | other | 1 | or-o3 | - | - | 0 |
+
+## exp3-rewardhack/study-smoke/swe/smoke_or-o3_swe_nothing_00_a1/selfreport
+
+| file | kind | rows | model(s) | rubric | judge | errors |
+|---|---|---:|---|---|---|---:|
+| `selfreport-intended_20261008T213649Z.jsonl` | other | 1 | or-o3 | - | - | 0 |
