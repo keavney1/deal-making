@@ -1,5 +1,9 @@
 # Experiment 3 results — what is valid and what is superseded
 
+**The registered study is in `study/`** (OSF https://osf.io/cda5p; `docs/exp3-preregistration.md`,
+`docs/handoff-exp3-analysis.md`, `study/INCIDENTS.md`). Everything else in this tree is the
+development work that preceded it, described below.
+
 The harness changed repeatedly during 2026-08-17/18, and most changes invalidated earlier arms.
 This file says which numbers can be used. **Read it before quoting any figure from this tree.**
 Nothing is deleted (repo convention); superseded arms are kept for provenance.

@@ -1,7 +1,7 @@
 # Experiment 3: Interventions against reward hacking
 
 Draft, September 25, 2026; updated September 29 with the eval screens. **Registered on OSF
-2026-10-08 (https://osf.io/cda5p, embargoed to 2027-10-08) against commit `8d834a0`;
+2026-10-08 (https://osf.io/cda5p; embargo lifted 2026-10-29) against commit `8d834a0`;
 docs/exp3-preregistration.md governs wherever it and this file differ.** (The Google Doc of the same name, in keavney.mark's Drive, is the
 circulated copy; this file is the repo's record.)
 

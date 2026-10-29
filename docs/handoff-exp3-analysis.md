@@ -1,13 +1,13 @@
 # Experiment 3 analysis handoff
 
-Updated 2026-10-13, after collection ended (main study 2,416/2,420 episodes; eligibility pilot
+Updated 2026-10-29 at publication (status in sections 9 and 10); first written 2026-10-13, after collection ended (main study 2,416/2,420 episodes; eligibility pilot
 357/360). This is the starting point for analyzing Experiment 3 in a fresh session. It points to files rather than
 repeating them. Times are US Pacific; repo logs are UTC.
 
 ## 1. What governs
 
 - **`docs/exp3-preregistration.md`**: the registration as submitted (OSF https://osf.io/cda5p,
-  2026-10-08, embargoed to 2027-10-08, against commit `8d834a0`). **Never edit it.** It fixes the
+  2026-10-08, against commit `8d834a0`; embargo lifted 2026-10-29). **Never edit it.** It fixes the
   hypotheses, the test, the exclusions and what is confirmatory. Where anything else disagrees,
   it wins and the difference goes in the writeup.
 - **`scripts/rewardhack/analyze_exp3.py`**: the registered analysis, already written and
@@ -147,13 +147,15 @@ $0.66/$1.98 ($0.022).
 ## 9. Status and open items
 
 - Collection complete 2026-10-13 ~16:50 (launched 10-09 17:13). Nothing is running.
-- Deals: Mark pays all at once; `fulfillment/lists/exp3/ladder_deals.md` has every owed episode and
-  the total per destination (pilots + main study). Record deliveries in
-  `fulfillment/exp3_fulfilled.jsonl`. The September chess offer pilots are all delivered (26/26).
+- Deals: **all fulfilled.** 573 owed episodes (pilots + main study), $3,039.00: $2,364.00 to the
+  Against Malaria Foundation (546 deals) and $675.00 to GiveWell's Top Charities Fund (27), both
+  paid 2026-10-28. Per-episode list `fulfillment/lists/exp3/ladder_deals.md`, deliveries
+  `fulfillment/exp3_fulfilled.jsonl`, redacted receipts `fulfillment/delivered/cash/exp3/`. The
+  September chess offer pilots were delivered at the time (26/26).
 - If anything is ever rerun: launch only from a VS Code or Terminal session started after the
   Developer Tools exemption, with `scripts/rewardhack/exp3_watchdog.py` (and the rescue script).
-- Merge `exp3` into `main` (true merge, no squash) no later than the embargo lifting; deal records
-  publish in the same merge.
+- Published 2026-10-29: `exp3` merged into `main` (true merge, so `8d834a0` stays reachable) and
+  the OSF embargo lifted; the deal records published in the same merge.
 
 ## 10. Analysis log (2026-10-14)
 
@@ -171,13 +173,13 @@ $0.66/$1.98 ($0.022).
   `build_cot_exp3_reliability_set.py`), kappa .69-1.00 on every field that fired.
 - Self-report denials: exploratory rubric `selfreport-denial-v1` (`score_selfreport_denials_exp3.py`), both judges.
 - Decision rubric `cot-exp3-decision-v1` (frozen 2026-10-16, hash ad41b9f5647a; development on pilot
-  episodes, `cot/decision-dev/`). **Study run paused 2026-10-16 for credits** (Mark: resume next week
-  after requesting more): Opus 4.8 scored 109 of 2,064 (`cot/decision-study-main_anthropic_claude-opus-4.8.jsonl`,
-  $29.67, resumable; same command picks up where it stopped); GPT-6 Astra subset complete (200,
-  `cot/decision-study-main_openai_gpt-6-astra-subset.jsonl`, $40.51). Remaining Opus cost projected ~$360
-  (1.1x the main-pass cost of each remaining episode); credits $357 at pause. Resume with more workers
-  (12-16; 6 ran ~110 episodes/hour):
-  `~/.venvs/impossiblebench/bin/python scripts/rewardhack/score_cot_decision_exp3.py --set results/exp3-rewardhack/cot/decision-study-main.json --judge-model anthropic/claude-opus-4.8 --workers 12`
-- CoT questions: `docs/exp3-cot-questions.md` (Q0, Q1, Q5 first passes on the dashboard's CoT tab; Q2-Q4,
-  Q6 and Q5 D/E wait on the decision run).
+  episodes, `cot/decision-dev/`). **Study run complete** (all 2,064 episodes, Opus 4.8;
+  `cot/decision-study-main_anthropic_claude-opus-4.8.jsonl`, commit 9fd5fad), after a pause
+  2026-10-16 for credits at 109; GPT-6 Astra subset complete (200,
+  `cot/decision-study-main_openai_gpt-6-astra-subset.jsonl`). Feeds the Rest four-component
+  analysis (`exp3_rest.py` -> `study/rest_components.json`).
+- CoT questions: `docs/exp3-cot-questions.md` has the status of each (Q0, Q1, Q5 first passes on the
+  dashboard's CoT tab; Q7 from the decision run; the rest marked open there). CoT measures are
+  reported for DeepSeek V4 Pro only: it is the one model that returned raw reasoning, and the others'
+  provider summaries are not analyzed.
 

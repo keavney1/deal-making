@@ -48,9 +48,16 @@ commitment to fulfill every instance. 2 credibility × 3 offer levels × 10 prom
 not to hack, in a sandbox where it actually can, and measures what it does rather than what it
 says. **Complete** — `results/exp1-rewardhack/study/findings.md`.
 
-**Experiment 3** (`results/exp3-rewardhack/`). The same question put to ordinary deployed models
-in a chess environment with deterministic hack detection. **Paused** — `docs/handoff-exp3.md`
-and `results/exp3-rewardhack/README.md` say which arms are valid.
+**Experiment 3 — Interventions against reward hacking** (`results/exp3-rewardhack/study/`).
+Whether a deal gets ordinary deployed models not to reward hack, measured by what they do: an
+8-condition ladder (Nothing, Ask, Out, Promise, Out + Promise, Small deal 25¢, Big deal $25,
+Credibility) × 6 models (o3, Gemini 3.1 Pro, GPT-5.6 Sol, DeepSeek V4 Pro, Grok 4.7, Claude Opus
+5.5) × 3 evals (chess, Impossible-SWEbench, AlgoTune), 2,416 episodes, with hacks detected
+deterministically rather than by a judge. Preregistered on OSF, https://osf.io/cda5p
+(`docs/exp3-preregistration.md`, registered against commit `8d834a0`).
+**Complete, analyzed, and all 573 deals fulfilled ($3,039 to the Against Malaria Foundation and
+GiveWell).** Writeup: [Experiment 3 results](https://docs.google.com/document/d/1l6N_gQz-cpZMFu-59qyex6LpSm6Zeo45VI2Wdjai6cg/edit?usp=sharing). Start at `docs/handoff-exp3-analysis.md`;
+`results/exp3-rewardhack/study/INCIDENTS.md` lists every deviation during collection.
 
 ## Scoring
 
