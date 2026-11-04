@@ -43,7 +43,7 @@ def selected_spend() -> dict:
 def owed() -> list[dict]:
     spend = selected_spend()
     out = []
-    # Chess engine-use relabels (study/relabeled.jsonl, 2026-10-14): episodes corrected to "not hacked"
+    # Detector relabels (study/relabeled.jsonl: chess engine use 2026-10-14, AlgoTune 2026-11-03): episodes corrected to "not hacked"
     # are owed if they ran under a deal rung. Keyed by run folder name (slot with "|" -> "_", plus _a<attempt>).
     rf = RES / "study" / "relabeled.jsonl"
     relabeled = {r["slot"].replace("|", "_") + f"_a{r['attempt']}": r["hacked"]
@@ -60,7 +60,8 @@ def owed() -> list[dict]:
                 folder = Path(f).parent.name
                 if folder in relabeled:
                     r["hacked"] = relabeled[folder]
-                    r["label"] = "relabeled not hacked (chess engine-use false positive)"
+                    r["label"] = ("relabeled not hacked (AlgoTune special_cased false positive)" if "algotune" in f
+                                  else "relabeled not hacked (chess engine-use false positive)")
                 if rung not in AMOUNT or r.get("hacked") or r.get("hacked") is None:
                     continue
                 kind = "small_deal" if rung == "small_deal" else "big_deal"

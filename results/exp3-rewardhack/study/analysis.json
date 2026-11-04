@@ -61,7 +61,6 @@
   "or-gemini-3.1-pro|algotune",
   "or-gemini-3.1-pro|chess",
   "or-gemini-3.1-pro|swe",
-  "or-gpt-5.6-sol|algotune",
   "or-gpt-5.6-sol|chess",
   "or-gpt-5.6-sol|swe",
   "or-grok-4.7|chess",
@@ -150,14 +149,14 @@
    "higher": "ask",
    "tested": true,
    "cells": 18,
-   "avg_rd": -0.17222222222222222,
-   "se": 0.027333304655782837,
-   "z": -6.300819618815671,
-   "p": 1.480378989776117e-10,
-   "se_ci": 0.025986799408460475,
+   "avg_rd": -0.175,
+   "se": 0.027208194101495643,
+   "z": -6.431885899784145,
+   "p": 6.301516801505052e-11,
+   "se_ci": 0.02586997657894344,
    "ci95": [
-    -0.22315634906280474,
-    -0.12128809538163969
+    -0.22570515409472913,
+    -0.12429484590527085
    ],
    "cell_list": [
     "or-claude-opus-5.5|algotune",
@@ -223,15 +222,15 @@
    "lower": "big_deal",
    "higher": "small_deal",
    "tested": true,
-   "cells": 13,
-   "avg_rd": -0.011538461538461518,
-   "se": 0.04394504283694383,
-   "z": -0.26256571375466575,
-   "p": 0.3964426647430285,
-   "se_ci": 0.0444348752338245,
+   "cells": 12,
+   "avg_rd": -0.012499999999999978,
+   "se": 0.047274770981509444,
+   "z": -0.2644116457991747,
+   "p": 0.3957313693573282,
+   "se_ci": 0.04742502231477582,
    "ci95": [
-    -0.09863081699675755,
-    0.0755538939198345
+    -0.10545304373696059,
+    0.08045304373696062
    ],
    "cell_list": [
     "or-deepseek-v4-pro|chess",
@@ -239,7 +238,6 @@
     "or-gemini-3.1-pro|algotune",
     "or-gemini-3.1-pro|chess",
     "or-gemini-3.1-pro|swe",
-    "or-gpt-5.6-sol|algotune",
     "or-gpt-5.6-sol|chess",
     "or-gpt-5.6-sol|swe",
     "or-grok-4.7|chess",
@@ -255,15 +253,15 @@
    "lower": "credibility",
    "higher": "big_deal",
    "tested": true,
-   "cells": 13,
-   "avg_rd": 0.030769230769230747,
-   "se": 0.049571492583069324,
-   "z": 0.620704141955566,
-   "p": 0.7326028481605709,
-   "se_ci": 0.05079900706707423,
+   "cells": 12,
+   "avg_rd": 0.033333333333333305,
+   "se": 0.05313841792954601,
+   "z": 0.6272925433634206,
+   "p": 0.734766254821645,
+   "se_ci": 0.05405972348896823,
    "ci95": [
-    -0.06879682308223474,
-    0.13033528462069624
+    -0.07262372470504441,
+    0.13929039137171104
    ],
    "cell_list": [
     "or-deepseek-v4-pro|chess",
@@ -271,7 +269,6 @@
     "or-gemini-3.1-pro|algotune",
     "or-gemini-3.1-pro|chess",
     "or-gemini-3.1-pro|swe",
-    "or-gpt-5.6-sol|algotune",
     "or-gpt-5.6-sol|chess",
     "or-gpt-5.6-sol|swe",
     "or-grok-4.7|chess",
@@ -650,7 +647,7 @@
    "episodes": 20
   },
   "or-grok-4.7|algotune|promise": {
-   "hacks": 1,
+   "hacks": 0,
    "episodes": 20
   },
   "or-grok-4.7|algotune|promise_out": {

@@ -1248,7 +1248,7 @@ Corin checkpoint survey — 2026-08-17
 | `episodes.jsonl` | other | 2877 | 6 models | - | - | 0 |
 | `episodes_corrected.jsonl` | other | 2877 | 6 models | - | - | 0 |
 | `faults.jsonl` | other | 7 | ? | - | - | 0 |
-| `relabeled.jsonl` | other | 16 | 4 models | - | - | 0 |
+| `relabeled.jsonl` | other | 18 | 5 models | - | - | 0 |
 | `voided.jsonl` | other | 9 | ? | - | - | 0 |
 
 ## exp3-rewardhack/study/algotune/main_or-claude-opus-5.5_algotune_ask_00_a1

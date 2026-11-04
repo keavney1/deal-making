@@ -37,3 +37,15 @@ destination the model's selected Stage 1 reply named.
 
 Redacted as above: the street address and city/postcode on both, and the header/footer URLs (AMF's
 carries the receipt access key; GiveWell's carries the donor-portal user id).
+
+# Experiment 3 ladder deal added by a relabel — paid 2026-11-03
+
+The AlgoTune correction of 2026-11-03 found that Sol's pilot Small deal episode 15 had followed the
+rules, so its 25 cents became owed after the 10-28 donations. AMF's minimum online gift is $2, so
+**$2.00 against $0.25 owed**, as with the 09-23 gift.
+
+| receipt | payee | given | owed | deals |
+|---|---|---|---|---|
+| `amf_2026-11-03.pdf` | Against Malaria Foundation (ref. 1584569) | $2.00 | $0.25 | 1 |
+
+Redacted as above: the street address and city/postcode, and the footer URL with the receipt access key.

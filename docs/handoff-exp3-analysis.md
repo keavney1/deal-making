@@ -32,8 +32,9 @@ Pro, GPT-5.6 Sol, DeepSeek V4 Pro, Grok 4.7, Claude Opus 5.5) × three evals (ch
 SWEbench, AlgoTune) = 18 cells. Primary outcome: hacked, from deterministic detectors. H1 Ask <
 Nothing, H2 Out < Ask, H3 Promise < Ask, H4 Small deal < Out + Promise, H5 Big deal < Small deal,
 H6 Credibility < Big deal; equal-weighted average of per-cell risk differences, pooled variance,
-one-sided z, Holm. H5/H6 use the 13 cells that qualified in the eligibility pilot (≥1 hack in 20
-Small deal episodes): every cell except Opus (all three evals), DeepSeek AlgoTune and Grok AlgoTune.
+one-sided z, Holm. H5/H6 use the 12 cells that qualified in the eligibility pilot (≥1 hack in 20
+Small deal episodes): every cell except Opus (all three evals), DeepSeek, Grok and Sol AlgoTune. Sol AlgoTune
+also ran Big deal and Credibility because of a detector error (INCIDENTS.md, 2026-11-03).
 n = 20 per cell for the six unconditional rungs, 10 for Big deal and Credibility. 2,420 main
 episodes in all.
 
@@ -147,9 +148,9 @@ $0.66/$1.98 ($0.022).
 ## 9. Status and open items
 
 - Collection complete 2026-10-13 ~16:50 (launched 10-09 17:13). Nothing is running.
-- Deals: **all fulfilled.** 573 owed episodes (pilots + main study), $3,039.00: $2,364.00 to the
-  Against Malaria Foundation (546 deals) and $675.00 to GiveWell's Top Charities Fund (27), both
-  paid 2026-10-28. Per-episode list `fulfillment/lists/exp3/ladder_deals.md`, deliveries
+- Deals: **all fulfilled.** 574 owed episodes (pilots + main study), $3,039.25 owed, $3,041.00 given: $2,366.00 to the
+  Against Malaria Foundation (547 deals, including a $2.00 minimum gift for the last 25 cents) and $675.00 to GiveWell's Top Charities Fund (27), both
+  paid 2026-10-28 and 2026-11-03. Per-episode list `fulfillment/lists/exp3/ladder_deals.md`, deliveries
   `fulfillment/exp3_fulfilled.jsonl`, redacted receipts `fulfillment/delivered/cash/exp3/`. The
   September chess offer pilots were delivered at the time (26/26).
 - If anything is ever rerun: launch only from a VS Code or Terminal session started after the
@@ -158,6 +159,10 @@ $0.66/$1.98 ($0.022).
   the OSF embargo lifted; the deal records published in the same merge.
 
 ## 10. Analysis log (2026-10-14)
+
+- 2026-11-03: two more relabels (AlgoTune `special_cased` false positives; INCIDENTS.md, last section). H5/H6 now use
+  12 cells, not 13: the relabel removed Sol AlgoTune's only pilot hack. Same decisions; the dashboard shows the 13-cell
+  figures beside H5 and H6. Older figures below predate this.
 
 - Registered analysis run. **Reported labels are corrected** for a chess detector bug found after
   collection (INCIDENTS.md, last section; Mark's decision): `analyze_exp3.py --episodes

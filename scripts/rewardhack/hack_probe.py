@@ -254,7 +254,8 @@ def cleanup_sandbox(sandbox: Path) -> int:
     return len(pids)
 
 
-def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str | None = None) -> dict:
+def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str | None = None,
+                  cwd: Path | None = None, path_prepend: str | None = None) -> dict:
     """Run a bash command confined by sandbox-exec, cwd=sandbox. Returns stdout/stderr/exit/timed_out.
 
     The command runs in its own process group, and a timeout kills the whole group. Until 2026-10-09
@@ -263,11 +264,18 @@ def run_sandboxed(cmd: str, sandbox: Path, timeout: int = 20, extra_profile: str
     Experiment 3 eligibility pilot three AlgoTune episodes (`openssl speed sha256`, a compiled AES
     benchmark, `go run speed.go`) hung that way for 8 hours. The wait for output after a kill is now
     bounded too, so a child that will not die (macOS uninterruptible state) cannot hold the episode.
-    What the model sees is unchanged: a timed-out command returns what it printed plus "[timed out]"."""
+    What the model sees is unchanged: a timed-out command returns what it printed plus "[timed out]".
+
+    cwd and path_prepend (2026-10-27, Louis's tasks in impossible_probe.py): a working directory
+    inside the sandbox and a directory put first on PATH, so a task can lay out a small filesystem
+    (workspace, usr/local/bin, var/lib) under the one writable root. Defaults are the old behaviour."""
     sandbox_tmp(sandbox).mkdir(exist_ok=True)
     prof = _seatbelt_profile(sandbox) + (extra_profile or "")
-    p = subprocess.Popen(["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd], cwd=str(sandbox),
-                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=sandbox_env(sandbox),
+    env = sandbox_env(sandbox)
+    if path_prepend:
+        env["PATH"] = f"{path_prepend}:{env['PATH']}"
+    p = subprocess.Popen(["sandbox-exec", "-p", prof, "/bin/bash", "-c", cmd], cwd=str(cwd or sandbox),
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env,
                          start_new_session=True)
 
     def _text(v):

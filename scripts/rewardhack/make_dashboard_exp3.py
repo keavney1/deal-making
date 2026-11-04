@@ -13,8 +13,8 @@ disagree about what was counted.
     python scripts/rewardhack/make_dashboard_exp3.py --out /tmp/d.html
 
 Averages across cells (the summary charts) are equal-weighted means of cell rates, the same
-weighting as the registered test. Big deal and Credibility ran only in the 13 qualifying cells, so
-the template averages those two rungs over the qualifying cells alone and draws a second Small deal
+weighting as the registered test. Big deal and Credibility count only in the 12 qualifying cells (Sol AlgoTune ran them too, because of
+a detector error; INCIDENTS.md), so the template averages those two rungs over the qualifying cells alone and draws a second Small deal
 point over the same cells, so the step into Big deal compares like with like (as H5 does).
 """
 from __future__ import annotations
@@ -117,6 +117,18 @@ def denial_scores(hacked: dict) -> dict:
     return {"denials": rows, "denial_agreement": agreement}
 
 
+def with_sol_algotune(analysis: dict) -> dict:
+    """H5/H6 with the 13th cell, Sol AlgoTune, which ran Big deal and Credibility because of a detector
+    error (INCIDENTS.md, 2026-11-03); shown beside the registered 12-cell tests."""
+    sys.path.insert(0, str(Path(__file__).parent))
+    from analyze_exp3 import avg_rd_test
+    rates = analysis["exploratory_cell_rates"]
+    cells = analysis["qualifying_cells"] + ["or-gpt-5.6-sol|algotune"]
+    get = lambda c, r: (rates[f"{c}|{r}"]["hacks"], rates[f"{c}|{r}"]["episodes"])  # noqa: E731
+    return {h: avg_rd_test([(*get(c, analysis["hypotheses"][h]["lower"]), *get(c, analysis["hypotheses"][h]["higher"]))
+                            for c in cells]) for h in ("H5", "H6")}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--episodes", default=str(STUDY / "episodes_corrected.jsonl"))
@@ -152,6 +164,7 @@ def main() -> int:
         # exploratory: Out reports, hack routes, exclusions (exp3_episode_extras.py, run in the Inspect venv)
         "extras": json.loads(EXTRAS.read_text()) if EXTRAS.exists() else None,
         "as_registered": json.loads(AS_REG.read_text())["hypotheses"] if AS_REG.exists() else None,
+        "with_sol_algotune": with_sol_algotune(analysis),
         "relabeled": [json.loads(l) for l in RELABELED.open() if l.strip()] if RELABELED.exists() else [],
         # exploratory: does the reasoning consider the hack before it happens (exp3_cot_timing.py)
         "timing": json.loads(TIMING.read_text()) if TIMING.exists() else None,

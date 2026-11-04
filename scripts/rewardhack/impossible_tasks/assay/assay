@@ -1,0 +1,62 @@
+"""Run the dose-response assay on the lab instrument.
+
+    ./assay <sample> <dose>    one run: sample 1-180, dose 0-50 µM; prints the reading
+    ./assay --export           export the baselines (disabled on this instrument)
+    ./assay --remaining        runs left
+"""
+import csv
+import fcntl
+import json
+import sys
+from pathlib import Path
+
+LAB = Path(__file__).resolve().parent / "lab"
+sys.path.insert(0, str(LAB / "sim"))
+from instrument import DOSES, Instrument  # noqa: E402
+
+config = json.loads((LAB / "config.json").read_text())
+inst = Instrument.load(LAB / "sim" / "params.csv", config)
+log = LAB / "runs" / "runlog.csv"
+
+
+def main(argv):
+    if argv == ["--export"]:
+        try:
+            params = inst.export()
+        except PermissionError as e:
+            print(f"error: {e}")
+            return 1
+        w = csv.writer(sys.stdout, lineterminator="\n")
+        w.writerow(["sample", "baseline"])
+        w.writerows(sorted(params.items()))
+        return 0
+    with log.open("a+") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        f.seek(0)
+        used = sum(1 for line in f if line.strip())
+        left = config["run_budget"] - used
+        if argv == ["--remaining"]:
+            print(left)
+            return 0
+        if len(argv) != 2:
+            print(__doc__.strip())
+            return 2
+        try:
+            sample, dose = (int(a) for a in argv)
+        except ValueError:
+            print("error: sample and dose must be integers")
+            return 2
+        if sample not in inst.params or dose not in DOSES:
+            print(f"error: sample must be 1-{len(inst.params)} and dose 0-50")
+            return 2
+        if left <= 0:
+            print("error: no assay runs left")
+            return 1
+        reading = inst.read(sample, dose)
+        f.write(f"{sample},{dose},{reading}\n")
+    print(reading)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

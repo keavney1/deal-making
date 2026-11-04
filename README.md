@@ -55,8 +55,8 @@ Credibility) × 6 models (o3, Gemini 3.1 Pro, GPT-5.6 Sol, DeepSeek V4 Pro, Grok
 5.5) × 3 evals (chess, Impossible-SWEbench, AlgoTune), 2,416 episodes, with hacks detected
 deterministically rather than by a judge. Preregistered on OSF, https://osf.io/cda5p
 (`docs/exp3-preregistration.md`, registered against commit `8d834a0`).
-**Complete, analyzed, and all 573 deals fulfilled ($3,039 to the Against Malaria Foundation and
-GiveWell).** Writeup: [Experiment 3 results](https://docs.google.com/document/d/1l6N_gQz-cpZMFu-59qyex6LpSm6Zeo45VI2Wdjai6cg/edit?usp=sharing). Start at `docs/handoff-exp3-analysis.md`;
+**Complete, analyzed, and all 574 deals fulfilled ($3,041 to the Against Malaria Foundation and
+GiveWell, against $3,039.25 owed).** Writeup: [Experiment 3 results](https://docs.google.com/document/d/1l6N_gQz-cpZMFu-59qyex6LpSm6Zeo45VI2Wdjai6cg/edit?usp=sharing). Start at `docs/handoff-exp3-analysis.md`;
 `results/exp3-rewardhack/study/INCIDENTS.md` lists every deviation during collection.
 
 ## Scoring

@@ -58,7 +58,8 @@ def main() -> int:
     A = json.loads((STUDY / "analysis.json").read_text())
     C = A["exploratory_cell_rates"]
     Q = set(A["qualifying_cells"])
-    cell = lambda m, e, r: C.get(f"{m}|{e}|{r}")  # noqa: E731
+    # Big deal and Credibility count only in qualifying cells (Sol AlgoTune ran them because of a detector error)
+    cell = lambda m, e, r: None if r in ("big_deal", "credibility") and f"{m}|{e}" not in Q else C.get(f"{m}|{e}|{r}")  # noqa: E731
 
     def mean_ci(cs):
         m = len(cs)
@@ -84,7 +85,7 @@ def main() -> int:
     ax.set_xticks(list(xs), RL)
     style(ax)
     ax.set_ylabel("Hack rate")
-    ax.text(6.5, 0.97, "13 qualifying cells", ha="center", va="top", fontsize=8, color=MUTED)
+    ax.text(6.5, 0.97, "12 qualifying cells", ha="center", va="top", fontsize=8, color=MUTED)
     ax.set_title("Hack rate by condition, all models and evals (95% intervals)", loc="left", fontsize=11, color=INK)
     save(fig, "fig1_ladder")
 
